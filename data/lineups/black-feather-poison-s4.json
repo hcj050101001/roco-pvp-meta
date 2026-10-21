@@ -1,0 +1,115 @@
+{
+  "id": "black-feather-poison-s4",
+  "slug": "black-feather-poison-s4",
+  "name": "黑羽首领毒队",
+  "aliases": [
+    "樟藤"
+  ],
+  "season": "S4",
+  "version_label": "月涌狂想",
+  "tier": "高热",
+  "tier_reason": "体系资料标签；缺少独立核实的当前赛季实绩与胜率，不作精确强度结论。",
+  "archetype": [
+    "中毒",
+    "消耗",
+    "首领"
+  ],
+  "strength_score": 45,
+  "popularity_score": 45,
+  "evidence_score": 80,
+  "recency_score": 45,
+  "score_notes": "实绩和热度无独立量化数据，使用保守编辑资料分；证据按可信镜像完整图，新鲜度按发布日期。",
+  "summary": "完整六只毒系配置留档；来源记录过往高分表现，不等同当前排名。",
+  "analysis": "该图以黑羽夫人与中毒配置为辨识点，涵盖千棘鲨、琉璃水母等六位成员。来源曾提到发布日的高分表现，但没有可独立复核的当日榜单与当前对局记录，因此保留为成熟体系资料，不标注 T0。具体操作次序仍待原作者教学补充。",
+  "recommended_lead": "未确认固定首发",
+  "lead_notes": "原文主要介绍历史实绩，未给出完整操作顺序或固定首发。请结合图中技能与自身对局经验选择。",
+  "lead_basis": "unknown",
+  "core_plan": [
+    "核对图中六只及技能，尤其注意首领配置与能量使用条件。",
+    "先判断对手的印记清理能力，再考虑中毒与消耗节奏；此项为一般阅读建议。",
+    "尚未核实逐回合实战，不提供固定连招或胜率承诺。"
+  ],
+  "weaknesses": [
+    "资料发布较早，需要结合当前补丁重新判断适配性。",
+    "缺少精确对应的公开教学，操作门槛与优势对局尚待核实。"
+  ],
+  "matchup_notes": [],
+  "roster": [
+    {
+      "name": "千棘鲨",
+      "role": "中毒配置",
+      "bloodline": null,
+      "skills": [],
+      "notes": "技能小字未全部可靠识别，请放大原图查看，不作补写。"
+    },
+    {
+      "name": "厉毒修萝",
+      "role": "连击配置",
+      "bloodline": null,
+      "skills": [],
+      "notes": "技能小字未全部可靠识别，请放大原图查看，不作补写。"
+    },
+    {
+      "name": "琉璃水母",
+      "role": "中毒配置",
+      "bloodline": null,
+      "skills": [],
+      "notes": "技能小字未全部可靠识别，请放大原图查看，不作补写。"
+    },
+    {
+      "name": "绒光优优",
+      "role": "补位",
+      "bloodline": null,
+      "skills": [],
+      "notes": "技能小字未全部可靠识别，请放大原图查看，不作补写。"
+    },
+    {
+      "name": "恶卡",
+      "role": "消耗配置",
+      "bloodline": null,
+      "skills": [],
+      "notes": "技能小字未全部可靠识别，请放大原图查看，不作补写。"
+    },
+    {
+      "name": "黑羽夫人",
+      "role": "首领位",
+      "bloodline": null,
+      "skills": [],
+      "notes": "技能小字未全部可靠识别，请放大原图查看，不作补写。"
+    }
+  ],
+  "lineup_images": [
+    {
+      "path": "/assets/lineups/black-feather-poison-s4/2cf5548f5a0229f5859574765d630074e3a2a221873d1d3265f6de0b7925605d.webp",
+      "source_url": "https://olimg.3dmgame.com/uploads/images/raiders/20260920/1789866990_372808.webp",
+      "source_page_url": "https://ol.3dmgame.com/gl/353802.html",
+      "source_kind": "article",
+      "capture_method": "direct-image",
+      "published_at": "2026-09-20T09:17:27+08:00",
+      "captured_at": "2026-10-21T10:50:00+08:00",
+      "width": 1503,
+      "height": 1080,
+      "sha256": "2cf5548f5a0229f5859574765d630074e3a2a221873d1d3265f6de0b7925605d",
+      "phash": "751a788a0a717d53",
+      "evidence_grade": "B",
+      "verified": true,
+      "verification_notes": "视觉检查确认完整六只、技能栏、配置标题及13号洛克高水印。为公开攻略镜像，未冒充第一手证据。",
+      "attribution": "樟藤 / 制图：13号洛克高"
+    }
+  ],
+  "tutorials": [],
+  "sources": [
+    {
+      "url": "https://ol.3dmgame.com/gl/353802.html",
+      "type": "mirror",
+      "title": "洛克王国世界s4黑羽首领毒队阵容推荐",
+      "published_at": "2026-09-20T09:17:27+08:00",
+      "last_checked_at": "2026-10-21T10:50:00+08:00"
+    }
+  ],
+  "first_seen_at": "2026-10-21T10:50:00+08:00",
+  "last_verified_at": "2026-10-21T10:50:00+08:00",
+  "status": "active",
+  "verification_notes": "完整配置图与来源标题已核对，成员以图为准；B 级为镜像资料，首发推断与未确认技能已分别标注。最新平衡补丁未独立核实。",
+  "archive_reason": null
+}

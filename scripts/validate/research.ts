@@ -1,0 +1,12 @@
+import { readFile, mkdir, writeFile } from 'node:fs/promises';
+import { join } from 'node:path';
+import { hashDistance } from '../extract/image';
+const {run_id}=JSON.parse(await readFile('research/inbox/latest.json','utf8'));
+if(!/^[a-zA-Z0-9-]+$/.test(run_id)) throw Error('无效 run_id');
+const manifest=JSON.parse(await readFile(join('research/inbox',run_id,'manifest.json'),'utf8'));
+const images=manifest.sources.flatMap((s:any)=>(s.images||[]).filter((i:any)=>i.sha256).map((i:any)=>({...i,source:s.url})));
+const duplicates=[];
+for(let i=0;i<images.length;i++) for(let j=0;j<i;j++) if(images[i].sha256===images[j].sha256 || hashDistance(images[i].phash,images[j].phash)<=5) duplicates.push({a:images[i].url,b:images[j].url,exact:images[i].sha256===images[j].sha256});
+await mkdir(join('research/runs',run_id),{recursive:true});
+await writeFile(join('research/runs',run_id,'evaluation.json'),JSON.stringify({run_id,candidates:images,duplicates,source_failures:manifest.sources.filter((s:any)=>s.status!=='ok'),note:'图像语义、版本与六只成员必须视觉复核；此脚本不自动晋升生产。'},null,2)+'\n');
+console.log(`候选 ${images.length} 张，重复对 ${duplicates.length}，等待证据判断。`);

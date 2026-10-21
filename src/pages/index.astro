@@ -1,0 +1,54 @@
+---
+import Layout from '../layouts/Layout.astro';
+import LineupCard from '../components/LineupCard.astro';
+import { activeLineups, state } from '../lib/data';
+import { withBase, displayDate } from '../lib/urls';
+const filters = [...new Set(activeLineups.map(l=>l.archetype[0]))];
+---
+<Layout title="阵容图鉴" section="overview">
+  <section class="hero wrap">
+    <div class="hero-copy"><div class="eyebrow"><span class="tiny-star">✦</span> 洛克王国：世界 · PVP FIELD GUIDE</div>
+      <h1>好阵容，<br />值得<span class="underlined">认真研究</span><span class="hero-period">。</span></h1>
+      <p class="hero-description">从一张真实的配置图开始。<br />读懂配队、理清思路，找到属于你的对战节奏。</p>
+      <a href="#lineup-overview" class="button primary">探索阵容图鉴 <span>↘</span></a><a href={withBase('/method/')} class="text-link">我们如何收录 <span>↗</span></a>
+      <div class="hero-meta"><span>真实一图流</span><i></i><span>来源可追溯</span><i></i><span>每月 1 日 / 16 日研究更新</span></div>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><span class="art-star star-one">✦</span><span class="art-star star-two">✧</span><span class="art-dot"></span>
+      <div class="moon"><div class="moon-inner"></div><span class="moon-mark">S4</span></div>
+      <div class="floating-label label-top"><span>☾</span><div>月涌狂想<small>A NEW CHAPTER</small></div></div>
+      <div class="floating-label label-bottom"><span class="label-check">✓</span><div>让每一套配队有据可循<small>REAL TEAMS. REAL SOURCES.</small></div></div>
+      <span class="art-caption">THE NEXT BATTLE IS YOURS.</span>
+    </div>
+  </section>
+  <section class="stats-band wrap" aria-label="图鉴概况"><div><strong>{String(activeLineups.length).padStart(2,'0')}</strong><span>套已核对阵容<small>少而精，认真收录</small></span></div><div><strong>100<span>%</span></strong><span>真实配置图<small>完整展示，保留原作者水印</small></span></div><div><strong>S4</strong><span>月涌狂想<small>当前收录赛季</small></span></div><div><span class="status-dot"></span><span>最近资料核对<small>{displayDate(state.last_research_at)} · 来源可查</small></span></div></section>
+  <section class="overview wrap" id="lineup-overview">
+    <div class="section-heading"><div><div class="eyebrow muted">THE LINEUP COLLECTION</div><h2>翻开你的下一套配队<span> / {String(activeLineups.length).padStart(2,'0')}</span></h2></div><a class="text-link" href={withBase('/method/')}>查看收录标准 ↗</a></div>
+    <p class="collection-note">{state.notice}</p>
+    <form class="collection-tools" role="search" onsubmit="return false"><label class="search-box"><span aria-hidden="true">⌕</span><span class="sr-only">搜索阵容或精灵</span><input id="search" type="search" placeholder="搜索阵容、精灵或打法…" autocomplete="off" /></label><label class="sort-label">排序 <select id="sort"><option value="recommended">资料推荐</option><option value="recent">最新发布</option><option value="name">阵容名称</option></select></label></form>
+    <div class="filter-bar" aria-label="体系筛选"><button class="filter active" data-filter="all" aria-pressed="true">全部阵容 <span>{activeLineups.length}</span></button>{filters.map(f=><button class="filter" data-filter={f} aria-pressed="false">{f}</button>)}<span class="result-count" id="result-count" role="status" aria-live="polite">共 {activeLineups.length} 套阵容</span></div>
+    <div class="lineup-grid" id="lineup-grid">{activeLineups.map((l,index)=><LineupCard lineup={l} index={index} />)}</div>
+    <div class="empty-state" id="empty-state" hidden><span>✧</span><h3>还没有找到这套配队</h3><p>换个精灵名，或者试试其他体系。</p><button class="button secondary" id="reset-search">重置筛选</button></div>
+    <div class="collection-end"><span>✦</span><p>配队不在多，在于真正理解。<small>当前最多收录 10 套，每一套都从真实图与来源开始。</small></p><a href={withBase('/method/')} class="text-link">了解这本手册 ↗</a></div>
+  </section>
+  <section class="reading-note wrap"><span class="reading-number">01 / READ BEFORE BATTLE</span><div><h2>图是起点，思路才是关键。</h2><p>先看完整配置，再读首发与核心流程。根据对手阵容调整节奏，别把一图流当作唯一答案。</p></div><a href={withBase('/method/')} class="circle-link" aria-label="阅读收录与使用准则">↗</a></section>
+</Layout>
+<script>
+  const input = document.querySelector<HTMLInputElement>('#search')!;
+  const sort = document.querySelector<HTMLSelectElement>('#sort')!;
+  const cards = [...document.querySelectorAll<HTMLElement>('[data-card]')];
+  const filters = [...document.querySelectorAll<HTMLButtonElement>('[data-filter]')];
+  let active = 'all';
+  function update() {
+    const q=input.value.trim().toLowerCase(); let count=0;
+    for(const card of cards) { card.hidden=!(card.dataset.search!.includes(q) && (active==='all' || card.dataset.types!.split('|').includes(active))); if(!card.hidden) count++; }
+    const ordered=[...cards].sort((a,b)=>sort.value==='recent'?b.dataset.date!.localeCompare(a.dataset.date!):sort.value==='name'?a.querySelector('h3')!.textContent!.localeCompare(b.querySelector('h3')!.textContent!,'zh-CN'):Number(a.dataset.index)-Number(b.dataset.index));
+    ordered.forEach(c=>document.querySelector('#lineup-grid')!.append(c));
+    document.querySelector('#result-count')!.textContent=`共 ${count} 套阵容`;
+    document.querySelector<HTMLElement>('#empty-state')!.hidden=count>0;
+    filters.forEach(b=>{b.classList.toggle('active',b.dataset.filter===active);b.setAttribute('aria-pressed',String(b.dataset.filter===active));});
+  }
+  input.addEventListener('input',update); sort.addEventListener('change',update);
+  filters.forEach(b=>b.addEventListener('click',()=>{active=b.dataset.filter!;update();}));
+  document.querySelector('#reset-search')!.addEventListener('click',()=>{input.value='';active='all';sort.value='recommended';update();input.focus();});
+</script>

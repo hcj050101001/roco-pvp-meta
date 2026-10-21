@@ -1,0 +1,147 @@
+{
+  "id": "sleep-mouse-s4",
+  "slug": "sleep-mouse-s4",
+  "name": "瞌睡鼠鼠队",
+  "aliases": [
+    "包包"
+  ],
+  "season": "S4",
+  "version_label": "月涌狂想",
+  "tier": "反制",
+  "tier_reason": "体系资料标签；缺少独立核实的当前赛季实绩与胜率，不作精确强度结论。",
+  "archetype": [
+    "反伤",
+    "强化",
+    "双终端"
+  ],
+  "strength_score": 55,
+  "popularity_score": 45,
+  "evidence_score": 80,
+  "recency_score": 90,
+  "score_notes": "实绩和热度无独立量化数据，使用保守编辑资料分；证据按可信镜像完整图，新鲜度按发布日期。",
+  "summary": "以反伤与强化制造换位压力，布灵和古卷承担终端输出。",
+  "analysis": "队伍用壳棘丝鼠与石冠王蜥制造反伤和消耗压力，瞌睡王负责正面交换；布灵布灵与古卷执政官补足后续输出。原文强调压低操作负担，但不代表所有对局都适合站场硬换。",
+  "recommended_lead": "根据对手选择",
+  "lead_notes": "原文未指定唯一首发。加油蟹可参与应对雨天水灵；请先看对手胜利条件，再决定防守位与输出位的出场顺序。",
+  "lead_basis": "unknown",
+  "core_plan": [
+    "先判断对手是否依赖强化或连击，再安排壳棘丝鼠和石冠王蜥承接。",
+    "利用强化、反伤与印记迫使对方调整站位，保留输出位的上场条件。",
+    "布灵布灵可参与前中期消耗；古卷执政官根据局面选择防反与输出。"
+  ],
+  "weaknesses": [
+    "硬换仍会受到克制关系与能量差影响，不能把数值优势视为必胜。",
+    "避免不必要地堆积会被清除的打湿印记。"
+  ],
+  "matchup_notes": [
+    "原文建议用加油蟹应对雨天水灵，并留意飞飞钥清除强化的时机。"
+  ],
+  "roster": [
+    {
+      "name": "加油蟹",
+      "role": "反制 / 对位",
+      "bloodline": null,
+      "skills": [
+        "潮汐",
+        "预备势",
+        "超维断界",
+        "水晶冲击"
+      ],
+      "notes": "成员与技能按原图人工视觉核对。"
+    },
+    {
+      "name": "石冠王蜥",
+      "role": "反伤 / 站场",
+      "bloodline": null,
+      "skills": [
+        "风谣",
+        "力量增效",
+        "追击",
+        "地刺"
+      ],
+      "notes": "成员与技能按原图人工视觉核对。"
+    },
+    {
+      "name": "布灵布灵",
+      "role": "终端输出",
+      "bloodline": null,
+      "skills": [
+        "报复",
+        "叠加态",
+        "湮灭",
+        "认知干涉"
+      ],
+      "notes": "成员与技能按原图人工视觉核对。"
+    },
+    {
+      "name": "古卷执政官",
+      "role": "终端输出",
+      "bloodline": null,
+      "skills": [
+        "防反",
+        "先发制人",
+        "彗能连击",
+        "湮灭"
+      ],
+      "notes": "成员与技能按原图人工视觉核对。"
+    },
+    {
+      "name": "瞌睡王",
+      "role": "正面交换",
+      "bloodline": null,
+      "skills": [
+        "力量增效",
+        "二重",
+        "先发制人",
+        "后发制人"
+      ],
+      "notes": "成员与技能按原图人工视觉核对。"
+    },
+    {
+      "name": "壳棘丝鼠",
+      "role": "印记 / 反伤",
+      "bloodline": null,
+      "skills": [
+        "鸩毒",
+        "棘突",
+        "毒雾",
+        "祛瘴"
+      ],
+      "notes": "成员与技能按原图人工视觉核对。"
+    }
+  ],
+  "lineup_images": [
+    {
+      "path": "/assets/lineups/sleep-mouse-s4/4ce133272b944051a9956893c0926dffe5d8f79936fbc67bcfefcf8e852d6bd9.webp",
+      "source_url": "https://olimg.3dmgame.com/uploads/images/raiders/20261013/1791860938_630571.webp",
+      "source_page_url": "https://ol.3dmgame.com/gl/355666.html",
+      "source_kind": "article",
+      "capture_method": "direct-image",
+      "published_at": "2026-10-13T11:09:21+08:00",
+      "captured_at": "2026-10-21T10:50:00+08:00",
+      "width": 1502,
+      "height": 1080,
+      "sha256": "4ce133272b944051a9956893c0926dffe5d8f79936fbc67bcfefcf8e852d6bd9",
+      "phash": "718adc8a03457577",
+      "evidence_grade": "B",
+      "verified": true,
+      "verification_notes": "视觉检查确认完整六只、技能栏、配置标题及13号洛克高水印。为公开攻略镜像，未冒充第一手证据。",
+      "attribution": "包包 / 制图：13号洛克高"
+    }
+  ],
+  "tutorials": [],
+  "sources": [
+    {
+      "url": "https://ol.3dmgame.com/gl/355666.html",
+      "type": "mirror",
+      "title": "洛克王国世界s4瞌睡鼠鼠队阵容推荐",
+      "published_at": "2026-10-13T11:09:21+08:00",
+      "last_checked_at": "2026-10-21T10:50:00+08:00"
+    }
+  ],
+  "first_seen_at": "2026-10-21T10:50:00+08:00",
+  "last_verified_at": "2026-10-21T10:50:00+08:00",
+  "status": "active",
+  "verification_notes": "完整配置图与来源标题已核对，成员以图为准；B 级为镜像资料，首发推断与未确认技能已分别标注。最新平衡补丁未独立核实。",
+  "archive_reason": null
+}

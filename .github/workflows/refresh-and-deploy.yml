@@ -1,0 +1,112 @@
+name: Research refresh and deploy
+on:
+  schedule:
+    - cron: '17 3 1,16 * *'
+      timezone: Asia/Shanghai
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: research-refresh
+  cancel-in-progress: false
+jobs:
+  research:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - run: npm run refresh:snapshot
+      - run: npm run research:full
+      - run: npm run research:validate
+      - name: Check AI credential availability
+        env:
+          HAS_KEY: ${{ secrets.OPENAI_API_KEY != '' }}
+        run: |
+          if [ "$HAS_KEY" != "true" ]; then
+            echo '::error::OPENAI_API_KEY is missing. Research artifacts are retained; existing Pages content is unchanged.'
+            exit 1
+          fi
+      - uses: openai/codex-action@v1
+        with:
+          openai-api-key: ${{ secrets.OPENAI_API_KEY }}
+          prompt-file: .github/codex/refresh.md
+          sandbox: workspace-write
+          safety-strategy: drop-sudo
+          output-file: research/codex-output.md
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: research-evidence
+          path: research/
+          include-hidden-files: false
+          retention-days: 30
+      - uses: actions/upload-artifact@v4
+        with:
+          name: proposed-content
+          path: |
+            data/
+            public/assets/lineups/
+          retention-days: 7
+  validate-and-publish:
+    needs: research
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
+    concurrency:
+      group: github-pages
+      cancel-in-progress: false
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/download-artifact@v4
+        with:
+          name: proposed-content
+          path: .refresh-content
+      - uses: actions/download-artifact@v4
+        with:
+          name: research-evidence
+          path: research
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npx tsx scripts/validate/promote.ts
+      - run: npm run refresh:guard
+      - run: npm run check
+      - run: npm test
+      - run: npm run build
+      - run: npx playwright install --with-deps chromium
+      - run: npm run test:ui
+        env:
+          TEST_BASE: /roco-pvp-meta
+      - name: Commit verified content
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data public/assets/lineups research/runs research/candidates research/rejected
+          if ! git diff --cached --quiet; then
+            git commit -m 'chore: refresh verified lineup evidence'
+            git push
+          fi
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+      - uses: actions/deploy-pages@v4
+        id: deployment

@@ -1,0 +1,18 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { activeLineups } from '../lib/data';
+import { displayDate, withBase } from '../lib/urls';
+import updates from '../../data/updates.json';
+---
+<Layout title="更新记录" section="updates">
+  <article class="prose-page wrap">
+    <div class="eyebrow">THE RESEARCH LOG</div><h1>让更新，<br />留下可查的足迹。</h1>
+    <p class="prose-intro">资料发现、图片核对和版本验证分别记录。</p>
+    {updates.map(entry=><section class="update-entry">
+      <div><span class="status-dot"></span><time>{displayDate(entry.date)}</time><span class="tier">{entry.label}</span></div>
+      <h2>{entry.title}</h2><p>{entry.description}</p><p class="subtle">{entry.notes}</p>
+    </section>)}
+    <section class="update-entry"><h2>当前收录</h2><ul>{activeLineups.map(l=><li><a href={withBase(`/lineups/${l.slug}/`)}>{l.name} ↗</a><span>图与来源已核对 · {displayDate(l.lineup_images[0].published_at)} 发布</span></li>)}</ul></section>
+    <aside class="evidence-note"><strong>下一次研究窗口</strong><p>每月 1 日、16 日北京时间 03:17。实际执行与失败原因以运行记录为准。</p><a class="text-link" href="https://github.com/hcj050101001/roco-pvp-meta/actions" target="_blank" rel="noopener noreferrer">查看运行记录 ↗</a></aside>
+  </article>
+</Layout>

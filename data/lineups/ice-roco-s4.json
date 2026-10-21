@@ -1,0 +1,147 @@
+{
+  "id": "ice-roco-s4",
+  "slug": "ice-roco-s4",
+  "name": "冰露罗头队",
+  "aliases": [
+    "洛王"
+  ],
+  "season": "S4",
+  "version_label": "月涌狂想",
+  "tier": "高热",
+  "tier_reason": "体系资料标签；缺少独立核实的当前赛季实绩与胜率，不作精确强度结论。",
+  "archetype": [
+    "接力",
+    "首领",
+    "平衡"
+  ],
+  "strength_score": 50,
+  "popularity_score": 40,
+  "evidence_score": 80,
+  "recency_score": 45,
+  "score_notes": "实绩和热度无独立量化数据，使用保守编辑资料分；证据按可信镜像完整图，新鲜度按发布日期。",
+  "summary": "布丁与路路传递增益，罗隐和水灵根据对位接管比赛。",
+  "analysis": "椰浆布丁与白发路路负责辅助传递；罗隐承接强化后推进，水灵补充魔抗方向的对位处理。彩蝶鲨参与收尾，飞飞钥负责清理强化与印记。首领化时机要留到增益与对位条件合适之后。",
+  "recommended_lead": "椰浆布丁 → 白发路路",
+  "lead_notes": "编辑推断：按来源描述的传抗性与示弱顺序给出轮转参考，并非原作者指定的通用固定首发。",
+  "lead_basis": "inferred",
+  "core_plan": [
+    "参考椰浆布丁向白发路路传递抗性的辅助链。",
+    "路路利用示弱与击鼓传花，把增益交给合适的输出位。",
+    "罗隐在安全时机强化与首领化；水灵和彩蝶鲨承担其他输出窗口。"
+  ],
+  "weaknesses": [
+    "来源指出首领罗隐魔抗较低，不能把物抗优势套用于魔法伤害。",
+    "传递增益和强化时均需留意愿力威胁。"
+  ],
+  "matchup_notes": [
+    "飞飞钥可用来处理强化与印记，吹走对手后再为路路创造传递机会。"
+  ],
+  "roster": [
+    {
+      "name": "白发路路",
+      "role": "辅助 / 传递",
+      "bloodline": null,
+      "skills": [
+        "纤维化",
+        "生日蛋糕",
+        "示弱",
+        "击鼓传花"
+      ],
+      "notes": "成员与技能按原图人工视觉核对。"
+    },
+    {
+      "name": "飞飞钥",
+      "role": "联防 / 清理",
+      "bloodline": null,
+      "skills": [
+        "飞羽",
+        "风隐",
+        "倾泻",
+        "吓退"
+      ],
+      "notes": "成员与技能按原图人工视觉核对。"
+    },
+    {
+      "name": "椰浆布丁",
+      "role": "抗性传递",
+      "bloodline": null,
+      "skills": [
+        "天洪",
+        "离子震荡",
+        "寒风吹",
+        "泡沫幻影"
+      ],
+      "notes": "成员与技能按原图人工视觉核对。"
+    },
+    {
+      "name": "水灵",
+      "role": "输出 / 魔抗对位",
+      "bloodline": null,
+      "skills": [
+        "润泽",
+        "水泡盾",
+        "气泡",
+        "寒风吹"
+      ],
+      "notes": "成员与技能按原图人工视觉核对。"
+    },
+    {
+      "name": "罗隐",
+      "role": "核心 / 首领",
+      "bloodline": null,
+      "skills": [
+        "泥浆铠甲",
+        "地刺",
+        "地震",
+        "彼岸之手"
+      ],
+      "notes": "成员与技能按原图人工视觉核对。"
+    },
+    {
+      "name": "彩蝶鲨",
+      "role": "水系收尾",
+      "bloodline": null,
+      "skills": [
+        "贮藏",
+        "回旋风暴",
+        "灵媒",
+        "天洪"
+      ],
+      "notes": "成员与技能按原图人工视觉核对。"
+    }
+  ],
+  "lineup_images": [
+    {
+      "path": "/assets/lineups/ice-roco-s4/bf128b3ad110869a7f37c4eaa0c453f4d52a03d9e7fe300f6755add9ccd1b44a.webp",
+      "source_url": "https://olimg.3dmgame.com/uploads/images/raiders/20260920/1789867155_744750.webp",
+      "source_page_url": "https://ol.3dmgame.com/gl/353804.html",
+      "source_kind": "article",
+      "capture_method": "direct-image",
+      "published_at": "2026-09-20T09:19:30+08:00",
+      "captured_at": "2026-10-21T10:50:00+08:00",
+      "width": 1499,
+      "height": 1080,
+      "sha256": "bf128b3ad110869a7f37c4eaa0c453f4d52a03d9e7fe300f6755add9ccd1b44a",
+      "phash": "758a5a8a0351bead",
+      "evidence_grade": "B",
+      "verified": true,
+      "verification_notes": "视觉检查确认完整六只、技能栏、配置标题及13号洛克高水印。为公开攻略镜像，未冒充第一手证据。",
+      "attribution": "洛王 / 制图：13号洛克高"
+    }
+  ],
+  "tutorials": [],
+  "sources": [
+    {
+      "url": "https://ol.3dmgame.com/gl/353804.html",
+      "type": "mirror",
+      "title": "洛克王国世界s4冰露罗头队阵容推荐",
+      "published_at": "2026-09-20T09:19:30+08:00",
+      "last_checked_at": "2026-10-21T10:50:00+08:00"
+    }
+  ],
+  "first_seen_at": "2026-10-21T10:50:00+08:00",
+  "last_verified_at": "2026-10-21T10:50:00+08:00",
+  "status": "active",
+  "verification_notes": "完整配置图与来源标题已核对，成员以图为准；B 级为镜像资料，首发推断与未确认技能已分别标注。最新平衡补丁未独立核实。",
+  "archive_reason": null
+}

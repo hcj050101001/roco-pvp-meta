@@ -1,0 +1,10 @@
+[
+  { "id": "rain", "platform": "3dm", "url": "https://ol.3dmgame.com/gl/355668.html", "enabled": true },
+  { "id": "sleep", "platform": "3dm", "url": "https://ol.3dmgame.com/gl/355666.html", "enabled": true },
+  { "id": "pear", "platform": "3dm", "url": "https://ol.3dmgame.com/gl/354707.html", "enabled": true },
+  { "id": "poison", "platform": "3dm", "url": "https://ol.3dmgame.com/gl/353802.html", "enabled": true },
+  { "id": "ice", "platform": "3dm", "url": "https://ol.3dmgame.com/gl/353804.html", "enabled": true },
+  { "id": "season", "platform": "taptap", "url": "https://www.taptap.cn/moment/847022426351994538", "enabled": true },
+  { "id": "community", "platform": "qiandao", "url": "https://qiandao.com/post?postId=1023430985116591249", "enabled": true },
+  { "id": "weekly", "platform": "bilibili", "url": "https://www.bilibili.com/video/BV1N8hk6rErM/", "enabled": true }
+]

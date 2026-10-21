@@ -1,0 +1,147 @@
+{
+  "id": "pear-snake-s4",
+  "slug": "pear-snake-s4",
+  "name": "梨螺萌蛇队",
+  "aliases": [
+    "五彩小梨螺花"
+  ],
+  "season": "S4",
+  "version_label": "月涌狂想",
+  "tier": "高热",
+  "tier_reason": "体系资料标签；缺少独立核实的当前赛季实绩与胜率，不作精确强度结论。",
+  "archetype": [
+    "接力",
+    "连击",
+    "联防"
+  ],
+  "strength_score": 50,
+  "popularity_score": 45,
+  "evidence_score": 80,
+  "recency_score": 65,
+  "score_notes": "实绩和热度无独立量化数据，使用保守编辑资料分；证据按可信镜像完整图，新鲜度按发布日期。",
+  "summary": "菊花梨积累节奏并传递增益，卡洛儿与寒音蛇寻找接管窗口。",
+  "analysis": "以菊花梨的蹦跶积累连击次数，再借助示弱与击鼓传花将优势交给卡洛儿或寒音蛇。化蝶和飞飞钥帮助联防，绒光优优补充覆盖。传增益的时机比单纯堆强化更重要。",
+  "recommended_lead": "菊花梨",
+  "lead_notes": "编辑推断：以原文的蹦跶与示弱传递思路作为起手参考；原文没有要求每局固定首发菊花梨。",
+  "lead_basis": "inferred",
+  "core_plan": [
+    "观察安全对位，用菊花梨蹦跶积累次数并施压。",
+    "以化蝶、飞飞钥参与轮转，争取传递示弱增益的机会。",
+    "把治愈与增益交给适合当前对局的输出成员，避免在被克制时强行接力。"
+  ],
+  "weaknesses": [
+    "传示弱需要理解对方即时威胁，不能忽视愿力。",
+    "需注意帕帕斯卡的迅捷钢铁，避免接力过程失去节奏。"
+  ],
+  "matchup_notes": [
+    "防御可用于应对原文提到的愿力威胁；先保障传递窗口再考虑推队。"
+  ],
+  "roster": [
+    {
+      "name": "菊花梨",
+      "role": "增益传递",
+      "bloodline": null,
+      "skills": [
+        "示弱",
+        "击鼓传花",
+        "防御",
+        "蹦跶"
+      ],
+      "notes": "成员与技能按原图人工视觉核对。"
+    },
+    {
+      "name": "卡洛儿",
+      "role": "接力输出",
+      "bloodline": null,
+      "skills": [
+        "无畏之心",
+        "防反",
+        "月光合奏",
+        "水波术"
+      ],
+      "notes": "成员与技能按原图人工视觉核对。"
+    },
+    {
+      "name": "寒音蛇",
+      "role": "连击输出",
+      "bloodline": null,
+      "skills": [
+        "看穿预防",
+        "示弱",
+        "连续毒针",
+        "月光合奏"
+      ],
+      "notes": "成员与技能按原图人工视觉核对。"
+    },
+    {
+      "name": "绒光优优",
+      "role": "覆盖 / 补位",
+      "bloodline": null,
+      "skills": [
+        "硬化",
+        "流沙",
+        "热砂",
+        "虹光冲击"
+      ],
+      "notes": "成员与技能按原图人工视觉核对。"
+    },
+    {
+      "name": "化蝶",
+      "role": "联防",
+      "bloodline": null,
+      "skills": [
+        "退化",
+        "摇篮曲",
+        "引燃",
+        "破碎旋律"
+      ],
+      "notes": "成员与技能按原图人工视觉核对。"
+    },
+    {
+      "name": "飞飞钥",
+      "role": "联防 / 清理",
+      "bloodline": null,
+      "skills": [
+        "飞羽",
+        "风隐",
+        "引燃",
+        "倾泻"
+      ],
+      "notes": "成员与技能按原图人工视觉核对。"
+    }
+  ],
+  "lineup_images": [
+    {
+      "path": "/assets/lineups/pear-snake-s4/deaa724fe740324151789b4d84ec54ee09326bacc008fc6027d18d9aba684396.webp",
+      "source_url": "https://olimg.3dmgame.com/uploads/images/raiders/20260928/1790578078_276030.webp",
+      "source_page_url": "https://ol.3dmgame.com/gl/354707.html",
+      "source_kind": "article",
+      "capture_method": "direct-image",
+      "published_at": "2026-09-28T14:48:42+08:00",
+      "captured_at": "2026-10-21T10:50:00+08:00",
+      "width": 1500,
+      "height": 1080,
+      "sha256": "deaa724fe740324151789b4d84ec54ee09326bacc008fc6027d18d9aba684396",
+      "phash": "7506728e0345adbd",
+      "evidence_grade": "B",
+      "verified": true,
+      "verification_notes": "视觉检查确认完整六只、技能栏、配置标题及13号洛克高水印。为公开攻略镜像，未冒充第一手证据。",
+      "attribution": "五彩小梨螺花 / 制图：13号洛克高"
+    }
+  ],
+  "tutorials": [],
+  "sources": [
+    {
+      "url": "https://ol.3dmgame.com/gl/354707.html",
+      "type": "mirror",
+      "title": "洛克王国世界s4梨螺萌蛇队阵容推荐",
+      "published_at": "2026-09-28T14:48:42+08:00",
+      "last_checked_at": "2026-10-21T10:50:00+08:00"
+    }
+  ],
+  "first_seen_at": "2026-10-21T10:50:00+08:00",
+  "last_verified_at": "2026-10-21T10:50:00+08:00",
+  "status": "active",
+  "verification_notes": "完整配置图与来源标题已核对，成员以图为准；B 级为镜像资料，首发推断与未确认技能已分别标注。最新平衡补丁未独立核实。",
+  "archive_reason": null
+}

@@ -1,0 +1,19 @@
+---
+import type { Lineup } from '../lib/schema';
+import { withBase, displayDate } from '../lib/urls';
+interface Props { lineup: Lineup; index: number }
+const { lineup: l, index } = Astro.props;
+const img = l.lineup_images[0];
+---
+<article class="lineup-card" data-card data-search={[l.name,...l.aliases,...l.archetype,...l.roster.map(p=>p.name)].join(' ').toLowerCase()} data-types={l.archetype.join('|')} data-date={img.published_at} data-index={index}>
+  <a href={withBase(`/lineups/${l.slug}/`)} class="card-link">
+    <div class="card-top"><span class="card-number">FIELD NOTE / {String(index+1).padStart(2,'0')}</span><span class="evidence-label">✓ 真实图已核对</span></div>
+    <div class="card-image"><img src={withBase(img.path)} width={img.width} height={img.height} alt={`${l.name}完整六只精灵与技能配置一图流`} loading={index<2?'eager':'lazy'} /></div>
+    <div class="card-content"><div class="card-title"><h3>{l.name}</h3><span class="tier">{l.tier}</span></div>
+      <div class="tags">{l.archetype.map(t=><span>{t}</span>)}</div>
+      <p class="card-summary">{l.summary}</p>
+      <div class="card-lead"><span>首发参考</span><strong>{l.recommended_lead}</strong>{l.lead_basis==='inferred' && <small>推断</small>}</div>
+      <div class="card-bottom"><span>资料 {displayDate(img.published_at)}</span><span class="card-cta">查看配队 <span aria-hidden="true">↗</span></span></div>
+    </div>
+  </a>
+</article>

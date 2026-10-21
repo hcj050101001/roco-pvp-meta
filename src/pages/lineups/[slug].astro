@@ -1,0 +1,33 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { allLineups } from '../../lib/data';
+import { withBase, displayDate } from '../../lib/urls';
+import type { Lineup } from '../../lib/schema';
+export function getStaticPaths() { return allLineups.map(lineup=>({params:{slug:lineup.slug},props:{lineup}})); }
+interface Props { lineup: Lineup }
+const { lineup:l } = Astro.props;
+---
+<Layout title={l.name} description={l.summary}>
+  <div class="detail-nav"><div class="wrap detail-nav-inner"><a href={withBase('/#lineup-overview')}>← 返回阵容总览</a><nav aria-label="详情导航"><a href="#configuration">配置图</a><a href="#analysis">打法解析</a><a href="#sources">资料来源</a></nav></div></div>
+  <article class="detail wrap">
+    <header class="detail-header"><div class="eyebrow">FIELD NOTES / {l.season} · {l.version_label}</div><div class="detail-title"><h1>{l.name}</h1><span class="tier">{l.tier}</span></div><p class="detail-summary">{l.summary}</p><div class="tags">{l.archetype.map(t=><span>{t}</span>)}</div><p class="detail-dates">资料发布 {displayDate(l.lineup_images[0].published_at)} <span>·</span> 最后核对 {displayDate(l.last_verified_at)} <span>·</span> {l.status==='active'?'已收录':l.status==='stale'?'待重新验证':'历史归档'}</p></header>
+    <div class="detail-columns"><div class="detail-main">
+      <section id="configuration" class="detail-section"><div class="section-label"><span>01 / CONFIGURATION</span><h2>完整配置，一图读懂</h2></div>
+        <p class="subtle">点击原图可放大查看。保留原始比例与作者水印。</p>
+        <div class="image-tabs" role="tablist" aria-label="选择阵容图" hidden={l.lineup_images.length<2}>{l.lineup_images.map((_,i)=><button role="tab" id={`tab-${i}`} aria-controls={`image-${i}`} aria-selected={i===0?'true':'false'} tabindex={i===0?0:-1} data-image-tab={i}>配置 {i+1}</button>)}</div>
+        {l.lineup_images.map((img,i)=><figure class="full-image" id={`image-${i}`} role={l.lineup_images.length>1?'tabpanel':undefined} aria-labelledby={l.lineup_images.length>1?`tab-${i}`:undefined} hidden={i>0}><a href={withBase(img.path)} target="_blank" rel="noopener noreferrer" aria-label={`打开${l.name}配置图 ${i+1}原图`}><img src={withBase(img.path)} width={img.width} height={img.height} alt={`${l.name}完整阵容配置：${l.roster.map(p=>p.name).join('、')}`} /></a><figcaption><span>{img.attribution}</span><span>{img.width} × {img.height} · 证据 {img.evidence_grade} 级</span></figcaption></figure>)}
+        <aside class="evidence-note"><strong>资料核对说明</strong><p>{l.verification_notes}</p></aside>
+      </section>
+      <section id="analysis" class="detail-section"><div class="section-label"><span>02 / GAME PLAN</span><h2>从配置，到对战思路</h2></div><p class="analysis-copy">{l.analysis}</p><div class="lead-block"><span>首发参考 / {l.lead_basis==='source'?'来源支持':l.lead_basis==='inferred'?'编辑推断':'尚未确认'}</span><h3>{l.recommended_lead}</h3><p>{l.lead_notes}</p></div><h3 class="minor-heading">核心操作流程</h3><ol class="plan-list">{l.core_plan.map((s,i)=><li><span>{String(i+1).padStart(2,'0')}</span><p>{s}</p></li>)}</ol><div class="matchup-grid"><div><h3>需要留意</h3><ul>{l.weaknesses.map(s=><li>{s}</li>)}</ul></div><div><h3>对局提示</h3>{l.matchup_notes.length?<ul>{l.matchup_notes.map(s=><li>{s}</li>)}</ul>:<p>尚无足够证据支持具体对局结论。</p>}</div></div></section>
+      <section id="roster" class="detail-section"><div class="section-label"><span>03 / THE TEAM</span><h2>六位成员，各司其职</h2></div><p class="subtle">成员与技能以附图为准；未确认的血脉不作推断。</p><div class="roster-list">{l.roster.map((p,i)=><div class="roster-row"><span class="roster-number">0{i+1}</span><div><h3>{p.name}<small>{p.role}</small></h3><p>{p.notes}</p><div class="skill-tags">{p.skills.map(s=><span>{s}</span>)}</div></div><span class="bloodline">血脉<br /><strong>{p.bloodline || '未独立确认'}</strong></span></div>)}</div></section>
+      <section id="sources" class="detail-section"><div class="section-label"><span>04 / SOURCES & EVIDENCE</span><h2>每一份资料，都有出处</h2></div><p class="subtle">{l.tier_reason}</p>{l.sources.map(s=><a class="source-row" href={s.url} target="_blank" rel="noopener noreferrer"><div><span>{s.type==='mirror'?'攻略转载 / 镜像':'公开来源'} · {displayDate(s.published_at)}</span><h3>{s.title}</h3></div><span>↗</span></a>)}<p class="source-disclaimer">图片与内容归原作者所有。本手册为玩家学习索引，保留水印与来源。如需纠错或处理图片授权，请通过页脚项目入口联系维护者。</p></section>
+      {l.tutorials.length>0 && <section class="detail-section"><div class="section-label"><span>05 / WATCH & LEARN</span><h2>对应教学与实战</h2></div>{l.tutorials.map(t=><a class="source-row" href={t.url} target="_blank" rel="noopener noreferrer"><div><span>{t.platform} · {t.creator}</span><h3>{t.title}</h3><p>{t.match_notes}</p></div><span>↗</span></a>)}</section>}
+      <a href={withBase('/#lineup-overview')} class="button primary bottom-return">← 返回阵容总览</a>
+    </div><aside class="detail-sidebar"><div class="sidebar-inner"><span class="eyebrow muted">YOUR QUICK NOTES</span><h2>上场之前</h2><dl><dt>阵容体系</dt><dd>{l.archetype.join(' / ')}</dd><dt>首发参考</dt><dd>{l.recommended_lead}</dd><dt>来源图作者</dt><dd>{l.lineup_images[0].attribution}</dd><dt>最后核对</dt><dd>{displayDate(l.last_verified_at)}</dd></dl><a href="#configuration" class="button secondary">查看完整配置 ↑</a><p>先理解胜利条件，再决定每一次出手。</p></div></aside></div>
+  </article>
+</Layout>
+<script>
+  const tabs=[...document.querySelectorAll<HTMLButtonElement>('[data-image-tab]')];
+  function activate(tab:HTMLButtonElement) { tabs.forEach(t=>{const selected=t===tab;t.setAttribute('aria-selected',String(selected));t.tabIndex=selected?0:-1;document.getElementById(`image-${t.dataset.imageTab}`)!.hidden=!selected;}); }
+  tabs.forEach((tab,i)=>{tab.addEventListener('click',()=>activate(tab));tab.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();const next=tabs[(i+(e.key==='ArrowRight'?1:tabs.length-1))%tabs.length];activate(next);next.focus();}});});
+</script>

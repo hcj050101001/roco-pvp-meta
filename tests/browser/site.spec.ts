@@ -1,5 +1,6 @@
 import { test,expect } from '@playwright/test';
 import { activeLineups,allLineups,historyLineups } from '../../src/lib/data';
+import { mkdir } from 'node:fs/promises';
 
 test('玩家首页：固定明亮风格、体系筛选与全局排序',async({page})=>{
   await page.goto('./');await expect(page).toHaveTitle(/阵容图鉴/);
@@ -65,4 +66,28 @@ test('往期赛季和搜索组合，旧链接跳转正确',async({page})=>{
   await page.getByRole('button',{name:'重置筛选'}).click();await expect(page.locator('[data-card]:visible')).toHaveCount(historyLineups.length);
   await page.goto('updates/');await expect(page).toHaveURL(/history/);
   expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+});
+
+test('逐卡视觉检查：统一预览框、同排边界和标题对齐，保留全部原图',async({page},info)=>{
+  const folder=`artifacts/cards-${info.project.name}`;await mkdir(folder,{recursive:true});
+  for(const [route,lineups] of [['./',activeLineups],['history/',historyLineups]] as const){
+    await page.goto(route);
+    const cards=page.locator('[data-card]');
+    for(let i=0;i<await cards.count();i++){
+      const card=cards.nth(i),img=card.locator('img');
+      await card.scrollIntoViewIfNeeded();await img.evaluate((e:HTMLImageElement)=>e.decode());
+      const layout=await card.evaluate(e=>{
+        const frame=e.querySelector('.card-image')!,image=e.querySelector('img')!,title=e.querySelector('h3')!;
+        const f=frame.getBoundingClientRect(),r=e.getBoundingClientRect(),t=title.getBoundingClientRect();
+        return {ratio:f.width/f.height,fit:getComputedStyle(image).objectFit,frameInside:f.left>=r.left&&f.right<=r.right&&f.top>=r.top&&f.bottom<=r.bottom,titleInside:t.left>=r.left&&t.right<=r.right,loaded:image.complete&&image.naturalWidth>0};
+      });
+      expect(layout.loaded).toBe(true);expect(layout.fit).toBe('contain');
+      expect(Math.abs(layout.ratio-4/3)).toBeLessThan(.01);expect(layout.frameInside).toBe(true);expect(layout.titleInside).toBe(true);
+      const href=await card.locator('.card-link').getAttribute('href'),lineup=lineups.find(l=>href?.includes(`/lineups/${l.slug}/`))!;
+      await card.screenshot({path:`${folder}/${lineup.slug}.png`});
+    }
+    const rows=await cards.evaluateAll(es=>es.map(e=>({top:e.getBoundingClientRect().top,bottom:e.getBoundingClientRect().bottom,title:e.querySelector('h3')!.getBoundingClientRect().top})));
+    for(const a of rows)for(const b of rows)if(Math.abs(a.top-b.top)<1){expect(Math.abs(a.bottom-b.bottom)).toBeLessThan(1);expect(Math.abs(a.title-b.title)).toBeLessThan(1);}
+    await page.evaluate(()=>scrollTo(0,0));await page.screenshot({path:`artifacts/${route==='./'?'overview':'history'}-cards-${info.project.name}.png`,fullPage:true});
+  }
 });

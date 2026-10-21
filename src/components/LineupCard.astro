@@ -14,8 +14,7 @@ const platforms={bilibili:'哔哩哔哩',douyin:'抖音',other:'视频'};
     <div class="card-content"><div class="card-title"><h3>{l.name}</h3><span class="card-arrow" aria-hidden="true">↗</span></div>
       <div class="tags">{l.archetype.map(t=><span>{t}</span>)}</div>
       <p class="card-roster">{l.roster.map(p=>p.name).join(' · ')}</p>
-      <div class="card-bottom"><span>{updated?displayDate(updated):l.season+' 赛季配置'}</span><span class="card-cta">查看完整配置 →</span></div>
     </div>
   </a>
-  {l.tutorials.length>0&&<div class="card-videos">{l.tutorials.map(t=><a class="video-link" href={t.url} target="_blank" rel="noopener noreferrer" title={t.title}><span aria-hidden="true">▷</span> {platforms[t.platform]} · 教学与实战 <span aria-hidden="true">↗</span></a>)}</div>}
+  <div class="card-bottom"><span>{updated?displayDate(updated):l.season+' 赛季配置'}</span><div class="card-actions">{l.tutorials.map(t=><a class="video-link" href={t.url} target="_blank" rel="noopener noreferrer" title={t.title}><span aria-hidden="true">▷</span> {platforms[t.platform]}教学</a>)}<a class="card-cta" href={withBase(`/lineups/${l.slug}/`)}>查看配置 →</a></div></div>
 </article>

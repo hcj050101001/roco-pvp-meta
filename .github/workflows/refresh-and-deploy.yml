@@ -35,6 +35,8 @@ jobs:
       - run: npm run season:check
       - run: npm run research:full
       - run: npm run research:validate
+      - name: Prepare bounded vision inputs
+        run: npm run research:vision
       - name: Research with DeepSeek
         uses: openai/codex-action@v1
         with:

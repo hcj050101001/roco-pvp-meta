@@ -17,6 +17,7 @@
 - 不绕过登录、验证码、付费、DRM、地区限制或私人认证。来源抓取失败不删除阵容、不改归档状态、不刷新验证时间。
 - 每日流程只核对可信官方已生效赛季公告；半月研究流程通过 DeepSeek Responses API 运行，只在候选通过独立校验后发布。缺少 `DEEPSEEK_API_KEY` 或 API 调用失败时研究停止，现有网站内容保持不变。
 - 模型接入配置在 `.github/codex/deepseek-models.json`，当前使用支持图片输入的 `deepseek-flash`。Codex Action 的 `openai-api-key` 参数传入 DeepSeek Secret，实际请求目标为 `https://api.deepseek.com/responses`；不依赖 OpenAI API 余额。接入修改后运行 `Verify DeepSeek connection` 验证实际鉴权、工具及识图能力。
+- 研究前运行 `research:vision`，仅用按 SHA 去重且单张不超过 192 KiB 的 JPEG 预览/原尺寸分块进行模型识图；禁止放大 PNG 累积到对话。自动压缩上下文阈值为 32,000 tokens，每候选落盘记录，避免重复附图触发 48 MiB 请求体上限。发布仍使用未改动的完整原图。
 
 ## 发布验收
 

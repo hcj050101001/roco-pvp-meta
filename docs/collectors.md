@@ -9,6 +9,7 @@ npm run research:collect       # 采集 data/sources.json 中启用的来源
 npm run research:discover      # Bing RSS 搜索后采集发现的支持平台链接
 npm run research:full          # discover + 无登录 Chromium 页面渲染
 npm run research:validate     # 对最新 run 统计候选图和重复项，不自动认证
+npm run research:vision       # SHA 去重后生成字节受限的模型识图 JPEG，不修改原图
 npm run season:check          # 由可信官方已生效公告核对赛季
 ```
 
@@ -26,6 +27,7 @@ node node_modules/tsx/dist/cli.mjs scripts/collect/run.ts --seeds path/to/urls.j
 - `extract/page.ts` 解析常见图片属性、`srcset`、`picture`、链接、Open Graph、JSON-LD 和可识别的内嵌 JSON。
 - `extract/image.ts` 识别图片格式并计算尺寸、SHA-256、pHash；哈希和尺寸只能证明文件属性，不能证明内容是某套真实阵容。
 - `validate/research.ts` 生成候选与重复图报告。人工视觉核对、图片映射、版本和成员确认仍需维护流程处理。
+- `research/vision.ts` 从最新 manifest 去重候选原图，为模型准备不超过 192 KiB 的 JPEG 概览和原尺寸重叠分块，保存 `vision/index.json`。保留原图字节及全部来源关联，不将 JPEG 预览发布到网站。32,000 tokens 的上下文压缩与逐候选研究记录限制对话中累积的图片；禁止模型自行放大 PNG 或重复附图。
 - `season.ts` 只接受指定 TapTap 官方账号发布且已生效的赛季公告。公告不可访问或证据不符合条件时保留现有赛季。
 
 ## 晋升与安全边界

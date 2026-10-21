@@ -22,6 +22,7 @@
     "refresh:snapshot": "tsx scripts/validate/refresh-guard.ts --snapshot",
     "research:discover": "tsx scripts/collect/run.ts --discover",
     "research:full": "tsx scripts/collect/run.ts --discover --browser",
+    "research:vision": "tsx scripts/research/prepare-vision.ts",
     "season:check": "tsx scripts/collect/season.ts"
   },
   "dependencies": {

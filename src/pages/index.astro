@@ -4,21 +4,18 @@ import Collection from '../components/Collection.astro';
 import { activeLineups,historyLineups,currentSeason,overview } from '../lib/data';
 import { withBase } from '../lib/urls';
 const systems=new Set(activeLineups.flatMap(l=>l.archetype));
-const moon=currentSeason.theme==='moon';
 ---
 <Layout title="阵容图鉴" section="overview">
   <section class="hero wrap">
-    <div class="hero-copy"><div class="eyebrow"><span>✦</span> {currentSeason.id} · {currentSeason.name}</div>
-      <h1>{moon?'月下选队，':'新季出发，'}<br /><span>下一场，你来主宰。</span></h1>
-      <p class="hero-description">查梯度，找体系，抄配置。<br />从环境主流到冷门配队，你的下一套阵容都在这里。</p>
-      <div class="hero-actions"><a class="button primary" href="#lineup-overview">选择你的阵容 <span>↘</span></a><a class="button ghost" href={withBase('/history/')}>回顾往期阵容 →</a></div>
-      <div class="hero-meta"><span>{activeLineups.length} 套配队</span><i></i><span>{systems.size} 种打法标签</span><i></i><span>完整一图流</span></div>
+    <div class="hero-copy"><div class="eyebrow">ROCO KINGDOM · TEAM HANDBOOK</div>
+      <h1>选一套喜欢的队伍，<br /><span>开始下一场对战。</span></h1>
+      <p class="hero-description">浏览真实配队图，找到想玩的体系。<br />配置、作者攻略与对应视频，放在一起看。</p>
+      <div class="hero-actions"><a class="button primary" href="#lineup-overview">浏览阵容 <span>↓</span></a><a class="button secondary" href={withBase('/history/')}>往期配队 →</a></div>
     </div>
-    <div class="celestial" aria-hidden="true"><div class="constellation"></div><div class="orbital orbital-one"></div><div class="orbital orbital-two"></div><div class="lunar-body"><span></span></div><span class="celestial-star star-a">✦</span><span class="celestial-star star-b">✧</span><span class="celestial-star star-c">✦</span><div class="moon-caption"><span>{currentSeason.id}</span><strong>{currentSeason.name}</strong><small>ROCO KINGDOM / NEW SEASON</small></div></div>
+    <aside class="hero-index"><span class="eyebrow muted">本季手册</span><strong>{currentSeason.id}<small>{currentSeason.name}</small></strong><div class="index-stats"><span><b>{activeLineups.length}</b>套配队</span><span><b>{systems.size}</b>个体系标签</span></div><a href={withBase('/history/')}>回顾 {historyLineups.length} 套往期阵容 ↗</a></aside>
   </section>
-  <div class="season-strip wrap"><span class="season-symbol" aria-hidden="true">{moon?'☾':'✦'}</span><div><strong>{currentSeason.id} · {currentSeason.name}</strong><p>{currentSeason.intro}</p></div><a class="text-link" href={withBase('/history/')}>{historyLineups.length} 套往期阵容 ↗</a></div>
-  {overview.transition&&<aside class="transition-banner wrap"><strong>新赛季，先用熟悉的队伍开局。</strong><p>{overview.current.length?'新赛季配队还在补充，以下保留上赛季阵容作过渡参考。':'新赛季配队正在整理，先沿用上赛季阵容；历史梯度不代表新版本强度。'}</p></aside>}
-  <section class="overview wrap" id="lineup-overview"><div class="section-heading"><div><div class="eyebrow muted">PICK YOUR NEXT TEAM</div><h2>当季阵容<span>{activeLineups.length} 套</span></h2></div><span class="collection-subtitle">先选打法，再看配置。</span></div>
+  {overview.transition&&<aside class="transition-banner wrap"><strong>新赛季配队陆续更新</strong><p>先沿用上一赛季阵容作过渡参考，卡片保留原赛季标记。</p></aside>}
+  <section class="overview wrap" id="lineup-overview"><div class="section-heading"><div><div class="eyebrow muted">{currentSeason.id} · {currentSeason.name}</div><h2>当季阵容<span>{activeLineups.length} 套</span></h2></div><span class="collection-subtitle">从主流体系，到更多配队尝试。</span></div>
     <Collection lineups={activeLineups} fallback={overview.fallback} />
   </section>
 </Layout>

@@ -7,77 +7,42 @@
   ],
   "season": "S3",
   "version_label": "铅字幻梦",
-  "tier": "待定",
-  "tier_basis": "unrated",
-  "tier_provisional": false,
-  "tier_updated_at": "2026-07-30T09:19:55+08:00",
-  "tier_reason": "已核对完整配置，尚缺能支持明确强度的实战依据，保留待定。",
   "archetype": [
     "平衡",
     "强攻",
     "水幕"
   ],
-  "strength_score": 40,
-  "popularity_score": 40,
-  "evidence_score": 75,
-  "recency_score": 20,
-  "score_notes": "仅用于同梯度内展示排序；无实时胜率或榜单推断。",
-  "summary": "以加油蟹处理火系，黑猫与布鲁斯提供多路火力。",
-  "analysis": "S3 的多核强攻配置。加油蟹负责水幕压力，音速犬和黑猫承担换血，冰钻布鲁斯补足物理爆发；窃光蚊和松鼠提供额外应对。",
-  "recommended_lead": "按对位选择",
-  "lead_notes": "没有固定首发要求，按对手属性与输出点调整出场顺序。",
-  "lead_basis": "unknown",
-  "core_plan": [
-    "先保留加油蟹处理关键火系对手的状态。",
-    "用音速犬与黑猫打出交换优势。",
-    "按抵抗关系安排布鲁斯、窃光蚊和松鼠收尾。"
-  ],
-  "weaknesses": [
-    "这是 S3 的历史配置，技能与对局判断需要结合新版本调整。"
-  ],
-  "matchup_notes": [],
+  "summary": "音速犬、黑猫巫师、加油蟹等六只精灵的完整配置。",
   "roster": [
     {
       "name": "音速犬",
-      "role": "节奏起点",
       "bloodline": null,
-      "skills": [],
-      "notes": ""
+      "skills": []
     },
     {
       "name": "黑猫巫师",
-      "role": "体系成员",
       "bloodline": null,
-      "skills": [],
-      "notes": ""
+      "skills": []
     },
     {
       "name": "加油蟹",
-      "role": "体系成员",
       "bloodline": null,
-      "skills": [],
-      "notes": ""
+      "skills": []
     },
     {
       "name": "窃光蚊",
-      "role": "体系成员",
       "bloodline": null,
-      "skills": [],
-      "notes": ""
+      "skills": []
     },
     {
       "name": "冰钻布鲁斯",
-      "role": "体系成员",
       "bloodline": null,
-      "skills": [],
-      "notes": ""
+      "skills": []
     },
     {
       "name": "蹦床松鼠",
-      "role": "体系成员",
       "bloodline": null,
-      "skills": [],
-      "notes": ""
+      "skills": []
     }
   ],
   "lineup_images": [
@@ -112,6 +77,8 @@
   "first_seen_at": "2026-10-21T03:27:24.580Z",
   "last_verified_at": "2026-10-21T03:27:24.580Z",
   "status": "archived",
-  "verification_notes": "历史赛季配置，成员以原图为准。",
-  "archive_reason": "保留 S3 往期配置供回顾，不作为当前赛季原生阵容。"
+  "verification_notes": "六位成员及配置以真实原图为准。仅收录可追溯的原话攻略；未独立确认最新平衡补丁。",
+  "archive_reason": "保留 S3 往期配置供回顾，不作为当前赛季原生阵容。",
+  "guides": [],
+  "signals": []
 }

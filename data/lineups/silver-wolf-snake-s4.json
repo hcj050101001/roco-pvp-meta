@@ -5,77 +5,42 @@
   "aliases": [],
   "season": "S4",
   "version_label": "月涌狂想",
-  "tier": "待定",
-  "tier_basis": "unrated",
-  "tier_provisional": false,
-  "tier_updated_at": "2026-10-21T03:27:24.580Z",
-  "tier_reason": "已核对完整配置，尚缺能支持明确强度的实战依据，保留待定。",
   "archetype": [
     "狼队",
     "萌系",
     "联防"
   ],
-  "strength_score": 40,
-  "popularity_score": 40,
-  "evidence_score": 75,
-  "recency_score": 75,
-  "score_notes": "仅用于同梯度内展示排序；无实时胜率或榜单推断。",
-  "summary": "银月狼王与寒音蛇并行，搭配幽影树和双翼联防。",
-  "analysis": "原图将银月狼王、寒音蛇放在同一套配置里，幽影树、绒光优优、化蝶和飞飞钥负责补位。狼王与蛇的技能配置分别保留，适合研究多输出点的配队方式。",
-  "recommended_lead": "按对位选择",
-  "lead_notes": "没有固定首发要求，按对手属性与输出点调整出场顺序。",
-  "lead_basis": "unknown",
-  "core_plan": [
-    "先判断银月狼王与寒音蛇谁更适合当前对局。",
-    "利用飞飞钥、化蝶与绒光优优参与联防。",
-    "保留胜利条件对应的输出成员，不强行沿用其他狼队连招。"
-  ],
-  "weaknesses": [
-    "没有精确教学支持固定操作链，具体对局优劣暂未评级。"
-  ],
-  "matchup_notes": [],
+  "summary": "幽影树、寒音蛇、飞飞钥等六只精灵的完整配置。",
   "roster": [
     {
       "name": "幽影树",
-      "role": "节奏起点",
       "bloodline": null,
-      "skills": [],
-      "notes": ""
+      "skills": []
     },
     {
       "name": "寒音蛇",
-      "role": "体系成员",
       "bloodline": null,
-      "skills": [],
-      "notes": ""
+      "skills": []
     },
     {
       "name": "飞飞钥",
-      "role": "体系成员",
       "bloodline": null,
-      "skills": [],
-      "notes": ""
+      "skills": []
     },
     {
       "name": "绒光优优",
-      "role": "体系成员",
       "bloodline": null,
-      "skills": [],
-      "notes": ""
+      "skills": []
     },
     {
       "name": "化蝶",
-      "role": "体系成员",
       "bloodline": null,
-      "skills": [],
-      "notes": ""
+      "skills": []
     },
     {
       "name": "银月狼王",
-      "role": "体系成员",
       "bloodline": null,
-      "skills": [],
-      "notes": ""
+      "skills": []
     }
   ],
   "lineup_images": [
@@ -111,6 +76,8 @@
   "first_seen_at": "2026-10-21T03:27:24.580Z",
   "last_verified_at": "2026-10-21T03:27:24.580Z",
   "status": "active",
-  "verification_notes": "完整配置已核对；当前只作体系参考，强度待定。",
-  "archive_reason": null
+  "verification_notes": "六位成员及配置以真实原图为准。仅收录可追溯的原话攻略；未独立确认最新平衡补丁。",
+  "archive_reason": null,
+  "guides": [],
+  "signals": []
 }

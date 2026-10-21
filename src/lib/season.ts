@@ -1,8 +1,8 @@
 import * as cheerio from 'cheerio';
 import { seasonNumber } from './rank';
 export interface SeasonEvidence {id:string;name:string;started_at:string;source_url:string;theme:string}
-export function themeFor(name:string) {
-  return /月|星|宇宙|银河/.test(name)?'moon':/梦|画|书|童话/.test(name)?'storybook':/狂欢|马戏|怪谈/.test(name)?'carnival':'classic';
+export function themeFor(_name:string) {
+  return 'light';
 }
 export function officialSeason(html:string,sourceUrl:string,now=new Date()):SeasonEvidence|null {
   const u=new URL(sourceUrl);if(u.hostname!=='www.taptap.cn'||!u.pathname.startsWith('/moment/'))return null;

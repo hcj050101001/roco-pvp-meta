@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { extractPage } from '../scripts/extract/page';
 import { lineupSchema } from '../src/lib/schema';
 import { allLineups } from '../src/lib/data';
-import { selectActive,selectOverview,rankScore } from '../src/lib/rank';
+import { selectActive,selectOverview,ranked,signalPriority,configurationDate } from '../src/lib/rank';
 import { hashDistance } from '../scripts/extract/image';
 import { guardRefresh } from '../src/lib/refresh';
 import { ingestSearch } from '../scripts/collect/search';
@@ -14,10 +14,13 @@ test('提取懒加载、原图、srcset、JSON-LD 与内嵌 JSON，不执行脚�
   for(const u of ['https://example.com/a.webp','https://example.com/b.png','https://example.com/full.jpg','https://example.com/og.png','https://cdn.example.com/ld.webp','https://cdn.example.com/embedded.webp']) assert.ok(r.images.some(i=>i.url===u),u);
   assert.equal(r.title,'阵容');
 });
-test('active 缺失真实图、错误 Tier、重复成员、无依据视频都被拒绝',()=>{
+test('缺失真实图、旧评级字段、重复成员、无依据攻略与视频都被拒绝',()=>{
   const l=structuredClone(allLineups[0]);
   assert.equal(lineupSchema.safeParse({...l,lineup_images:[]}).success,false);
-  assert.equal(lineupSchema.safeParse({...l,tier:'T9'}).success,false);
+  assert.equal(lineupSchema.safeParse({...l,tier:'T0'}).success,false);
+  assert.equal(lineupSchema.safeParse({...l,analysis:'自编打法'}).success,false);
+  assert.equal(lineupSchema.safeParse({...l,guides:[{quote:'无出处的打法'}]}).success,false);
+  assert.equal(lineupSchema.safeParse({...l,guides:[{quote:'原话',author:'玩家',source_url:'https://example.com',published_at:l.first_seen_at,verified_at:l.last_verified_at}]}).success,false);
   assert.equal(lineupSchema.safeParse({...l,roster:Array(6).fill(l.roster[0])}).success,false);
   assert.equal(lineupSchema.safeParse({...l,tutorials:[{title:'泛用教学',url:'https://example.com'}]}).success,false);
   assert.equal(lineupSchema.safeParse({...l,lineup_images:l.lineup_images.map(i=>({...i,path:'/assets/lineups/../../secret.webp'}))}).success,false);
@@ -27,11 +30,20 @@ test('C 级单一来源不晋升；归档必须有理由',()=>{
   assert.equal(lineupSchema.safeParse({...l,lineup_images:l.lineup_images.map(i=>({...i,evidence_grade:'C'}))}).success,false);
   assert.equal(lineupSchema.safeParse({...l,status:'archived',archive_reason:null}).success,false);
 });
-test('全面展示超过十套、按梯度排序并排除旧季和归档',()=>{
-  const samples=Array.from({length:15},(_,i)=>({...allLineups[0],id:`x-${i}`,slug:`x-${i}`,archetype:[i<12?'雨天':'反伤'],strength_score:100-i}));
-  const chosen=selectActive(samples,'S4');assert.equal(chosen.length,15);
+test('全面展示超过十套，并排除旧季和归档',()=>{
+  const samples=Array.from({length:18},(_,i)=>({...allLineups[0],id:`x-${i}`,slug:`x-${i}`,archetype:[i<12?'雨天':'反伤']}));
+  const chosen=selectActive(samples,'S4');assert.equal(chosen.length,18);
   assert.deepEqual(selectActive(samples,'S1'),[]);assert.deepEqual(selectActive(samples.map(l=>({...l,status:'archived'})),'S4'),[]);
-  assert.equal(rankScore({...samples[0],strength_score:100,popularity_score:100,evidence_score:100,recency_score:100}),100);
+});
+test('排序只采信有时效的实绩/热度线索，不将索引复核当新配置',()=>{
+  const now=Date.parse('2026-10-21T00:00:00Z'),a=structuredClone(allLineups[0]),b=structuredClone(allLineups[1]);
+  a.signals=[{kind:'high-rank',note:'有来源的历史实绩',source_url:a.sources[0].url,observed_at:'2026-09-20T00:00:00Z'}];b.signals=[];
+  assert.equal(ranked([b,a],now)[0].slug,a.slug);
+  assert.equal(signalPriority(a,Date.parse('2026-12-01')),0);
+  assert.equal(signalPriority(a,Date.parse('2026-09-01')),0);
+  b.lineup_images[0].published_at=null;b.last_verified_at='2026-10-21T00:00:00Z';assert.equal(configurationDate(b),'');
+  a.signals=[];a.lineup_images[0].published_at='2026-10-11T12:00:00+08:00';b.lineup_images[0].published_at='2026-10-11T05:00:00Z';
+  assert.equal(ranked([a,b],now)[0].slug,b.slug);
 });
 test('换季过渡不清空、少量新队并存；齐备后只展示当季，旧资料仍在',()=>{
   const previous=allLineups.filter(l=>l.season==='S4');
@@ -47,10 +59,10 @@ test('官方换季判断：只采信已发布的正式开服、拒绝未来预�
   const html=(a:unknown)=>`<script type="application/ld+json">${JSON.stringify(a)}</script>`;
   const url='https://www.taptap.cn/moment/123';
   assert.equal(officialSeason(html(article),url,new Date('2026-10-21')),null);
-  const confirmed=officialSeason(html(article),url,new Date('2026-11-02'));assert.equal(confirmed?.id,'S5');assert.equal(confirmed?.theme,'classic');
+  const confirmed=officialSeason(html(article),url,new Date('2026-11-02'));assert.equal(confirmed?.id,'S5');assert.equal(confirmed?.theme,'light');
   assert.equal(officialSeason(html({...article,headline:'S5赛季「春日旅行」即将上线'}),url,new Date('2026-11-02')),null);
   assert.equal(officialSeason(html({...article,author:{url:'https://www.taptap.cn/user/other'}}),url,new Date('2026-11-02')),null);
-  assert.equal(latestLaunched(confirmed?[confirmed]:[],'S6'),null);assert.equal(themeFor('月涌狂想'),'moon');assert.equal(themeFor('铅字幻梦'),'storybook');
+  assert.equal(latestLaunched(confirmed?[confirmed]:[],'S6'),null);assert.equal(themeFor('月涌狂想'),'light');assert.equal(themeFor('铅字幻梦'),'light');
 });
 test('pHash 汉明距离',()=>{assert.equal(hashDistance('0000000000000000','000000000000000f'),4);assert.equal(hashDistance('0123456789abcdef','0123456789abcdef'),0);});
 test('搜索结果仅发现支持的公开平台，拒绝伪装域名',()=>{

@@ -1,0 +1,84 @@
+{
+  "id": "horse-starfall-s4",
+  "slug": "horse-starfall-s4",
+  "name": "马头星陨队",
+  "aliases": [
+    "星陨马头"
+  ],
+  "season": "S4",
+  "version_label": "月涌狂想",
+  "archetype": [
+    "星陨"
+  ],
+  "summary": "怖哭菇、白金独角兽、玳塔等六只精灵的完整配置。",
+  "roster": [
+    {
+      "name": "怖哭菇",
+      "bloodline": null,
+      "skills": []
+    },
+    {
+      "name": "白金独角兽",
+      "bloodline": null,
+      "skills": []
+    },
+    {
+      "name": "玳塔",
+      "bloodline": null,
+      "skills": []
+    },
+    {
+      "name": "布灵布灵",
+      "bloodline": null,
+      "skills": []
+    },
+    {
+      "name": "音速犬",
+      "bloodline": null,
+      "skills": []
+    },
+    {
+      "name": "龙息帕尔",
+      "bloodline": null,
+      "skills": []
+    }
+  ],
+  "lineup_images": [
+    {
+      "path": "/assets/lineups/horse-starfall-s4/fba6ee6aa14dab833e61a58bf5594ce4d314a93005e744e27428064e55e74cb2.webp",
+      "source_url": "https://post.qiandaocdn.com/post/images/fdtKHlFMr6E_resize.webp?imginfo=w1625,h747",
+      "source_page_url": "https://qiandao.com/post?postId=1023430985116591249",
+      "source_kind": "comment",
+      "capture_method": "direct-image",
+      "published_at": "2026-10-11T05:34:23Z",
+      "captured_at": "2026-10-21T03:27:24.580Z",
+      "width": 1175,
+      "height": 540,
+      "sha256": "fba6ee6aa14dab833e61a58bf5594ce4d314a93005e744e27428064e55e74cb2",
+      "phash": "5e8719ab2bd45449",
+      "evidence_grade": "B",
+      "verified": true,
+      "verification_notes": "完整六只及技能、性格配置可见；镜像帖子作者本人评论补图，保留图中署名。发布时间为补图时间。",
+      "attribution": "图中署名：星陨c · 千岛：洛克王国阵容镜像"
+    }
+  ],
+  "tutorials": [],
+  "sources": [
+    {
+      "url": "https://qiandao.com/post?postId=1023430985116591249",
+      "type": "community",
+      "title": "洛克王国阵容镜像 · S4合集（原帖作者补图）",
+      "published_at": "2026-07-20T14:34:55.000Z",
+      "updated_at": "2026-10-21T02:07:22.000Z",
+      "last_checked_at": "2026-10-21T04:30:00Z"
+    }
+  ],
+  "first_seen_at": "2026-10-21T04:30:00Z",
+  "last_verified_at": "2026-10-21T04:30:00Z",
+  "status": "active",
+  "verification_notes": "原帖作者的公开评论“星陨马头”与附件一一对应；归属于S4区段。图片日期为该版本补图评论的发布时间，不是原始制图时间。已视觉确认六只与配置完整。",
+  "archive_reason": null,
+  "guides": [],
+  "signals": [],
+  "player_notes": []
+}

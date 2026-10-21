@@ -1,5 +1,26 @@
 [
-  { "id": "S2", "name": "狂欢怪谈", "theme": "carnival", "started_at": "2026-05-20T00:00:00+08:00", "source_url": "https://www.taptap.cn/game-event/12623", "intro": "恶魔狼与独角兽的对决，记下那个夏天的冲分选择。" },
-  { "id": "S3", "name": "铅字幻梦", "theme": "storybook", "started_at": "2026-07-16T00:00:00+08:00", "source_url": "https://www.taptap.cn/game-event/12623", "intro": "古卷翻开新局，星陨与接力在天梯留下各自的答案。" },
-  { "id": "S4", "name": "月涌狂想", "theme": "moon", "started_at": "2026-09-10T00:00:00+08:00", "source_url": "https://www.taptap.cn/moment/847022426351994538", "intro": "银月狼王登场。跟随星陨、雨天与接力，寻找月幕下的胜机。" }
+  {
+    "id": "S2",
+    "name": "狂欢怪谈",
+    "theme": "light",
+    "started_at": "2026-05-20T00:00:00+08:00",
+    "source_url": "https://www.taptap.cn/game-event/12623",
+    "intro": "恶魔狼与独角兽的对决，记下那个夏天的冲分选择。"
+  },
+  {
+    "id": "S3",
+    "name": "铅字幻梦",
+    "theme": "light",
+    "started_at": "2026-07-16T00:00:00+08:00",
+    "source_url": "https://www.taptap.cn/game-event/12623",
+    "intro": "古卷翻开新局，星陨与接力在天梯留下各自的答案。"
+  },
+  {
+    "id": "S4",
+    "name": "月涌狂想",
+    "theme": "light",
+    "started_at": "2026-09-10T00:00:00+08:00",
+    "source_url": "https://www.taptap.cn/moment/847022426351994538",
+    "intro": "银月狼王登场。跟随星陨、雨天与接力，寻找月幕下的胜机。"
+  }
 ]

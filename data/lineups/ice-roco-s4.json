@@ -7,107 +7,72 @@
   ],
   "season": "S4",
   "version_label": "月涌狂想",
-  "tier": "T2",
-  "tier_reason": "暂定 T2：接力后上限较高，传递链较长；罗隐的魔抗短板与愿力威胁让对位和操作条件更苛刻。",
   "archetype": [
     "接力",
     "首领",
     "平衡"
   ],
-  "strength_score": 50,
-  "popularity_score": 40,
-  "evidence_score": 80,
-  "recency_score": 45,
-  "score_notes": "实绩和热度无独立量化数据，使用保守编辑资料分；证据按可信镜像完整图，新鲜度按发布日期。",
-  "summary": "布丁与路路传递增益，罗隐和水灵根据对位接管比赛。",
-  "analysis": "椰浆布丁与白发路路负责辅助传递；罗隐承接强化后推进，水灵补充魔抗方向的对位处理。彩蝶鲨参与收尾，飞飞钥负责清理强化与印记。首领化时机要留到增益与对位条件合适之后。",
-  "recommended_lead": "椰浆布丁 → 白发路路",
-  "lead_notes": "编辑推断：按来源描述的传抗性与示弱顺序给出轮转参考，并非原作者指定的通用固定首发。",
-  "lead_basis": "inferred",
-  "core_plan": [
-    "参考椰浆布丁向白发路路传递抗性的辅助链。",
-    "路路利用示弱与击鼓传花，把增益交给合适的输出位。",
-    "罗隐在安全时机强化与首领化；水灵和彩蝶鲨承担其他输出窗口。"
-  ],
-  "weaknesses": [
-    "来源指出首领罗隐魔抗较低，不能把物抗优势套用于魔法伤害。",
-    "传递增益和强化时均需留意愿力威胁。"
-  ],
-  "matchup_notes": [
-    "飞飞钥可用来处理强化与印记，吹走对手后再为路路创造传递机会。"
-  ],
+  "summary": "白发路路、飞飞钥、椰浆布丁等六只精灵的完整配置。",
   "roster": [
     {
       "name": "白发路路",
-      "role": "辅助 / 传递",
       "bloodline": null,
       "skills": [
         "纤维化",
         "生日蛋糕",
         "示弱",
         "击鼓传花"
-      ],
-      "notes": ""
+      ]
     },
     {
       "name": "飞飞钥",
-      "role": "联防 / 清理",
       "bloodline": null,
       "skills": [
         "飞羽",
         "风隐",
         "倾泻",
         "吓退"
-      ],
-      "notes": ""
+      ]
     },
     {
       "name": "椰浆布丁",
-      "role": "抗性传递",
       "bloodline": null,
       "skills": [
         "天洪",
         "离子震荡",
         "寒风吹",
         "泡沫幻影"
-      ],
-      "notes": ""
+      ]
     },
     {
       "name": "水灵",
-      "role": "输出 / 魔抗对位",
       "bloodline": null,
       "skills": [
         "润泽",
         "水泡盾",
         "气泡",
         "寒风吹"
-      ],
-      "notes": ""
+      ]
     },
     {
       "name": "罗隐",
-      "role": "核心 / 首领",
       "bloodline": null,
       "skills": [
         "泥浆铠甲",
         "地刺",
         "地震",
         "彼岸之手"
-      ],
-      "notes": ""
+      ]
     },
     {
       "name": "彩蝶鲨",
-      "role": "水系收尾",
       "bloodline": null,
       "skills": [
         "贮藏",
         "回旋风暴",
         "灵媒",
         "天洪"
-      ],
-      "notes": ""
+      ]
     }
   ],
   "lineup_images": [
@@ -129,7 +94,18 @@
       "attribution": "洛王 / 制图：13号洛克高"
     }
   ],
-  "tutorials": [],
+  "tutorials": [
+    {
+      "title": "冰露罗头震撼来袭！",
+      "url": "https://www.douyin.com/video/7685302989641324883",
+      "platform": "douyin",
+      "creator": "洛王洛王",
+      "published_at": "2026-09-14T16:20:00+08:00",
+      "match_reason": "exact-title",
+      "match_notes": "无登录浏览器打开原视频页，标题直接点名冰露罗头并带S4月涌狂想标签；作者洛王洛王，与图文攻略中“洛王实测”对应。只关联该命名配队，不把页面AI章节摘要当作作者攻略或逐项技能复核。",
+      "verified_at": "2026-10-21T04:32:00Z"
+    }
+  ],
   "sources": [
     {
       "url": "https://ol.3dmgame.com/gl/353804.html",
@@ -142,9 +118,16 @@
   "first_seen_at": "2026-10-21T10:50:00+08:00",
   "last_verified_at": "2026-10-21T10:50:00+08:00",
   "status": "active",
-  "verification_notes": "完整配置图与来源标题已核对，成员以图为准；B 级为镜像资料，首发推断与未确认技能已分别标注。最新平衡补丁未独立核实。",
+  "verification_notes": "六位成员及配置以真实原图为准。仅收录可追溯的原话攻略；未独立确认最新平衡补丁。",
   "archive_reason": null,
-  "tier_basis": "editorial",
-  "tier_provisional": true,
-  "tier_updated_at": "2026-09-20T09:19:30+08:00"
+  "guides": [
+    {
+      "quote": "传增益一定要小心被愿力秒",
+      "author": "13号洛克高（3DM转载署名）",
+      "source_url": "https://ol.3dmgame.com/gl/353804.html",
+      "published_at": "2026-09-20T09:19:30+08:00",
+      "verified_at": "2026-10-21T10:50:00+08:00"
+    }
+  ],
+  "signals": []
 }

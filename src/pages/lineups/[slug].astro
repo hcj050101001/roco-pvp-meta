@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import { allLineups,state } from '../../lib/data';
 import { withBase,displayDate } from '../../lib/urls';
+import { configurationDate } from '../../lib/rank';
 import type { Lineup } from '../../lib/schema';
 export function getStaticPaths(){return allLineups.map(lineup=>({params:{slug:lineup.slug},props:{lineup}}));}
 interface Props { lineup:Lineup }
@@ -9,27 +10,25 @@ const {lineup:l}=Astro.props;
 const historical=l.status==='archived'||l.season!==state.season;
 const back=historical?withBase('/history/'):withBase('/#lineup-overview');
 const backLabel=historical?'← 返回往期阵容':'← 返回阵容总览';
+const published=configurationDate(l);
+const platforms={bilibili:'哔哩哔哩',douyin:'抖音',other:'视频'};
 ---
 <Layout title={l.name} description={l.summary}>
-  <div class="detail-nav"><div class="wrap detail-nav-inner"><a href={back}>{backLabel}</a><nav aria-label="详情导航"><a href="#configuration">配置图</a><a href="#analysis">打法解析</a><a href="#sources">原作者与来源</a></nav></div></div>
-  <article class="detail wrap"><header class="detail-header"><div class="eyebrow">{l.season} · {l.version_label}{historical?' / 往期阵容':''}</div><div class="detail-title"><h1>{l.name}</h1><span class:list={['tier',`tier-${l.tier.toLowerCase()}`]}>{l.tier}{l.tier_provisional&&<small>暂定</small>}{historical&&l.tier!=='待定'&&<small>当时</small>}</span></div><p class="detail-summary">{l.summary}</p><div class="tags">{l.archetype.map(t=><span>{t}</span>)}</div><p class="detail-dates">配置更新 {displayDate(l.sources[0].updated_at||l.lineup_images[0].published_at||l.last_verified_at)}</p></header>
-  {historical&&<aside class="transition-banner"><strong>{l.season} 赛季配置</strong><p>保留当时的技能与配队思路，使用前请结合当前版本调整。历史梯度不代表当季强度。</p></aside>}
+  <div class="detail-nav"><div class="wrap detail-nav-inner"><a href={back}>{backLabel}</a><nav aria-label="详情导航"><a href="#configuration">配置图</a>{l.guides.length>0&&<a href="#guides">作者攻略</a>}{l.tutorials.length>0&&<a href="#tutorials">教学视频</a>}<a href="#sources">来源</a></nav></div></div>
+  <article class="detail wrap"><header class="detail-header"><div class="eyebrow">{l.season} · {l.version_label}{historical?' / 往期阵容':''}</div><div class="detail-title"><h1>{l.name}</h1></div><div class="tags">{l.archetype.map(t=><span>{t}</span>)}</div>{published&&<p class="detail-dates">配置发布 {displayDate(published)}</p>}</header>
+  {historical&&<aside class="transition-banner"><strong>{l.season} 赛季配置</strong><p>保留当时配置，使用前请结合当前版本调整。</p></aside>}
   <div class="detail-columns"><div class="detail-main">
-    <section id="configuration" class="detail-section"><div class="section-label"><span>01 / CONFIGURATION</span><h2>完整配队</h2></div><p class="subtle">点击图片放大查看性格、技能与配置。</p>
+    <section id="configuration" class="detail-section"><div class="section-label"><span>CONFIGURATION</span><h2>完整配队</h2></div><p class="subtle">点击图片查看原图。</p>
       <div class="image-tabs" role="tablist" aria-label="选择阵容图" hidden={l.lineup_images.length<2}>{l.lineup_images.map((_,i)=><button role="tab" id={`tab-${i}`} aria-controls={`image-${i}`} aria-selected={i===0?'true':'false'} tabindex={i===0?0:-1} data-image-tab={i}>配置 {i+1}</button>)}</div>
       {l.lineup_images.map((img,i)=><figure class="full-image" id={`image-${i}`} role={l.lineup_images.length>1?'tabpanel':undefined} aria-labelledby={l.lineup_images.length>1?`tab-${i}`:undefined} hidden={i>0}><a href={withBase(img.path)} target="_blank" rel="noopener noreferrer" aria-label={`打开${l.name}配置图 ${i+1}原图`}><img src={withBase(img.path)} width={img.width} height={img.height} alt={`${l.name}完整阵容配置：${l.roster.map(p=>p.name).join('、')}`} /></a><figcaption>{img.attribution}<a href={withBase(img.path)} target="_blank" rel="noopener noreferrer">查看原图 ↗</a></figcaption></figure>)}
-      {l.player_notes?.length>0&&<aside class="player-note">{l.player_notes.map(p=><p>{p}</p>)}</aside>}
+      {l.player_notes.length>0&&<aside class="player-note">{l.player_notes.map(p=><p>{p}</p>)}</aside>}
     </section>
-    <section id="analysis" class="detail-section"><div class="section-label"><span>02 / GAME PLAN</span><h2>这套队，怎么打？</h2></div><p class="analysis-copy">{l.analysis}</p>
-      {l.lead_basis!=='unknown'&&<div class="lead-block"><span>首发参考{l.lead_basis==='inferred'?' · 按打法推断':''}</span><h3>{l.recommended_lead}</h3><p>{l.lead_notes}</p></div>}
-      <ol class="plan-list">{l.core_plan.map((p,i)=><li><span>{String(i+1).padStart(2,'0')}</span><p>{p}</p></li>)}</ol>
-      <div class="matchup-grid"><div><h3>注意这些对局</h3><ul>{l.weaknesses.map(p=><li>{p}</li>)}</ul></div>{l.matchup_notes.length>0&&<div><h3>临场调整</h3><ul>{l.matchup_notes.map(p=><li>{p}</li>)}</ul></div>}</div>
-    </section>
-    <section id="roster" class="detail-section"><div class="section-label"><span>03 / MEMBERS</span><h2>阵容成员</h2></div><div class="roster-list">{l.roster.map((p,i)=><div class="roster-row"><span class="roster-number">0{i+1}</span><div><h3>{p.name}{!['体系成员','节奏起点'].includes(p.role)&&<small>{p.role}</small>}</h3>{p.notes&&<p>{p.notes}</p>}{p.skills.length>0&&<div class="skill-tags">{p.skills.map(s=><span>{s}</span>)}</div>}</div>{p.bloodline&&<span class="bloodline">血脉<br /><strong>{p.bloodline}</strong></span>}</div>)}</div></section>
-    <section id="sources" class="detail-section"><div class="section-label"><span>04 / CREDITS</span><h2>原作者与来源</h2></div><p class="rating-note"><span>梯度参考 · {l.tier}</span>{l.tier_reason}</p>{l.sources.map(s=><a class="source-row" href={s.url} target="_blank" rel="noopener noreferrer"><div><span>{displayDate(s.updated_at||s.published_at)}</span><h3>{s.title}</h3></div><span>↗</span></a>)}</section>
-    {l.tutorials.length>0&&<section class="detail-section"><div class="section-label"><span>WATCH & LEARN</span><h2>教学与实战</h2></div>{l.tutorials.map(t=><a class="source-row" href={t.url} target="_blank" rel="noopener noreferrer"><div><span>{t.platform} · {t.creator}</span><h3>{t.title}</h3></div><span>↗</span></a>)}</section>}
+    {l.tutorials.length>0&&<section id="tutorials" class="detail-section"><div class="section-label"><span>WATCH & LEARN</span><h2>教学与实战</h2></div>{l.tutorials.map(t=><a class="source-row video-row" href={t.url} target="_blank" rel="noopener noreferrer"><div><span>{platforms[t.platform]} · {t.creator} · {displayDate(t.published_at)}</span><h3>{t.title}</h3></div><span>▷</span></a>)}</section>}
+    {l.guides.length>0&&<section id="guides" class="detail-section"><div class="section-label"><span>FROM THE AUTHOR</span><h2>作者攻略摘录</h2></div>{l.guides.map(g=><figure class="guide-quote"><blockquote>{g.quote}</blockquote><figcaption><span>{g.author} · {displayDate(g.published_at)}</span><a href={g.source_url} target="_blank" rel="noopener noreferrer">阅读全文 ↗</a></figcaption></figure>)}</section>}
+    <section id="roster" class="detail-section"><div class="section-label"><span>MEMBERS</span><h2>阵容成员</h2></div><div class="roster-list">{l.roster.map((p,i)=><div class="roster-row"><span class="roster-number">0{i+1}</span><div><h3>{p.name}</h3>{p.skills.length>0&&<div class="skill-tags">{p.skills.map(s=><span>{s}</span>)}</div>}</div>{p.bloodline&&<span class="bloodline">血脉<br /><strong>{p.bloodline}</strong></span>}</div>)}</div></section>
+    <section id="sources" class="detail-section"><div class="section-label"><span>CREDITS</span><h2>配置来源</h2></div>{l.sources.map(s=><a class="source-row" href={s.url} target="_blank" rel="noopener noreferrer"><div><span>{displayDate(s.updated_at||s.published_at)}{s.updated_at?' · 帖子更新':''}</span><h3>{s.title}</h3></div><span>↗</span></a>)}</section>
     <a class="button primary bottom-return" href={back}>{backLabel}</a>
-  </div><aside class="detail-sidebar"><div class="sidebar-inner"><span class="eyebrow muted">BEFORE THE BATTLE</span><h2>配队速览</h2><dl><dt>体系</dt><dd>{l.archetype.join(' / ')}</dd><dt>梯度</dt><dd>{l.tier}{l.tier_provisional?' · 暂定':''}{historical?' · 历史环境':''}</dd><dt>版本</dt><dd>{l.season} · {l.version_label}</dd></dl><a class="button secondary" href="#configuration">查看配置 ↑</a><a class="text-link sidebar-return" href={back}>{backLabel}</a></div></aside></div></article>
+  </div><aside class="detail-sidebar"><div class="sidebar-inner"><span class="eyebrow muted">TEAM NOTES</span><h2>配队速览</h2><dl><dt>体系</dt><dd>{l.archetype.join(' / ')}</dd><dt>成员</dt><dd>{l.roster.map(p=>p.name).join('、')}</dd><dt>版本</dt><dd>{l.season} · {l.version_label}</dd></dl><a class="button secondary" href="#configuration">查看配置 ↑</a><a class="text-link sidebar-return" href={back}>{backLabel}</a></div></aside></div></article>
 </Layout>
 <script>
   const tabs=[...document.querySelectorAll<HTMLButtonElement>('[data-image-tab]')];

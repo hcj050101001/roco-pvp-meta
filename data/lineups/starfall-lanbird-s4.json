@@ -5,77 +5,42 @@
   "aliases": [],
   "season": "S4",
   "version_label": "月涌狂想",
-  "tier": "待定",
-  "tier_basis": "unrated",
-  "tier_provisional": false,
-  "tier_updated_at": "2026-10-21T03:27:24.580Z",
-  "tier_reason": "已核对完整配置，尚缺能支持明确强度的实战依据，保留待定。",
   "archetype": [
     "星陨",
     "先制",
     "轮转"
   ],
-  "strength_score": 40,
-  "popularity_score": 40,
-  "evidence_score": 75,
-  "recency_score": 75,
-  "score_notes": "仅用于同梯度内展示排序；无实时胜率或榜单推断。",
-  "summary": "双印记位建立星陨压力，岚鸟与帕尔承担残血处理。",
-  "analysis": "这份配置采用怖哭菇与玳塔，并搭配化蝶支撑星陨运转。岚鸟和龙息帕尔带先发制人，给中后期提供收尾手段，与布灵版本分开保留。",
-  "recommended_lead": "按对位选择",
-  "lead_notes": "没有固定首发要求，按对手属性与输出点调整出场顺序。",
-  "lead_basis": "unknown",
-  "core_plan": [
-    "让怖哭菇、玳塔或化蝶在合适对位铺叠印记。",
-    "离心舞者参与消耗，逐步压低对方的安全血线。",
-    "保留岚鸟和帕尔的先制技能，处理关键残血。"
-  ],
-  "weaknesses": [
-    "印记被清除后，输出计划需要重新组织。"
-  ],
-  "matchup_notes": [],
+  "summary": "怖哭菇、玳塔、离心舞者等六只精灵的完整配置。",
   "roster": [
     {
       "name": "怖哭菇",
-      "role": "节奏起点",
       "bloodline": null,
-      "skills": [],
-      "notes": ""
+      "skills": []
     },
     {
       "name": "玳塔",
-      "role": "体系成员",
       "bloodline": null,
-      "skills": [],
-      "notes": ""
+      "skills": []
     },
     {
       "name": "离心舞者",
-      "role": "体系成员",
       "bloodline": null,
-      "skills": [],
-      "notes": ""
+      "skills": []
     },
     {
       "name": "化蝶",
-      "role": "体系成员",
       "bloodline": null,
-      "skills": [],
-      "notes": ""
+      "skills": []
     },
     {
       "name": "龙息帕尔",
-      "role": "体系成员",
       "bloodline": null,
-      "skills": [],
-      "notes": ""
+      "skills": []
     },
     {
       "name": "岚鸟",
-      "role": "体系成员",
       "bloodline": null,
-      "skills": [],
-      "notes": ""
+      "skills": []
     }
   ],
   "lineup_images": [
@@ -111,6 +76,8 @@
   "first_seen_at": "2026-10-21T03:27:24.580Z",
   "last_verified_at": "2026-10-21T03:27:24.580Z",
   "status": "active",
-  "verification_notes": "完整配置已核对；当前只作体系参考，强度待定。",
-  "archive_reason": null
+  "verification_notes": "六位成员及配置以真实原图为准。仅收录可追溯的原话攻略；未独立确认最新平衡补丁。",
+  "archive_reason": null,
+  "guides": [],
+  "signals": []
 }

@@ -3,7 +3,6 @@ import { z } from 'zod';
 const text = z.string().trim().min(1);
 const url = z.url().refine(v => new URL(v).protocol === 'https:', '只接受 HTTPS 来源');
 const date = z.iso.datetime({ offset: true });
-const score = z.number().min(0).max(100);
 export const imageSchema = z.object({
   path: z.string().regex(/^\/assets\/lineups\/[a-z0-9/-]+\.(png|jpe?g|webp|avif)$/).refine(v => !v.includes('..')),
   source_url: url, source_page_url: url,
@@ -19,14 +18,11 @@ export const imageSchema = z.object({
 export const lineupSchema = z.object({
   id: z.string().regex(/^[a-z0-9-]+$/), slug: z.string().regex(/^[a-z0-9-]+$/),
   name: text, aliases: z.array(text), season: text, version_label: text,
-  tier: z.enum(['T0', 'T1', 'T2', 'T3', '待定']), tier_reason: text,
-  tier_basis: z.enum(['source','editorial','unrated']), tier_provisional: z.boolean(), tier_updated_at: date,
   archetype: z.array(text).min(1),
-  strength_score: score, popularity_score: score, evidence_score: score, recency_score: score,
-  score_notes: text, summary: text, analysis: text,
-  recommended_lead: text, lead_notes: text, lead_basis: z.enum(['source', 'inferred', 'unknown']),
-  core_plan: z.array(text).min(1), weaknesses: z.array(text).min(1), matchup_notes: z.array(text),
-  roster: z.array(z.object({ name: text, role: text, bloodline: text.nullable(), skills: z.array(text), notes: z.string() }).strict()).length(6),
+  summary: text,
+  guides: z.array(z.object({ quote: text.max(24), author: text, source_url: url, published_at: date, verified_at: date }).strict()),
+  signals: z.array(z.object({ kind: z.enum(['high-rank','engagement']), note: text, source_url: url, observed_at: date }).strict()),
+  roster: z.array(z.object({ name: text, bloodline: text.nullable(), skills: z.array(text) }).strict()).length(6),
   lineup_images: z.array(imageSchema).min(1),
   tutorials: z.array(z.object({ title: text, url, platform: z.enum(['bilibili', 'douyin', 'other']), creator: text,
     published_at: date, match_reason: z.enum(['exact-title', 'same-six', 'same-author', 'source-linked']), match_notes: text,
@@ -38,8 +34,9 @@ export const lineupSchema = z.object({
   player_notes: z.array(text).default([]),
 }).strict().superRefine((lineup, ctx) => {
   if (new Set(lineup.roster.map(p => p.name)).size !== 6) ctx.addIssue({ code: 'custom', message: '成员不能重复' });
-  if ((lineup.tier === '待定') !== (lineup.tier_basis === 'unrated')) ctx.addIssue({ code: 'custom', message: '未评级阵容应标待定' });
-  if (lineup.tier_basis === 'editorial' && !lineup.tier_provisional) ctx.addIssue({ code: 'custom', message: '编辑评级必须标记暂定' });
+  for (const item of [...lineup.guides,...lineup.signals]) {
+    if (!lineup.sources.some(s=>s.url===item.source_url)) ctx.addIssue({code:'custom',message:'原话和排序线索必须关联已记录来源'});
+  }
   if (lineup.status === 'archived' && !lineup.archive_reason) ctx.addIssue({ code: 'custom', message: '归档需要理由' });
   if (lineup.lineup_images.every(i => i.evidence_grade === 'C') && new Set(lineup.sources.map(s => new URL(s.url).hostname)).size < 2)
     ctx.addIssue({ code: 'custom', message: 'C 级图片需要独立来源交叉验证' });

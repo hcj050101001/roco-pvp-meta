@@ -1,39 +1,35 @@
 ---
 import LineupCard from './LineupCard.astro';
 import type { Lineup } from '../lib/schema';
-import { tiers, tierDescriptions } from '../lib/rank';
 interface Props { lineups:Lineup[]; fallback?:Lineup[]; historical?:boolean }
 const {lineups,fallback=[],historical=false}=Astro.props;
 const filters=[...new Set(lineups.flatMap(l=>l.archetype))];
-const groups=[...tiers.map(t=>({tier:t,name:t==='待定'?'待定':t,description:tierDescriptions[t],items:lineups.filter(l=>l.tier===t && !fallback.includes(l))})),{tier:'过渡',name:'过渡参考',description:'沿用往期配队 · 不代表新赛季强度',items:fallback}];
 ---
 <div class="collection" data-collection>
-  <form class="collection-tools" role="search" onsubmit="return false"><label class="search-box"><span aria-hidden="true">⌕</span><span class="sr-only">搜索阵容或精灵</span><input id="search" type="search" placeholder="搜索阵容、精灵、体系…" autocomplete="off" /></label><label class="sort-label">排序 <select id="sort"><option value="tier">强度梯度</option><option value="recent">最近更新</option><option value="name">阵容名称</option></select></label></form>
-  <div class="tier-filters" aria-label="强度筛选"><button class="tier-filter active" data-tier-filter="all" aria-pressed="true">全部<span>{lineups.length}</span></button>{groups.filter(g=>g.items.length).map(g=><button class="tier-filter" data-tier-filter={g.tier} aria-pressed="false">{g.name}<span>{g.items.length}</span></button>)}</div>
+  <form class="collection-tools" role="search" onsubmit="return false"><label class="search-box"><span aria-hidden="true">⌕</span><span class="sr-only">搜索阵容或精灵</span><input id="search" type="search" placeholder="搜索阵容、精灵、体系…" autocomplete="off" /></label><label class="sort-label">排序 <select id="sort"><option value="recommended">推荐顺序</option><option value="recent">配置发布时间</option><option value="name">阵容名称</option></select></label></form>
   <div class="filter-bar" aria-label="体系筛选"><button class="filter active" data-filter="all" aria-pressed="true">全部体系</button>{filters.map(f=><button class="filter" data-filter={f} aria-pressed="false">{f}</button>)}</div>
-  <div class="collection-result"><span id="result-count" role="status" aria-live="polite">共 {lineups.length} 套阵容</span><span>梯度供选队参考 · 暂定评级随环境调整</span></div>
-  <div id="lineup-grid">{groups.filter(g=>g.items.length).map(g=><section class="tier-section" data-tier-section={g.tier}><header class="tier-heading"><span class:list={['tier-emblem',`tier-${g.tier.toLowerCase()}`]}>{g.name}</span><div><h3>{g.description}</h3><p>{g.tier==='待定'?'更多配队，等你探索。':g.tier==='过渡'?'新赛季配队陆续补充，先从熟悉的体系出发。':historical?'保留当时的配队与梯度，回顾不同版本的选择。':g.tier==='T0'?'优先了解的环境代表队。':'不同对局、不同选择，找到适合你的节奏。'}</p></div><span class="group-count">{g.items.length} 套</span></header><div class="lineup-grid">{g.items.map(l=><LineupCard lineup={l} index={lineups.indexOf(l)} historical={historical} fallback={g.tier==='过渡'} />)}</div></section>)}</div>
-  <div class="empty-state" id="empty-state" hidden><span>✧</span><h3>还没有找到这套配队</h3><p>换个精灵名，或者试试其他体系。</p><button class="button secondary" id="reset-search">重置筛选</button></div>
+  <div class="collection-result"><span id="result-count" role="status" aria-live="polite">共 {lineups.length} 套阵容</span><label class="video-filter"><input type="checkbox" id="with-video" /> 有教学视频</label></div>
+  <div id="lineup-grid" class="lineup-grid">{lineups.map((l,i)=><LineupCard lineup={l} index={i} historical={historical} fallback={fallback.includes(l)} />)}</div>
+  <div class="empty-state" id="empty-state" hidden><h3>还没有找到这套配队</h3><p>换个精灵名，或者试试其他体系。</p><button class="button secondary" id="reset-search">重置筛选</button></div>
 </div>
 <script>
   document.querySelectorAll<HTMLElement>('[data-collection]').forEach(root=>{
-    const input=root.querySelector<HTMLInputElement>('#search')!,sort=root.querySelector<HTMLSelectElement>('#sort')!;
-    const cards=[...root.querySelectorAll<HTMLElement>('[data-card]')];
-    const types=[...root.querySelectorAll<HTMLButtonElement>('[data-filter]')],tiers=[...root.querySelectorAll<HTMLButtonElement>('[data-tier-filter]')];
+    const input=root.querySelector<HTMLInputElement>('#search')!,sort=root.querySelector<HTMLSelectElement>('#sort')!,video=root.querySelector<HTMLInputElement>('#with-video')!;
+    const cards=[...root.querySelectorAll<HTMLElement>('[data-card]')], grid=root.querySelector('#lineup-grid')!;
+    const types=[...root.querySelectorAll<HTMLButtonElement>('[data-filter]')];
     const seasons=[...document.querySelectorAll<HTMLButtonElement>('[data-season-filter]')];
     const requested=new URL(location.href).searchParams.get('season');
-    let type='all',tier='all',season=seasons.some(b=>b.dataset.seasonFilter===requested)?requested!:'all';
+    let type='all',season=seasons.some(b=>b.dataset.seasonFilter===requested)?requested!:'all';
     function update(){let count=0;const query=input.value.trim().toLowerCase();
-      cards.forEach(card=>{card.hidden=!(card.dataset.search!.includes(query)&&(type==='all'||card.dataset.types!.split('|').includes(type))&&(tier==='all'||card.dataset.tier===tier)&&(season==='all'||card.dataset.season===season));if(!card.hidden)count++;});
-      root.querySelectorAll<HTMLElement>('[data-tier-section]').forEach(section=>{section.hidden=!section.querySelector('[data-card]:not([hidden])');const grid=section.querySelector('.lineup-grid')!;[...grid.querySelectorAll<HTMLElement>('[data-card]')].sort((a,b)=>sort.value==='recent'?b.dataset.date!.localeCompare(a.dataset.date!):sort.value==='name'?a.querySelector('h3')!.textContent!.localeCompare(b.querySelector('h3')!.textContent!,'zh-CN'):Number(a.dataset.index)-Number(b.dataset.index)).forEach(c=>grid.append(c));});
+      cards.forEach(card=>{card.hidden=!(card.dataset.search!.includes(query)&&(type==='all'||card.dataset.types!.split('|').includes(type))&&(season==='all'||card.dataset.season===season)&&(!video.checked||card.dataset.video==='yes'));if(!card.hidden)count++;});
+      [...cards].sort((a,b)=>sort.value==='recent'?b.dataset.date!.localeCompare(a.dataset.date!)||Number(a.dataset.index)-Number(b.dataset.index):sort.value==='name'?a.querySelector('h3')!.textContent!.localeCompare(b.querySelector('h3')!.textContent!,'zh-CN'):Number(a.dataset.index)-Number(b.dataset.index)).forEach(c=>grid.append(c));
       root.querySelector('#result-count')!.textContent=`共 ${count} 套阵容`;root.querySelector<HTMLElement>('#empty-state')!.hidden=count>0;
       types.forEach(b=>{b.classList.toggle('active',b.dataset.filter===type);b.setAttribute('aria-pressed',String(b.dataset.filter===type));});
-      tiers.forEach(b=>{b.classList.toggle('active',b.dataset.tierFilter===tier);b.setAttribute('aria-pressed',String(b.dataset.tierFilter===tier));});
       seasons.forEach(b=>{b.classList.toggle('active',b.dataset.seasonFilter===season);b.setAttribute('aria-pressed',String(b.dataset.seasonFilter===season));});
     }
-    input.addEventListener('input',update);sort.addEventListener('change',update);types.forEach(b=>b.addEventListener('click',()=>{type=b.dataset.filter!;update();}));tiers.forEach(b=>b.addEventListener('click',()=>{tier=b.dataset.tierFilter!;update();}));
+    input.addEventListener('input',update);sort.addEventListener('change',update);video.addEventListener('change',update);types.forEach(b=>b.addEventListener('click',()=>{type=b.dataset.filter!;update();}));
     seasons.forEach(b=>b.addEventListener('click',()=>{season=b.dataset.seasonFilter!;const url=new URL(location.href);if(season==='all')url.searchParams.delete('season');else url.searchParams.set('season',season);history.replaceState(null,'',url);update();}));
-    root.querySelector('#reset-search')!.addEventListener('click',()=>{type='all';tier='all';season='all';input.value='';sort.value='tier';history.replaceState(null,'',location.pathname);update();input.focus();});
+    root.querySelector('#reset-search')!.addEventListener('click',()=>{type='all';season='all';input.value='';video.checked=false;sort.value='recommended';history.replaceState(null,'',location.pathname);update();input.focus();});
     update();
   });
 </script>

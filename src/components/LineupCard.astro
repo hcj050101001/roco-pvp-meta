@@ -1,20 +1,21 @@
 ---
 import type { Lineup } from '../lib/schema';
 import { withBase, displayDate } from '../lib/urls';
+import { configurationDate } from '../lib/rank';
 interface Props { lineup: Lineup; index: number; historical?: boolean; fallback?: boolean }
 const { lineup: l, index, historical=false, fallback=false } = Astro.props;
-const img = l.lineup_images[0];
-const updated=l.sources[0].updated_at || img.published_at || l.last_verified_at;
+const img = l.lineup_images[0], updated=configurationDate(l);
+const platforms={bilibili:'哔哩哔哩',douyin:'抖音',other:'视频'};
 ---
-<article class="lineup-card" data-card data-season={l.season} data-tier={fallback?'过渡':l.tier} data-search={[l.name,...l.aliases,...l.archetype,...l.roster.map(p=>p.name)].join(' ').toLowerCase()} data-types={l.archetype.join('|')} data-date={updated} data-index={index}>
+<article class="lineup-card" data-card data-season={l.season} data-search={[l.name,...l.aliases,...l.archetype,...l.roster.map(p=>p.name)].join(' ').toLowerCase()} data-types={l.archetype.join('|')} data-date={updated} data-index={index} data-video={l.tutorials.length>0?'yes':'no'}>
   <a href={withBase(`/lineups/${l.slug}/`)} class="card-link">
-    <div class="card-top"><span class="card-number">{l.season} / {l.archetype[0]}</span><span class:list={['tier',`tier-${l.tier.toLowerCase()}`]}>{fallback?'过渡参考':historical && l.tier!=='待定'?`${l.tier} · 当时`:l.tier}{l.tier_provisional&&!fallback&&<small>暂定</small>}</span></div>
-    <div class="card-image"><img src={withBase(img.path)} width={img.width} height={img.height} alt={`${l.name}完整六只精灵与技能配置一图流`} loading={index<2?'eager':'lazy'} /></div>
+    <div class="card-top"><span class="card-number">{l.season} · {l.archetype[0]}</span>{(fallback||historical)&&<span class="card-label">{fallback?'过渡参考':'往期配队'}</span>}</div>
+    <div class="card-image"><img src={withBase(img.path)} width={img.width} height={img.height} alt={`${l.name}完整六只精灵与技能配置一图流`} loading={index<3?'eager':'lazy'} /></div>
     <div class="card-content"><div class="card-title"><h3>{l.name}</h3><span class="card-arrow" aria-hidden="true">↗</span></div>
       <div class="tags">{l.archetype.map(t=><span>{t}</span>)}</div>
-      <p class="card-summary">{l.summary}</p>
       <p class="card-roster">{l.roster.map(p=>p.name).join(' · ')}</p>
-      <div class="card-bottom"><span>{displayDate(updated)}</span><span class="card-cta">配置与打法 →</span></div>
+      <div class="card-bottom"><span>{updated?displayDate(updated):l.season+' 赛季配置'}</span><span class="card-cta">查看完整配置 →</span></div>
     </div>
   </a>
+  {l.tutorials.length>0&&<div class="card-videos">{l.tutorials.map(t=><a class="video-link" href={t.url} target="_blank" rel="noopener noreferrer" title={t.title}><span aria-hidden="true">▷</span> {platforms[t.platform]} · 教学与实战 <span aria-hidden="true">↗</span></a>)}</div>}
 </article>

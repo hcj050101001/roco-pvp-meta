@@ -1,10 +1,16 @@
 import type { Lineup } from './schema';
-export const rankScore = (l: Lineup) => Math.round((.35*l.strength_score + .25*l.recency_score + .2*l.popularity_score + .2*l.evidence_score)*10)/10;
-export const tiers = ['T0','T1','T2','T3','待定'] as const;
-export const tierDescriptions:Record<string,string> = {T0:'环境领衔',T1:'主流上分',T2:'对策与进阶',T3:'娱乐与尝试',待定:'更多体系'};
+// Discovery order, never a strength rating. Old claims lose priority after 45 days.
+export function signalPriority(l:Lineup, now=Date.now()) {
+  return Math.max(0,...l.signals.filter(s=>{const age=now-Date.parse(s.observed_at);return age>=0&&age<=45*86400000;}).map(s=>s.kind==='high-rank'?2:1));
+}
+export function configurationDate(l:Lineup) {
+  // An index refresh or a new verification is not the configuration's publication date.
+  const date=l.lineup_images[0].published_at;
+  return date ? new Date(date).toISOString() : '';
+}
 export const seasonNumber = (season:string) => Number(season.replace(/^S/i,'')) || 0;
-export function ranked(lineups: Lineup[]) {
-  return [...lineups].sort((a,b) => tiers.indexOf(a.tier)-tiers.indexOf(b.tier) || rankScore(b)-rankScore(a) || a.slug.localeCompare(b.slug));
+export function ranked(lineups: Lineup[], now=Date.now()) {
+  return [...lineups].sort((a,b) => seasonNumber(b.season)-seasonNumber(a.season) || signalPriority(b,now)-signalPriority(a,now) || configurationDate(b).localeCompare(configurationDate(a)) || a.slug.localeCompare(b.slug));
 }
 export function selectActive(lineups: Lineup[], season: string) {
   return ranked(lineups.filter(l => l.status === 'active' && l.season === season && l.lineup_images.some(i => i.verified)));

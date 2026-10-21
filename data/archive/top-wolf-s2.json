@@ -7,77 +7,42 @@
   ],
   "season": "S2",
   "version_label": "狂欢怪谈",
-  "tier": "T0",
-  "tier_basis": "source",
-  "tier_provisional": false,
-  "tier_updated_at": "2026-06-04T14:06:56+08:00",
-  "tier_reason": "历史来源以 S2 榜一狼王队发布；仅作该时期梯度参考。",
   "archetype": [
     "狼队",
     "速冻",
     "强攻"
   ],
-  "strength_score": 40,
-  "popularity_score": 40,
-  "evidence_score": 75,
-  "recency_score": 20,
-  "score_notes": "仅用于同梯度内展示排序；无实时胜率或榜单推断。",
-  "summary": "回顾 S2 榜一狼队：速冻印记与恶魔狼输出互相衔接。",
-  "analysis": "来源以 S2 榜一狼王队介绍这套配置，图中核心为恶魔狼。卡瓦重参与速冻铺垫，音速犬、海豹与海枝枝补充对局交换，霹雳迪迪提供电系压力。",
-  "recommended_lead": "按对位选择",
-  "lead_notes": "没有固定首发要求，按对手属性与输出点调整出场顺序。",
-  "lead_basis": "unknown",
-  "core_plan": [
-    "保留卡瓦重建立速冻印记的机会。",
-    "用其他成员换取恶魔狼的进场条件。",
-    "根据对位安排狼与电系输出，勿过早丢掉印记手。"
-  ],
-  "weaknesses": [
-    "仅保留 S2 当时环境的榜一来源评级，不代表当前版本仍是 T0。"
-  ],
-  "matchup_notes": [],
+  "summary": "音速犬、海豹船长、海枝枝等六只精灵的完整配置。",
   "roster": [
     {
       "name": "音速犬",
-      "role": "节奏起点",
       "bloodline": null,
-      "skills": [],
-      "notes": ""
+      "skills": []
     },
     {
       "name": "海豹船长",
-      "role": "体系成员",
       "bloodline": null,
-      "skills": [],
-      "notes": ""
+      "skills": []
     },
     {
       "name": "海枝枝",
-      "role": "体系成员",
       "bloodline": null,
-      "skills": [],
-      "notes": ""
+      "skills": []
     },
     {
       "name": "恶魔狼",
-      "role": "体系成员",
       "bloodline": null,
-      "skills": [],
-      "notes": ""
+      "skills": []
     },
     {
       "name": "霹雳迪迪",
-      "role": "体系成员",
       "bloodline": null,
-      "skills": [],
-      "notes": ""
+      "skills": []
     },
     {
       "name": "卡瓦重",
-      "role": "体系成员",
       "bloodline": null,
-      "skills": [],
-      "notes": ""
+      "skills": []
     }
   ],
   "lineup_images": [
@@ -112,6 +77,8 @@
   "first_seen_at": "2026-10-21T03:27:24.580Z",
   "last_verified_at": "2026-10-21T03:27:24.580Z",
   "status": "archived",
-  "verification_notes": "历史赛季配置，成员以原图为准。",
-  "archive_reason": "保留 S2 往期配置供回顾，不作为当前赛季原生阵容。"
+  "verification_notes": "六位成员及配置以真实原图为准。仅收录可追溯的原话攻略；未独立确认最新平衡补丁。",
+  "archive_reason": "保留 S2 往期配置供回顾，不作为当前赛季原生阵容。",
+  "guides": [],
+  "signals": []
 }

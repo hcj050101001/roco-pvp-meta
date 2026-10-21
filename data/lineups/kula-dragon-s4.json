@@ -1,0 +1,84 @@
+{
+  "id": "kula-dragon-s4",
+  "slug": "kula-dragon-s4",
+  "name": "库拉龙威队",
+  "aliases": [
+    "龙印队"
+  ],
+  "season": "S4",
+  "version_label": "月涌狂想",
+  "archetype": [
+    "龙威"
+  ],
+  "summary": "混乱鱿彩、化蝶、音速犬等六只精灵的完整配置。",
+  "roster": [
+    {
+      "name": "混乱鱿彩",
+      "bloodline": null,
+      "skills": []
+    },
+    {
+      "name": "化蝶",
+      "bloodline": null,
+      "skills": []
+    },
+    {
+      "name": "音速犬",
+      "bloodline": null,
+      "skills": []
+    },
+    {
+      "name": "酷拉",
+      "bloodline": null,
+      "skills": []
+    },
+    {
+      "name": "寂灭骨龙",
+      "bloodline": null,
+      "skills": []
+    },
+    {
+      "name": "翼龙",
+      "bloodline": null,
+      "skills": []
+    }
+  ],
+  "lineup_images": [
+    {
+      "path": "/assets/lineups/kula-dragon-s4/8fec6032a48385d12f7acc8f3b70b20186d11ec02aeae9329a3b3d3c93b1d417.webp",
+      "source_url": "https://post.qiandaocdn.com/post/images/fdtKNlyCQAs_resize.webp?imginfo=w1625,h747",
+      "source_page_url": "https://qiandao.com/post?postId=1023430985116591249",
+      "source_kind": "comment",
+      "capture_method": "direct-image",
+      "published_at": "2026-10-11T05:34:09Z",
+      "captured_at": "2026-10-21T03:27:24.580Z",
+      "width": 1175,
+      "height": 540,
+      "sha256": "8fec6032a48385d12f7acc8f3b70b20186d11ec02aeae9329a3b3d3c93b1d417",
+      "phash": "5ea359832bdc7409",
+      "evidence_grade": "B",
+      "verified": true,
+      "verification_notes": "完整六只及技能、性格配置可见；镜像帖子作者本人评论补图，保留图中署名。发布时间为补图时间。",
+      "attribution": "图中署名：龙印队 · 千岛：洛克王国阵容镜像"
+    }
+  ],
+  "tutorials": [],
+  "sources": [
+    {
+      "url": "https://qiandao.com/post?postId=1023430985116591249",
+      "type": "community",
+      "title": "洛克王国阵容镜像 · S4合集（原帖作者补图）",
+      "published_at": "2026-07-20T14:34:55.000Z",
+      "updated_at": "2026-10-21T02:07:22.000Z",
+      "last_checked_at": "2026-10-21T04:30:00Z"
+    }
+  ],
+  "first_seen_at": "2026-10-21T04:30:00Z",
+  "last_verified_at": "2026-10-21T04:30:00Z",
+  "status": "active",
+  "verification_notes": "原帖作者的公开评论“库拉龙威队”与附件一一对应；归属于S4区段。图片日期为该版本补图评论的发布时间，不是原始制图时间。已视觉确认六只与配置完整。",
+  "archive_reason": null,
+  "guides": [],
+  "signals": [],
+  "player_notes": []
+}

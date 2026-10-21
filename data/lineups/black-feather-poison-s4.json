@@ -7,75 +7,42 @@
   ],
   "season": "S4",
   "version_label": "月涌狂想",
-  "tier": "T0",
-  "tier_reason": "参考 9 月 20 日来源所记闪耀大赛榜一与 3161 分实绩，归为发布时环境的 T0。未独立复核当前榜单，不能视为实时排名。",
   "archetype": [
     "中毒",
     "消耗",
     "首领"
   ],
-  "strength_score": 45,
-  "popularity_score": 45,
-  "evidence_score": 80,
-  "recency_score": 45,
-  "score_notes": "实绩和热度无独立量化数据，使用保守编辑资料分；证据按可信镜像完整图，新鲜度按发布日期。",
-  "summary": "黑羽夫人领衔中毒消耗，用持续压力限制对方轮转。",
-  "analysis": "千棘鲨与琉璃水母提供中毒配置，厉毒修萝与恶卡补充进攻和消耗，黑羽夫人担任首领位。来源记录了 9 月 20 日的高分表现；本页保留该时期的强度参考。",
-  "recommended_lead": "未确认固定首发",
-  "lead_notes": "原文主要介绍历史实绩，未给出完整操作顺序或固定首发。请结合图中技能与自身对局经验选择。",
-  "lead_basis": "unknown",
-  "core_plan": [
-    "核对图中六只及技能，尤其注意首领配置与能量使用条件。",
-    "先判断对手的印记清理能力，再考虑中毒与消耗节奏；此项为一般阅读建议。",
-    "尚未核实逐回合实战，不提供固定连招或胜率承诺。"
-  ],
-  "weaknesses": [
-    "资料发布较早，需要结合当前补丁重新判断适配性。",
-    "缺少精确对应的公开教学，操作门槛与优势对局尚待核实。"
-  ],
-  "matchup_notes": [],
+  "summary": "千棘鲨、厉毒修萝、琉璃水母等六只精灵的完整配置。",
   "roster": [
     {
       "name": "千棘鲨",
-      "role": "中毒配置",
       "bloodline": null,
-      "skills": [],
-      "notes": "完整技能见原图。"
+      "skills": []
     },
     {
       "name": "厉毒修萝",
-      "role": "连击配置",
       "bloodline": null,
-      "skills": [],
-      "notes": "完整技能见原图。"
+      "skills": []
     },
     {
       "name": "琉璃水母",
-      "role": "中毒配置",
       "bloodline": null,
-      "skills": [],
-      "notes": "完整技能见原图。"
+      "skills": []
     },
     {
       "name": "绒光优优",
-      "role": "补位",
       "bloodline": null,
-      "skills": [],
-      "notes": "完整技能见原图。"
+      "skills": []
     },
     {
       "name": "恶卡",
-      "role": "消耗配置",
       "bloodline": null,
-      "skills": [],
-      "notes": "完整技能见原图。"
+      "skills": []
     },
     {
       "name": "黑羽夫人",
-      "role": "首领位",
       "bloodline": null,
-      "skills": [],
-      "notes": "完整技能见原图。"
+      "skills": []
     }
   ],
   "lineup_images": [
@@ -110,9 +77,15 @@
   "first_seen_at": "2026-10-21T10:50:00+08:00",
   "last_verified_at": "2026-10-21T10:50:00+08:00",
   "status": "active",
-  "verification_notes": "完整配置图与来源标题已核对，成员以图为准；B 级为镜像资料，首发推断与未确认技能已分别标注。最新平衡补丁未独立核实。",
+  "verification_notes": "六位成员及配置以真实原图为准。仅收录可追溯的原话攻略；未独立确认最新平衡补丁。",
   "archive_reason": null,
-  "tier_basis": "source",
-  "tier_provisional": false,
-  "tier_updated_at": "2026-09-20T09:17:27+08:00"
+  "guides": [],
+  "signals": [
+    {
+      "kind": "high-rank",
+      "note": "2026-09-20转载攻略记载：樟藤使用该队登顶闪耀大赛，3161分。为当日记录。",
+      "source_url": "https://ol.3dmgame.com/gl/353802.html",
+      "observed_at": "2026-09-20T09:17:27+08:00"
+    }
+  ]
 }

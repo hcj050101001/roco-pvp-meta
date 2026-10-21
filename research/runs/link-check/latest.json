@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-10-21T03:39:45.178Z",
+  "checked_at": "2026-10-21T04:36:40.349Z",
   "results": [
     {
       "url": "https://ol.3dmgame.com/gl/353802.html",
@@ -32,12 +32,27 @@
       "type": "image/webp"
     },
     {
+      "url": "https://post.qiandaocdn.com/post/images/fdtKHlFMr6E_resize.webp?imginfo=w1625,h747",
+      "status": "ok",
+      "type": "image/webp"
+    },
+    {
       "url": "https://ol.3dmgame.com/gl/353804.html",
       "status": "ok",
       "type": "text/html"
     },
     {
+      "url": "https://www.douyin.com/video/7685302989641324883",
+      "status": "ok",
+      "type": "text/html"
+    },
+    {
       "url": "https://olimg.3dmgame.com/uploads/images/raiders/20260920/1789867155_744750.webp",
+      "status": "ok",
+      "type": "image/webp"
+    },
+    {
+      "url": "https://post.qiandaocdn.com/post/images/fdtKNlyCQAs_resize.webp?imginfo=w1625,h747",
       "status": "ok",
       "type": "image/webp"
     },
@@ -88,6 +103,11 @@
     },
     {
       "url": "https://post.qiandaocdn.com/post/images/fdf4PG34C63_resize.webp?imginfo=w1625,h747",
+      "status": "ok",
+      "type": "image/webp"
+    },
+    {
+      "url": "https://post.qiandaocdn.com/post/images/fdtKCoBDRWE_resize.webp?imginfo=w1625,h747",
       "status": "ok",
       "type": "image/webp"
     },

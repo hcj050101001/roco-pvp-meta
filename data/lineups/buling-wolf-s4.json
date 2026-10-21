@@ -1,0 +1,116 @@
+{
+  "id": "buling-wolf-s4",
+  "slug": "buling-wolf-s4",
+  "name": "布灵恶魔狼队",
+  "aliases": [],
+  "season": "S4",
+  "version_label": "月涌狂想",
+  "tier": "待定",
+  "tier_basis": "unrated",
+  "tier_provisional": false,
+  "tier_updated_at": "2026-10-21T03:27:24.580Z",
+  "tier_reason": "已核对完整配置，尚缺能支持明确强度的实战依据，保留待定。",
+  "archetype": [
+    "狼队",
+    "多核",
+    "平衡"
+  ],
+  "strength_score": 40,
+  "popularity_score": 40,
+  "evidence_score": 75,
+  "recency_score": 75,
+  "score_notes": "仅用于同梯度内展示排序；无实时胜率或榜单推断。",
+  "summary": "恶魔狼与布灵组成输出轴，海枝枝和化蝶补充轮转。",
+  "analysis": "这套狼队使用恶魔狼，并非银月狼王。卡瓦重与巨噬针鼹参与消耗，海枝枝、化蝶协助联防，布灵提供另一个输出方向。",
+  "recommended_lead": "按对位选择",
+  "lead_notes": "没有固定首发要求，按对手属性与输出点调整出场顺序。",
+  "lead_basis": "unknown",
+  "core_plan": [
+    "围绕对手克制关系安排卡瓦重与巨噬针鼹。",
+    "用海枝枝、化蝶争取主要输出位的进场窗口。",
+    "分别保留布灵与恶魔狼的输出机会，避免单一核心被处理后失去后手。"
+  ],
+  "weaknesses": [
+    "两只输出位都需要对位空间，不能忽略辅助的状态。"
+  ],
+  "matchup_notes": [],
+  "roster": [
+    {
+      "name": "巨噬针鼹",
+      "role": "节奏起点",
+      "bloodline": null,
+      "skills": [],
+      "notes": ""
+    },
+    {
+      "name": "卡瓦重",
+      "role": "体系成员",
+      "bloodline": null,
+      "skills": [],
+      "notes": ""
+    },
+    {
+      "name": "布灵布灵",
+      "role": "体系成员",
+      "bloodline": null,
+      "skills": [],
+      "notes": ""
+    },
+    {
+      "name": "化蝶",
+      "role": "体系成员",
+      "bloodline": null,
+      "skills": [],
+      "notes": ""
+    },
+    {
+      "name": "海枝枝",
+      "role": "体系成员",
+      "bloodline": null,
+      "skills": [],
+      "notes": ""
+    },
+    {
+      "name": "恶魔狼",
+      "role": "体系成员",
+      "bloodline": null,
+      "skills": [],
+      "notes": ""
+    }
+  ],
+  "lineup_images": [
+    {
+      "path": "/assets/lineups/buling-wolf-s4/42c7bd8eaff19d7244246c9194e0c6525999654d346ddcafab243432a3044fdb.webp",
+      "source_url": "https://post.qiandaocdn.com/post/images/fdUoSqx23q3_resize.webp?imginfo=w1625,h747",
+      "source_page_url": "https://qiandao.com/post?postId=1023430985116591249",
+      "source_kind": "community-post",
+      "capture_method": "direct-image",
+      "published_at": null,
+      "captured_at": "2026-10-21T03:27:24.580Z",
+      "width": 1175,
+      "height": 540,
+      "sha256": "42c7bd8eaff19d7244246c9194e0c6525999654d346ddcafab243432a3044fdb",
+      "phash": "5e83598b23cc7459",
+      "evidence_grade": "B",
+      "verified": true,
+      "verification_notes": "完整六只、技能栏与图名已视觉核对。来自当日更新的 S4 社区索引；原始图片上传时间未知，不使用帖子初始日期充当图像发布日期。",
+      "attribution": "配置图：洛克王国阵容镜像（千岛）"
+    }
+  ],
+  "tutorials": [],
+  "sources": [
+    {
+      "url": "https://qiandao.com/post?postId=1023430985116591249",
+      "type": "community",
+      "title": "S4赛季队伍\n马头星陨队（全JiPin全10）\n夜王龙威起",
+      "published_at": "2026-07-20T14:34:55.000Z",
+      "updated_at": "2026-10-21T02:07:22.000Z",
+      "last_checked_at": "2026-10-21T03:27:24.580Z"
+    }
+  ],
+  "first_seen_at": "2026-10-21T03:27:24.580Z",
+  "last_verified_at": "2026-10-21T03:27:24.580Z",
+  "status": "active",
+  "verification_notes": "完整配置已核对；当前只作体系参考，强度待定。",
+  "archive_reason": null
+}

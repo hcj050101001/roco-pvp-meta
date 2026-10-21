@@ -7,8 +7,8 @@
   ],
   "season": "S4",
   "version_label": "月涌狂想",
-  "tier": "高热",
-  "tier_reason": "体系资料标签；缺少独立核实的当前赛季实绩与胜率，不作精确强度结论。",
+  "tier": "T0",
+  "tier_reason": "参考 9 月 20 日来源所记闪耀大赛榜一与 3161 分实绩，归为发布时环境的 T0。未独立复核当前榜单，不能视为实时排名。",
   "archetype": [
     "中毒",
     "消耗",
@@ -19,8 +19,8 @@
   "evidence_score": 80,
   "recency_score": 45,
   "score_notes": "实绩和热度无独立量化数据，使用保守编辑资料分；证据按可信镜像完整图，新鲜度按发布日期。",
-  "summary": "完整六只毒系配置留档；来源记录过往高分表现，不等同当前排名。",
-  "analysis": "该图以黑羽夫人与中毒配置为辨识点，涵盖千棘鲨、琉璃水母等六位成员。来源曾提到发布日的高分表现，但没有可独立复核的当日榜单与当前对局记录，因此保留为成熟体系资料，不标注 T0。具体操作次序仍待原作者教学补充。",
+  "summary": "黑羽夫人领衔中毒消耗，用持续压力限制对方轮转。",
+  "analysis": "千棘鲨与琉璃水母提供中毒配置，厉毒修萝与恶卡补充进攻和消耗，黑羽夫人担任首领位。来源记录了 9 月 20 日的高分表现；本页保留该时期的强度参考。",
   "recommended_lead": "未确认固定首发",
   "lead_notes": "原文主要介绍历史实绩，未给出完整操作顺序或固定首发。请结合图中技能与自身对局经验选择。",
   "lead_basis": "unknown",
@@ -40,42 +40,42 @@
       "role": "中毒配置",
       "bloodline": null,
       "skills": [],
-      "notes": "技能小字未全部可靠识别，请放大原图查看，不作补写。"
+      "notes": "完整技能见原图。"
     },
     {
       "name": "厉毒修萝",
       "role": "连击配置",
       "bloodline": null,
       "skills": [],
-      "notes": "技能小字未全部可靠识别，请放大原图查看，不作补写。"
+      "notes": "完整技能见原图。"
     },
     {
       "name": "琉璃水母",
       "role": "中毒配置",
       "bloodline": null,
       "skills": [],
-      "notes": "技能小字未全部可靠识别，请放大原图查看，不作补写。"
+      "notes": "完整技能见原图。"
     },
     {
       "name": "绒光优优",
       "role": "补位",
       "bloodline": null,
       "skills": [],
-      "notes": "技能小字未全部可靠识别，请放大原图查看，不作补写。"
+      "notes": "完整技能见原图。"
     },
     {
       "name": "恶卡",
       "role": "消耗配置",
       "bloodline": null,
       "skills": [],
-      "notes": "技能小字未全部可靠识别，请放大原图查看，不作补写。"
+      "notes": "完整技能见原图。"
     },
     {
       "name": "黑羽夫人",
       "role": "首领位",
       "bloodline": null,
       "skills": [],
-      "notes": "技能小字未全部可靠识别，请放大原图查看，不作补写。"
+      "notes": "完整技能见原图。"
     }
   ],
   "lineup_images": [
@@ -111,5 +111,8 @@
   "last_verified_at": "2026-10-21T10:50:00+08:00",
   "status": "active",
   "verification_notes": "完整配置图与来源标题已核对，成员以图为准；B 级为镜像资料，首发推断与未确认技能已分别标注。最新平衡补丁未独立核实。",
-  "archive_reason": null
+  "archive_reason": null,
+  "tier_basis": "source",
+  "tier_provisional": false,
+  "tier_updated_at": "2026-09-20T09:17:27+08:00"
 }

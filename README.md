@@ -1,6 +1,8 @@
 # 洛克配队手册
 
-《洛克王国：世界》PVP 阵容资料站。Astro + TypeScript + Zod，静态多页面，GitHub Pages 部署。当前收录 5 份经视觉核对的 S4 完整一图流；没有编造 T0、胜率或无法核实的教学视频。
+《洛克王国：世界》PVP 玩家阵容站。Astro + TypeScript + Zod，静态多页面，GitHub Pages 部署。当前有 12 套 S4 配队与 4 套 S2/S3 历史配队；每套保留完整真实配置图与来源。
+
+2026-10-21 玩家版改造：星月主题、当季梯度、全面体系分类、往期赛季筛选。已取消最多 10 套限制，删除收录准则页；旧更新记录 URL 跳转至历史阵容。
 
 线上地址：https://hcj050101001.github.io/roco-pvp-meta/
 
@@ -22,7 +24,7 @@ npm run dev
 - 首页图片完整显示，点击进入独立详情页；详情顶部常驻返回、底部再次返回。
 - 搜索覆盖阵容、别名、体系和六只精灵；支持体系过滤和发布时间排序。
 - 不明确的首发标记推断；血脉、看不清的技能、无精确对应的视频不补写。
-- 当前补丁尚未独立核对。资料排序是编辑资料分，不是实时胜率榜。
+- T0/T1/T2/T3 是强度梯度，证据不足为“待定”。来源实绩保留评级日期，编辑评级标注“暂定”，不表示实时胜率。
 - 历史阵容归档需理由，原图与原记录不硬删除。
 
 ## 研究流程
@@ -30,6 +32,7 @@ npm run dev
 ```sh
 npm run refresh:snapshot
 npm run research:discover
+npm run season:check
 npm run research:validate
 # Codex 按项目 Skill 对候选进行视觉/版本/成员核对，更新资料
 npm run lineup:rank
@@ -74,6 +77,10 @@ npm run test:ui
 ```
 
 ## 部署与半月更新
+
+`season-check.yml` 每天北京时间 08:17 检查官方公告，无需 OpenAI key。只接受 TapTap 官方账号 99962293 发布且已经生效的开服公告；未来预告、非官方作者、旧赛季与失败响应不能触发换季。确认新季后记录重大更新、切换 data/seasons.json 主题、保留所有原配置。新季不足三套时展示上一赛季的过渡参考，并去除其新季强度归属；当季达到三套后首页只展示当季，历史仍可浏览。
+
+S4 自动选择银月星空主题；其他已知赛季有童话/狂欢配色，未知主题使用基础配色，后续大版本可扩展主题。新季阵容的研究与强度复核由半月 Codex 流程完成，major_update_required 仅在完成实质更新后清除。
 
 `.github/workflows/deploy.yml` 对 main 推送和手动运行执行类型检查、测试、构建、浏览器验证，然后使用 configure-pages/upload-pages-artifact/deploy-pages 发布。
 

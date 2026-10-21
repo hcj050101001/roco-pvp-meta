@@ -1,0 +1,117 @@
+{
+  "id": "snow-snake-s3",
+  "slug": "snow-snake-s3",
+  "name": "雪影寒音蛇队",
+  "aliases": [
+    "水蓝蓝的蝴蝶结"
+  ],
+  "season": "S3",
+  "version_label": "铅字幻梦",
+  "tier": "待定",
+  "tier_basis": "unrated",
+  "tier_provisional": false,
+  "tier_updated_at": "2026-08-14T10:26:30+08:00",
+  "tier_reason": "已核对完整配置，尚缺能支持明确强度的实战依据，保留待定。",
+  "archetype": [
+    "接力",
+    "萌系",
+    "单核"
+  ],
+  "strength_score": 40,
+  "popularity_score": 40,
+  "evidence_score": 75,
+  "recency_score": 20,
+  "score_notes": "仅用于同梯度内展示排序；无实时胜率或榜单推断。",
+  "summary": "雪影与加油蟹传递增益，五保一协助寒音蛇推进。",
+  "analysis": "来源介绍的 S3 五保一接力队。雪影承担首领与传递职责，辅助成员使用状态技能为寒音蛇铺垫，飞飞钥负责处理强化与印记。",
+  "recommended_lead": "按对位选择",
+  "lead_notes": "没有固定首发要求，按对手属性与输出点调整出场顺序。",
+  "lead_basis": "unknown",
+  "core_plan": [
+    "为雪影争取安全的赤子之心与传递回合。",
+    "辅助位完成铺垫后，把资源交给寒音蛇。",
+    "保留飞飞钥处理对手的强化，保护单核输出空间。"
+  ],
+  "weaknesses": [
+    "核心被压制时需要重新组织传递链；不直接套用为 S4 的强度判断。"
+  ],
+  "matchup_notes": [],
+  "roster": [
+    {
+      "name": "雪影娃娃",
+      "role": "节奏起点",
+      "bloodline": null,
+      "skills": [],
+      "notes": ""
+    },
+    {
+      "name": "飞飞钥",
+      "role": "体系成员",
+      "bloodline": null,
+      "skills": [],
+      "notes": ""
+    },
+    {
+      "name": "寒音蛇",
+      "role": "体系成员",
+      "bloodline": null,
+      "skills": [],
+      "notes": ""
+    },
+    {
+      "name": "花影羚羊",
+      "role": "体系成员",
+      "bloodline": null,
+      "skills": [],
+      "notes": ""
+    },
+    {
+      "name": "九幽菇",
+      "role": "体系成员",
+      "bloodline": null,
+      "skills": [],
+      "notes": ""
+    },
+    {
+      "name": "加油蟹",
+      "role": "体系成员",
+      "bloodline": null,
+      "skills": [],
+      "notes": ""
+    }
+  ],
+  "lineup_images": [
+    {
+      "path": "/assets/lineups/snow-snake-s3/aed42968bc09963812142dbc3e909f6edf7b575af1fdc33409d990fd67b8ea5e.webp",
+      "source_url": "https://olimg.3dmgame.com/uploads/images/raiders/20260814/1786674312_400094.webp",
+      "source_page_url": "https://ol.3dmgame.com/gl/350004.html",
+      "source_kind": "article",
+      "capture_method": "direct-image",
+      "published_at": "2026-08-14T10:26:30+08:00",
+      "captured_at": "2026-10-21T03:27:24.580Z",
+      "width": 1500,
+      "height": 1080,
+      "sha256": "aed42968bc09963812142dbc3e909f6edf7b575af1fdc33409d990fd67b8ea5e",
+      "phash": "758a6c8a0755ac97",
+      "evidence_grade": "B",
+      "verified": true,
+      "verification_notes": "完整六只、配置标题与制图水印已视觉核对；仅作为对应历史赛季配置。",
+      "attribution": "水蓝蓝的蝴蝶结 / 制图：13号洛克高"
+    }
+  ],
+  "tutorials": [],
+  "sources": [
+    {
+      "url": "https://ol.3dmgame.com/gl/350004.html",
+      "type": "mirror",
+      "title": "洛克王国世界s3雪影蛇队阵容推荐",
+      "published_at": "2026-08-14T10:26:30+08:00",
+      "last_checked_at": "2026-10-21T03:27:24.580Z"
+    }
+  ],
+  "first_seen_at": "2026-10-21T03:27:24.580Z",
+  "last_verified_at": "2026-10-21T03:27:24.580Z",
+  "status": "archived",
+  "verification_notes": "历史赛季配置，成员以原图为准。",
+  "archive_reason": "保留 S3 往期配置供回顾，不作为当前赛季原生阵容。"
+}

@@ -14,7 +14,9 @@ const root=resolve('research/inbox',runId); await mkdir(root,{recursive:true});
 const records: Record<string,unknown>[]=[];
 let searchHealth:unknown[]=[];
 if(process.argv.includes('--discover')) {
-  const found=await discover(JSON.parse(await readFile('data/search-queries.json','utf8')),(name,body)=>writeFile(join(root,name),body));
+  const currentState=JSON.parse(await readFile('data/update-state.json','utf8'));
+  const queries=(JSON.parse(await readFile('data/search-queries.json','utf8')) as string[]).map(q=>q.replace(/S\d+/g,currentState.season));
+  const found=await discover(queries,(name,body)=>writeFile(join(root,name),body));
   searchHealth=found.health;
   const known=new Set(sources.map(s=>s.url));
   for(const [i,url] of found.urls.filter(u=>!known.has(u)).slice(0,24).entries())sources.push({id:`discovered-${i}`,platform:new URL(url).hostname,url,enabled:true});

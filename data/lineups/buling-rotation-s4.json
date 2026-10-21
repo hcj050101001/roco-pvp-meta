@@ -1,0 +1,116 @@
+{
+  "id": "buling-rotation-s4",
+  "slug": "buling-rotation-s4",
+  "name": "洛尘布灵轮转队",
+  "aliases": [],
+  "season": "S4",
+  "version_label": "月涌狂想",
+  "tier": "待定",
+  "tier_basis": "unrated",
+  "tier_provisional": false,
+  "tier_updated_at": "2026-10-21T03:27:24.580Z",
+  "tier_reason": "已核对完整配置，尚缺能支持明确强度的实战依据，保留待定。",
+  "archetype": [
+    "轮转",
+    "多核",
+    "联防"
+  ],
+  "strength_score": 40,
+  "popularity_score": 40,
+  "evidence_score": 75,
+  "recency_score": 75,
+  "score_notes": "仅用于同梯度内展示排序；无实时胜率或榜单推断。",
+  "summary": "布灵搭配骨龙与岚鸟，多点输出与辅助轮转并行。",
+  "analysis": "图中采用九幽菇、贝古斯作为支撑，布灵布灵与岚鸟参与输出，电球咩咩和寂灭骨龙补充打击面。不同于单核接力队，这套需要围绕对手抗性分配出场顺序。",
+  "recommended_lead": "按对位选择",
+  "lead_notes": "没有固定首发要求，按对手属性与输出点调整出场顺序。",
+  "lead_basis": "unknown",
+  "core_plan": [
+    "观察对手的主要输出属性，选择辅助与联防位承接。",
+    "在轮转中寻找布灵或岚鸟的安全进场窗口。",
+    "保留骨龙的先制与电系打击面应对残局。"
+  ],
+  "weaknesses": [
+    "需要更频繁地判断换位，完整对局优势仍待实战资料补充。"
+  ],
+  "matchup_notes": [],
+  "roster": [
+    {
+      "name": "电球咩咩",
+      "role": "节奏起点",
+      "bloodline": null,
+      "skills": [],
+      "notes": ""
+    },
+    {
+      "name": "九幽菇",
+      "role": "体系成员",
+      "bloodline": null,
+      "skills": [],
+      "notes": ""
+    },
+    {
+      "name": "布灵布灵",
+      "role": "体系成员",
+      "bloodline": null,
+      "skills": [],
+      "notes": ""
+    },
+    {
+      "name": "贝古斯",
+      "role": "体系成员",
+      "bloodline": null,
+      "skills": [],
+      "notes": ""
+    },
+    {
+      "name": "岚鸟",
+      "role": "体系成员",
+      "bloodline": null,
+      "skills": [],
+      "notes": ""
+    },
+    {
+      "name": "寂灭骨龙",
+      "role": "体系成员",
+      "bloodline": null,
+      "skills": [],
+      "notes": ""
+    }
+  ],
+  "lineup_images": [
+    {
+      "path": "/assets/lineups/buling-rotation-s4/e4df8c652c75a4751df94cdfea0f0a2d5b987d201f2677c0ecaa83254c7794ed.webp",
+      "source_url": "https://post.qiandaocdn.com/post/images/fdUoSIw2SaH_resize.webp?imginfo=w1625,h747",
+      "source_page_url": "https://qiandao.com/post?postId=1023430985116591249",
+      "source_kind": "community-post",
+      "capture_method": "direct-image",
+      "published_at": null,
+      "captured_at": "2026-10-21T03:27:24.580Z",
+      "width": 1175,
+      "height": 540,
+      "sha256": "e4df8c652c75a4751df94cdfea0f0a2d5b987d201f2677c0ecaa83254c7794ed",
+      "phash": "5e8359832b5c7459",
+      "evidence_grade": "B",
+      "verified": true,
+      "verification_notes": "完整六只、技能栏与图名已视觉核对。来自当日更新的 S4 社区索引；原始图片上传时间未知，不使用帖子初始日期充当图像发布日期。",
+      "attribution": "配置图：洛克王国阵容镜像（千岛）"
+    }
+  ],
+  "tutorials": [],
+  "sources": [
+    {
+      "url": "https://qiandao.com/post?postId=1023430985116591249",
+      "type": "community",
+      "title": "S4赛季队伍\n马头星陨队（全JiPin全10）\n夜王龙威起",
+      "published_at": "2026-07-20T14:34:55.000Z",
+      "updated_at": "2026-10-21T02:07:22.000Z",
+      "last_checked_at": "2026-10-21T03:27:24.580Z"
+    }
+  ],
+  "first_seen_at": "2026-10-21T03:27:24.580Z",
+  "last_verified_at": "2026-10-21T03:27:24.580Z",
+  "status": "active",
+  "verification_notes": "完整配置已核对；当前只作体系参考，强度待定。",
+  "archive_reason": null
+}

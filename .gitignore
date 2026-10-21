@@ -11,3 +11,4 @@ research/baseline.json
 *.log
 artifacts/
 .refresh-content/
+research/runs/season-*/*.html

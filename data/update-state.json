@@ -5,5 +5,11 @@
   "last_research_at": "2026-10-21T10:50:00+08:00",
   "last_successful_update": "2026-10-21T11:04:00+08:00",
   "balance_patch_date": null,
+  "theme": "moon",
+  "season_checked_at": "2026-10-21T03:35:06.927Z",
+  "season_revision": 1,
+  "previous_season": "S3",
+  "major_update_required": false,
+  "season_transitions": [],
   "notice": "已核对 S4 赛季。阵容以各自标注的来源日期为准；最新平衡补丁尚未完成独立核对，不将资料排序视为实时胜率榜。"
 }

@@ -24,6 +24,7 @@ jobs:
       - run: npm ci
       - run: npx playwright install --with-deps chromium
       - run: npm run refresh:snapshot
+      - run: npm run season:check
       - run: npm run research:full
       - run: npm run research:validate
       - name: Check AI credential availability

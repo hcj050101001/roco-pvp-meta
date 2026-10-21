@@ -9,7 +9,7 @@ const pages=(await walk(root)).filter(f=>f.endsWith('.html')); let checks=0;
 for(const page of pages) {
   const html=await readFile(page,'utf8'),$=cheerio.load(html);
   if(/[A-Z]:[\\/](?:Users|Luoke_pvp)|file:\/\//i.test(html)) throw Error(`含本机路径: ${page}`);
-  if(page.includes(`${process.platform==='win32'?'\\':'/'}lineups${process.platform==='win32'?'\\':'/'}`) && $('a').filter((_,el)=>$(el).text().includes('返回阵容总览')).length<2) throw Error(`详情页缺少双返回: ${page}`);
+  if(page.includes(`${process.platform==='win32'?'\\':'/'}lineups${process.platform==='win32'?'\\':'/'}`) && $('a').filter((_,el)=>/返回阵容总览|返回往期阵容/.test($(el).text())).length<2) throw Error(`详情页缺少双返回: ${page}`);
   for(const el of $('[href], [src]').toArray()) {
     const raw=$(el).attr('href') || $(el).attr('src')!;
     if(!raw || /^(https?:|mailto:|data:|tel:)/.test(raw)) continue;

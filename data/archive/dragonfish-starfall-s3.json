@@ -1,0 +1,117 @@
+{
+  "id": "dragonfish-starfall-s3",
+  "slug": "dragonfish-starfall-s3",
+  "name": "龙鱼星陨队",
+  "aliases": [
+    "小乐老师"
+  ],
+  "season": "S3",
+  "version_label": "铅字幻梦",
+  "tier": "待定",
+  "tier_basis": "unrated",
+  "tier_provisional": false,
+  "tier_updated_at": "2026-08-14T10:28:20+08:00",
+  "tier_reason": "已核对完整配置，尚缺能支持明确强度的实战依据，保留待定。",
+  "archetype": [
+    "星陨",
+    "引爆",
+    "多核"
+  ],
+  "strength_score": 40,
+  "popularity_score": 40,
+  "evidence_score": 75,
+  "recency_score": 20,
+  "score_notes": "仅用于同梯度内展示排序；无实时胜率或榜单推断。",
+  "summary": "菇蝶铺叠星陨，龙鱼与岚鸟施压，帕尔引爆收尾。",
+  "analysis": "S3 的星陨变体，龙鱼可以参与先手与中途推进。怖哭菇与化蝶需要保留状态以便再次铺印记，帕尔在后段寻找引爆窗口。",
+  "recommended_lead": "龙鱼",
+  "lead_notes": "来源建议没有明显优势时可以龙鱼首发。",
+  "lead_basis": "source",
+  "core_plan": [
+    "没有明显优势首发时，可参考来源选择龙鱼。",
+    "保护怖哭菇与化蝶，争取第二次铺叠印记。",
+    "以岚鸟和龙鱼压血，再让帕尔处理残局。"
+  ],
+  "weaknesses": [
+    "清印记会打断节奏；该配置的强度仅供回顾 S3。"
+  ],
+  "matchup_notes": [],
+  "roster": [
+    {
+      "name": "怖哭菇",
+      "role": "节奏起点",
+      "bloodline": null,
+      "skills": [],
+      "notes": ""
+    },
+    {
+      "name": "岚鸟",
+      "role": "体系成员",
+      "bloodline": null,
+      "skills": [],
+      "notes": ""
+    },
+    {
+      "name": "龙鱼",
+      "role": "体系成员",
+      "bloodline": null,
+      "skills": [],
+      "notes": ""
+    },
+    {
+      "name": "离心舞者",
+      "role": "体系成员",
+      "bloodline": null,
+      "skills": [],
+      "notes": ""
+    },
+    {
+      "name": "龙息帕尔",
+      "role": "体系成员",
+      "bloodline": null,
+      "skills": [],
+      "notes": ""
+    },
+    {
+      "name": "化蝶",
+      "role": "体系成员",
+      "bloodline": null,
+      "skills": [],
+      "notes": ""
+    }
+  ],
+  "lineup_images": [
+    {
+      "path": "/assets/lineups/dragonfish-starfall-s3/af38f861ada1208d4a9dde659cd81722741ba1846190ea43bfb052b76de06f37.webp",
+      "source_url": "https://olimg.3dmgame.com/uploads/images/raiders/20260814/1786674464_231825.webp",
+      "source_page_url": "https://ol.3dmgame.com/gl/350006.html",
+      "source_kind": "article",
+      "capture_method": "direct-image",
+      "published_at": "2026-08-14T10:28:20+08:00",
+      "captured_at": "2026-10-21T03:27:24.580Z",
+      "width": 1500,
+      "height": 1080,
+      "sha256": "af38f861ada1208d4a9dde659cd81722741ba1846190ea43bfb052b76de06f37",
+      "phash": "718ab99a03655ac7",
+      "evidence_grade": "B",
+      "verified": true,
+      "verification_notes": "完整六只、配置标题与制图水印已视觉核对；仅作为对应历史赛季配置。",
+      "attribution": "小乐老师 / 制图：13号洛克高"
+    }
+  ],
+  "tutorials": [],
+  "sources": [
+    {
+      "url": "https://ol.3dmgame.com/gl/350006.html",
+      "type": "mirror",
+      "title": "洛克王国世界s3龙鱼星陨队阵容推荐",
+      "published_at": "2026-08-14T10:28:20+08:00",
+      "last_checked_at": "2026-10-21T03:27:24.580Z"
+    }
+  ],
+  "first_seen_at": "2026-10-21T03:27:24.580Z",
+  "last_verified_at": "2026-10-21T03:27:24.580Z",
+  "status": "archived",
+  "verification_notes": "历史赛季配置，成员以原图为准。",
+  "archive_reason": "保留 S3 往期配置供回顾，不作为当前赛季原生阵容。"
+}

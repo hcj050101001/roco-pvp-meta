@@ -1,0 +1,116 @@
+{
+  "id": "starfall-buling-s4",
+  "slug": "starfall-buling-s4",
+  "name": "布灵星陨队",
+  "aliases": [],
+  "season": "S4",
+  "version_label": "月涌狂想",
+  "tier": "待定",
+  "tier_basis": "unrated",
+  "tier_provisional": false,
+  "tier_updated_at": "2026-10-21T03:27:24.580Z",
+  "tier_reason": "已核对完整配置，尚缺能支持明确强度的实战依据，保留待定。",
+  "archetype": [
+    "星陨",
+    "多核",
+    "轮转"
+  ],
+  "strength_score": 40,
+  "popularity_score": 40,
+  "evidence_score": 75,
+  "recency_score": 75,
+  "score_notes": "仅用于同梯度内展示排序；无实时胜率或榜单推断。",
+  "summary": "叠加星陨印记，衔接星兔与布灵输出，以帕尔收尾。",
+  "analysis": "怖哭菇和化蝶构成星陨铺垫，落陨星兔参与印记输出，龙息帕尔负责后续引爆。离心舞者与布灵布灵让队伍拥有更多轮转出口。",
+  "recommended_lead": "按对位选择",
+  "lead_notes": "没有固定首发要求，按对手属性与输出点调整出场顺序。",
+  "lead_basis": "unknown",
+  "core_plan": [
+    "先用印记位创造星陨层数，保留再次进场的空间。",
+    "依据抵抗关系选择星兔、舞者或布灵进攻。",
+    "寻找帕尔引爆印记的机会，避免过早交完输出资源。"
+  ],
+  "weaknesses": [
+    "面对清印记与幻系抵抗时，需要调整输出顺序。"
+  ],
+  "matchup_notes": [],
+  "roster": [
+    {
+      "name": "怖哭菇",
+      "role": "节奏起点",
+      "bloodline": null,
+      "skills": [],
+      "notes": ""
+    },
+    {
+      "name": "落陨星兔",
+      "role": "体系成员",
+      "bloodline": null,
+      "skills": [],
+      "notes": ""
+    },
+    {
+      "name": "龙息帕尔",
+      "role": "体系成员",
+      "bloodline": null,
+      "skills": [],
+      "notes": ""
+    },
+    {
+      "name": "化蝶",
+      "role": "体系成员",
+      "bloodline": null,
+      "skills": [],
+      "notes": ""
+    },
+    {
+      "name": "离心舞者",
+      "role": "体系成员",
+      "bloodline": null,
+      "skills": [],
+      "notes": ""
+    },
+    {
+      "name": "布灵布灵",
+      "role": "体系成员",
+      "bloodline": null,
+      "skills": [],
+      "notes": ""
+    }
+  ],
+  "lineup_images": [
+    {
+      "path": "/assets/lineups/starfall-buling-s4/02a03957625cb25590022bcd09730cbfd32229be6dffa59a59f0702e8572fe4c.webp",
+      "source_url": "https://post.qiandaocdn.com/post/images/fdUoSDhogBu_resize.webp?imginfo=w1625,h747",
+      "source_page_url": "https://qiandao.com/post?postId=1023430985116591249",
+      "source_kind": "community-post",
+      "capture_method": "direct-image",
+      "published_at": null,
+      "captured_at": "2026-10-21T03:27:24.580Z",
+      "width": 1175,
+      "height": 540,
+      "sha256": "02a03957625cb25590022bcd09730cbfd32229be6dffa59a59f0702e8572fe4c",
+      "phash": "5ea7598b23cc5449",
+      "evidence_grade": "B",
+      "verified": true,
+      "verification_notes": "完整六只、技能栏与图名已视觉核对。来自当日更新的 S4 社区索引；原始图片上传时间未知，不使用帖子初始日期充当图像发布日期。",
+      "attribution": "配置图：洛克王国阵容镜像（千岛）"
+    }
+  ],
+  "tutorials": [],
+  "sources": [
+    {
+      "url": "https://qiandao.com/post?postId=1023430985116591249",
+      "type": "community",
+      "title": "S4赛季队伍\n马头星陨队（全JiPin全10）\n夜王龙威起",
+      "published_at": "2026-07-20T14:34:55.000Z",
+      "updated_at": "2026-10-21T02:07:22.000Z",
+      "last_checked_at": "2026-10-21T03:27:24.580Z"
+    }
+  ],
+  "first_seen_at": "2026-10-21T03:27:24.580Z",
+  "last_verified_at": "2026-10-21T03:27:24.580Z",
+  "status": "active",
+  "verification_notes": "完整配置已核对；当前只作体系参考，强度待定。",
+  "archive_reason": null
+}

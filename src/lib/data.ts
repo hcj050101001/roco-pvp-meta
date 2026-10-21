@@ -2,7 +2,8 @@ import { readdirSync, readFileSync, existsSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { lineupSchema, type Lineup } from './schema';
 import state from '../../data/update-state.json' with { type: 'json' };
-import { selectActive } from './rank';
+import { selectOverview, ranked, seasonNumber } from './rank';
+import seasons from '../../data/seasons.json' with { type: 'json' };
 
 export function readLineups(root = process.cwd()): Lineup[] {
   return ['data/lineups', 'data/archive'].flatMap(dir => {
@@ -16,5 +17,8 @@ export function readLineups(root = process.cwd()): Lineup[] {
   });
 }
 export const allLineups = readLineups();
-export const activeLineups = selectActive(allLineups, state.season);
-export { state };
+export const overview = selectOverview(allLineups, state.season);
+export const activeLineups = overview.lineups;
+export const historyLineups = ranked(allLineups.filter(l=>l.status==='archived' || seasonNumber(l.season)<seasonNumber(state.season)));
+export const currentSeason = seasons.find(s=>s.id===state.season) || {id:state.season,name:state.version_label,theme:state.theme || 'classic',intro:''};
+export { state, seasons };

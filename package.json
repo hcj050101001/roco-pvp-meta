@@ -21,7 +21,8 @@
     "refresh:guard": "tsx scripts/validate/refresh-guard.ts",
     "refresh:snapshot": "tsx scripts/validate/refresh-guard.ts --snapshot",
     "research:discover": "tsx scripts/collect/run.ts --discover",
-    "research:full": "tsx scripts/collect/run.ts --discover --browser"
+    "research:full": "tsx scripts/collect/run.ts --discover --browser",
+    "season:check": "tsx scripts/collect/season.ts"
   },
   "dependencies": {
     "astro": "5.16.6",

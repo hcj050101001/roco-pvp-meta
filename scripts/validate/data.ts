@@ -3,7 +3,6 @@ import { resolve } from 'node:path';
 import { readLineups } from '../../src/lib/data';
 import { imageInfo } from '../extract/image';
 const lineups=readLineups();
-if(lineups.filter(l=>l.status==='active').length>10) throw Error('active 阵容不得超过 10');
 if(new Set(lineups.map(l=>l.slug)).size!==lineups.length || new Set(lineups.map(l=>l.id)).size!==lineups.length) throw Error('重复 slug/id');
 for(const l of lineups) for(const img of l.lineup_images) {
   const bytes=await readFile(resolve('public',img.path.slice(1))); const info=await imageInfo(bytes);

@@ -3,10 +3,11 @@ import assert from 'node:assert/strict';
 import { extractPage } from '../scripts/extract/page';
 import { lineupSchema } from '../src/lib/schema';
 import { allLineups } from '../src/lib/data';
-import { selectActive,rankScore } from '../src/lib/rank';
+import { selectActive,selectOverview,rankScore } from '../src/lib/rank';
 import { hashDistance } from '../scripts/extract/image';
 import { guardRefresh } from '../src/lib/refresh';
 import { ingestSearch } from '../scripts/collect/search';
+import { officialSeason,latestLaunched,themeFor } from '../src/lib/season';
 
 test('提取懒加载、原图、srcset、JSON-LD 与内嵌 JSON，不执行脚本',()=>{
   const r=extractPage(`<h1>阵容</h1><article>雨天队<img data-src="/a.webp"><picture><source srcset="/b.png 2x, /c.png 1x"></picture><a href="/full.jpg">原图</a></article><meta property="og:image" content="/og.png"><script type="application/ld+json">{"image":{"contentUrl":"https://cdn.example.com/ld.webp"}}</script><script>const x={"image":"https://cdn.example.com/embedded.webp"};throw Error('never execute')</script>`,'https://example.com/post');
@@ -16,7 +17,7 @@ test('提取懒加载、原图、srcset、JSON-LD 与内嵌 JSON，不执行脚�
 test('active 缺失真实图、错误 Tier、重复成员、无依据视频都被拒绝',()=>{
   const l=structuredClone(allLineups[0]);
   assert.equal(lineupSchema.safeParse({...l,lineup_images:[]}).success,false);
-  assert.equal(lineupSchema.safeParse({...l,tier:'T2'}).success,false);
+  assert.equal(lineupSchema.safeParse({...l,tier:'T9'}).success,false);
   assert.equal(lineupSchema.safeParse({...l,roster:Array(6).fill(l.roster[0])}).success,false);
   assert.equal(lineupSchema.safeParse({...l,tutorials:[{title:'泛用教学',url:'https://example.com'}]}).success,false);
   assert.equal(lineupSchema.safeParse({...l,lineup_images:l.lineup_images.map(i=>({...i,path:'/assets/lineups/../../secret.webp'}))}).success,false);
@@ -26,11 +27,30 @@ test('C 级单一来源不晋升；归档必须有理由',()=>{
   assert.equal(lineupSchema.safeParse({...l,lineup_images:l.lineup_images.map(i=>({...i,evidence_grade:'C'}))}).success,false);
   assert.equal(lineupSchema.safeParse({...l,status:'archived',archive_reason:null}).success,false);
 });
-test('排名至多十套、排除旧季和归档，并优先体系多样性',()=>{
+test('全面展示超过十套、按梯度排序并排除旧季和归档',()=>{
   const samples=Array.from({length:15},(_,i)=>({...allLineups[0],id:`x-${i}`,slug:`x-${i}`,archetype:[i<12?'雨天':'反伤'],strength_score:100-i}));
-  const chosen=selectActive(samples,'S4');assert.equal(chosen.length,10);assert.ok(chosen.slice(0,4).some(l=>l.archetype[0]==='反伤'));
+  const chosen=selectActive(samples,'S4');assert.equal(chosen.length,15);
   assert.deepEqual(selectActive(samples,'S1'),[]);assert.deepEqual(selectActive(samples.map(l=>({...l,status:'archived'})),'S4'),[]);
   assert.equal(rankScore({...samples[0],strength_score:100,popularity_score:100,evidence_score:100,recency_score:100}),100);
+});
+test('换季过渡不清空、少量新队并存；齐备后只展示当季，旧资料仍在',()=>{
+  const previous=allLineups.filter(l=>l.season==='S4');
+  const empty=selectOverview(previous,'S5');assert.equal(empty.current.length,0);assert.equal(empty.fallback.length,previous.length);assert.equal(empty.transition,true);
+  const incoming=[...previous,...Array.from({length:2},(_,i)=>({...previous[0],id:`s5-${i}`,slug:`s5-${i}`,season:'S5'}))];
+  const partial=selectOverview(incoming,'S5');assert.equal(partial.current.length,2);assert.equal(partial.fallback.length,previous.length);
+  incoming.push({...previous[0],id:'s5-3',slug:'s5-3',season:'S5'});
+  const complete=selectOverview(incoming,'S5');assert.equal(complete.lineups.length,3);assert.equal(complete.transition,false);
+  assert.equal(incoming.filter(l=>l.season==='S4').length,previous.length);
+});
+test('官方换季判断：只采信已发布的正式开服、拒绝未来预告和非官方作者',()=>{
+  const article={ '@type':'NewsArticle',headline:'《洛克王国：世界》S5赛季「春日旅行」开服公告',description:'版本更新已全部完成，各位可登录。',datePublished:'2026-11-01T00:00:00Z',author:{url:'https://www.taptap.cn/user/99962293'}};
+  const html=(a:unknown)=>`<script type="application/ld+json">${JSON.stringify(a)}</script>`;
+  const url='https://www.taptap.cn/moment/123';
+  assert.equal(officialSeason(html(article),url,new Date('2026-10-21')),null);
+  const confirmed=officialSeason(html(article),url,new Date('2026-11-02'));assert.equal(confirmed?.id,'S5');assert.equal(confirmed?.theme,'classic');
+  assert.equal(officialSeason(html({...article,headline:'S5赛季「春日旅行」即将上线'}),url,new Date('2026-11-02')),null);
+  assert.equal(officialSeason(html({...article,author:{url:'https://www.taptap.cn/user/other'}}),url,new Date('2026-11-02')),null);
+  assert.equal(latestLaunched(confirmed?[confirmed]:[],'S6'),null);assert.equal(themeFor('月涌狂想'),'moon');assert.equal(themeFor('铅字幻梦'),'storybook');
 });
 test('pHash 汉明距离',()=>{assert.equal(hashDistance('0000000000000000','000000000000000f'),4);assert.equal(hashDistance('0123456789abcdef','0123456789abcdef'),0);});
 test('搜索结果仅发现支持的公开平台，拒绝伪装域名',()=>{

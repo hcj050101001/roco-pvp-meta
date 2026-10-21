@@ -69,7 +69,11 @@ npm run research:validate
 
 `research:full` 会再尝试用无登录 Chromium 查看部分页面的公开渲染和懒加载内容。研究数据写入 `research/inbox/<run-id>/`，采集器不会直接改动阵容 JSON。可通过 `--seeds <json文件>` 给采集器导入公开 URL 数组。
 
-`npm run season:check` 每日由 GitHub Actions 运行，只接受官方已生效公告；来源不可用时保留现有赛季。半月研究和发布流程在每月 1 日、16 日运行，也支持手动触发。完整研究依赖仓库 Secret `OPENAI_API_KEY`；用户可在 GitHub 仓库 Settings → Secrets and variables → Actions 中自行设置。缺少 Secret 时研究 job 会停止，线上内容保持不变。
+`npm run season:check` 每日由 GitHub Actions 运行，只接受官方已生效公告；来源不可用时保留现有赛季。半月研究和发布流程在北京时间每月 1 日、16 日 03:17 运行，也支持手动触发。完整研究使用 DeepSeek `deepseek-flash`（支持图片核验），依赖仓库 Secret `DEEPSEEK_API_KEY`；在 GitHub 仓库 Settings → Secrets and variables → Actions 中设置。缺少 Secret 或 API 调用失败时研究 job 会停止，线上内容保持不变。
+
+模型请求通过 Codex Action 的代理发往 `https://api.deepseek.com/responses`，消耗 DeepSeek API 账户余额。Action 的参数名仍叫 `openai-api-key`，传入的是 DeepSeek 密钥，无需 OpenAI API Key。模型能力定义在 `.github/codex/deepseek-models.json`；配置依据 [DeepSeek Responses 文档](https://api-docs.deepseek.com/guides/responses_api/)及 [Codex 接入文档](https://api-docs.deepseek.com/quick_start/agent_integrations/codex)。
+
+可在 Actions 手动运行 `Verify DeepSeek connection`：真实调用 DeepSeek，核对随机文件读取与图片数字识别，不修改网站内容。`Research refresh and deploy` 才执行完整的候选采集、核验和发布。
 
 推送到 `main` 会运行 `.github/workflows/deploy.yml`：类型检查、单元测试、静态构建、浏览器测试通过后部署 GitHub Pages。手动部署可在仓库 Actions 页面运行 `Build and deploy Pages`。
 

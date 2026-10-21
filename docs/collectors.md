@@ -34,6 +34,8 @@ node node_modules/tsx/dist/cli.mjs scripts/collect/run.ts --seeds path/to/urls.j
 
 不访问需要登录、验证码、付费、DRM、私人 Cookie 或其他访问绕过的内容。来源失败只写健康记录，不得据此删除、归档或刷新已有资料。自动发布 job 会再次校验现有记录、图片哈希、测试和构建；失败时不部署候选数据。
 
+半月流程使用 DeepSeek Responses API 的 `deepseek-flash` 处理采集证据并核对图片，凭证仅保存在 GitHub Secret `DEEPSEEK_API_KEY`。Codex Action 负责工具执行和隔离代理，模型请求目标为 `https://api.deepseek.com/responses`。`Verify DeepSeek connection` 是独立的真实接口检查，验证文件工具和图片输入，不修改生产内容；通过连通性检查不代表已完成某次阵容研究。
+
 ## 证据保存
 
 `research/inbox/` 与 `research/baseline.json` 在 `.gitignore` 中忽略，避免提交原始网页快照或临时基线。可提交且与具体研究任务有关的结论记录放在 `research/runs/<run-id>/`；GitHub Actions 也会上传有限期 artifact。研究摘要只记录实际执行过的来源检查和验证，不将历史一次性结果写成采集器的永久能力保证。

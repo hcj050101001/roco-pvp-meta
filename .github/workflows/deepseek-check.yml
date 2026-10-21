@@ -1,0 +1,65 @@
+name: Verify DeepSeek connection
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: deepseek-connection-check
+  cancel-in-progress: false
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Prepare random shell and image challenges
+        run: |
+          node --input-type=module <<'NODE'
+          import { randomBytes, randomInt } from 'node:crypto';
+          import { mkdir, writeFile } from 'node:fs/promises';
+          import sharp from 'sharp';
+          await mkdir('artifacts/deepseek-check', { recursive: true });
+          const token = randomBytes(12).toString('hex');
+          const code = String(randomInt(100000, 1000000));
+          await writeFile('artifacts/deepseek-check/token.txt', token);
+          await writeFile(process.env.RUNNER_TEMP + '/deepseek-expected.json', JSON.stringify({token, code}));
+          const svg = `<svg width="800" height="300" xmlns="http://www.w3.org/2000/svg"><rect width="800" height="300" fill="white"/><text x="400" y="190" text-anchor="middle" font-family="sans-serif" font-size="110" fill="black">${code}</text></svg>`;
+          await sharp(Buffer.from(svg)).png().toFile('artifacts/deepseek-check/image.png');
+          NODE
+      - name: Call DeepSeek and exercise shell and vision
+        uses: openai/codex-action@v1
+        with:
+          openai-api-key: ${{ secrets.DEEPSEEK_API_KEY }}
+          responses-api-endpoint: https://api.deepseek.com/responses
+          model: deepseek-flash
+          effort: low
+          codex-version: 0.163.0
+          codex-args: >-
+            ["-c", "model_catalog_json=\"${{ github.workspace }}/.github/codex/deepseek-models.json\"",
+             "-c", "web_search=\"disabled\""]
+          sandbox: read-only
+          safety-strategy: drop-sudo
+          output-file: artifacts/deepseek-check/result.json
+          prompt: >-
+            This is a connectivity test, not a content update. Do not edit files or run research.
+            Use the shell tool to read artifacts/deepseek-check/token.txt.
+            Use the view_image tool to inspect artifacts/deepseek-check/image.png and read the six digits.
+            Do not read RUNNER_TEMP or infer the digits from other files.
+            Reply only with a JSON object containing token (the shell file text) and code (the six digits as a string).
+      - name: Check actual shell and vision results
+        run: |
+          node --input-type=module <<'NODE'
+          import assert from 'node:assert/strict';
+          import { readFile } from 'node:fs/promises';
+          const expected = JSON.parse(await readFile(process.env.RUNNER_TEMP + '/deepseek-expected.json', 'utf8'));
+          const actual = JSON.parse(await readFile('artifacts/deepseek-check/result.json', 'utf8'));
+          assert.deepEqual(actual, expected, 'DeepSeek did not return the shell and image challenges correctly');
+          console.log('DeepSeek API authentication, Responses streaming, shell tools and image input passed.');
+          NODE

@@ -66,7 +66,7 @@ jobs:
         if: steps.changed.outputs.major == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
-          HAS_KEY: ${{ secrets.OPENAI_API_KEY != '' }}
+          HAS_KEY: ${{ secrets.DEEPSEEK_API_KEY != '' }}
         run: |
           if [ "$HAS_KEY" == "true" ]; then
             gh workflow run refresh-and-deploy.yml

@@ -43,6 +43,7 @@ jobs:
           responses-api-endpoint: https://api.deepseek.com/responses
           model: deepseek-flash
           effort: high
+          allow-bot-users: github-actions[bot]
           codex-version: 0.163.0
           codex-args: >-
             ["-c", "model_catalog_json=\"${{ github.workspace }}/.github/codex/deepseek-models.json\"",

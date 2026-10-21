@@ -19,5 +19,5 @@ for(const l of proposed){
   if(old && (old.status==='archived')!==(l.status==='archived'))await unlink(resolve('data',old.status==='archived'?'archive':'lineups',`${old.slug}.json`));
   for(const img of l.lineup_images){const target=resolve('public',img.path.slice(1));await mkdir(dirname(target),{recursive:true});await copyFile(resolve(staging,'public',img.path.slice(1)),target);}
 }
-for(const filename of ['sources.json','update-state.json','seasons.json','updates.json','search-queries.json'])await copyFile(resolve(staging,'data',filename),resolve('data',filename));
+for(const filename of ['sources.json','update-state.json','seasons.json','search-queries.json'])await copyFile(resolve(staging,'data',filename),resolve('data',filename));
 console.log(`已应用 ${proposed.length} 条候选资料，既有 ID 和旧图片均保留。`);

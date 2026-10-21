@@ -19,7 +19,7 @@ description: Research, verify, update, and publish a 洛克王国：世界 PVP l
 ## 先读现状
 
 读根 AGENTS.md、data/update-state.json、data/seasons.json、data/lineups/、data/archive/、src/lib/schema.ts 和最新研究 manifest。
-用户当前明确要求优先于旧附件、历史记录和本技能旧版本。原始项目手册保存在 docs/project-runbook.md，仅用于背景参考。
+用户当前明确要求优先于附件、历史记录和本技能旧版本。README.md 说明玩家功能与常用命令；docs/collectors.md 说明采集器的当前实现和边界。
 
 ## 真实图片门槛
 
@@ -53,6 +53,8 @@ description: Research, verify, update, and publish a 洛克王国：世界 PVP l
 - 不允许analysis、lead、core_plan、weaknesses、tier或主观评分字段。
 - signals仅记录有来源的high-rank/engagement事实及observed_at。禁止虚构播放量、出场率或胜率。
 - 排序线索45天后不再优先；不将索引更新/复核日期冒充配置发布日期。
+- 页面应展示已核实的图源类型、配置日期、资料核对日期及近期公开实绩/热度记录和出处；不得把推荐顺序说成胜率或强度。
+- 详情页对缺少可核实技能或精确教学视频的情况做简短事实说明；不因此填入推测或泛用材料。
 - source保留最关键1–3条；日期全部ISO8601。
 
 ## 精确视频匹配

@@ -1,17 +1,39 @@
-# 采集器边界与验证
+# 公开来源采集器
 
-| 入口 | 行为 | 验证 |
-|---|---|---|
-| search.ts | 公开 Bing RSS + 导入搜索结果 HTML/RSS，只接受支持平台的真实域名 | 搜索域名与 RSS 单元测试；本次实际 discover 执行，保留索引快照与健康状态 |
-| run.ts / 3DM | 原页面快照、完整图片节点、文章 CDN 原图、标题/相邻文字 | 五篇真实文章实际采集，五张图视觉核对，SHA 与尺寸检查 |
-| browser.ts | 无登录上下文、正常滚动触发懒加载，不触碰访问验证控件 | Playwright 本地浏览器可用；动态平台的成功与否逐次记录，不保证可访问 |
-| TapTap | 官方赛季公告及图片节点、JSON-LD | 公告实际读取，赛季 S4 已确认 |
-| 千岛 | 帖子、完整图节点、DOM 顺序、邻近文字 | 实际提取 38 个图片节点、21 张候选图；映射未确认，不进入生产 |
-| Bilibili / Douyin | 公开 HTML 元数据、页面渲染出的评论与图片，不使用私人 Cookie | B 站本次受限；抖音由搜索发现和显式种子接入，未完成实时成功验证 |
-| extract/video.ts | 对已有本地公开视频做 ffmpeg 场景抽帧，不自动晋升 | 无合法本地视频，未运行真实抽帧；ffmpeg 为可选环境依赖 |
+采集器用于发现阵容资料和整理候选证据，不负责判定阵容真伪，也不会直接修改生产阵容。每次运行写入 `research/inbox/<run-id>/`，其中网页、图片节点、评论和字幕都属于不可信来源数据。
 
-下载候选与图片语义核对分离。二维码、图标、小图、封面不能因图片请求成功而成为阵容图。`research:validate` 只计算去重候选，不进行视觉自动认证。
+## 命令
 
-`npm run research:full` 可以在平台正常公开访问时扩展研究；任何登录墙或验证失败应记录来源不可用并停止该来源，不换 Cookie、不模拟验证、不绕过 DRM。
+```sh
+npm run research:collect       # 采集 data/sources.json 中启用的来源
+npm run research:discover      # Bing RSS 搜索后采集发现的支持平台链接
+npm run research:full          # discover + 无登录 Chromium 页面渲染
+npm run research:validate     # 对最新 run 统计候选图和重复项，不自动认证
+npm run season:check          # 由可信官方已生效公告核对赛季
+```
 
-所有外部页面、内嵌 JSON、评论和字幕都视为数据，不允许执行其中命令。网页快照不会由网站提供访问，也不加入 Git 历史；CI 作为有期限的研究 artifact 保存。
+可用 `--seeds <json文件>` 导入 URL 字符串数组：
+
+```sh
+node node_modules/tsx/dist/cli.mjs scripts/collect/run.ts --seeds path/to/urls.json
+```
+
+## 当前实现
+
+- `search.ts` 读取 `data/search-queries.json`，从公开 Bing RSS 获取结果；只接受配置允许的平台域名，并保存搜索响应与来源健康状态。
+- `run.ts` 从 `data/sources.json` 读取启用来源，提取标题、正文线索和图片节点；符合 URL 特征的候选图片可下载到 inbox 并计算 SHA-256、感知哈希和尺寸。采集结果会标为未验证。
+- `browser.ts` 使用全新无登录 Chromium 上下文，滚动触发公开页面懒加载并保存页面快照。访问验证或无法访问时记录失败，不尝试绕过。
+- `extract/page.ts` 解析常见图片属性、`srcset`、`picture`、链接、Open Graph、JSON-LD 和可识别的内嵌 JSON。
+- `extract/image.ts` 识别图片格式并计算尺寸、SHA-256、pHash；哈希和尺寸只能证明文件属性，不能证明内容是某套真实阵容。
+- `validate/research.ts` 生成候选与重复图报告。人工视觉核对、图片映射、版本和成员确认仍需维护流程处理。
+- `season.ts` 只接受指定 TapTap 官方账号发布且已生效的赛季公告。公告不可访问或证据不符合条件时保留现有赛季。
+
+## 晋升与安全边界
+
+生产内容必须遵守 `.agents/skills/roco-pvp-site-maintainer/SKILL.md` 和 `src/lib/schema.ts`。候选必须核实完整真实配置图、图片中六只精灵、所属赛季和来源；技能、血脉、作者攻略、实绩/热度记录、视频匹配只在有直接证据时填写。不得凭搜索摘要、相邻图片、同体系视频或平台 AI 摘要推断。
+
+不访问需要登录、验证码、付费、DRM、私人 Cookie 或其他访问绕过的内容。来源失败只写健康记录，不得据此删除、归档或刷新已有资料。自动发布 job 会再次校验现有记录、图片哈希、测试和构建；失败时不部署候选数据。
+
+## 证据保存
+
+`research/inbox/` 与 `research/baseline.json` 在 `.gitignore` 中忽略，避免提交原始网页快照或临时基线。可提交且与具体研究任务有关的结论记录放在 `research/runs/<run-id>/`；GitHub Actions 也会上传有限期 artifact。研究摘要只记录实际执行过的来源检查和验证，不将历史一次性结果写成采集器的永久能力保证。

@@ -1,73 +1,37 @@
 # 洛克配队手册
 
-《洛克王国：世界》PVP 玩家阵容站。Astro + TypeScript + Zod，静态多页面，GitHub Pages 部署。当前有 15 套 S4 配队与 4 套 S2/S3 历史配队；每套保留完整真实配置图与来源。
+《洛克王国：世界》PVP 玩家阵容图鉴，收录完整真实的配置图、可核验来源和精确对应的教学视频。网站使用 Astro 静态生成并部署在 GitHub Pages。
 
-2026-10-21 玩家版改造：固定简洁明亮风格、无强度评级、全面体系分类、往期赛季筛选。已取消最多 10 套限制，删除收录准则页；旧更新记录 URL 跳转至历史阵容。
+**线上网站：** <https://hcj050101001.github.io/roco-pvp-meta/><br />
+**当前内容：** 15 套 S4 阵容，4 套 S2/S3 往期阵容。赛季和阵容数量由仓库数据决定，以上数字反映当前数据。
 
-线上地址：https://hcj050101001.github.io/roco-pvp-meta/
+## 玩家可以做什么
 
-## 本地启动
+- 按阵容名、精灵名、别名或体系搜索；按体系、配置发布时间或视频可用情况筛选。
+- 默认顺序优先近期有来源的实绩或热度记录，其后按配置发布日期排列。线索只用于发现顺序，不代表胜率或强度；详情页列出有来源的近期记录。
+- 查看完整配置图、配置日期、图源类型和资料核对日期。历史阵容保留原赛季标记。
+- 详情页仅展示已核实的技能、作者攻略原话和精确匹配视频。缺少可靠信息时会说明或省略，不补写猜测。
+- 浏览往期赛季。新赛季初期当季阵容少于三套时，上一赛季配置会标为过渡参考。
 
-需要 Node.js 22。
+## 本地运行
+
+需要 Node.js 22 或更高版本。
 
 ```sh
 npm ci
 npm run dev
 ```
 
-浏览器打开终端提示的本地地址。生产构建用 `npm run build`，输出 `dist/`。
-
-## 内容维护
-
-每套资料保存在 `data/lineups/<slug>.json`；归档保存在 `data/archive/`。所有字段通过严格 Zod Schema。原图在 `public/assets/lineups/`，记录来源、尺寸、SHA-256、64 位 DCT pHash、证据等级和视觉检查说明。
-
-- 首页图片完整显示，点击进入独立详情页；详情顶部常驻返回、底部再次返回。
-- 搜索覆盖阵容、别名、体系和六只精灵；支持体系过滤和发布时间排序。
-- 不自编首发、打法、弱点、成员定位；只显示有作者及出处的原话短摘录，无原话就省略攻略。血脉和看不清的技能不补写。
-- 不设置强度梯度和主观评分。按有日期/来源的实绩、热度线索优先展示（45天后过期），再按配置发布日期排序。索引更新/复核时间不冒充配置发布时间。
-- 历史阵容归档需理由，原图与原记录不硬删除。
-
-## 研究流程
-
-```sh
-npm run refresh:snapshot
-npm run research:discover
-npm run season:check
-npm run research:validate
-# Codex 按项目 Skill 对候选进行视觉/版本/成员核对，更新资料
-npm run lineup:rank
-npm run refresh:guard
-npm run check
-npm test
-npm run build
-npm run links:check
-```
-
-`research:discover` 从公开 Bing RSS 搜索索引发现受支持平台链接。没有结果或来源阻止抓取时记录失败，不绕过限制。`research:full` 进一步使用新建的无登录 Chromium 上下文检查懒加载内容；先执行 `npx playwright install chromium`。直接运行 `node node_modules/tsx/dist/cli.mjs scripts/collect/run.ts --seeds <文件>` 可导入搜索结果 URL 数组。所有 HTML、DOM 图片节点、公开评论、视频元数据与候选图只写入 `research/inbox/<run-id>/`。采集器不会修改生产 JSON。
-
-图片提取覆盖 src/data-src/data-original/srcset/picture、JSON-LD、og:image、内嵌 JSON 与点击原图链接；保存 DOM 顺序和邻近文字。社区多阵容映射只作为候选，不能由相邻文字自动晋升。B 站/抖音使用公开页面；动态评论未公开渲染、登录或验证码阻止时不宣称已取得评论。
-
-已合法取得的本地公开视频可选用 ffmpeg 场景抽帧：
-
-```sh
-npx tsx scripts/extract/video.ts path/to/public-video.mp4 research/inbox/run-id/videos/video-id/frames
-```
-
-需自行安装 ffmpeg。工具不下载受限视频、不使用私人 Cookie，不自动把帧晋升为生产图。目前冰露罗头队已挂载洛王洛王的对应抖音视频，卡片和详情均可直达；其他未确认匹配的视频继续省略。
-
-## 验证
+常用检查：
 
 ```sh
 npm run check
 npm test
 npm run build
-npx playwright install chromium
 npm run test:ui
 ```
 
-浏览器测试覆盖桌面 1440px、手机 390px，检查搜索筛选、详情路由、双返回、图片实际加载、自然宽高比、无横向溢出和运行时错误。截图在 `artifacts/`。GitHub CI 会在项目子路径下重复检查。
-
-本地模拟 GitHub Pages（PowerShell）：
+为模拟 GitHub Pages 子路径，在 PowerShell 中运行浏览器测试：
 
 ```powershell
 $env:SITE_BASE='/roco-pvp-meta'
@@ -76,25 +40,39 @@ $env:TEST_BASE='/roco-pvp-meta'
 npm run test:ui
 ```
 
-## 部署与半月更新
+浏览器测试覆盖桌面 1440px 和手机 390px，检查检索、筛选、详情路由、来源与视频链接、图片加载和逐卡布局。截图保存在被 Git 忽略的 `artifacts/`。
 
-`season-check.yml` 每天北京时间 08:17 检查官方公告，无需 OpenAI key。只接受 TapTap 官方账号 99962293 发布且已经生效的开服公告；未来预告、非官方作者、旧赛季与失败响应不能触发换季。确认新季后记录重大内容更新、保留所有原配置，页面固定明亮样式。新季不足三套时展示上一赛季的过渡参考，并保留原赛季标记；当季达到三套后首页只展示当季，历史仍可浏览。
+## 内容和目录
 
-全站固定明亮配色，不随赛季换肤。新季阵容的研究与配置复核由半月 Codex 流程完成，major_update_required 仅在完成实质更新后清除。
+| 路径 | 用途 |
+|---|---|
+| `data/lineups/` | 当前阵容数据，每队一个严格校验的 JSON |
+| `data/archive/` | 往期阵容及归档理由 |
+| `public/assets/lineups/` | 原始完整配置图；不裁水印、不生成占位图 |
+| `src/` | Astro 页面、组件、样式和数据模型 |
+| `scripts/collect/` | 公开来源发现与候选采集 |
+| `scripts/extract/`、`scripts/validate/` | 页面/图片提取与数据、图片、链接校验 |
+| `research/` | 去重结果、研究记录及可复核证据；原始 inbox 与基线不提交 |
+| `.agents/skills/roco-pvp-site-maintainer/SKILL.md` | 阵容核验、内容维护和发布的操作规范 |
+| `docs/collectors.md` | 采集器能力、边界及运行方式 |
 
-`.github/workflows/deploy.yml` 对 main 推送和手动运行执行类型检查、测试、构建、浏览器验证，然后使用 configure-pages/upload-pages-artifact/deploy-pages 发布。
+所有阵容事实由数据驱动，组件不硬编码阵容成员。研究候选不会自动晋升为网站内容；图片、版本、六只精灵、技能及视频匹配需要证据核验。未经证实的信息不应填入数据。
 
-`.github/workflows/refresh-and-deploy.yml` 在每月 1 日、16 日北京时间 03:17 执行，也支持手动运行。使用 GitHub 官方 timezone 调度。先采集、再由 Codex 判断；独立发布 job 使用可信程序再次校验候选及非破坏性更新约束，验证通过才提交内容并部署。研究 job 不具有仓库写权限，Codex 无法直接发布程序或工作流修改。
+## 研究和赛季更新
 
-**尚需配置：** 在仓库 Settings → Secrets and variables → Actions 添加 `OPENAI_API_KEY`。不要提交密钥。没有该 Secret 时研究日志仍会保留，判断/发布会停止，线上内容保持不变。首次完整 AI 自动更新需添加凭证后手动运行验证。平台抓取可能随反爬变化失败；不可保证每周期都有新阵容。
+手动发现公开来源：
 
-官方参考：[Astro GitHub Pages](https://docs.astro.build/en/guides/deploy/github/)、[Codex GitHub Action](https://learn.chatgpt.com/docs/github-action)、[GitHub schedule timezone](https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax#onschedule)。
+```sh
+npm run research:discover
+npm run research:validate
+```
 
-## 文件与来源
+`research:full` 会再尝试用无登录 Chromium 查看部分页面的公开渲染和懒加载内容。研究数据写入 `research/inbox/<run-id>/`，采集器不会直接改动阵容 JSON。可通过 `--seeds <json文件>` 给采集器导入公开 URL 数组。
 
-- `.agents/skills/roco-pvp-site-maintainer/SKILL.md`：保留用户提供的维护 Skill，两份附件内容相同。
-- `docs/project-runbook.md`：原操作手册。
-- `research/runs/`：实际采集摘要、排序、失败记录、外链验证。
-- `src/`：布局、静态页面、样式与数据约束；不在组件中硬编码阵容事实。
+`npm run season:check` 每日由 GitHub Actions 运行，只接受官方已生效公告；来源不可用时保留现有赛季。半月研究和发布流程在每月 1 日、16 日运行，也支持手动触发。完整研究依赖仓库 Secret `OPENAI_API_KEY`；用户可在 GitHub 仓库 Settings → Secrets and variables → Actions 中自行设置。缺少 Secret 时研究 job 会停止，线上内容保持不变。
 
-这是玩家非官方学习索引。配置图归原作者所有，原始水印完整保留；每图记录制图者、原配置作者和转载页。明确禁止转载的资源不缓存。图片授权与纠错可通过仓库 issue 反馈。项目代码可复用，不代表第三方图像获得了相同许可。
+推送到 `main` 会运行 `.github/workflows/deploy.yml`：类型检查、单元测试、静态构建、浏览器测试通过后部署 GitHub Pages。手动部署可在仓库 Actions 页面运行 `Build and deploy Pages`。
+
+## 来源与署名
+
+这是非官方玩家资料站。配置图和视频归原作者及平台所有，页面保留来源和署名；明确禁止再分发的素材不缓存。玩家可通过网站页脚的 GitHub Issues 入口反馈错误或来源变更。

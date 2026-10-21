@@ -77,3 +77,12 @@ test('来源失败不删除、不误归档、不刷新验证日期',()=>{
   const archived=structuredClone(allLineups);archived[0].status='archived';archived[0].archive_reason='';
   assert.throws(()=>guardRefresh(allLineups,archived,[archived[0].sources[0].url]),/归档缺少理由/);
 });
+
+test('自动更新拒绝 OCR 猜测改名，即使来源可访问也必须留候选',()=>{
+  const changed=structuredClone(allLineups);
+  changed[0].roster[0].name='疑似 OCR 新名字';
+  assert.throws(()=>guardRefresh(allLineups,changed,[changed[0].sources[0].url]),/不允许改写既有成员名称/);
+  const fieldsOnly=structuredClone(allLineups);
+  fieldsOnly[0].verification_notes+=' 已核对原图。';
+  assert.doesNotThrow(()=>guardRefresh(allLineups,fieldsOnly,[fieldsOnly[0].sources[0].url]));
+});

@@ -1,0 +1,9 @@
+{
+  "status": "pending-independent-review",
+  "run_id": "2026-10-21T07-24-21-433Z",
+  "reason": "自动研究提出的密集图片文字识别修订缺少独立佐证；不应用到生产成员名称。",
+  "proposals": [
+    { "slug": "black-feather-poison-s4", "existing": "恶卡", "proposed": "丧卡" },
+    { "slug": "sleep-mouse-s4", "existing": "壳棘丝鼠", "proposed": "壳粟丝鼠" }
+  ]
+}

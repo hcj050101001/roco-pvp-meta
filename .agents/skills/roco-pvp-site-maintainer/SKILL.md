@@ -70,6 +70,7 @@ description: Research, verify, update, and publish a 洛克王国：世界 PVP l
 - 普通更新仅改data/、public/assets/lineups/、research/；程序/工作流修改需属于用户当前任务范围。
 - 不因一次来源失败删图、删队、归档或刷新last_verified_at。
 - 新证据不确定时保留旧已核实数据；换季不清空网站。
+- 自动流程遇到相同SHA且无新配置/版本/攻略/视频证据时保留既有记录和核验日期，不反复OCR。已有成员名称及顺序不可自动改写，疑似文字识别修订只记候选；refresh:guard独立阻断此类更改。新成员组合应使用独立阵容记录。
 - 历史配置归档需具体理由，保留原图和独立详情URL。
 - 每日season:check只接受可信官方已生效公告；未来预告、论坛推测、失败响应都不能触发换季。只改内容基线，不改页面风格。
 - 半月GitHub Actions研究流程使用DeepSeek Responses API（deepseek-flash，支持图片输入）；缺少DEEPSEEK_API_KEY或API调用失败时保留网站，不向公众宣称已完成自动内容复核。模型接入变更后运行Verify DeepSeek connection工作流核对真实鉴权、工具调用与识图。

@@ -77,6 +77,8 @@ npm run research:validate
 
 完整研究会先运行 `research:vision`，按 SHA 去重并生成单张不超过 192 KiB 的 JPEG 概览和原尺寸分块，仅用于模型识图。每候选保存核验进度，32,000 tokens 后自动压缩上下文，避免连续附加放大 PNG 触发 DeepSeek 的 [48 MiB 请求体限制](https://api-docs.deepseek.com/guides/vision)。网站使用的完整原图和水印保持原样；预览无法确认的细节不填入数据。
 
+相同 SHA 且没有新证据的图片保留既有记录，不重复 OCR、不刷新验证日期。自动更新不会改写已有成员名称和顺序；疑似文字识别修订保留为候选，`refresh:guard` 独立阻断这类更改。
+
 推送到 `main` 会运行 `.github/workflows/deploy.yml`：类型检查、单元测试、静态构建、浏览器测试通过后部署 GitHub Pages。手动部署可在仓库 Actions 页面运行 `Build and deploy Pages`。
 
 ## 来源与署名

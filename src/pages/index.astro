@@ -9,7 +9,7 @@ const systems=new Set(activeLineups.flatMap(l=>l.archetype));
   <section class="hero wrap">
     <div class="hero-copy"><div class="eyebrow">ROCO KINGDOM · TEAM HANDBOOK</div>
       <h1>选一套喜欢的队伍，<br /><span>开始下一场对战。</span></h1>
-      <p class="hero-description">浏览真实配队图，找到想玩的体系。<br />配置、作者攻略与对应视频，放在一起看。</p>
+      <p class="hero-description">浏览真实配队图，找到想玩的体系。<br />已核实的攻略与教学视频会随阵容附上。</p>
       <div class="hero-actions"><a class="button primary" href="#lineup-overview">浏览阵容 <span>↓</span></a><a class="button secondary" href={withBase('/history/')}>往期配队 →</a></div>
     </div>
     <aside class="hero-index"><span class="eyebrow muted">本季手册</span><strong>{currentSeason.id}<small>{currentSeason.name}</small></strong><div class="index-stats"><span><b>{activeLineups.length}</b>套配队</span><span><b>{systems.size}</b>个体系标签</span></div><a href={withBase('/history/')}>回顾 {historyLineups.length} 套往期阵容 ↗</a></aside>

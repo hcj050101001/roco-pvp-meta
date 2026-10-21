@@ -12,7 +12,8 @@ test('玩家首页：固定明亮风格、体系筛选与全局排序',async({pa
   await page.getByRole('searchbox').fill(query);
   await expect(page.locator('[data-card]:visible')).toHaveCount(activeLineups.filter(l=>[l.name,...l.aliases,...l.archetype,...l.roster.map(p=>p.name)].join(' ').includes(query)).length);
   await page.getByRole('searchbox').fill('no-such-lineup-xxxx');await expect(page.locator('[data-card]:visible')).toHaveCount(0);
-  await expect(page.getByText('还没有找到这套配队')).toBeVisible();
+  await expect(page.getByText('没有找到符合条件的阵容')).toBeVisible();
+  await expect(page.getByRole('link',{name:'浏览往期阵容'})).toBeVisible();
   await page.getByRole('button',{name:'重置筛选'}).click();
   await expect(page.locator('[data-tier-filter],.tier')).toHaveCount(0);
   const type=activeLineups[0].archetype[0];await page.locator('[data-filter]').filter({hasText:type}).first().click();
@@ -47,6 +48,10 @@ test('当季和往期详情均可返回，完整原图无裁切',async({page},in
     await expect(page.locator('#analysis,.lead-block,.plan-list,.rating-note,.tier')).toHaveCount(0);
     await expect(page.locator('#guides')).toHaveCount(lineup.guides.length?1:0);
     await expect(page.locator('#tutorials .video-row')).toHaveCount(lineup.tutorials.length);
+    await expect(page.locator('#tutorials .info-gap')).toHaveCount(lineup.tutorials.length?0:1);
+    await expect(page.locator('#signals .source-row')).toHaveCount(lineup.signals.length);
+    await expect(page.locator('.detail-provenance')).toContainText(lineup.lineup_images[0].evidence_grade==='A'?'作者或一手来源':lineup.lineup_images[0].evidence_grade==='B'?'可信图文来源':'转载图源·已交叉核对');
+    await expect(page.locator('#roster .info-gap')).toContainText(`${lineup.roster.filter(p=>p.skills.length>0).length} / 6`);
     await expect(page.locator('.detail-nav-inner>a')).toHaveText(/返回阵容总览|返回往期阵容/);
     const images=await page.locator('img').evaluateAll(els=>els.map(el=>{const e=el as HTMLImageElement;return {loaded:e.complete&&e.naturalWidth>0,fit:getComputedStyle(e).objectFit,ratio:e.getBoundingClientRect().width/e.getBoundingClientRect().height,natural:e.naturalWidth/e.naturalHeight};}));
     for(const img of images){expect(img.loaded).toBe(true);expect(img.fit).toBe('contain');expect(Math.abs(img.ratio-img.natural)).toBeLessThan(.01);}

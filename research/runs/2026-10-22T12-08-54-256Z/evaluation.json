@@ -1,0 +1,1530 @@
+{
+  "run_id": "2026-10-22T12-08-54-256Z",
+  "candidates": [
+    {
+      "url": "https://img2-tc.tapimg.com/video/cover/FmXzPTTmdikJGKShnlSOXMggRyGQ_20260911042331.jpg/_tap_ugc_m.jpg",
+      "context": "部分恶系宠物60级只靠2-3个技能“磨死”骨龙截图  03:48",
+      "method": "src",
+      "order": 21,
+      "width": 720,
+      "height": 324,
+      "format": "jpeg",
+      "sha256": "a319e594571f289a58a423a9ca28915237fd49d10c0ef7851d3ecd0d5be9244c",
+      "phash": "62e361629d9d149d",
+      "file": "a319e594571f289a58a423a9ca28915237fd49d10c0ef7851d3ecd0d5be9244c.jpg",
+      "verified": false,
+      "mapping_confidence": "unverified",
+      "source": "https://www.taptap.cn/moment/847022426351994538"
+    },
+    {
+      "url": "https://img2-tc.tapimg.com/moment/etag/FhXVkJ0SdOd7lS3V0jn7AAkCZ0j9_20260910080528.jpg",
+      "context": "embedded JSON / script",
+      "method": "embedded",
+      "order": 23,
+      "width": 720,
+      "height": 403,
+      "format": "jpeg",
+      "sha256": "998cf65479c294cf43588e9e3360b0dcc0e2012c4d66fd6bf83fe68bea72e156",
+      "phash": "32f019eb4699ec16",
+      "file": "998cf65479c294cf43588e9e3360b0dcc0e2012c4d66fd6bf83fe68bea72e156.jpg",
+      "verified": false,
+      "mapping_confidence": "unverified",
+      "source": "https://www.taptap.cn/moment/847022426351994538"
+    },
+    {
+      "url": "https://assets.tapimg.com/protocol/%E6%98%93%E7%8E%A9%E5%B9%BF%E7%94%B5%E8%AF%81.jpg",
+      "context": "营业执照 ｜ 沪 ICP 备 16012525 号沪网文（2025）0236-071 号增值电信业务经营许可证：沪 B2-20170322  B1-20204119广播电视节目制作经营许可证：（沪）字第04651号内容安全算法 网信算备310112119986605230015号个性化推送算法 网信算备310112119986602230017号TapSight 智能问答助手算法 网信算备310112119986601240015号易玩（上海）网络科技有限公司公司地址：上海市静安区灵石路 718 号 B1 北楼注册地址：上海市闵行区紫星路 588 号 2 幢 2122 室 投诉举报邮箱：kefu@taptap.com 沪公网安备 31010602009551 号违法信息举报电话：021-60727072 转 3003网上有害信息举报专区上海辟谣专栏",
+      "method": "image-link",
+      "order": 8,
+      "width": 2058,
+      "height": 1362,
+      "format": "png",
+      "sha256": "4b36a1e19c737e9a22d364534f988db6c5023da1ebfe10120843fe19f4124bf8",
+      "phash": "2f70e1279ec58398",
+      "file": "4b36a1e19c737e9a22d364534f988db6c5023da1ebfe10120843fe19f4124bf8.png",
+      "verified": false,
+      "mapping_confidence": "unverified",
+      "source": "https://www.taptap.cn/app/188212/topic"
+    },
+    {
+      "url": "https://img-tc.tapimg.com/market/images/895ed85a16175a61a74e6089f6466a25.jpg/_tap_banner.jpg",
+      "context": "TapTap",
+      "method": "src",
+      "order": 9,
+      "width": 1080,
+      "height": 349,
+      "format": "jpeg",
+      "sha256": "8079df71c5197485dbb022c83364e0fa591b117f40663dbaafb16d1925fb87f1",
+      "phash": "0206f93f7661607e",
+      "file": "8079df71c5197485dbb022c83364e0fa591b117f40663dbaafb16d1925fb87f1.jpg",
+      "verified": false,
+      "mapping_confidence": "unverified",
+      "source": "https://www.taptap.cn/app/188212/topic"
+    },
+    {
+      "url": "https://assets.tapimg.com/protocol/%E6%98%93%E7%8E%A9%E5%B9%BF%E7%94%B5%E8%AF%81.jpg",
+      "context": "营业执照 ｜ 沪 ICP 备 16012525 号沪网文（2025）0236-071 号增值电信业务经营许可证：沪 B2-20170322  B1-20204119广播电视节目制作经营许可证：（沪）字第04651号内容安全算法 网信算备310112119986605230015号个性化推送算法 网信算备310112119986602230017号TapSight 智能问答助手算法 网信算备310112119986601240015号易玩（上海）网络科技有限公司公司地址：上海市静安区灵石路 718 号 B1 北楼注册地址：上海市闵行区紫星路 588 号 2 幢 2122 室 投诉举报邮箱：kefu@taptap.com 沪公网安备 31010602009551 号违法信息举报电话：021-60727072 转 3003网上有害信息举报专区上海辟谣专栏",
+      "method": "image-link",
+      "order": 8,
+      "width": 2058,
+      "height": 1362,
+      "format": "png",
+      "sha256": "4b36a1e19c737e9a22d364534f988db6c5023da1ebfe10120843fe19f4124bf8",
+      "phash": "2f70e1279ec58398",
+      "file": "4b36a1e19c737e9a22d364534f988db6c5023da1ebfe10120843fe19f4124bf8.png",
+      "verified": false,
+      "mapping_confidence": "unverified",
+      "source": "https://www.taptap.cn/moment/858904416206456638"
+    },
+    {
+      "url": "https://img2-tc.tapimg.com/moment/etag/FkhtBwkITO3A_2CPRYT8BXQjNtVc_20261013025924.jpg/_tap_ugc.jpg",
+      "context": "教练我要组黑白火队！ 1",
+      "method": "src",
+      "order": 11,
+      "width": 1080,
+      "height": 497,
+      "format": "jpeg",
+      "sha256": "4d2506c74d77d71feacb186571f8973499fc8f9872ca80a71cf5ed08d879ee05",
+      "phash": "46ce09f396b14939",
+      "file": "4d2506c74d77d71feacb186571f8973499fc8f9872ca80a71cf5ed08d879ee05.jpg",
+      "verified": false,
+      "mapping_confidence": "unverified",
+      "source": "https://www.taptap.cn/moment/858904416206456638"
+    },
+    {
+      "url": "https://img2-tc.tapimg.com/moment/etag/FkhtBwkITO3A_2CPRYT8BXQjNtVc_20261013025924.jpg",
+      "context": "教练我要组黑白火队！ 1",
+      "method": "srcset",
+      "order": 12,
+      "width": 2781,
+      "height": 1280,
+      "format": "jpeg",
+      "sha256": "9ab597d713774aacbf0573874e72b4f0c433cf64b56b5d08739587bd95a7849f",
+      "phash": "46ce09d396b1493d",
+      "file": "9ab597d713774aacbf0573874e72b4f0c433cf64b56b5d08739587bd95a7849f.jpg",
+      "verified": false,
+      "mapping_confidence": "unverified",
+      "source": "https://www.taptap.cn/moment/858904416206456638"
+    },
+    {
+      "url": "https://img2-tc.tapimg.com/moment/etag/FkfLAj2f41QOlNa5YiUH7ABNkRYj_20261013025925.jpg/_tap_ugc.jpg",
+      "context": "教练我要组黑白火队！ 2",
+      "method": "src",
+      "order": 13,
+      "width": 1080,
+      "height": 586,
+      "format": "jpeg",
+      "sha256": "0ed9f3c8a8445ea55a83eee312eb3fbce83935a8bcafcb195e06bd19951f5dd2",
+      "phash": "505118e64f293b3f",
+      "file": "0ed9f3c8a8445ea55a83eee312eb3fbce83935a8bcafcb195e06bd19951f5dd2.jpg",
+      "verified": false,
+      "mapping_confidence": "unverified",
+      "source": "https://www.taptap.cn/moment/858904416206456638"
+    },
+    {
+      "url": "https://img2-tc.tapimg.com/moment/etag/FkfLAj2f41QOlNa5YiUH7ABNkRYj_20261013025925.jpg",
+      "context": "教练我要组黑白火队！ 2",
+      "method": "srcset",
+      "order": 14,
+      "width": 2356,
+      "height": 1279,
+      "format": "jpeg",
+      "sha256": "2ccfef64ab74fcb008ebf34c48d1607b053a626375867a44ac17e9b0b183f1f6",
+      "phash": "505118e64f293b3f",
+      "file": "2ccfef64ab74fcb008ebf34c48d1607b053a626375867a44ac17e9b0b183f1f6.jpg",
+      "verified": false,
+      "mapping_confidence": "unverified",
+      "source": "https://www.taptap.cn/moment/858904416206456638"
+    },
+    {
+      "url": "https://img2-tc.tapimg.com/moment/etag/Fhe_L2W1qNV_nWNH-l6zPl_pmva6_20261013025925.jpg/_tap_ugc.jpg",
+      "context": "教练我要组黑白火队！ 3",
+      "method": "src",
+      "order": 15,
+      "width": 1080,
+      "height": 497,
+      "format": "jpeg",
+      "sha256": "2205abcf8e36f100baab888c662dbb1b608e3643a872b726214e593853d5b8bf",
+      "phash": "10815749ae733dea",
+      "file": "2205abcf8e36f100baab888c662dbb1b608e3643a872b726214e593853d5b8bf.jpg",
+      "verified": false,
+      "mapping_confidence": "unverified",
+      "source": "https://www.taptap.cn/moment/858904416206456638"
+    },
+    {
+      "url": "https://img2-tc.tapimg.com/moment/etag/Fhe_L2W1qNV_nWNH-l6zPl_pmva6_20261013025925.jpg",
+      "context": "教练我要组黑白火队！ 3",
+      "method": "srcset",
+      "order": 16,
+      "width": 2781,
+      "height": 1280,
+      "format": "jpeg",
+      "sha256": "1a4bddd13f0f8b0d9cd6f12788f90f455f69a0be811f7c54b4b70c3aea4ab4bb",
+      "phash": "10815359ae733dea",
+      "file": "1a4bddd13f0f8b0d9cd6f12788f90f455f69a0be811f7c54b4b70c3aea4ab4bb.jpg",
+      "verified": false,
+      "mapping_confidence": "unverified",
+      "source": "https://www.taptap.cn/moment/858904416206456638"
+    },
+    {
+      "url": "https://img2-tc.tapimg.com/moment/etag/FhSMacgCUt5z9K9oO7Pn1VHOlqpx_20261013025926.jpg/_tap_ugc.jpg",
+      "context": "教练我要组黑白火队！ 4",
+      "method": "src",
+      "order": 17,
+      "width": 1080,
+      "height": 497,
+      "format": "jpeg",
+      "sha256": "a876fe6bf5d8c1d0947fadc19ee5bb11753d759bcfadbbd1fcaa22d24d193054",
+      "phash": "60c11e3e3e397836",
+      "file": "a876fe6bf5d8c1d0947fadc19ee5bb11753d759bcfadbbd1fcaa22d24d193054.jpg",
+      "verified": false,
+      "mapping_confidence": "unverified",
+      "source": "https://www.taptap.cn/moment/858904416206456638"
+    },
+    {
+      "url": "https://post.qiandaocdn.com/post/images/fd4nGiPIV5I_resize.webp?imginfo=w2480,h3507!lfit_w540_jpg",
+      "context": "帖子封面图",
+      "method": "src",
+      "order": 18,
+      "width": 540,
+      "height": 764,
+      "format": "jpeg",
+      "sha256": "30c8f22379fbf3efce68429e50f030c9e775d6f42e22a63832d78ed6fb7aa525",
+      "phash": "7666d099d1932754",
+      "file": "30c8f22379fbf3efce68429e50f030c9e775d6f42e22a63832d78ed6fb7aa525.jpg",
+      "verified": false,
+      "mapping_confidence": "unverified",
+      "source": "https://qiandao.com/topic?id=undefined"
+    },
+    {
+      "url": "https://post.qiandaocdn.com/post/images/fXfRAfQVj3F_resize.webp?imginfo=w845,h709!lfit_w540_jpg",
+      "context": "帖子封面图",
+      "method": "src",
+      "order": 20,
+      "width": 540,
+      "height": 453,
+      "format": "jpeg",
+      "sha256": "13ddbc28b2aeefae0a67ed0454a00108849e3434551f3219b75cae2b2659ec6a",
+      "phash": "11a7549d09c066ff",
+      "file": "13ddbc28b2aeefae0a67ed0454a00108849e3434551f3219b75cae2b2659ec6a.jpg",
+      "verified": false,
+      "mapping_confidence": "unverified",
+      "source": "https://qiandao.com/topic?id=undefined"
+    },
+    {
+      "url": "https://post.qiandaocdn.com/post/images/fdAYjoLWFJZ_resize.webp?imginfo=w2304,h1380!lfit_w540_jpg",
+      "context": "帖子封面图",
+      "method": "src",
+      "order": 22,
+      "width": 540,
+      "height": 323,
+      "format": "jpeg",
+      "sha256": "99c88785dcc9bbe6583f80dae8eced13d73a62383831af04fb364d9bb9d5bc65",
+      "phash": "5f95a4919a6a642b",
+      "file": "99c88785dcc9bbe6583f80dae8eced13d73a62383831af04fb364d9bb9d5bc65.jpg",
+      "verified": false,
+      "mapping_confidence": "unverified",
+      "source": "https://qiandao.com/topic?id=undefined"
+    },
+    {
+      "url": "https://post.qiandaocdn.com/post/images/fdAYrhL3Gsc_resize.webp?imginfo=w903,h2268!lfit_w540_jpg",
+      "context": "帖子封面图",
+      "method": "src",
+      "order": 24,
+      "width": 540,
+      "height": 1356,
+      "format": "jpeg",
+      "sha256": "1dace3bc3e5f2573a9b31319427dcf7a2148b693279b38fd535e7366f2b03e7a",
+      "phash": "39e03d29ce1bc09b",
+      "file": "1dace3bc3e5f2573a9b31319427dcf7a2148b693279b38fd535e7366f2b03e7a.jpg",
+      "verified": false,
+      "mapping_confidence": "unverified",
+      "source": "https://qiandao.com/topic?id=undefined"
+    },
+    {
+      "url": "https://post.qiandaocdn.com/post/images/fXfXMiHaS1o.jpg?imginfo=w454,h778!lfit_w540_jpg",
+      "context": "帖子封面图",
+      "method": "src",
+      "order": 26,
+      "width": 454,
+      "height": 778,
+      "format": "jpeg",
+      "sha256": "ef19d0e55a20c8bf8fe9eb891b50079ebb6a26bb965c7fb0c2f1fe7b478488a1",
+      "phash": "6ad7d0603760077e",
+      "file": "ef19d0e55a20c8bf8fe9eb891b50079ebb6a26bb965c7fb0c2f1fe7b478488a1.jpg",
+      "verified": false,
+      "mapping_confidence": "unverified",
+      "source": "https://qiandao.com/topic?id=undefined"
+    },
+    {
+      "url": "https://post.qiandaocdn.com/post/images/fXfy52VAR0Q_resize.webp?imginfo=w3024,h4032!lfit_w540_jpg",
+      "context": "帖子封面图",
+      "method": "src",
+      "order": 28,
+      "width": 540,
+      "height": 720,
+      "format": "jpeg",
+      "sha256": "e78614beface9b90612ae4c9ef05c7b85356b47e079832e16357e4d2e909f6ff",
+      "phash": "7cda55252bf10b22",
+      "file": "e78614beface9b90612ae4c9ef05c7b85356b47e079832e16357e4d2e909f6ff.jpg",
+      "verified": false,
+      "mapping_confidence": "unverified",
+      "source": "https://qiandao.com/topic?id=undefined"
+    },
+    {
+      "url": "https://post.qiandaocdn.com/post/images/fXiL12J8EsT_resize.webp?imginfo=w4096,h3072!lfit_w540_jpg",
+      "context": "帖子封面图",
+      "method": "src",
+      "order": 30,
+      "width": 540,
+      "height": 405,
+      "format": "jpeg",
+      "sha256": "434a696ab9fd4be9ae62c72d96b7cba4ae38187f892ce6b448ada63af8afd901",
+      "phash": "0a8c6dcc4cdad2e5",
+      "file": "434a696ab9fd4be9ae62c72d96b7cba4ae38187f892ce6b448ada63af8afd901.jpg",
+      "verified": false,
+      "mapping_confidence": "unverified",
+      "source": "https://qiandao.com/topic?id=undefined"
+    },
+    {
+      "url": "https://wegame.gtimg.com/tgp_act/release/wegame/nrc20260618/images/part2_img.png",
+      "context": "S2赛季「专属福利」",
+      "method": "src",
+      "order": 3,
+      "width": 1474,
+      "height": 1055,
+      "format": "png",
+      "sha256": "44f8022815770d851774374a3ad086406eea6d79171fee8ca44282e95410f7e2",
+      "phash": "01823f47136f4e97",
+      "file": "44f8022815770d851774374a3ad086406eea6d79171fee8ca44282e95410f7e2.png",
+      "verified": false,
+      "mapping_confidence": "unverified",
+      "source": "https://www.wegame.com.cn/act/wegame/nrc20260618/?wg_ad_from=communitycoverNew"
+    },
+    {
+      "url": "https://wegame.gtimg.com/tgp_act/release/wegame/nrc20260618/images/part3_img.png",
+      "context": "{{presentMap['lkwgsj20260521v-new-5']?'已领取':'领取注册礼包'}} 小洛克「萌新福利」",
+      "method": "src",
+      "order": 4,
+      "width": 1687,
+      "height": 1000,
+      "format": "png",
+      "sha256": "d451feada5b4f20a3bc34dd13ab8592c81a5f22544fbd24f8bb7d5c9592651ac",
+      "phash": "776b2a9490e14bb4",
+      "file": "d451feada5b4f20a3bc34dd13ab8592c81a5f22544fbd24f8bb7d5c9592651ac.png",
+      "verified": false,
+      "mapping_confidence": "unverified",
+      "source": "https://www.wegame.com.cn/act/wegame/nrc20260618/?wg_ad_from=communitycoverNew"
+    },
+    {
+      "url": "https://wegame.gtimg.com/tgp_act/release/wegame/nrc20260618/images/part4_r_txt.png",
+      "context": "邀请好友 {{inviteInfo[item-1]?decodeName(inviteInfo[item-1].nick):'待加入'}}",
+      "method": "src",
+      "order": 5,
+      "width": 893,
+      "height": 315,
+      "format": "png",
+      "sha256": "7d5745d8249f00ffcd5674992f27301af37b0a453a6e6e76687c41b26a9e030f",
+      "phash": "21af4bc743571554",
+      "file": "7d5745d8249f00ffcd5674992f27301af37b0a453a6e6e76687c41b26a9e030f.png",
+      "verified": false,
+      "mapping_confidence": "unverified",
+      "source": "https://www.wegame.com.cn/act/wegame/nrc20260618/?wg_ad_from=communitycoverNew"
+    },
+    {
+      "url": "https://wegame.gtimg.com/tgp_act/release/wegame/nrc20260618/images/part5_con1_img1.png",
+      "context": "",
+      "method": "src",
+      "order": 6,
+      "width": 1502,
+      "height": 518,
+      "format": "png",
+      "sha256": "00108398e888f8fc1a43ff1b758cc12393a2ab0755e3f4852077369f12013751",
+      "phash": "44f26e093b1f3703",
+      "file": "00108398e888f8fc1a43ff1b758cc12393a2ab0755e3f4852077369f12013751.png",
+      "verified": false,
+      "mapping_confidence": "unverified",
+      "source": "https://www.wegame.com.cn/act/wegame/nrc20260618/?wg_ad_from=communitycoverNew"
+    },
+    {
+      "url": "https://wegame.gtimg.com/tgp_act/release/wegame/nrc20260618/images/part5_con2_img1.png",
+      "context": "",
+      "method": "src",
+      "order": 7,
+      "width": 1502,
+      "height": 518,
+      "format": "png",
+      "sha256": "7b3ecc78fafd32636829592e2571cd1e5fce3c3ed89952a426ca7154a4f20474",
+      "phash": "01cc2fcc3b987acc",
+      "file": "7b3ecc78fafd32636829592e2571cd1e5fce3c3ed89952a426ca7154a4f20474.png",
+      "verified": false,
+      "mapping_confidence": "unverified",
+      "source": "https://www.wegame.com.cn/act/wegame/nrc20260618/?wg_ad_from=communitycoverNew"
+    },
+    {
+      "url": "https://wegame.gtimg.com/tgp_act/release/wegame/lkwgsj20260409launch/images/part1/star/1.png",
+      "context": "",
+      "method": "srcset",
+      "order": 1,
+      "width": 9576,
+      "height": 345,
+      "format": "png",
+      "sha256": "ad56e4b0754da037b12f8ce161a0426638357307ca951b881f2b8351130376cb",
+      "phash": "612eec479f1860d3",
+      "file": "ad56e4b0754da037b12f8ce161a0426638357307ca951b881f2b8351130376cb.png",
+      "verified": false,
+      "mapping_confidence": "unverified",
+      "source": "https://www.wegame.com.cn/act/wegame/lkwgsj20260409launch/index.html"
+    },
+    {
+      "url": "https://wegame.gtimg.com/tgp_act/release/wegame/lkwgsj20260409launch/images/part1/star/2.png",
+      "context": "",
+      "method": "srcset",
+      "order": 2,
+      "width": 9576,
+      "height": 345,
+      "format": "png",
+      "sha256": "a8c5c963f56c65907a71ef543888202ce868716db56030cfa49cc33f630d2fa2",
+      "phash": "516578d2366c325e",
+      "file": "a8c5c963f56c65907a71ef543888202ce868716db56030cfa49cc33f630d2fa2.png",
+      "verified": false,
+      "mapping_confidence": "unverified",
+      "source": "https://www.wegame.com.cn/act/wegame/lkwgsj20260409launch/index.html"
+    },
+    {
+      "url": "https://wegame.gtimg.com/tgp_act/release/wegame/lkwgsj20260409launch/images/part1/star/3.png",
+      "context": "",
+      "method": "srcset",
+      "order": 3,
+      "width": 9576,
+      "height": 345,
+      "format": "png",
+      "sha256": "ad377a3e61651a1e3c80a3a480c7440fe9d834e04ecd354a74e071317ba937d7",
+      "phash": "219e656593bc261e",
+      "file": "ad377a3e61651a1e3c80a3a480c7440fe9d834e04ecd354a74e071317ba937d7.png",
+      "verified": false,
+      "mapping_confidence": "unverified",
+      "source": "https://www.wegame.com.cn/act/wegame/lkwgsj20260409launch/index.html"
+    },
+    {
+      "url": "https://wegame.gtimg.com/tgp_act/release/wegame/lkwgsj20260409launch/images/part1/star/5.png",
+      "context": "",
+      "method": "srcset",
+      "order": 5,
+      "width": 9576,
+      "height": 345,
+      "format": "png",
+      "sha256": "aec5db4f6ea523434ade35ed6c26a56b6590f77fe996b1b97c264de2a9320d59",
+      "phash": "416c272d1ef83956",
+      "file": "aec5db4f6ea523434ade35ed6c26a56b6590f77fe996b1b97c264de2a9320d59.png",
+      "verified": false,
+      "mapping_confidence": "unverified",
+      "source": "https://www.wegame.com.cn/act/wegame/lkwgsj20260409launch/index.html"
+    },
+    {
+      "url": "https://patchwiki.biligame.com/images/nrc/6/61/gii9b3c4xttr339mp5cakicf1dwoile.png",
+      "context": "时装图鉴",
+      "method": "src",
+      "order": 11,
+      "width": 512,
+      "height": 1024,
+      "format": "png",
+      "sha256": "2347da93d5928de3587c6a100d33c5c56e14c9ab5f7028cccddeda2cd99f529e",
+      "phash": "0d6e6a99b231b552",
+      "file": "2347da93d5928de3587c6a100d33c5c56e14c9ab5f7028cccddeda2cd99f529e.png",
+      "verified": false,
+      "mapping_confidence": "unverified",
+      "source": "https://wiki.biligame.com/nrc/%E9%A6%96%E9%A1%B5"
+    },
+    {
+      "url": "https://static.biligame.net/common/images/culture-logo.png",
+      "context": "",
+      "method": "src",
+      "order": 13,
+      "width": 428,
+      "height": 424,
+      "format": "png",
+      "sha256": "d60ae067780386430fd152ed3a27d564f280cf8a8a3159f2d38fc2ad456895ad",
+      "phash": "41ce3595cf0e1a74",
+      "file": "d60ae067780386430fd152ed3a27d564f280cf8a8a3159f2d38fc2ad456895ad.png",
+      "verified": false,
+      "mapping_confidence": "unverified",
+      "source": "https://wiki.biligame.com/nrc/%E9%A6%96%E9%A1%B5"
+    },
+    {
+      "url": "https://patchwiki.biligame.com/images/nrc/6/68/oitygxndm17xufinmtw0yknt4mry5j4.png?version=252cd363dd7e2aefa8c4ebdee73f5518",
+      "context": "metadata",
+      "method": "og:image",
+      "order": 15,
+      "width": 800,
+      "height": 300,
+      "format": "png",
+      "sha256": "3fac66c5a9e21058fed0f3a53ae93672cf730116236f52c0424398a8a4aa2f5a",
+      "phash": "4fc3659a249a3c99",
+      "file": "3fac66c5a9e21058fed0f3a53ae93672cf730116236f52c0424398a8a4aa2f5a.png",
+      "verified": false,
+      "mapping_confidence": "unverified",
+      "source": "https://wiki.biligame.com/nrc/%E9%A6%96%E9%A1%B5"
+    },
+    {
+      "url": "https://sylyfile.3dmgame.com/upload/game/20260428/656fc37e35fe2714e2c2d20587e6708e.png",
+      "context": "安卓下载\n                             \n                        进入官网",
+      "method": "data-original",
+      "order": 15,
+      "width": 512,
+      "height": 512,
+      "format": "png",
+      "sha256": "d85e16a7764cba7c59788633837990ed9d6bd2586fba5c51aeaa9a1869dfb18d",
+      "phash": "55b6346949c95396",
+      "file": "d85e16a7764cba7c59788633837990ed9d6bd2586fba5c51aeaa9a1869dfb18d.png",
+      "verified": false,
+      "mapping_confidence": "unverified",
+      "source": "https://ol.3dmgame.com/gl/355668.html"
+    },
+    {
+      "url": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260429/1777452636_579807.png",
+      "context": "",
+      "method": "data-original",
+      "order": 16,
+      "width": 400,
+      "height": 400,
+      "format": "png",
+      "sha256": "2ad91b6c3e45a32866d71c5ccc5302ae7849f1a11a6b776a3ef4a742a0407ff9",
+      "phash": "3fc6d0529129c575",
+      "file": "2ad91b6c3e45a32866d71c5ccc5302ae7849f1a11a6b776a3ef4a742a0407ff9.png",
+      "verified": false,
+      "mapping_confidence": "unverified",
+      "source": "https://ol.3dmgame.com/gl/355668.html"
+    },
+    {
+      "url": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300662_248760.png",
+      "context": "安卓下载\n                             \n                        进入官网",
+      "method": "data-original",
+      "order": 17,
+      "width": 512,
+      "height": 512,
+      "format": "png",
+      "sha256": "a5981479e6810f9ca49cd44fbc8fe0d3e5c8ea86142188921965db4edc9c37d7",
+      "phash": "5d3a61b30735384b",
+      "file": "a5981479e6810f9ca49cd44fbc8fe0d3e5c8ea86142188921965db4edc9c37d7.png",
+      "verified": false,
+      "mapping_confidence": "unverified",
+      "source": "https://ol.3dmgame.com/gl/355668.html"
+    },
+    {
+      "url": "https://sylyfile.3dmgame.com/upload/game/20260428/656fc37e35fe2714e2c2d20587e6708e.png",
+      "context": "安卓下载\n                             \n                        进入官网",
+      "method": "data-original",
+      "order": 15,
+      "width": 512,
+      "height": 512,
+      "format": "png",
+      "sha256": "d85e16a7764cba7c59788633837990ed9d6bd2586fba5c51aeaa9a1869dfb18d",
+      "phash": "55b6346949c95396",
+      "file": "d85e16a7764cba7c59788633837990ed9d6bd2586fba5c51aeaa9a1869dfb18d.png",
+      "verified": false,
+      "mapping_confidence": "unverified",
+      "source": "https://ol.3dmgame.com/gl/348407.html"
+    },
+    {
+      "url": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260429/1777452636_579807.png",
+      "context": "",
+      "method": "data-original",
+      "order": 16,
+      "width": 400,
+      "height": 400,
+      "format": "png",
+      "sha256": "2ad91b6c3e45a32866d71c5ccc5302ae7849f1a11a6b776a3ef4a742a0407ff9",
+      "phash": "3fc6d0529129c575",
+      "file": "2ad91b6c3e45a32866d71c5ccc5302ae7849f1a11a6b776a3ef4a742a0407ff9.png",
+      "verified": false,
+      "mapping_confidence": "unverified",
+      "source": "https://ol.3dmgame.com/gl/348407.html"
+    },
+    {
+      "url": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300662_248760.png",
+      "context": "安卓下载\n                             \n                        进入官网",
+      "method": "data-original",
+      "order": 17,
+      "width": 512,
+      "height": 512,
+      "format": "png",
+      "sha256": "a5981479e6810f9ca49cd44fbc8fe0d3e5c8ea86142188921965db4edc9c37d7",
+      "phash": "5d3a61b30735384b",
+      "file": "a5981479e6810f9ca49cd44fbc8fe0d3e5c8ea86142188921965db4edc9c37d7.png",
+      "verified": false,
+      "mapping_confidence": "unverified",
+      "source": "https://ol.3dmgame.com/gl/348407.html"
+    },
+    {
+      "url": "https://sylyfile.3dmgame.com/upload/game/20260428/656fc37e35fe2714e2c2d20587e6708e.png",
+      "context": "安卓下载\n                             \n                        进入官网",
+      "method": "data-original",
+      "order": 15,
+      "width": 512,
+      "height": 512,
+      "format": "png",
+      "sha256": "d85e16a7764cba7c59788633837990ed9d6bd2586fba5c51aeaa9a1869dfb18d",
+      "phash": "55b6346949c95396",
+      "file": "d85e16a7764cba7c59788633837990ed9d6bd2586fba5c51aeaa9a1869dfb18d.png",
+      "verified": false,
+      "mapping_confidence": "unverified",
+      "source": "https://ol.3dmgame.com/gl/342821.html"
+    },
+    {
+      "url": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260429/1777452636_579807.png",
+      "context": "",
+      "method": "data-original",
+      "order": 16,
+      "width": 400,
+      "height": 400,
+      "format": "png",
+      "sha256": "2ad91b6c3e45a32866d71c5ccc5302ae7849f1a11a6b776a3ef4a742a0407ff9",
+      "phash": "3fc6d0529129c575",
+      "file": "2ad91b6c3e45a32866d71c5ccc5302ae7849f1a11a6b776a3ef4a742a0407ff9.png",
+      "verified": false,
+      "mapping_confidence": "unverified",
+      "source": "https://ol.3dmgame.com/gl/342821.html"
+    },
+    {
+      "url": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300662_248760.png",
+      "context": "安卓下载\n                             \n                        进入官网",
+      "method": "data-original",
+      "order": 17,
+      "width": 512,
+      "height": 512,
+      "format": "png",
+      "sha256": "a5981479e6810f9ca49cd44fbc8fe0d3e5c8ea86142188921965db4edc9c37d7",
+      "phash": "5d3a61b30735384b",
+      "file": "a5981479e6810f9ca49cd44fbc8fe0d3e5c8ea86142188921965db4edc9c37d7.png",
+      "verified": false,
+      "mapping_confidence": "unverified",
+      "source": "https://ol.3dmgame.com/gl/342821.html"
+    },
+    {
+      "url": "https://post.qiandaocdn.com/post/images/fdUoSqx23q3_resize.webp!lfit_w540_h540",
+      "context": "S4赛季队伍\n马头星陨队（全JiPin全10）\n夜王龙威起",
+      "method": "srcset",
+      "order": 10,
+      "width": 540,
+      "height": 248,
+      "format": "jpeg",
+      "sha256": "1986bd87dacbb12658c47c5c52f3979e8cfb1303afaf6f56691f1ac294127c52",
+      "phash": "5e83598f234c7459",
+      "file": "1986bd87dacbb12658c47c5c52f3979e8cfb1303afaf6f56691f1ac294127c52.jpg",
+      "verified": false,
+      "mapping_confidence": "unverified",
+      "source": "https://qiandao.com/post?postId=1023430985116591249"
+    },
+    {
+      "url": "https://post.qiandaocdn.com/post/images/fdUoSDhogvK_resize.webp!lfit_w540_h540",
+      "context": "S4赛季队伍\n马头星陨队（全JiPin全10）\n夜王龙威起",
+      "method": "srcset",
+      "order": 12,
+      "width": 540,
+      "height": 248,
+      "format": "jpeg",
+      "sha256": "bb7e4ab1ab579786ac12ce61831f6f1de917087463af592bc87037c1b4369aa5",
+      "phash": "5e8b598b0bcc7451",
+      "file": "bb7e4ab1ab579786ac12ce61831f6f1de917087463af592bc87037c1b4369aa5.jpg",
+      "verified": false,
+      "mapping_confidence": "unverified",
+      "source": "https://qiandao.com/post?postId=1023430985116591249"
+    },
+    {
+      "url": "https://post.qiandaocdn.com/post/images/fdUoSRboE2F_resize.webp!lfit_w540_h540",
+      "context": "S4赛季队伍\n马头星陨队（全JiPin全10）\n夜王龙威起",
+      "method": "srcset",
+      "order": 14,
+      "width": 540,
+      "height": 248,
+      "format": "jpeg",
+      "sha256": "3326eca0f55961745e85791f8e8458cf05a0267caca094c0a1b437c3419278c3",
+      "phash": "5ea3598b0b457459",
+      "file": "3326eca0f55961745e85791f8e8458cf05a0267caca094c0a1b437c3419278c3.jpg",
+      "verified": false,
+      "mapping_confidence": "unverified",
+      "source": "https://qiandao.com/post?postId=1023430985116591249"
+    },
+    {
+      "url": "https://post.qiandaocdn.com/post/images/fdtKMpAtz3P_resize.webp!lfit_w540_h540",
+      "context": "S4赛季队伍\n马头星陨队（全JiPin全10）\n夜王龙威起",
+      "method": "srcset",
+      "order": 16,
+      "width": 305,
+      "height": 540,
+      "format": "jpeg",
+      "sha256": "1625371cc301771b341a9c7ff0c58fddaff2594ff10e8d623d3e6ac6a06ad9bf",
+      "phash": "5b00a4dbb77da070",
+      "file": "1625371cc301771b341a9c7ff0c58fddaff2594ff10e8d623d3e6ac6a06ad9bf.jpg",
+      "verified": false,
+      "mapping_confidence": "unverified",
+      "source": "https://qiandao.com/post?postId=1023430985116591249"
+    },
+    {
+      "url": "https://sylyfile.3dmgame.com/upload/game/20260428/656fc37e35fe2714e2c2d20587e6708e.png",
+      "context": "安卓下载\n                             \n                        进入官网",
+      "method": "data-original",
+      "order": 15,
+      "width": 512,
+      "height": 512,
+      "format": "png",
+      "sha256": "d85e16a7764cba7c59788633837990ed9d6bd2586fba5c51aeaa9a1869dfb18d",
+      "phash": "55b6346949c95396",
+      "file": "d85e16a7764cba7c59788633837990ed9d6bd2586fba5c51aeaa9a1869dfb18d.png",
+      "verified": false,
+      "mapping_confidence": "unverified",
+      "source": "https://ol.3dmgame.com/gl/355666.html"
+    },
+    {
+      "url": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260429/1777452636_579807.png",
+      "context": "",
+      "method": "data-original",
+      "order": 16,
+      "width": 400,
+      "height": 400,
+      "format": "png",
+      "sha256": "2ad91b6c3e45a32866d71c5ccc5302ae7849f1a11a6b776a3ef4a742a0407ff9",
+      "phash": "3fc6d0529129c575",
+      "file": "2ad91b6c3e45a32866d71c5ccc5302ae7849f1a11a6b776a3ef4a742a0407ff9.png",
+      "verified": false,
+      "mapping_confidence": "unverified",
+      "source": "https://ol.3dmgame.com/gl/355666.html"
+    },
+    {
+      "url": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300662_248760.png",
+      "context": "安卓下载\n                             \n                        进入官网",
+      "method": "data-original",
+      "order": 17,
+      "width": 512,
+      "height": 512,
+      "format": "png",
+      "sha256": "a5981479e6810f9ca49cd44fbc8fe0d3e5c8ea86142188921965db4edc9c37d7",
+      "phash": "5d3a61b30735384b",
+      "file": "a5981479e6810f9ca49cd44fbc8fe0d3e5c8ea86142188921965db4edc9c37d7.png",
+      "verified": false,
+      "mapping_confidence": "unverified",
+      "source": "https://ol.3dmgame.com/gl/355666.html"
+    },
+    {
+      "url": "https://sylyfile.3dmgame.com/upload/game/20260428/656fc37e35fe2714e2c2d20587e6708e.png",
+      "context": "安卓下载\n                             \n                        进入官网",
+      "method": "data-original",
+      "order": 15,
+      "width": 512,
+      "height": 512,
+      "format": "png",
+      "sha256": "d85e16a7764cba7c59788633837990ed9d6bd2586fba5c51aeaa9a1869dfb18d",
+      "phash": "55b6346949c95396",
+      "file": "d85e16a7764cba7c59788633837990ed9d6bd2586fba5c51aeaa9a1869dfb18d.png",
+      "verified": false,
+      "mapping_confidence": "unverified",
+      "source": "https://ol.3dmgame.com/gl/350006.html"
+    },
+    {
+      "url": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260429/1777452636_579807.png",
+      "context": "",
+      "method": "data-original",
+      "order": 16,
+      "width": 400,
+      "height": 400,
+      "format": "png",
+      "sha256": "2ad91b6c3e45a32866d71c5ccc5302ae7849f1a11a6b776a3ef4a742a0407ff9",
+      "phash": "3fc6d0529129c575",
+      "file": "2ad91b6c3e45a32866d71c5ccc5302ae7849f1a11a6b776a3ef4a742a0407ff9.png",
+      "verified": false,
+      "mapping_confidence": "unverified",
+      "source": "https://ol.3dmgame.com/gl/350006.html"
+    },
+    {
+      "url": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300662_248760.png",
+      "context": "安卓下载\n                             \n                        进入官网",
+      "method": "data-original",
+      "order": 17,
+      "width": 512,
+      "height": 512,
+      "format": "png",
+      "sha256": "a5981479e6810f9ca49cd44fbc8fe0d3e5c8ea86142188921965db4edc9c37d7",
+      "phash": "5d3a61b30735384b",
+      "file": "a5981479e6810f9ca49cd44fbc8fe0d3e5c8ea86142188921965db4edc9c37d7.png",
+      "verified": false,
+      "mapping_confidence": "unverified",
+      "source": "https://ol.3dmgame.com/gl/350006.html"
+    },
+    {
+      "url": "https://sylyfile.3dmgame.com/upload/game/20260428/656fc37e35fe2714e2c2d20587e6708e.png",
+      "context": "安卓下载\n                             \n                        进入官网",
+      "method": "data-original",
+      "order": 15,
+      "width": 512,
+      "height": 512,
+      "format": "png",
+      "sha256": "d85e16a7764cba7c59788633837990ed9d6bd2586fba5c51aeaa9a1869dfb18d",
+      "phash": "55b6346949c95396",
+      "file": "d85e16a7764cba7c59788633837990ed9d6bd2586fba5c51aeaa9a1869dfb18d.png",
+      "verified": false,
+      "mapping_confidence": "unverified",
+      "source": "https://ol.3dmgame.com/gl/354707.html"
+    },
+    {
+      "url": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260429/1777452636_579807.png",
+      "context": "",
+      "method": "data-original",
+      "order": 16,
+      "width": 400,
+      "height": 400,
+      "format": "png",
+      "sha256": "2ad91b6c3e45a32866d71c5ccc5302ae7849f1a11a6b776a3ef4a742a0407ff9",
+      "phash": "3fc6d0529129c575",
+      "file": "2ad91b6c3e45a32866d71c5ccc5302ae7849f1a11a6b776a3ef4a742a0407ff9.png",
+      "verified": false,
+      "mapping_confidence": "unverified",
+      "source": "https://ol.3dmgame.com/gl/354707.html"
+    },
+    {
+      "url": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300662_248760.png",
+      "context": "安卓下载\n                             \n                        进入官网",
+      "method": "data-original",
+      "order": 17,
+      "width": 512,
+      "height": 512,
+      "format": "png",
+      "sha256": "a5981479e6810f9ca49cd44fbc8fe0d3e5c8ea86142188921965db4edc9c37d7",
+      "phash": "5d3a61b30735384b",
+      "file": "a5981479e6810f9ca49cd44fbc8fe0d3e5c8ea86142188921965db4edc9c37d7.png",
+      "verified": false,
+      "mapping_confidence": "unverified",
+      "source": "https://ol.3dmgame.com/gl/354707.html"
+    },
+    {
+      "url": "https://sylyfile.3dmgame.com/upload/game/20260428/656fc37e35fe2714e2c2d20587e6708e.png",
+      "context": "安卓下载\n                             \n                        进入官网",
+      "method": "data-original",
+      "order": 15,
+      "width": 512,
+      "height": 512,
+      "format": "png",
+      "sha256": "d85e16a7764cba7c59788633837990ed9d6bd2586fba5c51aeaa9a1869dfb18d",
+      "phash": "55b6346949c95396",
+      "file": "d85e16a7764cba7c59788633837990ed9d6bd2586fba5c51aeaa9a1869dfb18d.png",
+      "verified": false,
+      "mapping_confidence": "unverified",
+      "source": "https://ol.3dmgame.com/gl/350004.html"
+    },
+    {
+      "url": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260429/1777452636_579807.png",
+      "context": "",
+      "method": "data-original",
+      "order": 16,
+      "width": 400,
+      "height": 400,
+      "format": "png",
+      "sha256": "2ad91b6c3e45a32866d71c5ccc5302ae7849f1a11a6b776a3ef4a742a0407ff9",
+      "phash": "3fc6d0529129c575",
+      "file": "2ad91b6c3e45a32866d71c5ccc5302ae7849f1a11a6b776a3ef4a742a0407ff9.png",
+      "verified": false,
+      "mapping_confidence": "unverified",
+      "source": "https://ol.3dmgame.com/gl/350004.html"
+    },
+    {
+      "url": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300662_248760.png",
+      "context": "安卓下载\n                             \n                        进入官网",
+      "method": "data-original",
+      "order": 17,
+      "width": 512,
+      "height": 512,
+      "format": "png",
+      "sha256": "a5981479e6810f9ca49cd44fbc8fe0d3e5c8ea86142188921965db4edc9c37d7",
+      "phash": "5d3a61b30735384b",
+      "file": "a5981479e6810f9ca49cd44fbc8fe0d3e5c8ea86142188921965db4edc9c37d7.png",
+      "verified": false,
+      "mapping_confidence": "unverified",
+      "source": "https://ol.3dmgame.com/gl/350004.html"
+    },
+    {
+      "url": "https://sylyfile.3dmgame.com/upload/game/20260428/656fc37e35fe2714e2c2d20587e6708e.png",
+      "context": "安卓下载\n                             \n                        进入官网",
+      "method": "data-original",
+      "order": 15,
+      "width": 512,
+      "height": 512,
+      "format": "png",
+      "sha256": "d85e16a7764cba7c59788633837990ed9d6bd2586fba5c51aeaa9a1869dfb18d",
+      "phash": "55b6346949c95396",
+      "file": "d85e16a7764cba7c59788633837990ed9d6bd2586fba5c51aeaa9a1869dfb18d.png",
+      "verified": false,
+      "mapping_confidence": "unverified",
+      "source": "https://ol.3dmgame.com/gl/353802.html"
+    },
+    {
+      "url": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260429/1777452636_579807.png",
+      "context": "",
+      "method": "data-original",
+      "order": 16,
+      "width": 400,
+      "height": 400,
+      "format": "png",
+      "sha256": "2ad91b6c3e45a32866d71c5ccc5302ae7849f1a11a6b776a3ef4a742a0407ff9",
+      "phash": "3fc6d0529129c575",
+      "file": "2ad91b6c3e45a32866d71c5ccc5302ae7849f1a11a6b776a3ef4a742a0407ff9.png",
+      "verified": false,
+      "mapping_confidence": "unverified",
+      "source": "https://ol.3dmgame.com/gl/353802.html"
+    },
+    {
+      "url": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300662_248760.png",
+      "context": "安卓下载\n                             \n                        进入官网",
+      "method": "data-original",
+      "order": 17,
+      "width": 512,
+      "height": 512,
+      "format": "png",
+      "sha256": "a5981479e6810f9ca49cd44fbc8fe0d3e5c8ea86142188921965db4edc9c37d7",
+      "phash": "5d3a61b30735384b",
+      "file": "a5981479e6810f9ca49cd44fbc8fe0d3e5c8ea86142188921965db4edc9c37d7.png",
+      "verified": false,
+      "mapping_confidence": "unverified",
+      "source": "https://ol.3dmgame.com/gl/353802.html"
+    },
+    {
+      "url": "https://sylyfile.3dmgame.com/upload/game/20260428/656fc37e35fe2714e2c2d20587e6708e.png",
+      "context": "安卓下载\n                             \n                        进入官网",
+      "method": "data-original",
+      "order": 15,
+      "width": 512,
+      "height": 512,
+      "format": "png",
+      "sha256": "d85e16a7764cba7c59788633837990ed9d6bd2586fba5c51aeaa9a1869dfb18d",
+      "phash": "55b6346949c95396",
+      "file": "d85e16a7764cba7c59788633837990ed9d6bd2586fba5c51aeaa9a1869dfb18d.png",
+      "verified": false,
+      "mapping_confidence": "unverified",
+      "source": "https://ol.3dmgame.com/gl/353804.html"
+    },
+    {
+      "url": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260429/1777452636_579807.png",
+      "context": "",
+      "method": "data-original",
+      "order": 16,
+      "width": 400,
+      "height": 400,
+      "format": "png",
+      "sha256": "2ad91b6c3e45a32866d71c5ccc5302ae7849f1a11a6b776a3ef4a742a0407ff9",
+      "phash": "3fc6d0529129c575",
+      "file": "2ad91b6c3e45a32866d71c5ccc5302ae7849f1a11a6b776a3ef4a742a0407ff9.png",
+      "verified": false,
+      "mapping_confidence": "unverified",
+      "source": "https://ol.3dmgame.com/gl/353804.html"
+    },
+    {
+      "url": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300662_248760.png",
+      "context": "安卓下载\n                             \n                        进入官网",
+      "method": "data-original",
+      "order": 17,
+      "width": 512,
+      "height": 512,
+      "format": "png",
+      "sha256": "a5981479e6810f9ca49cd44fbc8fe0d3e5c8ea86142188921965db4edc9c37d7",
+      "phash": "5d3a61b30735384b",
+      "file": "a5981479e6810f9ca49cd44fbc8fe0d3e5c8ea86142188921965db4edc9c37d7.png",
+      "verified": false,
+      "mapping_confidence": "unverified",
+      "source": "https://ol.3dmgame.com/gl/353804.html"
+    },
+    {
+      "url": "https://assets.tapimg.com/abd/activity/rock-dex/assets/game-icon-1e714198.png",
+      "context": "洛克王国 洛克王国阵容大厅在 TapTap 客户端内查看完整阵容大厅，探索洛克王国热门阵容配置打开 TapTap APP",
+      "method": "src",
+      "order": 0,
+      "width": 300,
+      "height": 300,
+      "format": "png",
+      "sha256": "1e7141986e41291bce8ae1f0ee3e88c248da835fafa684e075793bc807b2cee7",
+      "phash": "536b2c5c31345337",
+      "file": "1e7141986e41291bce8ae1f0ee3e88c248da835fafa684e075793bc807b2cee7.png",
+      "verified": false,
+      "mapping_confidence": "unverified",
+      "source": "https://www.taptap.cn/poster-activity/NIU11IM3S8uL"
+    }
+  ],
+  "duplicates": [
+    {
+      "a": "https://assets.tapimg.com/protocol/%E6%98%93%E7%8E%A9%E5%B9%BF%E7%94%B5%E8%AF%81.jpg",
+      "b": "https://assets.tapimg.com/protocol/%E6%98%93%E7%8E%A9%E5%B9%BF%E7%94%B5%E8%AF%81.jpg",
+      "exact": true
+    },
+    {
+      "a": "https://img2-tc.tapimg.com/moment/etag/FkhtBwkITO3A_2CPRYT8BXQjNtVc_20261013025924.jpg",
+      "b": "https://img2-tc.tapimg.com/moment/etag/FkhtBwkITO3A_2CPRYT8BXQjNtVc_20261013025924.jpg/_tap_ugc.jpg",
+      "exact": false
+    },
+    {
+      "a": "https://img2-tc.tapimg.com/moment/etag/FkfLAj2f41QOlNa5YiUH7ABNkRYj_20261013025925.jpg",
+      "b": "https://img2-tc.tapimg.com/moment/etag/FkfLAj2f41QOlNa5YiUH7ABNkRYj_20261013025925.jpg/_tap_ugc.jpg",
+      "exact": false
+    },
+    {
+      "a": "https://img2-tc.tapimg.com/moment/etag/Fhe_L2W1qNV_nWNH-l6zPl_pmva6_20261013025925.jpg",
+      "b": "https://img2-tc.tapimg.com/moment/etag/Fhe_L2W1qNV_nWNH-l6zPl_pmva6_20261013025925.jpg/_tap_ugc.jpg",
+      "exact": false
+    },
+    {
+      "a": "https://sylyfile.3dmgame.com/upload/game/20260428/656fc37e35fe2714e2c2d20587e6708e.png",
+      "b": "https://sylyfile.3dmgame.com/upload/game/20260428/656fc37e35fe2714e2c2d20587e6708e.png",
+      "exact": true
+    },
+    {
+      "a": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260429/1777452636_579807.png",
+      "b": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260429/1777452636_579807.png",
+      "exact": true
+    },
+    {
+      "a": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300662_248760.png",
+      "b": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300662_248760.png",
+      "exact": true
+    },
+    {
+      "a": "https://sylyfile.3dmgame.com/upload/game/20260428/656fc37e35fe2714e2c2d20587e6708e.png",
+      "b": "https://sylyfile.3dmgame.com/upload/game/20260428/656fc37e35fe2714e2c2d20587e6708e.png",
+      "exact": true
+    },
+    {
+      "a": "https://sylyfile.3dmgame.com/upload/game/20260428/656fc37e35fe2714e2c2d20587e6708e.png",
+      "b": "https://sylyfile.3dmgame.com/upload/game/20260428/656fc37e35fe2714e2c2d20587e6708e.png",
+      "exact": true
+    },
+    {
+      "a": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260429/1777452636_579807.png",
+      "b": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260429/1777452636_579807.png",
+      "exact": true
+    },
+    {
+      "a": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260429/1777452636_579807.png",
+      "b": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260429/1777452636_579807.png",
+      "exact": true
+    },
+    {
+      "a": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300662_248760.png",
+      "b": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300662_248760.png",
+      "exact": true
+    },
+    {
+      "a": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300662_248760.png",
+      "b": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300662_248760.png",
+      "exact": true
+    },
+    {
+      "a": "https://sylyfile.3dmgame.com/upload/game/20260428/656fc37e35fe2714e2c2d20587e6708e.png",
+      "b": "https://sylyfile.3dmgame.com/upload/game/20260428/656fc37e35fe2714e2c2d20587e6708e.png",
+      "exact": true
+    },
+    {
+      "a": "https://sylyfile.3dmgame.com/upload/game/20260428/656fc37e35fe2714e2c2d20587e6708e.png",
+      "b": "https://sylyfile.3dmgame.com/upload/game/20260428/656fc37e35fe2714e2c2d20587e6708e.png",
+      "exact": true
+    },
+    {
+      "a": "https://sylyfile.3dmgame.com/upload/game/20260428/656fc37e35fe2714e2c2d20587e6708e.png",
+      "b": "https://sylyfile.3dmgame.com/upload/game/20260428/656fc37e35fe2714e2c2d20587e6708e.png",
+      "exact": true
+    },
+    {
+      "a": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260429/1777452636_579807.png",
+      "b": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260429/1777452636_579807.png",
+      "exact": true
+    },
+    {
+      "a": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260429/1777452636_579807.png",
+      "b": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260429/1777452636_579807.png",
+      "exact": true
+    },
+    {
+      "a": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260429/1777452636_579807.png",
+      "b": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260429/1777452636_579807.png",
+      "exact": true
+    },
+    {
+      "a": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300662_248760.png",
+      "b": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300662_248760.png",
+      "exact": true
+    },
+    {
+      "a": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300662_248760.png",
+      "b": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300662_248760.png",
+      "exact": true
+    },
+    {
+      "a": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300662_248760.png",
+      "b": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300662_248760.png",
+      "exact": true
+    },
+    {
+      "a": "https://sylyfile.3dmgame.com/upload/game/20260428/656fc37e35fe2714e2c2d20587e6708e.png",
+      "b": "https://sylyfile.3dmgame.com/upload/game/20260428/656fc37e35fe2714e2c2d20587e6708e.png",
+      "exact": true
+    },
+    {
+      "a": "https://sylyfile.3dmgame.com/upload/game/20260428/656fc37e35fe2714e2c2d20587e6708e.png",
+      "b": "https://sylyfile.3dmgame.com/upload/game/20260428/656fc37e35fe2714e2c2d20587e6708e.png",
+      "exact": true
+    },
+    {
+      "a": "https://sylyfile.3dmgame.com/upload/game/20260428/656fc37e35fe2714e2c2d20587e6708e.png",
+      "b": "https://sylyfile.3dmgame.com/upload/game/20260428/656fc37e35fe2714e2c2d20587e6708e.png",
+      "exact": true
+    },
+    {
+      "a": "https://sylyfile.3dmgame.com/upload/game/20260428/656fc37e35fe2714e2c2d20587e6708e.png",
+      "b": "https://sylyfile.3dmgame.com/upload/game/20260428/656fc37e35fe2714e2c2d20587e6708e.png",
+      "exact": true
+    },
+    {
+      "a": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260429/1777452636_579807.png",
+      "b": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260429/1777452636_579807.png",
+      "exact": true
+    },
+    {
+      "a": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260429/1777452636_579807.png",
+      "b": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260429/1777452636_579807.png",
+      "exact": true
+    },
+    {
+      "a": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260429/1777452636_579807.png",
+      "b": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260429/1777452636_579807.png",
+      "exact": true
+    },
+    {
+      "a": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260429/1777452636_579807.png",
+      "b": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260429/1777452636_579807.png",
+      "exact": true
+    },
+    {
+      "a": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300662_248760.png",
+      "b": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300662_248760.png",
+      "exact": true
+    },
+    {
+      "a": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300662_248760.png",
+      "b": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300662_248760.png",
+      "exact": true
+    },
+    {
+      "a": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300662_248760.png",
+      "b": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300662_248760.png",
+      "exact": true
+    },
+    {
+      "a": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300662_248760.png",
+      "b": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300662_248760.png",
+      "exact": true
+    },
+    {
+      "a": "https://sylyfile.3dmgame.com/upload/game/20260428/656fc37e35fe2714e2c2d20587e6708e.png",
+      "b": "https://sylyfile.3dmgame.com/upload/game/20260428/656fc37e35fe2714e2c2d20587e6708e.png",
+      "exact": true
+    },
+    {
+      "a": "https://sylyfile.3dmgame.com/upload/game/20260428/656fc37e35fe2714e2c2d20587e6708e.png",
+      "b": "https://sylyfile.3dmgame.com/upload/game/20260428/656fc37e35fe2714e2c2d20587e6708e.png",
+      "exact": true
+    },
+    {
+      "a": "https://sylyfile.3dmgame.com/upload/game/20260428/656fc37e35fe2714e2c2d20587e6708e.png",
+      "b": "https://sylyfile.3dmgame.com/upload/game/20260428/656fc37e35fe2714e2c2d20587e6708e.png",
+      "exact": true
+    },
+    {
+      "a": "https://sylyfile.3dmgame.com/upload/game/20260428/656fc37e35fe2714e2c2d20587e6708e.png",
+      "b": "https://sylyfile.3dmgame.com/upload/game/20260428/656fc37e35fe2714e2c2d20587e6708e.png",
+      "exact": true
+    },
+    {
+      "a": "https://sylyfile.3dmgame.com/upload/game/20260428/656fc37e35fe2714e2c2d20587e6708e.png",
+      "b": "https://sylyfile.3dmgame.com/upload/game/20260428/656fc37e35fe2714e2c2d20587e6708e.png",
+      "exact": true
+    },
+    {
+      "a": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260429/1777452636_579807.png",
+      "b": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260429/1777452636_579807.png",
+      "exact": true
+    },
+    {
+      "a": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260429/1777452636_579807.png",
+      "b": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260429/1777452636_579807.png",
+      "exact": true
+    },
+    {
+      "a": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260429/1777452636_579807.png",
+      "b": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260429/1777452636_579807.png",
+      "exact": true
+    },
+    {
+      "a": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260429/1777452636_579807.png",
+      "b": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260429/1777452636_579807.png",
+      "exact": true
+    },
+    {
+      "a": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260429/1777452636_579807.png",
+      "b": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260429/1777452636_579807.png",
+      "exact": true
+    },
+    {
+      "a": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300662_248760.png",
+      "b": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300662_248760.png",
+      "exact": true
+    },
+    {
+      "a": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300662_248760.png",
+      "b": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300662_248760.png",
+      "exact": true
+    },
+    {
+      "a": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300662_248760.png",
+      "b": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300662_248760.png",
+      "exact": true
+    },
+    {
+      "a": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300662_248760.png",
+      "b": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300662_248760.png",
+      "exact": true
+    },
+    {
+      "a": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300662_248760.png",
+      "b": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300662_248760.png",
+      "exact": true
+    },
+    {
+      "a": "https://sylyfile.3dmgame.com/upload/game/20260428/656fc37e35fe2714e2c2d20587e6708e.png",
+      "b": "https://sylyfile.3dmgame.com/upload/game/20260428/656fc37e35fe2714e2c2d20587e6708e.png",
+      "exact": true
+    },
+    {
+      "a": "https://sylyfile.3dmgame.com/upload/game/20260428/656fc37e35fe2714e2c2d20587e6708e.png",
+      "b": "https://sylyfile.3dmgame.com/upload/game/20260428/656fc37e35fe2714e2c2d20587e6708e.png",
+      "exact": true
+    },
+    {
+      "a": "https://sylyfile.3dmgame.com/upload/game/20260428/656fc37e35fe2714e2c2d20587e6708e.png",
+      "b": "https://sylyfile.3dmgame.com/upload/game/20260428/656fc37e35fe2714e2c2d20587e6708e.png",
+      "exact": true
+    },
+    {
+      "a": "https://sylyfile.3dmgame.com/upload/game/20260428/656fc37e35fe2714e2c2d20587e6708e.png",
+      "b": "https://sylyfile.3dmgame.com/upload/game/20260428/656fc37e35fe2714e2c2d20587e6708e.png",
+      "exact": true
+    },
+    {
+      "a": "https://sylyfile.3dmgame.com/upload/game/20260428/656fc37e35fe2714e2c2d20587e6708e.png",
+      "b": "https://sylyfile.3dmgame.com/upload/game/20260428/656fc37e35fe2714e2c2d20587e6708e.png",
+      "exact": true
+    },
+    {
+      "a": "https://sylyfile.3dmgame.com/upload/game/20260428/656fc37e35fe2714e2c2d20587e6708e.png",
+      "b": "https://sylyfile.3dmgame.com/upload/game/20260428/656fc37e35fe2714e2c2d20587e6708e.png",
+      "exact": true
+    },
+    {
+      "a": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260429/1777452636_579807.png",
+      "b": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260429/1777452636_579807.png",
+      "exact": true
+    },
+    {
+      "a": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260429/1777452636_579807.png",
+      "b": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260429/1777452636_579807.png",
+      "exact": true
+    },
+    {
+      "a": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260429/1777452636_579807.png",
+      "b": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260429/1777452636_579807.png",
+      "exact": true
+    },
+    {
+      "a": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260429/1777452636_579807.png",
+      "b": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260429/1777452636_579807.png",
+      "exact": true
+    },
+    {
+      "a": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260429/1777452636_579807.png",
+      "b": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260429/1777452636_579807.png",
+      "exact": true
+    },
+    {
+      "a": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260429/1777452636_579807.png",
+      "b": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260429/1777452636_579807.png",
+      "exact": true
+    },
+    {
+      "a": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300662_248760.png",
+      "b": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300662_248760.png",
+      "exact": true
+    },
+    {
+      "a": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300662_248760.png",
+      "b": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300662_248760.png",
+      "exact": true
+    },
+    {
+      "a": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300662_248760.png",
+      "b": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300662_248760.png",
+      "exact": true
+    },
+    {
+      "a": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300662_248760.png",
+      "b": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300662_248760.png",
+      "exact": true
+    },
+    {
+      "a": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300662_248760.png",
+      "b": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300662_248760.png",
+      "exact": true
+    },
+    {
+      "a": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300662_248760.png",
+      "b": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300662_248760.png",
+      "exact": true
+    },
+    {
+      "a": "https://sylyfile.3dmgame.com/upload/game/20260428/656fc37e35fe2714e2c2d20587e6708e.png",
+      "b": "https://sylyfile.3dmgame.com/upload/game/20260428/656fc37e35fe2714e2c2d20587e6708e.png",
+      "exact": true
+    },
+    {
+      "a": "https://sylyfile.3dmgame.com/upload/game/20260428/656fc37e35fe2714e2c2d20587e6708e.png",
+      "b": "https://sylyfile.3dmgame.com/upload/game/20260428/656fc37e35fe2714e2c2d20587e6708e.png",
+      "exact": true
+    },
+    {
+      "a": "https://sylyfile.3dmgame.com/upload/game/20260428/656fc37e35fe2714e2c2d20587e6708e.png",
+      "b": "https://sylyfile.3dmgame.com/upload/game/20260428/656fc37e35fe2714e2c2d20587e6708e.png",
+      "exact": true
+    },
+    {
+      "a": "https://sylyfile.3dmgame.com/upload/game/20260428/656fc37e35fe2714e2c2d20587e6708e.png",
+      "b": "https://sylyfile.3dmgame.com/upload/game/20260428/656fc37e35fe2714e2c2d20587e6708e.png",
+      "exact": true
+    },
+    {
+      "a": "https://sylyfile.3dmgame.com/upload/game/20260428/656fc37e35fe2714e2c2d20587e6708e.png",
+      "b": "https://sylyfile.3dmgame.com/upload/game/20260428/656fc37e35fe2714e2c2d20587e6708e.png",
+      "exact": true
+    },
+    {
+      "a": "https://sylyfile.3dmgame.com/upload/game/20260428/656fc37e35fe2714e2c2d20587e6708e.png",
+      "b": "https://sylyfile.3dmgame.com/upload/game/20260428/656fc37e35fe2714e2c2d20587e6708e.png",
+      "exact": true
+    },
+    {
+      "a": "https://sylyfile.3dmgame.com/upload/game/20260428/656fc37e35fe2714e2c2d20587e6708e.png",
+      "b": "https://sylyfile.3dmgame.com/upload/game/20260428/656fc37e35fe2714e2c2d20587e6708e.png",
+      "exact": true
+    },
+    {
+      "a": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260429/1777452636_579807.png",
+      "b": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260429/1777452636_579807.png",
+      "exact": true
+    },
+    {
+      "a": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260429/1777452636_579807.png",
+      "b": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260429/1777452636_579807.png",
+      "exact": true
+    },
+    {
+      "a": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260429/1777452636_579807.png",
+      "b": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260429/1777452636_579807.png",
+      "exact": true
+    },
+    {
+      "a": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260429/1777452636_579807.png",
+      "b": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260429/1777452636_579807.png",
+      "exact": true
+    },
+    {
+      "a": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260429/1777452636_579807.png",
+      "b": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260429/1777452636_579807.png",
+      "exact": true
+    },
+    {
+      "a": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260429/1777452636_579807.png",
+      "b": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260429/1777452636_579807.png",
+      "exact": true
+    },
+    {
+      "a": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260429/1777452636_579807.png",
+      "b": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260429/1777452636_579807.png",
+      "exact": true
+    },
+    {
+      "a": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300662_248760.png",
+      "b": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300662_248760.png",
+      "exact": true
+    },
+    {
+      "a": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300662_248760.png",
+      "b": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300662_248760.png",
+      "exact": true
+    },
+    {
+      "a": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300662_248760.png",
+      "b": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300662_248760.png",
+      "exact": true
+    },
+    {
+      "a": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300662_248760.png",
+      "b": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300662_248760.png",
+      "exact": true
+    },
+    {
+      "a": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300662_248760.png",
+      "b": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300662_248760.png",
+      "exact": true
+    },
+    {
+      "a": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300662_248760.png",
+      "b": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300662_248760.png",
+      "exact": true
+    },
+    {
+      "a": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300662_248760.png",
+      "b": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300662_248760.png",
+      "exact": true
+    },
+    {
+      "a": "https://sylyfile.3dmgame.com/upload/game/20260428/656fc37e35fe2714e2c2d20587e6708e.png",
+      "b": "https://sylyfile.3dmgame.com/upload/game/20260428/656fc37e35fe2714e2c2d20587e6708e.png",
+      "exact": true
+    },
+    {
+      "a": "https://sylyfile.3dmgame.com/upload/game/20260428/656fc37e35fe2714e2c2d20587e6708e.png",
+      "b": "https://sylyfile.3dmgame.com/upload/game/20260428/656fc37e35fe2714e2c2d20587e6708e.png",
+      "exact": true
+    },
+    {
+      "a": "https://sylyfile.3dmgame.com/upload/game/20260428/656fc37e35fe2714e2c2d20587e6708e.png",
+      "b": "https://sylyfile.3dmgame.com/upload/game/20260428/656fc37e35fe2714e2c2d20587e6708e.png",
+      "exact": true
+    },
+    {
+      "a": "https://sylyfile.3dmgame.com/upload/game/20260428/656fc37e35fe2714e2c2d20587e6708e.png",
+      "b": "https://sylyfile.3dmgame.com/upload/game/20260428/656fc37e35fe2714e2c2d20587e6708e.png",
+      "exact": true
+    },
+    {
+      "a": "https://sylyfile.3dmgame.com/upload/game/20260428/656fc37e35fe2714e2c2d20587e6708e.png",
+      "b": "https://sylyfile.3dmgame.com/upload/game/20260428/656fc37e35fe2714e2c2d20587e6708e.png",
+      "exact": true
+    },
+    {
+      "a": "https://sylyfile.3dmgame.com/upload/game/20260428/656fc37e35fe2714e2c2d20587e6708e.png",
+      "b": "https://sylyfile.3dmgame.com/upload/game/20260428/656fc37e35fe2714e2c2d20587e6708e.png",
+      "exact": true
+    },
+    {
+      "a": "https://sylyfile.3dmgame.com/upload/game/20260428/656fc37e35fe2714e2c2d20587e6708e.png",
+      "b": "https://sylyfile.3dmgame.com/upload/game/20260428/656fc37e35fe2714e2c2d20587e6708e.png",
+      "exact": true
+    },
+    {
+      "a": "https://sylyfile.3dmgame.com/upload/game/20260428/656fc37e35fe2714e2c2d20587e6708e.png",
+      "b": "https://sylyfile.3dmgame.com/upload/game/20260428/656fc37e35fe2714e2c2d20587e6708e.png",
+      "exact": true
+    },
+    {
+      "a": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260429/1777452636_579807.png",
+      "b": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260429/1777452636_579807.png",
+      "exact": true
+    },
+    {
+      "a": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260429/1777452636_579807.png",
+      "b": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260429/1777452636_579807.png",
+      "exact": true
+    },
+    {
+      "a": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260429/1777452636_579807.png",
+      "b": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260429/1777452636_579807.png",
+      "exact": true
+    },
+    {
+      "a": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260429/1777452636_579807.png",
+      "b": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260429/1777452636_579807.png",
+      "exact": true
+    },
+    {
+      "a": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260429/1777452636_579807.png",
+      "b": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260429/1777452636_579807.png",
+      "exact": true
+    },
+    {
+      "a": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260429/1777452636_579807.png",
+      "b": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260429/1777452636_579807.png",
+      "exact": true
+    },
+    {
+      "a": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260429/1777452636_579807.png",
+      "b": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260429/1777452636_579807.png",
+      "exact": true
+    },
+    {
+      "a": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260429/1777452636_579807.png",
+      "b": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260429/1777452636_579807.png",
+      "exact": true
+    },
+    {
+      "a": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300662_248760.png",
+      "b": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300662_248760.png",
+      "exact": true
+    },
+    {
+      "a": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300662_248760.png",
+      "b": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300662_248760.png",
+      "exact": true
+    },
+    {
+      "a": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300662_248760.png",
+      "b": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300662_248760.png",
+      "exact": true
+    },
+    {
+      "a": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300662_248760.png",
+      "b": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300662_248760.png",
+      "exact": true
+    },
+    {
+      "a": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300662_248760.png",
+      "b": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300662_248760.png",
+      "exact": true
+    },
+    {
+      "a": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300662_248760.png",
+      "b": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300662_248760.png",
+      "exact": true
+    },
+    {
+      "a": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300662_248760.png",
+      "b": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300662_248760.png",
+      "exact": true
+    },
+    {
+      "a": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300662_248760.png",
+      "b": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300662_248760.png",
+      "exact": true
+    }
+  ],
+  "source_failures": [
+    {
+      "id": "source-7df19db1251df7af",
+      "url": "https://www.bilibili.com/video/BV1N8hk6rErM/",
+      "platform": "bilibili",
+      "enabled": true,
+      "seasons": [
+        "S4",
+        "S3",
+        "S2"
+      ],
+      "origin": "seed",
+      "status": "source_fetch_failed",
+      "error": "Error: 访问受限或响应不完整",
+      "checked_at": "2026-10-22T12:09:26.727Z"
+    }
+  ],
+  "note": "图像语义、版本与六只成员必须视觉复核；此脚本不自动晋升生产。"
+}

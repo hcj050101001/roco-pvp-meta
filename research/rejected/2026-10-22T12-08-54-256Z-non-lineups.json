@@ -1,0 +1,488 @@
+{
+  "run_id": "2026-10-22T12-08-54-256Z",
+  "untrusted": true,
+  "step": "rejected-non-lineup-candidates",
+  "note": "All 38 unique candidates were visually reviewed. This file consolidates the 35 rejected images from indices 0-32, 36 and 37; the remaining three complete configuration sheets are pending in research/candidates/. No data records or assets were created.",
+  "entries": [
+    {
+      "vision_index": 0,
+      "sha256": "a319e594571f289a58a423a9ca28915237fd49d10c0ef7851d3ecd0d5be9244c",
+      "platform": "taptap",
+      "source_url": "https://www.taptap.cn/moment/847022426351994538",
+      "observed": null,
+      "decision": "reject",
+      "reason": "TapTap video cover / partial pet-skills screenshot; not a complete six-member configuration sheet",
+      "references": [
+        "https://www.taptap.cn/moment/847022426351994538"
+      ],
+      "image_url": "https://img2-tc.tapimg.com/video/cover/FmXzPTTmdikJGKShnlSOXMggRyGQ_20260911042331.jpg/_tap_ugc_m.jpg"
+    },
+    {
+      "vision_index": 1,
+      "sha256": "998cf65479c294cf43588e9e3360b0dcc0e2012c4d66fd6bf83fe68bea72e156",
+      "platform": "taptap",
+      "source_url": "https://www.taptap.cn/moment/847022426351994538",
+      "observed": null,
+      "decision": "reject",
+      "reason": "TapTap opening announcement banner; not a configuration sheet",
+      "references": [
+        "https://www.taptap.cn/moment/847022426351994538"
+      ],
+      "image_url": "https://img2-tc.tapimg.com/moment/etag/FhXVkJ0SdOd7lS3V0jn7AAkCZ0j9_20260910080528.jpg"
+    },
+    {
+      "vision_index": 2,
+      "sha256": "4b36a1e19c737e9a22d364534f988db6c5023da1ebfe10120843fe19f4124bf8",
+      "platform": "taptap",
+      "source_url": "https://www.taptap.cn/moment/858904416206456638",
+      "observed": null,
+      "decision": "reject",
+      "reason": "regulatory business-license seal; not game content",
+      "references": [
+        "https://www.taptap.cn/app/188212/topic",
+        "https://www.taptap.cn/moment/858904416206456638"
+      ],
+      "image_url": "https://assets.tapimg.com/protocol/%E6%98%93%E7%8E%A9%E5%B9%BF%E7%94%B5%E8%AF%81.jpg"
+    },
+    {
+      "vision_index": 3,
+      "sha256": "8079df71c5197485dbb022c83364e0fa591b117f40663dbaafb16d1925fb87f1",
+      "platform": "taptap",
+      "source_url": "https://www.taptap.cn/app/188212/topic",
+      "observed": null,
+      "decision": "reject",
+      "reason": "TapTap key-art banner; not a configuration sheet",
+      "references": [
+        "https://www.taptap.cn/app/188212/topic"
+      ],
+      "image_url": "https://img-tc.tapimg.com/market/images/895ed85a16175a61a74e6089f6466a25.jpg/_tap_banner.jpg"
+    },
+    {
+      "vision_index": 4,
+      "sha256": "4d2506c74d77d71feacb186571f8973499fc8f9872ca80a71cf5ed08d879ee05",
+      "platform": "taptap",
+      "source_url": "https://www.taptap.cn/moment/858904416206456638",
+      "observed": null,
+      "decision": "reject",
+      "reason": "TapTap author post screenshot: open-world dialogue and party sidebar, not a six-member configuration",
+      "references": [
+        "https://www.taptap.cn/moment/858904416206456638"
+      ],
+      "image_url": "https://img2-tc.tapimg.com/moment/etag/FkhtBwkITO3A_2CPRYT8BXQjNtVc_20261013025924.jpg/_tap_ugc.jpg"
+    },
+    {
+      "vision_index": 5,
+      "sha256": "9ab597d713774aacbf0573874e72b4f0c433cf64b56b5d08739587bd95a7849f",
+      "platform": "taptap",
+      "source_url": "https://www.taptap.cn/moment/858904416206456638",
+      "observed": null,
+      "decision": "reject",
+      "reason": "TapTap author post screenshot: battle scene, not a six-member configuration",
+      "references": [
+        "https://www.taptap.cn/moment/858904416206456638"
+      ],
+      "image_url": "https://img2-tc.tapimg.com/moment/etag/FkhtBwkITO3A_2CPRYT8BXQjNtVc_20261013025924.jpg"
+    },
+    {
+      "vision_index": 6,
+      "sha256": "0ed9f3c8a8445ea55a83eee312eb3fbce83935a8bcafcb195e06bd19951f5dd2",
+      "platform": "taptap",
+      "source_url": "https://www.taptap.cn/moment/858904416206456638",
+      "observed": null,
+      "decision": "reject",
+      "reason": "TapTap author post screenshot: battle scene with chat overlay, not a six-member configuration",
+      "references": [
+        "https://www.taptap.cn/moment/858904416206456638"
+      ],
+      "image_url": "https://img2-tc.tapimg.com/moment/etag/FkfLAj2f41QOlNa5YiUH7ABNkRYj_20261013025925.jpg/_tap_ugc.jpg"
+    },
+    {
+      "vision_index": 7,
+      "sha256": "2ccfef64ab74fcb008ebf34c48d1607b053a626375867a44ac17e9b0b183f1f6",
+      "platform": "taptap",
+      "source_url": "https://www.taptap.cn/moment/858904416206456638",
+      "observed": null,
+      "decision": "reject",
+      "reason": "TapTap author post screenshot: open-world private chat, not a six-member configuration",
+      "references": [
+        "https://www.taptap.cn/moment/858904416206456638"
+      ],
+      "image_url": "https://img2-tc.tapimg.com/moment/etag/FkfLAj2f41QOlNa5YiUH7ABNkRYj_20261013025925.jpg"
+    },
+    {
+      "vision_index": 8,
+      "sha256": "2205abcf8e36f100baab888c662dbb1b608e3643a872b726214e593853d5b8bf",
+      "platform": "taptap",
+      "source_url": "https://www.taptap.cn/moment/858904416206456638",
+      "observed": null,
+      "decision": "reject",
+      "reason": "TapTap author post screenshot: single-pet box detail with no full six-member skills",
+      "references": [
+        "https://www.taptap.cn/moment/858904416206456638"
+      ],
+      "image_url": "https://img2-tc.tapimg.com/moment/etag/Fhe_L2W1qNV_nWNH-l6zPl_pmva6_20261013025925.jpg/_tap_ugc.jpg"
+    },
+    {
+      "vision_index": 9,
+      "sha256": "1a4bddd13f0f8b0d9cd6f12788f90f455f69a0be811f7c54b4b70c3aea4ab4bb",
+      "platform": "taptap",
+      "source_url": "https://www.taptap.cn/moment/858904416206456638",
+      "observed": null,
+      "decision": "reject",
+      "reason": "TapTap author post screenshot: same single-pet box detail at another crop, no full six-member skills",
+      "references": [
+        "https://www.taptap.cn/moment/858904416206456638"
+      ],
+      "image_url": "https://img2-tc.tapimg.com/moment/etag/Fhe_L2W1qNV_nWNH-l6zPl_pmva6_20261013025925.jpg"
+    },
+    {
+      "vision_index": 10,
+      "sha256": "a876fe6bf5d8c1d0947fadc19ee5bb11753d759bcfadbbd1fcaa22d24d193054",
+      "platform": "taptap",
+      "source_url": "https://www.taptap.cn/moment/858904416206456638",
+      "observed": null,
+      "decision": "reject",
+      "reason": "TapTap author post screenshot: party editor with only three members and one pet skill panel",
+      "references": [
+        "https://www.taptap.cn/moment/858904416206456638"
+      ],
+      "image_url": "https://img2-tc.tapimg.com/moment/etag/FhSMacgCUt5z9K9oO7Pn1VHOlqpx_20261013025926.jpg/_tap_ugc.jpg"
+    },
+    {
+      "vision_index": 11,
+      "sha256": "30c8f22379fbf3efce68429e50f030c9e775d6f42e22a63832d78ed6fb7aa525",
+      "platform": "qiandao",
+      "source_url": "https://qiandao.com/topic?id=undefined",
+      "observed": null,
+      "decision": "reject",
+      "reason": "Qiandao post cover from a malformed/invalid topic (id=undefined); not a configuration sheet",
+      "references": [
+        "https://qiandao.com/topic?id=undefined"
+      ],
+      "image_url": "https://post.qiandaocdn.com/post/images/fd4nGiPIV5I_resize.webp?imginfo=w2480,h3507!lfit_w540_jpg"
+    },
+    {
+      "vision_index": 12,
+      "sha256": "13ddbc28b2aeefae0a67ed0454a00108849e3434551f3219b75cae2b2659ec6a",
+      "platform": "qiandao",
+      "source_url": "https://qiandao.com/topic?id=undefined",
+      "observed": null,
+      "decision": "reject",
+      "reason": "Qiandao post cover from a malformed/invalid topic (id=undefined); not a configuration sheet",
+      "references": [
+        "https://qiandao.com/topic?id=undefined"
+      ],
+      "image_url": "https://post.qiandaocdn.com/post/images/fXfRAfQVj3F_resize.webp?imginfo=w845,h709!lfit_w540_jpg"
+    },
+    {
+      "vision_index": 13,
+      "sha256": "99c88785dcc9bbe6583f80dae8eced13d73a62383831af04fb364d9bb9d5bc65",
+      "platform": "qiandao",
+      "source_url": "https://qiandao.com/topic?id=undefined",
+      "observed": null,
+      "decision": "reject",
+      "reason": "Qiandao post cover from a malformed/invalid topic (id=undefined); not a configuration sheet",
+      "references": [
+        "https://qiandao.com/topic?id=undefined"
+      ],
+      "image_url": "https://post.qiandaocdn.com/post/images/fdAYjoLWFJZ_resize.webp?imginfo=w2304,h1380!lfit_w540_jpg"
+    },
+    {
+      "vision_index": 14,
+      "sha256": "1dace3bc3e5f2573a9b31319427dcf7a2148b693279b38fd535e7366f2b03e7a",
+      "platform": "qiandao",
+      "source_url": "https://qiandao.com/topic?id=undefined",
+      "observed": null,
+      "decision": "reject",
+      "reason": "Qiandao post cover from a malformed/invalid topic (id=undefined); not a configuration sheet",
+      "references": [
+        "https://qiandao.com/topic?id=undefined"
+      ],
+      "image_url": "https://post.qiandaocdn.com/post/images/fdAYrhL3Gsc_resize.webp?imginfo=w903,h2268!lfit_w540_jpg"
+    },
+    {
+      "vision_index": 15,
+      "sha256": "ef19d0e55a20c8bf8fe9eb891b50079ebb6a26bb965c7fb0c2f1fe7b478488a1",
+      "platform": "qiandao",
+      "source_url": "https://qiandao.com/topic?id=undefined",
+      "observed": null,
+      "decision": "reject",
+      "reason": "Qiandao post cover from a malformed/invalid topic (id=undefined); not a configuration sheet",
+      "references": [
+        "https://qiandao.com/topic?id=undefined"
+      ],
+      "image_url": "https://post.qiandaocdn.com/post/images/fXfXMiHaS1o.jpg?imginfo=w454,h778!lfit_w540_jpg"
+    },
+    {
+      "vision_index": 16,
+      "sha256": "e78614beface9b90612ae4c9ef05c7b85356b47e079832e16357e4d2e909f6ff",
+      "platform": "qiandao",
+      "source_url": "https://qiandao.com/topic?id=undefined",
+      "observed": null,
+      "decision": "reject",
+      "reason": "Qiandao post cover from a malformed/invalid topic (id=undefined); not a configuration sheet",
+      "references": [
+        "https://qiandao.com/topic?id=undefined"
+      ],
+      "image_url": "https://post.qiandaocdn.com/post/images/fXfy52VAR0Q_resize.webp?imginfo=w3024,h4032!lfit_w540_jpg"
+    },
+    {
+      "vision_index": 17,
+      "sha256": "434a696ab9fd4be9ae62c72d96b7cba4ae38187f892ce6b448ada63af8afd901",
+      "platform": "qiandao",
+      "source_url": "https://qiandao.com/topic?id=undefined",
+      "observed": null,
+      "decision": "reject",
+      "reason": "Qiandao post cover from a malformed/invalid topic (id=undefined); not a configuration sheet",
+      "references": [
+        "https://qiandao.com/topic?id=undefined"
+      ],
+      "image_url": "https://post.qiandaocdn.com/post/images/fXiL12J8EsT_resize.webp?imginfo=w4096,h3072!lfit_w540_jpg"
+    },
+    {
+      "vision_index": 18,
+      "sha256": "44f8022815770d851774374a3ad086406eea6d79171fee8ca44282e95410f7e2",
+      "platform": "wegame",
+      "source_url": "https://www.wegame.com.cn/act/wegame/nrc20260618/?wg_ad_from=communitycoverNew",
+      "observed": null,
+      "decision": "reject",
+      "reason": "WeGame S2 seasonal-activity banner/promo; not a configuration sheet",
+      "references": [
+        "https://www.wegame.com.cn/act/wegame/nrc20260618/?wg_ad_from=communitycoverNew"
+      ],
+      "image_url": "https://wegame.gtimg.com/tgp_act/release/wegame/nrc20260618/images/part2_img.png"
+    },
+    {
+      "vision_index": 19,
+      "sha256": "d451feada5b4f20a3bc34dd13ab8592c81a5f22544fbd24f8bb7d5c9592651ac",
+      "platform": "wegame",
+      "source_url": "https://www.wegame.com.cn/act/wegame/nrc20260618/?wg_ad_from=communitycoverNew",
+      "observed": null,
+      "decision": "reject",
+      "reason": "WeGame activity banner/promo; not a configuration sheet",
+      "references": [
+        "https://www.wegame.com.cn/act/wegame/nrc20260618/?wg_ad_from=communitycoverNew"
+      ],
+      "image_url": "https://wegame.gtimg.com/tgp_act/release/wegame/nrc20260618/images/part3_img.png"
+    },
+    {
+      "vision_index": 20,
+      "sha256": "7d5745d8249f00ffcd5674992f27301af37b0a453a6e6e76687c41b26a9e030f",
+      "platform": "wegame",
+      "source_url": "https://www.wegame.com.cn/act/wegame/nrc20260618/?wg_ad_from=communitycoverNew",
+      "observed": null,
+      "decision": "reject",
+      "reason": "WeGame invite-friends activity module; not a configuration sheet",
+      "references": [
+        "https://www.wegame.com.cn/act/wegame/nrc20260618/?wg_ad_from=communitycoverNew"
+      ],
+      "image_url": "https://wegame.gtimg.com/tgp_act/release/wegame/nrc20260618/images/part4_r_txt.png"
+    },
+    {
+      "vision_index": 21,
+      "sha256": "00108398e888f8fc1a43ff1b758cc12393a2ab0755e3f4852077369f12013751",
+      "platform": "wegame",
+      "source_url": "https://www.wegame.com.cn/act/wegame/nrc20260618/?wg_ad_from=communitycoverNew",
+      "observed": null,
+      "decision": "reject",
+      "reason": "WeGame activity banner/promo; not a configuration sheet",
+      "references": [
+        "https://www.wegame.com.cn/act/wegame/nrc20260618/?wg_ad_from=communitycoverNew"
+      ],
+      "image_url": "https://wegame.gtimg.com/tgp_act/release/wegame/nrc20260618/images/part5_con1_img1.png"
+    },
+    {
+      "vision_index": 22,
+      "sha256": "7b3ecc78fafd32636829592e2571cd1e5fce3c3ed89952a426ca7154a4f20474",
+      "platform": "wegame",
+      "source_url": "https://www.wegame.com.cn/act/wegame/nrc20260618/?wg_ad_from=communitycoverNew",
+      "observed": null,
+      "decision": "reject",
+      "reason": "WeGame activity banner/promo; not a configuration sheet",
+      "references": [
+        "https://www.wegame.com.cn/act/wegame/nrc20260618/?wg_ad_from=communitycoverNew"
+      ],
+      "image_url": "https://wegame.gtimg.com/tgp_act/release/wegame/nrc20260618/images/part5_con2_img1.png"
+    },
+    {
+      "vision_index": 23,
+      "sha256": "ad56e4b0754da037b12f8ce161a0426638357307ca951b881f2b8351130376cb",
+      "platform": "wegame",
+      "source_url": "https://www.wegame.com.cn/act/wegame/lkwgsj20260409launch/index.html",
+      "observed": null,
+      "decision": "reject",
+      "reason": "WeGame launch activity banner; not a configuration sheet",
+      "references": [
+        "https://www.wegame.com.cn/act/wegame/lkwgsj20260409launch/index.html"
+      ],
+      "image_url": "https://wegame.gtimg.com/tgp_act/release/wegame/lkwgsj20260409launch/images/part1/star/1.png"
+    },
+    {
+      "vision_index": 24,
+      "sha256": "a8c5c963f56c65907a71ef543888202ce868716db56030cfa49cc33f630d2fa2",
+      "platform": "wegame",
+      "source_url": "https://www.wegame.com.cn/act/wegame/lkwgsj20260409launch/index.html",
+      "observed": null,
+      "decision": "reject",
+      "reason": "WeGame launch activity banner; not a configuration sheet",
+      "references": [
+        "https://www.wegame.com.cn/act/wegame/lkwgsj20260409launch/index.html"
+      ],
+      "image_url": "https://wegame.gtimg.com/tgp_act/release/wegame/lkwgsj20260409launch/images/part1/star/2.png"
+    },
+    {
+      "vision_index": 25,
+      "sha256": "ad377a3e61651a1e3c80a3a480c7440fe9d834e04ecd354a74e071317ba937d7",
+      "platform": "wegame",
+      "source_url": "https://www.wegame.com.cn/act/wegame/lkwgsj20260409launch/index.html",
+      "observed": null,
+      "decision": "reject",
+      "reason": "WeGame launch activity banner; not a configuration sheet",
+      "references": [
+        "https://www.wegame.com.cn/act/wegame/lkwgsj20260409launch/index.html"
+      ],
+      "image_url": "https://wegame.gtimg.com/tgp_act/release/wegame/lkwgsj20260409launch/images/part1/star/3.png"
+    },
+    {
+      "vision_index": 26,
+      "sha256": "aec5db4f6ea523434ade35ed6c26a56b6590f77fe996b1b97c264de2a9320d59",
+      "platform": "wegame",
+      "source_url": "https://www.wegame.com.cn/act/wegame/lkwgsj20260409launch/index.html",
+      "observed": null,
+      "decision": "reject",
+      "reason": "WeGame launch activity banner; not a configuration sheet",
+      "references": [
+        "https://www.wegame.com.cn/act/wegame/lkwgsj20260409launch/index.html"
+      ],
+      "image_url": "https://wegame.gtimg.com/tgp_act/release/wegame/lkwgsj20260409launch/images/part1/star/5.png"
+    },
+    {
+      "vision_index": 27,
+      "sha256": "2347da93d5928de3587c6a100d33c5c56e14c9ab5f7028cccddeda2cd99f529e",
+      "platform": "biligame",
+      "source_url": "https://wiki.biligame.com/nrc/%E9%A6%96%E9%A1%B5",
+      "observed": null,
+      "decision": "reject",
+      "reason": "Biligame fashion-catalog graphic; not a lineup configuration",
+      "references": [
+        "https://wiki.biligame.com/nrc/%E9%A6%96%E9%A1%B5"
+      ],
+      "image_url": "https://patchwiki.biligame.com/images/nrc/6/61/gii9b3c4xttr339mp5cakicf1dwoile.png"
+    },
+    {
+      "vision_index": 28,
+      "sha256": "d60ae067780386430fd152ed3a27d564f280cf8a8a3159f2d38fc2ad456895ad",
+      "platform": "biligame",
+      "source_url": "https://wiki.biligame.com/nrc/%E9%A6%96%E9%A1%B5",
+      "observed": null,
+      "decision": "reject",
+      "reason": "Biligame business-license seal; not game content",
+      "references": [
+        "https://wiki.biligame.com/nrc/%E9%A6%96%E9%A1%B5"
+      ],
+      "image_url": "https://static.biligame.net/common/images/culture-logo.png"
+    },
+    {
+      "vision_index": 29,
+      "sha256": "3fac66c5a9e21058fed0f3a53ae93672cf730116236f52c0424398a8a4aa2f5a",
+      "platform": "biligame",
+      "source_url": "https://wiki.biligame.com/nrc/%E9%A6%96%E9%A1%B5",
+      "observed": null,
+      "decision": "reject",
+      "reason": "blank watermark strip; no lineup content",
+      "references": [
+        "https://wiki.biligame.com/nrc/%E9%A6%96%E9%A1%B5"
+      ],
+      "image_url": "https://patchwiki.biligame.com/images/nrc/6/68/oitygxndm17xufinmtw0yknt4mry5j4.png?version=252cd363dd7e2aefa8c4ebdee73f5518"
+    },
+    {
+      "vision_index": 30,
+      "sha256": "d85e16a7764cba7c59788633837990ed9d6bd2586fba5c51aeaa9a1869dfb18d",
+      "platform": "3dm",
+      "source_url": "https://ol.3dmgame.com/gl/353804.html",
+      "observed": null,
+      "decision": "reject",
+      "reason": "3DM unrelated spaceship icon; not a lineup configuration",
+      "references": [
+        "https://ol.3dmgame.com/gl/355668.html",
+        "https://ol.3dmgame.com/gl/348407.html",
+        "https://ol.3dmgame.com/gl/342821.html",
+        "https://ol.3dmgame.com/gl/355666.html",
+        "https://ol.3dmgame.com/gl/350006.html",
+        "https://ol.3dmgame.com/gl/354707.html",
+        "https://ol.3dmgame.com/gl/350004.html",
+        "https://ol.3dmgame.com/gl/353802.html",
+        "https://ol.3dmgame.com/gl/353804.html"
+      ],
+      "image_url": "https://sylyfile.3dmgame.com/upload/game/20260428/656fc37e35fe2714e2c2d20587e6708e.png"
+    },
+    {
+      "vision_index": 31,
+      "sha256": "2ad91b6c3e45a32866d71c5ccc5302ae7849f1a11a6b776a3ef4a742a0407ff9",
+      "platform": "3dm",
+      "source_url": "https://ol.3dmgame.com/gl/353804.html",
+      "observed": null,
+      "decision": "reject",
+      "reason": "3DM QR code; not a configuration sheet",
+      "references": [
+        "https://ol.3dmgame.com/gl/355668.html",
+        "https://ol.3dmgame.com/gl/348407.html",
+        "https://ol.3dmgame.com/gl/342821.html",
+        "https://ol.3dmgame.com/gl/355666.html",
+        "https://ol.3dmgame.com/gl/350006.html",
+        "https://ol.3dmgame.com/gl/354707.html",
+        "https://ol.3dmgame.com/gl/350004.html",
+        "https://ol.3dmgame.com/gl/353802.html",
+        "https://ol.3dmgame.com/gl/353804.html"
+      ],
+      "image_url": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260429/1777452636_579807.png"
+    },
+    {
+      "vision_index": 32,
+      "sha256": "a5981479e6810f9ca49cd44fbc8fe0d3e5c8ea86142188921965db4edc9c37d7",
+      "platform": "3dm",
+      "source_url": "https://ol.3dmgame.com/gl/353804.html",
+      "observed": null,
+      "decision": "reject",
+      "reason": "3DM promotional advertisement (0.1折); not a configuration sheet",
+      "references": [
+        "https://ol.3dmgame.com/gl/355668.html",
+        "https://ol.3dmgame.com/gl/348407.html",
+        "https://ol.3dmgame.com/gl/342821.html",
+        "https://ol.3dmgame.com/gl/355666.html",
+        "https://ol.3dmgame.com/gl/350006.html",
+        "https://ol.3dmgame.com/gl/354707.html",
+        "https://ol.3dmgame.com/gl/350004.html",
+        "https://ol.3dmgame.com/gl/353802.html",
+        "https://ol.3dmgame.com/gl/353804.html"
+      ],
+      "image_url": "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300662_248760.png"
+    },
+    {
+      "vision_index": 36,
+      "sha256": "1625371cc301771b341a9c7ff0c58fddaff2594ff10e8d623d3e6ac6a06ad9bf",
+      "platform": "qiandao",
+      "source_url": "https://qiandao.com/post?postId=1023430985116591249",
+      "observed": null,
+      "decision": "reject",
+      "reason": "Qiandao roster-selection screenshot without skills or bloodlines; not a complete configuration sheet",
+      "references": [
+        "https://qiandao.com/post?postId=1023430985116591249"
+      ],
+      "image_url": "https://post.qiandaocdn.com/post/images/fdtKMpAtz3P_resize.webp!lfit_w540_h540"
+    },
+    {
+      "vision_index": 37,
+      "sha256": "1e7141986e41291bce8ae1f0ee3e88c248da835fafa684e075793bc807b2cee7",
+      "platform": "taptap",
+      "source_url": "https://www.taptap.cn/poster-activity/NIU11IM3S8uL",
+      "observed": null,
+      "decision": "reject",
+      "reason": "generic TapTap app icon; not a lineup configuration",
+      "references": [
+        "https://www.taptap.cn/poster-activity/NIU11IM3S8uL"
+      ],
+      "image_url": "https://assets.tapimg.com/abd/activity/rock-dex/assets/game-icon-1e714198.png"
+    }
+  ]
+}

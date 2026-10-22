@@ -1,0 +1,14 @@
+{
+  "run_id": "2026-10-22T12-37-13-996Z",
+  "untrusted": true,
+  "step": "pending-unresolved",
+  "result": "pending",
+  "source_url": "https://qiandao.com/post?postId=1023430985116591249",
+  "entries": [
+    { "sha256": "b1964ce7c6e5154d702cf20ae01a3eb748836bcc9b6a296266b3460994910599", "reason": "仅 540×248 缩略图，完整配置帧待续查；无图像或原始来源的赛季证据。" },
+    { "sha256": "2907bfdb0caa70f0e2041402c92743eda87f0ebfc61f33b6b31006aef2458888", "reason": "同帖缩略图，完整配置帧待续查；赛季未知。" },
+    { "sha256": "abbb00fde3caa895d768543b1780fdedcca06e3c98345894ad47c951682d38f0", "reason": "同帖缩略图，完整配置帧待续查；赛季未知。" },
+    { "sha256": "d537e0e761843143539f4ef1131d4b354581ed2b964793d346a6fc2fdc73c8b0", "reason": "同帖缩略图，完整配置帧待续查；赛季未知。" }
+  ],
+  "note": "留 research/candidates/，不发布、不填版本。"
+}

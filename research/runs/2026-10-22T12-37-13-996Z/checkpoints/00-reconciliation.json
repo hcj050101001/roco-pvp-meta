@@ -1,0 +1,15 @@
+{
+  "run_id": "2026-10-22T12-37-13-996Z",
+  "untrusted": true,
+  "step": "candidate-denominator",
+  "method": "evaluation.json contains 62 entries with duplicate representations of the same asset; distinct SHA-256 values in vision/index.json = 52. This file is the processing denominator for the run.",
+  "total_unique_candidates": 52,
+  "reconciliation": {
+    "exact_published_duplicates": 9,
+    "non_lineup_rejects_documented": 16,
+    "non_lineup_rejects_new": 5,
+    "qiandao_pending": 4,
+    "unreviewed_at_start_of_pass": 18
+  },
+  "note": "Counts are bookkeeping only; no publication quota exists."
+}

@@ -1,0 +1,90 @@
+{
+  "run_id": "2026-10-22T12-37-13-996Z",
+  "untrusted": true,
+  "step": "visual-semantics-remaining-rejects",
+  "method": "Inspected only the prepared overview JPEGs listed in vision/index.json; no original image, enlargement, repeat attachment or new variant was generated.",
+  "completion": "52/52 unique candidates visually reviewed",
+  "result": "rejected",
+  "entries": [
+    {
+      "sha256": "94449ada8b820f321f0160e766445015978e8adcfd2e44be007ef92508322c9c",
+      "platform": "qiandao",
+      "source_url": "https://qiandao.com/topic?id=undefined",
+      "reason": "毛绒猫周边与稀有度/商品说明图，无游戏配置栏。"
+    },
+    {
+      "sha256": "1b1efe632490e3b1a841ab12f7343cbfb9a4c742e175b05fc058f1575681e504",
+      "platform": "qiandao",
+      "source_url": "https://qiandao.com/topic?id=undefined",
+      "reason": "毛绒猫周边商品合照，无游戏配置栏。"
+    },
+    {
+      "sha256": "2f61c328048c468641a07bcb050c2f3b8b681ab76175c877b4eaccf643e3c2d8",
+      "platform": "qiandao",
+      "source_url": "https://qiandao.com/topic?id=undefined",
+      "reason": "单件道具/技能提示框截图，非六只成员配置图。"
+    },
+    {
+      "sha256": "cde6668fcf44b904ead4954b11afe8b00f99496feabe2b55e84f9f2e87c57d5d",
+      "platform": "qiandao",
+      "source_url": "https://qiandao.com/topic?id=undefined",
+      "reason": "约稿角色插画，无游戏界面或配置信息。"
+    },
+    {
+      "sha256": "2d678bd611f78c59d4f94ae7b32c26b33f3981c339aff8517a4be05ceacbc0ce",
+      "platform": "qiandao",
+      "source_url": "https://qiandao.com/topic?id=undefined",
+      "reason": "实体手办/摆件照片，无游戏界面。"
+    },
+    {
+      "sha256": "ee602626fd600e311f6f6120e164a2f1142ba0121d985e4939a8f64be60bb994",
+      "platform": "qiandao",
+      "source_url": "https://qiandao.com/topic?id=undefined",
+      "reason": "单件戒指/装备属性提示框，非队伍配置图。"
+    },
+    {
+      "sha256": "ba1b128c51df7e01593179e9d8bb851f6beae566c8b8aab5017659b467be25b2",
+      "platform": "wegame",
+      "source_url": "https://www.wegame.com.cn/act/wegame/nrc20260618/?wg_ad_from=communitycoverNew",
+      "reason": "鸟类活动宣传画（画面活动期 2026-06-19 至 07-09），非配置图。"
+    },
+    {
+      "sha256": "2967e59bcaf9197318c8963b99bb53beda2a4d86ba73564bbe9ecf2d7b35c82a",
+      "platform": "wegame",
+      "source_url": "https://www.wegame.com.cn/act/wegame/nrc20260618/?wg_ad_from=communitycoverNew",
+      "reason": "「学院呱呱」活动横幅（画面活动期 05-21 至 07-16），非配置图。"
+    },
+    {
+      "sha256": "345fee67dcc794b2fa922e93a853c3135d55bed220801efc1032219e49d0cf2e",
+      "platform": "wegame",
+      "source_url": "https://www.wegame.com.cn/act/wegame/nrc20260618/?wg_ad_from=communitycoverNew",
+      "reason": "签到活动文字说明（画面活动期 06-18 至 07-09），非配置图。"
+    },
+    {
+      "sha256": "eb5aefa4f1b96bfa80a32c7a18e4d394ddfc3177c8db80aea428949b5f8124df",
+      "platform": "wegame",
+      "source_url": "https://www.wegame.com.cn/act/wegame/nrc20260618/?wg_ad_from=communitycoverNew",
+      "reason": "邀请组队奖励文字页，无成员配置。"
+    },
+    {
+      "sha256": "e0490bc55781d43cd679a28d48340643b858b4b06be3dcedf1552d4831aea59d",
+      "platform": "wegame",
+      "source_url": "https://www.wegame.com.cn/act/wegame/lkwgsj20260409launch/index.html",
+      "reason": "「领Q币大奖」开服促销素材，非配置图。"
+    },
+    {
+      "sha256": "5f28e976a8c631a76d5e1440686c9427c1060e63f7788316a53e32690fc56c0a",
+      "platform": "wegame",
+      "source_url": "https://www.wegame.com.cn/act/wegame/lkwgsj20260409launch/index.html",
+      "reason": "「领暗区好礼」开服促销素材，非配置图。"
+    }
+  ],
+  "final_counts": {
+    "unique_candidates": 52,
+    "exact_published_duplicates": 9,
+    "prior_rejects": 16,
+    "pending_unresolved": 4,
+    "new_rejects": 23
+  },
+  "note": "Genuinely new images were inspected only once. Duplicates and pending thumbnails were not re-OCR'd. No publishable complete six-member sheet was found in this pass."
+}

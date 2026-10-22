@@ -1,0 +1,14 @@
+{
+  "run_id": "2026-10-22T12-37-13-996Z",
+  "untrusted": true,
+  "step": "visual-semantics-new-rejects",
+  "method": "Inspected only prepared overview JPEGs listed in vision/index.json. No original image or new variant was generated.",
+  "result": "rejected",
+  "entries": [
+    { "sha256": "e184fa1e5ff008550dae0c9b86322a07c214b16d7b41d3b3f63c93585ec4226b", "platform": "taptap", "source_url": "https://www.taptap.cn/moment/858904416206456638", "reason": "“教练我要组黑白火队！”帖：仅露出 3/6 个配置位且页面自述第 1/2 页，属部分队伍；不推断缺失成员。" },
+    { "sha256": "a1bcb3f36f9d6bad4b45c216dca6a8c0d6dd5b3f22d8c10a3d36cd4f0e3d21a8", "platform": "taptap", "source_url": "https://www.taptap.cn/moment/847022426351994538", "reason": "单角色大世界截图，无配置栏与六只成员。" },
+    { "sha256": "c81f4dd6f010603588e212a29550cd7cb29adaa29e5fbf64a20da1e0016cea0b", "platform": "taptap", "source_url": "https://www.taptap.cn/review/50780923", "reason": "评测插图/封面，无配置信息。" },
+    { "sha256": "ae14137a4df5d1a89b97faa46e040762df59175eb077cbdc0ab46d8d6883b1c5", "platform": "taptap", "source_url": "https://www.taptap.cn/review/50780923", "reason": "评测角色立绘，无配置信息。" },
+    { "sha256": "306a7180eab40638f1197c15871dbf1e3eab95ba164826252a8d27a8668e7c42", "platform": "taptap", "source_url": "https://www.taptap.cn/review/50780923", "reason": "评测双角色立绘，无配置信息。" }
+  ]
+}

@@ -1,0 +1,238 @@
+{
+  "run_id": "2026-10-22T12-37-13-996Z",
+  "untrusted": true,
+  "step": "rejected-non-lineup-candidates",
+  "note": "All 52 unique candidates were visually reviewed using only the prepared overview JPEGs from vision/index.json. This file records the 23 newly rejected non-lineup images. The 16 candidates rejected in earlier runs are not relisted; 9 exact published duplicates were left unchanged and 4 Qiandao thumbnails remain pending in research/candidates/. No data records or assets were created.",
+  "entries": [
+    {
+      "sha256": "e184fa1e5ff008550dae0c9b86322a07c214b16d7b41d3b3f63c93585ec4226b",
+      "platform": "taptap",
+      "source_url": "https://www.taptap.cn/moment/858904416206456638",
+      "decision": "reject",
+      "reason": "“教练我要组黑白火队！”帖：仅露出 3/6 个配置位且页面自述第 1/2 页，属部分队伍；不推断缺失成员。",
+      "references": [
+        "https://www.taptap.cn/moment/858904416206456638"
+      ]
+    },
+    {
+      "sha256": "a1bcb3f36f9d6bad4b45c216dca6a8c0d6dd5b3f22d8c10a3d36cd4f0e3d21a8",
+      "platform": "taptap",
+      "source_url": "https://www.taptap.cn/moment/847022426351994538",
+      "decision": "reject",
+      "reason": "单角色大世界截图，无配置栏与六只成员。",
+      "references": [
+        "https://www.taptap.cn/moment/847022426351994538"
+      ]
+    },
+    {
+      "sha256": "c81f4dd6f010603588e212a29550cd7cb29adaa29e5fbf64a20da1e0016cea0b",
+      "platform": "taptap",
+      "source_url": "https://www.taptap.cn/review/50780923",
+      "decision": "reject",
+      "reason": "评测插图/封面，无配置信息。",
+      "references": [
+        "https://www.taptap.cn/review/50780923"
+      ]
+    },
+    {
+      "sha256": "ae14137a4df5d1a89b97faa46e040762df59175eb077cbdc0ab46d8d6883b1c5",
+      "platform": "taptap",
+      "source_url": "https://www.taptap.cn/review/50780923",
+      "decision": "reject",
+      "reason": "评测角色立绘，无配置信息。",
+      "references": [
+        "https://www.taptap.cn/review/50780923"
+      ]
+    },
+    {
+      "sha256": "306a7180eab40638f1197c15871dbf1e3eab95ba164826252a8d27a8668e7c42",
+      "platform": "taptap",
+      "source_url": "https://www.taptap.cn/review/50780923",
+      "decision": "reject",
+      "reason": "评测双角色立绘，无配置信息。",
+      "references": [
+        "https://www.taptap.cn/review/50780923"
+      ]
+    },
+    {
+      "sha256": "b2897edd110078a1c0f8bd892b94acc823fb329542e2737577397436c578b9b8",
+      "platform": "taptap",
+      "source_url": "https://www.taptap.cn/app/188212",
+      "decision": "reject",
+      "reason": "S4「月涌狂想」主视觉宣传图，无配置栏。",
+      "references": [
+        "https://www.taptap.cn/app/188212"
+      ]
+    },
+    {
+      "sha256": "00fa77147140801133bf91d9d1bd08af2108a401c2a6817b4ae2b0d5982eddfc",
+      "platform": "taptap",
+      "source_url": "https://www.taptap.cn/app/188212",
+      "decision": "reject",
+      "reason": "S4 开季宣传横幅，无成员配置。",
+      "references": [
+        "https://www.taptap.cn/app/188212"
+      ]
+    },
+    {
+      "sha256": "8c5cf47f0cfd86b66b9a2e2f3a9374a6835bc155b1439e318cc38afd85a93683",
+      "platform": "taptap",
+      "source_url": "https://www.taptap.cn/app/188212",
+      "decision": "reject",
+      "reason": "S4 开季宣传美术图，无配置栏。",
+      "references": [
+        "https://www.taptap.cn/app/188212"
+      ]
+    },
+    {
+      "sha256": "25711dba04d1c314f036001d4717b3d5a2dc5696157cfad92f316d44ff9e2591",
+      "platform": "taptap",
+      "source_url": "https://www.taptap.cn/app/188212",
+      "decision": "reject",
+      "reason": "宣传大世界画面，仅侧边队伍栏，非完整配置图。",
+      "references": [
+        "https://www.taptap.cn/app/188212"
+      ]
+    },
+    {
+      "sha256": "ac938443a10f1d0f172f968f5594dc9fa1203465f6894061ad13c9a2f56c73d8",
+      "platform": "taptap",
+      "source_url": "https://www.taptap.cn/app/188212",
+      "decision": "reject",
+      "reason": "时装促销图，无配置信息。",
+      "references": [
+        "https://www.taptap.cn/app/188212"
+      ]
+    },
+    {
+      "sha256": "5f9b1d845e21eb10e3e37288f41d4e6978f4244c50adb877cb78917fa1f4a0f1",
+      "platform": "taptap",
+      "source_url": "https://www.taptap.cn/app/188212",
+      "decision": "reject",
+      "reason": "家园/家具宣传图，无配置信息。",
+      "references": [
+        "https://www.taptap.cn/app/188212"
+      ]
+    },
+    {
+      "sha256": "94449ada8b820f321f0160e766445015978e8adcfd2e44be007ef92508322c9c",
+      "platform": "qiandao",
+      "source_url": "https://qiandao.com/topic?id=undefined",
+      "decision": "reject",
+      "reason": "毛绒猫周边与稀有度/商品说明图，无游戏配置栏。",
+      "references": [
+        "https://qiandao.com/topic?id=undefined"
+      ]
+    },
+    {
+      "sha256": "1b1efe632490e3b1a841ab12f7343cbfb9a4c742e175b05fc058f1575681e504",
+      "platform": "qiandao",
+      "source_url": "https://qiandao.com/topic?id=undefined",
+      "decision": "reject",
+      "reason": "毛绒猫周边商品合照，无游戏配置栏。",
+      "references": [
+        "https://qiandao.com/topic?id=undefined"
+      ]
+    },
+    {
+      "sha256": "2f61c328048c468641a07bcb050c2f3b8b681ab76175c877b4eaccf643e3c2d8",
+      "platform": "qiandao",
+      "source_url": "https://qiandao.com/topic?id=undefined",
+      "decision": "reject",
+      "reason": "单件道具/技能提示框截图，非六只成员配置图。",
+      "references": [
+        "https://qiandao.com/topic?id=undefined"
+      ]
+    },
+    {
+      "sha256": "cde6668fcf44b904ead4954b11afe8b00f99496feabe2b55e84f9f2e87c57d5d",
+      "platform": "qiandao",
+      "source_url": "https://qiandao.com/topic?id=undefined",
+      "decision": "reject",
+      "reason": "约稿角色插画，无游戏界面或配置信息。",
+      "references": [
+        "https://qiandao.com/topic?id=undefined"
+      ]
+    },
+    {
+      "sha256": "2d678bd611f78c59d4f94ae7b32c26b33f3981c339aff8517a4be05ceacbc0ce",
+      "platform": "qiandao",
+      "source_url": "https://qiandao.com/topic?id=undefined",
+      "decision": "reject",
+      "reason": "实体手办/摆件照片，无游戏界面。",
+      "references": [
+        "https://qiandao.com/topic?id=undefined"
+      ]
+    },
+    {
+      "sha256": "ee602626fd600e311f6f6120e164a2f1142ba0121d985e4939a8f64be60bb994",
+      "platform": "qiandao",
+      "source_url": "https://qiandao.com/topic?id=undefined",
+      "decision": "reject",
+      "reason": "单件戒指/装备属性提示框，非队伍配置图。",
+      "references": [
+        "https://qiandao.com/topic?id=undefined"
+      ]
+    },
+    {
+      "sha256": "ba1b128c51df7e01593179e9d8bb851f6beae566c8b8aab5017659b467be25b2",
+      "platform": "wegame",
+      "source_url": "https://www.wegame.com.cn/act/wegame/nrc20260618/?wg_ad_from=communitycoverNew",
+      "decision": "reject",
+      "reason": "鸟类活动宣传画（画面活动期 2026-06-19 至 07-09），非配置图。",
+      "references": [
+        "https://www.wegame.com.cn/act/wegame/nrc20260618/?wg_ad_from=communitycoverNew"
+      ]
+    },
+    {
+      "sha256": "2967e59bcaf9197318c8963b99bb53beda2a4d86ba73564bbe9ecf2d7b35c82a",
+      "platform": "wegame",
+      "source_url": "https://www.wegame.com.cn/act/wegame/nrc20260618/?wg_ad_from=communitycoverNew",
+      "decision": "reject",
+      "reason": "「学院呱呱」活动横幅（画面活动期 05-21 至 07-16），非配置图。",
+      "references": [
+        "https://www.wegame.com.cn/act/wegame/nrc20260618/?wg_ad_from=communitycoverNew"
+      ]
+    },
+    {
+      "sha256": "345fee67dcc794b2fa922e93a853c3135d55bed220801efc1032219e49d0cf2e",
+      "platform": "wegame",
+      "source_url": "https://www.wegame.com.cn/act/wegame/nrc20260618/?wg_ad_from=communitycoverNew",
+      "decision": "reject",
+      "reason": "签到活动文字说明（画面活动期 06-18 至 07-09），非配置图。",
+      "references": [
+        "https://www.wegame.com.cn/act/wegame/nrc20260618/?wg_ad_from=communitycoverNew"
+      ]
+    },
+    {
+      "sha256": "eb5aefa4f1b96bfa80a32c7a18e4d394ddfc3177c8db80aea428949b5f8124df",
+      "platform": "wegame",
+      "source_url": "https://www.wegame.com.cn/act/wegame/nrc20260618/?wg_ad_from=communitycoverNew",
+      "decision": "reject",
+      "reason": "邀请组队奖励文字页，无成员配置。",
+      "references": [
+        "https://www.wegame.com.cn/act/wegame/nrc20260618/?wg_ad_from=communitycoverNew"
+      ]
+    },
+    {
+      "sha256": "e0490bc55781d43cd679a28d48340643b858b4b06be3dcedf1552d4831aea59d",
+      "platform": "wegame",
+      "source_url": "https://www.wegame.com.cn/act/wegame/lkwgsj20260409launch/index.html",
+      "decision": "reject",
+      "reason": "「领Q币大奖」开服促销素材，非配置图。",
+      "references": [
+        "https://www.wegame.com.cn/act/wegame/lkwgsj20260409launch/index.html"
+      ]
+    },
+    {
+      "sha256": "5f28e976a8c631a76d5e1440686c9427c1060e63f7788316a53e32690fc56c0a",
+      "platform": "wegame",
+      "source_url": "https://www.wegame.com.cn/act/wegame/lkwgsj20260409launch/index.html",
+      "decision": "reject",
+      "reason": "「领暗区好礼」开服促销素材，非配置图。",
+      "references": [
+        "https://www.wegame.com.cn/act/wegame/lkwgsj20260409launch/index.html"
+      ]
+    }
+  ]
+}

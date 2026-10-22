@@ -1,0 +1,226 @@
+{
+  "run_id": "2026-10-22T10-47-12-443Z",
+  "untrusted": true,
+  "step": "rejected-non-lineup-candidates",
+  "note": "Consolidated from run checkpoints 03 and 04. Rejected images are not lineups; no data records were created.",
+  "entries": [
+    {
+      "vision_index": 0,
+      "sha256": "10974fc0cf81e75c4031305143c39a44574c355cd651a7f1a7f9262e843cedd8",
+      "platform": "taptap",
+      "source_url": "https://www.taptap.cn/moment/847022426351994538",
+      "observed": null,
+      "decision": "reject",
+      "reason": "TapTap 开服公告 banner, not a six-member configuration sheet",
+      "references": [
+        "https://www.taptap.cn/moment/847022426351994538"
+      ],
+      "image_url": "https://img2-tc.tapimg.com/moment/etag/FhXVkJ0SdOd7lS3V0jn7AAkCZ0j9_20260910080528.jpg/_tap_ugc.jpg"
+    },
+    {
+      "vision_index": 1,
+      "sha256": "3c1064aeed6b30ff06f497201db54568e26077c652a4758f2f8ce7248aea4c61",
+      "platform": "taptap",
+      "source_url": "https://www.taptap.cn/moment/847022426351994538",
+      "observed": null,
+      "decision": "reject",
+      "reason": "game key art / cover illustration",
+      "references": [
+        "https://www.taptap.cn/moment/847022426351994538"
+      ],
+      "image_url": "https://img-tc.tapimg.com/market/images/2628c7a2531124999a88dddd29ee3686.jpg/_tap_banner_m.jpg"
+    },
+    {
+      "vision_index": 2,
+      "sha256": "c8806bcfa255807e33ee9ac72224db25dedfd2a95730ade5a0dcb6642133d416",
+      "platform": "taptap",
+      "source_url": "https://www.taptap.cn/moment/847022426351994538",
+      "observed": null,
+      "decision": "reject",
+      "reason": "unrelated in-game character screenshot, no lineup grid",
+      "references": [
+        "https://www.taptap.cn/moment/847022426351994538"
+      ],
+      "image_url": "https://img2-tc.tapimg.com/moment/etag/FuOzhtyx4GDjxO8X78B7SpMfJn7F_20260909161652.png/_tap_ugc_m.jpg"
+    },
+    {
+      "vision_index": 3,
+      "sha256": "cccf93bd64c30b6c8670cb871460213029d11161555d63eef9ce791c825f2544",
+      "platform": "bilibili",
+      "source_url": "https://www.bilibili.com/video/BV1N8hk6rErM/",
+      "observed": null,
+      "decision": "reject",
+      "reason": "Bilibili WEB logo; video page returned HTTP 412, so no configuration frame was verifiable",
+      "references": [
+        "https://www.bilibili.com/video/BV1N8hk6rErM/"
+      ],
+      "image_url": "https://i0.hdslb.com/bfs/static/jinkela/long/images/512.png"
+    },
+    {
+      "vision_index": 8,
+      "sha256": "575ffe5c4176b5500d1449b4daac185b5d6907dc7367b6a5bbc7752187d948db",
+      "platform": "biligame",
+      "source_url": "https://wiki.biligame.com/nrc/%E9%A6%96%E9%A1%B5",
+      "observed": null,
+      "decision": "reject",
+      "reason": "wiki homepage banner",
+      "references": [
+        "https://wiki.biligame.com/nrc/%E9%A6%96%E9%A1%B5"
+      ],
+      "image_url": "https://patchwiki.biligame.com/images/nrc/thumb/8/83/5pgb7ze1ijipoe5mqmlwcmqgodvyxin.png/800px-PetPortrait_img_Win_LiangFengWan1_001_Res.png"
+    },
+    {
+      "vision_index": 9,
+      "sha256": "6150b0762a1294b8ea6538097bb3641075ebca74e5320b5322854e2cc132f9d7",
+      "platform": "biligame",
+      "source_url": "https://wiki.biligame.com/nrc/%E9%A6%96%E9%A1%B5",
+      "observed": null,
+      "decision": "reject",
+      "reason": "wiki homepage banner",
+      "references": [
+        "https://wiki.biligame.com/nrc/%E9%A6%96%E9%A1%B5"
+      ],
+      "image_url": "https://patchwiki.biligame.com/images/nrc/thumb/f/fe/6515vv3kymwyb67h48qonnpp6sokkjt.png/1600px-Activity_Starlight_1031_V1.png"
+    },
+    {
+      "vision_index": 10,
+      "sha256": "6a6451ab3bfdbee2bbe110078e22747952893a60531ba2d2ea79ce4c667e9e4d",
+      "platform": "biligame",
+      "source_url": "https://wiki.biligame.com/nrc/%E9%A6%96%E9%A1%B5",
+      "observed": null,
+      "decision": "reject",
+      "reason": "monster scene illustration, not a lineup",
+      "references": [
+        "https://wiki.biligame.com/nrc/%E9%A6%96%E9%A1%B5"
+      ],
+      "image_url": "https://patchwiki.biligame.com/images/nrc/thumb/f/f7/tabzbmm9b4uyssbiatmfyx5nwmy66ka.png/1600px-Activity_Outbreak_1900034_V1.png"
+    },
+    {
+      "vision_index": 11,
+      "sha256": "a539c411a0843cc4b0ae4f69d3f1f5b001fda99c452571e79899814d97871c8b",
+      "platform": "biligame",
+      "source_url": "https://wiki.biligame.com/nrc/%E9%A6%96%E9%A1%B5",
+      "observed": null,
+      "decision": "reject",
+      "reason": "monster scene illustration, not a lineup",
+      "references": [
+        "https://wiki.biligame.com/nrc/%E9%A6%96%E9%A1%B5"
+      ],
+      "image_url": "https://patchwiki.biligame.com/images/nrc/thumb/f/f7/tabzbmm9b4uyssbiatmfyx5nwmy66ka.png/1200px-Activity_Outbreak_1900034_V1.png"
+    },
+    {
+      "vision_index": 12,
+      "sha256": "b76df8ce0a8343693cdff2dd2217b5a737d340e65e766ff323525ba83c664c36",
+      "platform": "biligame",
+      "source_url": "https://wiki.biligame.com/nrc/%E9%A6%96%E9%A1%B5",
+      "observed": null,
+      "decision": "reject",
+      "reason": "wiki guest portrait/icon",
+      "references": [
+        "https://wiki.biligame.com/nrc/%E9%A6%96%E9%A1%B5"
+      ],
+      "image_url": "https://patchwiki.biligame.com/images/nrc/thumb/f/f7/tabzbmm9b4uyssbiatmfyx5nwmy66ka.png/800px-Activity_Outbreak_1900034_V1.png"
+    },
+    {
+      "vision_index": 13,
+      "sha256": "1d908dc6febb73a260bbee9ea318e8b18149dd887b22d8917ecceda9e4e00162",
+      "platform": "biligame",
+      "source_url": "https://wiki.biligame.com/nrc/%E9%A6%96%E9%A1%B5",
+      "observed": null,
+      "decision": "reject",
+      "reason": "wiki portrait/icon",
+      "references": [
+        "https://wiki.biligame.com/nrc/%E9%A6%96%E9%A1%B5"
+      ],
+      "image_url": "https://patchwiki.biligame.com/images/nrc/thumb/f/fe/6515vv3kymwyb67h48qonnpp6sokkjt.png/1200px-Activity_Starlight_1031_V1.png"
+    },
+    {
+      "vision_index": 14,
+      "sha256": "d0891a223db430fbda5a952e76d82ce177e673e1b04e6a1eaa1e15cc21d551f2",
+      "platform": "biligame",
+      "source_url": "https://wiki.biligame.com/nrc/%E9%A6%96%E9%A1%B5",
+      "observed": null,
+      "decision": "reject",
+      "reason": "wiki portrait/icon",
+      "references": [
+        "https://wiki.biligame.com/nrc/%E9%A6%96%E9%A1%B5"
+      ],
+      "image_url": "https://patchwiki.biligame.com/images/nrc/thumb/f/fe/6515vv3kymwyb67h48qonnpp6sokkjt.png/800px-Activity_Starlight_1031_V1.png"
+    },
+    {
+      "vision_index": 15,
+      "sha256": "2fe68cba574f65c505391ab72b1077d6866076e2b4c28c4c360c1d59ccdbe7be",
+      "platform": "biligame",
+      "source_url": "https://wiki.biligame.com/nrc/%E9%A6%96%E9%A1%B5",
+      "observed": null,
+      "decision": "reject",
+      "reason": "wiki homepage graphic; no complete six-member configuration",
+      "references": [
+        "https://wiki.biligame.com/nrc/%E9%A6%96%E9%A1%B5"
+      ],
+      "image_url": "https://patchwiki.biligame.com/images/nrc/8/83/5pgb7ze1ijipoe5mqmlwcmqgodvyxin.png"
+    },
+    {
+      "vision_index": 27,
+      "sha256": "bdc3fc604b22609ba44c233491752afa4f49b8ebafb74bf955a6d9c6d4087d03",
+      "platform": "qiandao",
+      "source_url": null,
+      "observed": null,
+      "decision": "reject",
+      "reason": "plush blind-box catalogue chart, unrelated to PVP lineups",
+      "references": [
+        "https://qiandao.com/topic?id=undefined"
+      ],
+      "image_url": "https://post.qiandaocdn.com/post/images/fdV9zWmQNyz_resize.webp?imginfo=w1161,h2586!lfit_w540_jpg",
+      "source_note": "collector page URL was malformed (topic?id=undefined); no usable source page recorded"
+    },
+    {
+      "vision_index": 28,
+      "sha256": "d8aa416e49beb38846f2133b728a9abdb3d12eee2d0a12e3046336fd281e8fd8",
+      "platform": "qiandao",
+      "source_url": null,
+      "observed": null,
+      "decision": "reject",
+      "reason": "plush blind-box catalogue chart, unrelated to PVP lineups",
+      "references": [
+        "https://qiandao.com/topic?id=undefined"
+      ],
+      "image_url": "https://post.qiandaocdn.com/post/images/fdAE6yCQCtu_resize.webp?imginfo=w860,h2162!lfit_w540_jpg",
+      "source_note": "collector page URL was malformed (topic?id=undefined); no usable source page recorded"
+    },
+    {
+      "vision_index": 17,
+      "sha256": "a94e58ea3689bfa56d131b8c19a3ccb2b2df332fec28173bd3147c28258d38ad",
+      "platform": "3dm",
+      "source_url": "https://ol.3dmgame.com/gl/355668.html",
+      "observed": "square QR code with a small mascot in the centre",
+      "decision": "reject",
+      "reason": "editorial QR/promo asset repeated across 3DM article pages; contains no lineup",
+      "references": [
+        "https://ol.3dmgame.com/gl/355668.html",
+        "https://ol.3dmgame.com/gl/348407.html",
+        "https://ol.3dmgame.com/gl/342821.html",
+        "https://ol.3dmgame.com/gl/355666.html",
+        "https://ol.3dmgame.com/gl/350006.html",
+        "https://ol.3dmgame.com/gl/354707.html",
+        "https://ol.3dmgame.com/gl/350004.html",
+        "https://ol.3dmgame.com/gl/353802.html",
+        "https://ol.3dmgame.com/gl/353804.html"
+      ],
+      "image_url": "https://ol.3dmgame.com/page/images/3dmapp.png"
+    },
+    {
+      "vision_index": 26,
+      "sha256": "1e7141986e41291bce8ae1f0ee3e88c248da835fafa684e075793bc807b2cee7",
+      "platform": "taptap",
+      "source_url": "https://www.taptap.cn/poster-activity/NIU11IM3S8uL",
+      "observed": "blue rounded-square TapTap app icon",
+      "decision": "reject",
+      "reason": "application icon; no configuration content",
+      "references": [
+        "https://www.taptap.cn/poster-activity/NIU11IM3S8uL"
+      ],
+      "image_url": "https://assets.tapimg.com/abd/activity/rock-dex/assets/game-icon-1e714198.png"
+    }
+  ]
+}

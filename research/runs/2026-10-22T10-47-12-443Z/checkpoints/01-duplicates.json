@@ -1,0 +1,18 @@
+{
+  "run_id": "2026-10-22T10-47-12-443Z",
+  "untrusted": true,
+  "step": "sha256-dedupe-against-published-assets",
+  "method": "Compared each vision candidate SHA-256 with files under public/assets/lineups/. Exact matches were not re-OCR'd and no record fields were modified.",
+  "result": "unchanged",
+  "entries": [
+    { "vision_index": 16, "sha256": "1f398c9ec783882e544378782ef583bf934fb509bc8ba8ec86de3c3ebe75c4f1", "slug": "rain-wing-s4", "note": "Existing record already documents the 彩蝶鲨/莎莎 caption discrepancy; no new evidence." },
+    { "vision_index": 18, "sha256": "bc8a093670b9cd456fdc4c4f161b6f16df042720f66d6e9030a8975133f593fc", "slug": "power-cat-crab-s3", "note": "Exact duplicate; historical S3 record preserved intact." },
+    { "vision_index": 19, "sha256": "39d5b950b6eaf6d4550e204ec90621cef3511196dc2e48ba7002071f9c3d4f0d", "slug": "top-wolf-s2", "note": "Exact duplicate; historical S2 record preserved intact." },
+    { "vision_index": 20, "sha256": "4ce133272b944051a9956893c0926dffe5d8f79936fbc67bcfefcf8e852d6bd9", "slug": "sleep-mouse-s4", "note": "Exact duplicate; no new configuration or quote evidence." },
+    { "vision_index": 21, "sha256": "af38f861ada1208d4a9dde659cd81722741ba1846190ea43bfb052b76de06f37", "slug": "dragonfish-starfall-s3", "note": "Exact duplicate; historical S3 record preserved intact." },
+    { "vision_index": 22, "sha256": "deaa724fe740324151789b4d84ec54ee09326bacc008fc6027d18d9aba684396", "slug": "pear-snake-s4", "note": "Exact duplicate; unchanged." },
+    { "vision_index": 23, "sha256": "aed42968bc09963812142dbc3e909f6edf7b575af1fdc33409d990fd67b8ea5e", "slug": "snow-snake-s3", "note": "Exact duplicate; historical S3 record preserved intact." },
+    { "vision_index": 24, "sha256": "2cf5548f5a0229f5859574765d630074e3a2a221873d1d3265f6de0b7925605d", "slug": "black-feather-poison-s4", "note": "Exact duplicate; existing roster name/order untouched." },
+    { "vision_index": 25, "sha256": "bf128b3ad110869a7f37c4eaa0c453f4d52a03d9e7fe300f6755add9ccd1b44a", "slug": "ice-roco-s4", "note": "Exact duplicate; unchanged." }
+  ]
+}

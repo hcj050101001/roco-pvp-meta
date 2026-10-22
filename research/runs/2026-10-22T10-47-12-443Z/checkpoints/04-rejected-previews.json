@@ -1,0 +1,38 @@
+{
+  "run_id": "2026-10-22T10-47-12-443Z",
+  "untrusted": true,
+  "step": "remaining-prepared-overview-review",
+  "note": "Only the prepared overview JPEGs were viewed; no original, enlarged PNG or extra variant was opened.",
+  "entries": [
+    {
+      "vision_index": 17,
+      "sha256": "a94e58ea3689bfa56d131b8c19a3ccb2b2df332fec28173bd3147c28258d38ad",
+      "bytes": 3571,
+      "platform": "3dm",
+      "references": [
+        "https://ol.3dmgame.com/gl/355668.html",
+        "https://ol.3dmgame.com/gl/348407.html",
+        "https://ol.3dmgame.com/gl/342821.html",
+        "https://ol.3dmgame.com/gl/355666.html",
+        "https://ol.3dmgame.com/gl/350006.html",
+        "https://ol.3dmgame.com/gl/354707.html",
+        "https://ol.3dmgame.com/gl/350004.html",
+        "https://ol.3dmgame.com/gl/353802.html",
+        "https://ol.3dmgame.com/gl/353804.html"
+      ],
+      "observed": "square QR code with a small mascot in the centre",
+      "decision": "reject",
+      "reason": "editorial QR/promo asset repeated across 3DM article pages; contains no lineup"
+    },
+    {
+      "vision_index": 26,
+      "sha256": "1e7141986e41291bce8ae1f0ee3e88c248da835fafa684e075793bc807b2cee7",
+      "bytes": 7952,
+      "platform": "taptap",
+      "references": ["https://www.taptap.cn/poster-activity/NIU11IM3S8uL"],
+      "observed": "blue rounded-square TapTap app icon",
+      "decision": "reject",
+      "reason": "application icon; no configuration content"
+    }
+  ]
+}

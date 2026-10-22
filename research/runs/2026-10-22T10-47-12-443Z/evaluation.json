@@ -1,0 +1,784 @@
+{
+  "run_id": "2026-10-22T10-47-12-443Z",
+  "candidates": [
+    {
+      "url": "https://img2-tc.tapimg.com/moment/etag/FhXVkJ0SdOd7lS3V0jn7AAkCZ0j9_20260910080528.jpg/_tap_ugc.jpg",
+      "context": "TapTap",
+      "method": "src",
+      "order": 4,
+      "width": 720,
+      "height": 403,
+      "format": "jpeg",
+      "sha256": "10974fc0cf81e75c4031305143c39a44574c355cd651a7f1a7f9262e843cedd8",
+      "phash": "32f019eb4799ec06",
+      "file": "10974fc0cf81e75c4031305143c39a44574c355cd651a7f1a7f9262e843cedd8.jpg",
+      "verified": false,
+      "mapping_confidence": "unverified",
+      "source": "https://www.taptap.cn/moment/847022426351994538"
+    },
+    {
+      "url": "https://img-tc.tapimg.com/market/images/2628c7a2531124999a88dddd29ee3686.jpg/_tap_banner_m.jpg",
+      "context": "洛克王国：世界 封面",
+      "method": "src",
+      "order": 5,
+      "width": 460,
+      "height": 215,
+      "format": "jpeg",
+      "sha256": "3c1064aeed6b30ff06f497201db54568e26077c652a4758f2f8ce7248aea4c61",
+      "phash": "0c22f3193e179f8a",
+      "file": "3c1064aeed6b30ff06f497201db54568e26077c652a4758f2f8ce7248aea4c61.jpg",
+      "verified": false,
+      "mapping_confidence": "unverified",
+      "source": "https://www.taptap.cn/moment/847022426351994538"
+    },
+    {
+      "url": "https://img2-tc.tapimg.com/moment/etag/FuOzhtyx4GDjxO8X78B7SpMfJn7F_20260909161652.png/_tap_ugc_m.jpg",
+      "context": "我要退游了，如题截图",
+      "method": "src",
+      "order": 6,
+      "width": 720,
+      "height": 322,
+      "format": "jpeg",
+      "sha256": "c8806bcfa255807e33ee9ac72224db25dedfd2a95730ade5a0dcb6642133d416",
+      "phash": "2b6ee0d8079322f6",
+      "file": "c8806bcfa255807e33ee9ac72224db25dedfd2a95730ade5a0dcb6642133d416.jpg",
+      "verified": false,
+      "mapping_confidence": "unverified",
+      "source": "https://www.taptap.cn/moment/847022426351994538"
+    },
+    {
+      "url": "https://i0.hdslb.com/bfs/static/jinkela/long/images/512.png",
+      "context": "window.webAbTest||(window.webAbTest={});try{window.__INITIAL_STATE__&&(window.webAbTest.pageVersion=window.__INITIAL_STATE__.pageVersion||\"new_video\",window.webAbTest.videoGoOldVersion=window.__INITIAL_STATE__.videoGoOldVersion||-1)}catch(w){console.error(w)}window.abtest=window.webAbTestfunction loadScript(e,n){var i=document.createElement(\"script\");i.type=\"text/javascript\",i.src=e,document.body.appendChild(i),i.onload=function(){\"function\"==typeof n&&n()}}if(window.loginInfoCallbacks=[],window",
+      "method": "src",
+      "order": 0,
+      "width": 512,
+      "height": 512,
+      "format": "png",
+      "sha256": "cccf93bd64c30b6c8670cb871460213029d11161555d63eef9ce791c825f2544",
+      "phash": "5b1e2c3e6c4c213b",
+      "file": "cccf93bd64c30b6c8670cb871460213029d11161555d63eef9ce791c825f2544.png",
+      "verified": false,
+      "mapping_confidence": "unverified",
+      "source": "https://www.bilibili.com/video/BV1N8hk6rErM/"
+    },
+    {
+      "url": "https://post.qiandaocdn.com/post/images/fdUoSDhogBu_resize.webp!lfit_w540_h540",
+      "context": "S4赛季队伍\n马头星陨队（全JiPin全10）\n夜王龙威起",
+      "method": "srcset",
+      "order": 2,
+      "width": 540,
+      "height": 248,
+      "format": "jpeg",
+      "sha256": "b1964ce7c6e5154d702cf20ae01a3eb748836bcc9b6a296266b3460994910599",
+      "phash": "5ea7598b235c5449",
+      "file": "b1964ce7c6e5154d702cf20ae01a3eb748836bcc9b6a296266b3460994910599.jpg",
+      "verified": false,
+      "mapping_confidence": "unverified",
+      "source": "https://qiandao.com/post?postId=1023430985116591249"
+    },
+    {
+      "url": "https://post.qiandaocdn.com/post/images/fdf4PG34C63_resize.webp!lfit_w540_h540",
+      "context": "S4赛季队伍\n马头星陨队（全JiPin全10）\n夜王龙威起",
+      "method": "srcset",
+      "order": 4,
+      "width": 540,
+      "height": 248,
+      "format": "jpeg",
+      "sha256": "2907bfdb0caa70f0e2041402c92743eda87f0ebfc61f33b6b31006aef2458888",
+      "phash": "5ea3198f235c5459",
+      "file": "2907bfdb0caa70f0e2041402c92743eda87f0ebfc61f33b6b31006aef2458888.jpg",
+      "verified": false,
+      "mapping_confidence": "unverified",
+      "source": "https://qiandao.com/post?postId=1023430985116591249"
+    },
+    {
+      "url": "https://post.qiandaocdn.com/post/images/fdUoSIw2SaH_resize.webp!lfit_w540_h540",
+      "context": "S4赛季队伍\n马头星陨队（全JiPin全10）\n夜王龙威起",
+      "method": "srcset",
+      "order": 6,
+      "width": 540,
+      "height": 248,
+      "format": "jpeg",
+      "sha256": "abbb00fde3caa895d768543b1780fdedcca06e3c98345894ad47c951682d38f0",
+      "phash": "5e8359832b5c7459",
+      "file": "abbb00fde3caa895d768543b1780fdedcca06e3c98345894ad47c951682d38f0.jpg",
+      "verified": false,
+      "mapping_confidence": "unverified",
+      "source": "https://qiandao.com/post?postId=1023430985116591249"
+    },
+    {
+      "url": "https://post.qiandaocdn.com/post/images/fdUoSgsZ4p7_resize.webp!lfit_w540_h540",
+      "context": "S4赛季队伍\n马头星陨队（全JiPin全10）\n夜王龙威起",
+      "method": "srcset",
+      "order": 8,
+      "width": 540,
+      "height": 248,
+      "format": "jpeg",
+      "sha256": "d537e0e761843143539f4ef1131d4b354581ed2b964793d346a6fc2fdc73c8b0",
+      "phash": "5ea359a3239d5419",
+      "file": "d537e0e761843143539f4ef1131d4b354581ed2b964793d346a6fc2fdc73c8b0.jpg",
+      "verified": false,
+      "mapping_confidence": "unverified",
+      "source": "https://qiandao.com/post?postId=1023430985116591249"
+    },
+    {
+      "url": "https://patchwiki.biligame.com/images/nrc/thumb/f/f7/tabzbmm9b4uyssbiatmfyx5nwmy66ka.png/800px-Activity_Outbreak_1900034_V1.png",
+      "context": "芽眼魔大量出没",
+      "method": "src",
+      "order": 1,
+      "width": 800,
+      "height": 450,
+      "format": "png",
+      "sha256": "b76df8ce0a8343693cdff2dd2217b5a737d340e65e766ff323525ba83c664c36",
+      "phash": "30077cc64be08fab",
+      "file": "b76df8ce0a8343693cdff2dd2217b5a737d340e65e766ff323525ba83c664c36.png",
+      "verified": false,
+      "mapping_confidence": "unverified",
+      "source": "https://wiki.biligame.com/nrc/%E9%A6%96%E9%A1%B5"
+    },
+    {
+      "url": "https://patchwiki.biligame.com/images/nrc/thumb/f/f7/tabzbmm9b4uyssbiatmfyx5nwmy66ka.png/1200px-Activity_Outbreak_1900034_V1.png",
+      "context": "芽眼魔大量出没",
+      "method": "srcset",
+      "order": 2,
+      "width": 1200,
+      "height": 675,
+      "format": "png",
+      "sha256": "a539c411a0843cc4b0ae4f69d3f1f5b001fda99c452571e79899814d97871c8b",
+      "phash": "30077cc64be08fab",
+      "file": "a539c411a0843cc4b0ae4f69d3f1f5b001fda99c452571e79899814d97871c8b.png",
+      "verified": false,
+      "mapping_confidence": "unverified",
+      "source": "https://wiki.biligame.com/nrc/%E9%A6%96%E9%A1%B5"
+    },
+    {
+      "url": "https://patchwiki.biligame.com/images/nrc/thumb/f/f7/tabzbmm9b4uyssbiatmfyx5nwmy66ka.png/1600px-Activity_Outbreak_1900034_V1.png",
+      "context": "芽眼魔大量出没",
+      "method": "srcset",
+      "order": 3,
+      "width": 1600,
+      "height": 900,
+      "format": "png",
+      "sha256": "6a6451ab3bfdbee2bbe110078e22747952893a60531ba2d2ea79ce4c667e9e4d",
+      "phash": "30077cc64be08fab",
+      "file": "6a6451ab3bfdbee2bbe110078e22747952893a60531ba2d2ea79ce4c667e9e4d.png",
+      "verified": false,
+      "mapping_confidence": "unverified",
+      "source": "https://wiki.biligame.com/nrc/%E9%A6%96%E9%A1%B5"
+    },
+    {
+      "url": "https://patchwiki.biligame.com/images/nrc/thumb/f/fe/6515vv3kymwyb67h48qonnpp6sokkjt.png/800px-Activity_Starlight_1031_V1.png",
+      "context": "星光对决",
+      "method": "src",
+      "order": 4,
+      "width": 800,
+      "height": 600,
+      "format": "png",
+      "sha256": "d0891a223db430fbda5a952e76d82ce177e673e1b04e6a1eaa1e15cc21d551f2",
+      "phash": "513d68bf60fa00f2",
+      "file": "d0891a223db430fbda5a952e76d82ce177e673e1b04e6a1eaa1e15cc21d551f2.png",
+      "verified": false,
+      "mapping_confidence": "unverified",
+      "source": "https://wiki.biligame.com/nrc/%E9%A6%96%E9%A1%B5"
+    },
+    {
+      "url": "https://patchwiki.biligame.com/images/nrc/thumb/f/fe/6515vv3kymwyb67h48qonnpp6sokkjt.png/1200px-Activity_Starlight_1031_V1.png",
+      "context": "星光对决",
+      "method": "srcset",
+      "order": 5,
+      "width": 1200,
+      "height": 900,
+      "format": "png",
+      "sha256": "1d908dc6febb73a260bbee9ea318e8b18149dd887b22d8917ecceda9e4e00162",
+      "phash": "513d68bf40fe00f2",
+      "file": "1d908dc6febb73a260bbee9ea318e8b18149dd887b22d8917ecceda9e4e00162.png",
+      "verified": false,
+      "mapping_confidence": "unverified",
+      "source": "https://wiki.biligame.com/nrc/%E9%A6%96%E9%A1%B5"
+    },
+    {
+      "url": "https://patchwiki.biligame.com/images/nrc/thumb/f/fe/6515vv3kymwyb67h48qonnpp6sokkjt.png/1600px-Activity_Starlight_1031_V1.png",
+      "context": "星光对决",
+      "method": "srcset",
+      "order": 6,
+      "width": 1600,
+      "height": 1200,
+      "format": "png",
+      "sha256": "6150b0762a1294b8ea6538097bb3641075ebca74e5320b5322854e2cc132f9d7",
+      "phash": "513d68bf40fe00f2",
+      "file": "6150b0762a1294b8ea6538097bb3641075ebca74e5320b5322854e2cc132f9d7.png",
+      "verified": false,
+      "mapping_confidence": "unverified",
+      "source": "https://wiki.biligame.com/nrc/%E9%A6%96%E9%A1%B5"
+    },
+    {
+      "url": "https://patchwiki.biligame.com/images/nrc/thumb/8/83/5pgb7ze1ijipoe5mqmlwcmqgodvyxin.png/800px-PetPortrait_img_Win_LiangFengWan1_001_Res.png",
+      "context": "量风碗  精灵图鉴",
+      "method": "src",
+      "order": 7,
+      "width": 800,
+      "height": 800,
+      "format": "png",
+      "sha256": "575ffe5c4176b5500d1449b4daac185b5d6907dc7367b6a5bbc7752187d948db",
+      "phash": "430e7cb11be2271b",
+      "file": "575ffe5c4176b5500d1449b4daac185b5d6907dc7367b6a5bbc7752187d948db.png",
+      "verified": false,
+      "mapping_confidence": "unverified",
+      "source": "https://wiki.biligame.com/nrc/%E9%A6%96%E9%A1%B5"
+    },
+    {
+      "url": "https://patchwiki.biligame.com/images/nrc/8/83/5pgb7ze1ijipoe5mqmlwcmqgodvyxin.png",
+      "context": "量风碗  精灵图鉴",
+      "method": "srcset",
+      "order": 8,
+      "width": 1024,
+      "height": 1024,
+      "format": "png",
+      "sha256": "2fe68cba574f65c505391ab72b1077d6866076e2b4c28c4c360c1d59ccdbe7be",
+      "phash": "430e6cb11be62733",
+      "file": "2fe68cba574f65c505391ab72b1077d6866076e2b4c28c4c360c1d59ccdbe7be.png",
+      "verified": false,
+      "mapping_confidence": "unverified",
+      "source": "https://wiki.biligame.com/nrc/%E9%A6%96%E9%A1%B5"
+    },
+    {
+      "url": "https://olimg.3dmgame.com/uploads/images/raiders/20261013/1791860995_701445.webp",
+      "context": "核心打法：跟大多数雨天一样，肉水灵多打水系技能给莎莎叠减能耗，离子和机械愿是用来解布鲁斯和萌队的，只有打小洛克才算个小信息差。莎莎、翼王、大书三大C体系，找好的时机上场输出即可。骨龙平衡队万能联防位、消耗手，补充电系打击面的同时稍稍控能，配合先发打空能量后死切。火羽就是一个倾泄位，跟翼王绑定，被削弱后依然能玩的点在于他有幽爆好打布灵和新狼王。这套阵容的短板很明显，就是在打强化队时需要手法和游戏理解，因为没有清强化的精灵，只能靠火羽被动和骨龙先发拦截，如果觉得还是不够可以把大书的彗星换成先发",
+      "method": "src",
+      "order": 4,
+      "width": 1499,
+      "height": 1080,
+      "format": "webp",
+      "sha256": "1f398c9ec783882e544378782ef583bf934fb509bc8ba8ec86de3c3ebe75c4f1",
+      "phash": "758aae8a03557c55",
+      "file": "1f398c9ec783882e544378782ef583bf934fb509bc8ba8ec86de3c3ebe75c4f1.webp",
+      "verified": false,
+      "mapping_confidence": "unverified",
+      "source": "https://ol.3dmgame.com/gl/355668.html"
+    },
+    {
+      "url": "https://ol.3dmgame.com/page/images/3dmapp.png",
+      "context": "",
+      "method": "src",
+      "order": 8,
+      "width": 344,
+      "height": 344,
+      "format": "png",
+      "sha256": "a94e58ea3689bfa56d131b8c19a3ccb2b2df332fec28173bd3147c28258d38ad",
+      "phash": "2a66e37294c9a1cb",
+      "file": "a94e58ea3689bfa56d131b8c19a3ccb2b2df332fec28173bd3147c28258d38ad.png",
+      "verified": false,
+      "mapping_confidence": "unverified",
+      "source": "https://ol.3dmgame.com/gl/355668.html"
+    },
+    {
+      "url": "https://olimg.3dmgame.com/uploads/images/raiders/20260730/1785374374_114403_jpg_r.jpg",
+      "context": "冰钻布鲁斯：副C。力大砖飞代表人物，用来打冰队、毒队等体系队非常好打。上来可以直接剁地消耗，也可以力增完秒，打火队慢速精灵也可以剁地力度很高。冰雹用来印记状态不让对手强化、开印记。先发收割残血力度足",
+      "method": "src",
+      "order": 4,
+      "width": 1080,
+      "height": 777,
+      "format": "jpeg",
+      "sha256": "bc8a093670b9cd456fdc4c4f161b6f16df042720f66d6e9030a8975133f593fc",
+      "phash": "7582c58e07556c5b",
+      "file": "bc8a093670b9cd456fdc4c4f161b6f16df042720f66d6e9030a8975133f593fc.jpg",
+      "verified": false,
+      "mapping_confidence": "unverified",
+      "source": "https://ol.3dmgame.com/gl/348407.html"
+    },
+    {
+      "url": "https://ol.3dmgame.com/page/images/3dmapp.png",
+      "context": "",
+      "method": "src",
+      "order": 8,
+      "width": 344,
+      "height": 344,
+      "format": "png",
+      "sha256": "a94e58ea3689bfa56d131b8c19a3ccb2b2df332fec28173bd3147c28258d38ad",
+      "phash": "2a66e37294c9a1cb",
+      "file": "a94e58ea3689bfa56d131b8c19a3ccb2b2df332fec28173bd3147c28258d38ad.png",
+      "verified": false,
+      "mapping_confidence": "unverified",
+      "source": "https://ol.3dmgame.com/gl/348407.html"
+    },
+    {
+      "url": "https://olimg.3dmgame.com/uploads/images/raiders/20260604/1780553203_393658.webp",
+      "context": "卡瓦重：印记手。主要作用就是凭借高速挂速冻，不好处理草系、光系精灵需要他来打消耗。卡瓦重不要掉太早避免开不出速冻印记",
+      "method": "src",
+      "order": 4,
+      "width": 1500,
+      "height": 1080,
+      "format": "webp",
+      "sha256": "39d5b950b6eaf6d4550e204ec90621cef3511196dc2e48ba7002071f9c3d4f0d",
+      "phash": "758ed78e06516531",
+      "file": "39d5b950b6eaf6d4550e204ec90621cef3511196dc2e48ba7002071f9c3d4f0d.webp",
+      "verified": false,
+      "mapping_confidence": "unverified",
+      "source": "https://ol.3dmgame.com/gl/342821.html"
+    },
+    {
+      "url": "https://ol.3dmgame.com/page/images/3dmapp.png",
+      "context": "",
+      "method": "src",
+      "order": 8,
+      "width": 344,
+      "height": 344,
+      "format": "png",
+      "sha256": "a94e58ea3689bfa56d131b8c19a3ccb2b2df332fec28173bd3147c28258d38ad",
+      "phash": "2a66e37294c9a1cb",
+      "file": "a94e58ea3689bfa56d131b8c19a3ccb2b2df332fec28173bd3147c28258d38ad.png",
+      "verified": false,
+      "mapping_confidence": "unverified",
+      "source": "https://ol.3dmgame.com/gl/342821.html"
+    },
+    {
+      "url": "https://olimg.3dmgame.com/uploads/images/raiders/20261013/1791860938_630571.webp",
+      "context": "核心打法：靠强化和数值跟对方站撸的阵容，无脑摔炮打法，把难受博弈点都交给对方选择简单好上分。打雨天水灵就用加油蟹反制，预备式愿力超糖稳定解;残血情况下最好能用潮汐应对拿到打湿印记一层就够很舒服，多了反而会被清，如果预备式强化后预判到对方切飞飞清强化可以大胆愿力打状态。用鼠鼠被动特性，对方强化就吃中毒，打我们就吃棘刺印记让对方轮转或联防难受，想博弈我们盾就吃鸩毒伤害。王蜥跟鼠鼠一样，不打我们就无脑力增地刺，打我们反正肉又能反伤又能消耗对手能量，切完克离心舞者、厉毒修萝等这样的连击手。瞌睡王主打的数值高，能硬吃你伤害耗你能量还有很高的力度，而且对方并不知道你有没有防御和回复技能还要去博弈这个点，我们就很舒服的无脑输出就行。布灵作为一个不吃资源的终端输出手，可以在前中期就上来叠加态后摔炮消耗打出优势，大书就更不用说了和布灵组成双终端，不想博弈就直接无脑湮灭，必要博弈就防反增伤后再输出。",
+      "method": "src",
+      "order": 4,
+      "width": 1502,
+      "height": 1080,
+      "format": "webp",
+      "sha256": "4ce133272b944051a9956893c0926dffe5d8f79936fbc67bcfefcf8e852d6bd9",
+      "phash": "718adc8a03457577",
+      "file": "4ce133272b944051a9956893c0926dffe5d8f79936fbc67bcfefcf8e852d6bd9.webp",
+      "verified": false,
+      "mapping_confidence": "unverified",
+      "source": "https://ol.3dmgame.com/gl/355666.html"
+    },
+    {
+      "url": "https://ol.3dmgame.com/page/images/3dmapp.png",
+      "context": "",
+      "method": "src",
+      "order": 8,
+      "width": 344,
+      "height": 344,
+      "format": "png",
+      "sha256": "a94e58ea3689bfa56d131b8c19a3ccb2b2df332fec28173bd3147c28258d38ad",
+      "phash": "2a66e37294c9a1cb",
+      "file": "a94e58ea3689bfa56d131b8c19a3ccb2b2df332fec28173bd3147c28258d38ad.png",
+      "verified": false,
+      "mapping_confidence": "unverified",
+      "source": "https://ol.3dmgame.com/gl/355666.html"
+    },
+    {
+      "url": "https://olimg.3dmgame.com/uploads/images/raiders/20260814/1786674464_231825.webp",
+      "context": "龙息帕尔：印记引爆、主C。星陨队前面只需要杀两只，最后上帕尔带走两点魔力值。上场可以先力增强化再火云车或撕裂秒，对位脆皮可以直接引爆印记秒",
+      "method": "src",
+      "order": 4,
+      "width": 1500,
+      "height": 1080,
+      "format": "webp",
+      "sha256": "af38f861ada1208d4a9dde659cd81722741ba1846190ea43bfb052b76de06f37",
+      "phash": "718ab99a03655ac7",
+      "file": "af38f861ada1208d4a9dde659cd81722741ba1846190ea43bfb052b76de06f37.webp",
+      "verified": false,
+      "mapping_confidence": "unverified",
+      "source": "https://ol.3dmgame.com/gl/350006.html"
+    },
+    {
+      "url": "https://ol.3dmgame.com/page/images/3dmapp.png",
+      "context": "",
+      "method": "src",
+      "order": 8,
+      "width": 344,
+      "height": 344,
+      "format": "png",
+      "sha256": "a94e58ea3689bfa56d131b8c19a3ccb2b2df332fec28173bd3147c28258d38ad",
+      "phash": "2a66e37294c9a1cb",
+      "file": "a94e58ea3689bfa56d131b8c19a3ccb2b2df332fec28173bd3147c28258d38ad.png",
+      "verified": false,
+      "mapping_confidence": "unverified",
+      "source": "https://ol.3dmgame.com/gl/350006.html"
+    },
+    {
+      "url": "https://olimg.3dmgame.com/uploads/images/raiders/20260928/1790578078_276030.webp",
+      "context": "核心打法：菊花梨蹦跶无减益给卡洛儿和寒音蛇叠连击次数，并有一定的伤害给到对位压力可以在前期先叠。传示弱需要一定理解，带防御可以防愿力，也需要防帕帕斯卡迅捷钢铁。化蝶和飞飞钥是核心联防位，帮助菊花梨比退对方站场精灵来传出示弱增益，治愈魔法给到梨螺蛇其中之一传增益和站场推队。",
+      "method": "src",
+      "order": 4,
+      "width": 1500,
+      "height": 1080,
+      "format": "webp",
+      "sha256": "deaa724fe740324151789b4d84ec54ee09326bacc008fc6027d18d9aba684396",
+      "phash": "7506728e0345adbd",
+      "file": "deaa724fe740324151789b4d84ec54ee09326bacc008fc6027d18d9aba684396.webp",
+      "verified": false,
+      "mapping_confidence": "unverified",
+      "source": "https://ol.3dmgame.com/gl/354707.html"
+    },
+    {
+      "url": "https://ol.3dmgame.com/page/images/3dmapp.png",
+      "context": "",
+      "method": "src",
+      "order": 8,
+      "width": 344,
+      "height": 344,
+      "format": "png",
+      "sha256": "a94e58ea3689bfa56d131b8c19a3ccb2b2df332fec28173bd3147c28258d38ad",
+      "phash": "2a66e37294c9a1cb",
+      "file": "a94e58ea3689bfa56d131b8c19a3ccb2b2df332fec28173bd3147c28258d38ad.png",
+      "verified": false,
+      "mapping_confidence": "unverified",
+      "source": "https://ol.3dmgame.com/gl/354707.html"
+    },
+    {
+      "url": "https://olimg.3dmgame.com/uploads/images/raiders/20260814/1786674312_400094.webp",
+      "context": "飞飞钥：倾泄位、清强化位。飞羽作为最强清强化技能，迅捷进场清增益克制同行处理强化精灵，并给寒音蛇增伤。倾泄用来配合特性百分百清除清毒印记、星陨印记等。吓退和风隐也都能处理强化精灵，容错率极高",
+      "method": "src",
+      "order": 4,
+      "width": 1500,
+      "height": 1080,
+      "format": "webp",
+      "sha256": "aed42968bc09963812142dbc3e909f6edf7b575af1fdc33409d990fd67b8ea5e",
+      "phash": "758a6c8a0755ac97",
+      "file": "aed42968bc09963812142dbc3e909f6edf7b575af1fdc33409d990fd67b8ea5e.webp",
+      "verified": false,
+      "mapping_confidence": "unverified",
+      "source": "https://ol.3dmgame.com/gl/350004.html"
+    },
+    {
+      "url": "https://ol.3dmgame.com/page/images/3dmapp.png",
+      "context": "",
+      "method": "src",
+      "order": 8,
+      "width": 344,
+      "height": 344,
+      "format": "png",
+      "sha256": "a94e58ea3689bfa56d131b8c19a3ccb2b2df332fec28173bd3147c28258d38ad",
+      "phash": "2a66e37294c9a1cb",
+      "file": "a94e58ea3689bfa56d131b8c19a3ccb2b2df332fec28173bd3147c28258d38ad.png",
+      "verified": false,
+      "mapping_confidence": "unverified",
+      "source": "https://ol.3dmgame.com/gl/350004.html"
+    },
+    {
+      "url": "https://olimg.3dmgame.com/uploads/images/raiders/20260920/1789866990_372808.webp",
+      "context": "S4新赛季毒队又登顶了闪耀大赛榜一，并且又是今天的最高分3161分。但你不会真觉得毒队超模吧，强的是世一毒樟藤。如果你喜欢玩毒队那我推荐你看樟藤，如果你不玩毒队或毒队玩的少我也推荐你看樟藤，多看看你也会打毒队。他不仅技术好，人好心态好声音也好听，所有人都来支持老大可以吗。毒队越少毒队越强你知道的，下面奉上最新一图流",
+      "method": "src",
+      "order": 4,
+      "width": 1503,
+      "height": 1080,
+      "format": "webp",
+      "sha256": "2cf5548f5a0229f5859574765d630074e3a2a221873d1d3265f6de0b7925605d",
+      "phash": "751a788a0a717d53",
+      "file": "2cf5548f5a0229f5859574765d630074e3a2a221873d1d3265f6de0b7925605d.webp",
+      "verified": false,
+      "mapping_confidence": "unverified",
+      "source": "https://ol.3dmgame.com/gl/353802.html"
+    },
+    {
+      "url": "https://ol.3dmgame.com/page/images/3dmapp.png",
+      "context": "",
+      "method": "src",
+      "order": 8,
+      "width": 344,
+      "height": 344,
+      "format": "png",
+      "sha256": "a94e58ea3689bfa56d131b8c19a3ccb2b2df332fec28173bd3147c28258d38ad",
+      "phash": "2a66e37294c9a1cb",
+      "file": "a94e58ea3689bfa56d131b8c19a3ccb2b2df332fec28173bd3147c28258d38ad.png",
+      "verified": false,
+      "mapping_confidence": "unverified",
+      "source": "https://ol.3dmgame.com/gl/353802.html"
+    },
+    {
+      "url": "https://olimg.3dmgame.com/uploads/images/raiders/20260920/1789867155_744750.webp",
+      "context": "飞飞钥：联防位。洛王实测比贝古斯好用，主要用来上来清对方强化和清印记，以及风隐吹走后换路路上来传增益",
+      "method": "src",
+      "order": 4,
+      "width": 1499,
+      "height": 1080,
+      "format": "webp",
+      "sha256": "bf128b3ad110869a7f37c4eaa0c453f4d52a03d9e7fe300f6755add9ccd1b44a",
+      "phash": "758a5a8a0351bead",
+      "file": "bf128b3ad110869a7f37c4eaa0c453f4d52a03d9e7fe300f6755add9ccd1b44a.webp",
+      "verified": false,
+      "mapping_confidence": "unverified",
+      "source": "https://ol.3dmgame.com/gl/353804.html"
+    },
+    {
+      "url": "https://ol.3dmgame.com/page/images/3dmapp.png",
+      "context": "",
+      "method": "src",
+      "order": 8,
+      "width": 344,
+      "height": 344,
+      "format": "png",
+      "sha256": "a94e58ea3689bfa56d131b8c19a3ccb2b2df332fec28173bd3147c28258d38ad",
+      "phash": "2a66e37294c9a1cb",
+      "file": "a94e58ea3689bfa56d131b8c19a3ccb2b2df332fec28173bd3147c28258d38ad.png",
+      "verified": false,
+      "mapping_confidence": "unverified",
+      "source": "https://ol.3dmgame.com/gl/353804.html"
+    },
+    {
+      "url": "https://assets.tapimg.com/abd/activity/rock-dex/assets/game-icon-1e714198.png",
+      "context": "洛克王国 洛克王国阵容大厅在 TapTap 客户端内查看完整阵容大厅，探索洛克王国热门阵容配置打开 TapTap APP",
+      "method": "src",
+      "order": 0,
+      "width": 300,
+      "height": 300,
+      "format": "png",
+      "sha256": "1e7141986e41291bce8ae1f0ee3e88c248da835fafa684e075793bc807b2cee7",
+      "phash": "536b2c5c31345337",
+      "file": "1e7141986e41291bce8ae1f0ee3e88c248da835fafa684e075793bc807b2cee7.png",
+      "verified": false,
+      "mapping_confidence": "unverified",
+      "source": "https://www.taptap.cn/poster-activity/NIU11IM3S8uL"
+    },
+    {
+      "url": "https://post.qiandaocdn.com/post/images/fdV9zWmQNyz_resize.webp?imginfo=w1161,h2586!lfit_w540_jpg",
+      "context": "帖子封面图",
+      "method": "src",
+      "order": 12,
+      "width": 540,
+      "height": 1203,
+      "format": "jpeg",
+      "sha256": "bdc3fc604b22609ba44c233491752afa4f49b8ebafb74bf955a6d9c6d4087d03",
+      "phash": "67f45a4a0e87398a",
+      "file": "bdc3fc604b22609ba44c233491752afa4f49b8ebafb74bf955a6d9c6d4087d03.jpg",
+      "verified": false,
+      "mapping_confidence": "unverified",
+      "source": "https://qiandao.com/topic?id=undefined"
+    },
+    {
+      "url": "https://post.qiandaocdn.com/post/images/fdAE6yCQCtu_resize.webp?imginfo=w860,h2162!lfit_w540_jpg",
+      "context": "帖子封面图",
+      "method": "src",
+      "order": 14,
+      "width": 540,
+      "height": 1358,
+      "format": "jpeg",
+      "sha256": "d8aa416e49beb38846f2133b728a9abdb3d12eee2d0a12e3046336fd281e8fd8",
+      "phash": "31e43535ce1bc09b",
+      "file": "d8aa416e49beb38846f2133b728a9abdb3d12eee2d0a12e3046336fd281e8fd8.jpg",
+      "verified": false,
+      "mapping_confidence": "unverified",
+      "source": "https://qiandao.com/topic?id=undefined"
+    }
+  ],
+  "duplicates": [
+    {
+      "a": "https://post.qiandaocdn.com/post/images/fdf4PG34C63_resize.webp!lfit_w540_h540",
+      "b": "https://post.qiandaocdn.com/post/images/fdUoSDhogBu_resize.webp!lfit_w540_h540",
+      "exact": false
+    },
+    {
+      "a": "https://patchwiki.biligame.com/images/nrc/thumb/f/f7/tabzbmm9b4uyssbiatmfyx5nwmy66ka.png/1200px-Activity_Outbreak_1900034_V1.png",
+      "b": "https://patchwiki.biligame.com/images/nrc/thumb/f/f7/tabzbmm9b4uyssbiatmfyx5nwmy66ka.png/800px-Activity_Outbreak_1900034_V1.png",
+      "exact": false
+    },
+    {
+      "a": "https://patchwiki.biligame.com/images/nrc/thumb/f/f7/tabzbmm9b4uyssbiatmfyx5nwmy66ka.png/1600px-Activity_Outbreak_1900034_V1.png",
+      "b": "https://patchwiki.biligame.com/images/nrc/thumb/f/f7/tabzbmm9b4uyssbiatmfyx5nwmy66ka.png/800px-Activity_Outbreak_1900034_V1.png",
+      "exact": false
+    },
+    {
+      "a": "https://patchwiki.biligame.com/images/nrc/thumb/f/f7/tabzbmm9b4uyssbiatmfyx5nwmy66ka.png/1600px-Activity_Outbreak_1900034_V1.png",
+      "b": "https://patchwiki.biligame.com/images/nrc/thumb/f/f7/tabzbmm9b4uyssbiatmfyx5nwmy66ka.png/1200px-Activity_Outbreak_1900034_V1.png",
+      "exact": false
+    },
+    {
+      "a": "https://patchwiki.biligame.com/images/nrc/thumb/f/fe/6515vv3kymwyb67h48qonnpp6sokkjt.png/1200px-Activity_Starlight_1031_V1.png",
+      "b": "https://patchwiki.biligame.com/images/nrc/thumb/f/fe/6515vv3kymwyb67h48qonnpp6sokkjt.png/800px-Activity_Starlight_1031_V1.png",
+      "exact": false
+    },
+    {
+      "a": "https://patchwiki.biligame.com/images/nrc/thumb/f/fe/6515vv3kymwyb67h48qonnpp6sokkjt.png/1600px-Activity_Starlight_1031_V1.png",
+      "b": "https://patchwiki.biligame.com/images/nrc/thumb/f/fe/6515vv3kymwyb67h48qonnpp6sokkjt.png/800px-Activity_Starlight_1031_V1.png",
+      "exact": false
+    },
+    {
+      "a": "https://patchwiki.biligame.com/images/nrc/thumb/f/fe/6515vv3kymwyb67h48qonnpp6sokkjt.png/1600px-Activity_Starlight_1031_V1.png",
+      "b": "https://patchwiki.biligame.com/images/nrc/thumb/f/fe/6515vv3kymwyb67h48qonnpp6sokkjt.png/1200px-Activity_Starlight_1031_V1.png",
+      "exact": false
+    },
+    {
+      "a": "https://patchwiki.biligame.com/images/nrc/8/83/5pgb7ze1ijipoe5mqmlwcmqgodvyxin.png",
+      "b": "https://patchwiki.biligame.com/images/nrc/thumb/8/83/5pgb7ze1ijipoe5mqmlwcmqgodvyxin.png/800px-PetPortrait_img_Win_LiangFengWan1_001_Res.png",
+      "exact": false
+    },
+    {
+      "a": "https://ol.3dmgame.com/page/images/3dmapp.png",
+      "b": "https://ol.3dmgame.com/page/images/3dmapp.png",
+      "exact": true
+    },
+    {
+      "a": "https://ol.3dmgame.com/page/images/3dmapp.png",
+      "b": "https://ol.3dmgame.com/page/images/3dmapp.png",
+      "exact": true
+    },
+    {
+      "a": "https://ol.3dmgame.com/page/images/3dmapp.png",
+      "b": "https://ol.3dmgame.com/page/images/3dmapp.png",
+      "exact": true
+    },
+    {
+      "a": "https://ol.3dmgame.com/page/images/3dmapp.png",
+      "b": "https://ol.3dmgame.com/page/images/3dmapp.png",
+      "exact": true
+    },
+    {
+      "a": "https://ol.3dmgame.com/page/images/3dmapp.png",
+      "b": "https://ol.3dmgame.com/page/images/3dmapp.png",
+      "exact": true
+    },
+    {
+      "a": "https://ol.3dmgame.com/page/images/3dmapp.png",
+      "b": "https://ol.3dmgame.com/page/images/3dmapp.png",
+      "exact": true
+    },
+    {
+      "a": "https://ol.3dmgame.com/page/images/3dmapp.png",
+      "b": "https://ol.3dmgame.com/page/images/3dmapp.png",
+      "exact": true
+    },
+    {
+      "a": "https://ol.3dmgame.com/page/images/3dmapp.png",
+      "b": "https://ol.3dmgame.com/page/images/3dmapp.png",
+      "exact": true
+    },
+    {
+      "a": "https://ol.3dmgame.com/page/images/3dmapp.png",
+      "b": "https://ol.3dmgame.com/page/images/3dmapp.png",
+      "exact": true
+    },
+    {
+      "a": "https://ol.3dmgame.com/page/images/3dmapp.png",
+      "b": "https://ol.3dmgame.com/page/images/3dmapp.png",
+      "exact": true
+    },
+    {
+      "a": "https://ol.3dmgame.com/page/images/3dmapp.png",
+      "b": "https://ol.3dmgame.com/page/images/3dmapp.png",
+      "exact": true
+    },
+    {
+      "a": "https://ol.3dmgame.com/page/images/3dmapp.png",
+      "b": "https://ol.3dmgame.com/page/images/3dmapp.png",
+      "exact": true
+    },
+    {
+      "a": "https://ol.3dmgame.com/page/images/3dmapp.png",
+      "b": "https://ol.3dmgame.com/page/images/3dmapp.png",
+      "exact": true
+    },
+    {
+      "a": "https://ol.3dmgame.com/page/images/3dmapp.png",
+      "b": "https://ol.3dmgame.com/page/images/3dmapp.png",
+      "exact": true
+    },
+    {
+      "a": "https://ol.3dmgame.com/page/images/3dmapp.png",
+      "b": "https://ol.3dmgame.com/page/images/3dmapp.png",
+      "exact": true
+    },
+    {
+      "a": "https://ol.3dmgame.com/page/images/3dmapp.png",
+      "b": "https://ol.3dmgame.com/page/images/3dmapp.png",
+      "exact": true
+    },
+    {
+      "a": "https://ol.3dmgame.com/page/images/3dmapp.png",
+      "b": "https://ol.3dmgame.com/page/images/3dmapp.png",
+      "exact": true
+    },
+    {
+      "a": "https://ol.3dmgame.com/page/images/3dmapp.png",
+      "b": "https://ol.3dmgame.com/page/images/3dmapp.png",
+      "exact": true
+    },
+    {
+      "a": "https://ol.3dmgame.com/page/images/3dmapp.png",
+      "b": "https://ol.3dmgame.com/page/images/3dmapp.png",
+      "exact": true
+    },
+    {
+      "a": "https://ol.3dmgame.com/page/images/3dmapp.png",
+      "b": "https://ol.3dmgame.com/page/images/3dmapp.png",
+      "exact": true
+    },
+    {
+      "a": "https://ol.3dmgame.com/page/images/3dmapp.png",
+      "b": "https://ol.3dmgame.com/page/images/3dmapp.png",
+      "exact": true
+    },
+    {
+      "a": "https://ol.3dmgame.com/page/images/3dmapp.png",
+      "b": "https://ol.3dmgame.com/page/images/3dmapp.png",
+      "exact": true
+    },
+    {
+      "a": "https://ol.3dmgame.com/page/images/3dmapp.png",
+      "b": "https://ol.3dmgame.com/page/images/3dmapp.png",
+      "exact": true
+    },
+    {
+      "a": "https://ol.3dmgame.com/page/images/3dmapp.png",
+      "b": "https://ol.3dmgame.com/page/images/3dmapp.png",
+      "exact": true
+    },
+    {
+      "a": "https://ol.3dmgame.com/page/images/3dmapp.png",
+      "b": "https://ol.3dmgame.com/page/images/3dmapp.png",
+      "exact": true
+    },
+    {
+      "a": "https://ol.3dmgame.com/page/images/3dmapp.png",
+      "b": "https://ol.3dmgame.com/page/images/3dmapp.png",
+      "exact": true
+    },
+    {
+      "a": "https://ol.3dmgame.com/page/images/3dmapp.png",
+      "b": "https://ol.3dmgame.com/page/images/3dmapp.png",
+      "exact": true
+    },
+    {
+      "a": "https://ol.3dmgame.com/page/images/3dmapp.png",
+      "b": "https://ol.3dmgame.com/page/images/3dmapp.png",
+      "exact": true
+    },
+    {
+      "a": "https://ol.3dmgame.com/page/images/3dmapp.png",
+      "b": "https://ol.3dmgame.com/page/images/3dmapp.png",
+      "exact": true
+    },
+    {
+      "a": "https://ol.3dmgame.com/page/images/3dmapp.png",
+      "b": "https://ol.3dmgame.com/page/images/3dmapp.png",
+      "exact": true
+    },
+    {
+      "a": "https://ol.3dmgame.com/page/images/3dmapp.png",
+      "b": "https://ol.3dmgame.com/page/images/3dmapp.png",
+      "exact": true
+    },
+    {
+      "a": "https://ol.3dmgame.com/page/images/3dmapp.png",
+      "b": "https://ol.3dmgame.com/page/images/3dmapp.png",
+      "exact": true
+    },
+    {
+      "a": "https://ol.3dmgame.com/page/images/3dmapp.png",
+      "b": "https://ol.3dmgame.com/page/images/3dmapp.png",
+      "exact": true
+    },
+    {
+      "a": "https://ol.3dmgame.com/page/images/3dmapp.png",
+      "b": "https://ol.3dmgame.com/page/images/3dmapp.png",
+      "exact": true
+    },
+    {
+      "a": "https://ol.3dmgame.com/page/images/3dmapp.png",
+      "b": "https://ol.3dmgame.com/page/images/3dmapp.png",
+      "exact": true
+    },
+    {
+      "a": "https://ol.3dmgame.com/page/images/3dmapp.png",
+      "b": "https://ol.3dmgame.com/page/images/3dmapp.png",
+      "exact": true
+    }
+  ],
+  "source_failures": [],
+  "note": "图像语义、版本与六只成员必须视觉复核；此脚本不自动晋升生产。"
+}

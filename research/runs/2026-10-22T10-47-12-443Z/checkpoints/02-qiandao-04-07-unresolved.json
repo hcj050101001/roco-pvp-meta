@@ -1,0 +1,40 @@
+{
+  "run_id": "2026-10-22T10-47-12-443Z",
+  "untrusted": true,
+  "step": "qiandao-post-1023430985116591249",
+  "source_url": "https://qiandao.com/post?postId=1023430985116591249",
+  "platform": "qiandao",
+  "source_kind": "mirror-collection",
+  "grade_cap": "B",
+  "observed": {
+    "images": 4,
+    "dimensions": "540x248",
+    "format": "JPEG",
+    "watermark": "橙黄色 洛克王国 watermark retained in all four sheets",
+    "layout": "six member slots with skill and bloodline icons",
+    "mirror_attribution": "洛克王国阵容镜像 (collection mirror label, not the original creator)",
+    "metadata_author": null,
+    "metadata_published_at": null,
+    "page_title": "S4赛季队伍 / 马头星陨队（全JiPin全10）/ 夜王龙威起",
+    "title_maps_to_image": "no",
+    "season_evidence": "none in image; visible 07-20 is yearless and predates S4",
+    "sha_matches_published": "none"
+  },
+  "decision": "pending",
+  "blockers": [
+    "no reliable per-image mapping between the four sheets and the team titles in the post",
+    "no original author attribution; mirror label only",
+    "no publication date for the images",
+    "no image-level season evidence; page title and update time are not usable season proof"
+  ],
+  "candidates": [
+    "b1964ce7c6e5154d702cf20ae01a3eb748836bcc9b6a296266b3460994910599",
+    "2907bfdb0caa70f0e2041402c92743eda87f0ebfc61f33b6b31006aef2458888",
+    "abbb00fde3caa895d768543b1780fdedcca06e3c98345894ad47c951682d38f0",
+    "d537e0e761843143539f4ef1131d4b354581ed2b964793d346a6fc2fdc73c8b0"
+  ],
+  "notes": [
+    "Index 6 resembles buling-rotation-s4 but has a different SHA; the existing published record is preserved and no substitution was made.",
+    "No member names, skills, bloodlines or roster order were transcribed into data/ from these sheets."
+  ]
+}

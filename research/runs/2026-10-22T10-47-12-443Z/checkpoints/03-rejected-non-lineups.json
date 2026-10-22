@@ -1,0 +1,24 @@
+{
+  "run_id": "2026-10-22T10-47-12-443Z",
+  "untrusted": true,
+  "step": "visual-rejection-review",
+  "entries": [
+    { "vision_index": 0, "sha256": "10974fc0cf81e75c4031305143c39a44574c355cd651a7f1a7f9262e843cedd8", "platform": "taptap", "reason": "TapTap 开服公告 banner, not a six-member configuration sheet" },
+    { "vision_index": 1, "sha256": "3c1064aeed6b30ff06f497201db54568e26077c652a4758f2f8ce7248aea4c61", "platform": "taptap", "reason": "game key art / cover illustration" },
+    { "vision_index": 2, "sha256": "c8806bcfa255807e33ee9ac72224db25dedfd2a95730ade5a0dcb6642133d416", "platform": "taptap", "reason": "unrelated in-game character screenshot, no lineup grid" },
+    { "vision_index": 3, "sha256": "cccf93bd64c30b6c8670cb871460213029d11161555d63eef9ce791c825f2544", "platform": "bilibili", "reason": "Bilibili WEB logo; video page returned HTTP 412, so no configuration frame was verifiable" },
+    { "vision_index": 8, "sha256": "575ffe5c4176b5500d1449b4daac185b5d6907dc7367b6a5bbc7752187d948db", "platform": "biligame", "reason": "wiki homepage banner" },
+    { "vision_index": 9, "sha256": "6150b0762a1294b8ea6538097bb3641075ebca74e5320b5322854e2cc132f9d7", "platform": "biligame", "reason": "wiki homepage banner" },
+    { "vision_index": 10, "sha256": "6a6451ab3bfdbee2bbe110078e22747952893a60531ba2d2ea79ce4c667e9e4d", "platform": "biligame", "reason": "monster scene illustration, not a lineup" },
+    { "vision_index": 11, "sha256": "a539c411a0843cc4b0ae4f69d3f1f5b001fda99c452571e79899814d97871c8b", "platform": "biligame", "reason": "monster scene illustration, not a lineup" },
+    { "vision_index": 12, "sha256": "b76df8ce0a8343693cdff2dd2217b5a737d340e65e766ff323525ba83c664c36", "platform": "biligame", "reason": "wiki guest portrait/icon" },
+    { "vision_index": 13, "sha256": "1d908dc6febb73a260bbee9ea318e8b18149dd887b22d8917ecceda9e4e00162", "platform": "biligame", "reason": "wiki portrait/icon" },
+    { "vision_index": 14, "sha256": "d0891a223db430fbda5a952e76d82ce177e673e1b04e6a1eaa1e15cc21d551f2", "platform": "biligame", "reason": "wiki portrait/icon" },
+    { "vision_index": 15, "sha256": "2fe68cba574f65c505391ab72b1077d6866076e2b4c28c4c360c1d59ccdbe7be", "platform": "biligame", "reason": "wiki homepage graphic; no complete six-member configuration" },
+    { "vision_index": 27, "sha256": "bdc3fc604b22609ba44c233491752afa4f49b8ebafb74bf955a6d9c6d4087d03", "platform": "qiandao", "reason": "plush blind-box catalogue chart, unrelated to PVP lineups" },
+    { "vision_index": 28, "sha256": "d8aa416e49beb38846f2133b728a9abdb3d12eee2d0a12e3046336fd281e8fd8", "platform": "qiandao", "reason": "plush blind-box catalogue chart, unrelated to PVP lineups" }
+  ],
+  "extra": [
+    "qiandao.com/topic?id=undefined rendered an unrelated plush-material page with no lineup image."
+  ]
+}

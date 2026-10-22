@@ -1,0 +1,40 @@
+{
+  "status": "pending",
+  "run_id": "2026-10-22T10-47-12-443Z",
+  "untrusted": true,
+  "platform": "qiandao",
+  "source_url": "https://qiandao.com/post?postId=1023430985116591249",
+  "source_kind": "mirror-collection",
+  "grade_cap": "B",
+  "mirror_attribution": "洛克王国阵容镜像",
+  "original_author": null,
+  "published_at": null,
+  "season": null,
+  "version_label": null,
+  "team_title_mapping": null,
+  "image": {
+    "sha256": "2907bfdb0caa70f0e2041402c92743eda87f0ebfc61f33b6b31006aef2458888",
+    "local_source": "research/inbox/2026-10-22T10-47-12-443Z/source-08e0a7f61192db02/2907bfdb0caa70f0e2041402c92743eda87f0ebfc61f33b6b31006aef2458888.jpg",
+    "url": "https://qiandao.com/post?postId=1023430985116591249",
+    "width": 540,
+    "height": 248,
+    "format": "jpeg",
+    "bytes": 31740,
+    "watermark": "orange 洛克王国 watermark retained",
+    "content": "six member slots with skill and bloodline icons"
+  },
+  "reason": "Complete six-member configuration sheet is visible, but the mirror post does not map this image to a named team, author or publication date, and the image itself carries no season evidence.",
+  "blockers": [
+    "no per-image title/team mapping in the post",
+    "no original author attribution (mirror label only)",
+    "no publication date for the image",
+    "no image-level S4/S3/S2 evidence; page title and update time are not usable",
+    "visible 07-20 is yearless and predates S4"
+  ],
+  "notes": [
+    "Roster names, skills and bloodlines were not written into data/ from this sheet.",
+    "Index 6 visually resembles buling-rotation-s4 but has a different SHA-256; the published record was left untouched."
+  ],
+  "next_step": "Find an author-original post for this exact image with a team title, publication date and season evidence before publication; otherwise keep pending.",
+  "vision_index": 5
+}

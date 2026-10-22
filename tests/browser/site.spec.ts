@@ -73,6 +73,46 @@ test('往期赛季和搜索组合，旧链接跳转正确',async({page})=>{
   expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
 });
 
+test('筛选状态可清除，排序说明和视频开关支持键盘',async({page})=>{
+  await page.goto('history/?season=S3&ref=guide#main');
+  await expect(page.getByRole('button',{name:'清除筛选'})).toBeVisible();
+  await page.getByRole('searchbox').fill(historyLineups[0].roster[0].name);
+  await page.getByRole('button',{name:'清除筛选'}).click();
+  await expect(page.locator('[data-card]:visible')).toHaveCount(historyLineups.length);
+  await expect(page.getByRole('searchbox')).toHaveValue('');
+  await expect(page.getByRole('searchbox')).toBeFocused();
+  await expect(page.getByRole('button',{name:'清除筛选'})).toBeHidden();
+  expect(new URL(page.url()).searchParams.has('season')).toBe(false);
+  expect(new URL(page.url()).searchParams.get('ref')).toBe('guide');
+  expect(new URL(page.url()).hash).toBe('#main');
+  const explanation=page.locator('.sort-note summary');
+  await explanation.focus();await page.keyboard.press('Enter');
+  await expect(page.locator('#sort-explanation')).toBeVisible();
+  const video=page.getByRole('checkbox',{name:'有教学视频'});
+  await video.focus();await page.keyboard.press('Space');
+  await expect(video).toBeChecked();
+  await expect(page.locator('[data-card]:visible')).toHaveCount(historyLineups.filter(l=>l.tutorials.length>0).length);
+  await page.getByRole('button',{name:'清除筛选'}).click();
+  await expect(video).not.toBeChecked();
+  await expect(page.locator('[data-card]:visible')).toHaveCount(historyLineups.length);
+});
+
+test('窄屏和平板保持完整布局与可点击导航',async({page})=>{
+  for(const width of [320,580,768,1024]){
+    await page.setViewportSize({width,height:900});
+    for(const route of ['./','history/',`lineups/${activeLineups[0].slug}/`,'404.html']){
+      await page.goto(route);
+      expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+      const navigation=page.getByRole('navigation',{name:'主导航'});
+      for(const link of await navigation.getByRole('link').all()){
+        const bounds=await link.boundingBox();expect(bounds).not.toBeNull();
+        expect(bounds!.x).toBeGreaterThanOrEqual(0);expect(bounds!.x+bounds!.width).toBeLessThanOrEqual(width);
+        expect(bounds!.height).toBeGreaterThanOrEqual(40);
+      }
+    }
+  }
+});
+
 test('逐卡视觉检查：统一预览框、同排边界和标题对齐，保留全部原图',async({page},info)=>{
   const folder=`artifacts/cards-${info.project.name}`;await mkdir(folder,{recursive:true});
   for(const [route,lineups] of [['./',activeLineups],['history/',historyLineups]] as const){

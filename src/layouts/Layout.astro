@@ -2,6 +2,7 @@
 import '../styles/player.css';
 import { withBase } from '../lib/urls';
 import { currentSeason } from '../lib/data';
+import Icon from '../components/Icon.astro';
 interface Props { title: string; description?: string; section?: string }
 const { title, description = '洛克王国：世界 PVP 配队手册。浏览真实阵容配置、作者攻略与对应视频，回顾往期配队。', section = '' } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site);
@@ -10,7 +11,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
 <html lang="zh-CN">
   <head>
     <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content={description} /><meta name="theme-color" content="#f8fafc" />
+    <meta name="description" content={description} /><meta name="theme-color" content="#fafaf7" />
     <meta property="og:title" content={title} /><meta property="og:description" content={description} /><meta property="og:type" content="website" />
     <link rel="canonical" href={canonical} /><link rel="icon" type="image/svg+xml" href={withBase('favicon.svg')} />
     <title>{title} · 洛克配队手册</title>
@@ -19,14 +20,14 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     <a href="#main" class="skip-link">跳到正文</a>
     <header class="site-header">
       <div class="header-inner wrap">
-        <a href={withBase('/')} class="brand" aria-label="洛克配队手册首页"><span class="brand-symbol" aria-hidden="true">R</span><span>洛克配队手册<small>ROCO KINGDOM · PVP</small></span></a>
+        <a href={withBase('/')} class="brand" aria-label="洛克配队手册首页"><span class="brand-symbol" aria-hidden="true"><Icon name="book" size={22} /></span><span>洛克配队手册<small>ROCO KINGDOM · PVP</small></span></a>
         <nav aria-label="主导航"><a href={withBase('/')} aria-current={section==='overview'?'page':undefined}>当季阵容</a><a href={withBase('/history/')} aria-current={section==='history'?'page':undefined}>往期阵容</a></nav>
-        <span class="season-pill"><span></span>{currentSeason.id} · {currentSeason.name}</span>
+        <a class="season-pill" href={withBase('/#lineup-overview')}><span class="status-dot"></span>{currentSeason.id} · {currentSeason.name}<Icon name="diagonal" size={14} /></a>
       </div>
     </header>
     <main id="main"><slot /></main>
     <footer class="site-footer wrap">
-      <div><a class="footer-brand" href={withBase('/')}>洛克配队手册</a><p>{currentSeason.id} · {currentSeason.name}</p></div>
+      <div><a class="footer-brand" href={withBase('/')}><Icon name="book" size={18} />洛克配队手册</a><p>每一种配队，都有新的可能。</p></div>
       <div><p>非官方玩家站 · 配置图归原作者所有</p><a href="https://github.com/hcj050101001/roco-pvp-meta/issues" target="_blank" rel="noopener noreferrer">反馈与纠错 ↗</a></div>
     </footer>
   </body>

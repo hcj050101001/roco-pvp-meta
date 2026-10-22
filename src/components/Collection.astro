@@ -1,5 +1,6 @@
 ---
 import LineupCard from './LineupCard.astro';
+import Icon from './Icon.astro';
 import type { Lineup } from '../lib/schema';
 import { withBase } from '../lib/urls';
 interface Props { lineups:Lineup[]; fallback?:Lineup[]; historical?:boolean }
@@ -7,12 +8,14 @@ const {lineups,fallback=[],historical=false}=Astro.props;
 const filters=[...new Set(lineups.flatMap(l=>l.archetype))];
 ---
 <div class="collection" data-collection>
-  <form class="collection-tools" role="search" onsubmit="return false"><label class="search-box"><span aria-hidden="true">⌕</span><span class="sr-only">搜索阵容或精灵</span><input id="search" type="search" placeholder="搜索阵容、精灵、体系…" autocomplete="off" /></label><label class="sort-label">排序 <select id="sort"><option value="recommended">推荐顺序</option><option value="recent">配置发布时间</option><option value="name">阵容名称</option></select></label></form>
-  <p class="sort-explanation">推荐顺序优先显示近期有来源的实绩或热度记录，其后按配置发布时间排列；不代表胜率或强度。</p>
-  <div class="filter-bar" aria-label="体系筛选"><button class="filter active" data-filter="all" aria-pressed="true">全部体系</button>{filters.map(f=><button class="filter" data-filter={f} aria-pressed="false">{f}</button>)}</div>
-  <div class="collection-result"><span id="result-count" role="status" aria-live="polite">共 {lineups.length} 套阵容</span><label class="video-filter"><input type="checkbox" id="with-video" /> 有教学视频</label></div>
+  <div class="filter-panel">
+    <form class="collection-tools" role="search" onsubmit="return false"><label class="search-box"><Icon name="search" size={20} /><span class="sr-only">搜索阵容或精灵</span><input id="search" type="search" placeholder="搜索阵容、精灵或体系" autocomplete="off" /></label><label class="sort-label">排列方式 <select id="sort" aria-describedby="sort-explanation"><option value="recommended">推荐顺序</option><option value="recent">配置发布时间</option><option value="name">阵容名称</option></select></label></form>
+    <div class="filter-row"><span class="filter-label" id="system-label">配队体系</span><div class="filter-bar" role="group" aria-labelledby="system-label"><button class="filter active" data-filter="all" aria-pressed="true">全部体系</button>{filters.map(f=><button class="filter" data-filter={f} aria-pressed="false">{f}</button>)}</div></div>
+    <details class="sort-note"><summary>关于推荐顺序</summary><p id="sort-explanation" class="sort-explanation">优先显示近期有来源的实绩或热度记录，其后按配置发布时间排列；不代表胜率或强度。</p></details>
+  </div>
+  <div class="collection-result"><div class="result-summary"><span id="result-count" role="status" aria-live="polite">共 {lineups.length} 套阵容</span><button id="clear-filters" class="clear-filters" hidden><Icon name="close" size={14} />清除筛选</button></div><label class="video-filter"><input type="checkbox" id="with-video" /><span class="switch-track" aria-hidden="true"></span>有教学视频</label></div>
   <div id="lineup-grid" class="lineup-grid">{lineups.map((l,i)=><LineupCard lineup={l} index={i} historical={historical} fallback={fallback.includes(l)} />)}</div>
-  <div class="empty-state" id="empty-state" hidden><h3>没有找到符合条件的阵容</h3><p>试试更换精灵名或体系筛选，也可以重置条件浏览全部阵容。</p><div class="empty-actions"><button class="button secondary" id="reset-search">重置筛选</button>{!historical&&<a class="button secondary" href={withBase('/history/')}>浏览往期阵容</a>}</div></div>
+  <div class="empty-state" id="empty-state" hidden><span class="empty-icon"><Icon name="search" size={26} /></span><h3>没有找到符合条件的阵容</h3><p>换个关键词，或清除筛选，重新发现喜欢的队伍。</p><div class="empty-actions"><button class="button primary" id="reset-search">重置筛选</button>{!historical&&<a class="button secondary" href={withBase('/history/')}>浏览往期阵容</a>}</div></div>
 </div>
 <script>
   document.querySelectorAll<HTMLElement>('[data-collection]').forEach(root=>{
@@ -26,12 +29,15 @@ const filters=[...new Set(lineups.flatMap(l=>l.archetype))];
       cards.forEach(card=>{card.hidden=!(card.dataset.search!.includes(query)&&(type==='all'||card.dataset.types!.split('|').includes(type))&&(season==='all'||card.dataset.season===season)&&(!video.checked||card.dataset.video==='yes'));if(!card.hidden)count++;});
       [...cards].sort((a,b)=>sort.value==='recent'?b.dataset.date!.localeCompare(a.dataset.date!)||Number(a.dataset.index)-Number(b.dataset.index):sort.value==='name'?a.querySelector('h3')!.textContent!.localeCompare(b.querySelector('h3')!.textContent!,'zh-CN'):Number(a.dataset.index)-Number(b.dataset.index)).forEach(c=>grid.append(c));
       root.querySelector('#result-count')!.textContent=`共 ${count} 套阵容`;root.querySelector<HTMLElement>('#empty-state')!.hidden=count>0;
+      root.querySelector<HTMLElement>('#clear-filters')!.hidden=!(query||type!=='all'||season!=='all'||video.checked);
       types.forEach(b=>{b.classList.toggle('active',b.dataset.filter===type);b.setAttribute('aria-pressed',String(b.dataset.filter===type));});
       seasons.forEach(b=>{b.classList.toggle('active',b.dataset.seasonFilter===season);b.setAttribute('aria-pressed',String(b.dataset.seasonFilter===season));});
     }
     input.addEventListener('input',update);sort.addEventListener('change',update);video.addEventListener('change',update);types.forEach(b=>b.addEventListener('click',()=>{type=b.dataset.filter!;update();}));
     seasons.forEach(b=>b.addEventListener('click',()=>{season=b.dataset.seasonFilter!;const url=new URL(location.href);if(season==='all')url.searchParams.delete('season');else url.searchParams.set('season',season);history.replaceState(null,'',url);update();}));
-    root.querySelector('#reset-search')!.addEventListener('click',()=>{type='all';season='all';input.value='';video.checked=false;sort.value='recommended';history.replaceState(null,'',location.pathname);update();input.focus();});
+    function reset(){type='all';season='all';input.value='';video.checked=false;sort.value='recommended';const url=new URL(location.href);url.searchParams.delete('season');history.replaceState(null,'',url);update();input.focus();}
+    root.querySelector('#reset-search')!.addEventListener('click',reset);
+    root.querySelector('#clear-filters')!.addEventListener('click',reset);
     update();
   });
 </script>

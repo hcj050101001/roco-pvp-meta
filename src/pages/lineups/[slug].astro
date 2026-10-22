@@ -15,9 +15,9 @@ const platforms={bilibili:'哔哩哔哩',douyin:'抖音',other:'视频'};
 const evidenceLabels={A:'作者或一手来源',B:'可信图文来源',C:'转载图源·已交叉核对'};
 const verifiedSkillCount=l.roster.filter(p=>p.skills.length>0).length;
 ---
-<Layout title={l.name} description={l.summary}>
+<Layout title={l.name} description={l.summary} section={historical?'history':'overview'}>
   <div class="detail-nav"><div class="wrap detail-nav-inner"><a href={back}>{backLabel}</a><nav aria-label="详情导航"><a href="#configuration">配置图</a>{l.signals.length>0&&<a href="#signals">近期记录</a>}{l.guides.length>0&&<a href="#guides">作者攻略</a>}{l.tutorials.length>0&&<a href="#tutorials">教学视频</a>}<a href="#sources">来源</a></nav></div></div>
-  <article class="detail wrap"><header class="detail-header"><div class="eyebrow">{l.season} · {l.version_label}{historical?' / 往期阵容':''}</div><div class="detail-title"><h1>{l.name}</h1></div><div class="tags">{l.archetype.map(t=><span>{t}</span>)}</div><div class="detail-provenance"><span>{published?`配置发布 ${displayDate(published)}`:'配置发布日期未标注'}</span><span>{evidenceLabels[l.lineup_images[0].evidence_grade]}</span><span>资料核对于 {displayDate(l.last_verified_at)}</span></div></header>
+  <article class="detail wrap"><header class="detail-header"><div class="eyebrow"><span class="eyebrow-line"></span>{l.season} · {l.version_label}{historical?' / 往期阵容':''}</div><div class="detail-title"><h1>{l.name}</h1><span class="detail-edition" aria-hidden="true">{l.season}</span></div><div class="tags">{l.archetype.map(t=><span>{t}</span>)}</div><div class="detail-provenance"><span>{published?`配置发布 ${displayDate(published)}`:'配置发布日期未标注'}</span><span>{evidenceLabels[l.lineup_images[0].evidence_grade]}</span><span>资料核对于 {displayDate(l.last_verified_at)}</span></div></header>
   {historical&&<aside class="transition-banner"><strong>{l.season} 赛季配置</strong><p>保留当时配置，使用前请结合当前版本调整。</p></aside>}
   <div class="detail-columns"><div class="detail-main">
     <section id="configuration" class="detail-section"><div class="section-label"><span>CONFIGURATION</span><h2>完整配队</h2></div><p class="subtle">点击图片查看原图。</p>

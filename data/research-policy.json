@@ -1,0 +1,23 @@
+{
+  "platforms": [
+    { "id": "taptap", "domain": "taptap.cn", "kind": "community" },
+    { "id": "bilibili", "domain": "bilibili.com", "kind": "creator" },
+    { "id": "qiandao", "domain": "qiandao.com", "kind": "community" },
+    { "id": "douyin", "domain": "douyin.com", "kind": "creator" },
+    { "id": "xiaohongshu", "domain": "xiaohongshu.com", "kind": "creator" },
+    { "id": "tieba", "domain": "tieba.baidu.com", "kind": "community" },
+    { "id": "nga", "domain": "nga.cn", "kind": "community" },
+    { "id": "gamekee", "domain": "gamekee.com", "kind": "community" },
+    { "id": "wegame", "domain": "wegame.com.cn", "kind": "community" },
+    { "id": "17173", "domain": "17173.com", "kind": "editorial" },
+    { "id": "duowan", "domain": "duowan.com", "kind": "editorial" },
+    { "id": "gamersky", "domain": "gamersky.com", "kind": "editorial" },
+    { "id": "biligame", "domain": "wiki.biligame.com", "kind": "wiki" },
+    { "id": "3dm", "domain": "3dmgame.com", "kind": "editorial" },
+    { "id": "sina", "domain": "sina.cn", "kind": "mirror" }
+  ],
+  "max_pages": 48,
+  "max_images_per_page": 8,
+  "max_related_per_page": 8,
+  "minimum_successful_platforms": 3
+}

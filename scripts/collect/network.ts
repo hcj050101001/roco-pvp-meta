@@ -10,11 +10,11 @@ export async function assertPublicUrl(raw: string) {
   if (addresses.some(({address}) => /^(127\.|10\.|192\.168\.|169\.254\.|172\.(1[6-9]|2\d|3[01])\.|0\.|::1$|f[cd]|fe80)/i.test(address))) throw Error('拒绝私有网络地址');
   return u;
 }
-export async function publicFetch(url: string, maxBytes = 12_000_000) {
+export async function publicFetch(url: string, maxBytes = 12_000_000, timeoutMs = 25000) {
   let target = url;
   for (let i=0;i<5;i++) {
     await assertPublicUrl(target);
-    const r = await fetch(target,{redirect:'manual',signal:AbortSignal.timeout(25000),headers:{'User-Agent':'RocoEvidenceBot/1.0 (+https://github.com/hcj050101001/roco-pvp-meta)'}});
+    const r = await fetch(target,{redirect:'manual',signal:AbortSignal.timeout(timeoutMs),headers:{'User-Agent':'RocoEvidenceBot/1.0 (+https://github.com/hcj050101001/roco-pvp-meta)'}});
     if (r.status>=300 && r.status<400 && r.headers.get('location')) { target = new URL(r.headers.get('location')!,target).href; continue; }
     if (!r.ok) throw Error(`HTTP ${r.status}`);
     if (Number(r.headers.get('content-length') || 0)>maxBytes) throw Error('响应超过大小限制');

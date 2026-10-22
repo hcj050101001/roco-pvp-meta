@@ -63,11 +63,12 @@ npm run test:ui
 手动发现公开来源：
 
 ```sh
-npm run research:discover
+npm run research:full -- --scope all
 npm run research:validate
+npm run research:coverage
 ```
 
-`research:full` 会再尝试用无登录 Chromium 查看部分页面的公开渲染和懒加载内容。研究数据写入 `research/inbox/<run-id>/`，采集器不会直接改动阵容 JSON。可通过 `--seeds <json文件>` 给采集器导入公开 URL 数组。
+`research:full` 默认同时搜索当季和历史赛季，跨平台发现并尝试用无登录 Chromium 查看公开渲染和懒加载内容。可用 `--scope history` 单独补充旧季。研究数据写入 `research/inbox/<run-id>/`，采集器不会直接改动阵容 JSON。默认接入扩展种子、已发布出处与待续查链接，也可通过 `--seeds <json文件>` 给采集器导入公开 URL 数组。具体策略见 [多来源、跨赛季阵容扩展](docs/research-strategy.md)；覆盖报告不等于阵容已核实。
 
 `npm run season:check` 每日由 GitHub Actions 运行，只接受官方已生效公告；来源不可用时保留现有赛季。半月研究和发布流程在北京时间每月 1 日、16 日 00:00 运行，也支持手动触发。完整研究使用 DeepSeek `deepseek-flash`（支持图片核验），依赖仓库 Secret `DEEPSEEK_API_KEY`；在 GitHub 仓库 Settings → Secrets and variables → Actions 中设置。缺少 Secret 或 API 调用失败时研究 job 会停止，线上内容保持不变。
 

@@ -5,6 +5,8 @@
   { "id": "poison", "platform": "3dm", "url": "https://ol.3dmgame.com/gl/353802.html", "enabled": true },
   { "id": "ice", "platform": "3dm", "url": "https://ol.3dmgame.com/gl/353804.html", "enabled": true },
   { "id": "season", "platform": "taptap", "url": "https://www.taptap.cn/moment/847022426351994538", "enabled": true },
+  { "id": "taptap-topics", "platform": "taptap", "url": "https://www.taptap.cn/app/188212/topic", "enabled": true },
+  { "id": "biligame-index", "platform": "biligame", "url": "https://wiki.biligame.com/nrc/%E9%A6%96%E9%A1%B5", "enabled": true },
   { "id": "community", "platform": "qiandao", "url": "https://qiandao.com/post?postId=1023430985116591249", "enabled": true },
   { "id": "weekly", "platform": "bilibili", "url": "https://www.bilibili.com/video/BV1N8hk6rErM/", "enabled": true }
 ]

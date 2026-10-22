@@ -4,6 +4,16 @@ on:
     - cron: '0 0 1,16 * *'
       timezone: Asia/Shanghai
   workflow_dispatch:
+    inputs:
+      scope:
+        description: '研究范围（默认同时扩展当季与历史赛季）'
+        type: choice
+        required: true
+        default: all
+        options:
+          - all
+          - current
+          - history
 permissions:
   contents: read
 concurrency:
@@ -12,7 +22,7 @@ concurrency:
 jobs:
   research:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 60
     steps:
       - uses: actions/checkout@v4
         with:
@@ -33,8 +43,13 @@ jobs:
       - run: npx playwright install --with-deps chromium
       - run: npm run refresh:snapshot
       - run: npm run season:check
-      - run: npm run research:full
+      - name: Discover current and historical lineups across platforms
+        env:
+          RESEARCH_SCOPE: ${{ inputs.scope || 'all' }}
+        run: npm run research:full -- --scope "$RESEARCH_SCOPE" --seeds research/expansion-seeds.json
       - run: npm run research:validate
+      - name: Report source and season coverage before research
+        run: npm run research:coverage
       - name: Prepare bounded vision inputs
         run: npm run research:vision
       - name: Research with DeepSeek
@@ -54,6 +69,8 @@ jobs:
           sandbox: workspace-write
           safety-strategy: drop-sudo
           output-file: research/codex-output.md
+      - name: Record actual source coverage after verification
+        run: npm run research:coverage
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -100,6 +117,7 @@ jobs:
       - run: npm ci
       - run: npx tsx scripts/validate/promote.ts
       - run: npm run refresh:guard
+      - run: npm run research:coverage
       - run: npm run check
       - run: npm test
       - run: npm run build

@@ -3,7 +3,7 @@ import { assertPublicUrl } from './network';
 // A fresh browser context: no persistent profile, private cookies or login.
 export async function publicBrowserSnapshot(url:string) {
   await assertPublicUrl(url);
-  const browser=await chromium.launch({headless:true});
+  const browser=await chromium.launch({headless:true,...(process.env.RESEARCH_CHROMIUM_PATH?{executablePath:process.env.RESEARCH_CHROMIUM_PATH}:{})});
   try {
     const context=await browser.newContext({viewport:{width:1440,height:1000}});
     await context.route('**/*',async route=>{try {const u=new URL(route.request().url());if(u.protocol!=='https:')return route.abort();await assertPublicUrl(u.href);await route.continue();}catch{await route.abort();}});

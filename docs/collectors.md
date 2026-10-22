@@ -7,7 +7,9 @@
 ```sh
 npm run research:collect       # 采集 data/sources.json 中启用的来源
 npm run research:discover      # Bing RSS 搜索后采集发现的支持平台链接
-npm run research:full          # discover + 无登录 Chromium 页面渲染
+npm run research:full          # 全赛季、多平台 discover + 无登录 Chromium 页面渲染
+npm run research:full -- --scope history # 单独历史补档
+npm run research:coverage      # 按平台、赛季报告发现与收录覆盖
 npm run research:validate     # 对最新 run 统计候选图和重复项，不自动认证
 npm run research:vision       # SHA 去重后生成字节受限的模型识图 JPEG，不修改原图
 npm run season:check          # 由可信官方已生效公告核对赛季
@@ -19,16 +21,20 @@ npm run season:check          # 由可信官方已生效公告核对赛季
 node node_modules/tsx/dist/cli.mjs scripts/collect/run.ts --seeds path/to/urls.json
 ```
 
+完整发现策略见 [多来源、跨赛季策略](research-strategy.md)。平台、预算和诊断目标在 `data/research-policy.json`；默认自动读取扩展种子及跨轮待续查链接。
+
 ## 当前实现
 
-- `search.ts` 读取 `data/search-queries.json`，从公开 Bing RSS 获取结果；只接受配置允许的平台域名，并保存搜索响应与来源健康状态。
-- `run.ts` 从 `data/sources.json` 读取启用来源，提取标题、正文线索和图片节点；符合 URL 特征的候选图片可下载到 inbox 并计算 SHA-256、感知哈希和尺寸。采集结果会标为未验证。
-- `browser.ts` 使用全新无登录 Chromium 上下文，滚动触发公开页面懒加载并保存页面快照。访问验证或无法访问时记录失败，不尝试绕过。
+- `search.ts` 读取 `data/search-queries.json`，按平台和全部目标赛季生成查询，先从公开 Bing RSS 获取结果、无支持结果时尝试 Bing HTML，并解码结果追踪 URL；只接受配置允许的平台域名，并保存搜索响应与来源健康状态。
+- `run.ts` 合并 `data/sources.json`、扩展种子、已发布当季与历史出处和待续查队列，按平台及赛季公平分配采集预算，提取标题、正文线索和图片节点；符合 URL 特征的候选图片可下载到 inbox 并计算 SHA-256、感知哈希和尺寸。采集结果会标为未验证。
+- `browser.ts` 使用全新无登录 Chromium 上下文，滚动触发公开页面懒加载并保存页面快照。访问验证或无法访问时记录失败，不尝试绕过。可通过 `RESEARCH_CHROMIUM_PATH` 选择已有浏览器；浏览器补充失败时保留已经合法抓取的公开 HTML。
 - `extract/page.ts` 解析常见图片属性、`srcset`、`picture`、链接、Open Graph、JSON-LD 和可识别的内嵌 JSON。
 - `extract/image.ts` 识别图片格式并计算尺寸、SHA-256、pHash；哈希和尺寸只能证明文件属性，不能证明内容是某套真实阵容。
 - `validate/research.ts` 生成候选与重复图报告。人工视觉核对、图片映射、版本和成员确认仍需维护流程处理。
 - `research/vision.ts` 从最新 manifest 去重候选原图，为模型准备不超过 192 KiB 的 JPEG 概览和原尺寸重叠分块，保存 `vision/index.json`。保留原图字节及全部来源关联，不将 JPEG 预览发布到网站。32,000 tokens 的上下文压缩与逐候选研究记录限制对话中累积的图片；禁止模型自行放大 PNG 或重复附图。
 - `season.ts` 只接受指定 TapTap 官方账号发布且已生效的赛季公告。公告不可访问或证据不符合条件时保留现有赛季。
+
+`coverage.json`/`coverage.md` 区分查询范围、请求成功和候选图片，给出每个平台、每个赛季的覆盖及未收录哈希；哈希不等于真实新队。超预算链接保存在 `research/candidates/discovery-backlog.json`，图片候选超预算项留在 manifest，不静默当作已处理。
 
 ## 晋升与安全边界
 

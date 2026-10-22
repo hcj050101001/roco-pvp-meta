@@ -16,6 +16,7 @@
     "test:ui": "playwright test",
     "research:collect": "tsx scripts/collect/run.ts",
     "research:validate": "tsx scripts/validate/research.ts",
+    "research:coverage": "tsx scripts/research/coverage-report.ts",
     "lineup:rank": "tsx scripts/rank/run.ts",
     "links:check": "tsx scripts/validate/links.ts",
     "refresh:guard": "tsx scripts/validate/refresh-guard.ts",

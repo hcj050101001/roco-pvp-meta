@@ -6,9 +6,29 @@ import { publicFetch } from './network';
 import { imageInfo } from '../extract/image';
 import { discover } from './search';
 import { publicBrowserSnapshot } from './browser';
-import { readLineups } from '../../src/lib/data';
+import { loadSeasons, loadState, readLineups } from '../../src/lib/data';
 import { sourceFor, mergeSources, balancedSources, selectedSeasons, queryPlan, candidateImage, retrySource, remainingImages, unprocessedImages, processedImages, type Source } from './strategy';
 import policy from '../../data/research-policy.json';
+
+type DownloadRecord = {
+  url: string; context?: string; method?: string; order?: number;
+  sha256?: string; width?: number; height?: number; format?: string; phash?: string;
+  file?: string; verified: boolean; mapping_confidence?: string; error?: string;
+};
+type SourceRecord = Source & {
+  status: 'ok' | 'source_fetch_failed';
+  resolved_url?: string; title?: string; evidence_hash?: string;
+  images?: DownloadRecord[]; image_nodes?: number;
+  deferred_images?: { url: string; context: string; method: string; order: number }[];
+  browser_error?: string | null; checked_at: string; error?: string;
+};
+type Seed = { url: string; enabled: boolean; seasons?: string[] };
+type JsonRecord = Record<string, unknown>;
+
+const isRecord = (value: unknown): value is JsonRecord => typeof value === 'object' && value !== null && !Array.isArray(value);
+const stringArray = (value: unknown): string[] => Array.isArray(value) ? value.filter((v): v is string => typeof v === 'string') : [];
+const errorMessage = (error: unknown) => String(error);
+const isEnoent = (error: unknown) => error instanceof Error && (error as NodeJS.ErrnoException).code === 'ENOENT';
 
 const option = (name: string, fallback: string) => {
   const i = process.argv.indexOf(name);
@@ -16,8 +36,8 @@ const option = (name: string, fallback: string) => {
   if (!process.argv[i + 1] || process.argv[i + 1].startsWith('--')) throw Error(`缺少 ${name} 参数`);
   return process.argv[i + 1];
 };
-const state = JSON.parse(await readFile('data/update-state.json', 'utf8'));
-const known = JSON.parse(await readFile('data/seasons.json', 'utf8')) as { id: string }[];
+const state = loadState();
+const known = loadSeasons();
 const scope = option('--scope', 'all');
 const seasons = selectedSeasons(state.season, known.map(s => s.id), scope);
 if (!seasons.length) throw Error('所选范围没有已记录赛季');
@@ -34,32 +54,41 @@ const add = (raw: string, ss: string[], origin: string) => {
   const s = sourceFor(raw, ss.filter(season => seasons.includes(season)), origin);
   if (s?.seasons.length) sources.push(s);
 };
-const seeds = JSON.parse(await readFile('data/sources.json', 'utf8'));
-for (const s of seeds.filter((s: any) => s.enabled)) add(s.url, s.seasons ?? sourceSeasons(s.url), 'seed');
+const rawSeeds: unknown = JSON.parse(await readFile('data/sources.json', 'utf8'));
+if (!Array.isArray(rawSeeds)) throw Error('sources.json 必须是数组');
+const seeds: Seed[] = rawSeeds.flatMap(s => isRecord(s) && typeof s.url === 'string'
+  ? [{ url: s.url, enabled: s.enabled === true, seasons: Array.isArray(s.seasons) ? stringArray(s.seasons) : undefined }]
+  : []);
+for (const s of seeds.filter(s => s.enabled)) add(s.url, s.seasons ?? sourceSeasons(s.url), 'seed');
 // Explicit expansion seeds and old-season evidence are part of every scheduled run.
 const seedFile = option('--seeds', 'research/expansion-seeds.json');
-for (const s of JSON.parse(await readFile(seedFile, 'utf8'))) {
-  const url = typeof s === 'string' ? s : s.url;
-  add(url, s.seasons ?? sourceSeasons(url), 'expansion');
+const rawExpansion: unknown = JSON.parse(await readFile(seedFile, 'utf8'));
+if (!Array.isArray(rawExpansion)) throw Error(`${seedFile} 必须是数组`);
+for (const s of rawExpansion) {
+  if (typeof s === 'string') add(s, sourceSeasons(s), 'expansion');
+  else if (isRecord(s) && typeof s.url === 'string') add(s.url, Array.isArray(s.seasons) ? stringArray(s.seasons) : sourceSeasons(s.url), 'expansion');
 }
 const backlogFile = 'research/candidates/discovery-backlog.json';
 const carriedBacklog: Source[] = [];
 try {
-  for (const s of JSON.parse(await readFile(backlogFile, 'utf8')).sources) {
-    const entry = sourceFor(s.url, s.seasons, 'backlog');
+  const backlogData: unknown = JSON.parse(await readFile(backlogFile, 'utf8'));
+  if (!isRecord(backlogData) || !Array.isArray(backlogData.sources)) throw Error('discovery-backlog.json 格式错误');
+  for (const s of backlogData.sources) {
+    if (!isRecord(s) || typeof s.url !== 'string') continue;
+    const entry = sourceFor(s.url, stringArray(s.seasons), 'backlog');
     if (!entry) continue;
-    entry.pending_image_urls = Array.isArray(s.pending_image_urls) ? s.pending_image_urls.filter((u: unknown) => typeof u === 'string') : [];
-    entry.processed_image_urls = Array.isArray(s.processed_image_urls) ? s.processed_image_urls.filter((u: unknown) => typeof u === 'string') : [];
-    if (/^[a-f0-9]{64}$/.test(s.evidence_hash)) entry.evidence_hash = s.evidence_hash;
-    entry.attempts = Number.isInteger(s.attempts) && s.attempts > 0 ? Math.min(s.attempts, 100) : 0;
-    if (s.retry_after && Number.isFinite(Date.parse(s.retry_after))) entry.retry_after = new Date(s.retry_after).toISOString();
+    entry.pending_image_urls = stringArray(s.pending_image_urls);
+    entry.processed_image_urls = stringArray(s.processed_image_urls);
+    if (typeof s.evidence_hash === 'string' && /^[a-f0-9]{64}$/.test(s.evidence_hash)) entry.evidence_hash = s.evidence_hash;
+    entry.attempts = typeof s.attempts === 'number' && Number.isInteger(s.attempts) && s.attempts > 0 ? Math.min(s.attempts, 100) : 0;
+    if (typeof s.retry_after === 'string' && Number.isFinite(Date.parse(s.retry_after))) entry.retry_after = new Date(s.retry_after).toISOString();
     const otherSeasons=entry.seasons.filter(season=>!seasons.includes(season));
     if(otherSeasons.length)carriedBacklog.push(entry.seasons.some(season=>seasons.includes(season))
       ? {...entry,seasons:otherSeasons,pending_image_urls:[],processed_image_urls:[],evidence_hash:undefined,attempts:0,retry_after:undefined}
       : entry);
     if(entry.seasons.some(season=>seasons.includes(season)))sources.push({ ...entry, seasons: entry.seasons.filter(season => seasons.includes(season)) });
   }
-} catch (e: any) { if (e.code !== 'ENOENT') throw e; }
+} catch (e) { if (!isEnoent(e)) throw e; }
 for (const l of lineups) for (const s of l.sources) add(s.url, [l.season], 'published-reference');
 let searchHealth: unknown[] = [];
 if (process.argv.includes('--discover')) {
@@ -77,7 +106,7 @@ sources = sources.filter(s => !s.retry_after || Date.parse(s.retry_after) <= Dat
 const initial = balancedSources(sources, seasons, policy.max_pages);
 const queue = [...initial.selected], deferred = [...initial.deferred];
 const seen = new Set([...queue.map(s => s.url), ...carriedBacklog.filter(s=>s.retry_after && Date.parse(s.retry_after)>Date.now()).map(s=>s.url)]);
-const records: Record<string, any>[] = [];
+const records: SourceRecord[] = [];
 const related: Source[] = [];
 const imageBacklog: Source[] = [];
 const failedSources: Source[] = [];
@@ -99,7 +128,7 @@ for (let index = 0; index < queue.length; index++) {
     const extracted = extractPage(html, r.url);
     const evidence_hash = createHash('sha256').update(JSON.stringify([extracted.title, extracted.text, extracted.metadata, extracted.public_comments, extracted.videos])).digest('hex');
     await writeFile(join(folder, 'page.json'), JSON.stringify(extracted, null, 2) + '\n');
-    const downloads = [];
+    const downloads: DownloadRecord[] = [];
     const pending = new Set(source.pending_image_urls ?? []);
     const pendingOrder = new Map([...pending].map((url,index)=>[url,index]));
     const candidates = unprocessedImages([...extracted.images, ...[...pending].filter(url => !extracted.images.some(i => i.url === url)).map(url => ({url, context:'待续原图', method:'backlog', order:0}))]
@@ -117,7 +146,7 @@ for (let index = 0; index < queue.length; index++) {
         if (!/\.(png|jpe?g|webp|avif)$/.test(file)) continue;
         await writeFile(join(folder, file), res.body);
         downloads.push({ ...img, ...info, file, verified: false, mapping_confidence: 'unverified' });
-      } catch (e) { failedImages.push(img.url); downloads.push({ ...img, error: String(e), verified: false }); }
+      } catch (e) { failedImages.push(img.url); downloads.push({ ...img, error: errorMessage(e), verified: false }); }
     }
     const pendingImages = remainingImages([...candidates.slice(policy.max_images_per_page).map(i => i.url),...pending], completed.filter(url => !failedImages.includes(url)), failedImages);
     const processed = processedImages(source,evidence_hash);
@@ -130,11 +159,11 @@ for (let index = 0; index < queue.length; index++) {
     records.push({ ...source, status: 'ok', resolved_url: r.url, title: extracted.title, evidence_hash, images: downloads,
       image_nodes: extracted.images.length, deferred_images: candidates.slice(policy.max_images_per_page),
       browser_error: browserError, checked_at: new Date().toISOString() });
-    console.log(`${source.platform} ${source.url}: ${downloads.filter(i => 'sha256' in i).length} 张未核验候选图${browserError ? '；浏览器补充失败' : ''}`);
+    console.log(`${source.platform} ${source.url}: ${downloads.filter(i => i.sha256).length} 张未核验候选图${browserError ? '；浏览器补充失败' : ''}`);
   } catch (e) {
     failedSources.push(retrySource(source));
-    records.push({ ...source, status: 'source_fetch_failed', error: String(e), checked_at: new Date().toISOString() });
-    console.log(`${source.platform}: ${String(e)}`);
+    records.push({ ...source, status: 'source_fetch_failed', error: errorMessage(e), checked_at: new Date().toISOString() });
+    console.log(`${source.platform}: ${errorMessage(e)}`);
   }
   // Discover from all initial platforms first, then distribute remaining slots fairly.
   if (index === queue.length - 1 && related.length) {

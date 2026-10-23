@@ -1,12 +1,10 @@
 import { readdir,readFile,stat } from 'node:fs/promises';
 import { join,resolve } from 'node:path';
 import * as cheerio from 'cheerio';
+import { basePath as base, siteUrl as origin } from '../../src/lib/site';
 const root=resolve('dist');
-const repo=process.env.GITHUB_REPOSITORY || 'hcj050101001/roco-pvp-meta'; const [owner,name]=repo.split('/');
-const base=(process.env.SITE_BASE ?? (process.env.GITHUB_ACTIONS && name!==`${owner}.github.io`?`/${name}`:'/')).replace(/\/$/,'');
 async function walk(dir:string):Promise<string[]> { return (await Promise.all((await readdir(dir,{withFileTypes:true})).map(f=>f.isDirectory()?walk(join(dir,f.name)):Promise.resolve([join(dir,f.name)])))).flat(); }
 const all=await walk(root),pages=all.filter(f=>f.endsWith('.html')); let checks=0;
-const origin=(process.env.SITE_URL || `https://${owner}.github.io`).replace(/\/$/,'');
 const siteRoot=`${origin}${base}/`;
 const contentPages:string[]=[];
 const originalSizes=new Map<string,number>(),derivedSizes=new Map<string,number>();

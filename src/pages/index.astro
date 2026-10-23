@@ -4,9 +4,12 @@ import Collection from '../components/Collection.astro';
 import Icon from '../components/Icon.astro';
 import { activeLineups,historyLineups,currentSeason,overview } from '../lib/data';
 import { withBase } from '../lib/urls';
+import { absoluteUrl } from '../lib/seo';
 const systems=new Set(activeLineups.flatMap(l=>l.archetype));
+const description='洛克王国：世界 PVP 配队手册。浏览当季真实阵容配置、作者攻略原话和对应教学视频，按体系与精灵检索。';
+const websiteJsonLd={'@context':'https://schema.org','@type':'WebSite',name:'洛克配队手册',alternateName:'ROCO KINGDOM PVP',url:absoluteUrl(withBase('/')),description,inLanguage:'zh-CN'};
 ---
-<Layout title="阵容图鉴" section="overview">
+<Layout title="阵容图鉴" description={description} image={activeLineups[0]?.lineup_images[0]?.path} jsonLd={websiteJsonLd} section="overview">
   <section class="hero wrap">
     <div class="hero-copy"><div class="eyebrow"><span class="eyebrow-line"></span> THE TEAM HANDBOOK</div>
       <h1>每一种配队，<br /><span>都有新的可能。</span></h1>

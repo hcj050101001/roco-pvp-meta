@@ -2,4 +2,4 @@
 import Layout from '../layouts/Layout.astro';
 import { withBase } from '../lib/urls';
 ---
-<Layout title="未找到这一页"><div class="not-found wrap"><div class="eyebrow">FIELD NOTE / 404</div><h1>这页笔记，<br />还没被发现。</h1><p>页面可能已移动，回到图鉴继续探索吧。</p><a href={withBase('/')} class="button primary">← 返回阵容总览</a></div></Layout>
+<Layout title="未找到这一页" noindex><div class="not-found wrap"><div class="eyebrow">FIELD NOTE / 404</div><h1>这页笔记，<br />还没被发现。</h1><p>页面可能已移动，回到图鉴继续探索吧。</p><a href={withBase('/')} class="button primary">← 返回阵容总览</a></div></Layout>

@@ -3,6 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import { allLineups,state } from '../../lib/data';
 import { withBase,displayDate } from '../../lib/urls';
 import { configurationDate } from '../../lib/rank';
+import { absoluteUrl } from '../../lib/seo';
 import type { Lineup } from '../../lib/schema';
 export function getStaticPaths(){return allLineups.map(lineup=>({params:{slug:lineup.slug},props:{lineup}}));}
 interface Props { lineup:Lineup }
@@ -14,15 +15,20 @@ const published=configurationDate(l);
 const platforms={bilibili:'哔哩哔哩',douyin:'抖音',other:'视频'};
 const evidenceLabels={A:'作者或一手来源',B:'可信图文来源',C:'转载图源·已交叉核对'};
 const verifiedSkillCount=l.roster.filter(p=>p.skills.length>0).length;
+const breadcrumbJsonLd={'@context':'https://schema.org','@type':'BreadcrumbList',itemListElement:[
+  {'@type':'ListItem',position:1,name:'阵容图鉴',item:absoluteUrl(withBase('/'))},
+  {'@type':'ListItem',position:2,name:historical?'往期阵容':'当季阵容',item:absoluteUrl(historical?withBase('/history/'):withBase('/#lineup-overview'))},
+  {'@type':'ListItem',position:3,name:l.name,item:absoluteUrl(Astro.url.pathname)},
+]};
 ---
-<Layout title={l.name} description={l.summary} section={historical?'history':'overview'}>
+<Layout title={l.name} description={l.summary} image={l.lineup_images[0].path} jsonLd={breadcrumbJsonLd} section={historical?'history':'overview'}>
   <div class="detail-nav"><div class="wrap detail-nav-inner"><a href={back}>{backLabel}</a><nav aria-label="详情导航"><a href="#configuration">配置图</a>{l.signals.length>0&&<a href="#signals">近期记录</a>}{l.guides.length>0&&<a href="#guides">作者攻略</a>}{l.tutorials.length>0&&<a href="#tutorials">教学视频</a>}<a href="#sources">来源</a></nav></div></div>
   <article class="detail wrap"><header class="detail-header"><div class="eyebrow"><span class="eyebrow-line"></span>{l.season} · {l.version_label}{historical?' / 往期阵容':''}</div><div class="detail-title"><h1>{l.name}</h1><span class="detail-edition" aria-hidden="true">{l.season}</span></div><div class="tags">{l.archetype.map(t=><span>{t}</span>)}</div><div class="detail-provenance"><span>{published?`配置发布 ${displayDate(published)}`:'配置发布日期未标注'}</span><span>{evidenceLabels[l.lineup_images[0].evidence_grade]}</span><span>资料核对于 {displayDate(l.last_verified_at)}</span></div></header>
   {historical&&<aside class="transition-banner"><strong>{l.season} 赛季配置</strong><p>保留当时配置，使用前请结合当前版本调整。</p></aside>}
   <div class="detail-columns"><div class="detail-main">
     <section id="configuration" class="detail-section"><div class="section-label"><span>CONFIGURATION</span><h2>完整配队</h2></div><p class="subtle">点击图片查看原图。</p>
       <div class="image-tabs" role="tablist" aria-label="选择阵容图" hidden={l.lineup_images.length<2}>{l.lineup_images.map((_,i)=><button role="tab" id={`tab-${i}`} aria-controls={`image-${i}`} aria-selected={i===0?'true':'false'} tabindex={i===0?0:-1} data-image-tab={i}>配置 {i+1}</button>)}</div>
-      {l.lineup_images.map((img,i)=><figure class="full-image" id={`image-${i}`} role={l.lineup_images.length>1?'tabpanel':undefined} aria-labelledby={l.lineup_images.length>1?`tab-${i}`:undefined} hidden={i>0}><a href={withBase(img.path)} target="_blank" rel="noopener noreferrer" aria-label={`打开${l.name}配置图 ${i+1}原图`}><img src={withBase(img.path)} width={img.width} height={img.height} alt={`${l.name}完整阵容配置：${l.roster.map(p=>p.name).join('、')}`} /></a><figcaption>{img.attribution}<a href={withBase(img.path)} target="_blank" rel="noopener noreferrer">查看原图 ↗</a></figcaption></figure>)}
+      {l.lineup_images.map((img,i)=><figure class="full-image" id={`image-${i}`} role={l.lineup_images.length>1?'tabpanel':undefined} aria-labelledby={l.lineup_images.length>1?`tab-${i}`:undefined} hidden={i>0}><a href={withBase(img.path)} target="_blank" rel="noopener noreferrer" aria-label={`打开${l.name}配置图 ${i+1}原图`}><img src={withBase(img.path)} width={img.width} height={img.height} alt={`${l.name}完整阵容配置：${l.roster.map(p=>p.name).join('、')}`} decoding="async" fetchpriority={i===0?'high':undefined} /></a><figcaption>{img.attribution}<a href={withBase(img.path)} target="_blank" rel="noopener noreferrer">查看原图 ↗</a></figcaption></figure>)}
       {l.player_notes.length>0&&<aside class="player-note">{l.player_notes.map(p=><p>{p}</p>)}</aside>}
     </section>
     {l.signals.length>0&&<section id="signals" class="detail-section"><div class="section-label"><span>PUBLIC RECORDS</span><h2>近期公开记录</h2></div>{l.signals.map(s=><a class="source-row" href={s.source_url} target="_blank" rel="noopener noreferrer"><div><span>{s.kind==='high-rank'?'公开实绩':'公开热度记录'} · {displayDate(s.observed_at)}</span><h3>{s.note}</h3></div><span>↗</span></a>)}</section>}

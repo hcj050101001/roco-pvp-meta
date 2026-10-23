@@ -21,9 +21,11 @@ test('完整筛选链接可刷新分享，详情返回恢复筛选与卡片位�
   await card.locator('.card-link').click();await page.goBack();
   await expect(page.getByRole('searchbox')).toHaveValue(lineup.roster[0].name);
   await page.getByRole('button',{name:'清除筛选'}).click();
-  const clean=new URL(page.url());
-  for(const key of ['q','type','season','sort','video'])expect(clean.searchParams.has(key)).toBe(false);
-  expect(clean.searchParams.get('ref')).toBe('guide');
+  await expect.poll(()=>{
+    const url=new URL(page.url());
+    return ['q','type','season','sort','video'].some(key=>url.searchParams.has(key));
+  }).toBe(false);
+  expect(new URL(page.url()).searchParams.get('ref')).toBe('guide');
   await page.goto(`./?video=1&sort=recent`);
   await expect(page.getByRole('checkbox',{name:'有教学视频'})).toBeChecked();
   await expect(page.locator('[data-card]:visible')).toHaveCount(activeLineups.filter(l=>l.tutorials.length).length);
@@ -50,8 +52,9 @@ test('玩家首页：固定明亮风格、体系筛选与全局排序',async({pa
   await expect(page.locator('[data-card]:visible')).toHaveCount(activeLineups.filter(l=>l.archetype.includes(type)).length);
   await page.getByRole('button',{name:'全部体系',exact:true}).click();
   await page.selectOption('#sort','recent');
-  const dates=await page.locator('[data-card]').evaluateAll(els=>els.map(e=>(e as HTMLElement).dataset.date!));
-  expect(dates).toEqual([...dates].sort((a,b)=>b.localeCompare(a)));
+  await expect.poll(()=>page.locator('[data-card]').evaluateAll(els=>els.map(e=>(e as HTMLElement).dataset.date!))).toEqual(
+    [...await page.locator('[data-card]').evaluateAll(els=>els.map(e=>(e as HTMLElement).dataset.date!))].sort((a,b)=>b.localeCompare(a)),
+  );
   await page.selectOption('#sort','recommended');
   await page.getByRole('checkbox',{name:'有教学视频'}).check();
   await expect(page.locator('[data-card]:visible')).toHaveCount(activeLineups.filter(l=>l.tutorials.length>0).length);
@@ -92,6 +95,33 @@ test('当季和往期详情均可返回，完整原图无裁切',async({page},in
   expect(errors).toEqual([]);
 });
 
+test('卡片使用派生响应图，详情页保留原始尺寸',async({page})=>{
+  await page.goto('./');
+  const cards=page.locator('[data-card]');
+  const total=await cards.count();expect(total).toBeGreaterThan(0);
+  let saw480=false,saw800=false;
+  for(let i=0;i<total;i++){
+    const img=cards.nth(i).locator('img');
+    await img.scrollIntoViewIfNeeded();
+    await expect.poll(()=>img.evaluate((e:HTMLImageElement)=>e.naturalWidth)).toBeGreaterThan(0);
+    const srcset=await img.getAttribute('srcset');
+    expect(srcset).toBeTruthy();
+    const entries=srcset!.split(',').map(s=>s.trim());
+    expect(entries.length).toBeGreaterThan(0);
+    for(const entry of entries)expect(entry).toMatch(/\/assets\/lineups\/derived\/[a-f0-9]{64}-(480|800)\.webp \d+w$/);
+    saw480 ||= srcset!.includes('480w');saw800 ||= srcset!.includes('800w');
+    expect(await img.evaluate((e:HTMLImageElement)=>e.currentSrc)).toContain('/assets/lineups/derived/');
+    expect(await img.evaluate((e:HTMLImageElement)=>e.naturalWidth)).toBeLessThanOrEqual(800);
+  }
+  expect(saw480).toBe(true);expect(saw800).toBe(true);
+  const lineup=activeLineups[0];
+  await page.goto(`lineups/${lineup.slug}/`);
+  const detail=page.locator('.full-image img').first();
+  await detail.scrollIntoViewIfNeeded();
+  await expect.poll(()=>detail.evaluate((e:HTMLImageElement)=>e.naturalWidth)).toBe(lineup.lineup_images[0].width);
+  expect(await detail.evaluate((e:HTMLImageElement)=>e.currentSrc)).not.toContain('/derived/');
+});
+
 test('往期赛季和搜索组合，旧链接跳转正确',async({page})=>{
   await page.goto('./');await page.getByRole('navigation',{name:'主导航'}).getByRole('link',{name:'往期阵容'}).click();
   await expect(page.locator('[data-card]:visible')).toHaveCount(historyLineups.length);
@@ -112,7 +142,7 @@ test('筛选状态可清除，排序说明和视频开关支持键盘',async({pa
   await expect(page.getByRole('searchbox')).toHaveValue('');
   await expect(page.getByRole('searchbox')).toBeFocused();
   await expect(page.getByRole('button',{name:'清除筛选'})).toBeHidden();
-  expect(new URL(page.url()).searchParams.has('season')).toBe(false);
+  await expect.poll(()=>new URL(page.url()).searchParams.has('season')).toBe(false);
   expect(new URL(page.url()).searchParams.get('ref')).toBe('guide');
   expect(new URL(page.url()).hash).toBe('#main');
   const explanation=page.locator('.sort-note summary');

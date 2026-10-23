@@ -1,0 +1,669 @@
+{
+  "956d35a499bc6997ce365c9f9574e1230369d8616529da59b40d4ca56defa7dc": {
+    "sha256": "956d35a499bc6997ce365c9f9574e1230369d8616529da59b40d4ca56defa7dc",
+    "status": "rejected",
+    "reason": "Prepared overview is a mobile-game beginner tutorial cover with one mascot; no complete six-member configuration.",
+    "fingerprint": "c28b0dd9f8dcadaab202a2707a5f1b764f1874d5e5595e95312df10ddc815bc3",
+    "references": [
+      "https://www.taptap.cn/moment/847022426351994538"
+    ],
+    "checked_at": "2026-10-23T10:07:29.322Z",
+    "retry_after": null
+  },
+  "4d2506c74d77d71feacb186571f8973499fc8f9872ca80a71cf5ed08d879ee05": {
+    "sha256": "4d2506c74d77d71feacb186571f8973499fc8f9872ca80a71cf5ed08d879ee05",
+    "status": "rejected",
+    "reason": "Overview is a field gameplay screenshot with a single creature info card and HUD list; no complete six-member configuration.",
+    "fingerprint": "88704704e1f4e2497fc7ae749fb88ebcfc9cf0fa9591d544640d3b45575b573d",
+    "references": [
+      "https://www.taptap.cn/moment/847022426351994538"
+    ],
+    "checked_at": "2026-10-23T10:07:29.322Z",
+    "retry_after": null
+  },
+  "c5e4588506df05293c33f51b7f38b8bb153d8276e37775793d0e8b513ddda614": {
+    "sha256": "c5e4588506df05293c33f51b7f38b8bb153d8276e37775793d0e8b513ddda614",
+    "status": "rejected",
+    "reason": "Overview is a single-creature field scene with UID watermark; no complete six-member configuration.",
+    "fingerprint": "eaaaffa4ee30ba2398e2b036c387ef681761c55bea87945b8c36c0907110c4a9",
+    "references": [
+      "https://www.taptap.cn/moment/847022426351994538"
+    ],
+    "checked_at": "2026-10-23T10:07:29.322Z",
+    "retry_after": null
+  },
+  "ce34979b14f8481fbe04068b42d08a58122e1eac272a7d784332d6aef8bb821a": {
+    "sha256": "ce34979b14f8481fbe04068b42d08a58122e1eac272a7d784332d6aef8bb821a",
+    "status": "rejected",
+    "reason": "Overview is promotional splash art announcing launch; not a configuration image.",
+    "fingerprint": "725621f0caf65eec2127d93747a4a9b91166eaee6120a7601ee568eb469e956a",
+    "references": [
+      "https://www.taptap.cn/moment/847022426351994538"
+    ],
+    "checked_at": "2026-10-23T10:07:29.322Z",
+    "retry_after": null
+  },
+  "61382489a48d0bbd56145ce7971af0a8660a7c6a47fd57c52625ba014e8ae809": {
+    "sha256": "61382489a48d0bbd56145ce7971af0a8660a7c6a47fd57c52625ba014e8ae809",
+    "status": "rejected",
+    "reason": "Overview is a quest/reward UI screen; no six-member lineup.",
+    "fingerprint": "455c23e22ddefe70024c9e7dc68b48567370219cb62be1ee553634d6c6eb9fb9",
+    "references": [
+      "https://www.taptap.cn/moment/847022426351994538"
+    ],
+    "checked_at": "2026-10-23T10:07:29.322Z",
+    "retry_after": null
+  },
+  "762e3fbde0467396ba6bba81a3ec69cc54f3a1d40140b4a5e63dc7c29c5da1b4": {
+    "sha256": "762e3fbde0467396ba6bba81a3ec69cc54f3a1d40140b4a5e63dc7c29c5da1b4",
+    "status": "rejected",
+    "reason": "Overview is a single-creature detail screen with party icons at left and no complete six-member configuration, skills or bloodline panel.",
+    "fingerprint": "38a1b3237d251e9644784b48116b35119e5d5fb1fbff971dc701c2bb04c331b5",
+    "references": [
+      "https://www.taptap.cn/moment/847022426351994538"
+    ],
+    "checked_at": "2026-10-23T10:07:29.322Z",
+    "retry_after": null
+  },
+  "8091022d22f1013e0ca5e40f78a7a0c66c9a0d6ecca18fe90057db705dbef701": {
+    "sha256": "8091022d22f1013e0ca5e40f78a7a0c66c9a0d6ecca18fe90057db705dbef701",
+    "status": "rejected",
+    "reason": "Overview is an S2 season promotional article cover announcing new creatures and season changes; no lineup configuration.",
+    "fingerprint": "eaaaffa4ee30ba2398e2b036c387ef681761c55bea87945b8c36c0907110c4a9",
+    "references": [
+      "https://www.taptap.cn/moment/847022426351994538"
+    ],
+    "checked_at": "2026-10-23T10:07:29.322Z",
+    "retry_after": null
+  },
+  "470a9094c96a26b24669fca8eb9b7dc7dc0afe6b3d243444be09ac007a29b163": {
+    "sha256": "470a9094c96a26b24669fca8eb9b7dc7dc0afe6b3d243444be09ac007a29b163",
+    "status": "rejected",
+    "reason": "Overview is a TapTap topic-activity promotional banner; no lineup configuration.",
+    "fingerprint": "ce46ce90b8bffb2f4fba1f58bc813ccba904f969a42c6a6be118e3c2294cc91a",
+    "references": [
+      "https://www.taptap.cn/app/188212/topic"
+    ],
+    "checked_at": "2026-10-23T10:07:29.322Z",
+    "retry_after": null
+  },
+  "a418031696a67128e8ec99c6ccfd5d3400175b6573e7b183e8a22065f69d0017": {
+    "sha256": "a418031696a67128e8ec99c6ccfd5d3400175b6573e7b183e8a22065f69d0017",
+    "status": "rejected",
+    "reason": "Overview is only the TapTap logo on a blank background; no lineup configuration.",
+    "fingerprint": "8a1dd91928f645e5e40f803c4ab84f4cffaa4a9b7c2704840fc3e0438fd70561",
+    "references": [
+      "https://www.taptap.cn/app/188212/topic"
+    ],
+    "checked_at": "2026-10-23T10:07:29.322Z",
+    "retry_after": null
+  },
+  "145e5464caadfae59db0c741ddbfda95ffdf77c0c9d5d6095220202e84538677": {
+    "sha256": "145e5464caadfae59db0c741ddbfda95ffdf77c0c9d5d6095220202e84538677",
+    "status": "rejected",
+    "reason": "Overview is a creature-family evolution and skills introduction graphic; no six-member lineup.",
+    "fingerprint": "ce46ce90b8bffb2f4fba1f58bc813ccba904f969a42c6a6be118e3c2294cc91a",
+    "references": [
+      "https://www.taptap.cn/app/188212/topic"
+    ],
+    "checked_at": "2026-10-23T10:07:29.322Z",
+    "retry_after": null
+  },
+  "469f53bf6d448476b7b3e8b60c9661491e44ce0ad38efb2235cc9f34a6b182fd": {
+    "sha256": "469f53bf6d448476b7b3e8b60c9661491e44ce0ad38efb2235cc9f34a6b182fd",
+    "status": "rejected",
+    "reason": "Overview is a tall creature-family evolution and skills introduction graphic; no six-member lineup.",
+    "fingerprint": "ce46ce90b8bffb2f4fba1f58bc813ccba904f969a42c6a6be118e3c2294cc91a",
+    "references": [
+      "https://www.taptap.cn/app/188212/topic"
+    ],
+    "checked_at": "2026-10-23T10:07:29.322Z",
+    "retry_after": null
+  },
+  "4470547bc285f98a8007405326861403c1df9504f63174a770637dc95244d30c": {
+    "sha256": "4470547bc285f98a8007405326861403c1df9504f63174a770637dc95244d30c",
+    "status": "rejected",
+    "reason": "Overview is an S4 ranked-match lobby with rank badge and partially obscured party icons; no complete configuration details.",
+    "fingerprint": "ff86f1b4fc75be218f2198137f5ebffa4f65ea32570e5feeda1c9292f1fe127e",
+    "references": [
+      "https://www.taptap.cn/moment/858904416206456638"
+    ],
+    "checked_at": "2026-10-23T10:07:29.322Z",
+    "retry_after": null
+  },
+  "ca5336936e87f46f3ebc9886c7818e907bea6fd60d3f892369e6f065411384d7": {
+    "sha256": "ca5336936e87f46f3ebc9886c7818e907bea6fd60d3f892369e6f065411384d7",
+    "status": "rejected",
+    "reason": "Overview is a wider view of the same S4 ranked-match lobby; party icons are partially obscured and no configuration details are shown.",
+    "fingerprint": "ff86f1b4fc75be218f2198137f5ebffa4f65ea32570e5feeda1c9292f1fe127e",
+    "references": [
+      "https://www.taptap.cn/moment/858904416206456638"
+    ],
+    "checked_at": "2026-10-23T10:07:29.322Z",
+    "retry_after": null
+  },
+  "796c938a67a332ed8d66e74cc83dea01e474bdfe6e889fc75784c9ed1abcee8d": {
+    "sha256": "796c938a67a332ed8d66e74cc83dea01e474bdfe6e889fc75784c9ed1abcee8d",
+    "status": "rejected",
+    "reason": "Overview is a battle-results screen with a partial reward/creature list; no complete six-member configuration.",
+    "fingerprint": "2e20221a87d5ffe12473bc706503b5b446289eeb0855a2c0925a9de89079673e",
+    "references": [
+      "https://www.taptap.cn/moment/858904416206456638"
+    ],
+    "checked_at": "2026-10-23T10:07:29.322Z",
+    "retry_after": null
+  },
+  "47ff85c9ebf317c490eb1bdcc56d3e053b0ce993219428d96052310336643f13": {
+    "sha256": "47ff85c9ebf317c490eb1bdcc56d3e053b0ce993219428d96052310336643f13",
+    "status": "rejected",
+    "reason": "Overview is a slightly different crop of the same battle-results screen as candidate 13; it shows partial rewards/list but no complete six-member configuration.",
+    "fingerprint": "2e20221a87d5ffe12473bc706503b5b446289eeb0855a2c0925a9de89079673e",
+    "references": [
+      "https://www.taptap.cn/moment/858904416206456638"
+    ],
+    "checked_at": "2026-10-23T10:07:29.322Z",
+    "retry_after": null
+  },
+  "56899456633b8e2d1044cb0c7d930b6dc6e2639f9b2a243724e26eb9cce4a871": {
+    "sha256": "56899456633b8e2d1044cb0c7d930b6dc6e2639f9b2a243724e26eb9cce4a871",
+    "status": "rejected",
+    "reason": "Overview is an anime screenshot with Bilibili danmaku/subtitles; no six-member game configuration or lineup evidence.",
+    "fingerprint": "885ec790ecb0bc876c09eb9e62c9c925d5dfaf673c6511942bf24569eb31b3c9",
+    "references": [
+      "https://www.taptap.cn/moment/858904416206456638"
+    ],
+    "checked_at": "2026-10-23T10:07:29.322Z",
+    "retry_after": null
+  },
+  "11b0429bf2ba99ba1f696ccbf2b73bd84f69c450ff06703c6202d896855f7dee": {
+    "sha256": "11b0429bf2ba99ba1f696ccbf2b73bd84f69c450ff06703c6202d896855f7dee",
+    "status": "rejected",
+    "reason": "Overview is a near-identical anime screenshot with Bilibili danmaku/subtitles; no six-member game configuration or lineup evidence.",
+    "fingerprint": "885ec790ecb0bc876c09eb9e62c9c925d5dfaf673c6511942bf24569eb31b3c9",
+    "references": [
+      "https://www.taptap.cn/moment/858904416206456638"
+    ],
+    "checked_at": "2026-10-23T10:07:29.322Z",
+    "retry_after": null
+  },
+  "f19fdf2df6e2a7567b3f990787a35d1fb9967d1b5d48ed8fce7f00e59cb4f928": {
+    "sha256": "f19fdf2df6e2a7567b3f990787a35d1fb9967d1b5d48ed8fce7f00e59cb4f928",
+    "status": "rejected",
+    "reason": "Overview is a rain-soaked cinematic character photo unrelated to the game; no lineup configuration.",
+    "fingerprint": "3b96b47339d1dbbdbe7a6a19c92b0e040111a146d93aa55e6a39ff818f3166ef",
+    "references": [
+      "https://www.taptap.cn/moment/858904416206456638"
+    ],
+    "checked_at": "2026-10-23T10:07:29.322Z",
+    "retry_after": null
+  },
+  "c1889d4be2f89c28e0ba9e52743f59c5281d5fc5c8dfeb63db2c7306d66f32bd": {
+    "sha256": "c1889d4be2f89c28e0ba9e52743f59c5281d5fc5c8dfeb63db2c7306d66f32bd",
+    "status": "rejected",
+    "reason": "Overview is a wider crop of the same rain-soaked cinematic character photo; unrelated to the game and no lineup configuration.",
+    "fingerprint": "3b96b47339d1dbbdbe7a6a19c92b0e040111a146d93aa55e6a39ff818f3166ef",
+    "references": [
+      "https://www.taptap.cn/moment/858904416206456638"
+    ],
+    "checked_at": "2026-10-23T10:07:29.322Z",
+    "retry_after": null
+  },
+  "34e6c28cc0ecafac5defacde426f79bfa6882876f6019913f2d749f78f3d5365": {
+    "sha256": "34e6c28cc0ecafac5defacde426f79bfa6882876f6019913f2d749f78f3d5365",
+    "status": "rejected",
+    "reason": "Overview is an equipment/artifact inventory and single-creature detail screen; no complete six-member lineup configuration.",
+    "fingerprint": "d9bdff9ba1cbb6e964e2ec7d8181975fcd8e73901c9a6dbc073ba637d38987a4",
+    "references": [
+      "https://qiandao.com/topic?id=undefined"
+    ],
+    "checked_at": "2026-10-23T10:07:29.322Z",
+    "retry_after": null
+  },
+  "8871454911260f68eab0a073ee5193509de9e84ddf6104982a1d8cacd48fae5e": {
+    "sha256": "8871454911260f68eab0a073ee5193509de9e84ddf6104982a1d8cacd48fae5e",
+    "status": "rejected",
+    "reason": "Overview is a merchandise plush-keychain blind-box catalog; unrelated to a PVP lineup configuration.",
+    "fingerprint": "6be8fef707ae1316664f67f019bdb67db3a90a34f900817f20c94cb806836f2e",
+    "references": [
+      "https://qiandao.com/topic?id=undefined"
+    ],
+    "checked_at": "2026-10-23T10:07:29.322Z",
+    "retry_after": null
+  },
+  "6de6d2bccf5c511fbfacae95f7529c85e2bce8d3a48929941dab2b4dd07c24e9": {
+    "sha256": "6de6d2bccf5c511fbfacae95f7529c85e2bce8d3a48929941dab2b4dd07c24e9",
+    "status": "rejected",
+    "reason": "Overview is standalone anime-style character artwork; no game lineup configuration.",
+    "fingerprint": "d9bdff9ba1cbb6e964e2ec7d8181975fcd8e73901c9a6dbc073ba637d38987a4",
+    "references": [
+      "https://qiandao.com/topic?id=undefined"
+    ],
+    "checked_at": "2026-10-23T10:07:29.322Z",
+    "retry_after": null
+  },
+  "61bb281c09b548f330a8c69e6c0074cb49672c94a61efe47bba622236ac85152": {
+    "sha256": "61bb281c09b548f330a8c69e6c0074cb49672c94a61efe47bba622236ac85152",
+    "status": "rejected",
+    "reason": "Overview is an item-detail and market transaction screen; no complete six-member lineup configuration.",
+    "fingerprint": "d9bdff9ba1cbb6e964e2ec7d8181975fcd8e73901c9a6dbc073ba637d38987a4",
+    "references": [
+      "https://qiandao.com/topic?id=undefined"
+    ],
+    "checked_at": "2026-10-23T10:07:29.322Z",
+    "retry_after": null
+  },
+  "7593afed630abee5c4dbe4c17cd4ac0376154cad1d058e07f097f7417fa5e1af": {
+    "sha256": "7593afed630abee5c4dbe4c17cd4ac0376154cad1d058e07f097f7417fa5e1af",
+    "status": "rejected",
+    "reason": "Overview is a plush-keychain product catalog; unrelated to a PVP lineup configuration.",
+    "fingerprint": "965ac728f00dbc011c64fece248c531e1becfba64f92faaab5f581b25a0df7a7",
+    "references": [
+      "https://qiandao.com/topic?id=undefined"
+    ],
+    "checked_at": "2026-10-23T10:07:29.322Z",
+    "retry_after": null
+  },
+  "7d723a3fe7bb96aff111f3464751a8aaae124ea19deba38ec6d999dea7da456e": {
+    "sha256": "7d723a3fe7bb96aff111f3464751a8aaae124ea19deba38ec6d999dea7da456e",
+    "status": "rejected",
+    "reason": "Overview is an e-commerce order/exchange screen for a plush keychain; unrelated to a PVP lineup configuration.",
+    "fingerprint": "965ac728f00dbc011c64fece248c531e1becfba64f92faaab5f581b25a0df7a7",
+    "references": [
+      "https://qiandao.com/topic?id=undefined"
+    ],
+    "checked_at": "2026-10-23T10:07:29.322Z",
+    "retry_after": null
+  },
+  "656f56377e60590f812fe40423179850c2e6029d6d3622ce677ac21e9ed83ddc": {
+    "sha256": "656f56377e60590f812fe40423179850c2e6029d6d3622ce677ac21e9ed83ddc",
+    "status": "rejected",
+    "reason": "Overview is a promotional merchandise photo of a grey plush figure labelled 隐藏款 / 缅因喵 / Maine Coon Kitty with a Qiandao watermark; no game lineup configuration.",
+    "fingerprint": "965ac728f00dbc011c64fece248c531e1becfba64f92faaab5f581b25a0df7a7",
+    "references": [
+      "https://qiandao.com/topic?id=undefined"
+    ],
+    "checked_at": "2026-10-23T10:07:29.322Z",
+    "retry_after": null
+  },
+  "44f8022815770d851774374a3ad086406eea6d79171fee8ca44282e95410f7e2": {
+    "sha256": "44f8022815770d851774374a3ad086406eea6d79171fee8ca44282e95410f7e2",
+    "status": "rejected",
+    "reason": "Overview is an S2 promotional reward card listing items and a large creature illustration; no complete six-member lineup configuration.",
+    "fingerprint": "b70a1da0b0fdef29be5359329e043d2e424565f18af9429f8bfe3bebc154cf9c",
+    "references": [
+      "https://www.wegame.com.cn/act/wegame/nrc20260618/?wg_ad_from=communitycoverNew"
+    ],
+    "checked_at": "2026-10-23T10:07:29.322Z",
+    "retry_after": null
+  },
+  "7d5745d8249f00ffcd5674992f27301af37b0a453a6e6e76687c41b26a9e030f": {
+    "sha256": "7d5745d8249f00ffcd5674992f27301af37b0a453a6e6e76687c41b26a9e030f",
+    "status": "rejected",
+    "reason": "Overview is a team-invite activity rules/reward text graphic; no six-member configuration.",
+    "fingerprint": "1dfddadc063c35f740cb1482755e128e3190babf360dec6b2fdf678671a80d7c",
+    "references": [
+      "https://www.wegame.com.cn/act/wegame/nrc20260618/?wg_ad_from=communitycoverNew"
+    ],
+    "checked_at": "2026-10-23T10:07:29.322Z",
+    "retry_after": null
+  },
+  "00108398e888f8fc1a43ff1b758cc12393a2ab0755e3f4852077369f12013751": {
+    "sha256": "00108398e888f8fc1a43ff1b758cc12393a2ab0755e3f4852077369f12013751",
+    "status": "rejected",
+    "reason": "Overview shows six item/reward icons (棱镜球、精灵奖牌、炫彩精灵蛋、国王球、能力钥匙、分光水晶); no lineup.",
+    "fingerprint": "d9bc01009db3f836a9ba4a9181f6198a1e38960e66e68e21103651282571a184",
+    "references": [
+      "https://www.wegame.com.cn/act/wegame/nrc20260618/?wg_ad_from=communitycoverNew"
+    ],
+    "checked_at": "2026-10-23T10:07:29.322Z",
+    "retry_after": null
+  },
+  "7b3ecc78fafd32636829592e2571cd1e5fce3c3ed89952a426ca7154a4f20474": {
+    "sha256": "7b3ecc78fafd32636829592e2571cd1e5fce3c3ed89952a426ca7154a4f20474",
+    "status": "rejected",
+    "reason": "Overview shows four event-limited creature/outfit promotional banners; no lineup.",
+    "fingerprint": "d9bc01009db3f836a9ba4a9181f6198a1e38960e66e68e21103651282571a184",
+    "references": [
+      "https://www.wegame.com.cn/act/wegame/nrc20260618/?wg_ad_from=communitycoverNew"
+    ],
+    "checked_at": "2026-10-23T10:07:29.322Z",
+    "retry_after": null
+  },
+  "3b0bcf282db2f9cc941e3fd87edc34943caab121e6dc74c2f2d55211152bb664": {
+    "sha256": "3b0bcf282db2f9cc941e3fd87edc34943caab121e6dc74c2f2d55211152bb664",
+    "status": "rejected",
+    "reason": "Overview is an event reservation hardware-reward promo (phones, projector, keyboard, earbuds); no lineup.",
+    "fingerprint": "7a665e39f83d9d158928f19113b314c59b6468071ac87011eb7c64d129185d0b",
+    "references": [
+      "https://www.wegame.com.cn/act/wegame/lkwgsj20260409launch/index.html"
+    ],
+    "checked_at": "2026-10-23T10:07:29.322Z",
+    "retry_after": null
+  },
+  "1826dfeba46040262a184d39959180c2c2bcc6eea3c275070e244490a0f43bfb": {
+    "sha256": "1826dfeba46040262a184d39959180c2c2bcc6eea3c275070e244490a0f43bfb",
+    "status": "rejected",
+    "reason": "Overview is a WeGame launch reward graphic for 布瓜蝌; no six-member lineup configuration.",
+    "fingerprint": "ae8b9248d873ad6170f3cec663c68f5e27960c1f78f073bc970b4a3e668cecf9",
+    "references": [
+      "https://www.wegame.com.cn/act/wegame/lkwgsj20260409launch/index.html"
+    ],
+    "checked_at": "2026-10-23T10:07:29.322Z",
+    "retry_after": null
+  },
+  "ad56e4b0754da037b12f8ce161a0426638357307ca951b881f2b8351130376cb": {
+    "sha256": "ad56e4b0754da037b12f8ce161a0426638357307ca951b881f2b8351130376cb",
+    "status": "rejected",
+    "reason": "Overview is a thin decorative gold-particle divider; no lineup content.",
+    "fingerprint": "ae8b9248d873ad6170f3cec663c68f5e27960c1f78f073bc970b4a3e668cecf9",
+    "references": [
+      "https://www.wegame.com.cn/act/wegame/lkwgsj20260409launch/index.html"
+    ],
+    "checked_at": "2026-10-23T10:07:29.322Z",
+    "retry_after": null
+  },
+  "a8c5c963f56c65907a71ef543888202ce868716db56030cfa49cc33f630d2fa2": {
+    "sha256": "a8c5c963f56c65907a71ef543888202ce868716db56030cfa49cc33f630d2fa2",
+    "status": "rejected",
+    "reason": "Overview is a thin decorative gold-particle divider; no lineup content.",
+    "fingerprint": "ae8b9248d873ad6170f3cec663c68f5e27960c1f78f073bc970b4a3e668cecf9",
+    "references": [
+      "https://www.wegame.com.cn/act/wegame/lkwgsj20260409launch/index.html"
+    ],
+    "checked_at": "2026-10-23T10:07:29.322Z",
+    "retry_after": null
+  },
+  "ad377a3e61651a1e3c80a3a480c7440fe9d834e04ecd354a74e071317ba937d7": {
+    "sha256": "ad377a3e61651a1e3c80a3a480c7440fe9d834e04ecd354a74e071317ba937d7",
+    "status": "rejected",
+    "reason": "Overview is a thin decorative gold-particle divider; no lineup content.",
+    "fingerprint": "ae8b9248d873ad6170f3cec663c68f5e27960c1f78f073bc970b4a3e668cecf9",
+    "references": [
+      "https://www.wegame.com.cn/act/wegame/lkwgsj20260409launch/index.html"
+    ],
+    "checked_at": "2026-10-23T10:07:29.322Z",
+    "retry_after": null
+  },
+  "a4a58c20d5c09465a32cc2110c311522a8a70487835a902e710a25e382c76323": {
+    "sha256": "a4a58c20d5c09465a32cc2110c311522a8a70487835a902e710a25e382c76323",
+    "status": "rejected",
+    "reason": "Overview is a thin decorative gold-particle divider; no lineup content.",
+    "fingerprint": "ae8b9248d873ad6170f3cec663c68f5e27960c1f78f073bc970b4a3e668cecf9",
+    "references": [
+      "https://www.wegame.com.cn/act/wegame/lkwgsj20260409launch/index.html"
+    ],
+    "checked_at": "2026-10-23T10:07:29.322Z",
+    "retry_after": null
+  },
+  "2347da93d5928de3587c6a100d33c5c56e14c9ab5f7028cccddeda2cd99f529e": {
+    "sha256": "2347da93d5928de3587c6a100d33c5c56e14c9ab5f7028cccddeda2cd99f529e",
+    "status": "rejected",
+    "reason": "Overview is standalone anthropomorphic character artwork from the Biligame wiki; no lineup configuration.",
+    "fingerprint": "037caa6e0ac8c0d699064edcaf49eb744f9a36dc9ae760081074c6b93647f0dd",
+    "references": [
+      "https://wiki.biligame.com/nrc/%E9%A6%96%E9%A1%B5"
+    ],
+    "checked_at": "2026-10-23T10:07:29.322Z",
+    "retry_after": null
+  },
+  "d60ae067780386430fd152ed3a27d564f280cf8a8a3159f2d38fc2ad456895ad": {
+    "sha256": "d60ae067780386430fd152ed3a27d564f280cf8a8a3159f2d38fc2ad456895ad",
+    "status": "rejected",
+    "reason": "Overview is a 网络文化经营单位 compliance logo; no lineup content.",
+    "fingerprint": "43d8c8bf09872fa9a53a7922fe85ceebef041129c9e986b6df19ba1f5445a646",
+    "references": [
+      "https://wiki.biligame.com/nrc/%E9%A6%96%E9%A1%B5"
+    ],
+    "checked_at": "2026-10-23T10:07:29.322Z",
+    "retry_after": null
+  },
+  "3fac66c5a9e21058fed0f3a53ae93672cf730116236f52c0424398a8a4aa2f5a": {
+    "sha256": "3fac66c5a9e21058fed0f3a53ae93672cf730116236f52c0424398a8a4aa2f5a",
+    "status": "rejected",
+    "reason": "Overview is a white Biligame wordmark/star watermark; no lineup content.",
+    "fingerprint": "cf8d81076746ba461e368da3eabc1e69ffbd9ac43cf3278c85603a89a8264851",
+    "references": [
+      "https://wiki.biligame.com/nrc/%E9%A6%96%E9%A1%B5"
+    ],
+    "checked_at": "2026-10-23T10:07:29.322Z",
+    "retry_after": null
+  },
+  "051727edaf65693de3ba2591f8f0d4a6f37bb4d597c145d722f8700bb78058eb": {
+    "sha256": "051727edaf65693de3ba2591f8f0d4a6f37bb4d597c145d722f8700bb78058eb",
+    "status": "rejected",
+    "reason": "Overview is a square 0.1折 game advertisement icon reused across the nine 3DM articles; no lineup.",
+    "fingerprint": "9d9de7c3da85157b27e60e7908239b5de47ea5e0845e2939481e2aa2d1409c77",
+    "references": [
+      "https://ol.3dmgame.com/gl/355668.html",
+      "https://ol.3dmgame.com/gl/348407.html",
+      "https://ol.3dmgame.com/gl/342821.html",
+      "https://ol.3dmgame.com/gl/355666.html",
+      "https://ol.3dmgame.com/gl/350006.html",
+      "https://ol.3dmgame.com/gl/354707.html",
+      "https://ol.3dmgame.com/gl/350004.html",
+      "https://ol.3dmgame.com/gl/353802.html",
+      "https://ol.3dmgame.com/gl/353804.html"
+    ],
+    "checked_at": "2026-10-23T10:07:29.322Z",
+    "retry_after": null
+  },
+  "4a2a61fd9e8803a7dcd316d663b8089c0dd481df3a37de9144b987213f2cd06c": {
+    "sha256": "4a2a61fd9e8803a7dcd316d663b8089c0dd481df3a37de9144b987213f2cd06c",
+    "status": "rejected",
+    "reason": "Overview is a bare QR code from the 3DM page template; no lineup.",
+    "fingerprint": "08cbfac8ffa79dee75eaae3c195a2f2add25e227000c3f7cb4f5ed00202681db",
+    "references": [
+      "https://ol.3dmgame.com/gl/355668.html",
+      "https://ol.3dmgame.com/gl/348407.html",
+      "https://ol.3dmgame.com/gl/342821.html",
+      "https://ol.3dmgame.com/gl/355666.html",
+      "https://ol.3dmgame.com/gl/350006.html",
+      "https://ol.3dmgame.com/gl/354707.html",
+      "https://ol.3dmgame.com/gl/350004.html",
+      "https://ol.3dmgame.com/gl/353802.html",
+      "https://ol.3dmgame.com/gl/353804.html"
+    ],
+    "checked_at": "2026-10-23T10:07:29.322Z",
+    "retry_after": null
+  },
+  "221e6b3a87f9d530939442adfd330028f7d62028e0e94f520b66eafd044f4d69": {
+    "sha256": "221e6b3a87f9d530939442adfd330028f7d62028e0e94f520b66eafd044f4d69",
+    "status": "rejected",
+    "reason": "Overview is a square 0.1折 game advertisement icon reused across the nine 3DM articles; no lineup.",
+    "fingerprint": "e8a034858212ca6e7c675e306bdd80a4c6b263ab1060297530a47c64337e3bb7",
+    "references": [
+      "https://ol.3dmgame.com/gl/355668.html",
+      "https://ol.3dmgame.com/gl/348407.html",
+      "https://ol.3dmgame.com/gl/342821.html",
+      "https://ol.3dmgame.com/gl/355666.html",
+      "https://ol.3dmgame.com/gl/350006.html",
+      "https://ol.3dmgame.com/gl/354707.html",
+      "https://ol.3dmgame.com/gl/350004.html",
+      "https://ol.3dmgame.com/gl/353802.html",
+      "https://ol.3dmgame.com/gl/353804.html"
+    ],
+    "checked_at": "2026-10-23T10:07:29.322Z",
+    "retry_after": null
+  },
+  "4761f5fdf5fb1cdb79dc0a4bfeacb26f26d83db6294cf3d379e8014bd889499a": {
+    "sha256": "4761f5fdf5fb1cdb79dc0a4bfeacb26f26d83db6294cf3d379e8014bd889499a",
+    "status": "rejected",
+    "reason": "Overview is a QR code with a game ad icon in the centre; no lineup.",
+    "fingerprint": "08cbfac8ffa79dee75eaae3c195a2f2add25e227000c3f7cb4f5ed00202681db",
+    "references": [
+      "https://ol.3dmgame.com/gl/355668.html",
+      "https://ol.3dmgame.com/gl/348407.html",
+      "https://ol.3dmgame.com/gl/342821.html",
+      "https://ol.3dmgame.com/gl/355666.html",
+      "https://ol.3dmgame.com/gl/350006.html",
+      "https://ol.3dmgame.com/gl/354707.html",
+      "https://ol.3dmgame.com/gl/350004.html",
+      "https://ol.3dmgame.com/gl/353802.html",
+      "https://ol.3dmgame.com/gl/353804.html"
+    ],
+    "checked_at": "2026-10-23T10:07:29.322Z",
+    "retry_after": null
+  },
+  "e90acad390cb05d3d265b2ea0d123ebca1ba5bfb29568e6bba10b36886f2e114": {
+    "sha256": "e90acad390cb05d3d265b2ea0d123ebca1ba5bfb29568e6bba10b36886f2e114",
+    "status": "rejected",
+    "reason": "Overview is an anime-style mobile-game advertisement icon used in the 3DM page template; no lineup.",
+    "fingerprint": "e8a034858212ca6e7c675e306bdd80a4c6b263ab1060297530a47c64337e3bb7",
+    "references": [
+      "https://ol.3dmgame.com/gl/355668.html",
+      "https://ol.3dmgame.com/gl/348407.html",
+      "https://ol.3dmgame.com/gl/342821.html",
+      "https://ol.3dmgame.com/gl/355666.html",
+      "https://ol.3dmgame.com/gl/350006.html",
+      "https://ol.3dmgame.com/gl/354707.html",
+      "https://ol.3dmgame.com/gl/350004.html",
+      "https://ol.3dmgame.com/gl/353802.html",
+      "https://ol.3dmgame.com/gl/353804.html"
+    ],
+    "checked_at": "2026-10-23T10:07:29.322Z",
+    "retry_after": null
+  },
+  "fbbfce3279ea32889c17b4eca9445523750e941221558160ed1409b2c06f3cfb": {
+    "sha256": "fbbfce3279ea32889c17b4eca9445523750e941221558160ed1409b2c06f3cfb",
+    "status": "rejected",
+    "reason": "Overview is a TapTap 可可丰收节 promotional banner with creatures and rewards text; no six-member configuration.",
+    "fingerprint": "8a41a3cebfa86c90d7254837f4bb2dfd2defd6a8ca67cca6936f0aeb72c1fc47",
+    "references": [
+      "https://www.taptap.cn/app/188212"
+    ],
+    "checked_at": "2026-10-23T10:07:29.322Z",
+    "retry_after": null
+  },
+  "d21e1fe64da3b7ccc0bd2377ba7c5085351e60870ea5218ef6e0871feb260c63": {
+    "sha256": "d21e1fe64da3b7ccc0bd2377ba7c5085351e60870ea5218ef6e0871feb260c63",
+    "status": "rejected",
+    "reason": "Overview is a square TapTap game app icon showing a blue cartoon creature; no lineup.",
+    "fingerprint": "4de3c13ce82cbf47586e6419be2ca7bdd93c4c2bb655877580a7d58a03425881",
+    "references": [
+      "https://www.taptap.cn/app/188212"
+    ],
+    "checked_at": "2026-10-23T10:07:29.322Z",
+    "retry_after": null
+  },
+  "1528644f0e9b4e6741cdc204293c84c64fe6aafd055badd9b8dcc4d3572a8486": {
+    "sha256": "1528644f0e9b4e6741cdc204293c84c64fe6aafd055badd9b8dcc4d3572a8486",
+    "status": "rejected",
+    "reason": "Overview is an official S4 月涌狂想 season promotional poster (9月10日正式开启); no six-member configuration.",
+    "fingerprint": "4de3c13ce82cbf47586e6419be2ca7bdd93c4c2bb655877580a7d58a03425881",
+    "references": [
+      "https://www.taptap.cn/app/188212"
+    ],
+    "checked_at": "2026-10-23T10:07:29.322Z",
+    "retry_after": null
+  },
+  "cd929b3fc38a78b74ab6e6cc43e9c8bd1367e6a1d0f13259a2b4c3e33274683c": {
+    "sha256": "cd929b3fc38a78b74ab6e6cc43e9c8bd1367e6a1d0f13259a2b4c3e33274683c",
+    "status": "rejected",
+    "reason": "Overview is a character/cinematic promotional image with the slogan 遇见精灵，开启你们的独家故事; no lineup configuration.",
+    "fingerprint": "4de3c13ce82cbf47586e6419be2ca7bdd93c4c2bb655877580a7d58a03425881",
+    "references": [
+      "https://www.taptap.cn/app/188212"
+    ],
+    "checked_at": "2026-10-23T10:07:29.322Z",
+    "retry_after": null
+  },
+  "b4556f1e8545515eec4bd0fffc5dbc26126136d582af4c90e0f2b04ea446f360": {
+    "sha256": "b4556f1e8545515eec4bd0fffc5dbc26126136d582af4c90e0f2b04ea446f360",
+    "status": "rejected",
+    "reason": "Overview is an open-world gameplay promotional image (可以发呆的精灵大世界) with six small sidebar icons but no complete configuration or skills.",
+    "fingerprint": "4de3c13ce82cbf47586e6419be2ca7bdd93c4c2bb655877580a7d58a03425881",
+    "references": [
+      "https://www.taptap.cn/app/188212"
+    ],
+    "checked_at": "2026-10-23T10:07:29.322Z",
+    "retry_after": null
+  },
+  "0e15784969e44202089be1437958b5d82f919d32649a2bc7c2bba31358c160d4": {
+    "sha256": "0e15784969e44202089be1437958b5d82f919d32649a2bc7c2bba31358c160d4",
+    "status": "rejected",
+    "reason": "Overview is a mount/costume promotional image with six small sidebar icons but no complete lineup configuration.",
+    "fingerprint": "4de3c13ce82cbf47586e6419be2ca7bdd93c4c2bb655877580a7d58a03425881",
+    "references": [
+      "https://www.taptap.cn/app/188212"
+    ],
+    "checked_at": "2026-10-23T10:07:29.322Z",
+    "retry_after": null
+  },
+  "ec7b584d23132017d6ab3bc827919ecaaf5e1515416e2e01492bb7c25ffda5ac": {
+    "sha256": "ec7b584d23132017d6ab3bc827919ecaaf5e1515416e2e01492bb7c25ffda5ac",
+    "status": "rejected",
+    "reason": "Overview is a promotional housing/furniture screenshot from the TapTap app page, not a complete six-member lineup configuration.",
+    "fingerprint": "4de3c13ce82cbf47586e6419be2ca7bdd93c4c2bb655877580a7d58a03425881",
+    "references": [
+      "https://www.taptap.cn/app/188212"
+    ],
+    "checked_at": "2026-10-23T10:07:29.322Z",
+    "retry_after": null
+  },
+  "c45c6de446f5f5da68d9d8283afb93629bdfddfc1b163f491f94bff04fa10173": {
+    "sha256": "c45c6de446f5f5da68d9d8283afb93629bdfddfc1b163f491f94bff04fa10173",
+    "status": "rejected",
+    "reason": "Overview is an individual pet showcase for 大鲨鱼来喽 with elemental icons, not a complete six-member lineup configuration.",
+    "fingerprint": "fad39b8041cc9ccebe8a8a5adca790bcab60182e8331c4d9267c20498283026d",
+    "references": [
+      "https://www.taptap.cn/review/50751838"
+    ],
+    "checked_at": "2026-10-23T10:07:29.322Z",
+    "retry_after": null
+  },
+  "821c1de4d1dedc738ea7d6d1715cdaef11d1ec4550dad8980d8783d541142b96": {
+    "sha256": "821c1de4d1dedc738ea7d6d1715cdaef11d1ec4550dad8980d8783d541142b96",
+    "status": "rejected",
+    "reason": "Overview is an achievements screen showing 获得荣誉 and awards for 大鲨鱼来喽, not a complete six-member lineup configuration.",
+    "fingerprint": "fad39b8041cc9ccebe8a8a5adca790bcab60182e8331c4d9267c20498283026d",
+    "references": [
+      "https://www.taptap.cn/review/50751838"
+    ],
+    "checked_at": "2026-10-23T10:07:29.322Z",
+    "retry_after": null
+  },
+  "b8e7bba4c3aa28a31d16f0aa908e11cc00b9434d1b1d2a4146b560b3ca8521b1": {
+    "sha256": "b8e7bba4c3aa28a31d16f0aa908e11cc00b9434d1b1d2a4146b560b3ca8521b1",
+    "status": "rejected",
+    "reason": "Overview is an individual pet profile for 魔眷鸟 with elemental icons, not a complete six-member lineup configuration.",
+    "fingerprint": "fad39b8041cc9ccebe8a8a5adca790bcab60182e8331c4d9267c20498283026d",
+    "references": [
+      "https://www.taptap.cn/review/50751838"
+    ],
+    "checked_at": "2026-10-23T10:07:29.322Z",
+    "retry_after": null
+  },
+  "6b0af230de2598d1f0355e3a54b398f1e14120104e835a00a9b6b556e45c2711": {
+    "sha256": "6b0af230de2598d1f0355e3a54b398f1e14120104e835a00a9b6b556e45c2711",
+    "status": "rejected",
+    "reason": "TapTap page is a personal game review by 缝尘 (“不是攻略哦，只是一些个人评价”); overview is a mascot illustration, not a six-member lineup configuration.",
+    "fingerprint": "49e9f554e8a6f8d9362db23eeb2187ceb5c74ca829aa1862c8dab973d61b233d",
+    "references": [
+      "https://www.taptap.cn/review/50780923"
+    ],
+    "checked_at": "2026-10-23T10:07:29.322Z",
+    "retry_after": null
+  },
+  "0b7bc9b69b0eae069d506df837c7ea8c272bee7403919dd450eef78179407ada": {
+    "sha256": "0b7bc9b69b0eae069d506df837c7ea8c272bee7403919dd450eef78179407ada",
+    "status": "rejected",
+    "reason": "Overview is a multi-team 队伍选择 screenshot; the headline 马头星陨队 cannot be identified as one complete configuration, and the collection title/update time is not image-level season evidence.",
+    "fingerprint": "5a48b01ef919217c903842b29d21ae71f112d77371eb18e792355f096b6054e3",
+    "references": [
+      "https://qiandao.com/post?postId=1023430985116591249"
+    ],
+    "checked_at": "2026-10-23T10:07:29.322Z",
+    "retry_after": null
+  },
+  "3a5bb72fdb1150f070bdc5adb9fef48092df78b1ef6987da3505a186886269aa": {
+    "sha256": "3a5bb72fdb1150f070bdc5adb9fef48092df78b1ef6987da3505a186886269aa",
+    "status": "rejected",
+    "reason": "Qiandao asset is a generic gray avatar/comment prompt (“请在App内发表评论哦”), not a lineup configuration.",
+    "fingerprint": "5fc73bef110e09e803e8f234d8f6b2345da4935e13171168df193c77f0f0167d",
+    "references": [
+      "https://qiandao.com/post?postId=1023430985116591249"
+    ],
+    "checked_at": "2026-10-23T10:07:29.322Z",
+    "retry_after": null
+  }
+}

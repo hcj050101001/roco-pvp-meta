@@ -1,5 +1,5 @@
 {
-  "run_id": "2026-10-22T12-37-13-996Z",
+  "run_id": "2026-10-23T08-40-57-599Z",
   "untrusted": true,
   "sources": [
     {
@@ -14,14 +14,6 @@
       ],
       "origin": "seed",
       "pending_image_urls": [
-        "https://img2-tc.tapimg.com/moment/etag/FiLg-_eq71FNfQNDap1Lh13c5315_20261011160948.jpg/_tap_ugc.jpg",
-        "https://img2-tc.tapimg.com/moment/etag/FtJwylf0UMAVu-mQ6vdc0JKKxd2s_20260327003546.png/_tap_ugc.jpg",
-        "https://img2-tc.tapimg.com/moment/etag/FkhtBwkITO3A_2CPRYT8BXQjNtVc_20261013025924.jpg/_tap_ugc.jpg",
-        "https://img2-tc.tapimg.com/moment/etag/Fr60f1bLOG3GCktxmHBjU12aovUp_20261022122022.png/_tap_ugc.jpg",
-        "https://img2-tc.tapimg.com/moment/etag/Fl_Qw8XNgFGWV5Mqb8wXwU-odW1C_20260326120215.png/_tap_ugc.jpg",
-        "https://img2-tc.tapimg.com/moment/etag/FnAtT3_-dnpiKyr5-orSVzKymGZY_20260508102953.png/_tap_ugc.jpg",
-        "https://img2-tc.tapimg.com/moment/etag/FrLulSWItmHtGlMY1MlrCh6NbDcF_20260922000059.jpg/_tap_ugc.jpg",
-        "https://img2-tc.tapimg.com/moment/etag/Fq6E0hEHlgRqtk6o8obgBLbuhfbb_20260519220058.jpeg/_tap_ugc.jpg",
         "https://tap-client-logs-bj.cn-beijing.dualstack.log.aliyuncs.com/logstores/web_apm/track_ua.gif?t_log_id=80e9208e-73b0-4278-bd52-1bdd7510b642&APIVersion=0.6.0&XUA=V%3D1%26PN%3DWeb%26LANG%3Dzh_CN%26VN_CODE%3D100000000%26LOC%3DCN%26PLT%3DPC%26DS%3DAndroid%26UID%3D15c5ceed-8775-4826-a70f-204a04505034%26OS%3DLinux%26OSV%3Dx86_64%26DT%3DPC&UID=15c5ceed-8775-4826-a70f-204a04505034&browser_name=HeadlessChrome&action=startup&ts=1792672641277&request_path=%2Fmoment%2F847022426351994538",
         "https://assets.tapimg.com/apps/web-app-next/_nuxt/login-button-art.CyO-kNSq.png",
         "https://img.tapimg.com/market/images/d20ff71e1f1e1961755e6e4ffc6e2c3f.png",
@@ -36,7 +28,31 @@
         "https://img-tc.tapimg.com/market/images/7c94627d5565b59074b113f79dcf1692.png",
         "https://img2-tc.tapimg.com/video/cover/FmXzPTTmdikJGKShnlSOXMggRyGQ_20260911042331.jpg/_tap_ugc.jpg",
         "https://assets.tapimg.com/web-app-global/public-static/img/icons/apple-touch-icon-180x180-v3.png",
-        "https://img2-tc.tapimg.com/moment/etag/FhXVkJ0SdOd7lS3V0jn7AAkCZ0j9_20260910080528.jpg"
+        "https://img2-tc.tapimg.com/moment/etag/FhXVkJ0SdOd7lS3V0jn7AAkCZ0j9_20260910080528.jpg",
+        "https://tap-client-logs-bj.cn-beijing.dualstack.log.aliyuncs.com/logstores/web_apm/track_ua.gif?t_log_id=65039c36-9bf6-4226-8515-c620d5a8908f&APIVersion=0.6.0&XUA=V%3D1%26PN%3DWeb%26LANG%3Dzh_CN%26VN_CODE%3D100000000%26LOC%3DCN%26PLT%3DPC%26DS%3DAndroid%26UID%3D15c5ceed-8775-4826-a70f-204a04505034%26OS%3DLinux%26OSV%3Dx86_64%26DT%3DPC&UID=15c5ceed-8775-4826-a70f-204a04505034&browser_name=HeadlessChrome&action=startup&ts=1792744865068&request_path=%2Fmoment%2F847022426351994538",
+        "https://img-tc.tapimg.com/market/images/e9a61869998a8d5b95b0668d65c28d6d.png/_tap_appicon.jpg",
+        "https://img-tc.tapimg.com/market/images/a395edeea4e8c60315097a7472c7393c.jpg/_tap_appicon.jpg",
+        "https://img-tc.tapimg.com/market/images/3437da7ae9c7e1fa13625964cea6c4cb.png/_tap_appicon.jpg",
+        "https://assets.tapimg.com/protocol/%E6%98%93%E7%8E%A9%E5%B9%BF%E7%94%B5%E8%AF%81.jpg",
+        "https://img-tc.tapimg.com/market/images/27330daef3a3696edddd4a5e858f3d26.png/_tap_appicon_m.jpg",
+        "https://img2-tc.tapimg.com/moment/etag/FhXVkJ0SdOd7lS3V0jn7AAkCZ0j9_20260910080528.jpg/_tap_ugc.jpg",
+        "https://img-tc.tapimg.com/market/images/2628c7a2531124999a88dddd29ee3686.jpg/_tap_banner.jpg",
+        "https://img2-tc.tapimg.com/moment/etag/FuOzhtyx4GDjxO8X78B7SpMfJn7F_20260909161652.png/_tap_ugc.jpg",
+        "https://img2-tc.tapimg.com/moment/etag/FuZYhAvRJqKy0VOQg-buHvFSo90R_20261023133324.jpg/_tap_ugc.jpg",
+        "https://img2-tc.tapimg.com/moment/etag/FvhdUm5B_oJRBNgPbAppNy0WH8sB_20261003164059.png/_tap_ugc.jpg",
+        "https://img2-tc.tapimg.com/moment/etag/FmLyL6HLj4znBpB9K9n0Uo90DyOc_20261023025324.png/_tap_ugc.jpg"
+      ],
+      "attempts": 0,
+      "evidence_hash": "5c5e0f910ac2ed56279fd151f83e0a1763aa298ddb01516f2d22fdb600927d4e",
+      "processed_image_urls": [
+        "https://img2-tc.tapimg.com/moment/etag/FiLg-_eq71FNfQNDap1Lh13c5315_20261011160948.jpg/_tap_ugc.jpg",
+        "https://img2-tc.tapimg.com/moment/etag/FtJwylf0UMAVu-mQ6vdc0JKKxd2s_20260327003546.png/_tap_ugc.jpg",
+        "https://img2-tc.tapimg.com/moment/etag/FkhtBwkITO3A_2CPRYT8BXQjNtVc_20261013025924.jpg/_tap_ugc.jpg",
+        "https://img2-tc.tapimg.com/moment/etag/Fr60f1bLOG3GCktxmHBjU12aovUp_20261022122022.png/_tap_ugc.jpg",
+        "https://img2-tc.tapimg.com/moment/etag/Fl_Qw8XNgFGWV5Mqb8wXwU-odW1C_20260326120215.png/_tap_ugc.jpg",
+        "https://img2-tc.tapimg.com/moment/etag/FnAtT3_-dnpiKyr5-orSVzKymGZY_20260508102953.png/_tap_ugc.jpg",
+        "https://img2-tc.tapimg.com/moment/etag/FrLulSWItmHtGlMY1MlrCh6NbDcF_20260922000059.jpg/_tap_ugc.jpg",
+        "https://img2-tc.tapimg.com/moment/etag/Fq6E0hEHlgRqtk6o8obgBLbuhfbb_20260519220058.jpeg/_tap_ugc.jpg"
       ]
     },
     {
@@ -51,14 +67,6 @@
       ],
       "origin": "seed",
       "pending_image_urls": [
-        "https://img2-tc.tapimg.com/moment/etag/FsBToOIKPdvVm0Zrg8jz63Rz7Qtx_20260324163349.png/_tap_icon_m.jpg",
-        "https://img2-tc.tapimg.com/moment/etag/FqEx8lnaWsG-QplMkXJJbyAj8HTl_20260325203831.png/_tap_icon_m.jpg",
-        "https://img2-tc.tapimg.com/moment/etag/FrLwc1OBqTPKx5zz_OwJUDv1Pngm_20260408134730.png/_tap_icon_m.jpg",
-        "https://img2-tc.tapimg.com/moment/etag/FirZzhQ2bSdurK0Zyynu1U2-PZGZ_20260325204109.png/_tap_icon_m.jpg",
-        "https://img2-tc.tapimg.com/moment/etag/Fvf0cJPZnhuoJsBHt27BVz_6yM0o_20261015195421.jpg/_tap_ugc.jpg",
-        "https://img.tapimg.com/market/images/1683cb44cf3a438051b934bd6ca539ff.png",
-        "https://img2-tc.tapimg.com/moment/etag/FmvDcsnkfFF_i_3noGTz9u7XUPle_20261022193529.jpg/_tap_ugc.jpg",
-        "https://img2-tc.tapimg.com/moment/etag/FmvDcsnkfFF_i_3noGTz9u7XUPle_20261022193529.jpg",
         "https://img.tapimg.com/market/images/24f2b24c5043d63f5f2db8bd62b8e3de.png",
         "https://img2-tc.tapimg.com/moment/etag/FgVwCTtbCxYM4asCX-Fe7Rei2zJj_20261022192517.jpg/_tap_ugc.jpg",
         "https://img2-tc.tapimg.com/moment/etag/FgVwCTtbCxYM4asCX-Fe7Rei2zJj_20261022192517.jpg",
@@ -97,7 +105,59 @@
         "https://img2-tc.tapimg.com/moment/etag/Fj6iruM9KcMBPQ94KZDrimSEjApk_20261022175747.gif",
         "https://img-tc.tapimg.com/market/images/926e61cb56225243b1486de286dec918.png",
         "https://img2-tc.tapimg.com/moment/etag/Fjg-eN-OeC-mU0GIRG_WfdqHb5sb_20261022174958.jpg/_tap_ugc.jpg",
-        "https://img2-tc.tapimg.com/moment/etag/Fjg-eN-OeC-mU0GIRG_WfdqHb5sb_20261022174958.jpg"
+        "https://img2-tc.tapimg.com/moment/etag/Fjg-eN-OeC-mU0GIRG_WfdqHb5sb_20261022174958.jpg",
+        "https://tap-client-logs-bj.cn-beijing.dualstack.log.aliyuncs.com/logstores/web_apm/track_ua.gif?t_log_id=0b5fc667-e37e-487a-b7fd-e8a654b38f43&APIVersion=0.6.0&XUA=V%3D1%26PN%3DWeb%26LANG%3Dzh_CN%26VN_CODE%3D100000000%26LOC%3DCN%26PLT%3DPC%26DS%3DAndroid%26UID%3D15c5ceed-8775-4826-a70f-204a04505034%26OS%3DLinux%26OSV%3Dx86_64%26DT%3DPC&UID=15c5ceed-8775-4826-a70f-204a04505034&browser_name=HeadlessChrome&action=startup&ts=1792744876088&request_path=%2Fapp%2F188212%2Ftopic",
+        "https://assets.tapimg.com/apps/web-app-next/_nuxt/login-button-art.CyO-kNSq.png",
+        "https://img.tapimg.com/market/images/d20ff71e1f1e1961755e6e4ffc6e2c3f.png",
+        "https://img-tc.tapimg.com/market/images/d8a70575966d311941f2b38aee62f74f.png/_tap_appicon.jpg",
+        "https://img-tc.tapimg.com/market/images/ba24dee85b38c7364ac8279b3fe4a2c6.png/_tap_appicon.jpg",
+        "https://img-tc.tapimg.com/market/images/e9a61869998a8d5b95b0668d65c28d6d.png/_tap_appicon.jpg",
+        "https://img-tc.tapimg.com/market/images/a395edeea4e8c60315097a7472c7393c.jpg/_tap_appicon.jpg",
+        "https://img-tc.tapimg.com/market/images/3437da7ae9c7e1fa13625964cea6c4cb.png/_tap_appicon.jpg",
+        "https://img2-tc.tapimg.com/moment/etag/FsM0hwp36g1txzBu4RPnjuxAtcjT_20260323123947.png/_tap_icon_m.jpg",
+        "https://img2-tc.tapimg.com/moment/etag/FpkqZtxZUeQUwY3AssslKkZqYi66_20261022163226.jpg/_tap_ugc.jpg",
+        "https://img2-tc.tapimg.com/moment/etag/ln-64JpXbShT6K7j9gHxsm6wuBYV_20261023120458.jpg",
+        "https://img2-tc.tapimg.com/moment/etag/ltOak67Luo4heu8qSqpcPKrDnpW4_20261023120500.jpg",
+        "https://img-tc.tapimg.com/market/images/24f2b24c5043d63f5f2db8bd62b8e3de.png",
+        "https://img-tc.tapimg.com/market/images/e455c642a7725d0284ccea743e74d0b2.png",
+        "https://img-tc.tapimg.com/market/images/fb9657f06433a758d682d130413bca9f.png",
+        "https://img-tc.tapimg.com/market/images/8e892c236162b7acfe66ff166eff21d8.png",
+        "https://img-tc.tapimg.com/market/images/73fb8e8f92d753cd001235b5be5a1ed9.png",
+        "https://img2-tc.tapimg.com/moment/etag/FvZfiF1Bf90LSXJ2CkY4rtm1fJZZ_20261023085322.jpg/_tap_ugc.jpg",
+        "https://img2-tc.tapimg.com/moment/etag/FvZfiF1Bf90LSXJ2CkY4rtm1fJZZ_20261023085322.jpg",
+        "https://img2-tc.tapimg.com/moment/etag/FnKxeTmNA5MEetfP20v53_Evibns_20261023113656.jpg/_tap_ugc.jpg",
+        "https://img-tc.tapimg.com/market/images/83aa452eea88b5c64df710bca367b7e9.png",
+        "https://img-tc.tapimg.com/market/images/56288bc98a5bb0cfe2a1d0ca0b6ebad0.png",
+        "https://img2-tc.tapimg.com/moment/etag/FtolJNUiDEW1CcAvS8e13I72s21q_20261023100515.jpg/_tap_ugc.jpg",
+        "https://img2-tc.tapimg.com/moment/etag/FtolJNUiDEW1CcAvS8e13I72s21q_20261023100515.jpg",
+        "https://img2-tc.tapimg.com/moment/etag/FtjrCYBraP0sCQfLwwPKnaCJ4iKd_20261023112709.jpg/_tap_ugc.jpg",
+        "https://img-tc.tapimg.com/market/images/66662ed4a85c92c4ab4a77aa3c12fc22.png",
+        "https://img-tc.tapimg.com/market/images/ae0e167c6050f5be46f44a48450d607d.png",
+        "https://img2-tc.tapimg.com/moment/etag/FoaUPV5lSSS7yFocgj1bXpmIHcMi_20261023083014.jpg/_tap_ugc.jpg",
+        "https://img2-tc.tapimg.com/moment/etag/FoaUPV5lSSS7yFocgj1bXpmIHcMi_20261023083014.jpg",
+        "https://img-tc.tapimg.com/market/images/d07b262774c8a022a7dddbc39683da6b.png",
+        "https://img-tc.tapimg.com/market/images/362bcdd6b323d70e4cd0c3139335cb7e.png",
+        "https://img-tc.tapimg.com/market/images/9abe6c3175541d62250ba7bb3be5d151.png",
+        "https://img2-tc.tapimg.com/moment/etag/Fir1dHUhXbXE9lBbWAIj-1wVD4qK_20261023142745.jpg/_tap_ugc.jpg",
+        "https://img2-tc.tapimg.com/moment/etag/Fir1dHUhXbXE9lBbWAIj-1wVD4qK_20261023142745.jpg",
+        "https://img-tc.tapimg.com/market/images/6cb68fa4d4a3592ac2dfd6b0f2a75720.png",
+        "https://img.tapimg.com/market/images/7a440cbe4c6a7f5ef638d4cd933e4c15.png",
+        "https://img2-tc.tapimg.com/moment/etag/Fiy_MpL71q7dyq8IPf8SZSIC9jfC_20261023141108.jpg/_tap_ugc.jpg",
+        "https://img2-tc.tapimg.com/moment/etag/Fiy_MpL71q7dyq8IPf8SZSIC9jfC_20261023141108.jpg",
+        "https://img2-tc.tapimg.com/moment/etag/FmTNZkYZhTaPtzGzUC-i-A2RWK2G_20261022234140.jpg/_tap_ugc.jpg",
+        "https://img2-tc.tapimg.com/moment/etag/FmTNZkYZhTaPtzGzUC-i-A2RWK2G_20261022234140.jpg"
+      ],
+      "attempts": 0,
+      "evidence_hash": "781392ac17e3258ccabf744f8e8d065704982ca71a6d6fbdc694b8e528d774cc",
+      "processed_image_urls": [
+        "https://img2-tc.tapimg.com/moment/etag/FsBToOIKPdvVm0Zrg8jz63Rz7Qtx_20260324163349.png/_tap_icon_m.jpg",
+        "https://img2-tc.tapimg.com/moment/etag/FqEx8lnaWsG-QplMkXJJbyAj8HTl_20260325203831.png/_tap_icon_m.jpg",
+        "https://img2-tc.tapimg.com/moment/etag/FrLwc1OBqTPKx5zz_OwJUDv1Pngm_20260408134730.png/_tap_icon_m.jpg",
+        "https://img2-tc.tapimg.com/moment/etag/FirZzhQ2bSdurK0Zyynu1U2-PZGZ_20260325204109.png/_tap_icon_m.jpg",
+        "https://img2-tc.tapimg.com/moment/etag/Fvf0cJPZnhuoJsBHt27BVz_6yM0o_20261015195421.jpg/_tap_ugc.jpg",
+        "https://img.tapimg.com/market/images/1683cb44cf3a438051b934bd6ca539ff.png",
+        "https://img2-tc.tapimg.com/moment/etag/FmvDcsnkfFF_i_3noGTz9u7XUPle_20261022193529.jpg/_tap_ugc.jpg",
+        "https://img2-tc.tapimg.com/moment/etag/FmvDcsnkfFF_i_3noGTz9u7XUPle_20261022193529.jpg"
       ]
     },
     {
@@ -112,14 +172,6 @@
       ],
       "origin": "backlog",
       "pending_image_urls": [
-        "https://img2-tc.tapimg.com/moment/etag/Fr_pakpoKQOCgYMKU5bIT89Ynv2C_20261013025927.jpg/_tap_ugc.jpg",
-        "https://img2-tc.tapimg.com/moment/etag/Fr_pakpoKQOCgYMKU5bIT89Ynv2C_20261013025927.jpg",
-        "https://img2-tc.tapimg.com/moment/etag/FgBMQHG_2xhovEri-06e4VvmenIO_20261013025928.jpg/_tap_ugc.jpg",
-        "https://img2-tc.tapimg.com/moment/etag/FgBMQHG_2xhovEri-06e4VvmenIO_20261013025928.jpg",
-        "https://img2-tc.tapimg.com/moment/etag/Fgl_N9wnSQmnMWFh5LYh40gJY4-m_20261013025929.jpg/_tap_ugc.jpg",
-        "https://img2-tc.tapimg.com/moment/etag/Fgl_N9wnSQmnMWFh5LYh40gJY4-m_20261013025929.jpg",
-        "https://img2-tc.tapimg.com/moment/etag/Fr2JkbGUFYz_LtCx9DKZ5rNh9W5P_20261013025929.jpg/_tap_ugc.jpg",
-        "https://img2-tc.tapimg.com/moment/etag/Fr2JkbGUFYz_LtCx9DKZ5rNh9W5P_20261013025929.jpg",
         "https://img-tc.tapimg.com/market/images/b2af2b355fb86f3b564067445423c936.gif",
         "https://img-tc.tapimg.com/market/images/3924340d5f14c313cbaf81e4c2f31350.gif",
         "https://img-tc.tapimg.com/market/images/6fa8eeabce96920c955f643b434dec51.png/_tap_icon.jpg",
@@ -145,8 +197,33 @@
         "https://img2-tc.tapimg.com/moment/etag/Fhe_L2W1qNV_nWNH-l6zPl_pmva6_20261013025925.jpg",
         "https://img2-tc.tapimg.com/moment/etag/FhSMacgCUt5z9K9oO7Pn1VHOlqpx_20261013025926.jpg/_tap_ugc.jpg",
         "https://img2-tc.tapimg.com/moment/etag/ltnws-RPj8yLZ3JkkNVqnbr6YE49_20261012212544.jpg/_tap_ugc.jpg",
-        "https://img2-tc.tapimg.com/moment/etag/Fr60f1bLOG3GCktxmHBjU12aovUp_20261022122022.png/_tap_ugc.jpg"
-      ]
+        "https://img2-tc.tapimg.com/moment/etag/Fr60f1bLOG3GCktxmHBjU12aovUp_20261022122022.png/_tap_ugc.jpg",
+        "https://tap-client-logs-bj.cn-beijing.dualstack.log.aliyuncs.com/logstores/web_apm/track_ua.gif?t_log_id=2545f945-67c1-4837-9e47-69d96c7f4464&APIVersion=0.6.0&XUA=V%3D1%26PN%3DWeb%26LANG%3Dzh_CN%26VN_CODE%3D100000000%26LOC%3DCN%26PLT%3DPC%26DS%3DAndroid%26UID%3D15c5ceed-8775-4826-a70f-204a04505034%26OS%3DLinux%26OSV%3Dx86_64%26DT%3DPC&UID=15c5ceed-8775-4826-a70f-204a04505034&browser_name=HeadlessChrome&action=startup&ts=1792744884247&request_path=%2Fmoment%2F858904416206456638",
+        "https://assets.tapimg.com/apps/web-app-next/_nuxt/login-button-art.CyO-kNSq.png",
+        "https://img.tapimg.com/market/images/d20ff71e1f1e1961755e6e4ffc6e2c3f.png",
+        "https://img-tc.tapimg.com/market/images/d8a70575966d311941f2b38aee62f74f.png/_tap_appicon.jpg",
+        "https://img-tc.tapimg.com/market/images/ba24dee85b38c7364ac8279b3fe4a2c6.png/_tap_appicon.jpg",
+        "https://img-tc.tapimg.com/market/images/e9a61869998a8d5b95b0668d65c28d6d.png/_tap_appicon.jpg",
+        "https://img-tc.tapimg.com/market/images/a395edeea4e8c60315097a7472c7393c.jpg/_tap_appicon.jpg",
+        "https://img-tc.tapimg.com/market/images/3437da7ae9c7e1fa13625964cea6c4cb.png/_tap_appicon.jpg",
+        "https://img-tc.tapimg.com/market/images/a04f94ce34955e4ffbfbb3d59b62e18d.png",
+        "https://img2-tc.tapimg.com/moment/etag/FhSMacgCUt5z9K9oO7Pn1VHOlqpx_20261013025926.jpg",
+        "https://img-tc.tapimg.com/video-picture/tid-6883d35a3d8e4ba94d596e9f/first.jpg/_tap_ugc.jpg",
+        "https://img2-tc.tapimg.com/moment/etag/Ftmv7EHtOd90QAJArwiSQcN-lm0N.jpg/_tap_ugc.jpg",
+        "https://img2-tc.tapimg.com/moment/etag/FuZYhAvRJqKy0VOQg-buHvFSo90R_20261023133324.jpg/_tap_ugc.jpg"
+      ],
+      "processed_image_urls": [
+        "https://img2-tc.tapimg.com/moment/etag/Fr_pakpoKQOCgYMKU5bIT89Ynv2C_20261013025927.jpg/_tap_ugc.jpg",
+        "https://img2-tc.tapimg.com/moment/etag/Fr_pakpoKQOCgYMKU5bIT89Ynv2C_20261013025927.jpg",
+        "https://img2-tc.tapimg.com/moment/etag/FgBMQHG_2xhovEri-06e4VvmenIO_20261013025928.jpg/_tap_ugc.jpg",
+        "https://img2-tc.tapimg.com/moment/etag/FgBMQHG_2xhovEri-06e4VvmenIO_20261013025928.jpg",
+        "https://img2-tc.tapimg.com/moment/etag/Fgl_N9wnSQmnMWFh5LYh40gJY4-m_20261013025929.jpg/_tap_ugc.jpg",
+        "https://img2-tc.tapimg.com/moment/etag/Fgl_N9wnSQmnMWFh5LYh40gJY4-m_20261013025929.jpg",
+        "https://img2-tc.tapimg.com/moment/etag/Fr2JkbGUFYz_LtCx9DKZ5rNh9W5P_20261013025929.jpg/_tap_ugc.jpg",
+        "https://img2-tc.tapimg.com/moment/etag/Fr2JkbGUFYz_LtCx9DKZ5rNh9W5P_20261013025929.jpg"
+      ],
+      "attempts": 0,
+      "evidence_hash": "39a2b94ec63fb19e32f2d319502e89d1c085546bda51589b32842a57ced4af65"
     },
     {
       "id": "source-062dd768a9909d1c",
@@ -158,14 +235,6 @@
       ],
       "origin": "backlog",
       "pending_image_urls": [
-        "https://post.qiandaocdn.com/post/images/faVIrsDXL0K_resize.webp?imginfo=w2800,h1260!lfit_w540_jpg",
-        "https://post.qiandaocdn.com/post/images/fdglQS8XcE7_resize.webp?imginfo=w896,h1803!lfit_w540_jpg",
-        "https://post.qiandaocdn.com/post/images/fdShkP9zcTY_resize.webp?imginfo=w1536,h2048!lfit_w540_jpg",
-        "https://post.qiandaocdn.com/post/images/f4pUSA8vrYJ_resize.webp?imginfo=w1488,h1039!lfit_w540_jpg",
-        "https://post.qiandaocdn.com/post/images/fXof9QhaT1J_resize.webp?imginfo=w924,h1644",
-        "https://post.qiandaocdn.com/post/images/fXof9exuVBh_resize.webp?imginfo=w1080,h1450",
-        "https://treasure.qiandaocdn.com/treasure/images/fdAZzEHh8LV.png?imginfo=w276,h368",
-        "https://treasure.qiandaocdn.com/treasure/images/fdAZXJa2qAs.png?imginfo=w790,h1026",
         "https://post.qiandaocdn.com/post/images/6a807ffc3403ef580b65425a9dba05e8.png",
         "https://treasure.qiandaocdn.com/treasure/images/fdAZzcDhAFB.png?imginfo=w250,h334",
         "https://treasure.qiandaocdn.com/treasure/images/fdAZd2pi0K6.png?imginfo=w790,h920",
@@ -287,8 +356,39 @@
         "https://post.qiandaocdn.com/post/images/fdAYrhL3Gsc_resize.webp?imginfo=w903,h2268!lfit_w540_jpg",
         "https://post.qiandaocdn.com/post/images/fXfXMiHaS1o.jpg?imginfo=w454,h778!lfit_w540_jpg",
         "https://post.qiandaocdn.com/post/images/fXfy52VAR0Q_resize.webp?imginfo=w3024,h4032!lfit_w540_jpg",
-        "https://post.qiandaocdn.com/post/images/fXiL12J8EsT_resize.webp?imginfo=w4096,h3072!lfit_w540_jpg"
-      ]
+        "https://post.qiandaocdn.com/post/images/fXiL12J8EsT_resize.webp?imginfo=w4096,h3072!lfit_w540_jpg",
+        "https://post.qiandaocdn.com/post/images/fXof9QhaT1J_resize.webp?imginfo=w924,h1644!lfit_w540_jpg",
+        "https://post.qiandaocdn.com/post/images/fdVKTlLRadD_resize.webp?imginfo=w1161,h2586!lfit_w540_jpg",
+        "https://post.qiandaocdn.com/post/images/fa3vYOEQ6EU_resize.webp?imginfo=w1284,h1147!lfit_w540_jpg",
+        "https://post.qiandaocdn.com/post/images/fX5soIhvldk_resize.webp?imginfo=w4096,h3072!lfit_w540_jpg",
+        "https://post.qiandaocdn.com/post/images/fd946r62ZGE_resize.webp?imginfo=w2048,h2048!lfit_w540_jpg",
+        "https://post.qiandaocdn.com/post/images/fXBCZdrCpNa_resize.webp?imginfo=w3000,h4000!lfit_w540_jpg",
+        "https://post.qiandaocdn.com/post/images/fdAE6yCQCtu_resize.webp?imginfo=w860,h2162!lfit_w540_jpg",
+        "https://post.qiandaocdn.com/post/images/fdbQLmUrjQv_resize.webp?imginfo=w1440,h3026!lfit_w540_jpg",
+        "https://post.qiandaocdn.com/post/images/fXofa9SSbl3_resize.webp?imginfo=w924,h1644!lfit_w540_jpg",
+        "https://post.qiandaocdn.com/post/images/fXBCZdrCpNa_resize.webp?imginfo=w3000,h4000",
+        "https://post.qiandaocdn.com/post/images/fXBCZFkI8il_resize.webp?imginfo=w3000,h4000",
+        "https://post.qiandaocdn.com/post/images/fXBCZXwaEXh_resize.webp?imginfo=w3000,h4000",
+        "https://post.qiandaocdn.com/post/images/fXBCZGZChUx_resize.webp?imginfo=w3000,h4000",
+        "https://post.qiandaocdn.com/post/images/fXBCZFkI85N_resize.webp?imginfo=w3000,h4000",
+        "https://post.qiandaocdn.com/post/images/fXBCZanIjc7_resize.webp?imginfo=w3000,h4000",
+        "https://post.qiandaocdn.com/post/images/fXofa9SSbl3_resize.webp?imginfo=w924,h1644",
+        "https://post.qiandaocdn.com/post/images/fXofaKlRssS.jpg?imginfo=w1080,h876",
+        "https://public.qiandaocdn.com/interior/images/f5sMNWqRdvC.png?imginfo=w60,h60",
+        "https://public.qiandaocdn.com/interior/images/f5sMNg9yL49.png?imginfo=w800,h800"
+      ],
+      "processed_image_urls": [
+        "https://post.qiandaocdn.com/post/images/faVIrsDXL0K_resize.webp?imginfo=w2800,h1260!lfit_w540_jpg",
+        "https://post.qiandaocdn.com/post/images/fdglQS8XcE7_resize.webp?imginfo=w896,h1803!lfit_w540_jpg",
+        "https://post.qiandaocdn.com/post/images/fdShkP9zcTY_resize.webp?imginfo=w1536,h2048!lfit_w540_jpg",
+        "https://post.qiandaocdn.com/post/images/f4pUSA8vrYJ_resize.webp?imginfo=w1488,h1039!lfit_w540_jpg",
+        "https://post.qiandaocdn.com/post/images/fXof9QhaT1J_resize.webp?imginfo=w924,h1644",
+        "https://post.qiandaocdn.com/post/images/fXof9exuVBh_resize.webp?imginfo=w1080,h1450",
+        "https://treasure.qiandaocdn.com/treasure/images/fdAZzEHh8LV.png?imginfo=w276,h368",
+        "https://treasure.qiandaocdn.com/treasure/images/fdAZXJa2qAs.png?imginfo=w790,h1026"
+      ],
+      "attempts": 0,
+      "evidence_hash": "1d2950bbf347c6dc4de73e61799f65cdb49a1098830e85ff9eca72756ce63340"
     },
     {
       "id": "source-dc53636b31dbee6e",
@@ -302,13 +402,25 @@
       ],
       "origin": "backlog",
       "pending_image_urls": [
+        "https://wegame.gtimg.com/tgp_act/release/wegame/nrc20260618/images/part6_img.png",
+        "https://wegame.gtimg.com/tgp_act/release/wegame/nrc20260618/images/part7_img.png",
+        "https://wegame.gtimg.com/tgp_act/release/wegame/nrc20260618/images/part9_img.png",
+        "https://wegame.gtimg.com/tgp_act/release/wegame/nrc20260618/images/part10_img.png",
+        "https://wegame.gtimg.com/tgp_act/release/wegame/nrc20260618/images/rule_img1.png",
+        "https://wegame.gtimg.com/tgp_act/release/wegame/nrc20260618/images/rule_img2.png",
+        "https://wegame.gtimg.com/tgp_act/release/wegame/nrc20260618/images/part3_img.png",
+        "https://wegame.gtimg.com/tgp_act/release/wegame/nrc20260618/images/part1_reward_img1.png"
+      ],
+      "processed_image_urls": [
         "https://wegame.gtimg.com/tgp_act/release/wegame/nrc20260618/images/part1_reward_img3.png",
         "https://wegame.gtimg.com/tgp_act/release/wegame/nrc20260618/images/part2_img.png",
-        "https://wegame.gtimg.com/tgp_act/release/wegame/nrc20260618/images/part3_img.png",
         "https://wegame.gtimg.com/tgp_act/release/wegame/nrc20260618/images/part4_r_txt.png",
         "https://wegame.gtimg.com/tgp_act/release/wegame/nrc20260618/images/part5_con1_img1.png",
-        "https://wegame.gtimg.com/tgp_act/release/wegame/nrc20260618/images/part5_con2_img1.png"
-      ]
+        "https://wegame.gtimg.com/tgp_act/release/wegame/nrc20260618/images/part5_con2_img1.png",
+        "https://wegame.gtimg.com/tgp_act/release/wegame/nrc20260618/images/part1_reward_img2.png"
+      ],
+      "attempts": 0,
+      "evidence_hash": "8f90a3a97046dc61294725729e302923e73a19c9deda61b95f94d146739fe56a"
     },
     {
       "id": "source-f4925db3721b0cdd",
@@ -322,19 +434,31 @@
       ],
       "origin": "backlog",
       "pending_image_urls": [
+        "https://wegame.gtimg.com/tgp_act/release/wegame/lkwgsj20260409launch/images/part1/star/5.png",
+        "https://wegame.gtimg.com/tgp_act/release/wegame/lkwgsj20260409launch/images/part1/star/6.png",
+        "https://wegame.gtimg.com/tgp_act/release/wegame/lkwgsj20260409launch/images/page1_reward6.png",
+        "https://wegame.gtimg.com/tgp_act/release/wegame/lkwgsj20260409launch/images/page1_reward2.png",
+        "https://wegame.gtimg.com/tgp_act/release/wegame/lkwgsj20260409launch/images/page1_reward3.png",
+        "https://wegame.gtimg.com/tgp_act/release/wegame/lkwgsj20260409launch/images/page1_reward4.png",
+        "https://wegame.gtimg.com/tgp_act/release/wegame/lkwgsj20260409launch/images/page1_reward5.png",
+        "https://wegame.gtimg.com/tgp_act/release/wegame/lkwgsj20260409launch/images/page1_reward1.png",
+        "https://wegame.gtimg.com/tgp_act/release/wegame/lkwgsj20260409launch/images/page1_reward7.png",
+        "https://wegame.gtimg.com/tgp_act/release/wegame/lkwgsj20260409launch/images/page5_img1.png",
+        "https://wegame.gtimg.com/tgp_act/release/wegame/lkwgsj20260409launch/images/page5_img2.png",
+        "https://wegame.gtimg.com/tgp_act/release/wegame/lkwgsj20260409launch/images/page5_img3.png",
+        "https://wegame.gtimg.com/tgp_act/release/wegame/lkwgsj20260409launch/images/modal/online-bg.png"
+      ],
+      "processed_image_urls": [
         "https://wegame.gtimg.com/tgp_act/release/wegame/lkwgsj20260409launch/images/page5_img4.png",
         "https://wegame.gtimg.com/tgp_act/release/wegame/lkwgsj20260409launch/images/modal-webp/online-bg.webp",
-        "https://wegame.gtimg.com/tgp_act/release/wegame/lkwgsj20260409launch/images/modal/online-bg.png",
         "https://wegame.gtimg.com/tgp_act/release/wegame/lkwgsj20260409launch/images/page1_img1.png",
         "https://wegame.gtimg.com/tgp_act/release/wegame/lkwgsj20260409launch/images/part1/star/1.png",
         "https://wegame.gtimg.com/tgp_act/release/wegame/lkwgsj20260409launch/images/part1/star/2.png",
         "https://wegame.gtimg.com/tgp_act/release/wegame/lkwgsj20260409launch/images/part1/star/3.png",
-        "https://wegame.gtimg.com/tgp_act/release/wegame/lkwgsj20260409launch/images/part1/star/4.png",
-        "https://wegame.gtimg.com/tgp_act/release/wegame/lkwgsj20260409launch/images/part1/star/5.png",
-        "https://wegame.gtimg.com/tgp_act/release/wegame/lkwgsj20260409launch/images/part1/star/6.png",
-        "https://wegame.gtimg.com/tgp_act/release/wegame/lkwgsj20260409launch/images/page1_reward6.png",
-        "https://wegame.gtimg.com/tgp_act/release/wegame/lkwgsj20260409launch/images/page1_reward2.png"
-      ]
+        "https://wegame.gtimg.com/tgp_act/release/wegame/lkwgsj20260409launch/images/part1/star/4.png"
+      ],
+      "attempts": 0,
+      "evidence_hash": "3204d4f514005309b049399f82e7521f9352a21809607ae2976ff3682961a1e2"
     },
     {
       "id": "source-f8143bf134cc74bc",
@@ -348,15 +472,27 @@
       ],
       "origin": "seed",
       "pending_image_urls": [
-        "https://wiki.biligame.com/nrc/ImageObject",
+        "https://wiki.biligame.com/resources/assets/wiki.png",
+        "https://patchwiki.biligame.com/images/nrc/thumb/f/f7/tabzbmm9b4uyssbiatmfyx5nwmy66ka.png/800px-Activity_Outbreak_1900034_V1.png",
+        "https://patchwiki.biligame.com/images/nrc/thumb/f/f7/tabzbmm9b4uyssbiatmfyx5nwmy66ka.png/1200px-Activity_Outbreak_1900034_V1.png",
+        "https://patchwiki.biligame.com/images/nrc/thumb/f/f7/tabzbmm9b4uyssbiatmfyx5nwmy66ka.png/1600px-Activity_Outbreak_1900034_V1.png",
+        "https://patchwiki.biligame.com/images/nrc/thumb/f/fe/6515vv3kymwyb67h48qonnpp6sokkjt.png/800px-Activity_Starlight_1031_V1.png",
+        "https://patchwiki.biligame.com/images/nrc/thumb/f/fe/6515vv3kymwyb67h48qonnpp6sokkjt.png/1200px-Activity_Starlight_1031_V1.png",
+        "https://patchwiki.biligame.com/images/nrc/thumb/f/fe/6515vv3kymwyb67h48qonnpp6sokkjt.png/1600px-Activity_Starlight_1031_V1.png",
+        "https://patchwiki.biligame.com/images/nrc/thumb/8/83/5pgb7ze1ijipoe5mqmlwcmqgodvyxin.png/800px-PetPortrait_img_Win_LiangFengWan1_001_Res.png",
+        "https://patchwiki.biligame.com/images/nrc/8/83/5pgb7ze1ijipoe5mqmlwcmqgodvyxin.png",
+        "https://wiki.biligame.com/nrc/ImageObject"
+      ],
+      "attempts": 0,
+      "evidence_hash": "33ab05907f951ba212f18d482e0a873cb20899bce5a2c32665b1e758d0aaa4ff",
+      "processed_image_urls": [
         "https://patchwiki.biligame.com/images/nrc/4/46/b2bbimzl3m1qehtvsvtqn6euin2ny3u.png",
         "https://patchwiki.biligame.com/images/nrc/f/f0/e4nfud6df4ck6dr3ppt7e67yjk8t4se.png",
         "https://patchwiki.biligame.com/images/nrc/6/61/gii9b3c4xttr339mp5cakicf1dwoile.png",
         "https://patchwiki.biligame.com/images/nrc/9/96/3tw6nxfuj5nimwbj81a37h3lwbuzglw.png",
         "https://static.biligame.net/common/images/culture-logo.png",
         "https://static.biligame.net/common/images/record-logo.png",
-        "https://patchwiki.biligame.com/images/nrc/6/68/oitygxndm17xufinmtw0yknt4mry5j4.png?version=252cd363dd7e2aefa8c4ebdee73f5518",
-        "https://wiki.biligame.com/resources/assets/wiki.png"
+        "https://patchwiki.biligame.com/images/nrc/6/68/oitygxndm17xufinmtw0yknt4mry5j4.png?version=252cd363dd7e2aefa8c4ebdee73f5518"
       ]
     },
     {
@@ -369,14 +505,6 @@
       ],
       "origin": "seed",
       "pending_image_urls": [
-        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300703_958219.png",
-        "https://sylyfile.3dmgame.com/upload/game/20260608/e3cd3204ee0865e7f5a94ac6003c506a.png",
-        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260609/1780996893_516578.png",
-        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300960_223772.png",
-        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300985_158690.png",
-        "https://yx.3dmgame.com/uploads/images/thumbsmall/20240529/1716973458_939258.png",
-        "https://yx.3dmgame.com/uploads/images/thumbsmall/20240529/1716973545_572746.png",
-        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787301286_698785.jpg",
         "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787301342_141361.png",
         "https://my.3dmgame.com/newuser/images/appdown.png",
         "https://olimg.3dmgame.com/uploads/images/thumbnews/2026/1013/1791861029327.webp",
@@ -387,7 +515,27 @@
         "https://yx.3dmgame.com/uploads/images/thumbsmall/20220216/1644995802_841872.gif",
         "https://sylyfile.3dmgame.com/upload/game/20260428/656fc37e35fe2714e2c2d20587e6708e.png",
         "https://yx.3dmgame.com/uploads/images/thumbsmall/20260429/1777452636_579807.png",
-        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300662_248760.png"
+        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300662_248760.png",
+        "https://www.3dmgame.com/newpage/images/language-arrow-down.png",
+        "https://www.3dmgame.com/newpage/images/language-arrow-up.png",
+        "https://www.3dmgame.com/newpage/img/sao.png",
+        "https://olimg.3dmgame.com/uploads/images/raiders/20261013/1791860995_701445.webp",
+        "https://imgs.3dmgame.com/configs/d02f47921ef0457789a9ce7c31a5980d11758785265025.png?x-oss-process=image/interlace,1/format,webp",
+        "https://img.3dmgame.com/uploads/images/thumbnews/20260720/1784518943_551412.jpg",
+        "https://ol.3dmgame.com/page/images/3dmapp.png",
+        "https://olimg.3dmgame.com/uploads/images/thumbnews/20260623/1782209080_385349.png"
+      ],
+      "attempts": 0,
+      "evidence_hash": "0d8e67633a074cb44b8ff3fea055aa92b79a5545eb2a330e110fd5db7106f066",
+      "processed_image_urls": [
+        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300703_958219.png",
+        "https://sylyfile.3dmgame.com/upload/game/20260608/e3cd3204ee0865e7f5a94ac6003c506a.png",
+        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260609/1780996893_516578.png",
+        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300960_223772.png",
+        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300985_158690.png",
+        "https://yx.3dmgame.com/uploads/images/thumbsmall/20240529/1716973458_939258.png",
+        "https://yx.3dmgame.com/uploads/images/thumbsmall/20240529/1716973545_572746.png",
+        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787301286_698785.jpg"
       ]
     },
     {
@@ -400,14 +548,6 @@
       ],
       "origin": "expansion",
       "pending_image_urls": [
-        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300703_958219.png",
-        "https://sylyfile.3dmgame.com/upload/game/20260608/e3cd3204ee0865e7f5a94ac6003c506a.png",
-        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260609/1780996893_516578.png",
-        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300960_223772.png",
-        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300985_158690.png",
-        "https://yx.3dmgame.com/uploads/images/thumbsmall/20240529/1716973458_939258.png",
-        "https://yx.3dmgame.com/uploads/images/thumbsmall/20240529/1716973545_572746.png",
-        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787301286_698785.jpg",
         "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787301342_141361.png",
         "https://my.3dmgame.com/newuser/images/appdown.png",
         "https://olimg.3dmgame.com/uploads/images/thumbnews/2026/0730/1785374386757.jpg",
@@ -418,7 +558,27 @@
         "https://yx.3dmgame.com/uploads/images/thumbsmall/20220216/1644995802_841872.gif",
         "https://sylyfile.3dmgame.com/upload/game/20260428/656fc37e35fe2714e2c2d20587e6708e.png",
         "https://yx.3dmgame.com/uploads/images/thumbsmall/20260429/1777452636_579807.png",
-        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300662_248760.png"
+        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300662_248760.png",
+        "https://www.3dmgame.com/newpage/images/language-arrow-down.png",
+        "https://www.3dmgame.com/newpage/images/language-arrow-up.png",
+        "https://www.3dmgame.com/newpage/img/sao.png",
+        "https://olimg.3dmgame.com/uploads/images/raiders/20260730/1785374374_114403_jpg_r.jpg",
+        "https://imgs.3dmgame.com/configs/d02f47921ef0457789a9ce7c31a5980d11758785265025.png?x-oss-process=image/interlace,1/format,webp",
+        "https://img.3dmgame.com/uploads/images/thumbnews/20260720/1784518943_551412.jpg",
+        "https://ol.3dmgame.com/page/images/3dmapp.png",
+        "https://olimg.3dmgame.com/uploads/images/thumbnews/20260623/1782209080_385349.png"
+      ],
+      "attempts": 0,
+      "evidence_hash": "2f06f37c245de9f420b8016a7f6a2821432a76e9324896043aa832e0883ba552",
+      "processed_image_urls": [
+        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300703_958219.png",
+        "https://sylyfile.3dmgame.com/upload/game/20260608/e3cd3204ee0865e7f5a94ac6003c506a.png",
+        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260609/1780996893_516578.png",
+        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300960_223772.png",
+        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300985_158690.png",
+        "https://yx.3dmgame.com/uploads/images/thumbsmall/20240529/1716973458_939258.png",
+        "https://yx.3dmgame.com/uploads/images/thumbsmall/20240529/1716973545_572746.png",
+        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787301286_698785.jpg"
       ]
     },
     {
@@ -431,14 +591,6 @@
       ],
       "origin": "expansion",
       "pending_image_urls": [
-        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300703_958219.png",
-        "https://sylyfile.3dmgame.com/upload/game/20260608/e3cd3204ee0865e7f5a94ac6003c506a.png",
-        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260609/1780996893_516578.png",
-        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300960_223772.png",
-        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300985_158690.png",
-        "https://yx.3dmgame.com/uploads/images/thumbsmall/20240529/1716973458_939258.png",
-        "https://yx.3dmgame.com/uploads/images/thumbsmall/20240529/1716973545_572746.png",
-        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787301286_698785.jpg",
         "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787301342_141361.png",
         "https://my.3dmgame.com/newuser/images/appdown.png",
         "https://olimg.3dmgame.com/uploads/images/thumbnews/2026/0604/1780553205348.webp",
@@ -449,7 +601,62 @@
         "https://yx.3dmgame.com/uploads/images/thumbsmall/20220216/1644995802_841872.gif",
         "https://sylyfile.3dmgame.com/upload/game/20260428/656fc37e35fe2714e2c2d20587e6708e.png",
         "https://yx.3dmgame.com/uploads/images/thumbsmall/20260429/1777452636_579807.png",
-        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300662_248760.png"
+        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300662_248760.png",
+        "https://www.3dmgame.com/newpage/images/language-arrow-down.png",
+        "https://www.3dmgame.com/newpage/images/language-arrow-up.png",
+        "https://www.3dmgame.com/newpage/img/sao.png",
+        "https://olimg.3dmgame.com/uploads/images/raiders/20260604/1780553203_393658.webp",
+        "https://imgs.3dmgame.com/configs/d02f47921ef0457789a9ce7c31a5980d11758785265025.png?x-oss-process=image/interlace,1/format,webp",
+        "https://img.3dmgame.com/uploads/images/thumbnews/20260720/1784518943_551412.jpg",
+        "https://ol.3dmgame.com/page/images/3dmapp.png",
+        "https://olimg.3dmgame.com/uploads/images/thumbnews/20260623/1782209080_385349.png"
+      ],
+      "attempts": 0,
+      "evidence_hash": "45911b76a1b726bf608bba725921a02af1df1a161e2854245efc9c90a0c24283",
+      "processed_image_urls": [
+        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300703_958219.png",
+        "https://sylyfile.3dmgame.com/upload/game/20260608/e3cd3204ee0865e7f5a94ac6003c506a.png",
+        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260609/1780996893_516578.png",
+        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300960_223772.png",
+        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300985_158690.png",
+        "https://yx.3dmgame.com/uploads/images/thumbsmall/20240529/1716973458_939258.png",
+        "https://yx.3dmgame.com/uploads/images/thumbsmall/20240529/1716973545_572746.png",
+        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787301286_698785.jpg"
+      ]
+    },
+    {
+      "id": "source-2d1aea25f784485c",
+      "url": "https://www.sina.cn/news/detail/5349178104611569.html",
+      "platform": "sina",
+      "enabled": true,
+      "seasons": [
+        "S4",
+        "S3",
+        "S2"
+      ],
+      "origin": "expansion",
+      "evidence_hash": "60da18cb2c89e9cae066efec5cd92fea70d68acfef3bf16d871797ba0f10139e",
+      "processed_image_urls": [
+        "https://tvax3.sinaimg.cn/crop.0.0.600.600.50/006CDV5Ply8hrgp3aypthj30go0go773.jpg?KID=imgbed,tva&Expires=1792755773&ssig=KW4jlA9ghk",
+        "https://tvax4.sinaimg.cn/crop.0.0.480.480.50/006mDlFIly8hd1j34x99mj30dc0dcglm.jpg?KID=imgbed,tva&Expires=1792755139&ssig=1Ef5ZtLLbk",
+        "https://tvax3.sinaimg.cn/crop.0.0.600.600.50/006CDV5Ply8hrgp3aypthj30go0go773.jpg?KID=imgbed,tva&Expires=1792755139&ssig=dlo3YU8Ix%2F",
+        "https://tvax4.sinaimg.cn/crop.0.0.261.261.50/006jjd3wly8hww8x26ccrj3079079t8t.jpg?KID=imgbed,tva&Expires=1792755139&ssig=1Q0s2KGkEy",
+        "https://tvax1.sinaimg.cn/crop.0.0.1080.1080.50/008fzZCQly8hh6rvsy93aj30u00u0n10.jpg?KID=imgbed,tva&Expires=1792755139&ssig=rifajsRbpU",
+        "https://tvax1.sinaimg.cn/crop.0.0.1024.1024.50/0089XUdLly8h8ujaddwvcj30sg0sg767.jpg?KID=imgbed,tva&Expires=1792755139&ssig=zYp9A10002",
+        "https://tvax4.sinaimg.cn/crop.0.0.1080.1080.50/006U8s5bly8ie1kd8b0vhj30u00u0ju0.jpg?KID=imgbed,tva&Expires=1792755139&ssig=M8uuoNsdba",
+        "https://tvax3.sinaimg.cn/crop.0.0.640.640.50/006VTEaVly8fx8q2rncdzj30hs0hst8z.jpg?KID=imgbed,tva&Expires=1792755773&ssig=pevbw9Toeu"
+      ],
+      "attempts": 0,
+      "pending_image_urls": [
+        "https://tvax1.sinaimg.cn/crop.0.0.512.512.50/007YhdVHly8ha8038tr5sj30e80e8mxj.jpg?KID=imgbed,tva&Expires=1792755773&ssig=J%2FzGjH0JzI",
+        "https://tvax1.sinaimg.cn/crop.0.0.1080.1080.50/006rHPw0ly8ihkuhzj65nj30u00u0ae2.jpg?KID=imgbed,tva&Expires=1792755773&ssig=7WsmRioQBx",
+        "https://tvax3.sinaimg.cn/crop.0.0.1009.1009.50/538bc62dly8huv6yh7lzsj20s10s1tce.jpg?KID=imgbed,tva&Expires=1792755773&ssig=Yy09I6w4gb",
+        "https://tvax2.sinaimg.cn/crop.0.0.1080.1080.50/007RQS1Yly8ihw72eu4x4j30u00u0q4s.jpg?KID=imgbed,tva&Expires=1792755773&ssig=q2wQSrUYy6",
+        "https://tvax3.sinaimg.cn/crop.0.0.419.419.50/008u581Xly8iic8vqst65j30bn0bn3z5.jpg?KID=imgbed,tva&Expires=1792755773&ssig=e5LgNsze2b",
+        "https://tvax1.sinaimg.cn/crop.0.0.512.512.50/b56f48a7ly8hrn8t01jicj20e80e8dgm.jpg?KID=imgbed,tva&Expires=1792755773&ssig=G%2B8AjEaz%2Ff",
+        "https://tvax2.sinaimg.cn/crop.0.0.512.512.50/005JxvZaly8i1om5c12aaj30e80e83z5.jpg?KID=imgbed,tva&Expires=1792755773&ssig=upKaQDT4WD",
+        "https://tvax1.sinaimg.cn/crop.0.0.1057.1057.50/008I0PUZly8ift3lwkgt3j30td0tddgt.jpg?KID=imgbed,tva&Expires=1792755773&ssig=qFZq3d15od",
+        "https://n.sinaimg.cn/default/7bd4e141/20251230/sina.png"
       ]
     },
     {
@@ -464,14 +671,6 @@
       ],
       "origin": "backlog",
       "pending_image_urls": [
-        "https://img-tc.tapimg.com/market/images/78f8a7a03bd9f3c6edba6f2073ca38b3.jpg/_tap_banner.jpg",
-        "https://img-tc.tapimg.com/market/images/27330daef3a3696edddd4a5e858f3d26.png/_tap_sharing.jpg",
-        "https://img-tc.tapimg.com/market/images/27330daef3a3696edddd4a5e858f3d26.png",
-        "https://img-tc.tapimg.com/market/images/98d9b25e1fa206c407f8f7f3fcf93a8b.jpg",
-        "https://img-tc.tapimg.com/market/images/0364ba250c0fd268bd2d668264c52bc4.jpg",
-        "https://img-tc.tapimg.com/market/images/19d7321b2e406083a38dea9067057ee4.jpg",
-        "https://img-tc.tapimg.com/market/images/a5221f241c532382257aadacda26b634.jpg",
-        "https://img-tc.tapimg.com/market/images/71ec71df173480b837c518f74b759859.jpg",
         "https://tap-client-logs-bj.cn-beijing.dualstack.log.aliyuncs.com/logstores/web_apm/track_ua.gif?t_log_id=345e3495-b3ef-48fd-8f6c-ff153c15d009&APIVersion=0.6.0&XUA=V%3D1%26PN%3DWeb%26LANG%3Dzh_CN%26VN_CODE%3D100000000%26LOC%3DCN%26PLT%3DPC%26DS%3DAndroid%26UID%3D15c5ceed-8775-4826-a70f-204a04505034%26OS%3DLinux%26OSV%3Dx86_64%26DT%3DPC&UID=15c5ceed-8775-4826-a70f-204a04505034&browser_name=HeadlessChrome&action=startup&ts=1792672833545&request_path=%2Fapp%2F188212",
         "https://assets.tapimg.com/apps/web-app-next/_nuxt/login-button-art.CyO-kNSq.png",
         "https://img.tapimg.com/market/images/d20ff71e1f1e1961755e6e4ffc6e2c3f.png",
@@ -479,8 +678,31 @@
         "https://img-tc.tapimg.com/market/images/ba24dee85b38c7364ac8279b3fe4a2c6.png/_tap_appicon.jpg",
         "https://img-tc.tapimg.com/market/images/e9a61869998a8d5b95b0668d65c28d6d.png/_tap_appicon.jpg",
         "https://img-tc.tapimg.com/market/images/a395edeea4e8c60315097a7472c7393c.jpg/_tap_appicon.jpg",
-        "https://img-tc.tapimg.com/market/images/2a57f2fffe7795ef40c3670fed1e7b04.png/_tap_appicon.jpg"
-      ]
+        "https://img-tc.tapimg.com/market/images/2a57f2fffe7795ef40c3670fed1e7b04.png/_tap_appicon.jpg",
+        "https://tap-client-logs-bj.cn-beijing.dualstack.log.aliyuncs.com/logstores/web_apm/track_ua.gif?t_log_id=5219ac17-828e-4563-a33f-553b4e661b30&APIVersion=0.6.0&XUA=V%3D1%26PN%3DWeb%26LANG%3Dzh_CN%26VN_CODE%3D100000000%26LOC%3DCN%26PLT%3DPC%26DS%3DAndroid%26UID%3D15c5ceed-8775-4826-a70f-204a04505034%26OS%3DLinux%26OSV%3Dx86_64%26DT%3DPC&UID=15c5ceed-8775-4826-a70f-204a04505034&browser_name=HeadlessChrome&action=startup&ts=1792744978704&request_path=%2Fapp%2F188212",
+        "https://img-tc.tapimg.com/market/images/6c103cab9c45d204216ffbffc4de333a.jpg/_tap_banner.jpg",
+        "https://img-tc.tapimg.com/market/images/98d9b25e1fa206c407f8f7f3fcf93a8b.jpg/_tap_screenshot.jpg",
+        "https://img-tc.tapimg.com/market/images/0364ba250c0fd268bd2d668264c52bc4.jpg/_tap_screenshot.jpg",
+        "https://img-tc.tapimg.com/market/images/19d7321b2e406083a38dea9067057ee4.jpg/_tap_screenshot.jpg",
+        "https://img-tc.tapimg.com/market/images/a5221f241c532382257aadacda26b634.jpg/_tap_screenshot.jpg",
+        "https://img-tc.tapimg.com/market/images/71ec71df173480b837c518f74b759859.jpg/_tap_screenshot.jpg",
+        "https://img-tc.tapimg.com/market/images/27330daef3a3696edddd4a5e858f3d26.png/_tap_appicon_m.jpg",
+        "https://img-tc.tapimg.com/market/images/e0966643a93ff028a034fd63ac664e79.png/_tap_banner.jpg",
+        "https://img-tc.tapimg.com/market/images/16e9d5532f31d760b8c25f384013be54.jpg/_tap_banner.jpg",
+        "https://img-tc.tapimg.com/market/images/27330daef3a3696edddd4a5e858f3d26.png/_tap_appicon.jpg"
+      ],
+      "processed_image_urls": [
+        "https://img-tc.tapimg.com/market/images/78f8a7a03bd9f3c6edba6f2073ca38b3.jpg/_tap_banner.jpg",
+        "https://img-tc.tapimg.com/market/images/27330daef3a3696edddd4a5e858f3d26.png/_tap_sharing.jpg",
+        "https://img-tc.tapimg.com/market/images/27330daef3a3696edddd4a5e858f3d26.png",
+        "https://img-tc.tapimg.com/market/images/98d9b25e1fa206c407f8f7f3fcf93a8b.jpg",
+        "https://img-tc.tapimg.com/market/images/0364ba250c0fd268bd2d668264c52bc4.jpg",
+        "https://img-tc.tapimg.com/market/images/19d7321b2e406083a38dea9067057ee4.jpg",
+        "https://img-tc.tapimg.com/market/images/a5221f241c532382257aadacda26b634.jpg",
+        "https://img-tc.tapimg.com/market/images/71ec71df173480b837c518f74b759859.jpg"
+      ],
+      "attempts": 0,
+      "evidence_hash": "cc8e580d3d3ae5e518a361ea88ac7f8272626fe477dc957a7cd128a64aa45e51"
     },
     {
       "id": "source-62126a81fa8db00a",
@@ -494,14 +716,6 @@
       ],
       "origin": "backlog",
       "pending_image_urls": [
-        "https://img.tapimg.com/market/images/945b09ff7a33dc3966007a3e87896ebf.png",
-        "https://img.tapimg.com/market/images/83aae3b303b53f2e05194d4ffd873132.png",
-        "https://img.tapimg.com/market/images/926e61cb56225243b1486de286dec918.png",
-        "https://img.tapimg.com/market/images/ec76b6afa6044c52412cb02b77ec74e0.png",
-        "https://img2-tc.tapimg.com/review/etag/FusyOmn03xb1t959ktML-iHzwLq2_20261016124329.jpg/_tap_ugc_m.jpg",
-        "https://img2-tc.tapimg.com/review/etag/FuxSDzpbl9gny12nQiS5RzdNEmlJ_20261016124330.jpg/_tap_ugc.jpg",
-        "https://img2-tc.tapimg.com/review/etag/FvojqflxuPFWeHeAYorLZ5rUMSVv_20261016124330.jpg/_tap_ugc.jpg",
-        "https://img-tc.tapimg.com/market/images/27330daef3a3696edddd4a5e858f3d26.png/_tap_appicon_m.jpg",
         "https://img-tc.tapimg.com/market/images/9c744161554f1c6c60695789cf788ecd.jpg/_tap_appicon.jpg",
         "https://img-tc.tapimg.com/market/images/4c04d8dabd10d4d185fcb936a387e290.png",
         "https://img-tc.tapimg.com/market/images/27330daef3a3696edddd4a5e858f3d26.png/_tap_appicon.jpg",
@@ -513,8 +727,29 @@
         "https://img-tc.tapimg.com/market/images/27330daef3a3696edddd4a5e858f3d26.png/_tap_ugc.jpg",
         "https://tap-client-logs-bj.cn-beijing.dualstack.log.aliyuncs.com/logstores/web_apm/track_ua.gif?t_log_id=bca262b3-f33a-43ae-bf01-74fa67da2e5d&APIVersion=0.6.0&XUA=V%3D1%26PN%3DWeb%26LANG%3Dzh_CN%26VN_CODE%3D100000000%26LOC%3DCN%26PLT%3DPC%26DS%3DAndroid%26UID%3D15c5ceed-8775-4826-a70f-204a04505034%26OS%3DLinux%26OSV%3Dx86_64%26DT%3DPC&UID=15c5ceed-8775-4826-a70f-204a04505034&browser_name=HeadlessChrome&action=startup&ts=1792672841314&request_path=%2Freview%2F50751838",
         "https://assets.tapimg.com/apps/web-app-next/_nuxt/login-button-art.CyO-kNSq.png",
-        "https://img.tapimg.com/market/images/d20ff71e1f1e1961755e6e4ffc6e2c3f.png"
-      ]
+        "https://img.tapimg.com/market/images/d20ff71e1f1e1961755e6e4ffc6e2c3f.png",
+        "https://tap-client-logs-bj.cn-beijing.dualstack.log.aliyuncs.com/logstores/web_apm/track_ua.gif?t_log_id=fb8da335-427f-4377-8096-d6855cb50316&APIVersion=0.6.0&XUA=V%3D1%26PN%3DWeb%26LANG%3Dzh_CN%26VN_CODE%3D100000000%26LOC%3DCN%26PLT%3DPC%26DS%3DAndroid%26UID%3D15c5ceed-8775-4826-a70f-204a04505034%26OS%3DLinux%26OSV%3Dx86_64%26DT%3DPC&UID=15c5ceed-8775-4826-a70f-204a04505034&browser_name=HeadlessChrome&action=startup&ts=1792744986678&request_path=%2Freview%2F50751838",
+        "https://img.tapimg.com/market/images/48b4972c071bcb2f7aa4090588ef01a8.png",
+        "https://img.tapimg.com/market/images/24f2b24c5043d63f5f2db8bd62b8e3de.png",
+        "https://img.tapimg.com/market/images/48516f625646b5ea2c66f0cab3c9c52a.png",
+        "https://img.tapimg.com/market/images/17a929b2fb36da6ca1d925a7d08acef9.png",
+        "https://img.tapimg.com/market/images/d26b9c5d2d83fec7f865b827ab8bf3ac.png",
+        "https://img.tapimg.com/market/images/68b3dc8473df915ad2b85da5efef4f56.png",
+        "https://img.tapimg.com/market/images/83aa452eea88b5c64df710bca367b7e9.png",
+        "https://img.tapimg.com/market/images/a5aee440f53d1d44bf40658f0983769e.png"
+      ],
+      "processed_image_urls": [
+        "https://img.tapimg.com/market/images/945b09ff7a33dc3966007a3e87896ebf.png",
+        "https://img.tapimg.com/market/images/83aae3b303b53f2e05194d4ffd873132.png",
+        "https://img.tapimg.com/market/images/926e61cb56225243b1486de286dec918.png",
+        "https://img.tapimg.com/market/images/ec76b6afa6044c52412cb02b77ec74e0.png",
+        "https://img2-tc.tapimg.com/review/etag/FusyOmn03xb1t959ktML-iHzwLq2_20261016124329.jpg/_tap_ugc_m.jpg",
+        "https://img2-tc.tapimg.com/review/etag/FuxSDzpbl9gny12nQiS5RzdNEmlJ_20261016124330.jpg/_tap_ugc.jpg",
+        "https://img2-tc.tapimg.com/review/etag/FvojqflxuPFWeHeAYorLZ5rUMSVv_20261016124330.jpg/_tap_ugc.jpg",
+        "https://img-tc.tapimg.com/market/images/27330daef3a3696edddd4a5e858f3d26.png/_tap_appicon_m.jpg"
+      ],
+      "attempts": 0,
+      "evidence_hash": "5d31e3dd206012efd73a30cd3e5288426ec19111076db271eaa4762100105535"
     },
     {
       "id": "source-3240cd0f4535084a",
@@ -528,14 +763,6 @@
       ],
       "origin": "backlog",
       "pending_image_urls": [
-        "https://img-tc.tapimg.com/market/images/27330daef3a3696edddd4a5e858f3d26.png/_tap_appicon.jpg",
-        "https://img-tc.tapimg.com/market/images/fb9657f06433a758d682d130413bca9f.png",
-        "https://img-tc.tapimg.com/market/images/bcec76f0e878361961d21993a82c4467.png/_tap_appicon.jpg",
-        "https://img-tc.tapimg.com/market/images/915b677136fdd47fc9b42e25387fbe93.png/_tap_appicon.jpg",
-        "https://img-tc.tapimg.com/market/images/a04f94ce34955e4ffbfbb3d59b62e18d.png",
-        "https://img-tc.tapimg.com/market/images/e68a5245d71643fe4b6590f9931d02ee.png/_tap_appicon.jpg",
-        "https://img-tc.tapimg.com/market/images/20ae47c28e6e507a02b63f755231ab8f.png/_tap_appicon.jpg",
-        "https://img-tc.tapimg.com/market/images/27330daef3a3696edddd4a5e858f3d26.png/_tap_ugc.jpg",
         "https://tap-client-logs-bj.cn-beijing.dualstack.log.aliyuncs.com/logstores/web_apm/track_ua.gif?t_log_id=d2358d8c-1f05-4100-8360-5b9f735ac3bf&APIVersion=0.6.0&XUA=V%3D1%26PN%3DWeb%26LANG%3Dzh_CN%26VN_CODE%3D100000000%26LOC%3DCN%26PLT%3DPC%26DS%3DAndroid%26UID%3D15c5ceed-8775-4826-a70f-204a04505034%26OS%3DLinux%26OSV%3Dx86_64%26DT%3DPC&UID=15c5ceed-8775-4826-a70f-204a04505034&browser_name=HeadlessChrome&action=startup&ts=1792672846343&request_path=%2Freview%2F50780923",
         "https://assets.tapimg.com/apps/web-app-next/_nuxt/login-button-art.CyO-kNSq.png",
         "https://img.tapimg.com/market/images/d20ff71e1f1e1961755e6e4ffc6e2c3f.png",
@@ -543,8 +770,31 @@
         "https://img-tc.tapimg.com/market/images/ba24dee85b38c7364ac8279b3fe4a2c6.png/_tap_appicon.jpg",
         "https://img-tc.tapimg.com/market/images/e9a61869998a8d5b95b0668d65c28d6d.png/_tap_appicon.jpg",
         "https://img-tc.tapimg.com/market/images/a395edeea4e8c60315097a7472c7393c.jpg/_tap_appicon.jpg",
-        "https://img-tc.tapimg.com/market/images/2a57f2fffe7795ef40c3670fed1e7b04.png/_tap_appicon.jpg"
-      ]
+        "https://img-tc.tapimg.com/market/images/2a57f2fffe7795ef40c3670fed1e7b04.png/_tap_appicon.jpg",
+        "https://tap-client-logs-bj.cn-beijing.dualstack.log.aliyuncs.com/logstores/web_apm/track_ua.gif?t_log_id=8adf2bbe-8436-4129-8e19-66b47cc513e7&APIVersion=0.6.0&XUA=V%3D1%26PN%3DWeb%26LANG%3Dzh_CN%26VN_CODE%3D100000000%26LOC%3DCN%26PLT%3DPC%26DS%3DAndroid%26UID%3D15c5ceed-8775-4826-a70f-204a04505034%26OS%3DLinux%26OSV%3Dx86_64%26DT%3DPC&UID=15c5ceed-8775-4826-a70f-204a04505034&browser_name=HeadlessChrome&action=startup&ts=1792744993905&request_path=%2Freview%2F50780923",
+        "https://img-tc.tapimg.com/market/images/3437da7ae9c7e1fa13625964cea6c4cb.png/_tap_appicon.jpg",
+        "https://assets.tapimg.com/protocol/%E6%98%93%E7%8E%A9%E5%B9%BF%E7%94%B5%E8%AF%81.jpg",
+        "https://img-tc.tapimg.com/market/images/51b8208566d2b2d22c64f109172f552a.png",
+        "https://img.tapimg.com/market/images/48516f625646b5ea2c66f0cab3c9c52a.png",
+        "https://img2-tc.tapimg.com/review/etag/FrEbev-XdyrpnRfHa0WfGYZmHY6D_20261018085612.png/_tap_ugc_m.jpg",
+        "https://img2-tc.tapimg.com/review/etag/FnztkdzNXWTRDXX-4c78XCdydlRl_20261018085616.png/_tap_ugc.jpg",
+        "https://img2-tc.tapimg.com/review/etag/FkFFyVAZHqSbzhDUCzk4pJF_W4BL_20261018085620.png/_tap_ugc.jpg",
+        "https://img-tc.tapimg.com/market/images/27330daef3a3696edddd4a5e858f3d26.png/_tap_appicon_m.jpg",
+        "https://assets.tapimg.com/apps/web-app-next/_nuxt/moment_empty.Blrhi_GK.png",
+        "https://img-tc.tapimg.com/market/images/bb41908f3c65c86fe65c2a500b5e006b.png"
+      ],
+      "processed_image_urls": [
+        "https://img-tc.tapimg.com/market/images/27330daef3a3696edddd4a5e858f3d26.png/_tap_appicon.jpg",
+        "https://img-tc.tapimg.com/market/images/fb9657f06433a758d682d130413bca9f.png",
+        "https://img-tc.tapimg.com/market/images/bcec76f0e878361961d21993a82c4467.png/_tap_appicon.jpg",
+        "https://img-tc.tapimg.com/market/images/915b677136fdd47fc9b42e25387fbe93.png/_tap_appicon.jpg",
+        "https://img-tc.tapimg.com/market/images/a04f94ce34955e4ffbfbb3d59b62e18d.png",
+        "https://img-tc.tapimg.com/market/images/e68a5245d71643fe4b6590f9931d02ee.png/_tap_appicon.jpg",
+        "https://img-tc.tapimg.com/market/images/20ae47c28e6e507a02b63f755231ab8f.png/_tap_appicon.jpg",
+        "https://img-tc.tapimg.com/market/images/27330daef3a3696edddd4a5e858f3d26.png/_tap_ugc.jpg"
+      ],
+      "attempts": 0,
+      "evidence_hash": "8851837cdb9d4406187f7c8099b47e6b2e64a2cb625a57b51d8f04e03093d076"
     },
     {
       "id": "source-08e0a7f61192db02",
@@ -556,14 +806,6 @@
       ],
       "origin": "seed",
       "pending_image_urls": [
-        "https://post.qiandaocdn.com/post/images/fdtKMeE0AgI_resize.webp!lfit_w240",
-        "https://post.qiandaocdn.com/post/images/fdtKMeE0AgI_resize.webp!lfit_w540_h540",
-        "https://assets.qiandaocdn.com/admin-upload/a0dfa3dfd3149bbeedf0df089be0280a.png",
-        "https://public.qiandaocdn.com/interior/images/fyywH3lPuzG.png!lfit_w240",
-        "https://cdn.qiandaoapp.com/admins/5eb9abc3708e65794e393d9a1da821f4.png",
-        "https://cdn.qiandaoapp.com/interior/images/d2a671a0b95be92f6d35ffd0aea49537.png",
-        "https://post.qiandaocdn.com/post/images/fdUoSDhogBu_resize.webp?imginfo=w1625,h747",
-        "https://post.qiandaocdn.com/post/images/fdf4PG34C63_resize.webp?imginfo=w1625,h747",
         "https://post.qiandaocdn.com/post/images/fdUoSIw2SaH_resize.webp?imginfo=w1625,h747",
         "https://post.qiandaocdn.com/post/images/fdUoSgsZ4p7_resize.webp?imginfo=w1625,h747",
         "https://post.qiandaocdn.com/post/images/fdUoSqx23q3_resize.webp?imginfo=w1625,h747",
@@ -582,7 +824,27 @@
         "https://post.qiandaocdn.com/post/images/fdUoSRboE2F_resize.webp!lfit_w240",
         "https://post.qiandaocdn.com/post/images/fdUoSRboE2F_resize.webp!lfit_w540_h540",
         "https://post.qiandaocdn.com/post/images/fdtKMpAtz3P_resize.webp!lfit_w240",
-        "https://post.qiandaocdn.com/post/images/fdtKMpAtz3P_resize.webp!lfit_w540_h540"
+        "https://post.qiandaocdn.com/post/images/fdtKMpAtz3P_resize.webp!lfit_w540_h540",
+        "https://post.qiandaocdn.com/post/images/fdUoSDhogBu_resize.webp!lfit_w240",
+        "https://post.qiandaocdn.com/post/images/fdUoSDhogBu_resize.webp!lfit_w540_h540",
+        "https://post.qiandaocdn.com/post/images/fdf4PG34C63_resize.webp!lfit_w240",
+        "https://post.qiandaocdn.com/post/images/fdf4PG34C63_resize.webp!lfit_w540_h540",
+        "https://post.qiandaocdn.com/post/images/fdUoSIw2SaH_resize.webp!lfit_w240",
+        "https://post.qiandaocdn.com/post/images/fdUoSIw2SaH_resize.webp!lfit_w540_h540",
+        "https://post.qiandaocdn.com/post/images/fdUoSgsZ4p7_resize.webp!lfit_w240",
+        "https://post.qiandaocdn.com/post/images/fdUoSgsZ4p7_resize.webp!lfit_w540_h540"
+      ],
+      "attempts": 0,
+      "evidence_hash": "7ef2b984d75a3d6fa3145b5091bf486e95672e3e16060616e83ed8df0cc4524d",
+      "processed_image_urls": [
+        "https://post.qiandaocdn.com/post/images/fdtKMeE0AgI_resize.webp!lfit_w240",
+        "https://post.qiandaocdn.com/post/images/fdtKMeE0AgI_resize.webp!lfit_w540_h540",
+        "https://assets.qiandaocdn.com/admin-upload/a0dfa3dfd3149bbeedf0df089be0280a.png",
+        "https://public.qiandaocdn.com/interior/images/fyywH3lPuzG.png!lfit_w240",
+        "https://cdn.qiandaoapp.com/admins/5eb9abc3708e65794e393d9a1da821f4.png",
+        "https://cdn.qiandaoapp.com/interior/images/d2a671a0b95be92f6d35ffd0aea49537.png",
+        "https://post.qiandaocdn.com/post/images/fdUoSDhogBu_resize.webp?imginfo=w1625,h747",
+        "https://post.qiandaocdn.com/post/images/fdf4PG34C63_resize.webp?imginfo=w1625,h747"
       ]
     },
     {
@@ -595,14 +857,6 @@
       ],
       "origin": "seed",
       "pending_image_urls": [
-        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300703_958219.png",
-        "https://sylyfile.3dmgame.com/upload/game/20260608/e3cd3204ee0865e7f5a94ac6003c506a.png",
-        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260609/1780996893_516578.png",
-        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300960_223772.png",
-        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300985_158690.png",
-        "https://yx.3dmgame.com/uploads/images/thumbsmall/20240529/1716973458_939258.png",
-        "https://yx.3dmgame.com/uploads/images/thumbsmall/20240529/1716973545_572746.png",
-        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787301286_698785.jpg",
         "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787301342_141361.png",
         "https://my.3dmgame.com/newuser/images/appdown.png",
         "https://olimg.3dmgame.com/uploads/images/thumbnews/2026/1013/1791860954375.webp",
@@ -613,7 +867,27 @@
         "https://yx.3dmgame.com/uploads/images/thumbsmall/20220216/1644995802_841872.gif",
         "https://sylyfile.3dmgame.com/upload/game/20260428/656fc37e35fe2714e2c2d20587e6708e.png",
         "https://yx.3dmgame.com/uploads/images/thumbsmall/20260429/1777452636_579807.png",
-        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300662_248760.png"
+        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300662_248760.png",
+        "https://www.3dmgame.com/newpage/images/language-arrow-down.png",
+        "https://www.3dmgame.com/newpage/images/language-arrow-up.png",
+        "https://www.3dmgame.com/newpage/img/sao.png",
+        "https://olimg.3dmgame.com/uploads/images/raiders/20261013/1791860938_630571.webp",
+        "https://imgs.3dmgame.com/configs/d02f47921ef0457789a9ce7c31a5980d11758785265025.png?x-oss-process=image/interlace,1/format,webp",
+        "https://img.3dmgame.com/uploads/images/thumbnews/20260720/1784518943_551412.jpg",
+        "https://ol.3dmgame.com/page/images/3dmapp.png",
+        "https://olimg.3dmgame.com/uploads/images/thumbnews/20260623/1782209080_385349.png"
+      ],
+      "attempts": 0,
+      "evidence_hash": "4f3e08bd5c6934a63c028412e69d7674848f982d03b054e75309af4f4d951570",
+      "processed_image_urls": [
+        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300703_958219.png",
+        "https://sylyfile.3dmgame.com/upload/game/20260608/e3cd3204ee0865e7f5a94ac6003c506a.png",
+        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260609/1780996893_516578.png",
+        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300960_223772.png",
+        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300985_158690.png",
+        "https://yx.3dmgame.com/uploads/images/thumbsmall/20240529/1716973458_939258.png",
+        "https://yx.3dmgame.com/uploads/images/thumbsmall/20240529/1716973545_572746.png",
+        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787301286_698785.jpg"
       ]
     },
     {
@@ -626,14 +900,6 @@
       ],
       "origin": "expansion",
       "pending_image_urls": [
-        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300703_958219.png",
-        "https://sylyfile.3dmgame.com/upload/game/20260608/e3cd3204ee0865e7f5a94ac6003c506a.png",
-        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260609/1780996893_516578.png",
-        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300960_223772.png",
-        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300985_158690.png",
-        "https://yx.3dmgame.com/uploads/images/thumbsmall/20240529/1716973458_939258.png",
-        "https://yx.3dmgame.com/uploads/images/thumbsmall/20240529/1716973545_572746.png",
-        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787301286_698785.jpg",
         "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787301342_141361.png",
         "https://my.3dmgame.com/newuser/images/appdown.png",
         "https://olimg.3dmgame.com/uploads/images/thumbnews/2026/0814/1786674498979.webp",
@@ -644,7 +910,27 @@
         "https://yx.3dmgame.com/uploads/images/thumbsmall/20220216/1644995802_841872.gif",
         "https://sylyfile.3dmgame.com/upload/game/20260428/656fc37e35fe2714e2c2d20587e6708e.png",
         "https://yx.3dmgame.com/uploads/images/thumbsmall/20260429/1777452636_579807.png",
-        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300662_248760.png"
+        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300662_248760.png",
+        "https://www.3dmgame.com/newpage/images/language-arrow-down.png",
+        "https://www.3dmgame.com/newpage/images/language-arrow-up.png",
+        "https://www.3dmgame.com/newpage/img/sao.png",
+        "https://olimg.3dmgame.com/uploads/images/raiders/20260814/1786674464_231825.webp",
+        "https://imgs.3dmgame.com/configs/d02f47921ef0457789a9ce7c31a5980d11758785265025.png?x-oss-process=image/interlace,1/format,webp",
+        "https://img.3dmgame.com/uploads/images/thumbnews/20260720/1784518943_551412.jpg",
+        "https://ol.3dmgame.com/page/images/3dmapp.png",
+        "https://olimg.3dmgame.com/uploads/images/thumbnews/20260623/1782209080_385349.png"
+      ],
+      "attempts": 0,
+      "evidence_hash": "423999c93195361a3f73facfc34d7214aee678b4b87da4a32c7594b5814d31c9",
+      "processed_image_urls": [
+        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300703_958219.png",
+        "https://sylyfile.3dmgame.com/upload/game/20260608/e3cd3204ee0865e7f5a94ac6003c506a.png",
+        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260609/1780996893_516578.png",
+        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300960_223772.png",
+        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300985_158690.png",
+        "https://yx.3dmgame.com/uploads/images/thumbsmall/20240529/1716973458_939258.png",
+        "https://yx.3dmgame.com/uploads/images/thumbsmall/20240529/1716973545_572746.png",
+        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787301286_698785.jpg"
       ]
     },
     {
@@ -657,14 +943,6 @@
       ],
       "origin": "seed",
       "pending_image_urls": [
-        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300703_958219.png",
-        "https://sylyfile.3dmgame.com/upload/game/20260608/e3cd3204ee0865e7f5a94ac6003c506a.png",
-        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260609/1780996893_516578.png",
-        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300960_223772.png",
-        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300985_158690.png",
-        "https://yx.3dmgame.com/uploads/images/thumbsmall/20240529/1716973458_939258.png",
-        "https://yx.3dmgame.com/uploads/images/thumbsmall/20240529/1716973545_572746.png",
-        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787301286_698785.jpg",
         "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787301342_141361.png",
         "https://my.3dmgame.com/newuser/images/appdown.png",
         "https://olimg.3dmgame.com/uploads/images/thumbnews/2026/0928/1790578119226.webp",
@@ -675,7 +953,27 @@
         "https://yx.3dmgame.com/uploads/images/thumbsmall/20220216/1644995802_841872.gif",
         "https://sylyfile.3dmgame.com/upload/game/20260428/656fc37e35fe2714e2c2d20587e6708e.png",
         "https://yx.3dmgame.com/uploads/images/thumbsmall/20260429/1777452636_579807.png",
-        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300662_248760.png"
+        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300662_248760.png",
+        "https://www.3dmgame.com/newpage/images/language-arrow-down.png",
+        "https://www.3dmgame.com/newpage/images/language-arrow-up.png",
+        "https://www.3dmgame.com/newpage/img/sao.png",
+        "https://olimg.3dmgame.com/uploads/images/raiders/20260928/1790578078_276030.webp",
+        "https://imgs.3dmgame.com/configs/d02f47921ef0457789a9ce7c31a5980d11758785265025.png?x-oss-process=image/interlace,1/format,webp",
+        "https://img.3dmgame.com/uploads/images/thumbnews/20260720/1784518943_551412.jpg",
+        "https://ol.3dmgame.com/page/images/3dmapp.png",
+        "https://olimg.3dmgame.com/uploads/images/thumbnews/20260623/1782209080_385349.png"
+      ],
+      "attempts": 0,
+      "evidence_hash": "dd52af3e203e59a5a59e553b34022993254a9bf16f13285d8115327df365efad",
+      "processed_image_urls": [
+        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300703_958219.png",
+        "https://sylyfile.3dmgame.com/upload/game/20260608/e3cd3204ee0865e7f5a94ac6003c506a.png",
+        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260609/1780996893_516578.png",
+        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300960_223772.png",
+        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300985_158690.png",
+        "https://yx.3dmgame.com/uploads/images/thumbsmall/20240529/1716973458_939258.png",
+        "https://yx.3dmgame.com/uploads/images/thumbsmall/20240529/1716973545_572746.png",
+        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787301286_698785.jpg"
       ]
     },
     {
@@ -688,14 +986,6 @@
       ],
       "origin": "expansion",
       "pending_image_urls": [
-        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300703_958219.png",
-        "https://sylyfile.3dmgame.com/upload/game/20260608/e3cd3204ee0865e7f5a94ac6003c506a.png",
-        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260609/1780996893_516578.png",
-        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300960_223772.png",
-        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300985_158690.png",
-        "https://yx.3dmgame.com/uploads/images/thumbsmall/20240529/1716973458_939258.png",
-        "https://yx.3dmgame.com/uploads/images/thumbsmall/20240529/1716973545_572746.png",
-        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787301286_698785.jpg",
         "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787301342_141361.png",
         "https://my.3dmgame.com/newuser/images/appdown.png",
         "https://olimg.3dmgame.com/uploads/images/thumbnews/2026/0814/1786674384616.webp",
@@ -706,7 +996,27 @@
         "https://yx.3dmgame.com/uploads/images/thumbsmall/20220216/1644995802_841872.gif",
         "https://sylyfile.3dmgame.com/upload/game/20260428/656fc37e35fe2714e2c2d20587e6708e.png",
         "https://yx.3dmgame.com/uploads/images/thumbsmall/20260429/1777452636_579807.png",
-        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300662_248760.png"
+        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300662_248760.png",
+        "https://www.3dmgame.com/newpage/images/language-arrow-down.png",
+        "https://www.3dmgame.com/newpage/images/language-arrow-up.png",
+        "https://www.3dmgame.com/newpage/img/sao.png",
+        "https://olimg.3dmgame.com/uploads/images/raiders/20260814/1786674312_400094.webp",
+        "https://imgs.3dmgame.com/configs/d02f47921ef0457789a9ce7c31a5980d11758785265025.png?x-oss-process=image/interlace,1/format,webp",
+        "https://img.3dmgame.com/uploads/images/thumbnews/20260720/1784518943_551412.jpg",
+        "https://ol.3dmgame.com/page/images/3dmapp.png",
+        "https://olimg.3dmgame.com/uploads/images/thumbnews/20260623/1782209080_385349.png"
+      ],
+      "attempts": 0,
+      "evidence_hash": "51a4e7cbfa7188951b88673a0ae19b3da45e9ba7532ff7abc124f766418585b3",
+      "processed_image_urls": [
+        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300703_958219.png",
+        "https://sylyfile.3dmgame.com/upload/game/20260608/e3cd3204ee0865e7f5a94ac6003c506a.png",
+        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260609/1780996893_516578.png",
+        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300960_223772.png",
+        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300985_158690.png",
+        "https://yx.3dmgame.com/uploads/images/thumbsmall/20240529/1716973458_939258.png",
+        "https://yx.3dmgame.com/uploads/images/thumbsmall/20240529/1716973545_572746.png",
+        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787301286_698785.jpg"
       ]
     },
     {
@@ -719,14 +1029,6 @@
       ],
       "origin": "seed",
       "pending_image_urls": [
-        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300703_958219.png",
-        "https://sylyfile.3dmgame.com/upload/game/20260608/e3cd3204ee0865e7f5a94ac6003c506a.png",
-        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260609/1780996893_516578.png",
-        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300960_223772.png",
-        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300985_158690.png",
-        "https://yx.3dmgame.com/uploads/images/thumbsmall/20240529/1716973458_939258.png",
-        "https://yx.3dmgame.com/uploads/images/thumbsmall/20240529/1716973545_572746.png",
-        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787301286_698785.jpg",
         "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787301342_141361.png",
         "https://my.3dmgame.com/newuser/images/appdown.png",
         "https://olimg.3dmgame.com/uploads/images/thumbnews/2026/0920/1789867044781.webp",
@@ -737,7 +1039,27 @@
         "https://yx.3dmgame.com/uploads/images/thumbsmall/20220216/1644995802_841872.gif",
         "https://sylyfile.3dmgame.com/upload/game/20260428/656fc37e35fe2714e2c2d20587e6708e.png",
         "https://yx.3dmgame.com/uploads/images/thumbsmall/20260429/1777452636_579807.png",
-        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300662_248760.png"
+        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300662_248760.png",
+        "https://www.3dmgame.com/newpage/images/language-arrow-down.png",
+        "https://www.3dmgame.com/newpage/images/language-arrow-up.png",
+        "https://www.3dmgame.com/newpage/img/sao.png",
+        "https://olimg.3dmgame.com/uploads/images/raiders/20260920/1789866990_372808.webp",
+        "https://imgs.3dmgame.com/configs/d02f47921ef0457789a9ce7c31a5980d11758785265025.png?x-oss-process=image/interlace,1/format,webp",
+        "https://img.3dmgame.com/uploads/images/thumbnews/20260720/1784518943_551412.jpg",
+        "https://ol.3dmgame.com/page/images/3dmapp.png",
+        "https://olimg.3dmgame.com/uploads/images/thumbnews/20260623/1782209080_385349.png"
+      ],
+      "attempts": 0,
+      "evidence_hash": "5fd827b859d5ee184ff6861127e471b9ccc42a96fd3f95f2c84f3b82c3f4ca9c",
+      "processed_image_urls": [
+        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300703_958219.png",
+        "https://sylyfile.3dmgame.com/upload/game/20260608/e3cd3204ee0865e7f5a94ac6003c506a.png",
+        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260609/1780996893_516578.png",
+        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300960_223772.png",
+        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300985_158690.png",
+        "https://yx.3dmgame.com/uploads/images/thumbsmall/20240529/1716973458_939258.png",
+        "https://yx.3dmgame.com/uploads/images/thumbsmall/20240529/1716973545_572746.png",
+        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787301286_698785.jpg"
       ]
     },
     {
@@ -750,14 +1072,6 @@
       ],
       "origin": "seed",
       "pending_image_urls": [
-        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300703_958219.png",
-        "https://sylyfile.3dmgame.com/upload/game/20260608/e3cd3204ee0865e7f5a94ac6003c506a.png",
-        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260609/1780996893_516578.png",
-        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300960_223772.png",
-        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300985_158690.png",
-        "https://yx.3dmgame.com/uploads/images/thumbsmall/20240529/1716973458_939258.png",
-        "https://yx.3dmgame.com/uploads/images/thumbsmall/20240529/1716973545_572746.png",
-        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787301286_698785.jpg",
         "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787301342_141361.png",
         "https://my.3dmgame.com/newuser/images/appdown.png",
         "https://olimg.3dmgame.com/uploads/images/thumbnews/2026/0920/1789867163657.webp",
@@ -768,8 +1082,209 @@
         "https://yx.3dmgame.com/uploads/images/thumbsmall/20220216/1644995802_841872.gif",
         "https://sylyfile.3dmgame.com/upload/game/20260428/656fc37e35fe2714e2c2d20587e6708e.png",
         "https://yx.3dmgame.com/uploads/images/thumbsmall/20260429/1777452636_579807.png",
-        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300662_248760.png"
+        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300662_248760.png",
+        "https://www.3dmgame.com/newpage/images/language-arrow-down.png",
+        "https://www.3dmgame.com/newpage/images/language-arrow-up.png",
+        "https://www.3dmgame.com/newpage/img/sao.png",
+        "https://olimg.3dmgame.com/uploads/images/raiders/20260920/1789867155_744750.webp",
+        "https://imgs.3dmgame.com/configs/d02f47921ef0457789a9ce7c31a5980d11758785265025.png?x-oss-process=image/interlace,1/format,webp",
+        "https://img.3dmgame.com/uploads/images/thumbnews/20260720/1784518943_551412.jpg",
+        "https://ol.3dmgame.com/page/images/3dmapp.png",
+        "https://olimg.3dmgame.com/uploads/images/thumbnews/20260623/1782209080_385349.png"
+      ],
+      "attempts": 0,
+      "evidence_hash": "9c4780e63be263fc4cf8399fcdd183726700159b190841e3786591c91526c49c",
+      "processed_image_urls": [
+        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300703_958219.png",
+        "https://sylyfile.3dmgame.com/upload/game/20260608/e3cd3204ee0865e7f5a94ac6003c506a.png",
+        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260609/1780996893_516578.png",
+        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300960_223772.png",
+        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787300985_158690.png",
+        "https://yx.3dmgame.com/uploads/images/thumbsmall/20240529/1716973458_939258.png",
+        "https://yx.3dmgame.com/uploads/images/thumbsmall/20240529/1716973545_572746.png",
+        "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787301286_698785.jpg"
       ]
+    },
+    {
+      "id": "source-1d340602239021e1",
+      "url": "https://www.taptap.cn/poster-activity/NIU11IM3S8uL",
+      "platform": "taptap",
+      "enabled": true,
+      "seasons": [
+        "S4",
+        "S3",
+        "S2"
+      ],
+      "origin": "related-link",
+      "evidence_hash": "8e5da2efef4c00f28917d955761a3c083b6a29ace72cda6ff3208a1bad05b0ae",
+      "processed_image_urls": [],
+      "attempts": 0,
+      "retry_after": "2026-11-06T08:44:30.556Z",
+      "pending_image_urls": []
+    },
+    {
+      "id": "source-941e30f601fefebc",
+      "url": "https://www.taptap.cn/moment/862617352557038905?group_id=228326",
+      "platform": "taptap",
+      "enabled": true,
+      "seasons": [
+        "S4",
+        "S3",
+        "S2"
+      ],
+      "origin": "related-link",
+      "evidence_hash": "3735163649d08e856ce3424f8783f0a1bc28c21316d9a64df4fe4907e0842a1d",
+      "processed_image_urls": [
+        "https://tap-client-logs-bj.cn-beijing.dualstack.log.aliyuncs.com/logstores/web_apm/track_ua.gif?t_log_id=2a3a7a08-61a3-413d-8f33-c003170b2b9d&APIVersion=0.6.0&XUA=V%3D1%26PN%3DWeb%26LANG%3Dzh_CN%26VN_CODE%3D100000000%26LOC%3DCN%26PLT%3DPC%26DS%3DAndroid%26UID%3D15c5ceed-8775-4826-a70f-204a04505034%26OS%3DLinux%26OSV%3Dx86_64%26DT%3DPC&UID=15c5ceed-8775-4826-a70f-204a04505034&browser_name=HeadlessChrome&action=startup&ts=1792745071507&request_path=%2Fmoment%2F862617352557038905",
+        "https://assets.tapimg.com/apps/web-app-next/_nuxt/login-button-art.CyO-kNSq.png",
+        "https://img.tapimg.com/market/images/d20ff71e1f1e1961755e6e4ffc6e2c3f.png",
+        "https://img-tc.tapimg.com/market/images/d8a70575966d311941f2b38aee62f74f.png/_tap_appicon.jpg",
+        "https://img-tc.tapimg.com/market/images/ba24dee85b38c7364ac8279b3fe4a2c6.png/_tap_appicon.jpg",
+        "https://img-tc.tapimg.com/market/images/e9a61869998a8d5b95b0668d65c28d6d.png/_tap_appicon.jpg",
+        "https://img-tc.tapimg.com/market/images/a395edeea4e8c60315097a7472c7393c.jpg/_tap_appicon.jpg",
+        "https://img-tc.tapimg.com/market/images/3437da7ae9c7e1fa13625964cea6c4cb.png/_tap_appicon.jpg"
+      ],
+      "attempts": 0,
+      "pending_image_urls": [
+        "https://assets.tapimg.com/protocol/%E6%98%93%E7%8E%A9%E5%B9%BF%E7%94%B5%E8%AF%81.jpg",
+        "https://img-tc.tapimg.com/market/images/7d6d9b693352f7eaeb70f94d89a315fc.png",
+        "https://img-tc.tapimg.com/market/images/cda3c193b02aa4baf88eb460abe9abda.png",
+        "https://img2-tc.tapimg.com/moment/etag/FvZfiF1Bf90LSXJ2CkY4rtm1fJZZ_20261023085322.jpg/_tap_ugc.jpg",
+        "https://img2-tc.tapimg.com/moment/etag/FvZfiF1Bf90LSXJ2CkY4rtm1fJZZ_20261023085322.jpg",
+        "https://img-tc.tapimg.com/market/images/27330daef3a3696edddd4a5e858f3d26.png/_tap_appicon_m.jpg",
+        "https://img-tc.tapimg.com/market/images/dac48cab92a8f132fb52cd214491cb33.png",
+        "https://img-tc.tapimg.com/market/images/e455c642a7725d0284ccea743e74d0b2.png",
+        "https://img-tc.tapimg.com/market/images/008d2947257c2727686825ed3127cddf.png",
+        "https://img-tc.tapimg.com/market/images/d07b262774c8a022a7dddbc39683da6b.png",
+        "https://img-tc.tapimg.com/market/images/14bd07204a9c7641ee4830c3f3f2185f.png",
+        "https://img-tc.tapimg.com/market/images/17aba76195c6e91507e0a4e5d67444a0.png",
+        "https://img-tc.tapimg.com/market/images/b344897f6039512f2a9dcdc052cf35e8.png",
+        "https://img-tc.tapimg.com/market/images/f65f7c01f1f85fa2d09922b31b49cf69.png",
+        "https://img-tc.tapimg.com/market/images/ac04b9458163ff26d6abc04a718d4f2e.png",
+        "https://img-tc.tapimg.com/market/images/c27dbc3016d248ff48b4f70a238432b7.png",
+        "https://img2-tc.tapimg.com/moment/etag/Fjg5YdIPZKzRlDLvH8R-IQKzAD36_20261023090042.jpg/_tap_ugc.jpg",
+        "https://img-tc.tapimg.com/market/images/2628c7a2531124999a88dddd29ee3686.jpg/_tap_banner.jpg",
+        "https://img2-tc.tapimg.com/moment/etag/FiLg-_eq71FNfQNDap1Lh13c5315_20261011160948.jpg/_tap_ugc.jpg",
+        "https://img2-tc.tapimg.com/moment/etag/FtJwylf0UMAVu-mQ6vdc0JKKxd2s_20260327003546.png/_tap_ugc.jpg",
+        "https://img2-tc.tapimg.com/moment/etag/FuZYhAvRJqKy0VOQg-buHvFSo90R_20261023133324.jpg/_tap_ugc.jpg",
+        "https://img2-tc.tapimg.com/moment/etag/Fk9A13stU0zvg23FbXmiG18Pxrf3_20251124184316.png/_tap_ugc.jpg",
+        "https://img2-tc.tapimg.com/moment/etag/FiUFmPiiApkpZ6qBirQqY7S6mNsi_20260331225334.png/_tap_ugc.jpg",
+        "https://img2-tc.tapimg.com/moment/etag/FstIO_EfIZKpJ9tpTxYVT5A40xZZ_20261022175745.jpg/_tap_ugc.jpg",
+        "https://img2-tc.tapimg.com/moment/etag/FkBRLgHFECAgHDtNvjoW95Vp1Nlh_20260730133042.jpg/_tap_ugc.jpg",
+        "https://img2-tc.tapimg.com/moment/etag/Fp95GPbd7nhWJfeYViB2kL7ftG-Y_20261018154220.jpg/_tap_ugc.jpg",
+        "https://img2-tc.tapimg.com/moment/etag/FuO3fXqe2IKm63oTIVS7aKDluhQG_20260406230922.jpg/_tap_ugc.jpg",
+        "https://img2-tc.tapimg.com/moment/etag/FqJakI7L2wEo3RuyXCKQSU4ro2Fy_20261022115540.jpg/_tap_ugc.jpg",
+        "https://assets.tapimg.com/web-app-global/public-static/img/icons/apple-touch-icon-180x180-v3.png"
+      ]
+    },
+    {
+      "id": "source-c17912ed7e56e453",
+      "url": "https://www.sina.cn/news/detail/5342283785309545.html",
+      "platform": "sina",
+      "enabled": true,
+      "seasons": [
+        "S4",
+        "S3",
+        "S2"
+      ],
+      "origin": "related-link",
+      "evidence_hash": "4aff7d5f552da7b69722d1f4d433a9193b4ded87a8ce1774b3001a001dbdf073",
+      "processed_image_urls": [
+        "https://tvax4.sinaimg.cn/crop.0.0.480.480.50/006mDlFIly8hd1j34x99mj30dc0dcglm.jpg?KID=imgbed,tva&Expires=1792755878&ssig=cLDzliKdGw",
+        "https://n.sinaimg.cn/default/7bd4e141/20251230/sina.png"
+      ],
+      "attempts": 0,
+      "retry_after": "2026-11-06T08:44:41.557Z",
+      "pending_image_urls": []
+    },
+    {
+      "id": "source-282b964e49a77117",
+      "url": "https://www.sina.cn/news/detail/5285573990553638.html",
+      "platform": "sina",
+      "enabled": true,
+      "seasons": [
+        "S4",
+        "S3",
+        "S2"
+      ],
+      "origin": "related-link",
+      "evidence_hash": "59919f48c57d646c95ed15aa316f91ae5306325088a5711b34f8f6c7b77d720b",
+      "processed_image_urls": [
+        "https://tvax1.sinaimg.cn/crop.0.0.512.512.50/007YhdVHly8ha8038tr5sj30e80e8mxj.jpg?KID=imgbed,tva&Expires=1792755881&ssig=QKXiK03cjL",
+        "https://n.sinaimg.cn/default/7bd4e141/20251230/sina.png"
+      ],
+      "attempts": 0,
+      "retry_after": "2026-11-06T08:44:42.602Z",
+      "pending_image_urls": []
+    },
+    {
+      "id": "source-6f586c7ed70858ae",
+      "url": "https://www.sina.cn/news/detail/5284128875611418.html",
+      "platform": "sina",
+      "enabled": true,
+      "seasons": [
+        "S4",
+        "S3",
+        "S2"
+      ],
+      "origin": "related-link",
+      "evidence_hash": "549d56edbaf6ccf333660a8a57f0f54b1602060115050a4cbb619563f8352310",
+      "processed_image_urls": [
+        "https://tvax3.sinaimg.cn/crop.0.0.600.600.50/006CDV5Ply8hrgp3aypthj30go0go773.jpg?KID=imgbed,tva&Expires=1792755882&ssig=c37CATALoO",
+        "https://n.sinaimg.cn/default/7bd4e141/20251230/sina.png"
+      ],
+      "attempts": 0,
+      "retry_after": "2026-11-06T08:44:43.758Z",
+      "pending_image_urls": []
+    },
+    {
+      "id": "source-ed8ab14764764b96",
+      "url": "https://www.sina.cn/news/detail/5346553457804621.html",
+      "platform": "sina",
+      "enabled": true,
+      "seasons": [
+        "S4",
+        "S3",
+        "S2"
+      ],
+      "origin": "related-link",
+      "evidence_hash": "cb2ceb61b6a75b87408345cfcbd4647e5bc2eda7d64389a47fc02bc0191cafb0",
+      "processed_image_urls": [
+        "https://tvax3.sinaimg.cn/crop.0.0.1009.1009.50/538bc62dly8huv6yh7lzsj20s10s1tce.jpg?KID=imgbed,tva&Expires=1792755883&ssig=NRuqW7ozMj",
+        "https://tvax1.sinaimg.cn/crop.0.0.1024.1024.50/0089XUdLly8h8ujaddwvcj30sg0sg767.jpg?KID=imgbed,tva&Expires=1792755884&ssig=4mrTxXQD%2BG",
+        "https://tvax4.sinaimg.cn/crop.0.0.261.261.50/006jjd3wly8hww8x26ccrj3079079t8t.jpg?KID=imgbed,tva&Expires=1792755884&ssig=CT4gktNhwD",
+        "https://tvax1.sinaimg.cn/crop.0.0.1080.1080.50/008fzZCQly8hh6rvsy93aj30u00u0n10.jpg?KID=imgbed,tva&Expires=1792755884&ssig=J7BsjQPiSi",
+        "https://tvax4.sinaimg.cn/crop.0.0.1080.1080.50/006U8s5bly8ie1kd8b0vhj30u00u0ju0.jpg?KID=imgbed,tva&Expires=1792755884&ssig=1pSziEaW3d",
+        "https://tvax3.sinaimg.cn/crop.0.0.640.640.50/006VTEaVly8fx8q2rncdzj30hs0hst8z.jpg?KID=imgbed,tva&Expires=1792755773&ssig=pevbw9Toeu",
+        "https://tvax1.sinaimg.cn/crop.0.0.512.512.50/007YhdVHly8ha8038tr5sj30e80e8mxj.jpg?KID=imgbed,tva&Expires=1792755773&ssig=J%2FzGjH0JzI",
+        "https://tvax1.sinaimg.cn/crop.0.0.1080.1080.50/006rHPw0ly8ihkuhzj65nj30u00u0ae2.jpg?KID=imgbed,tva&Expires=1792755773&ssig=7WsmRioQBx"
+      ],
+      "attempts": 0,
+      "pending_image_urls": [
+        "https://tvax3.sinaimg.cn/crop.0.0.600.600.50/006CDV5Ply8hrgp3aypthj30go0go773.jpg?KID=imgbed,tva&Expires=1792755773&ssig=KW4jlA9ghk",
+        "https://tvax3.sinaimg.cn/crop.0.0.1009.1009.50/538bc62dly8huv6yh7lzsj20s10s1tce.jpg?KID=imgbed,tva&Expires=1792755773&ssig=Yy09I6w4gb",
+        "https://tvax2.sinaimg.cn/crop.0.0.1080.1080.50/007RQS1Yly8ihw72eu4x4j30u00u0q4s.jpg?KID=imgbed,tva&Expires=1792755773&ssig=q2wQSrUYy6",
+        "https://tvax3.sinaimg.cn/crop.0.0.419.419.50/008u581Xly8iic8vqst65j30bn0bn3z5.jpg?KID=imgbed,tva&Expires=1792755773&ssig=e5LgNsze2b",
+        "https://tvax1.sinaimg.cn/crop.0.0.512.512.50/b56f48a7ly8hrn8t01jicj20e80e8dgm.jpg?KID=imgbed,tva&Expires=1792755773&ssig=G%2B8AjEaz%2Ff",
+        "https://tvax2.sinaimg.cn/crop.0.0.512.512.50/005JxvZaly8i1om5c12aaj30e80e83z5.jpg?KID=imgbed,tva&Expires=1792755773&ssig=upKaQDT4WD",
+        "https://tvax1.sinaimg.cn/crop.0.0.1057.1057.50/008I0PUZly8ift3lwkgt3j30td0tddgt.jpg?KID=imgbed,tva&Expires=1792755773&ssig=qFZq3d15od",
+        "https://n.sinaimg.cn/default/7bd4e141/20251230/sina.png",
+        "https://n.sinaimg.cn/default/2fb77759/20151125/320X320.png"
+      ]
+    },
+    {
+      "id": "source-7df19db1251df7af",
+      "url": "https://www.bilibili.com/video/BV1N8hk6rErM/",
+      "platform": "bilibili",
+      "enabled": true,
+      "seasons": [
+        "S4",
+        "S3",
+        "S2"
+      ],
+      "origin": "seed",
+      "attempts": 1,
+      "retry_after": "2026-10-24T08:41:30.138Z"
     }
   ]
 }

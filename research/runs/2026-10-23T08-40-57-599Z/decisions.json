@@ -1,0 +1,287 @@
+[
+  {
+    "sha256": "956d35a499bc6997ce365c9f9574e1230369d8616529da59b40d4ca56defa7dc",
+    "status": "rejected",
+    "reason": "Prepared overview is a mobile-game beginner tutorial cover with one mascot; no complete six-member configuration."
+  },
+  {
+    "sha256": "4d2506c74d77d71feacb186571f8973499fc8f9872ca80a71cf5ed08d879ee05",
+    "status": "rejected",
+    "reason": "Overview is a field gameplay screenshot with a single creature info card and HUD list; no complete six-member configuration."
+  },
+  {
+    "sha256": "c5e4588506df05293c33f51b7f38b8bb153d8276e37775793d0e8b513ddda614",
+    "status": "rejected",
+    "reason": "Overview is a single-creature field scene with UID watermark; no complete six-member configuration."
+  },
+  {
+    "sha256": "ce34979b14f8481fbe04068b42d08a58122e1eac272a7d784332d6aef8bb821a",
+    "status": "rejected",
+    "reason": "Overview is promotional splash art announcing launch; not a configuration image."
+  },
+  {
+    "sha256": "61382489a48d0bbd56145ce7971af0a8660a7c6a47fd57c52625ba014e8ae809",
+    "status": "rejected",
+    "reason": "Overview is a quest/reward UI screen; no six-member lineup."
+  },
+  {
+    "sha256": "762e3fbde0467396ba6bba81a3ec69cc54f3a1d40140b4a5e63dc7c29c5da1b4",
+    "status": "rejected",
+    "reason": "Overview is a single-creature detail screen with party icons at left and no complete six-member configuration, skills or bloodline panel."
+  },
+  {
+    "sha256": "8091022d22f1013e0ca5e40f78a7a0c66c9a0d6ecca18fe90057db705dbef701",
+    "status": "rejected",
+    "reason": "Overview is an S2 season promotional article cover announcing new creatures and season changes; no lineup configuration."
+  },
+  {
+    "sha256": "470a9094c96a26b24669fca8eb9b7dc7dc0afe6b3d243444be09ac007a29b163",
+    "status": "rejected",
+    "reason": "Overview is a TapTap topic-activity promotional banner; no lineup configuration."
+  },
+  {
+    "sha256": "a418031696a67128e8ec99c6ccfd5d3400175b6573e7b183e8a22065f69d0017",
+    "status": "rejected",
+    "reason": "Overview is only the TapTap logo on a blank background; no lineup configuration."
+  },
+  {
+    "sha256": "145e5464caadfae59db0c741ddbfda95ffdf77c0c9d5d6095220202e84538677",
+    "status": "rejected",
+    "reason": "Overview is a creature-family evolution and skills introduction graphic; no six-member lineup."
+  },
+  {
+    "sha256": "469f53bf6d448476b7b3e8b60c9661491e44ce0ad38efb2235cc9f34a6b182fd",
+    "status": "rejected",
+    "reason": "Overview is a tall creature-family evolution and skills introduction graphic; no six-member lineup."
+  },
+  {
+    "sha256": "4470547bc285f98a8007405326861403c1df9504f63174a770637dc95244d30c",
+    "status": "rejected",
+    "reason": "Overview is an S4 ranked-match lobby with rank badge and partially obscured party icons; no complete configuration details."
+  },
+  {
+    "sha256": "ca5336936e87f46f3ebc9886c7818e907bea6fd60d3f892369e6f065411384d7",
+    "status": "rejected",
+    "reason": "Overview is a wider view of the same S4 ranked-match lobby; party icons are partially obscured and no configuration details are shown."
+  },
+  {
+    "sha256": "796c938a67a332ed8d66e74cc83dea01e474bdfe6e889fc75784c9ed1abcee8d",
+    "status": "rejected",
+    "reason": "Overview is a battle-results screen with a partial reward/creature list; no complete six-member configuration."
+  },
+  {
+    "sha256": "47ff85c9ebf317c490eb1bdcc56d3e053b0ce993219428d96052310336643f13",
+    "status": "rejected",
+    "reason": "Overview is a slightly different crop of the same battle-results screen as candidate 13; it shows partial rewards/list but no complete six-member configuration."
+  },
+  {
+    "sha256": "56899456633b8e2d1044cb0c7d930b6dc6e2639f9b2a243724e26eb9cce4a871",
+    "status": "rejected",
+    "reason": "Overview is an anime screenshot with Bilibili danmaku/subtitles; no six-member game configuration or lineup evidence."
+  },
+  {
+    "sha256": "11b0429bf2ba99ba1f696ccbf2b73bd84f69c450ff06703c6202d896855f7dee",
+    "status": "rejected",
+    "reason": "Overview is a near-identical anime screenshot with Bilibili danmaku/subtitles; no six-member game configuration or lineup evidence."
+  },
+  {
+    "sha256": "f19fdf2df6e2a7567b3f990787a35d1fb9967d1b5d48ed8fce7f00e59cb4f928",
+    "status": "rejected",
+    "reason": "Overview is a rain-soaked cinematic character photo unrelated to the game; no lineup configuration."
+  },
+  {
+    "sha256": "c1889d4be2f89c28e0ba9e52743f59c5281d5fc5c8dfeb63db2c7306d66f32bd",
+    "status": "rejected",
+    "reason": "Overview is a wider crop of the same rain-soaked cinematic character photo; unrelated to the game and no lineup configuration."
+  },
+  {
+    "sha256": "34e6c28cc0ecafac5defacde426f79bfa6882876f6019913f2d749f78f3d5365",
+    "status": "rejected",
+    "reason": "Overview is an equipment/artifact inventory and single-creature detail screen; no complete six-member lineup configuration."
+  },
+  {
+    "sha256": "8871454911260f68eab0a073ee5193509de9e84ddf6104982a1d8cacd48fae5e",
+    "status": "rejected",
+    "reason": "Overview is a merchandise plush-keychain blind-box catalog; unrelated to a PVP lineup configuration."
+  },
+  {
+    "sha256": "6de6d2bccf5c511fbfacae95f7529c85e2bce8d3a48929941dab2b4dd07c24e9",
+    "status": "rejected",
+    "reason": "Overview is standalone anime-style character artwork; no game lineup configuration."
+  },
+  {
+    "sha256": "61bb281c09b548f330a8c69e6c0074cb49672c94a61efe47bba622236ac85152",
+    "status": "rejected",
+    "reason": "Overview is an item-detail and market transaction screen; no complete six-member lineup configuration."
+  },
+  {
+    "sha256": "7593afed630abee5c4dbe4c17cd4ac0376154cad1d058e07f097f7417fa5e1af",
+    "status": "rejected",
+    "reason": "Overview is a plush-keychain product catalog; unrelated to a PVP lineup configuration."
+  },
+  {
+    "sha256": "7d723a3fe7bb96aff111f3464751a8aaae124ea19deba38ec6d999dea7da456e",
+    "status": "rejected",
+    "reason": "Overview is an e-commerce order/exchange screen for a plush keychain; unrelated to a PVP lineup configuration."
+  },
+  {
+    "sha256": "656f56377e60590f812fe40423179850c2e6029d6d3622ce677ac21e9ed83ddc",
+    "status": "rejected",
+    "reason": "Overview is a promotional merchandise photo of a grey plush figure labelled 隐藏款 / 缅因喵 / Maine Coon Kitty with a Qiandao watermark; no game lineup configuration."
+  },
+  {
+    "sha256": "44f8022815770d851774374a3ad086406eea6d79171fee8ca44282e95410f7e2",
+    "status": "rejected",
+    "reason": "Overview is an S2 promotional reward card listing items and a large creature illustration; no complete six-member lineup configuration."
+  },
+  {
+    "sha256": "7d5745d8249f00ffcd5674992f27301af37b0a453a6e6e76687c41b26a9e030f",
+    "status": "rejected",
+    "reason": "Overview is a team-invite activity rules/reward text graphic; no six-member configuration."
+  },
+  {
+    "sha256": "00108398e888f8fc1a43ff1b758cc12393a2ab0755e3f4852077369f12013751",
+    "status": "rejected",
+    "reason": "Overview shows six item/reward icons (棱镜球、精灵奖牌、炫彩精灵蛋、国王球、能力钥匙、分光水晶); no lineup."
+  },
+  {
+    "sha256": "7b3ecc78fafd32636829592e2571cd1e5fce3c3ed89952a426ca7154a4f20474",
+    "status": "rejected",
+    "reason": "Overview shows four event-limited creature/outfit promotional banners; no lineup."
+  },
+  {
+    "sha256": "3b0bcf282db2f9cc941e3fd87edc34943caab121e6dc74c2f2d55211152bb664",
+    "status": "rejected",
+    "reason": "Overview is an event reservation hardware-reward promo (phones, projector, keyboard, earbuds); no lineup."
+  },
+  {
+    "sha256": "1826dfeba46040262a184d39959180c2c2bcc6eea3c275070e244490a0f43bfb",
+    "status": "rejected",
+    "reason": "Overview is a WeGame launch reward graphic for 布瓜蝌; no six-member lineup configuration."
+  },
+  {
+    "sha256": "ad56e4b0754da037b12f8ce161a0426638357307ca951b881f2b8351130376cb",
+    "status": "rejected",
+    "reason": "Overview is a thin decorative gold-particle divider; no lineup content."
+  },
+  {
+    "sha256": "a8c5c963f56c65907a71ef543888202ce868716db56030cfa49cc33f630d2fa2",
+    "status": "rejected",
+    "reason": "Overview is a thin decorative gold-particle divider; no lineup content."
+  },
+  {
+    "sha256": "ad377a3e61651a1e3c80a3a480c7440fe9d834e04ecd354a74e071317ba937d7",
+    "status": "rejected",
+    "reason": "Overview is a thin decorative gold-particle divider; no lineup content."
+  },
+  {
+    "sha256": "a4a58c20d5c09465a32cc2110c311522a8a70487835a902e710a25e382c76323",
+    "status": "rejected",
+    "reason": "Overview is a thin decorative gold-particle divider; no lineup content."
+  },
+  {
+    "sha256": "2347da93d5928de3587c6a100d33c5c56e14c9ab5f7028cccddeda2cd99f529e",
+    "status": "rejected",
+    "reason": "Overview is standalone anthropomorphic character artwork from the Biligame wiki; no lineup configuration."
+  },
+  {
+    "sha256": "d60ae067780386430fd152ed3a27d564f280cf8a8a3159f2d38fc2ad456895ad",
+    "status": "rejected",
+    "reason": "Overview is a 网络文化经营单位 compliance logo; no lineup content."
+  },
+  {
+    "sha256": "3fac66c5a9e21058fed0f3a53ae93672cf730116236f52c0424398a8a4aa2f5a",
+    "status": "rejected",
+    "reason": "Overview is a white Biligame wordmark/star watermark; no lineup content."
+  },
+  {
+    "sha256": "051727edaf65693de3ba2591f8f0d4a6f37bb4d597c145d722f8700bb78058eb",
+    "status": "rejected",
+    "reason": "Overview is a square 0.1折 game advertisement icon reused across the nine 3DM articles; no lineup."
+  },
+  {
+    "sha256": "4a2a61fd9e8803a7dcd316d663b8089c0dd481df3a37de9144b987213f2cd06c",
+    "status": "rejected",
+    "reason": "Overview is a bare QR code from the 3DM page template; no lineup."
+  },
+  {
+    "sha256": "221e6b3a87f9d530939442adfd330028f7d62028e0e94f520b66eafd044f4d69",
+    "status": "rejected",
+    "reason": "Overview is a square 0.1折 game advertisement icon reused across the nine 3DM articles; no lineup."
+  },
+  {
+    "sha256": "4761f5fdf5fb1cdb79dc0a4bfeacb26f26d83db6294cf3d379e8014bd889499a",
+    "status": "rejected",
+    "reason": "Overview is a QR code with a game ad icon in the centre; no lineup."
+  },
+  {
+    "sha256": "e90acad390cb05d3d265b2ea0d123ebca1ba5bfb29568e6bba10b36886f2e114",
+    "status": "rejected",
+    "reason": "Overview is an anime-style mobile-game advertisement icon used in the 3DM page template; no lineup."
+  },
+  {
+    "sha256": "fbbfce3279ea32889c17b4eca9445523750e941221558160ed1409b2c06f3cfb",
+    "status": "rejected",
+    "reason": "Overview is a TapTap 可可丰收节 promotional banner with creatures and rewards text; no six-member configuration."
+  },
+  {
+    "sha256": "d21e1fe64da3b7ccc0bd2377ba7c5085351e60870ea5218ef6e0871feb260c63",
+    "status": "rejected",
+    "reason": "Overview is a square TapTap game app icon showing a blue cartoon creature; no lineup."
+  },
+  {
+    "sha256": "1528644f0e9b4e6741cdc204293c84c64fe6aafd055badd9b8dcc4d3572a8486",
+    "status": "rejected",
+    "reason": "Overview is an official S4 月涌狂想 season promotional poster (9月10日正式开启); no six-member configuration."
+  },
+  {
+    "sha256": "cd929b3fc38a78b74ab6e6cc43e9c8bd1367e6a1d0f13259a2b4c3e33274683c",
+    "status": "rejected",
+    "reason": "Overview is a character/cinematic promotional image with the slogan 遇见精灵，开启你们的独家故事; no lineup configuration."
+  },
+  {
+    "sha256": "b4556f1e8545515eec4bd0fffc5dbc26126136d582af4c90e0f2b04ea446f360",
+    "status": "rejected",
+    "reason": "Overview is an open-world gameplay promotional image (可以发呆的精灵大世界) with six small sidebar icons but no complete configuration or skills."
+  },
+  {
+    "sha256": "0e15784969e44202089be1437958b5d82f919d32649a2bc7c2bba31358c160d4",
+    "status": "rejected",
+    "reason": "Overview is a mount/costume promotional image with six small sidebar icons but no complete lineup configuration."
+  },
+  {
+    "sha256": "ec7b584d23132017d6ab3bc827919ecaaf5e1515416e2e01492bb7c25ffda5ac",
+    "status": "rejected",
+    "reason": "Overview is a promotional housing/furniture screenshot from the TapTap app page, not a complete six-member lineup configuration."
+  },
+  {
+    "sha256": "c45c6de446f5f5da68d9d8283afb93629bdfddfc1b163f491f94bff04fa10173",
+    "status": "rejected",
+    "reason": "Overview is an individual pet showcase for 大鲨鱼来喽 with elemental icons, not a complete six-member lineup configuration."
+  },
+  {
+    "sha256": "821c1de4d1dedc738ea7d6d1715cdaef11d1ec4550dad8980d8783d541142b96",
+    "status": "rejected",
+    "reason": "Overview is an achievements screen showing 获得荣誉 and awards for 大鲨鱼来喽, not a complete six-member lineup configuration."
+  },
+  {
+    "sha256": "b8e7bba4c3aa28a31d16f0aa908e11cc00b9434d1b1d2a4146b560b3ca8521b1",
+    "status": "rejected",
+    "reason": "Overview is an individual pet profile for 魔眷鸟 with elemental icons, not a complete six-member lineup configuration."
+  },
+  {
+    "sha256": "6b0af230de2598d1f0355e3a54b398f1e14120104e835a00a9b6b556e45c2711",
+    "status": "rejected",
+    "reason": "TapTap page is a personal game review by 缝尘 (“不是攻略哦，只是一些个人评价”); overview is a mascot illustration, not a six-member lineup configuration."
+  },
+  {
+    "sha256": "3a5bb72fdb1150f070bdc5adb9fef48092df78b1ef6987da3505a186886269aa",
+    "status": "rejected",
+    "reason": "Qiandao asset is a generic gray avatar/comment prompt (“请在App内发表评论哦”), not a lineup configuration."
+  },
+  {
+    "sha256": "0b7bc9b69b0eae069d506df837c7ea8c272bee7403919dd450eef78179407ada",
+    "status": "rejected",
+    "reason": "Overview is a multi-team 队伍选择 screenshot; the headline 马头星陨队 cannot be identified as one complete configuration, and the collection title/update time is not image-level season evidence."
+  }
+]

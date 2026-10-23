@@ -82,6 +82,10 @@ npm run research:coverage
 
 推送到 `main` 会运行 `.github/workflows/deploy.yml`：类型检查、单元测试、静态构建、浏览器测试通过后部署 GitHub Pages。手动部署可在仓库 Actions 页面运行 `Build and deploy Pages`。
 
+各发布入口复用 `.github/actions/validate-site`，保留桌面和手机截图及失败 trace。定时赛季核对和研究任务会比较线上 `build-state.json` 的内容指纹；仅核对时间变化时不部署，实际内容变化或 45 天排序线索到期后重新构建。线上指纹缺失或读取失败时保守执行验证和部署；核对结果仍保留在研究 artifact。
+
+搜索词、体系、赛季、视频筛选与排序保存在 URL，支持刷新和分享。详情页返回链接保留筛选条件并定位到原卡片；直接打开详情时仍使用默认返回入口。
+
 ## 来源与署名
 
 这是非官方玩家资料站。配置图和视频归原作者及平台所有，页面保留来源和署名；明确禁止再分发的素材不缓存。玩家可通过网站页脚的 GitHub Issues 入口反馈错误或来源变更。

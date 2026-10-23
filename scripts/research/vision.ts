@@ -1,6 +1,7 @@
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import { resolve, posix } from 'node:path';
 import sharp from 'sharp';
+import { candidateAction, fingerprint, type Ledger } from './ledger';
 
 export const PREVIEW_MAX_BYTES = 192 * 1024;
 
@@ -14,12 +15,12 @@ export async function boundedPreview(input: Buffer): Promise<Buffer> {
   throw Error('Image preview exceeds the request budget; preserve it for manual review');
 }
 
-export async function prepareVision(root = 'research/inbox') {
+export async function prepareVision(root = 'research/inbox', ledger: Ledger = {}, published = new Set<string>()) {
   const { run_id } = JSON.parse(await readFile(resolve(root, 'latest.json'), 'utf8'));
   if (!/^[a-zA-Z0-9-]+$/.test(run_id)) throw Error('Invalid research run');
   const runRoot = resolve(root, run_id);
   const manifest = JSON.parse(await readFile(resolve(runRoot, 'manifest.json'), 'utf8'));
-  const entries = new Map<string, { original: string; references: string[]; previews: string[]; bytes: number; error?: string }>();
+  const entries = new Map<string, { original: string; references: string[]; evidence: string[]; fingerprint: string; action: 'review' | 'reuse' | 'published'; previews: string[]; bytes: number; error?: string }>();
   for (const source of manifest.sources) {
     if (!/^[a-zA-Z0-9-]+$/.test(source.id)) throw Error('Invalid source path');
     for (const image of source.images ?? []) {
@@ -27,22 +28,27 @@ export async function prepareVision(root = 'research/inbox') {
       if (!/^[a-f0-9]{64}$/.test(image.sha256) || !new RegExp(`^${image.sha256}\\.(png|jpe?g|webp|avif)$`).test(image.file))
         throw Error('Invalid candidate image path');
       const old = entries.get(image.sha256);
-      if (old) { old.references.push(source.url); continue; }
+      const evidence = JSON.stringify([source.url, source.evidence_hash ?? '', image.context ?? '']);
+      if (old) { old.references.push(source.url); old.evidence.push(evidence); continue; }
       const original = posix.join(root.replaceAll('\\', '/'), run_id, source.id, image.file);
-      const record: { original: string; references: string[]; previews: string[]; bytes: number; error?: string } = {
-        original, references: [source.url], previews: [], bytes: 0,
-      };
+      const record = { original, references: [source.url], evidence: [evidence], fingerprint: '', action: 'review' as const, previews: [] as string[], bytes: 0 };
       entries.set(image.sha256, record);
+    }
+  }
+  for (const [sha256, record] of entries) {
+      record.fingerprint = fingerprint(record.evidence);
+      record.action = candidateAction(sha256, record.fingerprint, ledger, published);
+      if (record.action !== 'review') continue;
       try {
-        const input = await readFile(resolve(runRoot, source.id, image.file));
+        const input = await readFile(resolve(record.original));
         const metadata = await sharp(input).metadata();
         if (!metadata.width || !metadata.height) throw Error('Invalid image dimensions');
-        const output = resolve(runRoot, 'vision', image.sha256);
+        const output = resolve(runRoot, 'vision', sha256);
         await mkdir(output, { recursive: true });
         const save = async (name: string, bytes: Buffer) => {
           const preview = await boundedPreview(bytes);
           await writeFile(resolve(output, name), preview);
-          record.previews.push(posix.join(root.replaceAll('\\', '/'), run_id, 'vision', image.sha256, name));
+          record.previews.push(posix.join(root.replaceAll('\\', '/'), run_id, 'vision', sha256, name));
           record.bytes += preview.length;
         };
         await save('overview.jpg', input);
@@ -59,7 +65,6 @@ export async function prepareVision(root = 'research/inbox') {
       } catch (error) {
         record.error = String(error);
       }
-    }
   }
   const index = { run_id, preview_max_bytes: PREVIEW_MAX_BYTES, candidates: [...entries.entries()].map(([sha256, record]) => ({ sha256, ...record })) };
   await mkdir(resolve(runRoot, 'vision'), { recursive: true });

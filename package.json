@@ -11,7 +11,7 @@
     "preview": "astro preview --host 127.0.0.1",
     "check": "astro check",
     "validate": "tsx scripts/validate/data.ts",
-    "build": "npm run validate && astro build && tsx scripts/validate/site.ts",
+    "build": "npm run validate && astro build && tsx scripts/validate/site.ts && tsx scripts/validate/build-state.ts",
     "test": "tsx --test tests/*.test.ts",
     "test:ui": "playwright test",
     "research:collect": "tsx scripts/collect/run.ts",
@@ -20,10 +20,12 @@
     "lineup:rank": "tsx scripts/rank/run.ts",
     "links:check": "tsx scripts/validate/links.ts",
     "refresh:guard": "tsx scripts/validate/refresh-guard.ts",
+    "publish:plan": "tsx scripts/validate/publish-plan.ts",
     "refresh:snapshot": "tsx scripts/validate/refresh-guard.ts --snapshot",
     "research:discover": "tsx scripts/collect/run.ts --discover",
     "research:full": "tsx scripts/collect/run.ts --discover --browser",
     "research:vision": "tsx scripts/research/prepare-vision.ts",
+    "research:record": "tsx scripts/research/record-decisions.ts",
     "season:check": "tsx scripts/collect/season.ts"
   },
   "dependencies": {

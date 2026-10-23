@@ -27,26 +27,20 @@ jobs:
       - run: npm ci
       - run: npm run season:check
       - id: changed
-        run: |
-          if ! git diff --quiet -- data/update-state.json data/seasons.json; then
-            echo 'publish=true' >> "$GITHUB_OUTPUT"
-          fi
-          node --input-type=module -e "import fs from 'node:fs';import {execFileSync} from 'node:child_process';const old=JSON.parse(execFileSync('git',['show','HEAD:data/update-state.json'],{encoding:'utf8'}));const next=JSON.parse(fs.readFileSync('data/update-state.json','utf8'));fs.appendFileSync(process.env.GITHUB_OUTPUT,'major='+String(old.season!==next.season)+'\\n');"
+        run: npm run publish:plan
       - if: steps.changed.outputs.publish == 'true'
-        run: npm run check && npm test && npm run build
-      - if: steps.changed.outputs.publish == 'true'
-        run: npx playwright install --with-deps chromium
-      - if: steps.changed.outputs.publish == 'true'
-        run: npm run test:ui
-        env:
-          TEST_BASE: /roco-pvp-meta
+        uses: ./.github/actions/validate-site
+        with:
+          evidence-name: season-ui-evidence
       - if: steps.changed.outputs.publish == 'true'
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add data/update-state.json data/seasons.json
-          git commit -m 'chore: verify official season and preserve transition lineups'
-          git push
+          if ! git diff --cached --quiet; then
+            git commit -m 'chore: verify official season and preserve transition lineups'
+            git push
+          fi
       - if: steps.changed.outputs.publish == 'true'
         uses: actions/configure-pages@v5
       - if: steps.changed.outputs.publish == 'true'

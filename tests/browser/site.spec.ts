@@ -1,6 +1,35 @@
 import { test,expect } from '@playwright/test';
-import { activeLineups,allLineups,historyLineups } from '../../src/lib/data';
+import { activeLineups,allLineups,historyLineups,overview } from '../../src/lib/data';
 import { mkdir } from 'node:fs/promises';
+
+test('完整筛选链接可刷新分享，详情返回恢复筛选与卡片位置',async({page})=>{
+  const lineup=historyLineups[0];
+  const params=new URLSearchParams({season:lineup.season,q:lineup.roster[0].name,type:lineup.archetype[0],sort:'name',ref:'guide'});
+  await page.goto(`history/?${params}`);
+  await expect(page.getByRole('searchbox')).toHaveValue(lineup.roster[0].name);
+  await expect(page.locator('#sort')).toHaveValue('name');
+  await expect(page.locator(`[data-season-filter="${lineup.season}"]`)).toHaveAttribute('aria-pressed','true');
+  const card=page.locator(`#lineup-${lineup.slug}`);
+  await expect(card).toBeVisible();
+  await page.reload();await expect(page.getByRole('searchbox')).toHaveValue(lineup.roster[0].name);
+  await card.locator('.card-cta').click();
+  await expect(page.locator('.bottom-return')).toHaveAttribute('href',`/roco-pvp-meta/history/?${params}#lineup-${lineup.slug}`.replace('/roco-pvp-meta',process.env.TEST_BASE||''));
+  await page.locator('.bottom-return').click();
+  await expect(page.getByRole('searchbox')).toHaveValue(lineup.roster[0].name);
+  await expect(page.locator('#sort')).toHaveValue('name');
+  await expect(card).toBeInViewport();
+  await card.locator('.card-link').click();await page.goBack();
+  await expect(page.getByRole('searchbox')).toHaveValue(lineup.roster[0].name);
+  await page.getByRole('button',{name:'清除筛选'}).click();
+  const clean=new URL(page.url());
+  for(const key of ['q','type','season','sort','video'])expect(clean.searchParams.has(key)).toBe(false);
+  expect(clean.searchParams.get('ref')).toBe('guide');
+  await page.goto(`./?video=1&sort=recent`);
+  await expect(page.getByRole('checkbox',{name:'有教学视频'})).toBeChecked();
+  await expect(page.locator('[data-card]:visible')).toHaveCount(activeLineups.filter(l=>l.tutorials.length).length);
+  await page.goto(`lineups/${lineup.slug}/?returnTo=${encodeURIComponent('https://example.com/')}`);
+  await expect(page.locator('.bottom-return')).toHaveAttribute('href',`${process.env.TEST_BASE||''}/history/`);
+});
 
 test('玩家首页：固定明亮风格、体系筛选与全局排序',async({page})=>{
   await page.goto('./');await expect(page).toHaveTitle(/阵容图鉴/);
@@ -8,6 +37,7 @@ test('玩家首页：固定明亮风格、体系筛选与全局排序',async({pa
   await expect(page.getByRole('link',{name:'收录准则',exact:true})).toHaveCount(0);
   await expect(page.getByRole('link',{name:'更新记录',exact:true})).toHaveCount(0);
   await expect(page.locator('[data-card]:visible')).toHaveCount(activeLineups.length);
+  await expect(page.locator('[data-current-count]')).toHaveText(`${String(overview.current.length).padStart(2,'0')}套`);
   const query=activeLineups[0].roster[0].name;
   await page.getByRole('searchbox').fill(query);
   await expect(page.locator('[data-card]:visible')).toHaveCount(activeLineups.filter(l=>[l.name,...l.aliases,...l.archetype,...l.roster.map(p=>p.name)].join(' ').includes(query)).length);

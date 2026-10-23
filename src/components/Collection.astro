@@ -18,26 +18,38 @@ const filters=[...new Set(lineups.flatMap(l=>l.archetype))];
   <div class="empty-state" id="empty-state" hidden><span class="empty-icon"><Icon name="search" size={26} /></span><h3>没有找到符合条件的阵容</h3><p>换个关键词，或清除筛选，重新发现喜欢的队伍。</p><div class="empty-actions"><button class="button primary" id="reset-search">重置筛选</button>{!historical&&<a class="button secondary" href={withBase('/history/')}>浏览往期阵容</a>}</div></div>
 </div>
 <script>
+  import { readCollectionState, writeCollectionState } from '../lib/collection-state';
   document.querySelectorAll<HTMLElement>('[data-collection]').forEach(root=>{
     const input=root.querySelector<HTMLInputElement>('#search')!,sort=root.querySelector<HTMLSelectElement>('#sort')!,video=root.querySelector<HTMLInputElement>('#with-video')!;
     const cards=[...root.querySelectorAll<HTMLElement>('[data-card]')], grid=root.querySelector('#lineup-grid')!;
     const types=[...root.querySelectorAll<HTMLButtonElement>('[data-filter]')];
     const seasons=[...document.querySelectorAll<HTMLButtonElement>('[data-season-filter]')];
-    const requested=new URL(location.href).searchParams.get('season');
-    let type='all',season=seasons.some(b=>b.dataset.seasonFilter===requested)?requested!:'all';
-    function update(){let count=0;const query=input.value.trim().toLowerCase();
+    let type='all',season='all';
+    function restore(){
+      const state=readCollectionState(new URL(location.href),types.map(b=>b.dataset.filter!),seasons.map(b=>b.dataset.seasonFilter!));
+      input.value=state.query;type=state.type;season=state.season;video.checked=state.video;sort.value=state.sort;
+      update(false);
+    }
+    function update(sync=true){let count=0;const query=input.value.trim().toLowerCase();
+      if(sync){const url=writeCollectionState(new URL(location.href),{query:input.value,type,season,video:video.checked,sort:sort.value});history.replaceState(history.state,'',url);}
       cards.forEach(card=>{card.hidden=!(card.dataset.search!.includes(query)&&(type==='all'||card.dataset.types!.split('|').includes(type))&&(season==='all'||card.dataset.season===season)&&(!video.checked||card.dataset.video==='yes'));if(!card.hidden)count++;});
       [...cards].sort((a,b)=>sort.value==='recent'?b.dataset.date!.localeCompare(a.dataset.date!)||Number(a.dataset.index)-Number(b.dataset.index):sort.value==='name'?a.querySelector('h3')!.textContent!.localeCompare(b.querySelector('h3')!.textContent!,'zh-CN'):Number(a.dataset.index)-Number(b.dataset.index)).forEach(c=>grid.append(c));
       root.querySelector('#result-count')!.textContent=`共 ${count} 套阵容`;root.querySelector<HTMLElement>('#empty-state')!.hidden=count>0;
-      root.querySelector<HTMLElement>('#clear-filters')!.hidden=!(query||type!=='all'||season!=='all'||video.checked);
+      root.querySelector<HTMLElement>('#clear-filters')!.hidden=!(query||type!=='all'||season!=='all'||video.checked||sort.value!=='recommended');
       types.forEach(b=>{b.classList.toggle('active',b.dataset.filter===type);b.setAttribute('aria-pressed',String(b.dataset.filter===type));});
       seasons.forEach(b=>{b.classList.toggle('active',b.dataset.seasonFilter===season);b.setAttribute('aria-pressed',String(b.dataset.seasonFilter===season));});
+      cards.forEach(card=>card.querySelectorAll<HTMLAnchorElement>('.card-link,.card-cta').forEach(link=>{
+        const url=new URL(link.href);url.searchParams.set('returnTo',`${location.pathname}${location.search}#${card.id}`);link.href=url.href;
+      }));
     }
-    input.addEventListener('input',update);sort.addEventListener('change',update);video.addEventListener('change',update);types.forEach(b=>b.addEventListener('click',()=>{type=b.dataset.filter!;update();}));
-    seasons.forEach(b=>b.addEventListener('click',()=>{season=b.dataset.seasonFilter!;const url=new URL(location.href);if(season==='all')url.searchParams.delete('season');else url.searchParams.set('season',season);history.replaceState(null,'',url);update();}));
-    function reset(){type='all';season='all';input.value='';video.checked=false;sort.value='recommended';const url=new URL(location.href);url.searchParams.delete('season');history.replaceState(null,'',url);update();input.focus();}
+    input.addEventListener('input',()=>update());sort.addEventListener('change',()=>update());video.addEventListener('change',()=>update());types.forEach(b=>b.addEventListener('click',()=>{type=b.dataset.filter!;update();}));
+    seasons.forEach(b=>b.addEventListener('click',()=>{season=b.dataset.seasonFilter!;update();}));
+    function reset(){type='all';season='all';input.value='';video.checked=false;sort.value='recommended';update();input.focus();}
     root.querySelector('#reset-search')!.addEventListener('click',reset);
     root.querySelector('#clear-filters')!.addEventListener('click',reset);
-    update();
+    window.addEventListener('popstate',restore);
+    restore();
+    // Filtering/reordering finishes before restoring the selected card anchor.
+    if(location.hash.startsWith('#lineup-'))requestAnimationFrame(()=>document.getElementById(location.hash.slice(1))?.scrollIntoView());
   });
 </script>

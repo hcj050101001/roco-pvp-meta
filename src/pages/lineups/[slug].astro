@@ -34,6 +34,11 @@ const verifiedSkillCount=l.roster.filter(p=>p.skills.length>0).length;
   </div><aside class="detail-sidebar"><div class="sidebar-inner"><span class="eyebrow muted">TEAM NOTES</span><h2>配队速览</h2><dl><dt>体系</dt><dd>{l.archetype.join(' / ')}</dd><dt>成员</dt><dd>{l.roster.map(p=>p.name).join('、')}</dd><dt>版本</dt><dd>{l.season} · {l.version_label}</dd></dl><a class="button secondary" href="#configuration">查看配置 ↑</a><a class="text-link sidebar-return" href={back}>{backLabel}</a></div></aside></div></article>
 </Layout>
 <script>
+  import { safeCollectionReturn } from '../../lib/collection-state';
+  const back=safeCollectionReturn(new URL(location.href).searchParams.get('returnTo'),location.origin,import.meta.env.BASE_URL);
+  if(back)document.querySelectorAll<HTMLAnchorElement>('.detail-nav-inner>a,.bottom-return,.sidebar-return').forEach(link=>{
+    link.href=back;link.textContent=new URL(back,location.origin).pathname.endsWith('/history/')?'← 返回往期阵容':'← 返回阵容总览';
+  });
   const tabs=[...document.querySelectorAll<HTMLButtonElement>('[data-image-tab]')];
   function activate(tab:HTMLButtonElement){tabs.forEach(t=>{const selected=t===tab;t.setAttribute('aria-selected',String(selected));t.tabIndex=selected?0:-1;document.getElementById(`image-${t.dataset.imageTab}`)!.hidden=!selected;});}
   tabs.forEach((tab,i)=>{tab.addEventListener('click',()=>activate(tab));tab.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();const next=tabs[(i+(e.key==='ArrowRight'?1:tabs.length-1))%tabs.length];activate(next);next.focus();}});});

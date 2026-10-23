@@ -1,0 +1,30 @@
+name: Validate static site
+description: Validate data, code, production routes and desktop/mobile layouts
+inputs:
+  evidence-name:
+    description: Screenshot and trace artifact name
+    default: ui-evidence
+runs:
+  using: composite
+  steps:
+    - run: npm run check
+      shell: bash
+    - run: npm test
+      shell: bash
+    - run: npm run build
+      shell: bash
+      env:
+        SITE_BASE: /roco-pvp-meta
+    - run: npx playwright install --with-deps chromium
+      shell: bash
+    - run: node node_modules/@playwright/test/cli.js test --workers=2
+      shell: bash
+      env:
+        TEST_BASE: /roco-pvp-meta
+    - uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: ${{ inputs.evidence-name }}
+        path: |
+          artifacts/
+          test-results/

@@ -1,12 +1,13 @@
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { resolve, join } from 'node:path';
+import { createHash } from 'node:crypto';
 import { extractPage } from '../extract/page';
 import { publicFetch } from './network';
 import { imageInfo } from '../extract/image';
 import { discover } from './search';
 import { publicBrowserSnapshot } from './browser';
 import { readLineups } from '../../src/lib/data';
-import { sourceFor, mergeSources, balancedSources, selectedSeasons, queryPlan, candidateImage, type Source } from './strategy';
+import { sourceFor, mergeSources, balancedSources, selectedSeasons, queryPlan, candidateImage, retrySource, remainingImages, unprocessedImages, processedImages, type Source } from './strategy';
 import policy from '../../data/research-policy.json';
 
 const option = (name: string, fallback: string) => {
@@ -48,8 +49,15 @@ try {
     const entry = sourceFor(s.url, s.seasons, 'backlog');
     if (!entry) continue;
     entry.pending_image_urls = Array.isArray(s.pending_image_urls) ? s.pending_image_urls.filter((u: unknown) => typeof u === 'string') : [];
-    if (!entry.seasons.some(season => seasons.includes(season))) carriedBacklog.push(entry);
-    else sources.push({ ...entry, seasons: entry.seasons.filter(season => seasons.includes(season)) });
+    entry.processed_image_urls = Array.isArray(s.processed_image_urls) ? s.processed_image_urls.filter((u: unknown) => typeof u === 'string') : [];
+    if (/^[a-f0-9]{64}$/.test(s.evidence_hash)) entry.evidence_hash = s.evidence_hash;
+    entry.attempts = Number.isInteger(s.attempts) && s.attempts > 0 ? Math.min(s.attempts, 100) : 0;
+    if (s.retry_after && Number.isFinite(Date.parse(s.retry_after))) entry.retry_after = new Date(s.retry_after).toISOString();
+    const otherSeasons=entry.seasons.filter(season=>!seasons.includes(season));
+    if(otherSeasons.length)carriedBacklog.push(entry.seasons.some(season=>seasons.includes(season))
+      ? {...entry,seasons:otherSeasons,pending_image_urls:[],processed_image_urls:[],evidence_hash:undefined,attempts:0,retry_after:undefined}
+      : entry);
+    if(entry.seasons.some(season=>seasons.includes(season)))sources.push({ ...entry, seasons: entry.seasons.filter(season => seasons.includes(season)) });
   }
 } catch (e: any) { if (e.code !== 'ENOENT') throw e; }
 for (const l of lineups) for (const s of l.sources) add(s.url, [l.season], 'published-reference');
@@ -64,12 +72,15 @@ if (process.argv.includes('--discover')) {
 }
 // Novel evidence gets priority inside each platform/season, never a product collection cap.
 sources = mergeSources(sources).sort((a, b) => Number(published.has(a.url)) - Number(published.has(b.url)));
+carriedBacklog.push(...sources.filter(s => s.retry_after && Date.parse(s.retry_after) > Date.now()));
+sources = sources.filter(s => !s.retry_after || Date.parse(s.retry_after) <= Date.now());
 const initial = balancedSources(sources, seasons, policy.max_pages);
 const queue = [...initial.selected], deferred = [...initial.deferred];
-const seen = new Set(queue.map(s => s.url));
+const seen = new Set([...queue.map(s => s.url), ...carriedBacklog.filter(s=>s.retry_after && Date.parse(s.retry_after)>Date.now()).map(s=>s.url)]);
 const records: Record<string, any>[] = [];
 const related: Source[] = [];
 const imageBacklog: Source[] = [];
+const failedSources: Source[] = [];
 for (let index = 0; index < queue.length; index++) {
   const source = queue[index];
   const folder = join(root, source.id); await mkdir(folder, { recursive: true });
@@ -86,33 +97,42 @@ for (let index = 0; index < queue.length; index++) {
     }
     await writeFile(join(folder, 'page.html'), html);
     const extracted = extractPage(html, r.url);
+    const evidence_hash = createHash('sha256').update(JSON.stringify([extracted.title, extracted.text, extracted.metadata, extracted.public_comments, extracted.videos])).digest('hex');
     await writeFile(join(folder, 'page.json'), JSON.stringify(extracted, null, 2) + '\n');
     const downloads = [];
     const pending = new Set(source.pending_image_urls ?? []);
-    const candidates = extracted.images.filter(candidateImage).sort((a, b) => Number(pending.has(b.url)) - Number(pending.has(a.url)));
+    const pendingOrder = new Map([...pending].map((url,index)=>[url,index]));
+    const candidates = unprocessedImages([...extracted.images, ...[...pending].filter(url => !extracted.images.some(i => i.url === url)).map(url => ({url, context:'待续原图', method:'backlog', order:0}))]
+      .filter(candidateImage),source,evidence_hash).sort((a, b) => (pendingOrder.get(a.url)??Infinity)-(pendingOrder.get(b.url)??Infinity));
+    const completed: string[] = [];
+    const failedImages: string[] = [];
     for (const img of candidates.slice(0, policy.max_images_per_page)) {
       try {
         const res = await publicFetch(img.url, 12_000_000, 15000);
         if (!res.type.startsWith('image/')) throw Error('非图片响应');
         const info = await imageInfo(res.body);
+        completed.push(img.url);
         if (info.width < 300 || info.height < 200) continue;
         const file = `${info.sha256}.${info.format === 'jpeg' ? 'jpg' : info.format}`;
         if (!/\.(png|jpe?g|webp|avif)$/.test(file)) continue;
         await writeFile(join(folder, file), res.body);
         downloads.push({ ...img, ...info, file, verified: false, mapping_confidence: 'unverified' });
-      } catch (e) { downloads.push({ ...img, error: String(e), verified: false }); }
+      } catch (e) { failedImages.push(img.url); downloads.push({ ...img, error: String(e), verified: false }); }
     }
-    if (candidates.length > policy.max_images_per_page)
-      imageBacklog.push({ ...source, pending_image_urls: candidates.slice(policy.max_images_per_page).map(i => i.url) });
+    const pendingImages = remainingImages([...candidates.slice(policy.max_images_per_page).map(i => i.url),...pending], completed.filter(url => !failedImages.includes(url)), failedImages);
+    const processed = processedImages(source,evidence_hash);
+    imageBacklog.push({ ...source, evidence_hash, processed_image_urls:[...new Set([...processed,...completed.filter(url=>!failedImages.includes(url))])],
+      attempts:0, retry_after:pendingImages.length?undefined:new Date(Date.now()+14*86400000).toISOString(), pending_image_urls:pendingImages });
     for (const [i, link] of extracted.related_links.entries()) {
       const s = sourceFor(link.url, source.seasons, 'related-link');
       if (s && !seen.has(s.url)) (i < policy.max_related_per_page ? related : deferred).push(s);
     }
-    records.push({ ...source, status: 'ok', resolved_url: r.url, title: extracted.title, images: downloads,
+    records.push({ ...source, status: 'ok', resolved_url: r.url, title: extracted.title, evidence_hash, images: downloads,
       image_nodes: extracted.images.length, deferred_images: candidates.slice(policy.max_images_per_page),
       browser_error: browserError, checked_at: new Date().toISOString() });
     console.log(`${source.platform} ${source.url}: ${downloads.filter(i => 'sha256' in i).length} 张未核验候选图${browserError ? '；浏览器补充失败' : ''}`);
   } catch (e) {
+    failedSources.push(retrySource(source));
     records.push({ ...source, status: 'source_fetch_failed', error: String(e), checked_at: new Date().toISOString() });
     console.log(`${source.platform}: ${String(e)}`);
   }
@@ -123,7 +143,7 @@ for (let index = 0; index < queue.length; index++) {
     deferred.push(...extras.deferred); related.length = 0;
   }
 }
-const backlog = mergeSources([...carriedBacklog, ...deferred.filter(s => !seen.has(s.url)), ...imageBacklog]);
+const backlog = mergeSources([...carriedBacklog, ...deferred.filter(s => !seen.has(s.url)), ...imageBacklog, ...failedSources]);
 await mkdir('research/candidates', { recursive: true });
 await writeFile(backlogFile, JSON.stringify({ run_id: runId, untrusted: true, sources: backlog }, null, 2) + '\n');
 await writeFile(join(root, 'manifest.json'), JSON.stringify({ run_id: runId, created_at: new Date().toISOString(),

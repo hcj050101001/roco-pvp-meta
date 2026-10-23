@@ -20,8 +20,8 @@ const systems=new Set(activeLineups.flatMap(l=>l.archetype));
       <div class="cover-bottom"><span>ROCO KINGDOM · PVP</span><a href="#lineup-overview" aria-label="浏览本季配队"><Icon name="diagonal" size={22} /></a></div>
     </aside>
   </section>
-  <div class="edition-strip wrap"><div class="edition-intro"><Icon name="book" size={20} /><span>一册配队，<strong>更多可能。</strong></span></div><dl class="edition-stats"><div><dt>当季配队</dt><dd>{String(activeLineups.length).padStart(2,'0')}<span>套</span></dd></div><div><dt>体系标签</dt><dd>{String(systems.size).padStart(2,'0')}<span>个</span></dd></div><div><dt>往期配队</dt><dd>{String(historyLineups.length).padStart(2,'0')}<span>套</span></dd></div></dl><a href={withBase('/history/')} class="edition-link">每个赛季，都值得翻阅 <Icon name="arrow" size={16} /></a></div>
-  {overview.transition&&<aside class="transition-banner wrap"><strong>新赛季配队陆续更新</strong><p>先沿用上一赛季阵容作过渡参考，卡片保留原赛季标记。</p></aside>}
+  <div class="edition-strip wrap"><div class="edition-intro"><Icon name="book" size={20} /><span>一册配队，<strong>更多可能。</strong></span></div><dl class="edition-stats"><div><dt>当季配队</dt><dd data-current-count>{String(overview.current.length).padStart(2,'0')}<span>套</span></dd></div><div><dt>体系标签</dt><dd>{String(systems.size).padStart(2,'0')}<span>个</span></dd></div><div><dt>往期配队</dt><dd>{String(historyLineups.length).padStart(2,'0')}<span>套</span></dd></div></dl><a href={withBase('/history/')} class="edition-link">每个赛季，都值得翻阅 <Icon name="arrow" size={16} /></a></div>
+  {overview.transition&&<aside class="transition-banner wrap"><strong>新赛季配队陆续更新</strong><p>当季 {overview.current.length} 套，另有 {overview.fallback.length} 套上一赛季阵容作过渡参考，卡片保留原赛季标记。</p></aside>}
   <section class="overview wrap" id="lineup-overview"><div class="section-heading"><div><div class="eyebrow muted">EXPLORE THE COLLECTION</div><h2>发现你的下一支队伍<span>{activeLineups.length}</span></h2></div><span class="collection-subtitle"><span class="status-dot"></span>{currentSeason.id} · {currentSeason.name}</span></div>
     <Collection lineups={activeLineups} fallback={overview.fallback} />
   </section>

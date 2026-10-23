@@ -8,7 +8,7 @@ const { lineup: l, index, historical=false, fallback=false } = Astro.props;
 const img = l.lineup_images[0], updated=configurationDate(l);
 const platforms={bilibili:'哔哩哔哩',douyin:'抖音',other:'视频'};
 ---
-<article class="lineup-card" data-card data-season={l.season} data-search={[l.name,...l.aliases,...l.archetype,...l.roster.map(p=>p.name)].join(' ').toLowerCase()} data-types={l.archetype.join('|')} data-date={updated} data-index={index} data-video={l.tutorials.length>0?'yes':'no'}>
+<article id={`lineup-${l.slug}`} class="lineup-card" data-card data-season={l.season} data-search={[l.name,...l.aliases,...l.archetype,...l.roster.map(p=>p.name)].join(' ').toLowerCase()} data-types={l.archetype.join('|')} data-date={updated} data-index={index} data-video={l.tutorials.length>0?'yes':'no'}>
   <a href={withBase(`/lineups/${l.slug}/`)} class="card-link">
     <div class="card-top"><span class="card-number"><span class="status-dot"></span>{l.season} / {l.archetype[0]}</span><span class="card-label">{fallback?'过渡参考':historical?'往期配队':'当季配队'}</span></div>
     <div class="card-image"><img src={withBase(img.path)} width={img.width} height={img.height} alt={`${l.name}完整六只精灵与技能配置一图流`} loading={index<3?'eager':'lazy'} /></div>

@@ -6,6 +6,7 @@ import { tmpdir } from 'node:os';
 import { join, resolve, dirname, basename } from 'node:path';
 import sharp from 'sharp';
 import { boundedPreview, prepareVision, PREVIEW_MAX_BYTES } from '../scripts/research/vision';
+import { recordDecisions } from '../scripts/research/ledger';
 
 test('识图 JPEG 限制字节和尺寸，不放大小图', async () => {
   const input = await sharp(randomBytes(1200 * 900 * 3), { raw: { width: 1200, height: 900, channels: 3 } }).png().toBuffer();
@@ -38,6 +39,15 @@ test('候选按 SHA 去重、保留原图字节和全部来源，拒绝路径穿
     assert.equal(index.candidates[0].error, undefined);
     for (const preview of index.candidates[0].previews) assert.ok((await readFile(preview)).length <= PREVIEW_MAX_BYTES);
     assert.deepEqual(await readFile(join(root, run, 'a', image.file)), input);
+    const ledger=recordDecisions({},index.candidates,[{sha256,status:'rejected',reason:'测试候选非配置图'}]);
+    const repeated=await prepareVision(root,ledger);
+    assert.equal(repeated.candidates[0].action,'reuse');assert.equal(repeated.candidates[0].previews.length,0);
+    const published=await prepareVision(root,{},new Set([sha256]));
+    assert.equal(published.candidates[0].action,'published');assert.equal(published.candidates[0].previews.length,0);
+    sources[1].url='https://example.com/new-evidence';
+    await writeFile(join(root,run,'manifest.json'),JSON.stringify({sources}));
+    const reconsidered=await prepareVision(root,ledger);
+    assert.equal(reconsidered.candidates[0].action,'review');assert.ok(reconsidered.candidates[0].previews.length>0);
     sources[0].images[0] = { sha256, file: '../../secret.png' };
     await writeFile(join(root, run, 'manifest.json'), JSON.stringify({ sources }));
     await assert.rejects(prepareVision(root), /Invalid candidate image path/);

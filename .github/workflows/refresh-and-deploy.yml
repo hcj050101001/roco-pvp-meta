@@ -52,6 +52,12 @@ jobs:
         run: npm run research:coverage
       - name: Prepare bounded vision inputs
         run: npm run research:vision
+      - name: Preserve collector evidence before model execution
+        uses: actions/upload-artifact@v4
+        with:
+          name: collected-evidence
+          path: research/inbox/
+          retention-days: 7
       - name: Research with DeepSeek
         uses: openai/codex-action@v1
         with:
@@ -110,6 +116,10 @@ jobs:
         with:
           name: research-evidence
           path: research
+      - uses: actions/download-artifact@v4
+        with:
+          name: collected-evidence
+          path: research/inbox
       - uses: actions/setup-node@v4
         with:
           node-version: 22
@@ -117,14 +127,16 @@ jobs:
       - run: npm ci
       - run: npx tsx scripts/validate/promote.ts
       - run: npm run refresh:guard
-      - run: npm run research:coverage
-      - run: npm run check
-      - run: npm test
-      - run: npm run build
-      - run: npx playwright install --with-deps chromium
-      - run: npm run test:ui
         env:
-          TEST_BASE: /roco-pvp-meta
+          REFRESH_BASE_SHA: ${{ github.sha }}
+      - run: npm run research:record
+      - run: npm run research:coverage
+      - id: changed
+        run: npm run publish:plan
+      - if: steps.changed.outputs.publish == 'true'
+        uses: ./.github/actions/validate-site
+        with:
+          evidence-name: research-ui-evidence
       - name: Commit verified content
         shell: bash
         run: |
@@ -136,8 +148,11 @@ jobs:
             git push
           fi
       - uses: actions/configure-pages@v5
+        if: steps.changed.outputs.publish == 'true'
       - uses: actions/upload-pages-artifact@v3
+        if: steps.changed.outputs.publish == 'true'
         with:
           path: dist
       - uses: actions/deploy-pages@v4
+        if: steps.changed.outputs.publish == 'true'
         id: deployment

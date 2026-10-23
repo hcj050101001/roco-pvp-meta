@@ -48,6 +48,8 @@ test('排序只采信有时效的实绩/热度线索，不将索引复核当新�
 test('换季过渡不清空、少量新队并存；齐备后只展示当季，旧资料仍在',()=>{
   const previous=allLineups.filter(l=>l.season==='S4');
   const empty=selectOverview(previous,'S5');assert.equal(empty.current.length,0);assert.equal(empty.fallback.length,previous.length);assert.equal(empty.transition,true);
+  const single=selectOverview([...previous,{...previous[0],id:'s5-single',slug:'s5-single',season:'S5'}],'S5');
+  assert.equal(single.current.length,1);assert.equal(single.fallback.length,previous.length);
   const incoming=[...previous,...Array.from({length:2},(_,i)=>({...previous[0],id:`s5-${i}`,slug:`s5-${i}`,season:'S5'}))];
   const partial=selectOverview(incoming,'S5');assert.equal(partial.current.length,2);assert.equal(partial.fallback.length,previous.length);
   incoming.push({...previous[0],id:'s5-3',slug:'s5-3',season:'S5'});
@@ -84,5 +86,21 @@ test('自动更新拒绝 OCR 猜测改名，即使来源可访问也必须留候
   assert.throws(()=>guardRefresh(allLineups,changed,[changed[0].sources[0].url]),/不允许改写既有成员名称/);
   const fieldsOnly=structuredClone(allLineups);
   fieldsOnly[0].verification_notes+=' 已核对原图。';
-  assert.doesNotThrow(()=>guardRefresh(allLineups,fieldsOnly,[fieldsOnly[0].sources[0].url]));
+  assert.throws(()=>guardRefresh(allLineups,fieldsOnly,[fieldsOnly[0].sources[0].url]),/无新证据/);
+});
+
+test('可访问旧来源也不能刷新日期；新出处必须逐字段关联证据',()=>{
+  const old=structuredClone(allLineups[0]),next=structuredClone(old);
+  next.last_verified_at='2026-10-23T08:00:00+08:00';
+  const accessible=[old.sources[0].url];
+  assert.throws(()=>guardRefresh([old],[next],accessible),/无新证据/);
+  next.sources[0].last_checked_at=next.last_verified_at;
+  assert.throws(()=>guardRefresh([old],[next],accessible),/无新证据/);
+  const source={...old.sources[0],url:'https://example.com/original',title:'原作者配置'};
+  next.sources.push(source);accessible.push(source.url);
+  assert.throws(()=>guardRefresh([old],[next],accessible),/sources/);
+  const receipt={lineup_id:old.id,fields:['sources'],source_url:source.url,artifact_sha256:'a'.repeat(64),reason:'原帖明确关联同一配置图'};
+  assert.doesNotThrow(()=>guardRefresh([old],[next],accessible,[receipt]));
+  next.summary+=' 未核验描述';
+  assert.throws(()=>guardRefresh([old],[next],accessible,[receipt]),/summary/);
 });

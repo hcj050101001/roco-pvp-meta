@@ -3,7 +3,7 @@ import policy from '../../data/research-policy.json';
 
 export type Scope = 'all' | 'current' | 'history';
 export type Query = { query: string; season: string; platform: string };
-export type Source = { id: string; url: string; platform: string; enabled: boolean; seasons: string[]; origin: string; pending_image_urls?: string[] };
+export type Source = { id: string; url: string; platform: string; enabled: boolean; seasons: string[]; origin: string; pending_image_urls?: string[]; processed_image_urls?: string[]; evidence_hash?: string; attempts?: number; retry_after?: string };
 
 export function platformFor(raw: string): string | null {
   try {
@@ -49,10 +49,37 @@ export function mergeSources(items: Source[]): Source[] {
     if (old) {
       old.seasons = [...new Set([...old.seasons, ...item.seasons])];
       if (item.pending_image_urls) old.pending_image_urls = [...new Set([...(old.pending_image_urls ?? []), ...item.pending_image_urls])];
+      if (item.evidence_hash) {
+        if (old.evidence_hash === item.evidence_hash) old.processed_image_urls = [...new Set([...(old.processed_image_urls ?? []), ...(item.processed_image_urls ?? [])])];
+        else old.processed_image_urls = item.processed_image_urls;
+        old.evidence_hash = item.evidence_hash;
+      }
+      old.attempts = Math.max(old.attempts ?? 0, item.attempts ?? 0);
+      if (item.retry_after && (!old.retry_after || item.retry_after > old.retry_after)) old.retry_after = item.retry_after;
     }
     else result.set(item.url, { ...item, seasons: [...item.seasons] });
   }
   return [...result.values()];
+}
+
+export function retrySource(source: Source, now = Date.now()): Source {
+  const attempts = (source.attempts ?? 0) + 1;
+  return { ...source, attempts, retry_after: new Date(now + Math.min(14, 2 ** Math.min(attempts - 1, 4)) * 86400000).toISOString() };
+}
+
+export function remainingImages(previous: string[], completed: string[], deferred: string[]) {
+  const done = new Set(completed);
+  return [...new Set([...previous, ...deferred])].filter(url => !done.has(url));
+}
+
+export function unprocessedImages<T extends {url: string}>(images: T[], source: Source, evidenceHash: string) {
+  const processed = new Set(processedImages(source, evidenceHash));
+  return images.filter(image => !processed.has(image.url));
+}
+
+export function processedImages(source: Source, evidenceHash: string) {
+  // A completed traversal is rechecked on its next due run; an unfinished one advances.
+  return source.evidence_hash === evidenceHash && source.pending_image_urls?.length ? source.processed_image_urls ?? [] : [];
 }
 
 // One mirror cannot consume the budget before other platforms and seasons.

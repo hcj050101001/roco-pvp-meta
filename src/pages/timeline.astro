@@ -4,19 +4,33 @@ import { allLineups } from '../lib/data';
 import { timelineLineups } from '../lib/timeline';
 import { configurationDate } from '../lib/rank';
 import { displayDate, withBase } from '../lib/urls';
-import { breadcrumbJsonLd } from '../lib/seo';
+import { absoluteUrl, breadcrumbJsonLd } from '../lib/seo';
 
 const lineups = timelineLineups(allLineups);
+const itemListJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  numberOfItems: lineups.length,
+  itemListElement: lineups.map((lineup, index) => ({
+    '@type': 'ListItem',
+    position: index + 1,
+    name: lineup.name,
+    url: absoluteUrl(withBase(`/lineups/${lineup.slug}/`)),
+  })),
+};
 ---
 
 <Layout
   title="配置时间线"
   description="按配置图发布日期浏览已核验阵容；未标注日期的阵容单独列出。"
   section="timeline"
-  jsonLd={breadcrumbJsonLd([
-    { name: '阵容图鉴', path: '/' },
-    { name: '配置时间线', path: '/timeline/' },
-  ])}
+  jsonLd={[
+    breadcrumbJsonLd([
+      { name: '阵容图鉴', path: '/' },
+      { name: '配置时间线', path: '/timeline/' },
+    ]),
+    itemListJsonLd,
+  ]}
 >
   <div class="wrap data-page">
     <header class="data-page-heading">

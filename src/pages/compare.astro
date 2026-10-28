@@ -1,8 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { allLineups } from '../lib/data';
-import { withBase } from '../lib/urls';
 import { breadcrumbJsonLd } from '../lib/seo';
+import ComparePanel from '../components/ComparePanel.astro';
 
 const lineups = allLineups
   .filter((lineup) => lineup.lineup_images.some((image) => image.verified))
@@ -26,7 +26,7 @@ const lineups = allLineups
     <div class="compare-controls">
       <label>
         第一套阵容
-        <select id="compare-first">
+        <select id="compare-first" disabled>
           {lineups.map((lineup, index) => (
             <option value={lineup.slug} selected={index === 0}>
               {lineup.season} · {lineup.name}
@@ -36,7 +36,7 @@ const lineups = allLineups
       </label>
       <label>
         第二套阵容
-        <select id="compare-second">
+        <select id="compare-second" disabled>
           {lineups.map((lineup, index) => (
             <option value={lineup.slug} selected={index === 1}>
               {lineup.season} · {lineup.name}
@@ -45,28 +45,20 @@ const lineups = allLineups
         </select>
       </label>
     </div>
-    <p id="compare-status" role="status" aria-live="polite"></p>
+    <p id="compare-status" role="status" aria-live="polite">
+      正在对比{lineups[0].season} · {lineups[0].name}与{lineups[1].season} · {lineups[1].name}。
+    </p>
     <div class="compare-grid">
-      <section id="compare-left" aria-label="第一套阵容"></section>
-      <section id="compare-right" aria-label="第二套阵容"></section>
+      <section id="compare-left" aria-label="第一套阵容">
+        <ComparePanel lineup={lineups[0]} />
+      </section>
+      <section id="compare-right" aria-label="第二套阵容">
+        <ComparePanel lineup={lineups[1]} />
+      </section>
     </div>
     {lineups.map((lineup) => (
       <template data-compare-template={lineup.slug}>
-        <h2>
-          <a href={withBase(`/lineups/${lineup.slug}/`)}>{lineup.name}</a>
-        </h2>
-        <p>
-          {lineup.season} · 体系标签：{lineup.archetype.join(' · ')}
-        </p>
-        <ol class="compare-roster">
-          {lineup.roster.map((member) => (
-            <li>
-              <h3>{member.name}</h3>
-              <p>血脉：{member.bloodline ?? '未记录'}</p>
-              <p>技能：{member.skills.length ? member.skills.join(' · ') : '未记录'}</p>
-            </li>
-          ))}
-        </ol>
+        <ComparePanel lineup={lineup} />
       </template>
     ))}
   </div>
@@ -78,6 +70,8 @@ const lineups = allLineups
   const right = document.querySelector<HTMLElement>('#compare-right');
   const status = document.querySelector<HTMLElement>('#compare-status');
   if (first && second && left && right && status) {
+    first.disabled = false;
+    second.disabled = false;
     function render() {
       if (!first || !second || !left || !right || !status) return;
       if (first.value === second.value) {

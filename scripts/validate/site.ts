@@ -2,7 +2,7 @@ import { readdir, readFile, stat } from 'node:fs/promises';
 import { join, resolve } from 'node:path';
 import * as cheerio from 'cheerio';
 import { basePath as base, siteUrl as origin } from '../../src/lib/site';
-import { activeLineups, historyLineups } from '../../src/lib/data';
+import { activeLineups, allLineups, historyLineups } from '../../src/lib/data';
 import { additionalStaticPages } from '../../src/lib/static-pages';
 import { PAGE_SIZE } from '../../src/lib/collection-filter';
 const root = resolve('dist');
@@ -76,6 +76,51 @@ for (const path of [join(root, 'index.html'), join(root, 'history', 'index.html'
         .some((element) => $(element).attr('disabled') === undefined)
     )
       throw Error(`无脚本控件未禁用: ${selector} in ${path}`);
+}
+{
+  const $ = cheerio.load(await readFile(join(root, 'compare', 'index.html'), 'utf8'));
+  const firstTwo = allLineups
+    .filter((lineup) => lineup.lineup_images.some((image) => image.verified))
+    .sort((a, b) => a.name.localeCompare(b.name, 'zh-CN') || a.slug.localeCompare(b.slug))
+    .slice(0, 2);
+  if ($('#compare-first[disabled], #compare-second[disabled]').length !== 2)
+    throw Error('对比页无脚本选择器未禁用');
+  for (const [index, panel] of ['#compare-left', '#compare-right'].entries()) {
+    if (
+      $(panel + ' h2 a').attr('href') !== `${base}/lineups/${firstTwo[index].slug}/` ||
+      $(panel + ' .compare-roster > li').length !== 6
+    )
+      throw Error(`对比页预渲染内容不完整: ${panel}`);
+  }
+}
+{
+  const $ = cheerio.load(await readFile(join(root, 'systems', 'index.html'), 'utf8'));
+  if ($('.system-graph-scroll .system-graph').length !== 1) throw Error('体系共现图缺少可滚动容器');
+}
+{
+  const $ = cheerio.load(await readFile(join(root, 'timeline', 'index.html'), 'utf8'));
+  const itemList = $('script[type="application/ld+json"]')
+    .toArray()
+    .map((script) => JSON.parse($(script).text()) as Record<string, unknown>)
+    .find((node) => node['@type'] === 'ItemList') as
+    | {
+        numberOfItems?: number;
+        itemListElement?: { position: number; name: string; url: string }[];
+      }
+    | undefined;
+  const links = $('.timeline-list > li a').toArray();
+  if (
+    !itemList ||
+    itemList.numberOfItems !== links.length ||
+    itemList.itemListElement?.length !== links.length ||
+    itemList.itemListElement.some(
+      (entry, index) =>
+        entry.position !== index + 1 ||
+        entry.name !== $(links[index]).text() ||
+        entry.url !== new URL($(links[index]).attr('href')!, `${origin}${base}/`).href,
+    )
+  )
+    throw Error('时间线 ItemList 与可见阵容不一致');
 }
 let checks = 0;
 const siteRoot = `${origin}${base}/`;

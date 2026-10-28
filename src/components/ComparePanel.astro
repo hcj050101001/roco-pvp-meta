@@ -1,0 +1,26 @@
+---
+import type { Lineup } from '../lib/schema';
+import { withBase } from '../lib/urls';
+
+interface Props {
+  lineup: Lineup;
+}
+
+const { lineup } = Astro.props;
+---
+
+<h2>
+  <a href={withBase(`/lineups/${lineup.slug}/`)}>{lineup.name}</a>
+</h2>
+<p>
+  {lineup.season} · 体系标签：{lineup.archetype.join(' · ')}
+</p>
+<ol class="compare-roster">
+  {lineup.roster.map((member) => (
+    <li>
+      <h3>{member.name}</h3>
+      <p>血脉：{member.bloodline ?? '未记录'}</p>
+      <p>技能：{member.skills.length ? member.skills.join(' · ') : '未记录'}</p>
+    </li>
+  ))}
+</ol>

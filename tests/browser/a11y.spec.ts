@@ -1,5 +1,6 @@
 import { test, expect } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
+import { mkdir } from 'node:fs/promises';
 import { activeLineups, historyLineups } from '../../src/lib/data';
 import { additionalStaticPages } from '../../src/lib/static-pages';
 
@@ -31,6 +32,29 @@ for (const route of routes) {
     ).toEqual([]);
   });
 }
+
+test('新页桌面与手机视觉留证：时间线、对比和共现', async ({ page }, info) => {
+  await mkdir('artifacts', { recursive: true });
+  for (const route of ['timeline', 'compare', 'systems']) {
+    await page.goto(`${route}/`);
+    expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(
+      true,
+    );
+    if (route === 'compare') {
+      await expect(page.locator('#compare-left .compare-roster > li')).toHaveCount(6);
+      await expect(page.locator('#compare-right .compare-roster > li')).toHaveCount(6);
+    }
+    await page.screenshot({ path: `artifacts/${route}-${info.project.name}.png`, fullPage: true });
+    if (route === 'systems' && info.project.name === 'mobile') {
+      const graph = page.locator('.system-graph-scroll');
+      expect(await graph.evaluate((element) => element.scrollWidth > element.clientWidth)).toBe(
+        true,
+      );
+      await graph.evaluate((element) => (element.scrollLeft = element.scrollWidth));
+      await page.screenshot({ path: 'artifacts/systems-mobile-right.png', fullPage: true });
+    }
+  }
+});
 
 test('阵容对比可用键盘选择、处理相同选择并恢复', async ({ page }) => {
   await page.goto('compare/');

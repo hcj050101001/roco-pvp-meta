@@ -39,42 +39,48 @@ const positions = new Map(
         跳到关联阵容。
       </p>
     </header>
-    <svg class="system-graph" viewBox="0 0 960 960" aria-labelledby="graph-title graph-description">
-      <title id="graph-title">体系标签共现关系</title>
-      <desc id="graph-description">
-        {systems.length} 个标签，{edges.length} 组共同出现的标签。标签链接可跳到下方的关联阵容。
-      </desc>
-      {edges.map((edge) => {
-        const a = positions.get(edge.first)!;
-        const b = positions.get(edge.second)!;
-        return <line x1={a.x} y1={a.y} x2={b.x} y2={b.y} stroke="#a9c7df" stroke-width="2" />;
-      })}
-      {systemRecords.map(({ tag, id }) => {
-        const point = positions.get(tag)!;
-        return (
-          <a href={`#${id}`} aria-label={`查看${tag}关联阵容`}>
-            <circle
-              cx={point.x}
-              cy={point.y}
-              r="42"
-              fill="#fff"
-              stroke="#5587b2"
-              stroke-width="2"
-            />
-            <text
-              x={point.x}
-              y={point.y}
-              text-anchor="middle"
-              dominant-baseline="middle"
-              font-size="16"
-              fill="#243447"
-            >
-              {tag}
-            </text>
-          </a>
-        );
-      })}
-    </svg>
+    <div class="system-graph-scroll" role="region" aria-label="体系共现图，可横向滚动" tabindex="0">
+      <svg
+        class="system-graph"
+        viewBox="0 0 960 960"
+        aria-labelledby="graph-title graph-description"
+      >
+        <title id="graph-title">体系标签共现关系</title>
+        <desc id="graph-description">
+          {systems.length} 个标签，{edges.length} 组共同出现的标签。标签链接可跳到下方的关联阵容。
+        </desc>
+        {edges.map((edge) => {
+          const a = positions.get(edge.first)!;
+          const b = positions.get(edge.second)!;
+          return <line x1={a.x} y1={a.y} x2={b.x} y2={b.y} stroke="#a9c7df" stroke-width="2" />;
+        })}
+        {systemRecords.map(({ tag, id }) => {
+          const point = positions.get(tag)!;
+          return (
+            <a href={`#${id}`} aria-label={`查看${tag}关联阵容`}>
+              <circle
+                cx={point.x}
+                cy={point.y}
+                r="42"
+                fill="#fff"
+                stroke="#5587b2"
+                stroke-width="2"
+              />
+              <text
+                x={point.x}
+                y={point.y}
+                text-anchor="middle"
+                dominant-baseline="middle"
+                font-size="16"
+                fill="#243447"
+              >
+                {tag}
+              </text>
+            </a>
+          );
+        })}
+      </svg>
+    </div>
     <h2 id="system-records">按体系浏览</h2>
     <ul class="system-node-list">
       {systemRecords.map(({ tag, id, lineups }) => (

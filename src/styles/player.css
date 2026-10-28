@@ -2033,10 +2033,15 @@ img {
   margin: 0 0 6px;
 }
 
+.system-graph-scroll {
+  overflow-x: auto;
+  margin-bottom: 32px;
+}
+
 .system-graph {
   display: block;
   width: min(100%, 960px);
-  margin: 0 auto 32px;
+  margin: 0 auto;
   background: #f8fbfd;
   border: 1px solid #dce8f3;
   border-radius: 12px;
@@ -2111,6 +2116,9 @@ img {
 }
 
 @media (max-width: 580px) {
+  .system-graph {
+    width: 720px;
+  }
   .compare-controls,
   .compare-grid,
   .system-edge-list,

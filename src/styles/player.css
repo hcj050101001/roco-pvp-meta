@@ -2029,6 +2029,37 @@ img {
   background: #fff;
 }
 
+.compare-catalog {
+  margin-top: 32px;
+}
+
+.compare-catalog > p {
+  color: var(--muted);
+}
+
+.compare-catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.compare-catalog-grid details {
+  min-width: 0;
+  padding: 16px 20px;
+  border: 1px solid #dce8f3;
+  border-radius: 12px;
+  background: #fff;
+}
+
+.compare-catalog-grid summary {
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.compare-catalog-content {
+  padding-top: 16px;
+}
+
 .compare-grid h2 {
   margin-top: 0;
 }
@@ -2135,6 +2166,7 @@ img {
   }
   .compare-controls,
   .compare-grid,
+  .compare-catalog-grid,
   .system-edge-list,
   .system-node-list {
     grid-template-columns: 1fr;

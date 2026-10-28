@@ -58,11 +58,22 @@ const lineups = allLineups
         <ComparePanel lineup={lineups[1]} />
       </section>
     </div>
-    {lineups.map((lineup) => (
-      <template data-compare-template={lineup.slug}>
-        <ComparePanel lineup={lineup} />
-      </template>
-    ))}
+    <section class="compare-catalog" id="compare-catalog" aria-label="更多阵容配置">
+      <h2>更多阵容配置</h2>
+      <p>未启用脚本时，可展开任意两套阵容查看已记录的配置事实。</p>
+      <div class="compare-catalog-grid">
+        {lineups.slice(2).map((lineup) => (
+          <details data-compare-lineup={lineup.slug}>
+            <summary>
+              {lineup.season} · {lineup.name}
+            </summary>
+            <div class="compare-catalog-content">
+              <ComparePanel lineup={lineup} />
+            </div>
+          </details>
+        ))}
+      </div>
+    </section>
   </div>
 </Layout>
 <script>
@@ -72,6 +83,17 @@ const lineups = allLineups
   const right = document.querySelector<HTMLElement>('#compare-right');
   const status = document.querySelector<HTMLElement>('#compare-status');
   if (first && second && left && right && status) {
+    const panels = new Map<string, Node>([
+      [first.options[0].value, left.cloneNode(true)],
+      [second.options[1].value, right.cloneNode(true)],
+      ...[...document.querySelectorAll<HTMLElement>('[data-compare-lineup]')].map(
+        (item): [string, Node] => [
+          item.dataset.compareLineup!,
+          item.querySelector('.compare-catalog-content')!,
+        ],
+      ),
+    ]);
+    document.querySelector<HTMLElement>('#compare-catalog')!.hidden = true;
     first.disabled = false;
     second.disabled = false;
     function render() {
@@ -82,18 +104,14 @@ const lineups = allLineups
         right.replaceChildren();
         return;
       }
-      const templates = [
-        ...document.querySelectorAll<HTMLTemplateElement>('[data-compare-template]'),
-      ];
-      const a = templates.find((item) => item.dataset.compareTemplate === first.value);
-      const b = templates.find((item) => item.dataset.compareTemplate === second.value);
+      const a = panels.get(first.value);
+      const b = panels.get(second.value);
       if (!a || !b) return;
-      left.replaceChildren(a.content.cloneNode(true));
-      right.replaceChildren(b.content.cloneNode(true));
+      left.replaceChildren(...[...a.childNodes].map((node) => node.cloneNode(true)));
+      right.replaceChildren(...[...b.childNodes].map((node) => node.cloneNode(true)));
       status.textContent = `正在对比${first.selectedOptions[0].textContent}与${second.selectedOptions[0].textContent}。`;
     }
     first.addEventListener('change', render);
     second.addEventListener('change', render);
-    render();
   }
 </script>

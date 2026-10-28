@@ -1,0 +1,81 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { allLineups } from '../lib/data';
+import { systemGraph } from '../lib/system-graph';
+import { withBase } from '../lib/urls';
+
+const { systems, edges } = systemGraph(allLineups);
+const positions = new Map(
+  systems.map((tag, index) => {
+    const angle = (2 * Math.PI * index) / systems.length - Math.PI / 2;
+    return [tag, { x: 480 + Math.cos(angle) * 370, y: 480 + Math.sin(angle) * 370 }] as const;
+  }),
+);
+---
+
+<Layout title="体系共现图" description="查看已核验阵容中体系标签共同出现的记录。" section="systems">
+  <div class="wrap data-page">
+    <header class="data-page-heading">
+      <h1>体系共现图</h1>
+      <p>连线表示两个体系标签出现在同一套已核验阵容中。</p>
+    </header>
+    <svg
+      class="system-graph"
+      viewBox="0 0 960 960"
+      role="img"
+      aria-labelledby="graph-title graph-description"
+    >
+      <title id="graph-title">体系标签共现关系</title>
+      <desc id="graph-description">
+        {systems.length} 个标签，{edges.length} 组共同出现的标签。下方列出每组对应的阵容。
+      </desc>
+      {edges.map((edge) => {
+        const a = positions.get(edge.first)!;
+        const b = positions.get(edge.second)!;
+        return <line x1={a.x} y1={a.y} x2={b.x} y2={b.y} stroke="#a9c7df" stroke-width="2" />;
+      })}
+      {systems.map((tag) => {
+        const point = positions.get(tag)!;
+        return (
+          <g>
+            <circle
+              cx={point.x}
+              cy={point.y}
+              r="42"
+              fill="#fff"
+              stroke="#5587b2"
+              stroke-width="2"
+            />
+            <text
+              x={point.x}
+              y={point.y}
+              text-anchor="middle"
+              dominant-baseline="middle"
+              font-size="16"
+              fill="#243447"
+            >
+              {tag}
+            </text>
+          </g>
+        );
+      })}
+    </svg>
+    <h2>共现记录</h2>
+    <ul class="system-edge-list">
+      {edges.map((edge) => (
+        <li>
+          <strong>
+            {edge.first} · {edge.second}
+          </strong>
+          <span>共同出现于 {edge.lineups.length} 套阵容：</span>
+          {edge.lineups.map((lineup, index) => (
+            <span>
+              {index > 0 && '、'}
+              <a href={withBase(`/lineups/${lineup.slug}/`)}>{lineup.name}</a>
+            </span>
+          ))}
+        </li>
+      ))}
+    </ul>
+  </div>
+</Layout>

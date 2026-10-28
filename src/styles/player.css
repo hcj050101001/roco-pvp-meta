@@ -1562,8 +1562,10 @@ img {
     width: calc(100% - 40px);
   }
   .header-inner {
-    height: 72px;
+    height: auto;
+    padding-block: 10px 6px;
     gap: 12px;
+    flex-wrap: wrap;
   }
   .brand {
     font-size: 14px;
@@ -1582,8 +1584,11 @@ img {
     letter-spacing: 0.1em;
   }
   .header-inner nav {
+    width: 100%;
     gap: 2px;
     font-size: 12px;
+    overflow-x: auto;
+    white-space: nowrap;
   }
   .header-inner nav a {
     padding: 12px 10px;
@@ -2008,6 +2013,30 @@ img {
   margin: 0 0 6px;
 }
 
+.system-graph {
+  display: block;
+  width: min(100%, 960px);
+  margin: 0 auto 32px;
+  background: #f8fbfd;
+  border: 1px solid #dce8f3;
+  border-radius: 12px;
+}
+
+.system-edge-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px 24px;
+  padding-left: 20px;
+}
+
+.system-edge-list li {
+  padding: 8px 0;
+}
+
+.system-edge-list strong {
+  display: block;
+}
+
 .timeline-list {
   list-style: none;
   margin: 0;
@@ -2038,7 +2067,8 @@ img {
 
 @media (max-width: 580px) {
   .compare-controls,
-  .compare-grid {
+  .compare-grid,
+  .system-edge-list {
     grid-template-columns: 1fr;
   }
   .timeline-list li {

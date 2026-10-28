@@ -28,6 +28,7 @@ test('合法双视频与小图回退可以通过卡片验收', async ({ page }) 
       $ = cheerio.load(await response.text());
     const card = $(`#lineup-${lineup.slug}`);
     card.find('.video-link').remove();
+    card.find('picture source').remove();
     for (const [index, url] of urls.entries())
       card
         .find('.card-actions')
@@ -44,6 +45,7 @@ test('合法双视频与小图回退可以通过卡片验收', async ({ page }) 
   await expectVideoLinks(card, urls);
   await expectCardImage(card.locator('img'), {
     ...lineup.lineup_images[0],
+    sha256: '0'.repeat(64),
     path,
     width: 400,
     height: 300,

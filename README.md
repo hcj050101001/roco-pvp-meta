@@ -31,6 +31,17 @@ npm run build
 npm run test:ui
 ```
 
+持续集成与格式化：
+
+- 每次 pull request 和推送到 `main` 都会运行 `.github/workflows/ci.yml`，它只做校验（类型检查、单测、带子路径的生产构建和浏览器测试），不部署；发布仍需手动触发 `Build and deploy Pages`，普通推送不会发布。
+- 格式化与 Lint 配置为 Prettier（含 Astro 插件）与 ESLint（Flat Config，支持 `.astro` 与 TypeScript）：
+
+```sh
+npm run format
+npm run format:check
+npm run lint
+```
+
 为模拟 GitHub Pages 子路径，在 PowerShell 中运行浏览器测试：
 
 ```powershell

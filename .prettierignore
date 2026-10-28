@@ -1,0 +1,11 @@
+dist/
+.astro/
+node_modules/
+public/assets/
+research/inbox/
+research/baseline.json
+artifacts/
+test-results/
+playwright-report/
+.refresh-content/
+*.log

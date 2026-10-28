@@ -7,6 +7,7 @@ import { seasonIdSchema } from '../../src/lib/schema';
 import { guardRefresh } from '../../src/lib/refresh';
 import { imageInfo } from '../extract/image';
 import { readChangeEvidence } from './change-evidence';
+import { readLatestRunId } from '../research/io';
 
 const sourceListSchema = z.array(z.looseObject({
   url: z.url().refine(url => new URL(url).protocol === 'https:'),
@@ -79,7 +80,7 @@ export async function promoteContent(root = process.cwd(), staging = resolve(roo
     if (name === 'search-queries.json') z.array(z.string().trim().min(1)).parse(value);
   }
   const researchRoot = resolve(root, 'research');
-  const { run_id } = JSON.parse(await readFile(resolve(researchRoot, 'inbox/latest.json'), 'utf8'));
+  const run_id = await readLatestRunId(resolve(researchRoot, 'inbox'));
   const { evidence, accessibleUrls } = await readChangeEvidence(run_id, researchRoot);
   guardRefresh(previous, proposed, accessibleUrls, evidence);
 

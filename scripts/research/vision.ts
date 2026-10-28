@@ -2,6 +2,7 @@ import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import { resolve, posix } from 'node:path';
 import sharp from 'sharp';
 import { candidateAction, fingerprint, type Ledger } from './ledger';
+import { readLatestRunId, readManifest } from './io';
 
 export const PREVIEW_MAX_BYTES = 192 * 1024;
 
@@ -16,16 +17,16 @@ export async function boundedPreview(input: Buffer): Promise<Buffer> {
 }
 
 export async function prepareVision(root = 'research/inbox', ledger: Ledger = {}, published = new Set<string>()) {
-  const { run_id } = JSON.parse(await readFile(resolve(root, 'latest.json'), 'utf8'));
+  const run_id = await readLatestRunId(root);
   if (!/^[a-zA-Z0-9-]+$/.test(run_id)) throw Error('Invalid research run');
   const runRoot = resolve(root, run_id);
-  const manifest = JSON.parse(await readFile(resolve(runRoot, 'manifest.json'), 'utf8'));
+  const manifest = await readManifest(runRoot);
   const entries = new Map<string, { original: string; references: string[]; evidence: string[]; fingerprint: string; action: 'review' | 'reuse' | 'published'; previews: string[]; bytes: number; error?: string }>();
   for (const source of manifest.sources) {
-    if (!/^[a-zA-Z0-9-]+$/.test(source.id)) throw Error('Invalid source path');
+    if (!source.id || !/^[a-zA-Z0-9-]+$/.test(source.id)) throw Error('Invalid source path');
     for (const image of source.images ?? []) {
       if (!image.sha256 || image.error) continue;
-      if (!/^[a-f0-9]{64}$/.test(image.sha256) || !new RegExp(`^${image.sha256}\\.(png|jpe?g|webp|avif)$`).test(image.file))
+      if (!image.file || !/^[a-f0-9]{64}$/.test(image.sha256) || !new RegExp(`^${image.sha256}\\.(png|jpe?g|webp|avif)$`).test(image.file))
         throw Error('Invalid candidate image path');
       const old = entries.get(image.sha256);
       const evidence = JSON.stringify([source.url, source.evidence_hash ?? '', image.context ?? '']);

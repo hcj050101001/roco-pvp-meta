@@ -1,10 +1,15 @@
-import { readFile, writeFile, mkdir, appendFile } from 'node:fs/promises';
+import { writeFile, mkdir, appendFile } from 'node:fs/promises';
 import { readLineups } from '../../src/lib/data';
 import { coverage } from './coverage';
-const { run_id } = JSON.parse(await readFile('research/inbox/latest.json', 'utf8'));
+import { readLatestManifest } from './io';
+const { runId: run_id, manifest: rawManifest } = await readLatestManifest('research/inbox');
 if (!/^[a-zA-Z0-9-]+$/.test(run_id)) throw Error('无效研究路径');
-const manifest = JSON.parse(await readFile(`research/inbox/${run_id}/manifest.json`, 'utf8'));
-if (manifest.run_id !== run_id) throw Error('研究运行 ID 不匹配');
+if (rawManifest.run_id !== run_id) throw Error('研究运行 ID 不匹配');
+// io.ts preserves the producer's browser_error: null on success, while
+// coverage()'s source type predates that and only accepts a string. Null and
+// undefined are both falsy for coverage()'s browser-error check, so normalise
+// here instead of weakening io validation or touching coverage.ts.
+const manifest = { ...rawManifest, sources: rawManifest.sources.map(s => ({ ...s, browser_error: s.browser_error ?? undefined })) };
 const report = coverage(manifest, readLineups());
 const root = `research/runs/${run_id}`;
 await mkdir(root, { recursive: true });

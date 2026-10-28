@@ -1,12 +1,13 @@
 import { readFile, writeFile } from 'node:fs/promises';
 import { parseLedger, recordDecisions } from './ledger';
 import { execFileSync } from 'node:child_process';
-const { run_id } = JSON.parse(await readFile('research/inbox/latest.json', 'utf8'));
+import { readLatestRunId } from './io';
+const run_id = await readLatestRunId('research/inbox');
 if (!/^[a-zA-Z0-9-]+$/.test(run_id)) throw Error('无效研究路径');
 const index = JSON.parse(await readFile(`research/inbox/${run_id}/vision/index.json`, 'utf8'));
 let decisions: unknown = [];
 try { decisions = JSON.parse(await readFile(`research/runs/${run_id}/decisions.json`, 'utf8')); }
-catch (e: any) { if (e.code !== 'ENOENT') throw e; }
+catch (e: unknown) { if ((e as NodeJS.ErrnoException).code !== 'ENOENT') throw e; }
 const path = 'research/candidates/image-ledger.json';
 // Model artifacts cannot rewrite the prior decision history.
 const tracked=execFileSync('git',['ls-tree','--name-only','HEAD','--',path],{encoding:'utf8'}).trim();

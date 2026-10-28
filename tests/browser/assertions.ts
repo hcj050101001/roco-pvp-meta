@@ -46,10 +46,14 @@ export async function expectCardImage(image: Locator, original: Lineup['lineup_i
       original.width > width &&
       existsSync(resolve('public/assets/lineups/derived', `${original.sha256}-${width}.avif`)),
   );
-  const avifSource = image.locator('xpath=../source[type="image/avif"]');
+  const avifSrcset = await image.evaluate((element: HTMLImageElement) => {
+    const picture = element.parentElement;
+    return picture?.tagName === 'PICTURE'
+      ? (picture.querySelector('source[type="image/avif"]')?.getAttribute('srcset') ?? null)
+      : null;
+  });
   if (avifWidths.length) {
-    await expect(avifSource).toHaveAttribute(
-      'srcset',
+    expect(avifSrcset).toBe(
       avifWidths
         .map(
           (width) =>
@@ -57,7 +61,7 @@ export async function expectCardImage(image: Locator, original: Lineup['lineup_i
         )
         .join(', '),
     );
-  } else await expect(avifSource).toHaveCount(0);
+  } else expect(avifSrcset).toBeNull();
   if (widths.length || avifWidths.length) {
     const prefix = `${process.env.TEST_BASE || ''}/assets/lineups/derived/${original.sha256}`;
     if (widths.length)

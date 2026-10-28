@@ -1,0 +1,38 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { allLineups } from '../lib/data';
+import { timelineLineups } from '../lib/timeline';
+import { configurationDate } from '../lib/rank';
+import { displayDate, withBase } from '../lib/urls';
+
+const lineups = timelineLineups(allLineups);
+---
+
+<Layout
+  title="配置时间线"
+  description="按配置图发布日期浏览已核验阵容；未标注日期的阵容单独列出。"
+  section="timeline"
+>
+  <div class="wrap data-page">
+    <header class="data-page-heading">
+      <h1>配置时间线</h1>
+      <p>按配置图发布日期排列。未标注日期的阵容列在末尾。</p>
+    </header>
+    <ol class="timeline-list">
+      {lineups.map((lineup) => {
+        const date = configurationDate(lineup);
+        return (
+          <li>
+            <span class="timeline-date">{date ? displayDate(date) : '未标注'}</span>
+            <div>
+              <a href={withBase(`/lineups/${lineup.slug}/`)}>{lineup.name}</a>
+              <p>
+                {lineup.season} · {lineup.archetype.join(' · ')}
+              </p>
+            </div>
+          </li>
+        );
+      })}
+    </ol>
+  </div>
+</Layout>

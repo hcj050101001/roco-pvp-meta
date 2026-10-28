@@ -1942,3 +1942,54 @@ img {
     transition: none !important;
   }
 }
+.data-page {
+  padding-block: 48px 80px;
+}
+
+.data-page-heading {
+  margin-bottom: 28px;
+}
+
+.data-page-heading h1 {
+  margin: 0 0 10px;
+}
+
+.data-page-heading p {
+  margin: 0;
+  color: #526174;
+}
+
+.timeline-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-left: 2px solid #dce8f3;
+}
+
+.timeline-list li {
+  display: grid;
+  grid-template-columns: minmax(110px, 170px) minmax(0, 1fr);
+  gap: 20px;
+  padding: 18px 24px;
+  border-bottom: 1px solid #e5e9ee;
+}
+
+.timeline-date {
+  color: #526174;
+}
+
+.timeline-list a {
+  font-weight: 700;
+}
+
+.timeline-list p {
+  margin: 6px 0 0;
+  color: #526174;
+}
+
+@media (max-width: 580px) {
+  .timeline-list li {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+}

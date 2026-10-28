@@ -74,6 +74,12 @@ const structured = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
           <a href={withBase('/history/')} aria-current={section === 'history' ? 'page' : undefined}>
             往期阵容
           </a>
+          <a
+            href={withBase('/timeline/')}
+            aria-current={section === 'timeline' ? 'page' : undefined}
+          >
+            时间线
+          </a>
         </nav>
         <a class="season-pill" href={withBase('/#lineup-overview')}>
           <span class="status-dot"></span>

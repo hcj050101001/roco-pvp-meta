@@ -15,6 +15,7 @@ async function walk(dir: string): Promise<string[]> {
 const all = await walk(root),
   pages = all.filter((f) => f.endsWith('.html'));
 if (!pages.some((f) => /[\\/]timeline[\\/]index\.html$/.test(f))) throw Error('缺少配置时间线页面');
+if (!pages.some((f) => /[\\/]compare[\\/]index\.html$/.test(f))) throw Error('缺少阵容对比页面');
 let checks = 0;
 const siteRoot = `${origin}${base}/`;
 const contentPages: string[] = [];

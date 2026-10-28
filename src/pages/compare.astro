@@ -1,0 +1,98 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { allLineups } from '../lib/data';
+import { withBase } from '../lib/urls';
+
+const lineups = allLineups
+  .filter((lineup) => lineup.lineup_images.some((image) => image.verified))
+  .sort((a, b) => a.name.localeCompare(b.name, 'zh-CN') || a.slug.localeCompare(b.slug));
+---
+
+<Layout
+  title="阵容对比"
+  description="并排查看两套已核验阵容的精灵、技能、血脉和体系标签。"
+  section="compare"
+>
+  <div class="wrap data-page">
+    <header class="data-page-heading">
+      <h1>阵容对比</h1>
+      <p>选择两套已核验阵容，并排查看已记录的配置事实。</p>
+    </header>
+    <div class="compare-controls">
+      <label>
+        第一套阵容
+        <select id="compare-first">
+          {lineups.map((lineup, index) => (
+            <option value={lineup.slug} selected={index === 0}>
+              {lineup.season} · {lineup.name}
+            </option>
+          ))}
+        </select>
+      </label>
+      <label>
+        第二套阵容
+        <select id="compare-second">
+          {lineups.map((lineup, index) => (
+            <option value={lineup.slug} selected={index === 1}>
+              {lineup.season} · {lineup.name}
+            </option>
+          ))}
+        </select>
+      </label>
+    </div>
+    <p id="compare-status" role="status" aria-live="polite"></p>
+    <div class="compare-grid">
+      <section id="compare-left" aria-label="第一套阵容"></section>
+      <section id="compare-right" aria-label="第二套阵容"></section>
+    </div>
+    {lineups.map((lineup) => (
+      <template data-compare-template={lineup.slug}>
+        <h2>
+          <a href={withBase(`/lineups/${lineup.slug}/`)}>{lineup.name}</a>
+        </h2>
+        <p>
+          {lineup.season} · 体系标签：{lineup.archetype.join(' · ')}
+        </p>
+        <ol class="compare-roster">
+          {lineup.roster.map((member) => (
+            <li>
+              <h3>{member.name}</h3>
+              <p>血脉：{member.bloodline ?? '未记录'}</p>
+              <p>技能：{member.skills.length ? member.skills.join(' · ') : '未记录'}</p>
+            </li>
+          ))}
+        </ol>
+      </template>
+    ))}
+  </div>
+</Layout>
+<script>
+  const first = document.querySelector<HTMLSelectElement>('#compare-first');
+  const second = document.querySelector<HTMLSelectElement>('#compare-second');
+  const left = document.querySelector<HTMLElement>('#compare-left');
+  const right = document.querySelector<HTMLElement>('#compare-right');
+  const status = document.querySelector<HTMLElement>('#compare-status');
+  if (first && second && left && right && status) {
+    function render() {
+      if (!first || !second || !left || !right || !status) return;
+      if (first.value === second.value) {
+        status.textContent = '请选择两套不同的阵容。';
+        left.replaceChildren();
+        right.replaceChildren();
+        return;
+      }
+      const templates = [
+        ...document.querySelectorAll<HTMLTemplateElement>('[data-compare-template]'),
+      ];
+      const a = templates.find((item) => item.dataset.compareTemplate === first.value);
+      const b = templates.find((item) => item.dataset.compareTemplate === second.value);
+      if (!a || !b) return;
+      left.replaceChildren(a.content.cloneNode(true));
+      right.replaceChildren(b.content.cloneNode(true));
+      status.textContent = `正在对比${first.selectedOptions[0].textContent}与${second.selectedOptions[0].textContent}。`;
+    }
+    first.addEventListener('change', render);
+    second.addEventListener('change', render);
+    render();
+  }
+</script>

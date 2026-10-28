@@ -80,6 +80,9 @@ const structured = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
           >
             时间线
           </a>
+          <a href={withBase('/compare/')} aria-current={section === 'compare' ? 'page' : undefined}>
+            阵容对比
+          </a>
         </nav>
         <a class="season-pill" href={withBase('/#lineup-overview')}>
           <span class="status-dot"></span>

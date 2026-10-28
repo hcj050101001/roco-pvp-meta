@@ -1,12 +1,11 @@
-import type { APIRoute } from 'astro';
-import { activeLineups, historyLineups, overview } from '../lib/data';
-import { cardImageSources } from '../lib/card-image';
-import { configurationDate } from '../lib/rank';
-import { displayDate, withBase } from '../lib/urls';
-import { normalizeSearch } from '../lib/collection-filter';
-import type { Lineup } from '../lib/schema';
+import { activeLineups, historyLineups, overview } from './data';
+import { cardImageSources } from './card-image';
+import { configurationDate } from './rank';
+import { displayDate, withBase } from './urls';
+import { normalizeSearch } from './collection-filter';
+import type { Lineup } from './schema';
 
-import { platformLabels } from '../lib/platforms';
+import { platformLabels } from './platforms';
 
 export interface CollectionIndexCard {
   slug: string;
@@ -80,14 +79,10 @@ function toIndexCard(
   };
 }
 
-export const GET: APIRoute = () => {
-  const body = {
-    active: activeLineups.map((lineup, i) =>
-      toIndexCard(lineup, i, overview.fallback.includes(lineup) ? 'fallback' : 'current'),
-    ),
-    history: historyLineups.map((lineup, i) => toIndexCard(lineup, i, 'historical')),
-  };
-  return new Response(JSON.stringify(body), {
-    headers: { 'Content-Type': 'application/json; charset=utf-8' },
-  });
-};
+export function collectionIndex(kind: 'active' | 'history'): CollectionIndexCard[] {
+  return kind === 'active'
+    ? activeLineups.map((lineup, i) =>
+        toIndexCard(lineup, i, overview.fallback.includes(lineup) ? 'fallback' : 'current'),
+      )
+    : historyLineups.map((lineup, i) => toIndexCard(lineup, i, 'historical'));
+}

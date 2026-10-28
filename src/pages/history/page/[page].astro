@@ -1,0 +1,35 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Collection from '../../../components/Collection.astro';
+import { historyLineups } from '../../../lib/data';
+import { additionalStaticPages } from '../../../lib/static-pages';
+import { withBase } from '../../../lib/urls';
+
+export function getStaticPaths() {
+  return additionalStaticPages(historyLineups.length).map((page) => ({
+    params: { page: String(page) },
+    props: { page },
+  }));
+}
+
+const { page } = Astro.props;
+---
+
+<Layout
+  title={`往期阵容 · 第 ${page} 页`}
+  description="继续翻阅往期赛季的真实阵容配置图与资料。"
+  image={historyLineups[0]?.lineup_images[0]?.path}
+  section="history"
+>
+  <section class="overview wrap static-collection-page" id="lineup-overview">
+    <div class="section-heading">
+      <div>
+        <a class="text-link" href={withBase('/history/')}>
+          ← 返回往期首页
+        </a>
+        <h1>往期阵容 · 第 {page} 页</h1>
+      </div>
+    </div>
+    <Collection lineups={historyLineups} historical initialPage={page} />
+  </section>
+</Layout>

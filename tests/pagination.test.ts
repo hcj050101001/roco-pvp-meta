@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { paginate, PAGE_SIZE } from '../src/lib/collection-filter';
 import { clampPage, readCollectionState, writeCollectionState } from '../src/lib/collection-state';
+import { additionalStaticPages, staticPageCount, staticPagePath } from '../src/lib/static-pages';
 
 const items = Array.from({ length: 50 }, (_, i) => i + 1);
 
@@ -38,6 +39,19 @@ test('paginate 不修改输入数组', () => {
   const before = [...items];
   paginate(items, 2);
   assert.deepEqual(items, before);
+});
+
+test('静态分页路径从同一 24 张切片产生，首页与往期都可逐页覆盖', () => {
+  assert.equal(staticPageCount(24), 1);
+  assert.equal(staticPageCount(50), 3);
+  assert.deepEqual(additionalStaticPages(50), [2, 3]);
+  assert.deepEqual(
+    [1, ...additionalStaticPages(items.length)].flatMap((p) => paginate(items, p).items),
+    items,
+  );
+  assert.equal(staticPagePath(1), '/');
+  assert.equal(staticPagePath(2), '/page/2/');
+  assert.equal(staticPagePath(3, true), '/history/page/3/');
 });
 
 test('clampPage：非法值回落、超出总页数钳制、总页数未知时不钳制上界', () => {

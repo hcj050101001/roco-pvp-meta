@@ -11,11 +11,13 @@ interface Props {
   index: number;
   historical?: boolean;
   fallback?: boolean;
+  returnTo?: string;
 }
-const { lineup: l, index, historical = false, fallback = false } = Astro.props;
+const { lineup: l, index, historical = false, fallback = false, returnTo } = Astro.props;
 const img = l.lineup_images[0],
   updated = configurationDate(l);
 const { src: cardSrc, srcset: cardSrcset, avifSrcset, sizes: cardSizes } = cardImageSources(img);
+const href = `${withBase(`/lineups/${l.slug}/`)}${returnTo ? `?returnTo=${encodeURIComponent(returnTo)}` : ''}`;
 ---
 
 <article
@@ -31,7 +33,7 @@ const { src: cardSrc, srcset: cardSrcset, avifSrcset, sizes: cardSizes } = cardI
   data-index={index}
   data-video={l.tutorials.length > 0 ? 'yes' : 'no'}
 >
-  <a href={withBase(`/lineups/${l.slug}/`)} class="card-link">
+  <a href={href} class="card-link">
     <div class="card-top">
       <span class="card-number">
         <span class="status-dot"></span>
@@ -92,7 +94,7 @@ const { src: cardSrc, srcset: cardSrcset, avifSrcset, sizes: cardSizes } = cardI
           {platformLabels[t.platform]}教学
         </a>
       ))}
-      <a class="card-cta" href={withBase(`/lineups/${l.slug}/`)}>
+      <a class="card-cta" href={href}>
         查看配置 <Icon name="arrow" size={16} />
       </a>
     </div>

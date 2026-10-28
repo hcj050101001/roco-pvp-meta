@@ -710,7 +710,11 @@ img {
   gap: 8px;
   margin-top: 32px;
 }
-.pagination button {
+.pagination button,
+.pagination a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   min-height: 44px;
   min-width: 44px;
   padding: 8px 14px;
@@ -720,7 +724,8 @@ img {
   color: var(--muted);
   font-size: 12px;
 }
-.pagination button:hover:not(:disabled) {
+.pagination button:hover:not(:disabled),
+.pagination a:hover {
   border-color: #afc0eb;
   color: var(--accent);
 }
@@ -737,6 +742,10 @@ img {
 .pagination .page-ellipsis {
   color: var(--muted);
   padding: 0 4px;
+}
+.static-collection-page {
+  padding-top: 48px;
+  padding-bottom: 64px;
 }
 .lineup-card {
   display: flex;

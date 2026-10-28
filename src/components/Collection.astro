@@ -4,16 +4,17 @@ import Icon from './Icon.astro';
 import type { Lineup } from '../lib/schema';
 import { withBase } from '../lib/urls';
 import { PAGE_SIZE } from '../lib/collection-filter';
+import { staticPageCount, staticPagePath } from '../lib/static-pages';
 interface Props {
   lineups: Lineup[];
   fallback?: Lineup[];
   historical?: boolean;
+  initialPage?: number;
 }
-const { lineups, fallback = [], historical = false } = Astro.props;
+const { lineups, fallback = [], historical = false, initialPage = 1 } = Astro.props;
 const filters = [...new Set(lineups.flatMap((l) => l.archetype))];
-// 首屏只服务端渲染第一页：DOM 上限为 PAGE_SIZE 张，不再随总数线性增长；
-// 其余页与筛选后的结果由客户端按 collection-index.json 渲染（见下方脚本）。
-const firstPage = lineups.slice(0, PAGE_SIZE);
+const firstPage = lineups.slice((initialPage - 1) * PAGE_SIZE, initialPage * PAGE_SIZE);
+const staticPages = staticPageCount(lineups.length);
 ---
 
 <div
@@ -21,6 +22,8 @@ const firstPage = lineups.slice(0, PAGE_SIZE);
   data-collection
   data-index-set={historical ? 'history' : 'active'}
   data-total-count={lineups.length}
+  data-initial-page={initialPage}
+  data-root-path={staticPagePath(1, historical)}
 >
   <div class="filter-panel">
     <form class="collection-tools" role="search" onsubmit="return false">
@@ -77,9 +80,30 @@ const firstPage = lineups.slice(0, PAGE_SIZE);
   </div>
   <div id="lineup-grid" class="lineup-grid" role="region" tabindex="-1" aria-label="阵容列表">
     {firstPage.map((l, i) => (
-      <LineupCard lineup={l} index={i} historical={historical} fallback={fallback.includes(l)} />
+      <LineupCard
+        lineup={l}
+        index={(initialPage - 1) * PAGE_SIZE + i}
+        historical={historical}
+        fallback={fallback.includes(l)}
+        returnTo={
+          initialPage > 1
+            ? `${staticPagePath(initialPage, historical)}#lineup-${l.slug}`
+            : undefined
+        }
+      />
     ))}
   </div>
+  {staticPages > 1 && (
+    <nav class="pagination static-pagination" aria-label="静态阵容分页">
+      {initialPage > 1 && <a href={staticPagePath(initialPage - 1, historical)}>上一页</a>}
+      <span>
+        第 {initialPage} / {staticPages} 页
+      </span>
+      {initialPage < staticPages && (
+        <a href={staticPagePath(initialPage + 1, historical)}>下一页</a>
+      )}
+    </nav>
+  )}
   <nav class="pagination" id="pagination" aria-label="阵容分页" hidden>
     <button id="prev-page" type="button" aria-label="上一页">
       上一页
@@ -218,6 +242,8 @@ const firstPage = lineups.slice(0, PAGE_SIZE);
     const types = [...root.querySelectorAll<HTMLButtonElement>('[data-filter]')];
     const seasons = [...document.querySelectorAll<HTMLButtonElement>('[data-season-filter]')];
     const indexSet = root.dataset.indexSet ?? 'active';
+    const initialPage = Number(root.dataset.initialPage) || 1;
+    const staticPagination = root.querySelector<HTMLElement>('.static-pagination');
     // 首屏服务端卡片：仅在索引尚未加载且状态为默认时直接沿用，不做重渲染。
     const ssrCards = [...root.querySelectorAll<HTMLElement>('[data-card]')];
     const ssrData: CollectionCard[] = ssrCards.map((card) => ({
@@ -237,10 +263,11 @@ const firstPage = lineups.slice(0, PAGE_SIZE);
       if (!indexPromise) {
         indexPromise = (async () => {
           try {
-            const response = await fetch(`${import.meta.env.BASE_URL}collection-index.json`);
+            const response = await fetch(
+              `${import.meta.env.BASE_URL}collection-index-${indexSet}.json`,
+            );
             if (!response.ok) return null;
-            const body = (await response.json()) as Record<string, unknown>;
-            const entries = body[indexSet];
+            const entries: unknown = await response.json();
             if (!Array.isArray(entries)) return null;
             indexData = (entries as unknown as IndexCard[]).map(
               (entry) => ({ ...entry, types: entry.archetype, title: entry.name }) as IndexCard,
@@ -299,7 +326,7 @@ const firstPage = lineups.slice(0, PAGE_SIZE);
         if (token !== updateToken) return;
         if (renderData) data = renderData;
         else {
-          page = 1;
+          page = initialPage;
           indexStatus.innerHTML =
             '完整阵容索引加载失败。<button type="button" id="retry-index">重试</button>';
           root.querySelector('#retry-index')?.addEventListener(
@@ -325,8 +352,8 @@ const firstPage = lineups.slice(0, PAGE_SIZE);
       };
       const visible = data.filter((card) => isVisible(card, state));
       const sorted = sortCollection(visible, sort.value);
-      const paged = paginate(sorted, page);
-      if (paged.page !== page) page = paged.page;
+      const paged = paginate(sorted, renderData ? page : 1);
+      if (renderData && paged.page !== page) page = paged.page;
       const stateKey = JSON.stringify([input.value, type, season, video.checked, sort.value, page]);
       const stateChanged = stateKey !== lastState;
       lastState = stateKey;
@@ -338,6 +365,7 @@ const firstPage = lineups.slice(0, PAGE_SIZE);
         sort: sort.value,
         page,
       });
+      if (sync && initialPage > 1) next.pathname = root.dataset.rootPath!;
       if (sync && stateChanged && next.href !== location.href)
         history.replaceState(history.state, '', next);
       const count = renderData
@@ -376,7 +404,7 @@ const firstPage = lineups.slice(0, PAGE_SIZE);
         !renderData && !activeState
           ? `共 ${count} 套阵容`
           : !renderData && activeState
-            ? `共 ${Number(root.dataset.totalCount)} 套阵容 · 索引不可用，当前显示首屏`
+            ? `共 ${Number(root.dataset.totalCount)} 套阵容 · 索引不可用，当前显示本页`
             : count === 0
               ? `共 0 套阵容`
               : `共 ${count} 套阵容 · 第 ${paged.page} / ${paged.totalPages} 页（第 ${start}–${end} 套）`;
@@ -398,6 +426,7 @@ const firstPage = lineups.slice(0, PAGE_SIZE);
         b.setAttribute('aria-pressed', String(b.dataset.seasonFilter === season));
       });
       pagination.hidden = paged.totalPages <= 1 || count === 0;
+      if (staticPagination) staticPagination.hidden = Boolean(renderData);
       prevBtn.disabled = paged.page <= 1;
       nextBtn.disabled = paged.page >= paged.totalPages;
       pageNumbers.innerHTML = pageButtons(paged.totalPages, paged.page);
@@ -413,6 +442,8 @@ const firstPage = lineups.slice(0, PAGE_SIZE);
         types.map((b) => b.dataset.filter!),
         seasons.map((b) => b.dataset.seasonFilter!),
       );
+      if (!new URL(location.href).searchParams.has('page') && initialPage > 1)
+        state.page = initialPage;
       input.value = state.query;
       type = state.type;
       season = state.season;

@@ -58,7 +58,10 @@ export function safeCollectionReturn(value: string | null, origin: string, base:
       url.origin !== origin ||
       url.username ||
       url.password ||
-      ![root, `${root}history/`].includes(url.pathname)
+      (![root, `${root}history/`].includes(url.pathname) &&
+        !new RegExp(
+          `^${root.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}(?:history/)?page/[2-9][0-9]*/$`,
+        ).test(url.pathname))
     )
       return null;
     return `${url.pathname}${url.search}${url.hash}`;

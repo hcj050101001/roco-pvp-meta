@@ -257,7 +257,7 @@ test('窄屏和平板保持完整布局与可点击导航', async ({ page }) => 
 
 test('默认首访不取完整索引；500 条测试样例仍只绘制 24 张卡片', async ({ page }) => {
   let indexRequests = 0;
-  await page.route('**/collection-index.json', async (route) => {
+  await page.route('**/collection-index-active.json', async (route) => {
     indexRequests++;
     const lineup = activeLineups[0];
     const image = cardImageSources(lineup.lineup_images[0]);
@@ -280,7 +280,7 @@ test('默认首访不取完整索引；500 条测试样例仍只绘制 24 张卡
       href: withBase(`/lineups/${lineup.slug}/`),
     });
     await route.fulfill({
-      json: { active: Array.from({ length: 500 }, (_, i) => item(i)), history: [] },
+      json: Array.from({ length: 500 }, (_, i) => item(i)),
     });
   });
   await page.goto('./');
@@ -298,7 +298,7 @@ test('默认首访不取完整索引；500 条测试样例仍只绘制 24 张卡
 
 test('索引失败可读且能重试；翻页后焦点落在结果列表', async ({ page }) => {
   let attempts = 0;
-  await page.route('**/collection-index.json', async (route) => {
+  await page.route('**/collection-index-active.json', async (route) => {
     attempts++;
     if (attempts === 1) await route.abort();
     else await route.continue();

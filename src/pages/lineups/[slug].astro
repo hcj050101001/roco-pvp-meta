@@ -392,7 +392,7 @@ const breadcrumbJsonLd = {
       .querySelectorAll<HTMLAnchorElement>('.detail-nav-inner>a,.bottom-return,.sidebar-return')
       .forEach((link) => {
         link.href = back;
-        link.textContent = new URL(back, location.origin).pathname.endsWith('/history/')
+        link.textContent = new URL(back, location.origin).pathname.includes('/history/')
           ? '← 返回往期阵容'
           : '← 返回阵容总览';
       });

@@ -2,6 +2,9 @@ import { readdir, readFile, stat } from 'node:fs/promises';
 import { join, resolve } from 'node:path';
 import * as cheerio from 'cheerio';
 import { basePath as base, siteUrl as origin } from '../../src/lib/site';
+import { activeLineups, historyLineups } from '../../src/lib/data';
+import { additionalStaticPages } from '../../src/lib/static-pages';
+import { PAGE_SIZE } from '../../src/lib/collection-filter';
 const root = resolve('dist');
 async function walk(dir: string): Promise<string[]> {
   return (
@@ -17,6 +20,32 @@ const all = await walk(root),
 if (!pages.some((f) => /[\\/]timeline[\\/]index\.html$/.test(f))) throw Error('缺少配置时间线页面');
 if (!pages.some((f) => /[\\/]compare[\\/]index\.html$/.test(f))) throw Error('缺少阵容对比页面');
 if (!pages.some((f) => /[\\/]systems[\\/]index\.html$/.test(f))) throw Error('缺少体系共现页面');
+for (const [kind, lineups] of [
+  ['active', activeLineups],
+  ['history', historyLineups],
+] as const) {
+  const indexPath = join(root, `collection-index-${kind}.json`);
+  const entries: { slug: string; index: number }[] = JSON.parse(await readFile(indexPath, 'utf8'));
+  if (
+    entries.length !== lineups.length ||
+    entries.some((entry, index) => entry.slug !== lineups[index].slug || entry.index !== index)
+  )
+    throw Error(`${kind} 索引与列表顺序不一致`);
+  const historical = kind === 'history';
+  for (const page of additionalStaticPages(lineups.length)) {
+    const path = join(root, ...(historical ? ['history'] : []), 'page', String(page), 'index.html');
+    const $ = cheerio.load(await readFile(path, 'utf8'));
+    const rendered = $('[data-collection] [data-card]')
+      .toArray()
+      .map((el) => $(el).attr('id'));
+    const expected = lineups
+      .slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE)
+      .map((lineup) => `lineup-${lineup.slug}`);
+    if (JSON.stringify(rendered) !== JSON.stringify(expected))
+      throw Error(`${kind} 静态第 ${page} 页与索引顺序不一致`);
+  }
+}
+if (all.includes(join(root, 'collection-index.json'))) throw Error('旧合并索引未移除');
 let checks = 0;
 const siteRoot = `${origin}${base}/`;
 const contentPages: string[] = [];

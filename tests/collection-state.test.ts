@@ -122,7 +122,7 @@ test('safeCollectionReturn 拒绝空值、协议相对路径、外站、凭据�
   }
 });
 
-test('safeCollectionReturn 只允许根路径和 /history/ 并保留查询片段', () => {
+test('safeCollectionReturn 只允许列表根路径及静态分页并保留查询片段', () => {
   const origin = 'https://example.com';
   const base = '/roco-pvp-meta';
   assert.equal(
@@ -134,4 +134,14 @@ test('safeCollectionReturn 只允许根路径和 /history/ 并保留查询片段
     '/roco-pvp-meta/history/?season=S4#list',
   );
   assert.equal(safeCollectionReturn('/roco-pvp-meta/history', origin, base), null);
+  assert.equal(
+    safeCollectionReturn('/roco-pvp-meta/page/2/#lineup-example', origin, base),
+    '/roco-pvp-meta/page/2/#lineup-example',
+  );
+  assert.equal(
+    safeCollectionReturn('/roco-pvp-meta/history/page/3/?q=rain', origin, base),
+    '/roco-pvp-meta/history/page/3/?q=rain',
+  );
+  assert.equal(safeCollectionReturn('/roco-pvp-meta/page/1/', origin, base), null);
+  assert.equal(safeCollectionReturn('/roco-pvp-meta/history/page/2/../other/', origin, base), null);
 });

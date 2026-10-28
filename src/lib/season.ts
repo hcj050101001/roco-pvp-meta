@@ -41,6 +41,7 @@ export function officialSeason(
     const match = title.match(/S(\d+)赛季[「《“\s]*([^」》”\s]+?)[」》”]/i);
     if (!match || /前瞻|预告|将于|即将/.test(title)) continue;
     if (!/版本更新已全部完成|正式上线|正式启幕|现已开启|正式启程/.test(description)) continue;
+    if (typeof article.datePublished !== 'string') continue;
     const launched = new Date(article.datePublished);
     if (!Number.isFinite(launched.getTime()) || launched > now) continue;
     return {

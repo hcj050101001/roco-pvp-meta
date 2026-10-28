@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { latestLaunched, type SeasonEvidence } from '../src/lib/season';
+import { officialSeason, latestLaunched, type SeasonEvidence } from '../src/lib/season';
 
 function evidence(id: string, name = `季节${id}`): SeasonEvidence {
   return {
@@ -28,4 +28,25 @@ test('latestLaunched 当前赛季无证据时选择最高的更新赛季', () =>
 test('latestLaunched 空证据或只有旧赛季时返回 null', () => {
   assert.equal(latestLaunched([], 'S5'), null);
   assert.equal(latestLaunched([evidence('S3'), evidence('S4')], 'S5'), null);
+});
+
+test('officialSeason 拒绝非字符串发布日期，保留有效公告的判定', () => {
+  const article = {
+    '@type': 'NewsArticle',
+    author: { url: 'https://www.taptap.cn/user/99962293' },
+    headline: 'S4赛季「测试」',
+    description: '现已开启',
+    datePublished: '2026-10-01T00:00:00Z' as unknown,
+  };
+  const parse = () =>
+    officialSeason(
+      `<script type="application/ld+json">${JSON.stringify(article)}</script>`,
+      'https://www.taptap.cn/moment/example',
+      new Date('2026-10-28T00:00:00Z'),
+    );
+  assert.equal(parse()?.id, 'S4');
+  for (const date of [null, false, 0, {}, [], 'invalid']) {
+    article.datePublished = date;
+    assert.equal(parse(), null);
+  }
 });

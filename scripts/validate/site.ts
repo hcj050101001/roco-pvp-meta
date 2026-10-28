@@ -32,6 +32,8 @@ for (const [kind, lineups] of [
   )
     throw Error(`${kind} 索引与列表顺序不一致`);
   const historical = kind === 'history';
+  const pagePath = (number: number) =>
+    `${base}${historical ? '/history' : ''}${number === 1 ? '/' : `/page/${number}/`}`;
   const pageNumbers = [1, ...additionalStaticPages(lineups.length)];
   for (const page of pageNumbers) {
     const path =
@@ -49,19 +51,23 @@ for (const [kind, lineups] of [
       throw Error(`${kind} 静态第 ${page} 页与索引顺序不一致`);
     if (historical && $('[data-season-filter="all"]').length !== 1)
       throw Error(`历史静态第 ${page} 页缺少赛季筛选`);
+    const range = `第 ${page} / ${pageNumbers.length} 页（第 ${(page - 1) * PAGE_SIZE + 1}–${Math.min(page * PAGE_SIZE, lineups.length)} 套）`;
+    if (pageNumbers.length > 1 && !$('#result-count').text().includes(range))
+      throw Error(`${kind} 静态第 ${page} 页的结果范围不正确`);
     const links = $('nav.static-pagination a')
       .toArray()
       .map((el) => $(el).attr('href'));
     const expectedLinks = [
-      ...(page > 1
-        ? [`${base}${historical ? '/history' : ''}${page === 2 ? '/' : `/page/${page - 1}/`}`]
-        : []),
-      ...(page < pageNumbers.length
-        ? [`${base}${historical ? '/history' : ''}/page/${page + 1}/`]
-        : []),
+      ...(page > 1 ? [pagePath(page - 1)] : []),
+      ...pageNumbers.filter((number) => number !== page).map(pagePath),
+      ...(page < pageNumbers.length ? [pagePath(page + 1)] : []),
     ];
     if (JSON.stringify(links) !== JSON.stringify(expectedLinks))
       throw Error(`${kind} 静态第 ${page} 页的分页链接不完整`);
+    if (
+      $('nav.static-pagination [aria-current="page"]').length !== (pageNumbers.length > 1 ? 1 : 0)
+    )
+      throw Error(`${kind} 静态第 ${page} 页缺少当前页标记`);
   }
 }
 if (all.includes(join(root, 'collection-index.json'))) throw Error('旧合并索引未移除');
@@ -77,6 +83,20 @@ for (const path of [join(root, 'index.html'), join(root, 'history', 'index.html'
     )
       throw Error(`无脚本控件未禁用: ${selector} in ${path}`);
 }
+for (const lineup of allLineups) {
+  const historical = historyLineups.some((entry) => entry.slug === lineup.slug);
+  const collection = historical ? historyLineups : activeLineups;
+  const index = collection.findIndex((entry) => entry.slug === lineup.slug);
+  if (index < 0) throw Error(`阵容缺少所属列表: ${lineup.slug}`);
+  const page = Math.floor(index / PAGE_SIZE) + 1;
+  const prefix = `${base}${historical ? '/history' : ''}`;
+  const expected = `${prefix}${page === 1 ? '/' : `/page/${page}/`}#lineup-${lineup.slug}`;
+  const $ = cheerio.load(await readFile(join(root, 'lineups', lineup.slug, 'index.html'), 'utf8'), {
+    scriptingEnabled: false,
+  });
+  if ($('noscript a').filter((_, element) => $(element).attr('href') === expected).length !== 1)
+    throw Error(`详情页无脚本返回卡片链接不正确: ${lineup.slug}`);
+}
 {
   const $ = cheerio.load(await readFile(join(root, 'compare', 'index.html'), 'utf8'));
   const firstTwo = allLineups
@@ -91,6 +111,28 @@ for (const path of [join(root, 'index.html'), join(root, 'history', 'index.html'
       $(panel + ' .compare-roster > li').length !== 6
     )
       throw Error(`对比页预渲染内容不完整: ${panel}`);
+  }
+  const verifiedLineups = allLineups.filter((entry) =>
+    entry.lineup_images.some((image) => image.verified),
+  );
+  const catalog = $('#compare-catalog [data-compare-lineup]');
+  if (
+    catalog.length !== verifiedLineups.length - 2 ||
+    catalog.filter('details').length !== catalog.length
+  )
+    throw Error('对比页无脚本配置目录不完整');
+  for (const lineup of verifiedLineups) {
+    if (firstTwo.some((entry) => entry.slug === lineup.slug)) continue;
+    const item = catalog.filter(
+      (_, element) => $(element).attr('data-compare-lineup') === lineup.slug,
+    );
+    if (
+      item.length !== 1 ||
+      item.find('summary').length !== 1 ||
+      item.find('.compare-catalog-content .compare-roster > li').length !== 6 ||
+      item.find('.compare-catalog-content h2 a').attr('href') !== `${base}/lineups/${lineup.slug}/`
+    )
+      throw Error(`对比页无脚本配置缺失: ${lineup.slug}`);
   }
 }
 {

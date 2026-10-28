@@ -80,6 +80,9 @@ const staticPages = staticPageCount(lineups.length);
     <div class="result-summary">
       <span id="result-count" role="status" aria-live="polite">
         共 {lineups.length} 套阵容
+        {staticPages > 1
+          ? ` · 第 ${initialPage} / ${staticPages} 页（第 ${(initialPage - 1) * PAGE_SIZE + 1}–${Math.min(initialPage * PAGE_SIZE, lineups.length)} 套）`
+          : ''}
       </span>
       <button id="clear-filters" class="clear-filters" hidden disabled>
         <Icon name="close" size={14} />
@@ -109,9 +112,15 @@ const staticPages = staticPageCount(lineups.length);
   {staticPages > 1 && (
     <nav class="pagination static-pagination" aria-label="静态阵容分页">
       {initialPage > 1 && <a href={staticPagePath(initialPage - 1, historical)}>上一页</a>}
-      <span aria-current="page">
-        第 {initialPage} / {staticPages} 页
-      </span>
+      {Array.from({ length: staticPages }, (_, i) => i + 1).map((page) =>
+        page === initialPage ? (
+          <span aria-current="page">第 {page} 页</span>
+        ) : (
+          <a href={staticPagePath(page, historical)} aria-label={`第 ${page} 页`}>
+            {page}
+          </a>
+        ),
+      )}
       {initialPage < staticPages && (
         <a href={staticPagePath(initialPage + 1, historical)}>下一页</a>
       )}

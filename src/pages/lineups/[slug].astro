@@ -5,6 +5,8 @@ import { withBase, displayDate } from '../../lib/urls';
 import { configurationDate } from '../../lib/rank';
 import { absoluteUrl } from '../../lib/seo';
 import { platformLabels } from '../../lib/platforms';
+import { PAGE_SIZE } from '../../lib/collection-filter';
+import { staticPagePath } from '../../lib/static-pages';
 import type { Lineup } from '../../lib/schema';
 export function getStaticPaths() {
   return allLineups.map((lineup) => ({ params: { slug: lineup.slug }, props: { lineup } }));
@@ -16,6 +18,11 @@ const { lineup: l } = Astro.props;
 const historical = l.status === 'archived' || l.season !== state.season;
 const back = historical ? withBase('/history/') : withBase('/#lineup-overview');
 const backLabel = historical ? '← 返回往期阵容' : '← 返回阵容总览';
+const collectionIndex = (historical ? historyLineups : activeLineups).findIndex(
+  (candidate) => candidate.slug === l.slug,
+);
+if (collectionIndex < 0) throw Error(`阵容未出现在对应列表: ${l.slug}`);
+const staticBack = `${staticPagePath(Math.floor(collectionIndex / PAGE_SIZE) + 1, historical)}#lineup-${l.slug}`;
 const published = configurationDate(l);
 const evidenceLabels = { A: '作者或一手来源', B: '可信图文来源', C: '转载图源·已交叉核对' };
 const verifiedSkillCount = l.roster.filter((p) => p.skills.length > 0).length;
@@ -353,6 +360,11 @@ const breadcrumbJsonLd = {
         <a class="button primary bottom-return" href={back}>
           {backLabel}
         </a>
+        <noscript>
+          <a class="text-link" href={staticBack}>
+            ← 返回这套阵容的卡片
+          </a>
+        </noscript>
       </div>
       <aside class="detail-sidebar">
         <div class="sidebar-inner">

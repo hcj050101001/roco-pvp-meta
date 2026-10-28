@@ -7,5 +7,7 @@ export default defineConfig({
   base,
   output: 'static',
   trailingSlash: 'always',
-  integrations: [sitemap({ filter: page => !/\/(404|updates)\/?$/.test(new URL(page).pathname) })],
+  integrations: [
+    sitemap({ filter: (page) => !/\/(404|updates)\/?$/.test(new URL(page).pathname) }),
+  ],
 });

@@ -5,21 +5,94 @@ import { configurationDate } from '../lib/rank';
 import Icon from './Icon.astro';
 import { cardImageSources } from '../lib/card-image';
 import { platformLabels } from '../lib/platforms';
-interface Props { lineup: Lineup; index: number; historical?: boolean; fallback?: boolean }
-const { lineup: l, index, historical=false, fallback=false } = Astro.props;
-const img = l.lineup_images[0], updated=configurationDate(l);
-const { src:cardSrc, srcset:cardSrcset, sizes:cardSizes } = cardImageSources(img);
+interface Props {
+  lineup: Lineup;
+  index: number;
+  historical?: boolean;
+  fallback?: boolean;
+}
+const { lineup: l, index, historical = false, fallback = false } = Astro.props;
+const img = l.lineup_images[0],
+  updated = configurationDate(l);
+const { src: cardSrc, srcset: cardSrcset, sizes: cardSizes } = cardImageSources(img);
 ---
-<article id={`lineup-${l.slug}`} class="lineup-card" data-card data-season={l.season} data-search={[l.name,...l.aliases,...l.archetype,...l.roster.map(p=>p.name)].join(' ').toLowerCase()} data-types={l.archetype.join('|')} data-date={updated} data-index={index} data-video={l.tutorials.length>0?'yes':'no'}>
+
+<article
+  id={`lineup-${l.slug}`}
+  class="lineup-card"
+  data-card
+  data-season={l.season}
+  data-search={[l.name, ...l.aliases, ...l.archetype, ...l.roster.map((p) => p.name)]
+    .join(' ')
+    .toLowerCase()}
+  data-types={l.archetype.join('|')}
+  data-date={updated}
+  data-index={index}
+  data-video={l.tutorials.length > 0 ? 'yes' : 'no'}
+>
   <a href={withBase(`/lineups/${l.slug}/`)} class="card-link">
-    <div class="card-top"><span class="card-number"><span class="status-dot"></span>{l.season} / {l.archetype[0]}</span><span class="card-label">{fallback?'过渡参考':historical?'往期配队':'当季配队'}</span></div>
-    <div class="card-image"><img src={cardSrc} srcset={cardSrcset} sizes={cardSizes} width={img.width} height={img.height} alt={`${l.name}完整六只精灵与技能配置一图流`} loading={index<3?'eager':'lazy'} decoding="async" fetchpriority={index===0?'high':undefined} data-image-fallback /><p class="image-load-fallback" aria-live="polite" hidden>图片暂时无法加载，可稍后重试。</p></div>
-    <div class="card-content"><div class="card-title"><h3>{l.name}</h3><span class="card-arrow"><Icon name="diagonal" size={18} /></span></div>
-      <div class="tags">{l.archetype.map(t=><span>{t}</span>)}</div>
-      <p class="card-roster">{l.roster.map(p=>p.name).join(' · ')}</p>
+    <div class="card-top">
+      <span class="card-number">
+        <span class="status-dot"></span>
+        {l.season} / {l.archetype[0]}
+      </span>
+      <span class="card-label">{fallback ? '过渡参考' : historical ? '往期配队' : '当季配队'}</span>
+    </div>
+    <div class="card-image">
+      <img
+        src={cardSrc}
+        srcset={cardSrcset}
+        sizes={cardSizes}
+        width={img.width}
+        height={img.height}
+        alt={`${l.name}完整六只精灵与技能配置一图流`}
+        loading={index < 3 ? 'eager' : 'lazy'}
+        decoding="async"
+        fetchpriority={index === 0 ? 'high' : undefined}
+        data-image-fallback
+      />
+      <p class="image-load-fallback" aria-live="polite" hidden>
+        图片暂时无法加载，可稍后重试。
+      </p>
+    </div>
+    <div class="card-content">
+      <div class="card-title">
+        <h3>{l.name}</h3>
+        <span class="card-arrow">
+          <Icon name="diagonal" size={18} />
+        </span>
+      </div>
+      <div class="tags">
+        {l.archetype.map((t) => (
+          <span>{t}</span>
+        ))}
+      </div>
+      <p class="card-roster">{l.roster.map((p) => p.name).join(' · ')}</p>
     </div>
   </a>
-  <div class="card-bottom"><span class="card-date">{updated?'配置发布':'所属赛季'}<strong>{updated?displayDate(updated):l.season}</strong></span><div class="card-actions">{l.tutorials.map(t=><a class="video-link" href={t.url} target="_blank" rel="noopener noreferrer" title={t.title}><Icon name="play" size={14} />{platformLabels[t.platform]}教学</a>)}<a class="card-cta" href={withBase(`/lineups/${l.slug}/`)}>查看配置 <Icon name="arrow" size={16} /></a></div></div>
+  <div class="card-bottom">
+    <span class="card-date">
+      {updated ? '配置发布' : '所属赛季'}
+      <strong>{updated ? displayDate(updated) : l.season}</strong>
+    </span>
+    <div class="card-actions">
+      {l.tutorials.map((t) => (
+        <a
+          class="video-link"
+          href={t.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          title={t.title}
+        >
+          <Icon name="play" size={14} />
+          {platformLabels[t.platform]}教学
+        </a>
+      ))}
+      <a class="card-cta" href={withBase(`/lineups/${l.slug}/`)}>
+        查看配置 <Icon name="arrow" size={16} />
+      </a>
+    </div>
+  </div>
 </article>
 <script>
   import { initImageFallback } from '../client/image-fallback';

@@ -10,7 +10,12 @@ test('PAGE_SIZE 为 24', () => {
 });
 
 test('paginate 切片、总页数与总数', () => {
-  assert.deepEqual(paginate(items, 1), { items: items.slice(0, 24), page: 1, totalPages: 3, total: 50 });
+  assert.deepEqual(paginate(items, 1), {
+    items: items.slice(0, 24),
+    page: 1,
+    totalPages: 3,
+    total: 50,
+  });
   assert.deepEqual(paginate(items, 2).items, items.slice(24, 48));
   assert.deepEqual(paginate(items, 3).items, items.slice(48, 50));
   assert.equal(paginate(items, 3).totalPages, 3);
@@ -55,11 +60,24 @@ test('readCollectionState：page 默认 1，非法值回落，带总页数时钳
 });
 
 test('writeCollectionState：page=1 时省略参数，page>1 时保留且不丢其他参数', () => {
-  const base = { query: '', type: 'all', season: 'all', video: false, sort: 'recommended', page: 1 } as const;
-  const first = writeCollectionState(new URL('https://example.com/?page=2&ref=guide'), { ...base, page: 1 });
+  const base = {
+    query: '',
+    type: 'all',
+    season: 'all',
+    video: false,
+    sort: 'recommended',
+    page: 1,
+  } as const;
+  const first = writeCollectionState(new URL('https://example.com/?page=2&ref=guide'), {
+    ...base,
+    page: 1,
+  });
   assert.equal(first.searchParams.has('page'), false);
   assert.equal(first.searchParams.get('ref'), 'guide');
-  const third = writeCollectionState(new URL('https://example.com/?ref=guide'), { ...base, page: 3 });
+  const third = writeCollectionState(new URL('https://example.com/?ref=guide'), {
+    ...base,
+    page: 3,
+  });
   assert.equal(third.searchParams.get('page'), '3');
   assert.equal(third.searchParams.get('ref'), 'guide');
   // 往返：写出的 page 能原样读回。

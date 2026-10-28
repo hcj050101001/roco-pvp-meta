@@ -16,10 +16,7 @@ test('latestLaunched 只考虑当前及更新赛季，并返回最高赛季', ()
   const current = evidence('S5', '当前赛季');
   const newer = evidence('S7', '最新赛季');
 
-  assert.deepEqual(
-    latestLaunched([evidence('S4'), current, evidence('S6'), newer], 'S5'),
-    newer,
-  );
+  assert.deepEqual(latestLaunched([evidence('S4'), current, evidence('S6'), newer], 'S5'), newer);
 });
 
 test('latestLaunched 当前赛季无证据时选择最高的更新赛季', () => {

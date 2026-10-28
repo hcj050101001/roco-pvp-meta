@@ -12,24 +12,33 @@ export interface CollectionCard {
 
 export function isVisible(card: CollectionCard, state: CollectionState): boolean {
   const query = state.query.trim().toLowerCase();
-  return card.search.includes(query)
-    && (state.type === 'all' || card.types.includes(state.type))
-    && (state.season === 'all' || card.season === state.season)
-    && (!state.video || card.video);
+  return (
+    card.search.includes(query) &&
+    (state.type === 'all' || card.types.includes(state.type)) &&
+    (state.season === 'all' || card.season === state.season) &&
+    (!state.video || card.video)
+  );
 }
 
 export function sortCollection<T extends CollectionCard>(cards: T[], sort: string): T[] {
-  return [...cards].sort((a, b) => sort === 'recent'
-    ? b.date.localeCompare(a.date) || a.index - b.index
-    : sort === 'name'
-      ? a.title.localeCompare(b.title, 'zh-CN')
-      : a.index - b.index);
+  return [...cards].sort((a, b) =>
+    sort === 'recent'
+      ? b.date.localeCompare(a.date) || a.index - b.index
+      : sort === 'name'
+        ? a.title.localeCompare(b.title, 'zh-CN')
+        : a.index - b.index,
+  );
 }
 
 /** 每页卡片数：首屏服务端渲染与客户端分页共用同一上限，DOM 不再随总数增长。 */
 export const PAGE_SIZE = 24;
 
-export interface Page<T> { items: T[]; page: number; totalPages: number; total: number }
+export interface Page<T> {
+  items: T[];
+  page: number;
+  totalPages: number;
+  total: number;
+}
 
 /**
  * 对已筛选排序后的卡片分页。页码钳制到 [1, totalPages]；

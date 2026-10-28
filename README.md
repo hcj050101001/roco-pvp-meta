@@ -55,17 +55,17 @@ npm run test:ui
 
 ## 内容和目录
 
-| 路径 | 用途 |
-|---|---|
-| `data/lineups/` | 当前阵容数据，每队一个严格校验的 JSON |
-| `data/archive/` | 往期阵容及归档理由 |
-| `public/assets/lineups/` | 原始完整配置图；不裁水印、不生成占位图 |
-| `src/` | Astro 页面、组件、样式和数据模型 |
-| `scripts/collect/` | 公开来源发现与候选采集 |
-| `scripts/extract/`、`scripts/validate/` | 页面/图片提取与数据、图片、链接校验 |
-| `research/` | 去重结果、研究记录及可复核证据；原始 inbox 与基线不提交 |
-| `.agents/skills/roco-pvp-site-maintainer/SKILL.md` | 阵容核验、内容维护和发布的操作规范 |
-| `docs/collectors.md` | 采集器能力、边界及运行方式 |
+| 路径                                               | 用途                                                    |
+| -------------------------------------------------- | ------------------------------------------------------- |
+| `data/lineups/`                                    | 当前阵容数据，每队一个严格校验的 JSON                   |
+| `data/archive/`                                    | 往期阵容及归档理由                                      |
+| `public/assets/lineups/`                           | 原始完整配置图；不裁水印、不生成占位图                  |
+| `src/`                                             | Astro 页面、组件、样式和数据模型                        |
+| `scripts/collect/`                                 | 公开来源发现与候选采集                                  |
+| `scripts/extract/`、`scripts/validate/`            | 页面/图片提取与数据、图片、链接校验                     |
+| `research/`                                        | 去重结果、研究记录及可复核证据；原始 inbox 与基线不提交 |
+| `.agents/skills/roco-pvp-site-maintainer/SKILL.md` | 阵容核验、内容维护和发布的操作规范                      |
+| `docs/collectors.md`                               | 采集器能力、边界及运行方式                              |
 
 所有阵容事实由数据驱动，组件不硬编码阵容成员。研究候选不会自动晋升为网站内容；图片、版本、六只精灵、技能及视频匹配需要证据核验。未经证实的信息不应填入数据。
 

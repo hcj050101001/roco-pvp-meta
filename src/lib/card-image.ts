@@ -25,9 +25,11 @@ function loadDerivedManifest(root: string): Set<string> | null {
       cachedManifest = { root, files };
       return files;
     }
-  } catch { /* 没有 manifest 文件时改用目录扫描 */ }
+  } catch {
+    /* 没有 manifest 文件时改用目录扫描 */
+  }
   try {
-    const files = new Set(readdirSync(dir).filter(f => f.endsWith('.webp')));
+    const files = new Set(readdirSync(dir).filter((f) => f.endsWith('.webp')));
     cachedManifest = { root, files };
     return files;
   } catch {
@@ -39,11 +41,16 @@ function loadDerivedManifest(root: string): Set<string> | null {
 // 选择规则不变：宽度小于原图宽度的派生图全部入选，src 取最大宽度，srcset/sizes 不变。
 export function cardImageSources(img: LineupImage, root = process.cwd()) {
   const manifest = loadDerivedManifest(root);
-  const hasDerived = (width: number) => manifest
-    ? manifest.has(`${img.sha256}-${width}.webp`)
-    : existsSync(resolve(root, 'public/assets/lineups/derived', `${img.sha256}-${width}.webp`));
-  const usable = widths.filter(w => img.width > w && hasDerived(w));
+  const hasDerived = (width: number) =>
+    manifest
+      ? manifest.has(`${img.sha256}-${width}.webp`)
+      : existsSync(resolve(root, 'public/assets/lineups/derived', `${img.sha256}-${width}.webp`));
+  const usable = widths.filter((w) => img.width > w && hasDerived(w));
   if (!usable.length) return { src: withBase(img.path), srcset: undefined, sizes: undefined };
   const url = (w: number) => withBase(`/assets/lineups/derived/${img.sha256}-${w}.webp`);
-  return { src: url(usable[usable.length - 1]), srcset: usable.map(w => `${url(w)} ${w}w`).join(', '), sizes };
+  return {
+    src: url(usable[usable.length - 1]),
+    srcset: usable.map((w) => `${url(w)} ${w}w`).join(', '),
+    sizes,
+  };
 }

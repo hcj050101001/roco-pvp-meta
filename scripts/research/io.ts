@@ -55,12 +55,16 @@ export const manifestSourceSchema = z.looseObject({
   title: z.string().optional(),
   images: z.array(manifestImageSchema).optional(),
   image_nodes: z.number().optional(),
-  deferred_images: z.array(z.looseObject({
-    url: z.string().optional(),
-    context: z.string().optional(),
-    method: z.string().optional(),
-    order: z.number().optional(),
-  })).optional(),
+  deferred_images: z
+    .array(
+      z.looseObject({
+        url: z.string().optional(),
+        context: z.string().optional(),
+        method: z.string().optional(),
+        order: z.number().optional(),
+      }),
+    )
+    .optional(),
   browser_error: z.string().nullable().optional(),
   checked_at: z.string().optional(),
   error: z.string().optional(),
@@ -71,14 +75,22 @@ export const manifestSchema = z.looseObject({
   run_id: z.string().min(1),
   target_seasons: z.array(z.string()).optional(),
   sources: z.array(manifestSourceSchema),
-  search_health: z.array(z.looseObject({
-    season: z.string().optional(),
-    platform: z.string().optional(),
-    status: z.string(),
-  })).optional(),
-  deferred_sources: z.array(z.looseObject({
-    pending_image_urls: z.array(z.string()).optional(),
-  })).optional(),
+  search_health: z
+    .array(
+      z.looseObject({
+        season: z.string().optional(),
+        platform: z.string().optional(),
+        status: z.string(),
+      }),
+    )
+    .optional(),
+  deferred_sources: z
+    .array(
+      z.looseObject({
+        pending_image_urls: z.array(z.string()).optional(),
+      }),
+    )
+    .optional(),
 });
 export type ResearchManifest = z.infer<typeof manifestSchema>;
 
@@ -99,7 +111,9 @@ export async function readManifest(runRoot: string): Promise<ResearchManifest> {
  * manifest.run_id === runId check; this helper deliberately does not add a
  * second, differently-worded mismatch error.
  */
-export async function readLatestManifest(inboxRoot = 'research/inbox'): Promise<{ runId: string; manifest: ResearchManifest }> {
+export async function readLatestManifest(
+  inboxRoot = 'research/inbox',
+): Promise<{ runId: string; manifest: ResearchManifest }> {
   const runId = await readLatestRunId(inboxRoot);
   const manifest = await readManifest(join(inboxRoot, runId));
   return { runId, manifest };

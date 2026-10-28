@@ -28,7 +28,11 @@ export interface CollectionIndexCard {
 
 // 只输出渲染卡片所需的字段：不含来源、攻略原话、技能、血脉与核验说明，
 // 索引体积随阵容数线性增长但远小于卡片 DOM；详情数据仍由详情页服务端渲染。
-function toIndexCard(lineup: Lineup, index: number, label: CollectionIndexCard['label']): CollectionIndexCard {
+function toIndexCard(
+  lineup: Lineup,
+  index: number,
+  label: CollectionIndexCard['label'],
+): CollectionIndexCard {
   const img = lineup.lineup_images[0];
   const updated = configurationDate(lineup);
   const sources = cardImageSources(img);
@@ -38,24 +42,45 @@ function toIndexCard(lineup: Lineup, index: number, label: CollectionIndexCard['
     season: lineup.season,
     archetype: lineup.archetype,
     label,
-    search: [lineup.name, ...lineup.aliases, ...lineup.archetype, ...lineup.roster.map(p => p.name)].join(' ').toLowerCase(),
+    search: [
+      lineup.name,
+      ...lineup.aliases,
+      ...lineup.archetype,
+      ...lineup.roster.map((p) => p.name),
+    ]
+      .join(' ')
+      .toLowerCase(),
     types: lineup.archetype.join('|'),
     date: updated,
     dateKind: updated ? 'published' : 'season',
     dateText: updated ? displayDate(updated) : lineup.season,
     video: lineup.tutorials.length > 0,
     index,
-    roster: lineup.roster.map(p => p.name).join(' · '),
-    image: { src: sources.src, srcset: sources.srcset, sizes: sources.sizes, width: img.width, height: img.height },
-    videos: lineup.tutorials.map(t => ({ url: t.url, platform: platforms[t.platform], title: t.title })),
+    roster: lineup.roster.map((p) => p.name).join(' · '),
+    image: {
+      src: sources.src,
+      srcset: sources.srcset,
+      sizes: sources.sizes,
+      width: img.width,
+      height: img.height,
+    },
+    videos: lineup.tutorials.map((t) => ({
+      url: t.url,
+      platform: platforms[t.platform],
+      title: t.title,
+    })),
     href: withBase(`/lineups/${lineup.slug}/`),
   };
 }
 
 export const GET: APIRoute = () => {
   const body = {
-    active: activeLineups.map((lineup, i) => toIndexCard(lineup, i, overview.fallback.includes(lineup) ? 'fallback' : 'current')),
+    active: activeLineups.map((lineup, i) =>
+      toIndexCard(lineup, i, overview.fallback.includes(lineup) ? 'fallback' : 'current'),
+    ),
     history: historyLineups.map((lineup, i) => toIndexCard(lineup, i, 'historical')),
   };
-  return new Response(JSON.stringify(body), { headers: { 'Content-Type': 'application/json; charset=utf-8' } });
+  return new Response(JSON.stringify(body), {
+    headers: { 'Content-Type': 'application/json; charset=utf-8' },
+  });
 };

@@ -12,42 +12,97 @@ interface Props {
   jsonLd?: Record<string, unknown> | Record<string, unknown>[];
   noindex?: boolean;
 }
-const { title, description = SITE_DESCRIPTION, section = '', image, jsonLd, noindex = false } = Astro.props;
+const {
+  title,
+  description = SITE_DESCRIPTION,
+  section = '',
+  image,
+  jsonLd,
+  noindex = false,
+} = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site);
-const cover = image ?? activeLineups[0]?.lineup_images[0]?.path ?? historyLineups[0]?.lineup_images[0]?.path;
+const cover =
+  image ?? activeLineups[0]?.lineup_images[0]?.path ?? historyLineups[0]?.lineup_images[0]?.path;
 const ogImage = cover ? absoluteUrl(withBase(cover)) : undefined;
 const structured = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
 ---
+
 <!doctype html>
 <html lang="zh-CN">
   <head>
-    <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content={description} /><meta name="theme-color" content="#fafaf7" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#fafaf7" />
     {noindex ? <meta name="robots" content="noindex" /> : <link rel="canonical" href={canonical} />}
-    <meta property="og:title" content={title} /><meta property="og:description" content={description} /><meta property="og:type" content="website" />
-    <meta property="og:site_name" content={SITE_NAME} /><meta property="og:locale" content="zh_CN" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={SITE_NAME} />
+    <meta property="og:locale" content="zh_CN" />
     {!noindex && <meta property="og:url" content={canonical.href} />}
     {ogImage && <meta property="og:image" content={ogImage} />}
-    <meta name="twitter:card" content="summary_large_image" /><meta name="twitter:title" content={title} /><meta name="twitter:description" content={description} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
     {ogImage && <meta name="twitter:image" content={ogImage} />}
-    {structured.map(node => <script type="application/ld+json" set:html={serializeJsonLd(node)}></script>)}
+    {structured.map((node) => (
+      <script type="application/ld+json" set:html={serializeJsonLd(node)}></script>
+    ))}
     <link rel="icon" type="image/svg+xml" href={withBase('favicon.svg')} />
     <title>{title} · 洛克配队手册</title>
   </head>
   <!-- 固定浅色是产品规则，不随赛季换色 -->
   <body data-theme="light">
-    <a href="#main" class="skip-link">跳到正文</a>
+    <a href="#main" class="skip-link">
+      跳到正文
+    </a>
     <header class="site-header">
       <div class="header-inner wrap">
-        <a href={withBase('/')} class="brand"><span class="brand-symbol" aria-hidden="true"><Icon name="book" size={22} /></span><span>洛克配队手册<small>ROCO KINGDOM · PVP</small></span></a>
-        <nav aria-label="主导航"><a href={withBase('/')} aria-current={section==='overview'?'page':undefined}>当季阵容</a><a href={withBase('/history/')} aria-current={section==='history'?'page':undefined}>往期阵容</a></nav>
-        <a class="season-pill" href={withBase('/#lineup-overview')}><span class="status-dot"></span>{currentSeason.id} · {currentSeason.name}<Icon name="diagonal" size={14} /></a>
+        <a href={withBase('/')} class="brand">
+          <span class="brand-symbol" aria-hidden="true">
+            <Icon name="book" size={22} />
+          </span>
+          <span>
+            洛克配队手册<small>ROCO KINGDOM · PVP</small>
+          </span>
+        </a>
+        <nav aria-label="主导航">
+          <a href={withBase('/')} aria-current={section === 'overview' ? 'page' : undefined}>
+            当季阵容
+          </a>
+          <a href={withBase('/history/')} aria-current={section === 'history' ? 'page' : undefined}>
+            往期阵容
+          </a>
+        </nav>
+        <a class="season-pill" href={withBase('/#lineup-overview')}>
+          <span class="status-dot"></span>
+          {currentSeason.id} · {currentSeason.name}
+          <Icon name="diagonal" size={14} />
+        </a>
       </div>
     </header>
-    <main id="main"><slot /></main>
+    <main id="main">
+      <slot />
+    </main>
     <footer class="site-footer wrap">
-      <div><a class="footer-brand" href={withBase('/')}><Icon name="book" size={18} />洛克配队手册</a><p>每一种配队，都有新的可能。</p></div>
-      <div><p>非官方玩家站 · 配置图归原作者所有</p><a href="https://github.com/hcj050101001/roco-pvp-meta/issues" target="_blank" rel="noopener noreferrer">反馈与纠错 ↗</a></div>
+      <div>
+        <a class="footer-brand" href={withBase('/')}>
+          <Icon name="book" size={18} />
+          洛克配队手册
+        </a>
+        <p>每一种配队，都有新的可能。</p>
+      </div>
+      <div>
+        <p>非官方玩家站 · 配置图归原作者所有</p>
+        <a
+          href="https://github.com/hcj050101001/roco-pvp-meta/issues"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          反馈与纠错 ↗
+        </a>
+      </div>
     </footer>
   </body>
 </html>

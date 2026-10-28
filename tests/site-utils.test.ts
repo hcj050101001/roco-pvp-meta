@@ -1,7 +1,14 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { serializeJsonLd } from '../src/lib/seo';
-import { normalizeBase, parseRepository, projectBasePath, projectBasePathFor, owner, repoName } from '../src/lib/site';
+import {
+  normalizeBase,
+  parseRepository,
+  projectBasePath,
+  projectBasePathFor,
+  owner,
+  repoName,
+} from '../src/lib/site';
 
 test('serializeJsonLd 转义 < 和 &，且结果仍是合法 JSON', () => {
   const input = { text: '普通文本 <script> & 仍保留' };

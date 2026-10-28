@@ -2,30 +2,132 @@
 import Layout from '../layouts/Layout.astro';
 import Collection from '../components/Collection.astro';
 import Icon from '../components/Icon.astro';
-import { activeLineups,historyLineups,currentSeason,overview } from '../lib/data';
+import { activeLineups, historyLineups, currentSeason, overview } from '../lib/data';
 import { withBase } from '../lib/urls';
 import { absoluteUrl } from '../lib/seo';
-const systems=new Set(activeLineups.flatMap(l=>l.archetype));
-const description='洛克王国：世界 PVP 配队手册。浏览当季真实阵容配置、作者攻略原话和对应教学视频，按体系与精灵检索。';
-const websiteJsonLd={'@context':'https://schema.org','@type':'WebSite',name:'洛克配队手册',alternateName:'ROCO KINGDOM PVP',url:absoluteUrl(withBase('/')),description,inLanguage:'zh-CN'};
+const systems = new Set(activeLineups.flatMap((l) => l.archetype));
+const description =
+  '洛克王国：世界 PVP 配队手册。浏览当季真实阵容配置、作者攻略原话和对应教学视频，按体系与精灵检索。';
+const websiteJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: '洛克配队手册',
+  alternateName: 'ROCO KINGDOM PVP',
+  url: absoluteUrl(withBase('/')),
+  description,
+  inLanguage: 'zh-CN',
+};
 ---
-<Layout title="阵容图鉴" description={description} image={activeLineups[0]?.lineup_images[0]?.path} jsonLd={websiteJsonLd} section="overview">
+
+<Layout
+  title="阵容图鉴"
+  description={description}
+  image={activeLineups[0]?.lineup_images[0]?.path}
+  jsonLd={websiteJsonLd}
+  section="overview"
+>
   <section class="hero wrap">
-    <div class="hero-copy"><div class="eyebrow"><span class="eyebrow-line"></span> THE TEAM HANDBOOK</div>
-      <h1>每一种配队，<br /><span>都有新的可能。</span></h1>
-      <p class="hero-description">从一张配置图，找到下一场对战的灵感。<br />探索喜欢的体系，和你的队伍一起出发。</p>
-      <div class="hero-actions"><a class="button primary" href="#lineup-overview">探索当季阵容 <Icon name="down" /></a><a class="hero-history" href={withBase('/history/')}>翻阅往期 <Icon name="arrow" size={16} /></a></div>
+    <div class="hero-copy">
+      <div class="eyebrow">
+        <span class="eyebrow-line"></span> THE TEAM HANDBOOK
+      </div>
+      <h1>
+        每一种配队，
+        <br />
+        <span>都有新的可能。</span>
+      </h1>
+      <p class="hero-description">
+        从一张配置图，找到下一场对战的灵感。
+        <br />
+        探索喜欢的体系，和你的队伍一起出发。
+      </p>
+      <div class="hero-actions">
+        <a class="button primary" href="#lineup-overview">
+          探索当季阵容 <Icon name="down" />
+        </a>
+        <a class="hero-history" href={withBase('/history/')}>
+          翻阅往期 <Icon name="arrow" size={16} />
+        </a>
+      </div>
     </div>
     <aside class="season-cover" aria-label="本季手册">
-      <div class="cover-top"><span class="eyebrow">THE CURRENT EDITION</span><Icon name="book" size={22} /></div>
-      <div class="cover-orbit" aria-hidden="true"><span></span><span></span><span></span><i></i></div>
-      <div class="cover-title"><span class="cover-caption">本季配队手册</span><strong>{currentSeason.id}</strong><span class="cover-season">{currentSeason.name}</span></div>
-      <div class="cover-bottom"><span>ROCO KINGDOM · PVP</span><a href="#lineup-overview" aria-label="浏览本季配队"><Icon name="diagonal" size={22} /></a></div>
+      <div class="cover-top">
+        <span class="eyebrow">THE CURRENT EDITION</span>
+        <Icon name="book" size={22} />
+      </div>
+      <div class="cover-orbit" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+        <i></i>
+      </div>
+      <div class="cover-title">
+        <span class="cover-caption">本季配队手册</span>
+        <strong>{currentSeason.id}</strong>
+        <span class="cover-season">{currentSeason.name}</span>
+      </div>
+      <div class="cover-bottom">
+        <span>ROCO KINGDOM · PVP</span>
+        <a href="#lineup-overview" aria-label="浏览本季配队">
+          <Icon name="diagonal" size={22} />
+        </a>
+      </div>
     </aside>
   </section>
-  <div class="edition-strip wrap"><div class="edition-intro"><Icon name="book" size={20} /><span>一册配队，<strong>更多可能。</strong></span></div><dl class="edition-stats"><div><dt>当季配队</dt><dd data-current-count>{String(overview.current.length).padStart(2,'0')}<span>套</span></dd></div><div><dt>体系标签</dt><dd>{String(systems.size).padStart(2,'0')}<span>个</span></dd></div><div><dt>往期配队</dt><dd>{String(historyLineups.length).padStart(2,'0')}<span>套</span></dd></div></dl><a href={withBase('/history/')} class="edition-link">每个赛季，都值得翻阅 <Icon name="arrow" size={16} /></a></div>
-  {overview.transition&&<aside class="transition-banner wrap"><strong>新赛季配队陆续更新</strong><p>当季 {overview.current.length} 套，另有 {overview.fallback.length} 套上一赛季阵容作过渡参考，卡片保留原赛季标记。</p></aside>}
-  <section class="overview wrap" id="lineup-overview"><div class="section-heading"><div><div class="eyebrow muted">EXPLORE THE COLLECTION</div><h2>发现你的下一支队伍<span>{activeLineups.length}</span></h2></div><span class="collection-subtitle"><span class="status-dot"></span>{currentSeason.id} · {currentSeason.name}</span></div>
+  <div class="edition-strip wrap">
+    <div class="edition-intro">
+      <Icon name="book" size={20} />
+      <span>
+        一册配队，<strong>更多可能。</strong>
+      </span>
+    </div>
+    <dl class="edition-stats">
+      <div>
+        <dt>当季配队</dt>
+        <!-- prettier-ignore -->
+        <dd data-current-count>{String(overview.current.length).padStart(2, '0')}<span>套</span></dd>
+      </div>
+      <div>
+        <dt>体系标签</dt>
+        <dd>
+          {String(systems.size).padStart(2, '0')}
+          <span>个</span>
+        </dd>
+      </div>
+      <div>
+        <dt>往期配队</dt>
+        <dd>
+          {String(historyLineups.length).padStart(2, '0')}
+          <span>套</span>
+        </dd>
+      </div>
+    </dl>
+    <a href={withBase('/history/')} class="edition-link">
+      每个赛季，都值得翻阅 <Icon name="arrow" size={16} />
+    </a>
+  </div>
+  {overview.transition && (
+    <aside class="transition-banner wrap">
+      <strong>新赛季配队陆续更新</strong>
+      <p>
+        当季 {overview.current.length} 套，另有 {overview.fallback.length}{' '}
+        套上一赛季阵容作过渡参考，卡片保留原赛季标记。
+      </p>
+    </aside>
+  )}
+  <section class="overview wrap" id="lineup-overview">
+    <div class="section-heading">
+      <div>
+        <div class="eyebrow muted">EXPLORE THE COLLECTION</div>
+        <h2>
+          发现你的下一支队伍<span>{activeLineups.length}</span>
+        </h2>
+      </div>
+      <span class="collection-subtitle">
+        <span class="status-dot"></span>
+        {currentSeason.id} · {currentSeason.name}
+      </span>
+    </div>
     <Collection lineups={activeLineups} fallback={overview.fallback} />
   </section>
 </Layout>

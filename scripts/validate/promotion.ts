@@ -9,14 +9,21 @@ import { imageInfo } from '../extract/image';
 import { readChangeEvidence } from './change-evidence';
 import { readLatestRunId } from '../research/io';
 
-const sourceListSchema = z.array(z.looseObject({
-  url: z.url().refine(url => new URL(url).protocol === 'https:'),
-  enabled: z.boolean(), seasons: z.array(seasonIdSchema).optional(),
-}));
+const sourceListSchema = z.array(
+  z.looseObject({
+    url: z.url().refine((url) => new URL(url).protocol === 'https:'),
+    enabled: z.boolean(),
+    seasons: z.array(seasonIdSchema).optional(),
+  }),
+);
 
 async function optionalFile(path: string) {
-  try { return await readFile(path); }
-  catch (error) { if ((error as NodeJS.ErrnoException).code === 'ENOENT') return null; throw error; }
+  try {
+    return await readFile(path);
+  } catch (error) {
+    if ((error as NodeJS.ErrnoException).code === 'ENOENT') return null;
+    throw error;
+  }
 }
 
 async function atomicWrite(path: string, bytes: Buffer) {
@@ -31,10 +38,15 @@ async function atomicWrite(path: string, bytes: Buffer) {
 }
 
 // Snapshot every destination before applying anything; restore touched files on failure.
-export async function applyFileChanges(root: string, changes: Map<string, Buffer | null>, install = atomicWrite) {
+export async function applyFileChanges(
+  root: string,
+  changes: Map<string, Buffer | null>,
+  install = atomicWrite,
+) {
   const prepared = [];
   for (const [path, bytes] of changes) {
-    const target = resolve(root, path), rel = relative(resolve(root), target);
+    const target = resolve(root, path),
+      rel = relative(resolve(root), target);
     if (!rel || rel === '..' || rel.startsWith('../') || rel.startsWith('..\\') || isAbsolute(rel))
       throw Error('晋升目标越界');
     const previous = await optionalFile(target);
@@ -54,18 +66,30 @@ export async function applyFileChanges(root: string, changes: Map<string, Buffer
       try {
         if (previous === null) await rm(target, { force: true });
         else await atomicWrite(target, previous);
-      } catch (failure) { failures.push(failure); }
+      } catch (failure) {
+        failures.push(failure);
+      }
     }
-    if (failures.length) throw new AggregateError([error, ...failures], '晋升失败，部分文件恢复失败，请检查工作区');
+    if (failures.length)
+      throw new AggregateError([error, ...failures], '晋升失败，部分文件恢复失败，请检查工作区', {
+        cause: error,
+      });
     throw error;
   }
 }
 
-export async function promoteContent(root = process.cwd(), staging = resolve(root, '.refresh-content')) {
+export async function promoteContent(
+  root = process.cwd(),
+  staging = resolve(root, '.refresh-content'),
+) {
   const previous = loadData(root).allLineups;
   const proposed = loadData(staging).allLineups;
-  if (!proposed.length || new Set(proposed.map(l => l.id)).size !== proposed.length
-    || new Set(proposed.map(l => l.slug)).size !== proposed.length) throw Error('候选数据库为空或重复');
+  if (
+    !proposed.length ||
+    new Set(proposed.map((l) => l.id)).size !== proposed.length ||
+    new Set(proposed.map((l) => l.slug)).size !== proposed.length
+  )
+    throw Error('候选数据库为空或重复');
 
   const changes = new Map<string, Buffer | null>();
   const stageFile = async (path: string) => {
@@ -87,12 +111,15 @@ export async function promoteContent(root = process.cwd(), staging = resolve(roo
   for (const lineup of proposed) {
     const folder = lineup.status === 'archived' ? 'archive' : 'lineups';
     await stageFile(`data/${folder}/${lineup.slug}.json`);
-    const old = previous.find(l => l.id === lineup.id);
+    const old = previous.find((l) => l.id === lineup.id);
     if (old && (old.status === 'archived') !== (lineup.status === 'archived'))
-      changes.set(`data/${old.status === 'archived' ? 'archive' : 'lineups'}/${old.slug}.json`, null);
+      changes.set(
+        `data/${old.status === 'archived' ? 'archive' : 'lineups'}/${old.slug}.json`,
+        null,
+      );
     for (const image of lineup.lineup_images) {
       const path = `public${image.path}`;
-      const bytes = changes.get(path) ?? await stageFile(path);
+      const bytes = changes.get(path) ?? (await stageFile(path));
       const info = await imageInfo(bytes);
       for (const key of ['sha256', 'width', 'height', 'phash'] as const)
         if (info[key] !== image[key]) throw Error('候选图片与记录不一致');

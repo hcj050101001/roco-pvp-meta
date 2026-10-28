@@ -1,6 +1,11 @@
 dist/
 .astro/
 node_modules/
+data/
+# 阵容 JSON 由脚本以 JSON.stringify(null, 2) 写出，保持原格式，避免格式化往返抖动。
+research/
+.agents/
+# 研究记录与技能文档是证据/操作文本，不随代码格式化改动，避免无意义 diff。
 public/assets/
 research/inbox/
 research/baseline.json

@@ -1,3 +1,5 @@
+// 默认仓库仅为本地开发兜底：未设置 GITHUB_REPOSITORY 时不中断构建；
+// CI 与 GitHub Actions 环境下以 GITHUB_REPOSITORY 为准，不要依赖该默认值做线上判断。
 const DEFAULT_REPOSITORY = 'hcj050101001/roco-pvp-meta';
 const repositoryPattern = /^[a-zA-Z0-9_.-]+\/[a-zA-Z0-9_.-]+$/;
 
@@ -21,7 +23,12 @@ export function normalizeBase(value: string): string {
 }
 
 export const { repository, owner, repoName } = parseRepository(process.env.GITHUB_REPOSITORY);
-export const projectBasePath = repoName === `${owner}.github.io` ? '' : `/${repoName}`;
+
+/** 由 owner/repoName 推导项目页 base：用户页仓库（*.github.io）无子路径，其余为 /<仓库名>。 */
+export function projectBasePathFor(ownerName: string, repoNameValue: string): string {
+  return repoNameValue === `${ownerName}.github.io` ? '' : `/${repoNameValue}`;
+}
+export const projectBasePath = projectBasePathFor(owner, repoName);
 
 // 本地开发默认站点根；CI 的项目页自动带仓库子路径；SITE_BASE 可显式覆盖。
 export const basePath = normalizeBase(

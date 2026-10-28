@@ -1,9 +1,8 @@
 import * as cheerio from 'cheerio';
 import { seasonNumber } from './rank';
 export interface SeasonEvidence {id:string;name:string;started_at:string;source_url:string;theme:string}
-export function themeFor(_name:string) {
-  return 'light';
-}
+// 固定浅色是产品规则，不随赛季换色：主题恒为 'light'，不再经由 themeFor 这类
+// 看似可配置的函数中转，避免后来人误以为主题可随赛季名变化。
 export function officialSeason(html:string,sourceUrl:string,now=new Date()):SeasonEvidence|null {
   const u=new URL(sourceUrl);if(u.hostname!=='www.taptap.cn'||!u.pathname.startsWith('/moment/'))return null;
   const doc=cheerio.load(html);
@@ -16,7 +15,7 @@ export function officialSeason(html:string,sourceUrl:string,now=new Date()):Seas
     if(!/版本更新已全部完成|正式上线|正式启幕|现已开启|正式启程/.test(description))continue;
     const launched=new Date(article.datePublished);
     if(!Number.isFinite(launched.getTime())||launched>now)continue;
-    return {id:`S${Number(match[1])}`,name:match[2],started_at:launched.toISOString(),source_url:u.href,theme:themeFor(match[2])};
+    return {id:`S${Number(match[1])}`,name:match[2],started_at:launched.toISOString(),source_url:u.href,theme:'light'};
   }
   return null;
 }

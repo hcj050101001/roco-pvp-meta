@@ -12,7 +12,7 @@ export const seasonsSchema = z.array(seasonSchema).superRefine((seasons, ctx) =>
   if (new Set(seasons.map(s => s.id)).size !== seasons.length)
     ctx.addIssue({ code: 'custom', message: '赛季 ID 不能重复' });
 });
-export const siteStateSchema = z.looseObject({
+export const siteStateSchema = z.object({
   season: seasonIdSchema, version_label: text, theme: text.optional(),
   season_source: url.optional(), previous_season: seasonIdSchema.optional(),
   last_research_at: date.optional(), last_successful_update: date.optional(),
@@ -22,7 +22,7 @@ export const siteStateSchema = z.looseObject({
     from: seasonIdSchema, to: seasonIdSchema, confirmed_at: date,
     source_url: url, kind: z.literal('major-season-update'),
   }).strict()).optional(), notice: text.optional(),
-});
+}).strict();
 export const imageSchema = z.object({
   path: z.string().regex(/^\/assets\/lineups\/[a-z0-9/-]+\.(png|jpe?g|webp|avif)$/).refine(v => !v.includes('..')),
   source_url: url, source_page_url: url,

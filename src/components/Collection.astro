@@ -15,7 +15,7 @@ const filters=[...new Set(lineups.flatMap(l=>l.archetype))];
   </div>
   <div class="collection-result"><div class="result-summary"><span id="result-count" role="status" aria-live="polite">共 {lineups.length} 套阵容</span><button id="clear-filters" class="clear-filters" hidden><Icon name="close" size={14} />清除筛选</button></div><label class="video-filter"><input type="checkbox" id="with-video" /><span class="switch-track" aria-hidden="true"></span>有教学视频</label></div>
   <div id="lineup-grid" class="lineup-grid">{lineups.map((l,i)=><LineupCard lineup={l} index={i} historical={historical} fallback={fallback.includes(l)} />)}</div>
-  <div class="empty-state" id="empty-state" hidden><span class="empty-icon"><Icon name="search" size={26} /></span><h3>没有找到符合条件的阵容</h3><p>换个关键词，或清除筛选，重新发现喜欢的队伍。</p><div class="empty-actions"><button class="button primary" id="reset-search">重置筛选</button>{!historical&&<a class="button secondary" href={withBase('/history/')}>浏览往期阵容</a>}</div></div>
+  <div class="empty-state" id="empty-state" role="status" aria-live="polite" hidden><span class="empty-icon"><Icon name="search" size={26} /></span><h3>没有找到符合条件的阵容</h3><p>换个关键词，或清除筛选，重新发现喜欢的队伍。</p><div class="empty-actions"><button class="button primary" id="reset-search">重置筛选</button>{!historical&&<a class="button secondary" href={withBase('/history/')}>浏览往期阵容</a>}</div></div>
 </div>
 <script>
   import { readCollectionState, writeCollectionState } from '../lib/collection-state';

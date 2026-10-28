@@ -28,7 +28,7 @@ const breadcrumbJsonLd={'@context':'https://schema.org','@type':'BreadcrumbList'
   <div class="detail-columns"><div class="detail-main">
     <section id="configuration" class="detail-section"><div class="section-label"><span>CONFIGURATION</span><h2>完整配队</h2></div><p class="subtle">点击图片查看原图。</p>
       <div class="image-tabs" role="tablist" aria-label="选择阵容图" hidden={l.lineup_images.length<2}>{l.lineup_images.map((_,i)=><button role="tab" id={`tab-${i}`} aria-controls={`image-${i}`} aria-selected={i===0?'true':'false'} tabindex={i===0?0:-1} data-image-tab={i}>配置 {i+1}</button>)}</div>
-      {l.lineup_images.map((img,i)=><figure class="full-image" id={`image-${i}`} role={l.lineup_images.length>1?'tabpanel':undefined} aria-labelledby={l.lineup_images.length>1?`tab-${i}`:undefined} hidden={i>0}><a href={withBase(img.path)} target="_blank" rel="noopener noreferrer" aria-label={`打开${l.name}配置图 ${i+1}原图`}><img src={withBase(img.path)} width={img.width} height={img.height} alt={`${l.name}完整阵容配置：${l.roster.map(p=>p.name).join('、')}`} decoding="async" fetchpriority={i===0?'high':undefined} /></a><figcaption>{img.attribution}<a href={withBase(img.path)} target="_blank" rel="noopener noreferrer">查看原图 ↗</a></figcaption></figure>)}
+      {l.lineup_images.map((img,i)=><figure class="full-image" id={`image-${i}`} role={l.lineup_images.length>1?'tabpanel':undefined} aria-labelledby={l.lineup_images.length>1?`tab-${i}`:undefined} hidden={i>0}><a href={withBase(img.path)} target="_blank" rel="noopener noreferrer" aria-label={`打开${l.name}配置图 ${i+1}原图`}><img src={withBase(img.path)} width={img.width} height={img.height} alt={`${l.name}完整阵容配置：${l.roster.map(p=>p.name).join('、')}`} decoding="async" fetchpriority={i===0?'high':undefined} data-image-fallback /><span class="image-load-fallback" aria-live="polite" hidden>图片暂时无法加载，可稍后重试。</span></a><figcaption>{img.attribution}<a href={withBase(img.path)} target="_blank" rel="noopener noreferrer">查看原图 ↗</a></figcaption></figure>)}
       {l.player_notes.length>0&&<aside class="player-note">{l.player_notes.map(p=><p>{p}</p>)}</aside>}
     </section>
     {l.signals.length>0&&<section id="signals" class="detail-section"><div class="section-label"><span>PUBLIC RECORDS</span><h2>近期公开记录</h2></div>{l.signals.map(s=><a class="source-row" href={s.source_url} target="_blank" rel="noopener noreferrer"><div><span>{s.kind==='high-rank'?'公开实绩':'公开热度记录'} · {displayDate(s.observed_at)}</span><h3>{s.note}</h3></div><span>↗</span></a>)}</section>}
@@ -48,4 +48,10 @@ const breadcrumbJsonLd={'@context':'https://schema.org','@type':'BreadcrumbList'
   const tabs=[...document.querySelectorAll<HTMLButtonElement>('[data-image-tab]')];
   function activate(tab:HTMLButtonElement){tabs.forEach(t=>{const selected=t===tab;t.setAttribute('aria-selected',String(selected));t.tabIndex=selected?0:-1;document.getElementById(`image-${t.dataset.imageTab}`)!.hidden=!selected;});}
   tabs.forEach((tab,i)=>{tab.addEventListener('click',()=>activate(tab));tab.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();const next=tabs[(i+(e.key==='ArrowRight'?1:tabs.length-1))%tabs.length];activate(next);next.focus();}});});
+  document.querySelectorAll<HTMLImageElement>('[data-image-fallback]').forEach(image => {
+    image.addEventListener('error', () => {
+      image.hidden = true;
+      image.parentElement?.querySelector<HTMLElement>('.image-load-fallback')?.removeAttribute('hidden');
+    }, { once: true });
+  });
 </script>

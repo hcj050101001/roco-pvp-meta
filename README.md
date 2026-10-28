@@ -70,19 +70,19 @@ npm run research:coverage
 
 `research:full` 默认同时搜索当季和历史赛季，跨平台发现并尝试用无登录 Chromium 查看公开渲染和懒加载内容。可用 `--scope history` 单独补充旧季。研究数据写入 `research/inbox/<run-id>/`，采集器不会直接改动阵容 JSON。默认接入扩展种子、已发布出处与待续查链接，也可通过 `--seeds <json文件>` 给采集器导入公开 URL 数组。具体策略见 [多来源、跨赛季阵容扩展](docs/research-strategy.md)；覆盖报告不等于阵容已核实。
 
-`npm run season:check` 每日由 GitHub Actions 运行，只接受官方已生效公告；来源不可用时保留现有赛季。半月研究和发布流程在北京时间每月 1 日、16 日 00:00 运行，也支持手动触发。完整研究使用 DeepSeek `deepseek-flash`（支持图片核验），依赖仓库 Secret `DEEPSEEK_API_KEY`；在 GitHub 仓库 Settings → Secrets and variables → Actions 中设置。缺少 Secret 或 API 调用失败时研究 job 会停止，线上内容保持不变。
+阵容、赛季和网站仅在你主动发起聊天并提出更新后修改。仓库没有定时研究或赛季检查，也不会因推送代码自动发布。需要核对赛季时，助手手动运行 `npm run season:check`；来源不可用时保留现有赛季。
 
-模型请求通过 Codex Action 的代理发往 `https://api.deepseek.com/responses`，消耗 DeepSeek API 账户余额。Action 的参数名仍叫 `openai-api-key`，传入的是 DeepSeek 密钥，无需 OpenAI API Key。模型能力定义在 `.github/codex/deepseek-models.json`；配置依据 [DeepSeek Responses 文档](https://api-docs.deepseek.com/guides/responses_api/)及 [Codex 接入文档](https://api-docs.deepseek.com/quick_start/agent_integrations/codex)。
+更新阵容时，助手按 [多来源、跨赛季策略](docs/research-strategy.md) 收集并核验真实配置图、来源、赛季与对应视频。采集器只产生候选；是否发布由本次聊天中的证据核验决定。
 
-可在 Actions 手动运行 `Verify DeepSeek connection`：真实调用 DeepSeek，核对随机文件读取与图片数字识别，不修改网站内容。`Research refresh and deploy` 才执行完整的候选采集、核验和发布。
+研究需要识图时可手动运行 `npm run research:vision` 准备受限 JPEG。图片看不清的细节不填入阵容。
 
-完整研究会先运行 `research:vision`，按 SHA 去重并生成单张不超过 192 KiB 的 JPEG 概览和原尺寸分块，仅用于模型识图。每候选保存核验进度，32,000 tokens 后自动压缩上下文，避免连续附加放大 PNG 触发 DeepSeek 的 [48 MiB 请求体限制](https://api-docs.deepseek.com/guides/vision)。网站使用的完整原图和水印保持原样；预览无法确认的细节不填入数据。
+`research:vision` 按 SHA 去重并生成单张不超过 192 KiB 的 JPEG 概览和原尺寸分块，仅供识图。网站使用的完整原图和水印保持原样。
 
-相同 SHA 且没有新证据的图片保留既有记录，不重复 OCR、不刷新验证日期。自动更新不会改写已有成员名称和顺序；疑似文字识别修订保留为候选，`refresh:guard` 独立阻断这类更改。
+相同 SHA 且没有新证据的图片保留既有记录，不重复 OCR、不刷新验证日期。已有成员名称和顺序的疑似修订保留为候选，`refresh:guard` 独立阻断未经核实的更改。
 
-推送到 `main` 会运行 `.github/workflows/deploy.yml`：类型检查、单元测试、静态构建、浏览器测试通过后部署 GitHub Pages。手动部署可在仓库 Actions 页面运行 `Build and deploy Pages`。
+发布也只在你发起的更新任务中执行：助手完成资料与页面验收并推送至 `main` 后，手动运行 Actions 中的 `Build and deploy Pages`。该流程完成类型检查、单元测试、静态构建、浏览器测试，再部署 GitHub Pages；普通推送不会触发发布。
 
-各发布入口复用 `.github/actions/validate-site`，保留桌面和手机截图及失败 trace。定时赛季核对和研究任务会比较线上 `build-state.json` 的内容指纹；仅核对时间变化时不部署，实际内容变化或 45 天排序线索到期后重新构建。线上指纹缺失或读取失败时保守执行验证和部署；核对结果仍保留在研究 artifact。
+手动发布使用 `.github/actions/validate-site` 完成验收，保留桌面和手机截图及失败 trace。构建仍生成 `build-state.json` 内容指纹，供更新时检查实际发布内容。
 
 搜索词、体系、赛季、视频筛选与排序保存在 URL，支持刷新和分享。详情页返回链接保留筛选条件并定位到原卡片；直接打开详情时仍使用默认返回入口。
 

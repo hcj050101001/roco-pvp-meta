@@ -40,12 +40,12 @@ node node_modules/tsx/dist/cli.mjs scripts/collect/run.ts --seeds path/to/urls.j
 
 生产内容必须遵守 `.agents/skills/roco-pvp-site-maintainer/SKILL.md` 和 `src/lib/schema.ts`。候选必须核实完整真实配置图、图片中六只精灵、所属赛季和来源；技能、血脉、作者攻略、实绩/热度记录、视频匹配只在有直接证据时填写。不得凭搜索摘要、相邻图片、同体系视频或平台 AI 摘要推断。
 
-不访问需要登录、验证码、付费、DRM、私人 Cookie 或其他访问绕过的内容。来源失败只写健康记录，不得据此删除、归档或刷新已有资料。自动发布 job 会再次校验现有记录、图片哈希、测试和构建；失败时不部署候选数据。
+不访问需要登录、验证码、付费、DRM、私人 Cookie 或其他访问绕过的内容。来源失败只写健康记录，不得据此删除、归档或刷新已有资料。手动发布前须校验现有记录、图片哈希、测试和构建；失败时不部署候选数据。
 
 图片 SHA 与既有资料一致且没有新配置/版本/原话/视频证据时保留原记录。已有成员名称及顺序不可被自动 OCR 修订覆盖，`refresh:guard` 会独立拒绝；可能的更正只写入 `research/candidates/`，等待单独核验。
 
-半月流程使用 DeepSeek Responses API 的 `deepseek-flash` 处理采集证据并核对图片，凭证仅保存在 GitHub Secret `DEEPSEEK_API_KEY`。Codex Action 负责工具执行和隔离代理，模型请求目标为 `https://api.deepseek.com/responses`。`Verify DeepSeek connection` 是独立的真实接口检查，验证文件工具和图片输入，不修改生产内容；通过连通性检查不代表已完成某次阵容研究。
+采集器只在用户主动提出更新后，由助手按任务需要运行。若需模型识图，先运行 `research:vision` 准备受限 JPEG，再在当前任务中逐图核对；模型连接成功不代表候选已验证。
 
 ## 证据保存
 
-`research/inbox/` 与 `research/baseline.json` 在 `.gitignore` 中忽略，避免提交原始网页快照或临时基线。可提交且与具体研究任务有关的结论记录放在 `research/runs/<run-id>/`；GitHub Actions 也会上传有限期 artifact。研究摘要只记录实际执行过的来源检查和验证，不将历史一次性结果写成采集器的永久能力保证。
+`research/inbox/` 与 `research/baseline.json` 在 `.gitignore` 中忽略，避免提交原始网页快照或临时基线。可提交且与具体研究任务有关的结论记录放在 `research/runs/<run-id>/`。研究摘要只记录实际执行过的来源检查和验证，不将历史一次性结果写成采集器的永久能力保证。

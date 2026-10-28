@@ -30,11 +30,17 @@ const staticPages = staticPageCount(lineups.length);
       <label class="search-box">
         <Icon name="search" size={20} />
         <span class="sr-only">搜索阵容或精灵</span>
-        <input id="search" type="search" placeholder="搜索阵容、精灵或体系" autocomplete="off" />
+        <input
+          id="search"
+          type="search"
+          placeholder="搜索阵容、精灵或体系"
+          autocomplete="off"
+          disabled
+        />
       </label>
       <label class="sort-label">
         排列方式{' '}
-        <select id="sort" aria-describedby="sort-explanation">
+        <select id="sort" aria-describedby="sort-explanation" disabled>
           <option value="recommended">近期线索优先</option>
           <option value="recent">配置发布时间</option>
         </select>
@@ -45,11 +51,11 @@ const staticPages = staticPageCount(lineups.length);
         配队体系
       </span>
       <div class="filter-bar" role="group" aria-labelledby="system-label">
-        <button class="filter active" data-filter="all" aria-pressed="true">
+        <button class="filter active" data-filter="all" aria-pressed="true" disabled>
           全部体系
         </button>
         {filters.map((f) => (
-          <button class="filter" data-filter={f} aria-pressed="false">
+          <button class="filter" data-filter={f} aria-pressed="false" disabled>
             {f}
           </button>
         ))}
@@ -63,18 +69,24 @@ const staticPages = staticPageCount(lineups.length);
       </p>
     </details>
   </div>
+  <noscript>
+    <p class="index-status">
+      搜索与筛选需要启用脚本；
+      {staticPages > 1 ? '可使用分页链接浏览全部阵容。' : '下方阵容卡片仍可浏览。'}
+    </p>
+  </noscript>
   <div class="collection-result">
     <div class="result-summary">
       <span id="result-count" role="status" aria-live="polite">
         共 {lineups.length} 套阵容
       </span>
-      <button id="clear-filters" class="clear-filters" hidden>
+      <button id="clear-filters" class="clear-filters" hidden disabled>
         <Icon name="close" size={14} />
         清除筛选
       </button>
     </div>
     <label class="video-filter">
-      <input type="checkbox" id="with-video" />
+      <input type="checkbox" id="with-video" disabled />
       <span class="switch-track" aria-hidden="true"></span>有教学视频
     </label>
   </div>
@@ -96,7 +108,7 @@ const staticPages = staticPageCount(lineups.length);
   {staticPages > 1 && (
     <nav class="pagination static-pagination" aria-label="静态阵容分页">
       {initialPage > 1 && <a href={staticPagePath(initialPage - 1, historical)}>上一页</a>}
-      <span>
+      <span aria-current="page">
         第 {initialPage} / {staticPages} 页
       </span>
       {initialPage < staticPages && (
@@ -121,7 +133,7 @@ const staticPages = staticPageCount(lineups.length);
     <h3>没有找到符合条件的阵容</h3>
     <p>换个关键词，或清除筛选，重新发现喜欢的队伍。</p>
     <div class="empty-actions">
-      <button class="button primary" id="reset-search">
+      <button class="button primary" id="reset-search" disabled>
         重置筛选
       </button>
       {!historical && (
@@ -135,7 +147,7 @@ const staticPages = staticPageCount(lineups.length);
 <script>
   import { readCollectionState, writeCollectionState, clampPage } from '../lib/collection-state';
   import {
-    isVisible,
+    filterCollection,
     sortCollection,
     paginate,
     PAGE_SIZE,
@@ -238,9 +250,20 @@ const staticPages = staticPageCount(lineups.length);
     const resultCount = root.querySelector<HTMLElement>('#result-count')!;
     const emptyState = root.querySelector<HTMLElement>('#empty-state')!;
     const indexStatus = root.querySelector<HTMLElement>('#index-status')!;
-    const clearBtn = root.querySelector<HTMLElement>('#clear-filters')!;
+    const clearBtn = root.querySelector<HTMLButtonElement>('#clear-filters')!;
     const types = [...root.querySelectorAll<HTMLButtonElement>('[data-filter]')];
     const seasons = [...document.querySelectorAll<HTMLButtonElement>('[data-season-filter]')];
+    [
+      input,
+      sort,
+      video,
+      ...types,
+      ...seasons,
+      clearBtn,
+      root.querySelector<HTMLButtonElement>('#reset-search')!,
+    ].forEach((control) => {
+      control.disabled = false;
+    });
     const indexSet = root.dataset.indexSet ?? 'active';
     const initialPage = Number(root.dataset.initialPage) || 1;
     const staticPagination = root.querySelector<HTMLElement>('.static-pagination');
@@ -350,7 +373,7 @@ const staticPages = staticPageCount(lineups.length);
         sort: sort.value,
         page,
       };
-      const visible = data.filter((card) => isVisible(card, state));
+      const visible = filterCollection(data, state);
       const sorted = sortCollection(visible, sort.value);
       const paged = paginate(sorted, renderData ? page : 1);
       if (renderData && paged.page !== page) page = paged.page;
@@ -468,6 +491,7 @@ const staticPages = staticPageCount(lineups.length);
           sort: sort.value,
           page,
         });
+        if (initialPage > 1) corrected.pathname = root.dataset.rootPath!;
         if (corrected.href !== location.href) history.replaceState(history.state, '', corrected);
       }
       if (location.hash.startsWith('#lineup-'))

@@ -1,7 +1,13 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import type { CollectionState } from '../src/lib/collection-state';
-import { isVisible, sortCollection, type CollectionCard } from '../src/lib/collection-filter';
+import {
+  filterCollection,
+  isVisible,
+  normalizeSearch,
+  sortCollection,
+  type CollectionCard,
+} from '../src/lib/collection-filter';
 
 const baseState: CollectionState = {
   query: '',
@@ -43,6 +49,20 @@ test('isVisible combines type, season, and video filters', () => {
   assert.equal(isVisible(candidate, { ...baseState, season: 'S2' }), false);
   assert.equal(isVisible(card({ video: false }), { ...baseState, video: true }), false);
   assert.equal(isVisible(card({ video: false }), baseState), true);
+});
+
+test('filterCollection 对已规范化的索引与逐卡筛选结果一致', () => {
+  const cards = [
+    card({ search: normalizeSearch('ＴＥＳＴ  雨天队'), types: ['雨天'], season: 'S4' }),
+    card({ search: normalizeSearch('test 火系队'), types: ['火系'], season: 'S4' }),
+    card({ search: normalizeSearch('旧赛季 雨天队'), types: ['雨天'], season: 'S3' }),
+  ];
+  const state = { ...baseState, query: '  TEST 雨天 ', type: '雨天', season: 'S4', video: true };
+  assert.deepEqual(
+    filterCollection(cards, state),
+    cards.filter((item) => isVisible(item, state)),
+  );
+  assert.deepEqual(filterCollection(cards, state), [cards[0]]);
 });
 
 test('sortCollection applies default and recent ordering with specified ties', () => {

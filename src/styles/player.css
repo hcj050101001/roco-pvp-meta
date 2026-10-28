@@ -710,6 +710,9 @@ img {
   gap: 8px;
   margin-top: 32px;
 }
+.pagination[hidden] {
+  display: none;
+}
 .pagination button,
 .pagination a {
   display: inline-flex;

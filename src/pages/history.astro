@@ -41,11 +41,11 @@ const description =
       </div>
     </header>
     <nav class="season-tabs" aria-label="历史赛季">
-      <button class="active" data-season-filter="all" aria-pressed="true">
+      <button class="active" data-season-filter="all" aria-pressed="true" disabled>
         全部赛季 <span>{historyLineups.length}</span>
       </button>
       {choices.map((s) => (
-        <button data-season-filter={s.id} aria-pressed="false">
+        <button data-season-filter={s.id} aria-pressed="false" disabled>
           {s.id} · {s.name}
           <span>{historyLineups.filter((l) => l.season === s.id).length}</span>
         </button>

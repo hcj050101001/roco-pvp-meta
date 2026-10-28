@@ -24,6 +24,21 @@ export function isVisible(card: CollectionCard, state: CollectionState): boolean
   );
 }
 
+/** 列表数据的 search 字段在生成索引和 SSR 卡片时已规范化。 */
+export function filterCollection<T extends CollectionCard>(
+  cards: T[],
+  state: CollectionState,
+): T[] {
+  const query = normalizeSearch(state.query);
+  return cards.filter(
+    (card) =>
+      card.search.includes(query) &&
+      (state.type === 'all' || card.types.includes(state.type)) &&
+      (state.season === 'all' || card.season === state.season) &&
+      (!state.video || card.video),
+  );
+}
+
 export function sortCollection<T extends CollectionCard>(cards: T[], sort: string): T[] {
   return [...cards].sort((a, b) =>
     sort === 'recent' ? b.date.localeCompare(a.date) || a.index - b.index : a.index - b.index,

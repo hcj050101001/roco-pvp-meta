@@ -32,8 +32,12 @@ for (const [kind, lineups] of [
   )
     throw Error(`${kind} 索引与列表顺序不一致`);
   const historical = kind === 'history';
-  for (const page of additionalStaticPages(lineups.length)) {
-    const path = join(root, ...(historical ? ['history'] : []), 'page', String(page), 'index.html');
+  const pageNumbers = [1, ...additionalStaticPages(lineups.length)];
+  for (const page of pageNumbers) {
+    const path =
+      page === 1
+        ? join(root, ...(historical ? ['history'] : []), 'index.html')
+        : join(root, ...(historical ? ['history'] : []), 'page', String(page), 'index.html');
     const $ = cheerio.load(await readFile(path, 'utf8'));
     const rendered = $('[data-collection] [data-card]')
       .toArray()
@@ -43,9 +47,36 @@ for (const [kind, lineups] of [
       .map((lineup) => `lineup-${lineup.slug}`);
     if (JSON.stringify(rendered) !== JSON.stringify(expected))
       throw Error(`${kind} 静态第 ${page} 页与索引顺序不一致`);
+    if (historical && $('[data-season-filter="all"]').length !== 1)
+      throw Error(`历史静态第 ${page} 页缺少赛季筛选`);
+    const links = $('nav.static-pagination a')
+      .toArray()
+      .map((el) => $(el).attr('href'));
+    const expectedLinks = [
+      ...(page > 1
+        ? [`${base}${historical ? '/history' : ''}${page === 2 ? '/' : `/page/${page - 1}/`}`]
+        : []),
+      ...(page < pageNumbers.length
+        ? [`${base}${historical ? '/history' : ''}/page/${page + 1}/`]
+        : []),
+    ];
+    if (JSON.stringify(links) !== JSON.stringify(expectedLinks))
+      throw Error(`${kind} 静态第 ${page} 页的分页链接不完整`);
   }
 }
 if (all.includes(join(root, 'collection-index.json'))) throw Error('旧合并索引未移除');
+for (const path of [join(root, 'index.html'), join(root, 'history', 'index.html')]) {
+  const $ = cheerio.load(await readFile(path, 'utf8'));
+  if (!$('noscript').text().includes('搜索与筛选需要启用脚本'))
+    throw Error(`无脚本浏览提示缺失: ${path}`);
+  for (const selector of ['#search', '#sort', '#with-video', '[data-filter]'])
+    if (
+      $(selector)
+        .toArray()
+        .some((element) => $(element).attr('disabled') === undefined)
+    )
+      throw Error(`无脚本控件未禁用: ${selector} in ${path}`);
+}
 let checks = 0;
 const siteRoot = `${origin}${base}/`;
 const contentPages: string[] = [];

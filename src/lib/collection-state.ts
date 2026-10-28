@@ -60,7 +60,7 @@ export function safeCollectionReturn(value: string | null, origin: string, base:
       url.password ||
       (![root, `${root}history/`].includes(url.pathname) &&
         !new RegExp(
-          `^${root.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}(?:history/)?page/[2-9][0-9]*/$`,
+          `^${root.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}(?:history/)?page/(?:[2-9]|[1-9][0-9]+)/$`,
         ).test(url.pathname))
     )
       return null;

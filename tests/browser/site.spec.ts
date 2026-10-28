@@ -296,6 +296,21 @@ test('默认首访不取完整索引；500 条测试样例仍只绘制 24 张卡
   expect(indexRequests).toBe(1);
 });
 
+test('当季和往期筛选只请求各自的索引', async ({ page }) => {
+  const requests: string[] = [];
+  await page.route('**/collection-index-*.json', async (route) => {
+    requests.push(new URL(route.request().url()).pathname);
+    await route.continue();
+  });
+  await page.goto('./?q=雨天');
+  await expect(page.locator('#index-status')).toBeHidden();
+  expect(requests).toEqual([expect.stringContaining('collection-index-active.json')]);
+  requests.length = 0;
+  await page.goto('history/?q=雨天');
+  await expect(page.locator('#index-status')).toBeHidden();
+  expect(requests).toEqual([expect.stringContaining('collection-index-history.json')]);
+});
+
 test('索引失败可读且能重试；翻页后焦点落在结果列表', async ({ page }) => {
   let attempts = 0;
   await page.route('**/collection-index-active.json', async (route) => {

@@ -142,6 +142,10 @@ test('safeCollectionReturn 只允许列表根路径及静态分页并保留查�
     safeCollectionReturn('/roco-pvp-meta/history/page/3/?q=rain', origin, base),
     '/roco-pvp-meta/history/page/3/?q=rain',
   );
+  assert.equal(
+    safeCollectionReturn('/roco-pvp-meta/page/10/#lineup-example', origin, base),
+    '/roco-pvp-meta/page/10/#lineup-example',
+  );
   assert.equal(safeCollectionReturn('/roco-pvp-meta/page/1/', origin, base), null);
   assert.equal(safeCollectionReturn('/roco-pvp-meta/history/page/2/../other/', origin, base), null);
 });

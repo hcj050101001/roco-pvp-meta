@@ -1,0 +1,23 @@
+name: CI
+
+# Validation only: this workflow never deploys. Publishing stays manual
+# via the "Build and deploy Pages" workflow, and a plain push never publishes.
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - uses: ./.github/actions/validate-site

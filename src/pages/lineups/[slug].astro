@@ -4,6 +4,7 @@ import { allLineups,state } from '../../lib/data';
 import { withBase,displayDate } from '../../lib/urls';
 import { configurationDate } from '../../lib/rank';
 import { absoluteUrl } from '../../lib/seo';
+import { platformLabels } from '../../lib/platforms';
 import type { Lineup } from '../../lib/schema';
 export function getStaticPaths(){return allLineups.map(lineup=>({params:{slug:lineup.slug},props:{lineup}}));}
 interface Props { lineup:Lineup }
@@ -12,7 +13,6 @@ const historical=l.status==='archived'||l.season!==state.season;
 const back=historical?withBase('/history/'):withBase('/#lineup-overview');
 const backLabel=historical?'← 返回往期阵容':'← 返回阵容总览';
 const published=configurationDate(l);
-const platforms={bilibili:'哔哩哔哩',douyin:'抖音',other:'视频'};
 const evidenceLabels={A:'作者或一手来源',B:'可信图文来源',C:'转载图源·已交叉核对'};
 const verifiedSkillCount=l.roster.filter(p=>p.skills.length>0).length;
 const breadcrumbJsonLd={'@context':'https://schema.org','@type':'BreadcrumbList',itemListElement:[
@@ -32,7 +32,7 @@ const breadcrumbJsonLd={'@context':'https://schema.org','@type':'BreadcrumbList'
       {l.player_notes.length>0&&<aside class="player-note">{l.player_notes.map(p=><p>{p}</p>)}</aside>}
     </section>
     {l.signals.length>0&&<section id="signals" class="detail-section"><div class="section-label"><span>PUBLIC RECORDS</span><h2>近期公开记录</h2></div>{l.signals.map(s=><a class="source-row" href={s.source_url} target="_blank" rel="noopener noreferrer"><div><span>{s.kind==='high-rank'?'公开实绩':'公开热度记录'} · {displayDate(s.observed_at)}</span><h3>{s.note}</h3></div><span>↗</span></a>)}</section>}
-    <section id="tutorials" class="detail-section"><div class="section-label"><span>WATCH & LEARN</span><h2>教学与实战</h2></div>{l.tutorials.length>0?l.tutorials.map(t=><a class="source-row video-row" href={t.url} target="_blank" rel="noopener noreferrer"><div><span>{platforms[t.platform]} · {t.creator} · {displayDate(t.published_at)}</span><h3>{t.title}</h3></div><span>▷</span></a>):<p class="info-gap">暂未找到能确认对应这套阵容的教学视频。</p>}</section>
+    <section id="tutorials" class="detail-section"><div class="section-label"><span>WATCH & LEARN</span><h2>教学与实战</h2></div>{l.tutorials.length>0?l.tutorials.map(t=><a class="source-row video-row" href={t.url} target="_blank" rel="noopener noreferrer"><div><span>{platformLabels[t.platform]} · {t.creator} · {displayDate(t.published_at)}</span><h3>{t.title}</h3></div><span>▷</span></a>):<p class="info-gap">暂未找到能确认对应这套阵容的教学视频。</p>}</section>
     {l.guides.length>0&&<section id="guides" class="detail-section"><div class="section-label"><span>FROM THE AUTHOR</span><h2>作者攻略摘录</h2></div>{l.guides.map(g=><figure class="guide-quote"><blockquote>{g.quote}</blockquote><figcaption><span>{g.author} · {displayDate(g.published_at)}</span><a href={g.source_url} target="_blank" rel="noopener noreferrer">阅读全文 ↗</a></figcaption></figure>)}</section>}
     <section id="roster" class="detail-section"><div class="section-label"><span>MEMBERS</span><h2>阵容成员</h2></div><p class="info-gap">{verifiedSkillCount} / 6 只精灵有已核实技能记录；未核实的技能不作补写。</p><div class="roster-list">{l.roster.map((p,i)=><div class="roster-row"><span class="roster-number">0{i+1}</span><div><h3>{p.name}</h3>{p.skills.length>0&&<div class="skill-tags">{p.skills.map(s=><span>{s}</span>)}</div>}</div>{p.bloodline&&<span class="bloodline">血脉<br /><strong>{p.bloodline}</strong></span>}</div>)}</div></section>
     <section id="sources" class="detail-section"><div class="section-label"><span>CREDITS</span><h2>配置来源</h2></div>{l.sources.map(s=><a class="source-row" href={s.url} target="_blank" rel="noopener noreferrer"><div><span>{displayDate(s.updated_at||s.published_at)}{s.updated_at?' · 帖子更新':''}</span><h3>{s.title}</h3></div><span>↗</span></a>)}</section>
@@ -41,6 +41,7 @@ const breadcrumbJsonLd={'@context':'https://schema.org','@type':'BreadcrumbList'
 </Layout>
 <script>
   import { safeCollectionReturn } from '../../lib/collection-state';
+  import { initImageFallback } from '../../client/image-fallback';
   const back=safeCollectionReturn(new URL(location.href).searchParams.get('returnTo'),location.origin,import.meta.env.BASE_URL);
   if(back)document.querySelectorAll<HTMLAnchorElement>('.detail-nav-inner>a,.bottom-return,.sidebar-return').forEach(link=>{
     link.href=back;link.textContent=new URL(back,location.origin).pathname.endsWith('/history/')?'← 返回往期阵容':'← 返回阵容总览';
@@ -48,10 +49,5 @@ const breadcrumbJsonLd={'@context':'https://schema.org','@type':'BreadcrumbList'
   const tabs=[...document.querySelectorAll<HTMLButtonElement>('[data-image-tab]')];
   function activate(tab:HTMLButtonElement){tabs.forEach(t=>{const selected=t===tab;t.setAttribute('aria-selected',String(selected));t.tabIndex=selected?0:-1;document.getElementById(`image-${t.dataset.imageTab}`)!.hidden=!selected;});}
   tabs.forEach((tab,i)=>{tab.addEventListener('click',()=>activate(tab));tab.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();const next=tabs[(i+(e.key==='ArrowRight'?1:tabs.length-1))%tabs.length];activate(next);next.focus();}});});
-  document.querySelectorAll<HTMLImageElement>('[data-image-fallback]').forEach(image => {
-    image.addEventListener('error', () => {
-      image.hidden = true;
-      image.parentElement?.querySelector<HTMLElement>('.image-load-fallback')?.removeAttribute('hidden');
-    }, { once: true });
-  });
+  initImageFallback();
 </script>

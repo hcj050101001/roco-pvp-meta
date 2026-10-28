@@ -1,6 +1,7 @@
 import { test,expect } from '@playwright/test';
 import { activeLineups,allLineups,historyLineups,overview } from '../../src/lib/data';
 import { mkdir } from 'node:fs/promises';
+import { expectCardImage, expectConfigurationImages, expectVideoLinks } from './assertions';
 
 test('完整筛选链接可刷新分享，详情返回恢复筛选与卡片位置',async({page})=>{
   const lineup=historyLineups[0];
@@ -60,7 +61,7 @@ test('玩家首页：固定明亮风格、体系筛选与全局排序',async({pa
   await expect(page.locator('[data-card]:visible')).toHaveCount(activeLineups.filter(l=>l.tutorials.length>0).length);
   for(const l of activeLineups.filter(l=>l.tutorials.length>0)){
     const card=page.locator('[data-card]').filter({has:page.getByRole('heading',{name:l.name,exact:true})});
-    for(const t of l.tutorials)await expect(card.locator('.video-link')).toHaveAttribute('href',t.url);
+    await expectVideoLinks(card,l.tutorials.map(t=>t.url));
   }
   expect(await page.locator('a a').count()).toBe(0);
   expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
@@ -86,8 +87,7 @@ test('当季和往期详情均可返回，完整原图无裁切',async({page},in
     await expect(page.locator('.detail-provenance')).toContainText(lineup.lineup_images[0].evidence_grade==='A'?'作者或一手来源':lineup.lineup_images[0].evidence_grade==='B'?'可信图文来源':'转载图源·已交叉核对');
     await expect(page.locator('#roster .info-gap')).toContainText(`${lineup.roster.filter(p=>p.skills.length>0).length} / 6`);
     await expect(page.locator('.detail-nav-inner>a')).toHaveText(/返回阵容总览|返回往期阵容/);
-    const images=await page.locator('img').evaluateAll(els=>els.map(el=>{const e=el as HTMLImageElement;return {loaded:e.complete&&e.naturalWidth>0,fit:getComputedStyle(e).objectFit,ratio:e.getBoundingClientRect().width/e.getBoundingClientRect().height,natural:e.naturalWidth/e.naturalHeight};}));
-    for(const img of images){expect(img.loaded).toBe(true);expect(img.fit).toBe('contain');expect(Math.abs(img.ratio-img.natural)).toBeLessThan(.01);}
+    await expectConfigurationImages(page,lineup.lineup_images.length);
     expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
   }
   await page.screenshot({path:`artifacts/detail-${info.project.name}.png`,fullPage:true});
@@ -95,25 +95,13 @@ test('当季和往期详情均可返回，完整原图无裁切',async({page},in
   expect(errors).toEqual([]);
 });
 
-test('卡片使用派生响应图，详情页保留原始尺寸',async({page})=>{
+test('卡片按可用派生图加载或回退原图，详情页保留原始尺寸',async({page})=>{
   await page.goto('./');
   const cards=page.locator('[data-card]');
   const total=await cards.count();expect(total).toBeGreaterThan(0);
-  let saw480=false,saw800=false;
   for(let i=0;i<total;i++){
-    const img=cards.nth(i).locator('img');
-    await img.scrollIntoViewIfNeeded();
-    await expect.poll(()=>img.evaluate((e:HTMLImageElement)=>e.naturalWidth)).toBeGreaterThan(0);
-    const srcset=await img.getAttribute('srcset');
-    expect(srcset).toBeTruthy();
-    const entries=srcset!.split(',').map(s=>s.trim());
-    expect(entries.length).toBeGreaterThan(0);
-    for(const entry of entries)expect(entry).toMatch(/\/assets\/lineups\/derived\/[a-f0-9]{64}-(480|800)\.webp \d+w$/);
-    saw480 ||= srcset!.includes('480w');saw800 ||= srcset!.includes('800w');
-    expect(await img.evaluate((e:HTMLImageElement)=>e.currentSrc)).toContain('/assets/lineups/derived/');
-    expect(await img.evaluate((e:HTMLImageElement)=>e.naturalWidth)).toBeLessThanOrEqual(800);
+    await expectCardImage(cards.nth(i).locator('img'),activeLineups[i].lineup_images[0]);
   }
-  expect(saw480).toBe(true);expect(saw800).toBe(true);
   const lineup=activeLineups[0];
   await page.goto(`lineups/${lineup.slug}/`);
   const detail=page.locator('.full-image img').first();

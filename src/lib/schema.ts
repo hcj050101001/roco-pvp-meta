@@ -3,6 +3,26 @@ import { z } from 'zod';
 const text = z.string().trim().min(1);
 const url = z.url().refine(v => new URL(v).protocol === 'https:', '只接受 HTTPS 来源');
 const date = z.iso.datetime({ offset: true });
+export const seasonIdSchema = z.string().regex(/^S[1-9]\d*$/, '赛季必须使用 S1、S2 等格式');
+export const seasonSchema = z.object({
+  id: seasonIdSchema, name: text, intro: text,
+  theme: text.optional(), started_at: date.optional(), source_url: url.optional(),
+}).strict();
+export const seasonsSchema = z.array(seasonSchema).superRefine((seasons, ctx) => {
+  if (new Set(seasons.map(s => s.id)).size !== seasons.length)
+    ctx.addIssue({ code: 'custom', message: '赛季 ID 不能重复' });
+});
+export const siteStateSchema = z.looseObject({
+  season: seasonIdSchema, version_label: text, theme: text.optional(),
+  season_source: url.optional(), previous_season: seasonIdSchema.optional(),
+  last_research_at: date.optional(), last_successful_update: date.optional(),
+  balance_patch_date: date.nullable().optional(), season_checked_at: date.optional(),
+  season_revision: z.number().int().positive().optional(), major_update_required: z.boolean().optional(),
+  season_transitions: z.array(z.object({
+    from: seasonIdSchema, to: seasonIdSchema, confirmed_at: date,
+    source_url: url, kind: z.literal('major-season-update'),
+  }).strict()).optional(), notice: text.optional(),
+});
 export const imageSchema = z.object({
   path: z.string().regex(/^\/assets\/lineups\/[a-z0-9/-]+\.(png|jpe?g|webp|avif)$/).refine(v => !v.includes('..')),
   source_url: url, source_page_url: url,
@@ -17,7 +37,7 @@ export const imageSchema = z.object({
 }).strict();
 export const lineupSchema = z.object({
   id: z.string().regex(/^[a-z0-9-]+$/), slug: z.string().regex(/^[a-z0-9-]+$/),
-  name: text, aliases: z.array(text), season: text, version_label: text,
+  name: text, aliases: z.array(text), season: seasonIdSchema, version_label: text,
   archetype: z.array(text).min(1),
   summary: text,
   guides: z.array(z.object({ quote: text.max(24), author: text, source_url: url, published_at: date, verified_at: date }).strict()),

@@ -1,8 +1,8 @@
 import { readFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
-import { readLineups } from '../../src/lib/data';
+import { loadData } from '../../src/lib/data';
 import { imageInfo } from '../extract/image';
-const lineups=readLineups();
+const { allLineups: lineups }=loadData();
 if(new Set(lineups.map(l=>l.slug)).size!==lineups.length || new Set(lineups.map(l=>l.id)).size!==lineups.length) throw Error('重复 slug/id');
 for(const l of lineups) for(const img of l.lineup_images) {
   const bytes=await readFile(resolve('public',img.path.slice(1))); const info=await imageInfo(bytes);

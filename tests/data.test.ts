@@ -27,13 +27,13 @@ function fixture(options: {
   mkdirSync(join(root, 'data', 'lineups'), { recursive: true });
   mkdirSync(join(root, 'data', 'archive'), { recursive: true });
   writeFileSync(join(root, 'data', 'update-state.json'), JSON.stringify(options.state ?? { season: 'S4', version_label: '测试版本' }));
-  writeFileSync(join(root, 'data', 'seasons.json'), JSON.stringify(options.seasons ?? []));
+  writeFileSync(join(root, 'data', 'seasons.json'), JSON.stringify(options.seasons ?? [{ id: 'S4', name: '测试赛季', intro: '测试简介' }]));
   for (const lineup of options.lineups ?? []) writeFileSync(join(root, 'data', 'lineups', `${lineup.slug}.json`), JSON.stringify(lineup));
   for (const lineup of options.archive ?? []) writeFileSync(join(root, 'data', 'archive', `${lineup.slug}.json`), JSON.stringify(lineup));
   return root;
 }
 
-test('loadData(root) 只读取指定根目录，currentSeason 缺失时可回退', () => {
+test('loadData(root) 只读取指定根目录，当前赛季必须登记', () => {
   const root = fixture({
     state: { season: 'S4', version_label: '根目录版本', theme: 'light' },
     seasons: [{ id: 'S4', name: '根目录赛季', intro: '根目录简介' }],
@@ -56,8 +56,7 @@ test('loadData(root) 只读取指定根目录，currentSeason 缺失时可回退
     lineups: [sample()],
   });
   try {
-    const season = loadData(missing).currentSeason;
-    assert.deepEqual(season, { id: 'S5', name: '未登记版本', theme: 'dark', intro: '' });
+    assert.throws(() => loadData(missing), /当前赛季未登记/);
   } finally {
     rmSync(missing, { recursive: true, force: true });
   }
@@ -94,8 +93,33 @@ test('归档目录只接受 archived，文件名必须与 slug 一致', () => {
 test('update-state 缺少 season/version_label 时直接失败', () => {
   const root = fixture({ state: { season: 'S4' } });
   try {
-    assert.throws(() => loadData(root), /缺少 season\/version_label/);
+    assert.throws(() => loadData(root), /version_label/);
   } finally {
     rmSync(root, { recursive: true, force: true });
+  }
+});
+
+test('拒绝未登记、未来及格式错误的阵容赛季', () => {
+  for (const [season, seasons, message] of [
+    ['S999', [{ id: 'S4', name: '当季', intro: '简介' }], /赛季未登记/],
+    ['S5', [{ id: 'S4', name: '当季', intro: '简介' }, { id: 'S5', name: '未来', intro: '简介' }], /晚于当前赛季/],
+    ['unknown', [{ id: 'S4', name: '当季', intro: '简介' }], /赛季必须/],
+  ] as const) {
+    const root = fixture({ seasons, lineups: [{ ...sample(), season }] });
+    try { assert.throws(() => loadData(root), message); }
+    finally { rmSync(root, { recursive: true, force: true }); }
+  }
+});
+
+test('赛季表逐条校验并拒绝重复 ID，状态校验空标题及非法日期', () => {
+  for (const options of [
+    { seasons: [null] },
+    { seasons: [{ id: 'S4', name: '赛季', intro: '简介' }, { id: 'S4', name: '重复', intro: '简介' }] },
+    { state: { season: 'S4', version_label: '' } },
+    { state: { season: 'S4', version_label: '赛季', season_checked_at: 'yesterday' } },
+  ]) {
+    const root = fixture(options);
+    try { assert.throws(() => loadData(root)); }
+    finally { rmSync(root, { recursive: true, force: true }); }
   }
 });

@@ -5,6 +5,28 @@ import { ingestSearch, discover } from '../scripts/collect/search';
 import { extractPage } from '../scripts/extract/page';
 import { coverage } from '../scripts/research/coverage';
 import { allLineups } from '../src/lib/data';
+import { sourceDocument } from '../scripts/collect/page';
+
+test('浏览器重定向使用最终页面 URL；失败时成对保留普通抓取页面及 URL', async () => {
+  const html = `<article>${'公开配队内容'.repeat(60)}<img src="images/team.png"><a href="next/">配队</a></article>`;
+  const fetcher = async () => ({ body: Buffer.from(html), type: 'text/html', url: 'https://example.com/fetch/page' });
+  const snapshotter = async () => ({ html, screenshot: Buffer.from('screenshot'), url: 'https://example.com/browser/page' });
+  const document = await sourceDocument('https://example.com/entry', { browser: true, fetcher, snapshotter });
+  const page = extractPage(document.html, document.url);
+  assert.equal(page.images[0].url, 'https://example.com/browser/images/team.png');
+  assert.equal(page.related_links[0].url, 'https://example.com/browser/next/');
+  assert.equal(document.browser_error, null);
+  for (const fail of [
+    async () => { throw Error('浏览器失败'); },
+    async () => ({ ...await snapshotter(), html: '<title>安全验证</title>' }),
+  ]) {
+    const fallback = await sourceDocument('https://example.com/entry', { browser: true, fetcher, snapshotter: fail });
+    assert.equal(fallback.html, html);
+    assert.equal(fallback.url, 'https://example.com/fetch/page');
+    assert.equal(fallback.screenshot, undefined);
+    assert.ok(fallback.browser_error);
+  }
+});
 
 test('全部赛季与历史模式保留旧赛季，显式历史查询不会改写为当季', () => {
   assert.deepEqual(selectedSeasons('S4', ['S2', 'S3', 'S4'], 'all'), ['S4', 'S3', 'S2']);

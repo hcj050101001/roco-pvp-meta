@@ -1,23 +1,11 @@
 import { readdirSync, readFileSync, existsSync } from 'node:fs';
 import { resolve } from 'node:path';
-import { lineupSchema, type Lineup } from './schema';
+import type { z } from 'zod';
+import { lineupSchema, seasonsSchema, siteStateSchema, type Lineup } from './schema';
 import { selectOverview, ranked, seasonNumber } from './rank';
 
-export interface Season {
-  id: string;
-  name: string;
-  theme?: string;
-  started_at?: string;
-  source_url?: string;
-  intro: string;
-}
-
-export interface SiteState {
-  season: string;
-  version_label: string;
-  theme?: string;
-  [key: string]: unknown;
-}
+export type Season = z.infer<typeof seasonsSchema>[number];
+export type SiteState = z.infer<typeof siteStateSchema>;
 
 export function readLineups(root = process.cwd()): Lineup[] {
   return ['data/lineups', 'data/archive'].flatMap(dir => {
@@ -33,25 +21,25 @@ export function readLineups(root = process.cwd()): Lineup[] {
 
 export function loadState(root = process.cwd()): SiteState {
   const value: unknown = JSON.parse(readFileSync(resolve(root, 'data/update-state.json'), 'utf8'));
-  if (!value || typeof value !== 'object' || Array.isArray(value)
-    || typeof (value as SiteState).season !== 'string' || typeof (value as SiteState).version_label !== 'string')
-    throw Error('update-state.json 缺少 season/version_label');
-  return value as SiteState;
+  return siteStateSchema.parse(value);
 }
 
 export function loadSeasons(root = process.cwd()): Season[] {
   const value: unknown = JSON.parse(readFileSync(resolve(root, 'data/seasons.json'), 'utf8'));
-  if (!Array.isArray(value)) throw Error('seasons.json 必须是数组');
-  return value as Season[];
+  return seasonsSchema.parse(value);
 }
 
 export function loadData(root = process.cwd()) {
   const allLineups = readLineups(root);
   const state = loadState(root);
   const seasons = loadSeasons(root);
+  const currentSeason = seasons.find(s => s.id === state.season);
+  if (!currentSeason) throw Error(`当前赛季未登记：${state.season}`);
+  for (const lineup of allLineups) {
+    if (!seasons.some(s => s.id === lineup.season)) throw Error(`${lineup.slug}: 赛季未登记：${lineup.season}`);
+    if (seasonNumber(lineup.season) > seasonNumber(state.season)) throw Error(`${lineup.slug}: 阵容赛季晚于当前赛季`);
+  }
   const overview = selectOverview(allLineups, state.season);
-  const currentSeason = seasons.find(s => s.id === state.season)
-    || { id: state.season, name: state.version_label, theme: state.theme || 'classic', intro: '' };
   return {
     allLineups,
     state,

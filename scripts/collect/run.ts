@@ -5,7 +5,7 @@ import { extractPage } from '../extract/page';
 import { publicFetch } from './network';
 import { imageInfo } from '../extract/image';
 import { discover } from './search';
-import { publicBrowserSnapshot } from './browser';
+import { sourceDocument } from './page';
 import { loadSeasons, loadState, readLineups } from '../../src/lib/data';
 import { sourceFor, mergeSources, balancedSources, selectedSeasons, queryPlan, candidateImage, retrySource, remainingImages, unprocessedImages, processedImages, type Source } from './strategy';
 import policy from '../../data/research-policy.json';
@@ -114,18 +114,13 @@ for (let index = 0; index < queue.length; index++) {
   const source = queue[index];
   const folder = join(root, source.id); await mkdir(folder, { recursive: true });
   try {
-    const r = await publicFetch(source.url, 8_000_000); let html = r.body.toString('utf8');
-    const visibleTitle = html.match(/<title[^>]*>([\s\S]*?)<\/title>/i)?.[1] ?? '';
-    if (/访问验证|安全验证|请完成验证|Access Denied|验证码|验证中心/i.test(visibleTitle) || /bili-risk-control|captcha-container/i.test(html) || html.length < 300) throw Error('访问受限或响应不完整');
-    let browserError: string | null = null;
-    if (process.argv.includes('--browser') && ['qiandao', 'taptap', 'bilibili', 'douyin'].includes(source.platform)) {
-      try {
-        const snapshot = await publicBrowserSnapshot(source.url);
-        html = snapshot.html; await writeFile(join(folder, 'page.png'), snapshot.screenshot);
-      } catch (e) { browserError = String(e); } // Keep legitimately retrieved public HTML, never bypass access controls.
-    }
+    const document = await sourceDocument(source.url, {
+      browser: process.argv.includes('--browser') && ['qiandao', 'taptap', 'bilibili', 'douyin'].includes(source.platform),
+    });
+    const { html, browser_error: browserError } = document;
+    if (document.screenshot) await writeFile(join(folder, 'page.png'), document.screenshot);
     await writeFile(join(folder, 'page.html'), html);
-    const extracted = extractPage(html, r.url);
+    const extracted = extractPage(html, document.url);
     const evidence_hash = createHash('sha256').update(JSON.stringify([extracted.title, extracted.text, extracted.metadata, extracted.public_comments, extracted.videos])).digest('hex');
     await writeFile(join(folder, 'page.json'), JSON.stringify(extracted, null, 2) + '\n');
     const downloads: DownloadRecord[] = [];
@@ -156,7 +151,7 @@ for (let index = 0; index < queue.length; index++) {
       const s = sourceFor(link.url, source.seasons, 'related-link');
       if (s && !seen.has(s.url)) (i < policy.max_related_per_page ? related : deferred).push(s);
     }
-    records.push({ ...source, status: 'ok', resolved_url: r.url, title: extracted.title, evidence_hash, images: downloads,
+    records.push({ ...source, status: 'ok', resolved_url: document.url, title: extracted.title, evidence_hash, images: downloads,
       image_nodes: extracted.images.length, deferred_images: candidates.slice(policy.max_images_per_page),
       browser_error: browserError, checked_at: new Date().toISOString() });
     console.log(`${source.platform} ${source.url}: ${downloads.filter(i => i.sha256).length} 张未核验候选图${browserError ? '；浏览器补充失败' : ''}`);

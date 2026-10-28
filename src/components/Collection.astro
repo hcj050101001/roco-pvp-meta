@@ -70,7 +70,7 @@ const firstPage = lineups.slice(0, PAGE_SIZE);
       <span class="switch-track" aria-hidden="true"></span>有教学视频
     </label>
   </div>
-  <div id="lineup-grid" class="lineup-grid" tabindex="-1" aria-label="阵容列表">
+  <div id="lineup-grid" class="lineup-grid" role="region" tabindex="-1" aria-label="阵容列表">
     {firstPage.map((l, i) => (
       <LineupCard lineup={l} index={i} historical={historical} fallback={fallback.includes(l)} />
     ))}

@@ -19,6 +19,7 @@ const filters=[...new Set(lineups.flatMap(l=>l.archetype))];
 </div>
 <script>
   import { readCollectionState, writeCollectionState } from '../lib/collection-state';
+  import { isVisible, sortCollection, type CollectionCard } from '../lib/collection-filter';
   document.querySelectorAll<HTMLElement>('[data-collection]').forEach(root=>{
     const input=root.querySelector<HTMLInputElement>('#search')!,sort=root.querySelector<HTMLSelectElement>('#sort')!,video=root.querySelector<HTMLInputElement>('#with-video')!;
     const cards=[...root.querySelectorAll<HTMLElement>('[data-card]')], grid=root.querySelector('#lineup-grid')!;
@@ -36,14 +37,16 @@ const filters=[...new Set(lineups.flatMap(l=>l.archetype))];
       input.value=state.query;type=state.type;season=state.season;video.checked=state.video;sort.value=state.sort;
       update(false);
     }
-    function update(sync=true){let count=0;const query=input.value.trim().toLowerCase();
+    function update(sync=true){let count=0;
       const stateKey=JSON.stringify([input.value,type,season,video.checked,sort.value]),stateChanged=stateKey!==lastState;lastState=stateKey;
       const next=writeCollectionState(new URL(location.href),{query:input.value,type,season,video:video.checked,sort:sort.value});
       if(sync&&stateChanged&&next.href!==location.href)history.replaceState(history.state,'',next);
-      cards.forEach(card=>{card.hidden=!(card.dataset.search!.includes(query)&&(type==='all'||card.dataset.types!.split('|').includes(type))&&(season==='all'||card.dataset.season===season)&&(!video.checked||card.dataset.video==='yes'));if(!card.hidden)count++;});
-      [...cards].sort((a,b)=>sort.value==='recent'?b.dataset.date!.localeCompare(a.dataset.date!)||Number(a.dataset.index)-Number(b.dataset.index):sort.value==='name'?a.querySelector('h3')!.textContent!.localeCompare(b.querySelector('h3')!.textContent!,'zh-CN'):Number(a.dataset.index)-Number(b.dataset.index)).forEach(c=>grid.append(c));
+      const state={query:input.value,type,season,video:video.checked,sort:sort.value};
+      const cardData: CollectionCard[] = cards.map(card=>({search:card.dataset.search!,types:card.dataset.types!.split('|'),season:card.dataset.season!,video:card.dataset.video==='yes',date:card.dataset.date!,index:Number(card.dataset.index),title:card.querySelector('h3')!.textContent!}));
+      cards.forEach((card,index)=>{card.hidden=!isVisible(cardData[index],state);if(!card.hidden)count++;});
+      sortCollection(cardData,sort.value).forEach(c=>grid.append(cards[cardData.indexOf(c)]));
       root.querySelector('#result-count')!.textContent=`共 ${count} 套阵容`;root.querySelector<HTMLElement>('#empty-state')!.hidden=count>0;
-      root.querySelector<HTMLElement>('#clear-filters')!.hidden=!(query||type!=='all'||season!=='all'||video.checked||sort.value!=='recommended');
+      root.querySelector<HTMLElement>('#clear-filters')!.hidden=!(input.value.trim().toLowerCase()||type!=='all'||season!=='all'||video.checked||sort.value!=='recommended');
       types.forEach(b=>{b.classList.toggle('active',b.dataset.filter===type);b.setAttribute('aria-pressed',String(b.dataset.filter===type));});
       seasons.forEach(b=>{b.classList.toggle('active',b.dataset.seasonFilter===season);b.setAttribute('aria-pressed',String(b.dataset.seasonFilter===season));});
       // returnTo 只依赖当前筛选状态，状态没变就不必重写全部链接。

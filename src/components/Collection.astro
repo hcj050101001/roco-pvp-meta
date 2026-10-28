@@ -70,7 +70,7 @@ const firstPage = lineups.slice(0, PAGE_SIZE);
       <span class="switch-track" aria-hidden="true"></span>有教学视频
     </label>
   </div>
-  <div id="lineup-grid" class="lineup-grid">
+  <div id="lineup-grid" class="lineup-grid" tabindex="-1" aria-label="阵容列表">
     {firstPage.map((l, i) => (
       <LineupCard lineup={l} index={i} historical={historical} fallback={fallback.includes(l)} />
     ))}
@@ -190,7 +190,7 @@ const firstPage = lineups.slice(0, PAGE_SIZE);
     const input = root.querySelector<HTMLInputElement>('#search')!,
       sort = root.querySelector<HTMLSelectElement>('#sort')!,
       video = root.querySelector<HTMLInputElement>('#with-video')!;
-    const grid = root.querySelector('#lineup-grid')!;
+    const grid = root.querySelector<HTMLElement>('#lineup-grid')!;
     const pagination = root.querySelector<HTMLElement>('#pagination')!;
     const prevBtn = root.querySelector<HTMLButtonElement>('#prev-page')!;
     const nextBtn = root.querySelector<HTMLButtonElement>('#next-page')!;
@@ -236,8 +236,7 @@ const firstPage = lineups.slice(0, PAGE_SIZE);
       }
       return indexPromise;
     }
-    // 索引在后台预取：默认首屏不需要它，筛选/翻页需要时多半已经就绪。
-    void loadIndex();
+
     let type = 'all',
       season = 'all',
       page = 1;
@@ -266,16 +265,9 @@ const firstPage = lineups.slice(0, PAGE_SIZE);
         page = 1;
         lastFilterKey = filterKey;
       }
-      const needsIndex =
-        page !== 1 ||
-        input.value.trim() !== '' ||
-        type !== 'all' ||
-        season !== 'all' ||
-        video.checked ||
-        sort.value !== 'recommended';
       let data: CollectionCard[] = ssrData;
       let renderData: IndexCard[] | null = indexData;
-      if (!renderData && needsIndex) {
+      if (!renderData) {
         renderData = await loadIndex();
         if (token !== updateToken) return;
         if (renderData) data = renderData;
@@ -309,8 +301,12 @@ const firstPage = lineups.slice(0, PAGE_SIZE);
         history.replaceState(history.state, '', next);
       const count = visible.length;
       if (renderData) {
-        grid.innerHTML = paged.items.map((card) => cardHtml(card as IndexCard)).join('');
-        attachFallback(grid);
+        const currentIds = [...grid.querySelectorAll<HTMLElement>('[data-card]')].map((c) => c.id);
+        const nextIds = paged.items.map((card) => `lineup-${(card as IndexCard).slug}`);
+        if (JSON.stringify(currentIds) !== JSON.stringify(nextIds)) {
+          grid.innerHTML = paged.items.map((card) => cardHtml(card as IndexCard)).join('');
+          attachFallback(grid);
+        }
       } else {
         const shown = new Set(paged.items);
         ssrCards.forEach((card, i) => {
@@ -358,6 +354,7 @@ const firstPage = lineups.slice(0, PAGE_SIZE);
       pageNumbers.innerHTML = pageButtons(paged.totalPages, paged.page);
       if (scrollToGrid) {
         scrollToGrid = false;
+        grid.focus({ preventScroll: true });
         grid.scrollIntoView();
       }
     }

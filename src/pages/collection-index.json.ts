@@ -5,7 +5,7 @@ import { configurationDate } from '../lib/rank';
 import { displayDate, withBase } from '../lib/urls';
 import type { Lineup } from '../lib/schema';
 
-const platforms = { bilibili: '哔哩哔哩', douyin: '抖音', other: '视频' } as const;
+import { platformLabels } from '../lib/platforms';
 
 export interface CollectionIndexCard {
   slug: string;
@@ -14,7 +14,6 @@ export interface CollectionIndexCard {
   archetype: string[];
   label: 'current' | 'fallback' | 'historical';
   search: string;
-  types: string;
   date: string;
   dateKind: 'published' | 'season';
   dateText: string;
@@ -50,7 +49,6 @@ function toIndexCard(
     ]
       .join(' ')
       .toLowerCase(),
-    types: lineup.archetype.join('|'),
     date: updated,
     dateKind: updated ? 'published' : 'season',
     dateText: updated ? displayDate(updated) : lineup.season,
@@ -66,7 +64,7 @@ function toIndexCard(
     },
     videos: lineup.tutorials.map((t) => ({
       url: t.url,
-      platform: platforms[t.platform],
+      platform: platformLabels[t.platform],
       title: t.title,
     })),
     href: withBase(`/lineups/${lineup.slug}/`),

@@ -17,7 +17,7 @@ test('完整筛选链接可刷新分享，详情返回恢复筛选与卡片位�
   });
   await page.goto(`history/?${params}`);
   await expect(page.getByRole('searchbox')).toHaveValue(lineup.roster[0].name);
-  await expect(page.locator('#sort')).toHaveValue('name');
+  await expect(page.locator('#sort')).toHaveValue('recommended');
   await expect(page.locator(`[data-season-filter="${lineup.season}"]`)).toHaveAttribute(
     'aria-pressed',
     'true',
@@ -36,7 +36,7 @@ test('完整筛选链接可刷新分享，详情返回恢复筛选与卡片位�
   );
   await page.locator('.bottom-return').click();
   await expect(page.getByRole('searchbox')).toHaveValue(lineup.roster[0].name);
-  await expect(page.locator('#sort')).toHaveValue('name');
+  await expect(page.locator('#sort')).toHaveValue('recommended');
   await expect(card).toBeInViewport();
   await card.locator('.card-link').click();
   await page.goBack();

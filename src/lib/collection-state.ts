@@ -29,7 +29,7 @@ export function readCollectionState(
     type: types.includes(type) ? type : 'all',
     season: seasons.includes(season) ? season : 'all',
     video: p.get('video') === '1',
-    sort: ['recommended', 'recent', 'name'].includes(sort) ? sort : 'recommended',
+    sort: ['recommended', 'recent'].includes(sort) ? sort : 'recommended',
     page,
   };
 }
@@ -40,7 +40,7 @@ export function writeCollectionState(url: URL, state: CollectionState) {
     type: state.type === 'all' ? '' : state.type,
     season: state.season === 'all' ? '' : state.season,
     video: state.video ? '1' : '',
-    sort: state.sort === 'recommended' ? '' : state.sort,
+    sort: state.sort === 'recent' ? state.sort : '',
     page: state.page > 1 ? String(state.page) : '',
   };
   for (const [key, value] of Object.entries(values)) {

@@ -1,14 +1,11 @@
 import type { Lineup } from './schema';
-// Discovery order, never a strength rating. Old claims lose priority after 45 days.
+// Discovery order, never a strength rating. All valid signals share one priority group.
 export function signalPriority(l: Lineup, now = Date.now()) {
-  return Math.max(
-    0,
-    ...l.signals
-      .filter((s) => {
-        const age = now - Date.parse(s.observed_at);
-        return age >= 0 && age <= 45 * 86400000;
-      })
-      .map((s) => (s.kind === 'high-rank' ? 2 : 1)),
+  return Number(
+    l.signals.some((s) => {
+      const age = now - Date.parse(s.observed_at);
+      return age >= 0 && age <= 45 * 86400000;
+    }),
   );
 }
 export function configurationDate(l: Lineup) {
@@ -20,7 +17,6 @@ export const seasonNumber = (season: string) => Number(season.replace(/^S/i, '')
 export function ranked(lineups: Lineup[], now = Date.now()) {
   return [...lineups].sort(
     (a, b) =>
-      seasonNumber(b.season) - seasonNumber(a.season) ||
       signalPriority(b, now) - signalPriority(a, now) ||
       configurationDate(b).localeCompare(configurationDate(a)) ||
       a.slug.localeCompare(b.slug),

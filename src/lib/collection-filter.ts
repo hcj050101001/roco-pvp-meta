@@ -26,11 +26,7 @@ export function isVisible(card: CollectionCard, state: CollectionState): boolean
 
 export function sortCollection<T extends CollectionCard>(cards: T[], sort: string): T[] {
   return [...cards].sort((a, b) =>
-    sort === 'recent'
-      ? b.date.localeCompare(a.date) || a.index - b.index
-      : sort === 'name'
-        ? a.title.localeCompare(b.title, 'zh-CN')
-        : a.index - b.index,
+    sort === 'recent' ? b.date.localeCompare(a.date) || a.index - b.index : a.index - b.index,
   );
 }
 

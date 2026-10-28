@@ -32,9 +32,8 @@ const firstPage = lineups.slice(0, PAGE_SIZE);
       <label class="sort-label">
         排列方式{' '}
         <select id="sort" aria-describedby="sort-explanation">
-          <option value="recommended">推荐顺序</option>
+          <option value="recommended">近期线索优先</option>
           <option value="recent">配置发布时间</option>
-          <option value="name">阵容名称</option>
         </select>
       </label>
     </form>
@@ -54,9 +53,10 @@ const firstPage = lineups.slice(0, PAGE_SIZE);
       </div>
     </div>
     <details class="sort-note">
-      <summary>关于推荐顺序</summary>
+      <summary>关于近期线索优先</summary>
       <p id="sort-explanation" class="sort-explanation">
-        优先显示近期有来源的实绩或热度记录，其后按配置发布时间排列；不代表胜率或强度。
+        45 天内有来源的公开实绩或热度记录属于同一优先组；组内按配置发布日期排列。超过 45
+        天的记录仍可在详情页查看，不按近期线索排序。
       </p>
     </details>
   </div>

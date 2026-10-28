@@ -21,7 +21,7 @@ test('seasonNumber 读取 S 前缀数字，无效编号回落为 0', () => {
   assert.equal(seasonNumber('unknown'), 0);
 });
 
-test('signalPriority 在 45 天窗口内区分 high-rank 和普通热度', () => {
+test('signalPriority 在 45 天窗口内把实绩和热度视为同一组', () => {
   assert.equal(
     signalPriority(
       lineup({
@@ -43,7 +43,7 @@ test('signalPriority 在 45 天窗口内区分 high-rank 和普通热度', () =>
       }),
       now,
     ),
-    2,
+    1,
   );
 });
 
@@ -73,7 +73,7 @@ test('signalPriority 过期、未来和无信号时为 0', () => {
   assert.equal(signalPriority(lineup(), now), 0);
 });
 
-test('ranked 依次按赛季、信号优先级、配置日期和 slug 排序', () => {
+test('ranked 跨赛季只按有效线索组、配置日期和稳定 slug 排序', () => {
   const items = [
     lineup({
       slug: 'zeta',
@@ -123,6 +123,41 @@ test('ranked 依次按赛季、信号优先级、配置日期和 slug 排序', (
 
   assert.deepEqual(
     ranked(items, now).map((item) => item.slug),
-    ['zeta', 'engagement', 'alpha', 'beta', 'date-newer', 'date-older', 'older-season'],
+    ['engagement', 'older-season', 'zeta', 'alpha', 'beta', 'date-newer', 'date-older'],
+  );
+});
+
+test('固定日期：到期、未来线索不优先；无配置发布日期排在同组末尾', () => {
+  const signal = (kind: 'high-rank' | 'engagement', at: number) =>
+    [{ kind, observed_at: new Date(at).toISOString() }] as Lineup['signals'];
+  const items = [
+    lineup({
+      slug: 'future',
+      season: 'S5',
+      signals: signal('high-rank', now + 1),
+      lineup_images: [{ published_at: '2026-10-27T00:00:00Z' }] as Lineup['lineup_images'],
+    }),
+    lineup({
+      slug: 'expired',
+      season: 'S5',
+      signals: signal('high-rank', now - 45 * 86400000 - 1),
+      lineup_images: [{ published_at: '2026-10-26T00:00:00Z' }] as Lineup['lineup_images'],
+    }),
+    lineup({
+      slug: 'active-no-date',
+      season: 'S2',
+      signals: signal('engagement', now - 45 * 86400000),
+    }),
+    lineup({
+      slug: 'active-dated',
+      season: 'S3',
+      signals: signal('high-rank', now - 1),
+      lineup_images: [{ published_at: '2026-01-01T00:00:00Z' }] as Lineup['lineup_images'],
+    }),
+    lineup({ slug: 'no-date', season: 'S5' }),
+  ];
+  assert.deepEqual(
+    ranked(items, now).map((item) => item.slug),
+    ['active-dated', 'active-no-date', 'future', 'expired', 'no-date'],
   );
 });

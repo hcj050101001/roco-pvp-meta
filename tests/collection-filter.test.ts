@@ -45,7 +45,7 @@ test('isVisible combines type, season, and video filters', () => {
   assert.equal(isVisible(card({ video: false }), baseState), true);
 });
 
-test('sortCollection applies recommended, recent, and name ordering with specified ties', () => {
+test('sortCollection applies default and recent ordering with specified ties', () => {
   const items = [
     card({ index: 2, date: '2026-10-02', title: '乙队' }),
     card({ index: 1, date: '2026-10-03', title: '丙队' }),
@@ -61,10 +61,10 @@ test('sortCollection applies recommended, recent, and name ordering with specifi
     sortCollection(items, 'recent').map((item) => item.index),
     [0, 1, 2, 3],
   );
-  // 拼音顺序为丙 < 甲 < 乙，同名甲队按稳定排序保留输入顺序（0 在 3 前）。
+  // 旧 sort=name 不再按名称排序，回落到默认索引顺序。
   assert.deepEqual(
     sortCollection(items, 'name').map((item) => item.index),
-    [1, 0, 3, 2],
+    [0, 1, 2, 3],
   );
 });
 

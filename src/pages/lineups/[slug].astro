@@ -63,7 +63,7 @@ const breadcrumbJsonLd = {
       <a href={back}>{backLabel}</a>
       <nav aria-label="详情导航">
         <a href="#configuration">配置图</a>
-        {l.signals.length > 0 && <a href="#signals">近期记录</a>}
+        {l.signals.length > 0 && <a href="#signals">公开记录</a>}
         {l.guides.length > 0 && <a href="#guides">作者攻略</a>}
         {l.tutorials.length > 0 && <a href="#tutorials">教学视频</a>}
         <a href="#sources">来源</a>
@@ -174,7 +174,7 @@ const breadcrumbJsonLd = {
           <section id="signals" class="detail-section">
             <div class="section-label">
               <span>PUBLIC RECORDS</span>
-              <h2>近期公开记录</h2>
+              <h2>公开记录</h2>
             </div>
             {l.signals.map((s) => (
               <a class="source-row" href={s.source_url} target="_blank" rel="noopener noreferrer">

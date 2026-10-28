@@ -57,6 +57,20 @@ test('readCollectionState 读取查询、合法筛选和 video=1', () => {
   );
 });
 
+test('旧 sort=name 分享链接安全回落默认顺序', () => {
+  const state = readCollectionState(
+    new URL('https://example.com/?sort=name&q=雨天'),
+    types,
+    seasons,
+  );
+  assert.equal(state.sort, 'recommended');
+  assert.equal(state.query, '雨天');
+  assert.equal(
+    writeCollectionState(new URL('https://example.com/?sort=name'), state).searchParams.has('sort'),
+    false,
+  );
+});
+
 test('writeCollectionState 去除查询空格并删除默认值参数', () => {
   const result = writeCollectionState(
     new URL('https://example.com/?q=old&type=weather&season=S5&video=1&sort=name&keep=yes'),
@@ -82,11 +96,14 @@ test('writeCollectionState 保留非默认值', () => {
     type: 'weather',
     season: 'S5',
     video: true,
-    sort: 'name',
+    sort: 'recent',
     page: 3,
   });
   assert.equal(result.searchParams.get('page'), '3');
-  assert.equal(result.href, 'https://example.com/?type=weather&season=S5&video=1&sort=name&page=3');
+  assert.equal(
+    result.href,
+    'https://example.com/?type=weather&season=S5&video=1&sort=recent&page=3',
+  );
 });
 
 test('safeCollectionReturn 拒绝空值、协议相对路径、外站、凭据和未允许路径', () => {

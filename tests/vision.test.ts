@@ -29,9 +29,9 @@ test('候选按 SHA 去重、保留原图字节和全部来源，拒绝路径穿
     await mkdir(join(root, run, 'a'), { recursive: true });
     await writeFile(join(root, 'latest.json'), JSON.stringify({ run_id: run }));
     const image = { sha256, file: `${sha256}.png` };
-    const sources = [{ id: 'a', url: 'https://example.com/a', images: [image] }, { id: 'b', url: 'https://example.com/b', images: [image] }];
+    const sources = [{ id: 'a', url: 'https://example.com/a', status: 'ok', images: [image] }, { id: 'b', url: 'https://example.com/b', status: 'ok', images: [image] }];
     await writeFile(join(root, run, 'a', image.file), input);
-    await writeFile(join(root, run, 'manifest.json'), JSON.stringify({ sources }));
+    await writeFile(join(root, run, 'manifest.json'), JSON.stringify({ run_id: run, sources }));
     const index = await prepareVision(root);
     assert.equal(index.candidates.length, 1);
     assert.deepEqual(index.candidates[0].references, sources.map(s => s.url));
@@ -45,11 +45,11 @@ test('候选按 SHA 去重、保留原图字节和全部来源，拒绝路径穿
     const published=await prepareVision(root,{},new Set([sha256]));
     assert.equal(published.candidates[0].action,'published');assert.equal(published.candidates[0].previews.length,0);
     sources[1].url='https://example.com/new-evidence';
-    await writeFile(join(root,run,'manifest.json'),JSON.stringify({sources}));
+    await writeFile(join(root,run,'manifest.json'),JSON.stringify({ run_id: run, sources }));
     const reconsidered=await prepareVision(root,ledger);
     assert.equal(reconsidered.candidates[0].action,'review');assert.ok(reconsidered.candidates[0].previews.length>0);
     sources[0].images[0] = { sha256, file: '../../secret.png' };
-    await writeFile(join(root, run, 'manifest.json'), JSON.stringify({ sources }));
+    await writeFile(join(root, run, 'manifest.json'), JSON.stringify({ run_id: run, sources }));
     await assert.rejects(prepareVision(root), /Invalid candidate image path/);
   } finally {
     assert.equal(dirname(resolve(root)), resolve(tmpdir()));

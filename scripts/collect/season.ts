@@ -1,11 +1,16 @@
-import { readFile,writeFile,mkdir } from 'node:fs/promises';
+import { writeFile,mkdir } from 'node:fs/promises';
 import * as cheerio from 'cheerio';
 import { publicFetch } from './network';
 import { officialSeason,latestLaunched,type SeasonEvidence } from '../../src/lib/season';
-const state=JSON.parse(await readFile('data/update-state.json','utf8'));
-const seasons=JSON.parse(await readFile('data/seasons.json','utf8'));
+import { loadSeasons,loadState } from '../../src/lib/data';
+const state=loadState();
+const seasons=loadSeasons();
 const now=new Date();const run=`research/runs/season-${now.toISOString().replace(/[:.]/g,'-')}`;await mkdir(run,{recursive:true});
-const urls=new Set<string>([state.season_source]);const health:unknown[]=[];
+// siteStateSchema marks season_source optional, but the live state always
+// carries it; keep the previous runtime behaviour (a missing value still flows
+// into the fetch loop and is recorded unavailable) and only satisfy the type
+// checker with this cast.
+const urls=new Set<string>([state.season_source as string]);const health:unknown[]=[];
 try {
   const r=await publicFetch('https://www.taptap.cn/app/188212/topic?type=official');const doc=cheerio.load(r.body.toString('utf8'));
   for(const e of doc('a[href*="/moment/"]').toArray()){
@@ -27,7 +32,7 @@ if(next){
     state.season_transitions=[...(state.season_transitions||[]),{from:state.season,to:next.id,confirmed_at:now.toISOString(),source_url:next.source_url,kind:'major-season-update'}];
     state.previous_season=state.season;state.season=next.id;state.version_label=next.name;state.theme=next.theme;
     state.season_source=next.source_url;state.season_revision=(state.season_revision||1)+1;state.major_update_required=true;state.balance_patch_date=null;
-    if(!seasons.some((s:any)=>s.id===next.id)){seasons.push({...next,intro:'新赛季配队陆续更新，往期阵容可作过渡参考。'});await writeFile('data/seasons.json',JSON.stringify(seasons,null,2)+'\n');}
+    if(!seasons.some(s=>s.id===next.id)){seasons.push({...next,intro:'新赛季配队陆续更新，往期阵容可作过渡参考。'});await writeFile('data/seasons.json',JSON.stringify(seasons,null,2)+'\n');}
     state.notice='新赛季配队陆续更新，往期阵容仅作过渡参考。';
   }
   state.season_checked_at=now.toISOString();

@@ -51,7 +51,7 @@ const href = `${withBase(`/lineups/${l.slug}/`)}${returnTo ? `?returnTo=${encode
           width={img.width}
           height={img.height}
           alt={`${l.name}完整六只精灵与技能配置一图流`}
-          loading={index < 3 ? 'eager' : 'lazy'}
+          loading={index === 0 ? 'eager' : 'lazy'}
           decoding="async"
           fetchpriority={index === 0 ? 'high' : undefined}
           data-image-fallback

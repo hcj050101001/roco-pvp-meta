@@ -10,10 +10,14 @@ export interface CollectionCard {
   title: string;
 }
 
+export function normalizeSearch(value: string): string {
+  return value.normalize('NFKC').toLocaleLowerCase('zh-CN').replace(/\s+/g, ' ').trim();
+}
+
 export function isVisible(card: CollectionCard, state: CollectionState): boolean {
-  const query = state.query.trim().toLowerCase();
+  const query = normalizeSearch(state.query);
   return (
-    card.search.includes(query) &&
+    normalizeSearch(card.search).includes(query) &&
     (state.type === 'all' || card.types.includes(state.type)) &&
     (state.season === 'all' || card.season === state.season) &&
     (!state.video || card.video)

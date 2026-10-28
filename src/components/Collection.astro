@@ -16,7 +16,12 @@ const filters = [...new Set(lineups.flatMap((l) => l.archetype))];
 const firstPage = lineups.slice(0, PAGE_SIZE);
 ---
 
-<div class="collection" data-collection data-index-set={historical ? 'history' : 'active'}>
+<div
+  class="collection"
+  data-collection
+  data-index-set={historical ? 'history' : 'active'}
+  data-total-count={lineups.length}
+>
   <div class="filter-panel">
     <form class="collection-tools" role="search" onsubmit="return false">
       <label class="search-box">
@@ -84,6 +89,7 @@ const firstPage = lineups.slice(0, PAGE_SIZE);
       下一页
     </button>
   </nav>
+  <p class="index-status" id="index-status" role="status" aria-live="polite" hidden></p>
   <div class="empty-state" id="empty-state" role="status" aria-live="polite" hidden>
     <span class="empty-icon">
       <Icon name="search" size={26} />
@@ -197,6 +203,7 @@ const firstPage = lineups.slice(0, PAGE_SIZE);
     const pageNumbers = root.querySelector<HTMLElement>('#page-numbers')!;
     const resultCount = root.querySelector<HTMLElement>('#result-count')!;
     const emptyState = root.querySelector<HTMLElement>('#empty-state')!;
+    const indexStatus = root.querySelector<HTMLElement>('#index-status')!;
     const clearBtn = root.querySelector<HTMLElement>('#clear-filters')!;
     const types = [...root.querySelectorAll<HTMLButtonElement>('[data-filter]')];
     const seasons = [...document.querySelectorAll<HTMLButtonElement>('[data-season-filter]')];
@@ -265,15 +272,39 @@ const firstPage = lineups.slice(0, PAGE_SIZE);
         page = 1;
         lastFilterKey = filterKey;
       }
+      const activeState = Boolean(
+        input.value.trim() ||
+        type !== 'all' ||
+        season !== 'all' ||
+        video.checked ||
+        sort.value !== 'recommended' ||
+        page !== 1,
+      );
       let data: CollectionCard[] = ssrData;
       let renderData: IndexCard[] | null = indexData;
-      if (!renderData) {
+      if (!renderData && activeState) {
+        indexStatus.hidden = false;
+        indexStatus.textContent = '正在加载完整阵容索引…';
         renderData = await loadIndex();
         if (token !== updateToken) return;
         if (renderData) data = renderData;
-        // 索引加载失败时降级：只用首屏服务端卡片，页码钳制到 1。
-        else page = 1;
+        else {
+          page = 1;
+          indexStatus.innerHTML =
+            '完整阵容索引加载失败。<button type="button" id="retry-index">重试</button>';
+          root.querySelector('#retry-index')?.addEventListener(
+            'click',
+            () => {
+              indexPromise = null;
+              queue();
+            },
+            { once: true },
+          );
+        }
+      } else if (!renderData) {
+        data = ssrData;
       } else if (renderData) data = renderData;
+      if (renderData) indexStatus.hidden = true;
       const state = {
         query: input.value,
         type,
@@ -299,7 +330,11 @@ const firstPage = lineups.slice(0, PAGE_SIZE);
       });
       if (sync && stateChanged && next.href !== location.href)
         history.replaceState(history.state, '', next);
-      const count = visible.length;
+      const count = renderData
+        ? visible.length
+        : activeState
+          ? visible.length
+          : Number(root.dataset.totalCount);
       if (renderData) {
         const currentIds = [...grid.querySelectorAll<HTMLElement>('[data-card]')].map((c) => c.id);
         const nextIds = paged.items.map((card) => `lineup-${(card as IndexCard).slug}`);
@@ -328,9 +363,13 @@ const firstPage = lineups.slice(0, PAGE_SIZE);
       const start = count === 0 ? 0 : (paged.page - 1) * PAGE_SIZE + 1,
         end = Math.min(paged.page * PAGE_SIZE, count);
       resultCount.textContent =
-        count === 0
-          ? `共 0 套阵容`
-          : `共 ${count} 套阵容 · 第 ${paged.page} / ${paged.totalPages} 页（第 ${start}–${end} 套）`;
+        !renderData && !activeState
+          ? `共 ${count} 套阵容`
+          : !renderData && activeState
+            ? `共 ${Number(root.dataset.totalCount)} 套阵容 · 索引不可用，当前显示首屏`
+            : count === 0
+              ? `共 0 套阵容`
+              : `共 ${count} 套阵容 · 第 ${paged.page} / ${paged.totalPages} 页（第 ${start}–${end} 套）`;
       emptyState.hidden = count > 0;
       clearBtn.hidden = !(
         input.value.trim().toLowerCase() ||

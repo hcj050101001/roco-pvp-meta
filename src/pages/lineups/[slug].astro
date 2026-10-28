@@ -1,6 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import { allLineups, state } from '../../lib/data';
+import { allLineups, activeLineups, historyLineups, state } from '../../lib/data';
 import { withBase, displayDate } from '../../lib/urls';
 import { configurationDate } from '../../lib/rank';
 import { absoluteUrl } from '../../lib/seo';
@@ -19,6 +19,22 @@ const backLabel = historical ? '← 返回往期阵容' : '← 返回阵容总�
 const published = configurationDate(l);
 const evidenceLabels = { A: '作者或一手来源', B: '可信图文来源', C: '转载图源·已交叉核对' };
 const verifiedSkillCount = l.roster.filter((p) => p.skills.length > 0).length;
+const orderedCandidates = [...activeLineups, ...historyLineups];
+const sameSeason = orderedCandidates.find(
+  (candidate) => candidate.slug !== l.slug && candidate.season === l.season,
+);
+const sharedType = orderedCandidates
+  .map((candidate) => ({
+    candidate,
+    fact: l.archetype.find((tag) => candidate.archetype.includes(tag)),
+  }))
+  .find((match) => match.candidate.slug !== l.slug && match.fact);
+const sharedMember = orderedCandidates
+  .map((candidate) => ({
+    candidate,
+    fact: l.roster.find((member) => candidate.roster.some((p) => p.name === member.name))?.name,
+  }))
+  .find((match) => match.candidate.slug !== l.slug && match.fact);
 const breadcrumbJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
@@ -271,6 +287,68 @@ const breadcrumbJsonLd = {
               <span>↗</span>
             </a>
           ))}
+        </section>
+        <section id="continue-browsing" class="detail-section">
+          <div class="section-label">
+            <span>KEEP BROWSING</span>
+            <h2>继续浏览</h2>
+          </div>
+          <div class="related-links">
+            {sameSeason ? (
+              <a class="source-row" href={withBase(`/lineups/${sameSeason.slug}/`)}>
+                <div>
+                  <span>同赛季 · {sameSeason.season}</span>
+                  <h3>{sameSeason.name}</h3>
+                </div>
+                <span>↗</span>
+              </a>
+            ) : (
+              <a
+                class="source-row"
+                href={withBase(historical ? `/history/?season=${l.season}` : '/')}
+              >
+                <div>
+                  <span>同赛季 · {l.season}</span>
+                  <h3>浏览{l.season}赛季阵容</h3>
+                </div>
+                <span>↗</span>
+              </a>
+            )}
+            {sharedType ? (
+              <a class="source-row" href={withBase(`/lineups/${sharedType.candidate.slug}/`)}>
+                <div>
+                  <span>共同体系标签 · {sharedType.fact}</span>
+                  <h3>{sharedType.candidate.name}</h3>
+                </div>
+                <span>↗</span>
+              </a>
+            ) : (
+              <a class="source-row" href={withBase(historical ? '/history/' : '/')}>
+                <div>
+                  <span>体系标签</span>
+                  <h3>浏览{historical ? '往期' : '当季'}阵容</h3>
+                </div>
+                <span>↗</span>
+              </a>
+            )}
+            {sharedMember ? (
+              <a class="source-row" href={withBase(`/lineups/${sharedMember.candidate.slug}/`)}>
+                <div>
+                  <span>共同成员 · {sharedMember.fact}</span>
+                  <h3>{sharedMember.candidate.name}</h3>
+                </div>
+                <span>↗</span>
+              </a>
+            ) : (
+              <a class="source-row" href={withBase(historical ? '/history/' : '/')}>
+                <div>
+                  <span>共同成员</span>
+                  <h3>浏览{historical ? '往期' : '当季'}阵容</h3>
+                </div>
+                <span>↗</span>
+              </a>
+            )}
+          </div>
         </section>
         <a class="button primary bottom-return" href={back}>
           {backLabel}

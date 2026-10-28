@@ -3,6 +3,7 @@ import { activeLineups, historyLineups, overview } from '../lib/data';
 import { cardImageSources } from '../lib/card-image';
 import { configurationDate } from '../lib/rank';
 import { displayDate, withBase } from '../lib/urls';
+import { normalizeSearch } from '../lib/collection-filter';
 import type { Lineup } from '../lib/schema';
 
 import { platformLabels } from '../lib/platforms';
@@ -47,8 +48,8 @@ function toIndexCard(
       ...lineup.archetype,
       ...lineup.roster.map((p) => p.name),
     ]
-      .join(' ')
-      .toLowerCase(),
+      .map(normalizeSearch)
+      .join(' '),
     date: updated,
     dateKind: updated ? 'published' : 'season',
     dateText: updated ? displayDate(updated) : lineup.season,

@@ -2,6 +2,9 @@ import { test, expect } from '@playwright/test';
 import { activeLineups, allLineups, historyLineups, overview } from '../../src/lib/data';
 import { mkdir } from 'node:fs/promises';
 import { expectCardImage, expectConfigurationImages, expectVideoLinks } from './assertions';
+import { cardImageSources } from '../../src/lib/card-image';
+import { configurationDate } from '../../src/lib/rank';
+import { displayDate, withBase } from '../../src/lib/urls';
 
 test('完整筛选链接可刷新分享，详情返回恢复筛选与卡片位置', async ({ page }) => {
   const lineup = historyLineups[0];
@@ -250,6 +253,82 @@ test('窄屏和平板保持完整布局与可点击导航', async ({ page }) => 
       }
     }
   }
+});
+
+test('默认首访不取完整索引；500 条测试样例仍只绘制 24 张卡片', async ({ page }) => {
+  let indexRequests = 0;
+  await page.route('**/collection-index.json', async (route) => {
+    indexRequests++;
+    const lineup = activeLineups[0];
+    const image = cardImageSources(lineup.lineup_images[0]);
+    const date = configurationDate(lineup);
+    const item = (index: number) => ({
+      slug: `sample-${index}`,
+      name: `Test Hero ${index}`,
+      season: lineup.season,
+      archetype: lineup.archetype,
+      label: 'current',
+      search: `test hero ${index} ${lineup.roster.map((p) => p.name).join(' ')}`.toLowerCase(),
+      date: date ?? '',
+      dateKind: date ? 'published' : 'season',
+      dateText: date ? displayDate(date) : lineup.season,
+      video: false,
+      index,
+      roster: lineup.roster.map((p) => p.name).join(' · '),
+      image,
+      videos: [],
+      href: withBase(`/lineups/${lineup.slug}/`),
+    });
+    await route.fulfill({
+      json: { active: Array.from({ length: 500 }, (_, i) => item(i)), history: [] },
+    });
+  });
+  await page.goto('./');
+  expect(indexRequests).toBe(0);
+  await expect(page.locator('#result-count')).toHaveText(`共 ${activeLineups.length} 套阵容`);
+  const started = await page.evaluate(() => performance.now());
+  await page.getByRole('searchbox').fill('ＴＥＳＴ');
+  await expect(page.locator('#result-count')).toContainText('共 500 套阵容');
+  const elapsedMs = await page.evaluate((start) => performance.now() - start, started);
+  test.info().annotations.push({ type: '500-sample-search-ms', description: elapsedMs.toFixed(1) });
+  expect(elapsedMs).toBeLessThan(500);
+  await expect(page.locator('[data-card]')).toHaveCount(24);
+  expect(indexRequests).toBe(1);
+});
+
+test('索引失败可读且能重试；翻页后焦点落在结果列表', async ({ page }) => {
+  let attempts = 0;
+  await page.route('**/collection-index.json', async (route) => {
+    attempts++;
+    if (attempts === 1) await route.abort();
+    else await route.continue();
+  });
+  await page.goto('./?q=not-a-match');
+  await expect(page.locator('#index-status')).toContainText('加载失败');
+  await page.getByRole('button', { name: '重试' }).click();
+  await expect(page.locator('#index-status')).toBeHidden();
+  expect(attempts).toBe(2);
+  await page.goto('./');
+  if (activeLineups.length > 24) {
+    await page.getByRole('button', { name: '下一页' }).click();
+    await expect(page.locator('#lineup-grid')).toBeFocused();
+  }
+});
+
+test('配置图片加载失败时展示可读状态', async ({ page }) => {
+  await page.route('**/assets/lineups/**', (route) => route.abort());
+  await page.goto('./');
+  await expect(page.locator('[data-card] .image-load-fallback').first()).toBeVisible();
+});
+
+test('320px 与 200% 字体放大无横向溢出且搜索焦点保留', async ({ page }) => {
+  await page.setViewportSize({ width: 320, height: 800 });
+  await page.goto('./');
+  await page.addStyleTag({ content: 'html { font-size: 200% !important; }' });
+  const search = page.getByRole('searchbox');
+  await search.fill(activeLineups[0].roster[0].name);
+  await expect(search).toBeFocused();
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
 });
 
 test('逐卡视觉检查：统一预览框、同排边界和标题对齐，保留全部原图', async ({ page }, info) => {

@@ -622,6 +622,25 @@ img {
   flex-wrap: wrap;
   gap: 8px 18px;
 }
+.index-status {
+  margin: 0 0 14px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.7;
+}
+.index-status button {
+  margin-left: 8px;
+  padding: 5px 10px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  color: var(--accent);
+  background: var(--surface);
+}
+.related-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+  gap: 10px;
+}
 .clear-filters {
   display: inline-flex;
   align-items: center;

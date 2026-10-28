@@ -28,7 +28,7 @@ test('核对时间不触发发布；换季与内容变化触发发布，时间�
 
 test('筛选URL往返保留全部条件及无关参数，非法返回地址不生效',()=>{
   const original=new URL('https://example.com/roco-pvp-meta/history/?ref=guide#main');
-  const value={query:'雨天',type:'天气',season:'S3',video:true,sort:'name'};
+  const value={query:'雨天',type:'天气',season:'S3',video:true,sort:'name',page:1};
   const url=writeCollectionState(original,value);
   assert.deepEqual(readCollectionState(url,['天气'],['S3']),value);
   assert.equal(url.searchParams.get('ref'),'guide');assert.equal(url.hash,'#main');
@@ -36,7 +36,7 @@ test('筛选URL往返保留全部条件及无关参数，非法返回地址不�
   for(const bad of ['https://evil.example/','//evil.example/','/roco-pvp-meta/../other/','/roco-pvp-meta/lineups/a/','/\\evil.example/'])
     assert.equal(safeCollectionReturn(bad,url.origin,'/roco-pvp-meta'),null);
   const invalid=readCollectionState(new URL('https://example.com/?type=x&season=S99&sort=bad&video=yes'),[],[]);
-  assert.deepEqual(invalid,{query:'',type:'all',season:'all',sort:'recommended',video:false});
+  assert.deepEqual(invalid,{query:'',type:'all',season:'all',sort:'recommended',video:false,page:1});
 });
 
 test('跨轮索引复用拒绝结果，新证据和待续查到期可重新核验',()=>{

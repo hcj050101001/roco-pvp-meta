@@ -7,23 +7,23 @@ const seasons = ['all', 'S4', 'S5'];
 
 test('readCollectionState 默认值及非法筛选回落', () => {
   assert.deepEqual(readCollectionState(new URL('https://example.com/'), types, seasons), {
-    query: '', type: 'all', season: 'all', video: false, sort: 'recommended',
+    query: '', type: 'all', season: 'all', video: false, sort: 'recommended', page: 1,
   });
   assert.deepEqual(readCollectionState(new URL('https://example.com/?type=unknown&season=S99&sort=invalid'), types, seasons), {
-    query: '', type: 'all', season: 'all', video: false, sort: 'recommended',
+    query: '', type: 'all', season: 'all', video: false, sort: 'recommended', page: 1,
   });
 });
 
 test('readCollectionState 读取查询、合法筛选和 video=1', () => {
   assert.deepEqual(readCollectionState(new URL('https://example.com/?q=rain&type=weather&season=S5&sort=recent&video=1'), types, seasons), {
-    query: 'rain', type: 'weather', season: 'S5', video: true, sort: 'recent',
+    query: 'rain', type: 'weather', season: 'S5', video: true, sort: 'recent', page: 1,
   });
   assert.equal(readCollectionState(new URL('https://example.com/?video=true'), types, seasons).video, false);
 });
 
 test('writeCollectionState 去除查询空格并删除默认值参数', () => {
   const result = writeCollectionState(new URL('https://example.com/?q=old&type=weather&season=S5&video=1&sort=name&keep=yes'), {
-    query: '  rain team  ', type: 'all', season: 'all', video: false, sort: 'recommended',
+    query: '  rain team  ', type: 'all', season: 'all', video: false, sort: 'recommended', page: 1,
   });
   assert.equal(result.href, 'https://example.com/?q=rain+team&keep=yes');
   assert.equal(result.searchParams.has('type'), false);
@@ -34,9 +34,10 @@ test('writeCollectionState 去除查询空格并删除默认值参数', () => {
 
 test('writeCollectionState 保留非默认值', () => {
   const result = writeCollectionState(new URL('https://example.com/'), {
-    query: '  ', type: 'weather', season: 'S5', video: true, sort: 'name',
+    query: '  ', type: 'weather', season: 'S5', video: true, sort: 'name', page: 3,
   });
-  assert.equal(result.href, 'https://example.com/?type=weather&season=S5&video=1&sort=name');
+  assert.equal(result.searchParams.get('page'), '3');
+  assert.equal(result.href, 'https://example.com/?type=weather&season=S5&video=1&sort=name&page=3');
 });
 
 test('safeCollectionReturn 拒绝空值、协议相对路径、外站、凭据和未允许路径', () => {

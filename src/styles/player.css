@@ -122,6 +122,12 @@ img { display: block; max-width: 100%; height: auto; object-fit: contain; }
 .video-filter input:checked+.switch-track:before { transform: translateX(12px); }
 .video-filter input:focus-visible+.switch-track { outline: 3px solid #7193ee; outline-offset: 4px; }
 .lineup-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: stretch; gap: 26px 24px; }
+.pagination { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 8px; margin-top: 32px; }
+.pagination button { min-height: 44px; min-width: 44px; padding: 8px 14px; border: 1px solid var(--line); border-radius: 7px; background: white; color: var(--muted); font-size: 12px; }
+.pagination button:hover:not(:disabled) { border-color: #afc0eb; color: var(--accent); }
+.pagination button:disabled { opacity: .45; cursor: default; }
+.pagination .page-number.active { background: var(--accent-soft); border-color: #b9cbf5; color: var(--accent); font-weight: 600; }
+.pagination .page-ellipsis { color: var(--muted); padding: 0 4px; }
 .lineup-card { display: flex; flex-direction: column; min-width: 0; border: 1px solid var(--line); border-radius: 12px; background: white; overflow: hidden; box-shadow: 0 2px 3px #202c4002; transition: border-color .2s, box-shadow .2s, transform .2s; }
 .lineup-card:focus-within { border-color: #94aae5; }
 .card-link { display: flex; flex-direction: column; flex: 1; }

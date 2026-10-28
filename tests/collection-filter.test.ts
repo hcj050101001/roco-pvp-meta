@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import type { CollectionState } from '../src/lib/collection-state';
 import { isVisible, sortCollection, type CollectionCard } from '../src/lib/collection-filter';
 
-const baseState: CollectionState = { query: '', type: 'all', season: 'all', video: false, sort: 'recommended' };
+const baseState: CollectionState = { query: '', type: 'all', season: 'all', video: false, sort: 'recommended', page: 1 };
 
 function card(overrides: Partial<CollectionCard> = {}): CollectionCard {
   return { search: '雨天狼王', types: ['雨天'], season: 'S2', video: true, date: '2026-10-01', index: 0, title: '雨天队', ...overrides };

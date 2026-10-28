@@ -50,3 +50,18 @@ test('normalizeBase 统一空值、空格与首尾及多余斜杠', () => {
   assert.equal(normalizeBase('  /roco-pvp-meta/  '), '/roco-pvp-meta');
   assert.equal(normalizeBase('///roco-pvp-meta///'), '/roco-pvp-meta');
 });
+
+test('withBase 在站点根及子路径下等价处理带或不带斜杠的路径', async () => {
+  const { withBase } = await import('../src/lib/urls');
+  for (const base of ['', '/']) {
+    assert.equal(withBase('/history/', base), '/history/');
+    assert.equal(withBase('history/', base), '/history/');
+    assert.equal(withBase('/', base), '/');
+  }
+  for (const base of ['/roco-pvp-meta', '/roco-pvp-meta/']) {
+    assert.equal(withBase('/history/', base), '/roco-pvp-meta/history/');
+    assert.equal(withBase('history/', base), '/roco-pvp-meta/history/');
+    assert.equal(withBase('/', base), '/roco-pvp-meta/');
+    assert.equal(withBase('/assets/image.webp', base), '/roco-pvp-meta/assets/image.webp');
+  }
+});

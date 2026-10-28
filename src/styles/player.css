@@ -2042,6 +2042,31 @@ img {
   border-radius: 12px;
 }
 
+.system-graph a:focus-visible circle {
+  stroke: #274f91;
+  stroke-width: 6;
+}
+
+.system-node-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px 24px;
+  padding-left: 20px;
+}
+
+.system-node-list li {
+  padding: 8px 0;
+  scroll-margin-top: 100px;
+}
+
+.system-node-list strong {
+  display: block;
+}
+
+.system-node-list li:target {
+  background: var(--accent-soft);
+}
+
 .system-edge-list {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -2088,7 +2113,8 @@ img {
 @media (max-width: 580px) {
   .compare-controls,
   .compare-grid,
-  .system-edge-list {
+  .system-edge-list,
+  .system-node-list {
     grid-template-columns: 1fr;
   }
   .timeline-list li {

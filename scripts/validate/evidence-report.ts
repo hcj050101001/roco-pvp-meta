@@ -1,7 +1,12 @@
 import { readFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
+import { execFileSync } from 'node:child_process';
 import { allLineups } from '../../src/lib/data';
+import { guardRefresh } from '../../src/lib/refresh';
+import { lineupSchema } from '../../src/lib/schema';
 import { imageInfo } from '../extract/image';
+import { readChangeEvidence } from './change-evidence';
+import { readLatestRunId } from '../research/io';
 
 // Read-only maintenance report. It intentionally reports missing/ambiguous evidence
 // without imposing new admission rules on existing records.
@@ -69,6 +74,25 @@ for (const lineup of allLineups) {
     );
   console.log();
 }
-console.log(
-  'refresh:guard：请对本次工作区改动运行 npm run refresh:guard；本报告不代替 Git 基线比较。',
-);
+console.log('refresh:guard 基线比较：');
+try {
+  const paths = execFileSync(
+    'git',
+    ['ls-tree', '-r', '--name-only', 'HEAD', '--', 'data/lineups', 'data/archive'],
+    { encoding: 'utf8' },
+  )
+    .trim()
+    .split(/\r?\n/)
+    .filter((path) => path.endsWith('.json'));
+  const previous = paths.map((path) =>
+    lineupSchema.parse(
+      JSON.parse(execFileSync('git', ['show', `HEAD:${path}`], { encoding: 'utf8' })),
+    ),
+  );
+  const runId = await readLatestRunId();
+  const evidence = await readChangeEvidence(runId);
+  guardRefresh(previous, allLineups, evidence.accessibleUrls, evidence.evidence);
+  console.log(`通过：HEAD 基线 ${previous.length} 套，当前 ${allLineups.length} 套。`);
+} catch (error) {
+  console.log(`需维护者复核：${error instanceof Error ? error.message : String(error)}`);
+}

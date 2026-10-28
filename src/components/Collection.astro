@@ -128,7 +128,14 @@ const firstPage = lineups.slice(0, PAGE_SIZE);
     dateKind: 'published' | 'season';
     dateText: string;
     roster: string;
-    image: { src: string; srcset?: string; sizes?: string; width: number; height: number };
+    image: {
+      src: string;
+      srcset?: string;
+      avifSrcset?: string;
+      sizes?: string;
+      width: number;
+      height: number;
+    };
     videos: { url: string; platform: string; title: string }[];
     href: string;
   }
@@ -156,6 +163,9 @@ const firstPage = lineups.slice(0, PAGE_SIZE);
     const srcset = img.srcset
       ? ` srcset="${escapeHtml(img.srcset)}" sizes="${escapeHtml(img.sizes ?? '')}"`
       : '';
+    const avif = img.avifSrcset
+      ? `<source type="image/avif" srcset="${escapeHtml(img.avifSrcset)}" sizes="${escapeHtml(img.sizes ?? '')}" />`
+      : '';
     const fetchpriority = card.index === 0 ? ' fetchpriority="high"' : '';
     const videos = card.videos
       .map(
@@ -167,7 +177,7 @@ const firstPage = lineups.slice(0, PAGE_SIZE);
       `<article id="lineup-${escapeHtml(card.slug)}" class="lineup-card" data-card data-season="${escapeHtml(card.season)}" data-search="${escapeHtml(card.search)}" data-types="${escapeHtml(card.archetype.join('|'))}" data-date="${escapeHtml(card.date)}" data-index="${card.index}" data-video="${card.video ? 'yes' : 'no'}">` +
       `<a href="${escapeHtml(card.href)}" class="card-link">` +
       `<div class="card-top"><span class="card-number"><span class="status-dot"></span>${escapeHtml(card.season)} / ${escapeHtml(card.archetype[0])}</span><span class="card-label">${label}</span></div>` +
-      `<div class="card-image"><img src="${escapeHtml(img.src)}"${srcset} width="${img.width}" height="${img.height}" alt="${escapeHtml(card.name)}完整六只精灵与技能配置一图流" loading="${card.index < 3 ? 'eager' : 'lazy'}" decoding="async"${fetchpriority} data-image-fallback /><p class="image-load-fallback" aria-live="polite" hidden>图片暂时无法加载，可稍后重试。</p></div>` +
+      `<div class="card-image"><picture>${avif}<img src="${escapeHtml(img.src)}"${srcset} width="${img.width}" height="${img.height}" alt="${escapeHtml(card.name)}完整六只精灵与技能配置一图流" loading="${card.index < 3 ? 'eager' : 'lazy'}" decoding="async"${fetchpriority} data-image-fallback /></picture><p class="image-load-fallback" aria-live="polite" hidden>图片暂时无法加载，可稍后重试。</p></div>` +
       `<div class="card-content"><div class="card-title"><h3>${escapeHtml(card.name)}</h3><span class="card-arrow">${icon(ICON_PATHS.diagonal, 18)}</span></div>` +
       `<div class="tags">${card.archetype.map((t) => `<span>${escapeHtml(t)}</span>`).join('')}</div>` +
       `<p class="card-roster">${escapeHtml(card.roster)}</p></div></a>` +

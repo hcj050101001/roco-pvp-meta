@@ -21,7 +21,14 @@ export interface CollectionIndexCard {
   video: boolean;
   index: number;
   roster: string;
-  image: { src: string; srcset?: string; sizes?: string; width: number; height: number };
+  image: {
+    src: string;
+    srcset?: string;
+    avifSrcset?: string;
+    sizes?: string;
+    width: number;
+    height: number;
+  };
   videos: { url: string; platform: string; title: string }[];
   href: string;
 }
@@ -59,6 +66,7 @@ function toIndexCard(
     image: {
       src: sources.src,
       srcset: sources.srcset,
+      avifSrcset: sources.avifSrcset,
       sizes: sources.sizes,
       width: img.width,
       height: img.height,

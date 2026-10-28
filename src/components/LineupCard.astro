@@ -15,7 +15,7 @@ interface Props {
 const { lineup: l, index, historical = false, fallback = false } = Astro.props;
 const img = l.lineup_images[0],
   updated = configurationDate(l);
-const { src: cardSrc, srcset: cardSrcset, sizes: cardSizes } = cardImageSources(img);
+const { src: cardSrc, srcset: cardSrcset, avifSrcset, sizes: cardSizes } = cardImageSources(img);
 ---
 
 <article
@@ -40,18 +40,21 @@ const { src: cardSrc, srcset: cardSrcset, sizes: cardSizes } = cardImageSources(
       <span class="card-label">{fallback ? '过渡参考' : historical ? '往期配队' : '当季配队'}</span>
     </div>
     <div class="card-image">
-      <img
-        src={cardSrc}
-        srcset={cardSrcset}
-        sizes={cardSizes}
-        width={img.width}
-        height={img.height}
-        alt={`${l.name}完整六只精灵与技能配置一图流`}
-        loading={index < 3 ? 'eager' : 'lazy'}
-        decoding="async"
-        fetchpriority={index === 0 ? 'high' : undefined}
-        data-image-fallback
-      />
+      <picture>
+        {avifSrcset && <source type="image/avif" srcset={avifSrcset} sizes={cardSizes} />}
+        <img
+          src={cardSrc}
+          srcset={cardSrcset}
+          sizes={cardSizes}
+          width={img.width}
+          height={img.height}
+          alt={`${l.name}完整六只精灵与技能配置一图流`}
+          loading={index < 3 ? 'eager' : 'lazy'}
+          decoding="async"
+          fetchpriority={index === 0 ? 'high' : undefined}
+          data-image-fallback
+        />
+      </picture>
       <p class="image-load-fallback" aria-live="polite" hidden>
         图片暂时无法加载，可稍后重试。
       </p>

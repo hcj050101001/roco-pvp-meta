@@ -29,8 +29,9 @@ for (const file of all) {
   );
   if (original && original[1] !== 'derived')
     originalSizes.set(original[2], (await stat(file)).size);
-  const derived = rel.match(/^\/assets\/lineups\/derived\/([a-f0-9]{64})-(\d+)\.webp$/);
-  if (derived) derivedSizes.set(`${derived[1]}-${derived[2]}`, (await stat(file)).size);
+  const derived = rel.match(/^\/assets\/lineups\/derived\/([a-f0-9]{64})-(\d+)\.(webp|avif)$/);
+  if (derived)
+    derivedSizes.set(`${derived[1]}-${derived[2]}.${derived[3]}`, (await stat(file)).size);
 }
 for (const page of pages) {
   const html = await readFile(page, 'utf8'),
@@ -77,13 +78,15 @@ for (const page of pages) {
     }
     checks++;
   }
-  for (const img of $('img[srcset]').toArray()) {
-    for (const entry of ($(img).attr('srcset') || '').split(',')) {
+  for (const imageSource of $('img[srcset], source[srcset]').toArray()) {
+    for (const entry of ($(imageSource).attr('srcset') || '').split(',')) {
       const raw = entry.trim().split(/\s+/)[0];
       if (!raw) continue;
       const url = new URL(raw, `https://local.test${base}${pageRelative}`);
       if (base && !url.pathname.startsWith(base + '/')) throw Error(`派生图缺少 base: ${raw}`);
-      const match = url.pathname.match(/\/assets\/lineups\/derived\/([a-f0-9]{64})-(\d+)\.webp$/);
+      const match = url.pathname.match(
+        /\/assets\/lineups\/derived\/([a-f0-9]{64})-(\d+)\.(webp|avif)$/,
+      );
       if (!match) throw Error(`未知派生图路径: ${raw}`);
       const target = resolve(
         root,
@@ -96,7 +99,7 @@ for (const page of pages) {
         throw Error(`派生图缺失 ${raw} in ${page}`);
       }
       const original = originalSizes.get(match[1]),
-        size = derivedSizes.get(`${match[1]}-${match[2]}`);
+        size = derivedSizes.get(`${match[1]}-${match[2]}.${match[3]}`);
       if (original !== undefined && size !== undefined && size >= original)
         throw Error(`派生图未小于原图: ${raw}`);
       checks++;

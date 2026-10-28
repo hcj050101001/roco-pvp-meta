@@ -36,22 +36,45 @@ export async function expectConfigurationImages(page: Page, count: number) {
 export async function expectCardImage(image: Locator, original: Lineup['lineup_images'][number]) {
   await image.scrollIntoViewIfNeeded();
   await image.evaluate((element: HTMLImageElement) => element.decode());
-  const widths = [480, 800].filter(
+  const widths = [320, 480, 800].filter(
     (width) =>
       original.width > width &&
       existsSync(resolve('public/assets/lineups/derived', `${original.sha256}-${width}.webp`)),
   );
-  if (widths.length) {
-    const prefix = `${process.env.TEST_BASE || ''}/assets/lineups/derived/${original.sha256}`;
-    await expect(image).toHaveAttribute(
+  const avifWidths = [320, 480, 800].filter(
+    (width) =>
+      original.width > width &&
+      existsSync(resolve('public/assets/lineups/derived', `${original.sha256}-${width}.avif`)),
+  );
+  const avifSource = image.locator('xpath=../source[type="image/avif"]');
+  if (avifWidths.length) {
+    await expect(avifSource).toHaveAttribute(
       'srcset',
-      widths.map((width) => `${prefix}-${width}.webp ${width}w`).join(', '),
+      avifWidths
+        .map(
+          (width) =>
+            `${process.env.TEST_BASE || ''}/assets/lineups/derived/${original.sha256}-${width}.avif ${width}w`,
+        )
+        .join(', '),
     );
+  } else await expect(avifSource).toHaveCount(0);
+  if (widths.length || avifWidths.length) {
+    const prefix = `${process.env.TEST_BASE || ''}/assets/lineups/derived/${original.sha256}`;
+    if (widths.length)
+      await expect(image).toHaveAttribute(
+        'srcset',
+        widths.map((width) => `${prefix}-${width}.webp ${width}w`).join(', '),
+      );
+    else await expect(image).not.toHaveAttribute('srcset');
     const loaded = await image.evaluate((element: HTMLImageElement) => ({
       src: element.currentSrc,
       width: element.naturalWidth,
     }));
-    const selectedWidth = widths.find((width) => loaded.src.endsWith(`${prefix}-${width}.webp`));
+    const selectedWidth = [...widths, ...avifWidths].find(
+      (width) =>
+        loaded.src.endsWith(`${prefix}-${width}.webp`) ||
+        loaded.src.endsWith(`${prefix}-${width}.avif`),
+    );
     expect(selectedWidth).toBeDefined();
     // naturalWidth is density-corrected for width-descriptor srcsets, not the file's pixel width.
     expect(loaded.width).toBeGreaterThan(0);

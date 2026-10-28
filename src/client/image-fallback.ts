@@ -3,7 +3,9 @@ export function initImageFallback(scope: ParentNode = document): void {
   scope.querySelectorAll<HTMLImageElement>('[data-image-fallback]').forEach((image) => {
     const showFallback = () => {
       image.hidden = true;
-      image.parentElement
+      image.closest('picture')?.setAttribute('hidden', '');
+      image
+        .closest('.card-image')
         ?.querySelector<HTMLElement>('.image-load-fallback')
         ?.removeAttribute('hidden');
     };

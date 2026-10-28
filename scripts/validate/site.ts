@@ -195,12 +195,31 @@ for (const page of pages) {
     } catch {
       throw Error(`og:image 文件缺失: ${ogImage}`);
     }
-    for (const script of $('script[type="application/ld+json"]').toArray()) {
-      try {
-        JSON.parse($(script).text());
-      } catch {
-        throw Error(`JSON-LD 无法解析: ${page}`);
-      }
+    const schemas = $('script[type="application/ld+json"]')
+      .toArray()
+      .map((script): unknown => {
+        try {
+          return JSON.parse($(script).text());
+        } catch {
+          throw Error(`JSON-LD 无法解析: ${page}`);
+        }
+      });
+    if (route !== '/' && !route.startsWith('/updates/')) {
+      const breadcrumb = schemas.find(
+        (node) =>
+          typeof node === 'object' &&
+          node !== null &&
+          (node as Record<string, unknown>)['@type'] === 'BreadcrumbList',
+      ) as { itemListElement?: { item: string; name: string; position: number }[] } | undefined;
+      const items = breadcrumb?.itemListElement;
+      if (
+        !Array.isArray(items) ||
+        items.length < 2 ||
+        items[0].item !== siteRoot ||
+        items.at(-1)?.item !== expected ||
+        items.some((item, index) => !item.name || item.position !== index + 1)
+      )
+        throw Error(`面包屑结构化数据缺失或地址不匹配: ${page}`);
     }
     checks += 4;
     if (!route.includes('/updates/')) contentPages.push(expected);

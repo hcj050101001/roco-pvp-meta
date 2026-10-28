@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import { allLineups } from '../lib/data';
 import { withBase } from '../lib/urls';
+import { breadcrumbJsonLd } from '../lib/seo';
 
 const lineups = allLineups
   .filter((lineup) => lineup.lineup_images.some((image) => image.verified))
@@ -12,6 +13,10 @@ const lineups = allLineups
   title="阵容对比"
   description="并排查看两套已核验阵容的精灵、技能、血脉和体系标签。"
   section="compare"
+  jsonLd={breadcrumbJsonLd([
+    { name: '阵容图鉴', path: '/' },
+    { name: '阵容对比', path: '/compare/' },
+  ])}
 >
   <div class="wrap data-page">
     <header class="data-page-heading">

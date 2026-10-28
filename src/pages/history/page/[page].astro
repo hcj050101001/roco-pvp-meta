@@ -5,6 +5,7 @@ import { historyLineups, seasons, state } from '../../../lib/data';
 import { seasonNumber } from '../../../lib/rank';
 import { additionalStaticPages } from '../../../lib/static-pages';
 import { withBase } from '../../../lib/urls';
+import { breadcrumbJsonLd } from '../../../lib/seo';
 
 export function getStaticPaths() {
   return additionalStaticPages(historyLineups.length).map((page) => ({
@@ -24,6 +25,11 @@ const choices = seasons
   description="继续翻阅往期赛季的真实阵容配置图与资料。"
   image={historyLineups[0]?.lineup_images[0]?.path}
   section="history"
+  jsonLd={breadcrumbJsonLd([
+    { name: '阵容图鉴', path: '/' },
+    { name: '往期阵容', path: '/history/' },
+    { name: `往期阵容 · 第 ${page} 页`, path: `/history/page/${page}/` },
+  ])}
 >
   <section class="overview wrap static-collection-page" id="lineup-overview">
     <div class="section-heading">

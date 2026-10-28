@@ -4,6 +4,7 @@ import { allLineups } from '../lib/data';
 import { timelineLineups } from '../lib/timeline';
 import { configurationDate } from '../lib/rank';
 import { displayDate, withBase } from '../lib/urls';
+import { breadcrumbJsonLd } from '../lib/seo';
 
 const lineups = timelineLineups(allLineups);
 ---
@@ -12,6 +13,10 @@ const lineups = timelineLineups(allLineups);
   title="配置时间线"
   description="按配置图发布日期浏览已核验阵容；未标注日期的阵容单独列出。"
   section="timeline"
+  jsonLd={breadcrumbJsonLd([
+    { name: '阵容图鉴', path: '/' },
+    { name: '配置时间线', path: '/timeline/' },
+  ])}
 >
   <div class="wrap data-page">
     <header class="data-page-heading">

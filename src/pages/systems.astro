@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import { allLineups } from '../lib/data';
 import { systemGraph } from '../lib/system-graph';
 import { withBase } from '../lib/urls';
+import { breadcrumbJsonLd } from '../lib/seo';
 
 const { systems, edges } = systemGraph(allLineups);
 const systemRecords = systems.map((tag, index) => ({
@@ -21,7 +22,15 @@ const positions = new Map(
 );
 ---
 
-<Layout title="体系共现图" description="查看已核验阵容中体系标签共同出现的记录。" section="systems">
+<Layout
+  title="体系共现图"
+  description="查看已核验阵容中体系标签共同出现的记录。"
+  section="systems"
+  jsonLd={breadcrumbJsonLd([
+    { name: '阵容图鉴', path: '/' },
+    { name: '体系共现图', path: '/systems/' },
+  ])}
+>
   <div class="wrap data-page">
     <header class="data-page-heading">
       <h1>体系共现图</h1>

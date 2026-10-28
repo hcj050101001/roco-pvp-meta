@@ -5,6 +5,7 @@ import Icon from '../components/Icon.astro';
 import { historyLineups, seasons, state } from '../lib/data';
 import { seasonNumber } from '../lib/rank';
 import { withBase } from '../lib/urls';
+import { breadcrumbJsonLd } from '../lib/seo';
 const choices = seasons
   .filter((s) => historyLineups.some((l) => l.season === s.id))
   .sort((a, b) => seasonNumber(b.id) - seasonNumber(a.id));
@@ -17,6 +18,10 @@ const description =
   description={description}
   image={historyLineups[0]?.lineup_images[0]?.path}
   section="history"
+  jsonLd={breadcrumbJsonLd([
+    { name: '阵容图鉴', path: '/' },
+    { name: '往期阵容', path: '/history/' },
+  ])}
 >
   <div class="wrap history-page">
     <header class="history-hero">

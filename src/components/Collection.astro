@@ -239,6 +239,7 @@ const staticPages = staticPageCount(lineups.length);
     return html;
   }
   document.querySelectorAll<HTMLElement>('[data-collection]').forEach((root) => {
+    initImageFallback(root);
     const input = root.querySelector<HTMLInputElement>('#search')!,
       sort = root.querySelector<HTMLSelectElement>('#sort')!,
       video = root.querySelector<HTMLInputElement>('#with-video')!;

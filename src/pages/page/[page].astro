@@ -4,6 +4,7 @@ import Collection from '../../components/Collection.astro';
 import { activeLineups, overview } from '../../lib/data';
 import { additionalStaticPages } from '../../lib/static-pages';
 import { withBase } from '../../lib/urls';
+import { breadcrumbJsonLd } from '../../lib/seo';
 
 export function getStaticPaths() {
   return additionalStaticPages(activeLineups.length).map((page) => ({
@@ -20,6 +21,10 @@ const { page } = Astro.props;
   description="继续浏览当季阵容的完整配置图与资料。"
   image={activeLineups[0]?.lineup_images[0]?.path}
   section="overview"
+  jsonLd={breadcrumbJsonLd([
+    { name: '阵容图鉴', path: '/' },
+    { name: `当季阵容 · 第 ${page} 页`, path: `/page/${page}/` },
+  ])}
 >
   <section class="overview wrap static-collection-page" id="lineup-overview">
     <div class="section-heading">

@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import { allLineups } from '../lib/data';
 import { breadcrumbJsonLd } from '../lib/seo';
 import ComparePanel from '../components/ComparePanel.astro';
+import CollectionLinks from '../components/CollectionLinks.astro';
 
 const lineups = allLineups
   .filter((lineup) => lineup.lineup_images.some((image) => image.verified))
@@ -22,6 +23,7 @@ const lineups = allLineups
     <header class="data-page-heading">
       <h1>阵容对比</h1>
       <p>选择两套已核验阵容，并排查看已记录的配置事实。</p>
+      <CollectionLinks />
     </header>
     <div class="compare-controls">
       <label>

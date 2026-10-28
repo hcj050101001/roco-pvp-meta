@@ -5,6 +5,7 @@ import { timelineLineups } from '../lib/timeline';
 import { configurationDate } from '../lib/rank';
 import { displayDate, withBase } from '../lib/urls';
 import { absoluteUrl, breadcrumbJsonLd } from '../lib/seo';
+import CollectionLinks from '../components/CollectionLinks.astro';
 
 const lineups = timelineLineups(allLineups);
 const itemListJsonLd = {
@@ -36,6 +37,7 @@ const itemListJsonLd = {
     <header class="data-page-heading">
       <h1>配置时间线</h1>
       <p>按配置图发布日期排列。未标注日期的阵容列在末尾。</p>
+      <CollectionLinks />
     </header>
     <ol class="timeline-list">
       {lineups.map((lineup) => {

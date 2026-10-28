@@ -1984,6 +1984,20 @@ img {
   color: #526174;
 }
 
+.data-page-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  margin-top: 16px;
+}
+
+.data-page-links a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  padding-block: 8px;
+}
+
 .compare-controls,
 .compare-grid {
   display: grid;

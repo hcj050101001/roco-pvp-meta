@@ -4,6 +4,7 @@ import { allLineups } from '../lib/data';
 import { systemGraph } from '../lib/system-graph';
 import { withBase } from '../lib/urls';
 import { breadcrumbJsonLd } from '../lib/seo';
+import CollectionLinks from '../components/CollectionLinks.astro';
 
 const { systems, edges } = systemGraph(allLineups);
 const systemRecords = systems.map((tag, index) => ({
@@ -38,6 +39,7 @@ const positions = new Map(
         连线表示两个体系标签出现在同一套已核验阵容中。可用 Tab 键选择图中标签，按 Enter
         跳到关联阵容。
       </p>
+      <CollectionLinks />
     </header>
     <div class="system-graph-scroll" role="region" aria-label="体系共现图，可横向滚动" tabindex="0">
       <svg

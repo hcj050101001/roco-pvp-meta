@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { latestLaunched, themeFor, type SeasonEvidence } from '../src/lib/season';
+import { latestLaunched, type SeasonEvidence } from '../src/lib/season';
 
 function evidence(id: string, name = `季节${id}`): SeasonEvidence {
   return {
@@ -11,11 +11,6 @@ function evidence(id: string, name = `季节${id}`): SeasonEvidence {
     theme: 'light',
   };
 }
-
-test('themeFor 始终返回 light', () => {
-  assert.equal(themeFor('任意主题'), 'light');
-  assert.equal(themeFor('冬季主题'), 'light');
-});
 
 test('latestLaunched 只考虑当前及更新赛季，并返回最高赛季', () => {
   const current = evidence('S5', '当前赛季');

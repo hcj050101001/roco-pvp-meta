@@ -14,16 +14,16 @@ import { candidateAction, fingerprint, recordDecisions } from '../scripts/resear
 import { mergeSources, sourceFor, retrySource, remainingImages, unprocessedImages, processedImages } from '../scripts/collect/strategy';
 import { readChangeEvidence } from '../scripts/validate/change-evidence';
 
-test('核对时间不触发发布；换季、内容变化及45天线索到期触发发布',()=>{
-  const now=Date.parse('2026-10-23T00:00:00Z');
-  const signature=siteSignature(allLineups,state,seasons,now);
-  assert.equal(siteSignature(allLineups,{...state,season_checked_at:'2026-10-24T00:00:00Z'},seasons,now),signature);
-  assert.notEqual(siteSignature(allLineups,{...state,season:'S5'},seasons,now),signature);
+test('核对时间不触发发布；换季与内容变化触发发布，时间推移本身不再触发',()=>{
+  // siteSignature 已改为纯内容指纹：旧版“45 天线索到期触发发布”是混入时间依赖
+  // 信号优先级的副作用，已随指纹算法变更（build-state schema 2）废止。
+  const signature=siteSignature(allLineups,state,seasons);
+  assert.equal(siteSignature(allLineups,{...state,season_checked_at:'2026-10-24T00:00:00Z'},seasons),signature);
+  assert.notEqual(siteSignature(allLineups,{...state,season:'S5'},seasons),signature);
   const next=structuredClone(allLineups);next[0].summary+=' 已核验新配置';
-  assert.notEqual(siteSignature(next,state,seasons,now),signature);
-  const one=structuredClone(allLineups[0]);one.signals=[{kind:'engagement',source_url:one.sources[0].url,note:'实测线索',observed_at:'2026-09-08T00:00:00Z'}];
-  assert.notEqual(siteSignature([one],state,seasons,now),siteSignature([one],state,seasons,now+1));
-  assert.equal(siteSignature([...allLineups].reverse(),state,seasons,now),signature);
+  assert.notEqual(siteSignature(next,state,seasons),signature);
+  assert.equal(siteSignature(allLineups,state,seasons),signature);
+  assert.equal(siteSignature([...allLineups].reverse(),state,seasons),signature);
 });
 
 test('筛选URL往返保留全部条件及无关参数，非法返回地址不生效',()=>{

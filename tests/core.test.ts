@@ -7,7 +7,7 @@ import { selectActive,selectOverview,ranked,signalPriority,configurationDate } f
 import { hashDistance } from '../scripts/extract/image';
 import { guardRefresh } from '../src/lib/refresh';
 import { ingestSearch } from '../scripts/collect/search';
-import { officialSeason,latestLaunched,themeFor } from '../src/lib/season';
+import { officialSeason,latestLaunched } from '../src/lib/season';
 
 test('提取懒加载、原图、srcset、JSON-LD 与内嵌 JSON，不执行脚本',()=>{
   const r=extractPage(`<h1>阵容</h1><article>雨天队<img data-src="/a.webp"><picture><source srcset="/b.png 2x, /c.png 1x"></picture><a href="/full.jpg">原图</a></article><meta property="og:image" content="/og.png"><script type="application/ld+json">{"image":{"contentUrl":"https://cdn.example.com/ld.webp"}}</script><script>const x={"image":"https://cdn.example.com/embedded.webp"};throw Error('never execute')</script>`,'https://example.com/post');
@@ -64,7 +64,7 @@ test('官方换季判断：只采信已发布的正式开服、拒绝未来预�
   const confirmed=officialSeason(html(article),url,new Date('2026-11-02'));assert.equal(confirmed?.id,'S5');assert.equal(confirmed?.theme,'light');
   assert.equal(officialSeason(html({...article,headline:'S5赛季「春日旅行」即将上线'}),url,new Date('2026-11-02')),null);
   assert.equal(officialSeason(html({...article,author:{url:'https://www.taptap.cn/user/other'}}),url,new Date('2026-11-02')),null);
-  assert.equal(latestLaunched(confirmed?[confirmed]:[],'S6'),null);assert.equal(themeFor('月涌狂想'),'light');assert.equal(themeFor('铅字幻梦'),'light');
+  assert.equal(latestLaunched(confirmed?[confirmed]:[],'S6'),null);
 });
 test('pHash 汉明距离',()=>{assert.equal(hashDistance('0000000000000000','000000000000000f'),4);assert.equal(hashDistance('0123456789abcdef','0123456789abcdef'),0);});
 test('搜索结果仅发现支持的公开平台，拒绝伪装域名',()=>{

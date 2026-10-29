@@ -3,7 +3,7 @@
 《洛克王国：世界》PVP 玩家阵容图鉴，收录完整真实的配置图、可核验来源和精确对应的教学视频。网站使用 Astro 静态生成并部署在 GitHub Pages。
 
 **线上网站：** <https://hcj050101001.github.io/roco-pvp-meta/><br />
-**当前内容：** 15 套 S4 阵容，4 套 S2/S3 往期阵容。赛季和阵容数量由仓库数据决定，以上数字反映当前数据。
+**当前内容：** 15 套 S4 阵容，8 套 S2/S3 往期阵容。赛季和阵容数量由仓库数据决定，以上数字反映当前数据。
 
 ## 玩家可以做什么
 
@@ -33,7 +33,7 @@ npm run test:ui
 
 持续集成与格式化：
 
-- 每次 pull request 和推送到 `main` 都会运行 `.github/workflows/ci.yml`，它只做校验（类型检查、单测、带子路径的生产构建和浏览器测试），不部署；发布仍需手动触发 `Build and deploy Pages`，普通推送不会发布。
+- 每次 pull request 和推送到 `main` 都会运行 `.github/workflows/ci.yml`，它只做校验（类型检查、单测、带子路径的生产构建和浏览器测试），不部署。推送到 `main` 且校验通过后，日志会提醒：更新线上页面需在 Actions 中手动运行 workflow_dispatch「Build and deploy Pages」。普通推送不会发布。
 - 格式化与 Lint 配置为 Prettier（含 Astro 插件）与 ESLint（Flat Config，支持 `.astro` 与 TypeScript）：
 
 ```sh

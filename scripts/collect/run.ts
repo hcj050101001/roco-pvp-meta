@@ -2,6 +2,7 @@ import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { resolve, join } from 'node:path';
 import { createHash } from 'node:crypto';
 import { extractPage } from '../extract/page';
+import { acquireResearchLock } from './lock';
 import { publicFetch } from './network';
 import { imageInfo } from '../extract/image';
 import { discover } from './search';
@@ -21,6 +22,16 @@ import {
   type Source,
 } from './strategy';
 import policy from '../../data/research-policy.json';
+
+const releaseResearchLock = (() => {
+  try {
+    return acquireResearchLock();
+  } catch (error) {
+    console.error(error instanceof Error ? error.message : String(error));
+    process.exit(1);
+  }
+})();
+process.on('exit', () => releaseResearchLock());
 
 type DownloadRecord = {
   url: string;

@@ -4,33 +4,14 @@ import { configurationDate } from './rank';
 import { displayDate, withBase } from './urls';
 import { normalizeSearch } from './collection-filter';
 import type { Lineup } from './schema';
-
 import { platformLabels } from './platforms';
+import { collectionIndexSchema, type CollectionIndexCard } from './collection-index-schema';
 
-export interface CollectionIndexCard {
-  slug: string;
-  name: string;
-  season: string;
-  archetype: string[];
-  label: 'current' | 'fallback' | 'historical';
-  search: string;
-  date: string;
-  dateKind: 'published' | 'season';
-  dateText: string;
-  video: boolean;
-  index: number;
-  roster: string;
-  image: {
-    src: string;
-    srcset?: string;
-    avifSrcset?: string;
-    sizes?: string;
-    width: number;
-    height: number;
-  };
-  videos: { url: string; platform: string; title: string }[];
-  href: string;
-}
+export {
+  collectionIndexCardSchema,
+  collectionIndexSchema,
+  type CollectionIndexCard,
+} from './collection-index-schema';
 
 // 只输出渲染卡片所需的字段：不含来源、攻略原话、技能、血脉与核验说明，
 // 索引体积随阵容数线性增长但远小于卡片 DOM；详情数据仍由详情页服务端渲染。
@@ -80,9 +61,11 @@ function toIndexCard(
 }
 
 export function collectionIndex(kind: 'active' | 'history'): CollectionIndexCard[] {
-  return kind === 'active'
-    ? activeLineups.map((lineup, i) =>
-        toIndexCard(lineup, i, overview.fallback.includes(lineup) ? 'fallback' : 'current'),
-      )
-    : historyLineups.map((lineup, i) => toIndexCard(lineup, i, 'historical'));
+  const cards =
+    kind === 'active'
+      ? activeLineups.map((lineup, i) =>
+          toIndexCard(lineup, i, overview.fallback.includes(lineup) ? 'fallback' : 'current'),
+        )
+      : historyLineups.map((lineup, i) => toIndexCard(lineup, i, 'historical'));
+  return collectionIndexSchema.parse(cards);
 }

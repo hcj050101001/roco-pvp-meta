@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { mkdtempSync, mkdirSync, rmSync, writeFileSync } from 'node:fs';
+import { mkdtempSync, mkdirSync, readdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { loadData } from '../src/lib/data';
@@ -157,4 +157,25 @@ test('赛季表逐条校验并拒绝重复 ID，状态校验空标题及非法�
       rmSync(root, { recursive: true, force: true });
     }
   }
+});
+
+test('README 当前内容数量与 data 目录一致', () => {
+  const seasonOf = (dir: string, file: string) =>
+    String(JSON.parse(readFileSync(join(dir, file), 'utf8')).season);
+  const summarize = (dir: string) => {
+    const files = readdirSync(dir).filter((file) => file.endsWith('.json'));
+    const seasons = [...new Set(files.map((file) => seasonOf(dir, file)))].sort(
+      (a, b) => Number(a.slice(1)) - Number(b.slice(1)),
+    );
+    return { count: files.length, seasons: seasons.join('/') };
+  };
+  const active = summarize('data/lineups');
+  const archive = summarize('data/archive');
+  const readme = readFileSync('README.md', 'utf8');
+  assert.match(
+    readme,
+    new RegExp(
+      `${active.count} 套 ${active.seasons} 阵容，${archive.count} 套 ${archive.seasons} 往期阵容`,
+    ),
+  );
 });

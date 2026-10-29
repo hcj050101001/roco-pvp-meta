@@ -1,7 +1,7 @@
-import test from 'node:test';
+import test, { after, before } from 'node:test';
 import assert from 'node:assert/strict';
 import { execFileSync, spawnSync } from 'node:child_process';
-import { cp, mkdtemp, mkdir, rm, writeFile } from 'node:fs/promises';
+import { cp, mkdtemp, mkdir, readFile, rm, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { allLineups } from '../src/lib/data';
@@ -10,6 +10,7 @@ import { guardRefresh } from '../src/lib/refresh';
 import {
   assertNoTrackedInbox,
   assertCommittedReceipts,
+  assertReceiptImageSha,
   MAX_EVIDENCE_FILE_BYTES,
   readCommittedChangeEvidence,
 } from '../scripts/validate/change-evidence';
@@ -17,9 +18,9 @@ import {
 const run = 'run-1';
 const changesPath = `research/runs/${run}/changes.json`;
 const evidencePath = `research/runs/${run}/evidence.json`;
-const sha = 'a'.repeat(64);
 const lineup = structuredClone(allLineups[0]);
 const url = lineup.sources[0].url;
+const sha = lineup.lineup_images[0].sha256;
 const receipt = {
   lineup_id: lineup.id,
   fields: Object.keys(lineup).filter(
@@ -30,6 +31,15 @@ const receipt = {
   reason: '已核对配置',
 };
 const record = { run_id: run, sources: [{ url, artifact_sha256: [sha] }] };
+
+const inheritedBaseSha = process.env.REFRESH_BASE_SHA;
+before(() => {
+  delete process.env.REFRESH_BASE_SHA;
+});
+after(() => {
+  if (inheritedBaseSha === undefined) delete process.env.REFRESH_BASE_SHA;
+  else process.env.REFRESH_BASE_SHA = inheritedBaseSha;
+});
 
 async function fixture() {
   const root = await mkdtemp(join(tmpdir(), 'roco-committed-evidence-'));
@@ -123,6 +133,58 @@ test('严格校验格式、哈希和目录中的运行 ID', async () => {
 test('检测已跟踪 inbox 路径', () => {
   assert.doesNotThrow(() => assertNoTrackedInbox(['research/runs/run-1/evidence.json']));
   assert.throws(() => assertNoTrackedInbox(['research/inbox/run-1/page.html']), /不允许跟踪/);
+});
+
+test('图片哈希纯校验覆盖同来源、其他来源和缺失哈希', () => {
+  const otherImage = {
+    ...lineup.lineup_images[0],
+    source_page_url: 'https://example.com/other',
+    sha256: 'b'.repeat(64),
+  };
+  assert.doesNotThrow(() => assertReceiptImageSha(receipt, lineup));
+  assert.throws(
+    () => assertReceiptImageSha({ ...receipt, artifact_sha256: otherImage.sha256 }, lineup),
+    /变更回执哈希与阵容图片不符/,
+  );
+  assert.throws(
+    () =>
+      assertReceiptImageSha(
+        { ...receipt, artifact_sha256: otherImage.sha256 },
+        { ...lineup, lineup_images: [...lineup.lineup_images, otherImage] },
+      ),
+    /变更回执哈希与阵容图片不符/,
+  );
+  assert.throws(
+    () => assertReceiptImageSha(receipt, { ...lineup, lineup_images: [otherImage] }),
+    /变更回执哈希与阵容图片不符/,
+  );
+  const noHashes = {
+    ...lineup,
+    lineup_images: lineup.lineup_images.map((image) => ({ ...image, sha256: '' })),
+  };
+  assert.doesNotThrow(() => assertReceiptImageSha(receipt, noHashes));
+});
+
+test('回执哈希必须匹配同来源阵容图片', async () => {
+  await gitFixture(async ({ root, put, paths }) => {
+    await assert.doesNotReject(assertCommittedReceipts(paths, [lineup], root));
+    const otherSha = 'b'.repeat(64);
+    const otherUrl = 'https://example.com/other';
+    const otherImage = { ...lineup.lineup_images[0], source_page_url: otherUrl, sha256: otherSha };
+    const multiSource = { ...lineup, lineup_images: [...lineup.lineup_images, otherImage] };
+    await put(changesPath, [{ ...receipt, artifact_sha256: otherSha }]);
+    await put(evidencePath, { run_id: run, sources: [{ url, artifact_sha256: [otherSha] }] });
+    // Make the mismatched receipt valid against its committed evidence and baseline.
+    amendBaseline(root, changesPath, evidencePath);
+    await assert.rejects(
+      assertCommittedReceipts(paths, [lineup], root),
+      /变更回执哈希与阵容图片不符：black-feather-poison-s4/,
+    );
+    await assert.rejects(
+      assertCommittedReceipts(paths, [multiSource], root),
+      /变更回执哈希与阵容图片不符：black-feather-poison-s4/,
+    );
+  });
 });
 
 async function gitFixture(fn: (f: Awaited<ReturnType<typeof fixture>>) => Promise<void>) {
@@ -268,6 +330,15 @@ test('两个入口以空基线变量使用 HEAD，并拒绝改写未引用的证
         );
       const valid = invoke();
       assert.equal(valid.status, 0, valid.stderr);
+      const lineupPath = join(root, 'data/lineups', `${lineup.id}.json`);
+      const originalLineup = await readFile(lineupPath, 'utf8');
+      const changedLineup = JSON.parse(originalLineup);
+      changedLineup.lineup_images[0].sha256 = 'c'.repeat(64);
+      await writeFile(lineupPath, JSON.stringify(changedLineup));
+      const imageMismatch = invoke();
+      assert.notEqual(imageMismatch.status, 0);
+      assert.match(imageMismatch.stderr, /变更回执哈希与阵容图片不符/);
+      await writeFile(lineupPath, originalLineup);
       await put(evidencePath, {
         run_id: run,
         sources: [{ url, artifact_sha256: [sha, '0'.repeat(64)] }],

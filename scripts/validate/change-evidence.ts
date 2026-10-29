@@ -56,6 +56,19 @@ export function assertNoTrackedInbox(paths: string[]): void {
     throw Error('不允许跟踪 research/inbox 文件');
 }
 
+/** Bind a receipt to a hashed image from the same source, when hashes exist. */
+export function assertReceiptImageSha(receipt: ChangeEvidence, lineup: Lineup): void {
+  const hashedImages = lineup.lineup_images.filter((image) => image.sha256);
+  if (
+    hashedImages.length &&
+    !hashedImages.some(
+      (image) =>
+        image.source_page_url === receipt.source_url && image.sha256 === receipt.artifact_sha256,
+    )
+  )
+    throw Error(`变更回执哈希与阵容图片不符：${receipt.lineup_id}`);
+}
+
 /** Check committed receipts against the Git baseline and current lineup sources. */
 export async function assertCommittedReceipts(
   paths: string[],
@@ -120,6 +133,7 @@ export async function assertCommittedReceipts(
     if (!lineup) throw Error(`变更回执对应的阵容不存在：${receipt.lineup_id}`);
     if (!lineup.sources.some((source) => source.url === receipt.source_url))
       throw Error(`变更回执来源不在阵容中：${receipt.lineup_id}`);
+    assertReceiptImageSha(receipt, lineup);
   }
   return result;
 }

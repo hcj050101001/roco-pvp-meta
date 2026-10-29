@@ -135,6 +135,24 @@ async function gitFixture(fn: (f: Awaited<ReturnType<typeof fixture>>) => Promis
   });
 }
 
+function amendBaseline(root: string, ...paths: string[]) {
+  execFileSync('git', ['add', ...paths], { cwd: root, stdio: 'pipe' });
+  execFileSync(
+    'git',
+    [
+      '-c',
+      'user.name=Test',
+      '-c',
+      'user.email=test@example.com',
+      'commit',
+      '--amend',
+      '-qm',
+      'baseline',
+    ],
+    { cwd: root, stdio: 'pipe' },
+  );
+}
+
 test('已提交回执只能追加，基线文件不得删除', async () => {
   await gitFixture(async ({ root, put, paths }) => {
     await assert.doesNotReject(assertCommittedReceipts(paths, [lineup], root));
@@ -165,6 +183,103 @@ test('已提交回执只能追加，基线文件不得删除', async () => {
       /不允许删除或改写已提交的变更回执/,
     );
     await assert.rejects(assertCommittedReceipts(paths, [lineup], root, 'HEAD'), /无效基线提交/);
+  });
+});
+
+test('已提交证据的来源和哈希只能追加', async () => {
+  await gitFixture(async ({ root, put, paths }) => {
+    const unreferenced = 'b'.repeat(64);
+    const otherUrl = 'https://example.com/other';
+    const baseline = {
+      run_id: run,
+      sources: [
+        { url, artifact_sha256: [sha, unreferenced] },
+        { url: otherUrl, artifact_sha256: [] },
+      ],
+    };
+    await put(evidencePath, baseline);
+    amendBaseline(root, evidencePath);
+    for (const sources of [
+      [{ url, artifact_sha256: [sha, '0'.repeat(64)] }, baseline.sources[1]],
+      [{ url, artifact_sha256: ['0'.repeat(64), unreferenced] }, baseline.sources[1]],
+      [baseline.sources[0]],
+    ]) {
+      await put(evidencePath, { run_id: run, sources });
+      await assert.rejects(
+        assertCommittedReceipts(paths, [lineup], root),
+        /不允许删除或改写已提交的证据/,
+      );
+    }
+    await put(evidencePath, { ...baseline, run_id: 'run-2' });
+    await assert.rejects(
+      assertCommittedReceipts(paths, [lineup], root),
+      /不允许删除或改写已提交的证据/,
+    );
+    await put(evidencePath, {
+      run_id: run,
+      sources: [
+        { url, artifact_sha256: [sha, unreferenced, 'c'.repeat(64)] },
+        baseline.sources[1],
+        { url: 'https://example.com/new', artifact_sha256: ['d'.repeat(64)] },
+      ],
+    });
+    await assert.doesNotReject(assertCommittedReceipts(paths, [lineup], root, ''));
+  });
+});
+
+test('基线证据也须符合严格格式和大小限制', async () => {
+  for (const [baseline, error] of [
+    [JSON.stringify({ ...record, extra: true }), /extra/],
+    [' '.repeat(MAX_EVIDENCE_FILE_BYTES + 1), /超过 256 KiB/],
+  ] as const) {
+    await gitFixture(async ({ root, put, paths }) => {
+      await writeFile(join(root, evidencePath), baseline);
+      amendBaseline(root, evidencePath);
+      await put(evidencePath, record);
+      await assert.rejects(assertCommittedReceipts(paths, [lineup], root), error);
+    });
+  }
+});
+
+test('两个入口以空基线变量使用 HEAD，并拒绝改写未引用的证据', async () => {
+  await gitFixture(async ({ root, put }) => {
+    await cp('data', join(root, 'data'), { recursive: true });
+    const unreferenced = 'b'.repeat(64);
+    await put(evidencePath, {
+      run_id: run,
+      sources: [{ url, artifact_sha256: [sha, unreferenced] }],
+    });
+    await put(`research/runs/${run}/evaluation.json`, {
+      run_id: run,
+      candidates: [],
+      source_failures: [],
+    });
+    amendBaseline(root, 'research/runs', 'data');
+    for (const script of ['research.ts', 'refresh-guard.ts']) {
+      const invoke = () =>
+        spawnSync(
+          process.execPath,
+          [
+            '--import',
+            join(process.cwd(), 'node_modules/tsx/dist/loader.mjs'),
+            join(process.cwd(), 'scripts/validate', script),
+          ],
+          { cwd: root, encoding: 'utf8', env: { ...process.env, REFRESH_BASE_SHA: '' } },
+        );
+      const valid = invoke();
+      assert.equal(valid.status, 0, valid.stderr);
+      await put(evidencePath, {
+        run_id: run,
+        sources: [{ url, artifact_sha256: [sha, '0'.repeat(64)] }],
+      });
+      const changed = invoke();
+      assert.notEqual(changed.status, 0);
+      assert.match(changed.stderr, /不允许删除或改写已提交的证据/);
+      await put(evidencePath, {
+        run_id: run,
+        sources: [{ url, artifact_sha256: [sha, unreferenced] }],
+      });
+    }
   });
 });
 

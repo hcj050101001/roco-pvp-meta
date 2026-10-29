@@ -63,8 +63,8 @@ export async function assertCommittedReceipts(
   repositoryRoot = '.',
   baseSha: string | undefined = process.env.REFRESH_BASE_SHA,
 ): Promise<{ evidence: ChangeEvidence[]; accessibleUrls: string[] }> {
-  if (baseSha !== undefined && !/^[a-f0-9]{40}$/.test(baseSha)) throw Error('无效基线提交');
-  const ref = baseSha ?? 'HEAD';
+  if (baseSha && !/^[a-f0-9]{40}$/.test(baseSha)) throw Error('无效基线提交');
+  const ref = baseSha || 'HEAD';
   const baselinePaths = execFileSync(
     'git',
     ['ls-tree', '-r', '-z', '--name-only', ref, '--', 'research/runs'],
@@ -86,9 +86,25 @@ export async function assertCommittedReceipts(
       if ((error as NodeJS.ErrnoException).code === 'ENOENT') throw violation();
       throw error;
     }
-    if (!path.endsWith('/changes.json')) continue;
     const bytes = execFileSync('git', ['show', `${ref}:${path}`], { cwd: repositoryRoot });
     if (bytes.length > MAX_EVIDENCE_FILE_BYTES) throw Error(`证据文件超过 256 KiB：${path}`);
+    if (path.endsWith('/evidence.json')) {
+      const previous = committedEvidenceSchema.parse(JSON.parse(bytes.toString('utf8')));
+      const record = committedEvidenceSchema.parse(current);
+      const evidenceViolation = () => Error('不允许删除或改写已提交的证据');
+      if (record.run_id !== previous.run_id) throw evidenceViolation();
+      for (const source of previous.sources) {
+        const matching = record.sources.filter((entry) => entry.url === source.url);
+        if (
+          !matching.length ||
+          source.artifact_sha256.some(
+            (sha) => !matching.some((entry) => entry.artifact_sha256.includes(sha)),
+          )
+        )
+          throw evidenceViolation();
+      }
+      continue;
+    }
     const previous = receiptSchema.parse(JSON.parse(bytes.toString('utf8')));
     if (!Array.isArray(current)) throw violation();
     const remaining: unknown[] = [...current];

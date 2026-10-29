@@ -23,8 +23,8 @@ if (process.argv.includes('--snapshot')) {
 } else {
   // The baseline comes from the checkout, never from model-writable artifacts.
   const baseSha = process.env.REFRESH_BASE_SHA;
-  if (baseSha !== undefined && !/^[a-f0-9]{40}$/.test(baseSha)) throw Error('无效基线提交');
-  const ref = baseSha ?? 'HEAD';
+  if (baseSha && !/^[a-f0-9]{40}$/.test(baseSha)) throw Error('无效基线提交');
+  const ref = baseSha || 'HEAD';
   const paths = execFileSync(
     'git',
     ['ls-tree', '-r', '--name-only', ref, '--', 'data/lineups', 'data/archive'],

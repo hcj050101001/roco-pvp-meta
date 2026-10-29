@@ -36,9 +36,16 @@ if (process.argv.includes('--snapshot')) {
     if ((error as NodeJS.ErrnoException).code !== 'ENOENT') throw error;
     hasInbox = false;
   }
-  const { evidence, accessibleUrls } = hasInbox
-    ? await readChangeEvidence(await readLatestRunId())
-    : { evidence: [], accessibleUrls: [] };
+  let changeEvidence: Awaited<ReturnType<typeof readChangeEvidence>> = {
+    evidence: [],
+    accessibleUrls: [],
+  };
+  if (hasInbox) {
+    const run_id = await readLatestRunId();
+    if (!/^[a-zA-Z0-9-]+$/.test(run_id)) throw Error('无效研究路径');
+    changeEvidence = await readChangeEvidence(run_id);
+  }
+  const { evidence, accessibleUrls } = changeEvidence;
   guardRefresh(previous, current, accessibleUrls, evidence);
   console.log('非破坏性更新检查通过。');
 }

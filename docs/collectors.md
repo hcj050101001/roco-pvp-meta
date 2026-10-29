@@ -26,7 +26,8 @@ node node_modules/tsx/dist/cli.mjs scripts/collect/run.ts --seeds path/to/urls.j
 ## 当前实现
 
 - `search.ts` 读取 `data/search-queries.json`，按平台和全部目标赛季生成查询，先从公开 Bing RSS 获取结果、无支持结果时尝试 Bing HTML，并解码结果追踪 URL；只接受配置允许的平台域名，并保存搜索响应与来源健康状态。
-- `run.ts` 合并 `data/sources.json`、扩展种子、已发布当季与历史出处和待续查队列，按平台及赛季公平分配采集预算，提取标题、正文线索和图片节点；符合 URL 特征的候选图片可下载到 inbox 并计算 SHA-256、感知哈希和尺寸。采集结果会标为未验证。
+- `run.ts` 合并 `data/sources.json`、扩展种子、已发布当季与历史出处和待续查队列，按平台及赛季公平分配采集预算，提取标题、正文线索和图片节点；符合 URL 特征的候选图片可下载到 inbox 并计算 SHA-256、感知哈希和尺寸。采集结果会标为未验证。同一时间只跑一个采集进程：启动时对 `research/.research.lock` 加 `flock`，锁被占用则打印持有进程 PID 并退出，不写入 inbox。
+- `network.ts` 只请求公开 HTTPS。每一跳重定向都会重新解析并拒绝私有地址；实际连接使用该跳已核验的地址，并在连上后核对远端地址，避免 DNS 重绑定。浏览器补充仍在导航前拒绝非公开 URL，不绕过登录或验证码。
 - `browser.ts` 使用全新无登录 Chromium 上下文，滚动触发公开页面懒加载并保存页面快照。访问验证或无法访问时记录失败，不尝试绕过。可通过 `RESEARCH_CHROMIUM_PATH` 选择已有浏览器；浏览器补充失败时保留已经合法抓取的公开 HTML。
 - `extract/page.ts` 解析常见图片属性、`srcset`、`picture`、链接、Open Graph、JSON-LD 和可识别的内嵌 JSON。
 - `extract/image.ts` 识别图片格式并计算尺寸、SHA-256、pHash；哈希和尺寸只能证明文件属性，不能证明内容是某套真实阵容。

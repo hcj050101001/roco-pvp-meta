@@ -1,5 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import { escapeHtml } from '../src/lib/escape-html';
 import { serializeJsonLd } from '../src/lib/seo';
 import {
   normalizeBase,
@@ -9,6 +10,14 @@ import {
   owner,
   repoName,
 } from '../src/lib/site';
+
+test('escapeHtml 转义 & < > " 和单引号', () => {
+  assert.equal(
+    escapeHtml(`<img alt="a&b" title='x'>`),
+    '&lt;img alt=&quot;a&amp;b&quot; title=&#39;x&#39;&gt;',
+  );
+  assert.equal(escapeHtml('&#39;'), '&amp;#39;');
+});
 
 test('serializeJsonLd 转义 < 和 &，且结果仍是合法 JSON', () => {
   const input = { text: '普通文本 <script> & 仍保留' };

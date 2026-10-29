@@ -82,18 +82,22 @@ const href = `${withBase(`/lineups/${l.slug}/`)}${returnTo ? `?returnTo=${encode
       <strong>{updated ? displayDate(updated) : l.season}</strong>
     </span>
     <div class="card-actions">
-      {l.tutorials.map((t) => (
-        <a
-          class="video-link"
-          href={t.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          title={t.title}
-        >
-          <Icon name="play" size={14} />
-          {platformLabels[t.platform]}教学
-        </a>
-      ))}
+      {l.tutorials.length > 0 ? (
+        l.tutorials.map((t) => (
+          <a
+            class="video-link"
+            href={t.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            title={t.title}
+          >
+            <Icon name="play" size={14} />
+            {platformLabels[t.platform]}教学
+          </a>
+        ))
+      ) : (
+        <span class="card-gap">暂无对应教学</span>
+      )}
       <a class="card-cta" href={href}>
         查看配置 <Icon name="arrow" size={16} />
       </a>

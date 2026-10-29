@@ -9,6 +9,7 @@ test-results/
 playwright-report/
 research/inbox/
 research/baseline.json
+research/.research.lock
 *.log
 artifacts/
 .refresh-content/

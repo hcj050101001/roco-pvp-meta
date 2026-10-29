@@ -275,7 +275,11 @@ test('默认首访不取完整索引；500 条测试样例仍只绘制 24 张卡
       video: false,
       index,
       roster: lineup.roster.map((p) => p.name).join(' · '),
-      image,
+      image: {
+        ...image,
+        width: lineup.lineup_images[0].width,
+        height: lineup.lineup_images[0].height,
+      },
       videos: [],
       href: withBase(`/lineups/${lineup.slug}/`),
     });
@@ -342,6 +346,20 @@ test('当季和往期筛选只请求各自的索引', async ({ page }) => {
   await page.goto('history/?q=雨天');
   await expect(page.locator('#index-status')).toBeHidden();
   expect(requests).toEqual([expect.stringContaining('collection-index-history.json')]);
+});
+
+test('索引结构无效时沿用加载失败与重试', async ({ page }) => {
+  let attempts = 0;
+  await page.route('**/collection-index-active.json', async (route) => {
+    attempts++;
+    if (attempts === 1) await route.fulfill({ json: { unexpected: true } });
+    else await route.continue();
+  });
+  await page.goto('./?q=not-a-match');
+  await expect(page.locator('#index-status')).toContainText('加载失败');
+  await page.getByRole('button', { name: '重试' }).click();
+  await expect(page.locator('#index-status')).toBeHidden();
+  expect(attempts).toBe(2);
 });
 
 test('索引失败可读且能重试；翻页后焦点落在结果列表', async ({ page }) => {

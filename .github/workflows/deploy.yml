@@ -1,4 +1,5 @@
 name: Build and deploy Pages
+# 仅手动 workflow_dispatch。推送到 main 不会触发本工作流，也不会自动发布。
 on:
   workflow_dispatch:
 permissions:

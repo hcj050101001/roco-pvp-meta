@@ -919,6 +919,13 @@ img {
 .card-actions a {
   white-space: nowrap;
 }
+.card-gap {
+  display: inline-flex;
+  align-items: center;
+  color: var(--muted);
+  font-size: 11px;
+  min-height: 44px;
+}
 .video-link {
   display: inline-flex;
   align-items: center;
@@ -1193,6 +1200,23 @@ img {
   border-radius: 50%;
   background: #9ba9bc;
 }
+.fact-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 14px 0 0;
+}
+.fact-badges span {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 8px;
+  border: 1px dashed #d2d9e5;
+  border-radius: 4px;
+  background: #f4f6fb;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.5;
+}
 .detail-columns {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 270px;
@@ -1378,6 +1402,12 @@ img {
   background: #f0f3f8;
   color: #566c8f;
   font-size: 11px;
+}
+.skill-missing {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.6;
 }
 .bloodline {
   margin-left: auto;

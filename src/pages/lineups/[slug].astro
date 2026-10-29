@@ -100,6 +100,12 @@ const breadcrumbJsonLd = {
         <span>{evidenceLabels[l.lineup_images[0].evidence_grade]}</span>
         <span>资料核对于 {displayDate(l.last_verified_at)}</span>
       </div>
+      {(verifiedSkillCount < l.roster.length || l.tutorials.length === 0) && (
+        <p class="fact-badges">
+          {verifiedSkillCount < l.roster.length && <span>技能未完整核实</span>}
+          {l.tutorials.length === 0 && <span>暂无对应教学</span>}
+        </p>
+      )}
     </header>
     {historical && (
       <aside class="transition-banner">
@@ -258,12 +264,14 @@ const breadcrumbJsonLd = {
                 <span class="roster-number">0{i + 1}</span>
                 <div>
                   <h3>{p.name}</h3>
-                  {p.skills.length > 0 && (
+                  {p.skills.length > 0 ? (
                     <div class="skill-tags">
                       {p.skills.map((s) => (
                         <span>{s}</span>
                       ))}
                     </div>
+                  ) : (
+                    <p class="skill-missing">技能未核实</p>
                   )}
                 </div>
                 {p.bloodline && (

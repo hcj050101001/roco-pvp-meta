@@ -75,6 +75,29 @@ test('缺失真实图、旧评级字段、重复成员、无依据攻略与视�
     false,
   );
 });
+test('当季和归档阵容的每张图片都必须有 64 位小写 SHA-256', () => {
+  const base = structuredClone(allLineups[0]);
+  const image = base.lineup_images[0];
+  const missingSha = Object.fromEntries(Object.entries(image).filter(([key]) => key !== 'sha256'));
+  for (const lineup of [
+    { ...base, status: 'active', archive_reason: null },
+    { ...base, status: 'archived', archive_reason: '历史配置' },
+  ]) {
+    assert.equal(lineupSchema.safeParse(lineup).success, true);
+    for (const invalidImage of [
+      missingSha,
+      { ...image, sha256: 'A'.repeat(64) },
+      { ...image, sha256: 'a'.repeat(63) },
+      { ...image, sha256: 'a'.repeat(65) },
+      { ...image, sha256: 'g'.repeat(64) },
+    ]) {
+      assert.equal(
+        lineupSchema.safeParse({ ...lineup, lineup_images: [image, invalidImage] }).success,
+        false,
+      );
+    }
+  }
+});
 test('C 级单一来源不晋升；归档必须有理由', () => {
   const l = structuredClone(allLineups[0]);
   assert.equal(

@@ -56,13 +56,12 @@ export function assertNoTrackedInbox(paths: string[]): void {
     throw Error('不允许跟踪 research/inbox 文件');
 }
 
-/** Bind a receipt to a hashed image from the same source, when hashes exist. */
+/** Bind a receipt to an image from the same source. */
 export function assertReceiptImageSha(receipt: ChangeEvidence, lineup: Lineup): void {
-  const hashedImages = lineup.lineup_images.filter((image) => image.sha256);
   if (
-    hashedImages.length &&
-    !hashedImages.some(
+    !lineup.lineup_images.some(
       (image) =>
+        // 回执的 source_url 是来源页面，因此比较 source_page_url，而非图片直链 source_url。
         image.source_page_url === receipt.source_url && image.sha256 === receipt.artifact_sha256,
     )
   )

@@ -135,6 +135,16 @@ test('检测已跟踪 inbox 路径', () => {
   assert.throws(() => assertNoTrackedInbox(['research/inbox/run-1/page.html']), /不允许跟踪/);
 });
 
+test('阵容图片必须提供小写 64 位 SHA-256', () => {
+  const missingImage: Record<string, unknown> = { ...lineup.lineup_images[0] };
+  delete missingImage.sha256;
+  assert.throws(() => lineupSchema.parse({ ...lineup, lineup_images: [missingImage] }));
+  for (const invalidSha of ['A'.repeat(64), 'a'.repeat(63), 'a'.repeat(65)]) {
+    const image = { ...lineup.lineup_images[0], sha256: invalidSha };
+    assert.throws(() => lineupSchema.parse({ ...lineup, lineup_images: [image] }));
+  }
+});
+
 test('图片哈希纯校验覆盖同来源、其他来源和缺失哈希', () => {
   const otherImage = {
     ...lineup.lineup_images[0],
@@ -162,7 +172,12 @@ test('图片哈希纯校验覆盖同来源、其他来源和缺失哈希', () =>
     ...lineup,
     lineup_images: lineup.lineup_images.map((image) => ({ ...image, sha256: '' })),
   };
-  assert.doesNotThrow(() => assertReceiptImageSha(receipt, noHashes));
+  assert.throws(() => assertReceiptImageSha(receipt, noHashes), {
+    message: `变更回执哈希与阵容图片不符：${lineup.id}`,
+  });
+  assert.throws(() => assertReceiptImageSha(receipt, { ...lineup, lineup_images: [] }), {
+    message: `变更回执哈希与阵容图片不符：${lineup.id}`,
+  });
 });
 
 test('回执哈希必须匹配同来源阵容图片', async () => {

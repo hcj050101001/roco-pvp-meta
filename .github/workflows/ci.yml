@@ -26,6 +26,8 @@ jobs:
         env:
           REFRESH_BASE_SHA: ${{ github.event.pull_request.base.sha || github.event.before }}
       - run: npm run research:validate
+        env:
+          REFRESH_BASE_SHA: ${{ github.event.pull_request.base.sha || github.event.before }}
       - uses: ./.github/actions/validate-site
       - name: Remind manual Pages deploy
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'

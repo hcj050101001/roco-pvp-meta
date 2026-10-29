@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { mkdtemp, mkdir, rm, writeFile } from 'node:fs/promises';
+import { execFileSync, spawnSync } from 'node:child_process';
+import { cp, mkdtemp, mkdir, rm, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { allLineups } from '../src/lib/data';
@@ -8,6 +9,7 @@ import { lineupSchema } from '../src/lib/schema';
 import { guardRefresh } from '../src/lib/refresh';
 import {
   assertNoTrackedInbox,
+  assertCommittedReceipts,
   MAX_EVIDENCE_FILE_BYTES,
   readCommittedChangeEvidence,
 } from '../scripts/validate/change-evidence';
@@ -121,4 +123,93 @@ test('严格校验格式、哈希和目录中的运行 ID', async () => {
 test('检测已跟踪 inbox 路径', () => {
   assert.doesNotThrow(() => assertNoTrackedInbox(['research/runs/run-1/evidence.json']));
   assert.throws(() => assertNoTrackedInbox(['research/inbox/run-1/page.html']), /不允许跟踪/);
+});
+
+async function gitFixture(fn: (f: Awaited<ReturnType<typeof fixture>>) => Promise<void>) {
+  await withFixture(async (f) => {
+    const git = (...args: string[]) => execFileSync('git', args, { cwd: f.root, stdio: 'pipe' });
+    git('init', '-q');
+    git('add', 'research/runs');
+    git('-c', 'user.name=Test', '-c', 'user.email=test@example.com', 'commit', '-qm', 'baseline');
+    await fn(f);
+  });
+}
+
+test('已提交回执只能追加，基线文件不得删除', async () => {
+  await gitFixture(async ({ root, put, paths }) => {
+    await assert.doesNotReject(assertCommittedReceipts(paths, [lineup], root));
+    await put(changesPath, [receipt, { ...receipt, reason: '补充证据' }]);
+    await assert.doesNotReject(assertCommittedReceipts(paths, [lineup], root));
+    await put(changesPath, []);
+    await assert.rejects(
+      assertCommittedReceipts(paths, [lineup], root),
+      /不允许删除或改写已提交的变更回执/,
+    );
+    await put(changesPath, [{ ...receipt, reason: '改写' }]);
+    await assert.rejects(
+      assertCommittedReceipts(paths, [lineup], root),
+      /不允许删除或改写已提交的变更回执/,
+    );
+    await put(changesPath, [receipt]);
+    await rm(join(root, evidencePath));
+    await assert.rejects(
+      assertCommittedReceipts(paths, [lineup], root),
+      /不允许删除或改写已提交的变更回执/,
+    );
+    await assert.rejects(
+      assertCommittedReceipts([changesPath], [lineup], root),
+      /不允许删除或改写已提交的变更回执/,
+    );
+    await assert.rejects(
+      assertCommittedReceipts([evidencePath], [lineup], root),
+      /不允许删除或改写已提交的变更回执/,
+    );
+    await assert.rejects(assertCommittedReceipts(paths, [lineup], root, 'HEAD'), /无效基线提交/);
+  });
+});
+
+test('追加的回执必须符合严格格式并匹配阵容及来源', async () => {
+  await gitFixture(async ({ root, put, paths }) => {
+    for (const invalid of [
+      { ...receipt, extra: true },
+      { ...receipt, artifact_sha256: 'z'.repeat(64) },
+    ]) {
+      await put(changesPath, [receipt, invalid]);
+      await assert.rejects(assertCommittedReceipts(paths, [lineup], root));
+    }
+    await put(changesPath, [receipt, { ...receipt, lineup_id: 'missing' }]);
+    await assert.rejects(assertCommittedReceipts(paths, [lineup], root), /阵容不存在/);
+    const otherUrl = 'https://example.com/other';
+    await put(evidencePath, {
+      run_id: run,
+      sources: [...record.sources, { url: otherUrl, artifact_sha256: [sha] }],
+    });
+    await put(changesPath, [receipt, { ...receipt, source_url: otherUrl }]);
+    await assert.rejects(assertCommittedReceipts(paths, [lineup], root), /来源不在阵容中/);
+  });
+});
+
+test('两个入口在 inbox 存在时也拒绝已跟踪的 latest.json', async () => {
+  await gitFixture(async ({ root }) => {
+    await cp('data', join(root, 'data'), { recursive: true });
+    await mkdir(join(root, 'research/inbox'), { recursive: true });
+    await writeFile(join(root, 'research/inbox/latest.json'), '{}');
+    execFileSync('git', ['add', '-f', 'research/inbox/latest.json'], { cwd: root });
+    for (const script of ['research.ts', 'refresh-guard.ts']) {
+      const result = spawnSync(
+        process.execPath,
+        [
+          '--import',
+          join(process.cwd(), 'node_modules/tsx/dist/loader.mjs'),
+          join(process.cwd(), 'scripts/validate', script),
+        ],
+        {
+          cwd: root,
+          encoding: 'utf8',
+        },
+      );
+      assert.notEqual(result.status, 0);
+      assert.match(result.stderr, /不允许跟踪 research\/inbox 文件/);
+    }
+  });
 });

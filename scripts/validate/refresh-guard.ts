@@ -5,19 +5,26 @@ import { execFileSync } from 'node:child_process';
 import { lineupSchema } from '../../src/lib/schema';
 import {
   assertNoTrackedInbox,
+  assertCommittedReceipts,
   readChangeEvidence,
-  readCommittedChangeEvidence,
 } from './change-evidence';
 import { readLatestRunId } from '../research/io';
 const current = readLineups();
+const tracked = execFileSync('git', ['ls-files', '-z', '--', 'research/inbox', 'research/runs'], {
+  encoding: 'utf8',
+})
+  .split('\0')
+  .filter(Boolean);
+assertNoTrackedInbox(tracked);
 await mkdir('research', { recursive: true });
 if (process.argv.includes('--snapshot')) {
   await writeFile('research/baseline.json', JSON.stringify(current, null, 2) + '\n');
   console.log('已保存更新前快照');
 } else {
   // The baseline comes from the checkout, never from model-writable artifacts.
-  const ref = process.env.REFRESH_BASE_SHA || 'HEAD';
-  if (ref !== 'HEAD' && !/^[a-f0-9]{40}$/.test(ref)) throw Error('无效基线提交');
+  const baseSha = process.env.REFRESH_BASE_SHA;
+  if (baseSha !== undefined && !/^[a-f0-9]{40}$/.test(baseSha)) throw Error('无效基线提交');
+  const ref = baseSha ?? 'HEAD';
   const paths = execFileSync(
     'git',
     ['ls-tree', '-r', '--name-only', ref, '--', 'data/lineups', 'data/archive'],
@@ -46,13 +53,7 @@ if (process.argv.includes('--snapshot')) {
     if (!/^[a-zA-Z0-9-]+$/.test(run_id)) throw Error('无效研究路径');
     changeEvidence = await readChangeEvidence(run_id);
   } else {
-    const paths = execFileSync('git', ['ls-files', '-z', '--', 'research/inbox', 'research/runs'], {
-      encoding: 'utf8',
-    })
-      .split('\0')
-      .filter(Boolean);
-    assertNoTrackedInbox(paths);
-    changeEvidence = await readCommittedChangeEvidence(paths);
+    changeEvidence = await assertCommittedReceipts(tracked, current);
   }
   const { evidence, accessibleUrls } = changeEvidence;
   guardRefresh(previous, current, accessibleUrls, evidence);

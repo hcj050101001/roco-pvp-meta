@@ -1,8 +1,11 @@
 import { createHash } from 'node:crypto';
+import { execFileSync } from 'node:child_process';
 import { open, readFile } from 'node:fs/promises';
 import { join } from 'node:path';
+import { isDeepStrictEqual } from 'node:util';
 import { z } from 'zod';
 import type { ChangeEvidence } from '../../src/lib/refresh';
+import type { Lineup } from '../../src/lib/schema';
 import { readManifest } from '../research/io';
 
 // Each committed evidence JSON file is limited to 256 KiB, measured in bytes.
@@ -51,6 +54,58 @@ async function readEvidenceJson(path: string): Promise<unknown> {
 export function assertNoTrackedInbox(paths: string[]): void {
   if (paths.some((path) => path.startsWith('research/inbox/')))
     throw Error('不允许跟踪 research/inbox 文件');
+}
+
+/** Check committed receipts against the Git baseline and current lineup sources. */
+export async function assertCommittedReceipts(
+  paths: string[],
+  lineups: Lineup[],
+  repositoryRoot = '.',
+  baseSha: string | undefined = process.env.REFRESH_BASE_SHA,
+): Promise<{ evidence: ChangeEvidence[]; accessibleUrls: string[] }> {
+  if (baseSha !== undefined && !/^[a-f0-9]{40}$/.test(baseSha)) throw Error('无效基线提交');
+  const ref = baseSha ?? 'HEAD';
+  const baselinePaths = execFileSync(
+    'git',
+    ['ls-tree', '-r', '-z', '--name-only', ref, '--', 'research/runs'],
+    {
+      cwd: repositoryRoot,
+      encoding: 'utf8',
+    },
+  )
+    .split('\0')
+    .filter((path) => /^research\/runs\/[^/]+\/(changes|evidence)\.json$/.test(path));
+  const tracked = new Set(paths);
+  const violation = () => Error('不允许删除或改写已提交的变更回执');
+  for (const path of baselinePaths) {
+    if (!tracked.has(path)) throw violation();
+    let current: unknown;
+    try {
+      current = await readEvidenceJson(join(repositoryRoot, path));
+    } catch (error) {
+      if ((error as NodeJS.ErrnoException).code === 'ENOENT') throw violation();
+      throw error;
+    }
+    if (!path.endsWith('/changes.json')) continue;
+    const bytes = execFileSync('git', ['show', `${ref}:${path}`], { cwd: repositoryRoot });
+    if (bytes.length > MAX_EVIDENCE_FILE_BYTES) throw Error(`证据文件超过 256 KiB：${path}`);
+    const previous = receiptSchema.parse(JSON.parse(bytes.toString('utf8')));
+    if (!Array.isArray(current)) throw violation();
+    const remaining: unknown[] = [...current];
+    for (const receipt of previous) {
+      const index = remaining.findIndex((entry) => isDeepStrictEqual(entry, receipt));
+      if (index < 0) throw violation();
+      remaining.splice(index, 1);
+    }
+  }
+  const result = await readCommittedChangeEvidence(paths, repositoryRoot);
+  for (const receipt of result.evidence) {
+    const lineup = lineups.find((entry) => entry.id === receipt.lineup_id);
+    if (!lineup) throw Error(`变更回执对应的阵容不存在：${receipt.lineup_id}`);
+    if (!lineup.sources.some((source) => source.url === receipt.source_url))
+      throw Error(`变更回执来源不在阵容中：${receipt.lineup_id}`);
+  }
+  return result;
 }
 
 /** Paths are repository-relative tracked paths, not directory contents. */

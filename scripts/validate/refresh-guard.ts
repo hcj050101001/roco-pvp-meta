@@ -3,7 +3,11 @@ import { readLineups } from '../../src/lib/data';
 import { guardRefresh } from '../../src/lib/refresh';
 import { execFileSync } from 'node:child_process';
 import { lineupSchema } from '../../src/lib/schema';
-import { readChangeEvidence } from './change-evidence';
+import {
+  assertNoTrackedInbox,
+  readChangeEvidence,
+  readCommittedChangeEvidence,
+} from './change-evidence';
 import { readLatestRunId } from '../research/io';
 const current = readLineups();
 await mkdir('research', { recursive: true });
@@ -36,14 +40,19 @@ if (process.argv.includes('--snapshot')) {
     if ((error as NodeJS.ErrnoException).code !== 'ENOENT') throw error;
     hasInbox = false;
   }
-  let changeEvidence: Awaited<ReturnType<typeof readChangeEvidence>> = {
-    evidence: [],
-    accessibleUrls: [],
-  };
+  let changeEvidence: Awaited<ReturnType<typeof readChangeEvidence>>;
   if (hasInbox) {
     const run_id = await readLatestRunId();
     if (!/^[a-zA-Z0-9-]+$/.test(run_id)) throw Error('无效研究路径');
     changeEvidence = await readChangeEvidence(run_id);
+  } else {
+    const paths = execFileSync('git', ['ls-files', '-z', '--', 'research/inbox', 'research/runs'], {
+      encoding: 'utf8',
+    })
+      .split('\0')
+      .filter(Boolean);
+    assertNoTrackedInbox(paths);
+    changeEvidence = await readCommittedChangeEvidence(paths);
   }
   const { evidence, accessibleUrls } = changeEvidence;
   guardRefresh(previous, current, accessibleUrls, evidence);

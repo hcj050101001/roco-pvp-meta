@@ -1,0 +1,316 @@
+{
+  "run_id": "2026-10-29T01-21-34-138Z",
+  "sources": [
+    {
+      "url": "https://www.taptap.cn/moment/847022426351994538",
+      "artifact_sha256": [
+        "85a9008bb5dc3884914349478310d29be7ec174e99965dc343458b50e43481a3",
+        "49d54fb70d24580f661d5144e3295391d3ce6816cb104fda5ecf468aca15736e"
+      ]
+    },
+    {
+      "url": "https://www.taptap.cn/app/188212/topic",
+      "artifact_sha256": [
+        "fae612b51cf3fb14938a2c45e4c9c89bb6452733a381c9a83bcf306726d8aa29",
+        "7c22b55b20ec6a43d47ce17b125fc7a8da6513fbe7b75ccbcdb2b88ce71be19c",
+        "394e1e1c6344179abfefbcf993689f4551231bc6763b2be8cfbcf4ab1d420015",
+        "6a58776bd808327843b7884b432dbc85de85993fa52d7a5a7fbd8495a5b0a6be",
+        "0d483af451a694b923f047037c2da948d10ed2ab40b704907022335b8d7ebbfe"
+      ]
+    },
+    {
+      "url": "https://www.taptap.cn/moment/814312527868461907",
+      "artifact_sha256": ["d70d91b557a5be3ce04300a9828b567f80040cd050090f2bfbf039bb2ba8a7cd"]
+    },
+    {
+      "url": "https://qiandao.com/topic?id=undefined",
+      "artifact_sha256": [
+        "162f34ecdff5c93b3f7a74d174459ae2f0709ba5023b0b9d5a09304c60dcc389",
+        "3f6589e9c47915f2d0325a5e1e84e83e03b5fbb5504cf13b89f82e36ef2bbdea",
+        "b134991743879d543770220da533f4e46ec5f0ce103dd937de694f11a75064ce",
+        "ca41ee5c034beac4cdf66a5a7319963812c1dd7708e8ee938f0536ef39436ec8"
+      ]
+    },
+    {
+      "url": "https://www.wegame.com.cn/act/wegame/nrc20260618/?wg_ad_from=communitycoverNew",
+      "artifact_sha256": [
+        "37a79d2128153e69cb8ac8ea9cce030d97a0f872864c372d6b13f99d8ceb4536",
+        "ba1b128c51df7e01593179e9d8bb851f6beae566c8b8aab5017659b467be25b2",
+        "2967e59bcaf9197318c8963b99bb53beda2a4d86ba73564bbe9ecf2d7b35c82a",
+        "15c37ad957c87ba1ccde3804cd68409f44f1e34ad33daf19e95cb6c03dffff44",
+        "345fee67dcc794b2fa922e93a853c3135d55bed220801efc1032219e49d0cf2e",
+        "eb5aefa4f1b96bfa80a32c7a18e4d394ddfc3177c8db80aea428949b5f8124df",
+        "d451feada5b4f20a3bc34dd13ab8592c81a5f22544fbd24f8bb7d5c9592651ac"
+      ]
+    },
+    {
+      "url": "https://www.wegame.com.cn/act/wegame/lkwgsj20260409launch/index.html",
+      "artifact_sha256": [
+        "924bf12eb9101b6786f834efa9a0ef09f5e979d2c50f56dd486ac22850f67fbf",
+        "aec5db4f6ea523434ade35ed6c26a56b6590f77fe996b1b97c264de2a9320d59",
+        "31520ef7e740aec6580593ac0c45573d39db4bbac7b3c2ddf2f4fd6017e65118"
+      ]
+    },
+    {
+      "url": "https://www.wegame.com.cn/act/wegame/lkwgsj20260521v/index.html",
+      "artifact_sha256": [
+        "760fbb031a6d5c07a24aebfd41ac6935e6e33088b10a802a8419109816355d36",
+        "7b1bc0524b35ab39b8194ddef2922665e25680890c54589643fa5e05f930117c",
+        "7fe9a3ae155c31770e9e6ee46655bd256166215df0399c77ba96c416313bab8a"
+      ]
+    },
+    {
+      "url": "https://news.17173.com/content/05272026/172842307.shtml",
+      "artifact_sha256": [
+        "ca4b88f050d47c31c0ddceb42c63547196e781d9e0c0be376eff02b9bfdec9a7",
+        "758fa766186cb09506fe29ff663f235f42d14ab4434a120ceb991e4bac5213f1",
+        "2f3ba5e61a706a56357ad66057a40d596a31b86ff410bc581f66c2647c58aa85",
+        "50daa1ab57693697bf9fa8701a9ec6552abc2e1e70d8b028f6da7427f2911b76",
+        "0194ba7b2e48f3f0cc314152989dad36795efafb9183c04f51dc813c83bda331",
+        "22a4937656cf806ad4480ade5e5e654964aae29944b8bd07e0f751c2619e9bc1",
+        "fe00ad15730fbdbb17ac0b9acfaed8cebb7d79e7b84cfa84071fef300bb84326"
+      ]
+    },
+    {
+      "url": "https://news.17173.com/content/04062026/170103877.shtml",
+      "artifact_sha256": [
+        "095da4cf5ca392a7dd9ea2002ac387a644838627c97a6439be85459762d7c843",
+        "22e9c005b39005cc88b4bdd00a6b7e76e7264966de1802206a975ed1cde90f8e",
+        "17ae4552deffa53e70c0d792827d526339eb72c3af04c6688a43391a40d1bcd3",
+        "b13ab6373f324f7bf92efcc79e81db51328dc2a82a211f5158fe09724375ab5b",
+        "bf2acec395aa0b95657014576fa7801851d064f21b5b771e875f50e107532f6b"
+      ]
+    },
+    {
+      "url": "https://news.17173.com/content/04042026/110201912.shtml",
+      "artifact_sha256": [
+        "7caa6225e0595684d9f9944b7603f5ef15db7a5a5f279cc4a1cb0e56623c2777",
+        "abc3dda50789691070542d7dac38665e2965bf1763f605ba974b9a35ae485a40",
+        "0480d78106e5eba8d6c12fcd2293a18befef405f1df68394a4cd99ec9029b145"
+      ]
+    },
+    {
+      "url": "https://wiki.biligame.com/nrc/%E9%A6%96%E9%A1%B5",
+      "artifact_sha256": [
+        "c7b88c94404b8eb4cdf65ad756150e9c778ca93dba569d5d2b8bbb4062fad8a3",
+        "b76df8ce0a8343693cdff2dd2217b5a737d340e65e766ff323525ba83c664c36",
+        "a539c411a0843cc4b0ae4f69d3f1f5b001fda99c452571e79899814d97871c8b",
+        "6a6451ab3bfdbee2bbe110078e22747952893a60531ba2d2ea79ce4c667e9e4d",
+        "d0891a223db430fbda5a952e76d82ce177e673e1b04e6a1eaa1e15cc21d551f2",
+        "1d908dc6febb73a260bbee9ea318e8b18149dd887b22d8917ecceda9e4e00162",
+        "6150b0762a1294b8ea6538097bb3641075ebca74e5320b5322854e2cc132f9d7",
+        "575ffe5c4176b5500d1449b4daac185b5d6907dc7367b6a5bbc7752187d948db"
+      ]
+    },
+    {
+      "url": "https://wiki.biligame.com/rocom/?:?wiki",
+      "artifact_sha256": [
+        "cc246293979c2c234a798c44fc28bc30db5054611373f4fcc29cf23f64dc1c4c",
+        "0ceedd37fee92cba18f435d7a888696dd0a2f3bf4dd3bac6a94c9390cfaa8f7b",
+        "6bb948eeee8a1668309189f45994177432df575c15a28f2d88358546d0aa986e"
+      ]
+    },
+    {
+      "url": "https://ol.3dmgame.com/gl/355668.html",
+      "artifact_sha256": [
+        "edf0c80ca8128e1127acab4a759c443aefaec4716f1727bf366836047d4a65fa",
+        "e1e6e5115901439db603c47d173fc2dd5b36660b4a19b4adea8622beffdc454f"
+      ]
+    },
+    {
+      "url": "https://ol.3dmgame.com/gl/348407.html",
+      "artifact_sha256": [
+        "760a967d66a9be3c15b5568a5e8a82b76f3350570bbcbce31cddebd8f726ff93",
+        "e1e6e5115901439db603c47d173fc2dd5b36660b4a19b4adea8622beffdc454f"
+      ]
+    },
+    {
+      "url": "https://ol.3dmgame.com/gl/342821.html",
+      "artifact_sha256": [
+        "c0c5699cc49705f29d39dd24c10dbbe37e45a2728df10dfb634af4d308e91c7b",
+        "e1e6e5115901439db603c47d173fc2dd5b36660b4a19b4adea8622beffdc454f"
+      ]
+    },
+    {
+      "url": "https://www.sina.cn/news/detail/5349178104611569.html",
+      "artifact_sha256": ["a61ffe3699b46e42aa56001ad5e6a1e2605f6ac7ae91511c91f39bc2d67941f8"]
+    },
+    {
+      "url": "https://www.sina.cn/news/detail/5346553457804621.html",
+      "artifact_sha256": ["766808b92b620c5857f8ab0c2b7ea20e559ec711b07f011c4faa18d073a70ac6"]
+    },
+    {
+      "url": "https://www.taptap.cn/moment/789640283590494730",
+      "artifact_sha256": ["41f4c157fb27f591cee829ec0f63d99e18d8b5212f5ba9668fd070119e34156d"]
+    },
+    {
+      "url": "https://www.taptap.cn/moment/788306876868592445",
+      "artifact_sha256": ["b9b437e3993db1980a079ea9edb9506b4ae85c749d5998e84e61ae8044a8ead7"]
+    },
+    {
+      "url": "https://www.taptap.cn/moment/792667453384557230",
+      "artifact_sha256": [
+        "c00a151cb4068275631bf3abb2392ea00cb9002a6df09c521fbb7135fad4eefd",
+        "62859e1332bf0ed8b915f76a25cde3e4225523ef1dba53e11aabb0a9cdaa3a07",
+        "3a09396cdf9a15da666548d6354d6111e11fd2553c7eeca82cbfffcd8098a0d1",
+        "a3615d746011c3ab23763610fcc0eef7623f8989beeff8cd3f8b603bffdf6a97",
+        "5d8741f800343a240fdb1430210f2669b0219a0624ee13b699f813e77b3418d1"
+      ]
+    },
+    {
+      "url": "https://qiandao.com/post?postId=1023430985116591249",
+      "artifact_sha256": [
+        "9c5d28e771a73591e7c411bad420431dbef008cdf702acd723eb72702e32538f",
+        "e4df8c652c75a4751df94cdfea0f0a2d5b987d201f2677c0ecaa83254c7794ed",
+        "6ddbc8084d890daf38a199b37f36fe89718282cd77cf4818551bbbbeb5dd0da1",
+        "42c7bd8eaff19d7244246c9194e0c6525999654d346ddcafab243432a3044fdb",
+        "8ae9531ca9bf2a4c8824b35079e72d106a22054ac1d693e2c3e34f1f644a7d78",
+        "542e9bec1912f4fe7653a987147ac9a2ec9e86eda2573cfebe2187e3e3c763f6",
+        "60a23cbbbb3c8a5952dd7f5e9179418eebe204cc241e84e0e331cfdbdfa34ac1",
+        "41b7a408e2650ca4ea31b4296a598faaa5b2f08b5f89e27901ae1b7b29046f1e"
+      ]
+    },
+    {
+      "url": "https://news.17173.com/content/04082026/110245130.shtml",
+      "artifact_sha256": [
+        "6689d694f54c78feff6b2dd97a1c15968dab81590e41b54df73fe62bdcac60a1",
+        "b562045b2bd64f92d63cca91e21e4e04fad70ad93ed6c86e1ae4983b97e27120"
+      ]
+    },
+    {
+      "url": "https://news.17173.com/content/04022026/200924166.shtml",
+      "artifact_sha256": [
+        "649d06a4483bc8de1dbf52c81b91d24bf8678a98199bbbd0fad499e0960476fd",
+        "a1b8f395f1b5078d379bd1fd8fcdf7390fae2c7d2b5d046814c6637930807ffe",
+        "f0cacdf06757cb0d3bebe2e193d97d16935eb5b11bed2a46f32972e9a1c9db36",
+        "bbb1670b8739e68e8663e6b38777ca7b568416e84eb8e91d482f1505b517483b",
+        "a6b7e9208a80e29373f4fa0407343e6bdf52ebe477176f9a683e2325604ee3c1",
+        "230284834a9397b7671d364c876de299b71f7894a424a6c2715d7b1bfd44b373",
+        "23674881006f2885d456147496cce4fbf3973a3f8c43a6acf80079801fe496be",
+        "08baef80a664d249d32d53727797d5e63567f9c235521e37ce727d96170e6d88"
+      ]
+    },
+    {
+      "url": "https://ol.3dmgame.com/gl/350006.html",
+      "artifact_sha256": [
+        "e4259e6bb3b85359787240806fef9e42ad8bd10b6fd7ad07241c1e628ebc56a9",
+        "e1e6e5115901439db603c47d173fc2dd5b36660b4a19b4adea8622beffdc454f"
+      ]
+    },
+    {
+      "url": "https://www.taptap.cn/moment/787127821922206858",
+      "artifact_sha256": [
+        "3a10d72003161b8910953f693759538acb908e433da882aed0177237fa8d6505",
+        "9103cd96ead733ee7dbc48d036faaa757170a67b8fa82993098a15eb65f4ff77",
+        "2d45334a81cf2d914e284e428c46858cef26379a239515b49b5b603645692991",
+        "a7cf02b61c4c30c91d1b87e87f254ea0e407e0824363dcd39e1926729a03380a",
+        "8f8712038c794bb0d0023ab2fa4cc6c3edd10bc292027fe99d617473109ef7e6"
+      ]
+    },
+    {
+      "url": "https://www.taptap.cn/moment/807310182068521942",
+      "artifact_sha256": ["aa34bdbdf3e6c12e7d10f13e1199d41e4e75b338dd54d92c5fa05cb48ffb6105"]
+    },
+    {
+      "url": "https://www.taptap.cn/moment/858904416206456638",
+      "artifact_sha256": [
+        "d8407909d436f5882b6aabf6ec9ec2bef7324d5edfebce7d154bf0a89e733233",
+        "3c1064aeed6b30ff06f497201db54568e26077c652a4758f2f8ce7248aea4c61",
+        "ae6549b7776c9ac2f56ba6a77f32afef3b97af3c0708c957b75efd4ba7b63f8b"
+      ]
+    },
+    {
+      "url": "https://ol.3dmgame.com/gl/354707.html",
+      "artifact_sha256": [
+        "8069ae8097a17a9adda25c7c38af26f7b16e8639ad813ec83b09bd893f601f9f",
+        "e1e6e5115901439db603c47d173fc2dd5b36660b4a19b4adea8622beffdc454f"
+      ]
+    },
+    {
+      "url": "https://ol.3dmgame.com/gl/350004.html",
+      "artifact_sha256": [
+        "a722b81392de4ebbd725a19a5977c63bee2ea40f62d21b93ef617c45c00cf85e",
+        "e1e6e5115901439db603c47d173fc2dd5b36660b4a19b4adea8622beffdc454f"
+      ]
+    },
+    {
+      "url": "https://www.taptap.cn/app/188212",
+      "artifact_sha256": ["bb92d3895a7b694c7ca8ddbbff217c0f2766071c650a1cd1f7e8606a63010978"]
+    },
+    {
+      "url": "https://www.taptap.cn/review/50751838",
+      "artifact_sha256": ["e6fde828cce89e1013157f85d0fb7387569110782b6548e84f7a60c29ae107b1"]
+    },
+    {
+      "url": "https://www.taptap.cn/review/50780923",
+      "artifact_sha256": ["d942092b094dacc096082945ea21355679bc5ab89686b69f58e1def16597907d"]
+    },
+    {
+      "url": "https://ol.3dmgame.com/gl/353802.html",
+      "artifact_sha256": ["a7fb8167b9af7fa26ce6972ed4575e25b96117966523fa3895a9feb0b9654511"]
+    },
+    {
+      "url": "https://www.taptap.cn/moment/862617352557038905?group_id=228326",
+      "artifact_sha256": [
+        "a03aa36b3adcf0ec5d17573aa82e089d3c54272c9ac0c3a77d0066cf7fb1feeb",
+        "4b36a1e19c737e9a22d364534f988db6c5023da1ebfe10120843fe19f4124bf8",
+        "91566d0c1c4ae3cb87852b257569b18244a955b826ef95da3090038bce4cf409",
+        "a7362facd913789ef7230b6c5a8b03fa4dbcea69004e62cd7c18e74ecc5495ac",
+        "911a830b02ad8b1d030b474be4cbea99368c1be74c6e7b6a23874da79d3e4e58",
+        "f5af73ab6bc62ae8d45e8930418a50e9712a51df134712fab7a2f59518af1666",
+        "cb987a73f54bdc3eac6bc5da10ede2914ab2a230c28bee4db310d52b213f493f"
+      ]
+    },
+    {
+      "url": "https://www.taptap.cn/app/188212/topic?type=official",
+      "artifact_sha256": ["ff06540e5348a81c41bbc9cab352325062791325f212bda7c3fa6f44261db010"]
+    },
+    {
+      "url": "https://ol.3dmgame.com/gl/353804.html",
+      "artifact_sha256": [
+        "38a40514ac27c4590c7099becd2fcdad229829dac96fb8d5ce4da238a3639fad",
+        "e1e6e5115901439db603c47d173fc2dd5b36660b4a19b4adea8622beffdc454f"
+      ]
+    },
+    {
+      "url": "https://www.taptap.cn/moment/804842769402038693",
+      "artifact_sha256": ["d4ad0c5771c6ef3d934f8764ff41f7ea0f4140cec857b193a5b26bae7c5f66f4"]
+    },
+    {
+      "url": "https://www.taptap.cn/moment/801002398964253174",
+      "artifact_sha256": ["d62c9b7dc48a55c9d52860fce8d13bff2e453a4c30835f2b8722117343a443c3"]
+    },
+    {
+      "url": "https://www.taptap.cn/moment/832744337958768624",
+      "artifact_sha256": ["dfe9cd081eed43210a52fac057d189f1cb953e0a906c9fcb9c11dcd99e4d9187"]
+    },
+    {
+      "url": "https://wiki.biligame.com/rocom/%E9%98%B5%E5%AE%B9%E4%B8%80%E8%A7%88",
+      "artifact_sha256": ["5a6a976432b69dff7f347e37618836feb2304d56bf6fd07280809395c3f11cee"]
+    },
+    {
+      "url": "https://wiki.biligame.com/rocom/%E4%B8%8A%E4%BC%A0%E9%98%B5%E5%AE%B9",
+      "artifact_sha256": ["54861bb950ec10d1b5391e4d937df2a4f8caf61dc436615ed8b763138aebe74b"]
+    },
+    {
+      "url": "https://wiki.biligame.com/rocom/PVP%E4%B8%80%E9%80%9F%E6%A6%9C",
+      "artifact_sha256": ["0274529afad56b3e830a8ba7c0acd2f6faccbd2c4d348dd5c0d67e6f652df65f"]
+    },
+    {
+      "url": "https://www.taptap.cn/moment/812368489653207641",
+      "artifact_sha256": ["274d2c8661d8e5482970cb64434f47d25e955c443cc952e2b0d8e32b02a2d3e4"]
+    },
+    {
+      "url": "https://www.taptap.cn/moment/800623911493438323",
+      "artifact_sha256": [
+        "c877f3e1576f6cac043f6bd64735fbec49cdabc3c83b6f6470b74c65d6cfd084",
+        "51ee975216bcfcb00ed3c5e00157e6db2782fc059b4e032ba952e66fc3832326",
+        "95a589e0018a79175085d9b87b9d99cb0883133fcaea2771e42c0a9761d3b987"
+      ]
+    },
+    {
+      "url": "https://www.taptap.cn/moment/793146703359247295",
+      "artifact_sha256": ["a6ecaacdc828e6d2cfe127c0d1806a0a5119d19261b24ea4a17e46477433c410"]
+    }
+  ]
+}

@@ -4,6 +4,7 @@ import { hashDistance } from '../extract/image';
 import { manifestSchema, readLatestManifest } from '../research/io';
 import { execFileSync } from 'node:child_process';
 import { z } from 'zod';
+import { readCommittedChangeEvidence } from './change-evidence';
 // Raw inbox artifacts are intentionally untracked. In a clean checkout, replay
 // the committed evaluations through the same manifest and duplicate checks.
 let hasInbox = true;
@@ -16,6 +17,12 @@ try {
 const runs = [];
 if (hasInbox) runs.push(await readLatestManifest('research/inbox'));
 else {
+  const tracked = execFileSync('git', ['ls-files', '-z', '--', 'research/runs'], {
+    encoding: 'utf8',
+  })
+    .split('\0')
+    .filter(Boolean);
+  await readCommittedChangeEvidence(tracked);
   const paths = execFileSync('git', ['ls-files', 'research/runs/*/evaluation.json'], {
     encoding: 'utf8',
   })

@@ -1,11 +1,14 @@
 import { createHash } from 'node:crypto';
-import { readFile } from 'node:fs/promises';
+import { open, readFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { z } from 'zod';
 import type { ChangeEvidence } from '../../src/lib/refresh';
 import { readManifest } from '../research/io';
 
-const receiptSchema = z.array(
+// Each committed evidence JSON file is limited to 256 KiB, measured in bytes.
+export const MAX_EVIDENCE_FILE_BYTES = 262144;
+const runIdSchema = z.string().regex(/^[a-zA-Z0-9-]+$/);
+export const receiptSchema = z.array(
   z
     .object({
       lineup_id: z.string().regex(/^[a-z0-9-]+$/),
@@ -17,6 +20,82 @@ const receiptSchema = z.array(
     .strict(),
 );
 
+export const committedEvidenceSchema = z
+  .object({
+    run_id: runIdSchema,
+    sources: z.array(
+      z
+        .object({ url: z.url(), artifact_sha256: z.array(z.string().regex(/^[a-f0-9]{64}$/)) })
+        .strict(),
+    ),
+  })
+  .strict();
+
+async function readEvidenceJson(path: string): Promise<unknown> {
+  const file = await open(path, 'r');
+  try {
+    const bytes = Buffer.alloc(MAX_EVIDENCE_FILE_BYTES + 1);
+    let length = 0;
+    while (length < bytes.length) {
+      const result = await file.read(bytes, length, bytes.length - length, null);
+      if (!result.bytesRead) break;
+      length += result.bytesRead;
+    }
+    if (length > MAX_EVIDENCE_FILE_BYTES) throw Error(`证据文件超过 256 KiB：${path}`);
+    return JSON.parse(bytes.subarray(0, length).toString('utf8'));
+  } finally {
+    await file.close();
+  }
+}
+
+export function assertNoTrackedInbox(paths: string[]): void {
+  if (paths.some((path) => path.startsWith('research/inbox/')))
+    throw Error('不允许跟踪 research/inbox 文件');
+}
+
+/** Paths are repository-relative tracked paths, not directory contents. */
+export async function readCommittedChangeEvidence(
+  paths: string[],
+  repositoryRoot = '.',
+): Promise<{ evidence: ChangeEvidence[]; accessibleUrls: string[] }> {
+  const evidence: ChangeEvidence[] = [];
+  const accessibleUrls: string[] = [];
+  const records = paths.filter((path) =>
+    /^research\/runs\/[^/]+\/(changes|evidence)\.json$/.test(path),
+  );
+  const evidencePaths = new Set(records.filter((path) => path.endsWith('/evidence.json')));
+  const sourcesByRun = new Map<string, z.infer<typeof committedEvidenceSchema>>();
+  for (const path of evidencePaths) {
+    const runId = path.split('/')[2];
+    runIdSchema.parse(runId);
+    const record = committedEvidenceSchema.parse(
+      await readEvidenceJson(join(repositoryRoot, path)),
+    );
+    if (record.run_id !== runId) throw Error('研究运行 ID 与路径不匹配');
+    sourcesByRun.set(runId, record);
+    accessibleUrls.push(...record.sources.map((source) => source.url));
+  }
+  for (const path of records.filter((path) => path.endsWith('/changes.json'))) {
+    const runId = path.split('/')[2];
+    runIdSchema.parse(runId);
+    const receipts = receiptSchema.parse(await readEvidenceJson(join(repositoryRoot, path)));
+    const record = sourcesByRun.get(runId);
+    if (!record) throw Error(`缺少已跟踪的研究证据：${runId}`);
+    for (const receipt of receipts) {
+      if (
+        !record.sources.some(
+          (source) =>
+            source.url === receipt.source_url &&
+            source.artifact_sha256.includes(receipt.artifact_sha256),
+        )
+      )
+        throw Error(`变更证据来源或哈希不匹配：${receipt.lineup_id}`);
+    }
+    evidence.push(...receipts);
+  }
+  return { evidence, accessibleUrls };
+}
+
 export async function readChangeEvidence(
   runId: string,
   researchRoot = 'research',
@@ -27,7 +106,7 @@ export async function readChangeEvidence(
   if (manifest.run_id !== runId) throw Error('研究运行 ID 不匹配');
   let raw: unknown = [];
   try {
-    raw = JSON.parse(await readFile(join(researchRoot, 'runs', runId, 'changes.json'), 'utf8'));
+    raw = await readEvidenceJson(join(researchRoot, 'runs', runId, 'changes.json'));
   } catch (e: unknown) {
     if ((e as NodeJS.ErrnoException).code !== 'ENOENT') throw e;
   }

@@ -1,0 +1,342 @@
+[
+  {
+    "sha256": "49d54fb70d24580f661d5144e3295391d3ce6816cb104fda5ecf468aca15736e",
+    "status": "pending",
+    "reason": "Not fully visually cleared this round; left for follow-up review. No production write."
+  },
+  {
+    "sha256": "7c22b55b20ec6a43d47ce17b125fc7a8da6513fbe7b75ccbcdb2b88ce71be19c",
+    "status": "pending",
+    "reason": "Not fully visually cleared this round; left for follow-up review. No production write."
+  },
+  {
+    "sha256": "394e1e1c6344179abfefbcf993689f4551231bc6763b2be8cfbcf4ab1d420015",
+    "status": "pending",
+    "reason": "Not fully visually cleared this round; left for follow-up review. No production write."
+  },
+  {
+    "sha256": "6a58776bd808327843b7884b432dbc85de85993fa52d7a5a7fbd8495a5b0a6be",
+    "status": "pending",
+    "reason": "Not fully visually cleared this round; left for follow-up review. No production write."
+  },
+  {
+    "sha256": "0d483af451a694b923f047037c2da948d10ed2ab40b704907022335b8d7ebbfe",
+    "status": "pending",
+    "reason": "Not fully visually cleared this round; left for follow-up review. No production write."
+  },
+  {
+    "sha256": "3f6589e9c47915f2d0325a5e1e84e83e03b5fbb5504cf13b89f82e36ef2bbdea",
+    "status": "pending",
+    "reason": "Not fully visually cleared this round; left for follow-up review. No production write."
+  },
+  {
+    "sha256": "b134991743879d543770220da533f4e46ec5f0ce103dd937de694f11a75064ce",
+    "status": "pending",
+    "reason": "Not fully visually cleared this round; left for follow-up review. No production write."
+  },
+  {
+    "sha256": "ca41ee5c034beac4cdf66a5a7319963812c1dd7708e8ee938f0536ef39436ec8",
+    "status": "pending",
+    "reason": "Not fully visually cleared this round; left for follow-up review. No production write."
+  },
+  {
+    "sha256": "ba1b128c51df7e01593179e9d8bb851f6beae566c8b8aab5017659b467be25b2",
+    "status": "rejected",
+    "reason": "WeGame promotional/cover art; not a configuration image."
+  },
+  {
+    "sha256": "2967e59bcaf9197318c8963b99bb53beda2a4d86ba73564bbe9ecf2d7b35c82a",
+    "status": "rejected",
+    "reason": "WeGame promotional/cover art; not a configuration image."
+  },
+  {
+    "sha256": "15c37ad957c87ba1ccde3804cd68409f44f1e34ad33daf19e95cb6c03dffff44",
+    "status": "rejected",
+    "reason": "WeGame promotional/cover art; not a configuration image."
+  },
+  {
+    "sha256": "345fee67dcc794b2fa922e93a853c3135d55bed220801efc1032219e49d0cf2e",
+    "status": "pending",
+    "reason": "Not fully visually cleared this round; left for follow-up review. No production write."
+  },
+  {
+    "sha256": "eb5aefa4f1b96bfa80a32c7a18e4d394ddfc3177c8db80aea428949b5f8124df",
+    "status": "pending",
+    "reason": "Not fully visually cleared this round; left for follow-up review. No production write."
+  },
+  {
+    "sha256": "d451feada5b4f20a3bc34dd13ab8592c81a5f22544fbd24f8bb7d5c9592651ac",
+    "status": "rejected",
+    "reason": "WeGame promotional/cover art; not a configuration image."
+  },
+  {
+    "sha256": "aec5db4f6ea523434ade35ed6c26a56b6590f77fe996b1b97c264de2a9320d59",
+    "status": "pending",
+    "reason": "Not fully visually cleared this round; left for follow-up review. No production write."
+  },
+  {
+    "sha256": "31520ef7e740aec6580593ac0c45573d39db4bbac7b3c2ddf2f4fd6017e65118",
+    "status": "pending",
+    "reason": "Not fully visually cleared this round; left for follow-up review. No production write."
+  },
+  {
+    "sha256": "7b1bc0524b35ab39b8194ddef2922665e25680890c54589643fa5e05f930117c",
+    "status": "pending",
+    "reason": "Not fully visually cleared this round; left for follow-up review. No production write."
+  },
+  {
+    "sha256": "7fe9a3ae155c31770e9e6ee46655bd256166215df0399c77ba96c416313bab8a",
+    "status": "pending",
+    "reason": "Not fully visually cleared this round; left for follow-up review. No production write."
+  },
+  {
+    "sha256": "758fa766186cb09506fe29ff663f235f42d14ab4434a120ceb991e4bac5213f1",
+    "status": "pending",
+    "reason": "Not fully visually cleared this round; left for follow-up review. No production write."
+  },
+  {
+    "sha256": "2f3ba5e61a706a56357ad66057a40d596a31b86ff410bc581f66c2647c58aa85",
+    "status": "pending",
+    "reason": "Not fully visually cleared this round; left for follow-up review. No production write."
+  },
+  {
+    "sha256": "50daa1ab57693697bf9fa8701a9ec6552abc2e1e70d8b028f6da7427f2911b76",
+    "status": "verified",
+    "reason": "Complete six-member S2 config on 17173 article explicitly labeled S2; archived under data/archive/."
+  },
+  {
+    "sha256": "0194ba7b2e48f3f0cc314152989dad36795efafb9183c04f51dc813c83bda331",
+    "status": "verified",
+    "reason": "Complete six-member S2 config on 17173 article explicitly labeled S2; archived under data/archive/."
+  },
+  {
+    "sha256": "22a4937656cf806ad4480ade5e5e654964aae29944b8bd07e0f751c2619e9bc1",
+    "status": "verified",
+    "reason": "Complete six-member S2 config on 17173 article explicitly labeled S2; archived under data/archive/."
+  },
+  {
+    "sha256": "fe00ad15730fbdbb17ac0b9acfaed8cebb7d79e7b84cfa84071fef300bb84326",
+    "status": "verified",
+    "reason": "Complete six-member S2 config on 17173 article explicitly labeled S2; archived under data/archive/."
+  },
+  {
+    "sha256": "22e9c005b39005cc88b4bdd00a6b7e76e7264966de1802206a975ed1cde90f8e",
+    "status": "pending",
+    "reason": "Not fully visually cleared this round; left for follow-up review. No production write."
+  },
+  {
+    "sha256": "17ae4552deffa53e70c0d792827d526339eb72c3af04c6688a43391a40d1bcd3",
+    "status": "pending",
+    "reason": "Not fully visually cleared this round; left for follow-up review. No production write."
+  },
+  {
+    "sha256": "b13ab6373f324f7bf92efcc79e81db51328dc2a82a211f5158fe09724375ab5b",
+    "status": "pending",
+    "reason": "Not fully visually cleared this round; left for follow-up review. No production write."
+  },
+  {
+    "sha256": "bf2acec395aa0b95657014576fa7801851d064f21b5b771e875f50e107532f6b",
+    "status": "pending",
+    "reason": "Not fully visually cleared this round; left for follow-up review. No production write."
+  },
+  {
+    "sha256": "abc3dda50789691070542d7dac38665e2965bf1763f605ba974b9a35ae485a40",
+    "status": "pending",
+    "reason": "Not fully visually cleared this round; left for follow-up review. No production write."
+  },
+  {
+    "sha256": "0480d78106e5eba8d6c12fcd2293a18befef405f1df68394a4cd99ec9029b145",
+    "status": "pending",
+    "reason": "Not fully visually cleared this round; left for follow-up review. No production write."
+  },
+  {
+    "sha256": "b76df8ce0a8343693cdff2dd2217b5a737d340e65e766ff323525ba83c664c36",
+    "status": "pending",
+    "reason": "Not fully visually cleared this round; left for follow-up review. No production write."
+  },
+  {
+    "sha256": "a539c411a0843cc4b0ae4f69d3f1f5b001fda99c452571e79899814d97871c8b",
+    "status": "rejected",
+    "reason": "Wiki homepage decorative image; not a configuration."
+  },
+  {
+    "sha256": "6a6451ab3bfdbee2bbe110078e22747952893a60531ba2d2ea79ce4c667e9e4d",
+    "status": "rejected",
+    "reason": "Wiki homepage decorative image; not a configuration."
+  },
+  {
+    "sha256": "d0891a223db430fbda5a952e76d82ce177e673e1b04e6a1eaa1e15cc21d551f2",
+    "status": "pending",
+    "reason": "Not fully visually cleared this round; left for follow-up review. No production write."
+  },
+  {
+    "sha256": "1d908dc6febb73a260bbee9ea318e8b18149dd887b22d8917ecceda9e4e00162",
+    "status": "rejected",
+    "reason": "Wiki homepage decorative image; not a configuration."
+  },
+  {
+    "sha256": "6150b0762a1294b8ea6538097bb3641075ebca74e5320b5322854e2cc132f9d7",
+    "status": "rejected",
+    "reason": "Wiki homepage decorative image; not a configuration."
+  },
+  {
+    "sha256": "575ffe5c4176b5500d1449b4daac185b5d6907dc7367b6a5bbc7752187d948db",
+    "status": "pending",
+    "reason": "Not fully visually cleared this round; left for follow-up review. No production write."
+  },
+  {
+    "sha256": "0ceedd37fee92cba18f435d7a888696dd0a2f3bf4dd3bac6a94c9390cfaa8f7b",
+    "status": "pending",
+    "reason": "Not fully visually cleared this round; left for follow-up review. No production write."
+  },
+  {
+    "sha256": "6bb948eeee8a1668309189f45994177432df575c15a28f2d88358546d0aa986e",
+    "status": "pending",
+    "reason": "Not fully visually cleared this round; left for follow-up review. No production write."
+  },
+  {
+    "sha256": "e1e6e5115901439db603c47d173fc2dd5b36660b4a19b4adea8622beffdc454f",
+    "status": "pending",
+    "reason": "Not fully visually cleared this round; left for follow-up review. No production write."
+  },
+  {
+    "sha256": "62859e1332bf0ed8b915f76a25cde3e4225523ef1dba53e11aabb0a9cdaa3a07",
+    "status": "pending",
+    "reason": "Not fully visually cleared this round; left for follow-up review. No production write."
+  },
+  {
+    "sha256": "3a09396cdf9a15da666548d6354d6111e11fd2553c7eeca82cbfffcd8098a0d1",
+    "status": "pending",
+    "reason": "Not fully visually cleared this round; left for follow-up review. No production write."
+  },
+  {
+    "sha256": "a3615d746011c3ab23763610fcc0eef7623f8989beeff8cd3f8b603bffdf6a97",
+    "status": "pending",
+    "reason": "Not fully visually cleared this round; left for follow-up review. No production write."
+  },
+  {
+    "sha256": "5d8741f800343a240fdb1430210f2669b0219a0624ee13b699f813e77b3418d1",
+    "status": "pending",
+    "reason": "Not fully visually cleared this round; left for follow-up review. No production write."
+  },
+  {
+    "sha256": "60a23cbbbb3c8a5952dd7f5e9179418eebe204cc241e84e0e331cfdbdfa34ac1",
+    "status": "rejected",
+    "reason": "Team-selection icon list only; skills/bloodlines not readable as a config sheet."
+  },
+  {
+    "sha256": "41b7a408e2650ca4ea31b4296a598faaa5b2f08b5f89e27901ae1b7b29046f1e",
+    "status": "rejected",
+    "reason": "Team-selection icon list only; skills/bloodlines not readable as a config sheet."
+  },
+  {
+    "sha256": "b562045b2bd64f92d63cca91e21e4e04fad70ad93ed6c86e1ae4983b97e27120",
+    "status": "pending",
+    "reason": "Not fully visually cleared this round; left for follow-up review. No production write."
+  },
+  {
+    "sha256": "a1b8f395f1b5078d379bd1fd8fcdf7390fae2c7d2b5d046814c6637930807ffe",
+    "status": "pending",
+    "reason": "Not fully visually cleared this round; left for follow-up review. No production write."
+  },
+  {
+    "sha256": "f0cacdf06757cb0d3bebe2e193d97d16935eb5b11bed2a46f32972e9a1c9db36",
+    "status": "pending",
+    "reason": "Not fully visually cleared this round; left for follow-up review. No production write."
+  },
+  {
+    "sha256": "bbb1670b8739e68e8663e6b38777ca7b568416e84eb8e91d482f1505b517483b",
+    "status": "pending",
+    "reason": "Not fully visually cleared this round; left for follow-up review. No production write."
+  },
+  {
+    "sha256": "a6b7e9208a80e29373f4fa0407343e6bdf52ebe477176f9a683e2325604ee3c1",
+    "status": "pending",
+    "reason": "Not fully visually cleared this round; left for follow-up review. No production write."
+  },
+  {
+    "sha256": "230284834a9397b7671d364c876de299b71f7894a424a6c2715d7b1bfd44b373",
+    "status": "pending",
+    "reason": "Not fully visually cleared this round; left for follow-up review. No production write."
+  },
+  {
+    "sha256": "23674881006f2885d456147496cce4fbf3973a3f8c43a6acf80079801fe496be",
+    "status": "pending",
+    "reason": "Not fully visually cleared this round; left for follow-up review. No production write."
+  },
+  {
+    "sha256": "08baef80a664d249d32d53727797d5e63567f9c235521e37ce727d96170e6d88",
+    "status": "pending",
+    "reason": "Not fully visually cleared this round; left for follow-up review. No production write."
+  },
+  {
+    "sha256": "9103cd96ead733ee7dbc48d036faaa757170a67b8fa82993098a15eb65f4ff77",
+    "status": "rejected",
+    "reason": "Season rewards / rank summary UI with spirit list; not a full configuration sheet."
+  },
+  {
+    "sha256": "2d45334a81cf2d914e284e428c46858cef26379a239515b49b5b603645692991",
+    "status": "pending",
+    "reason": "TapTap wide image from 87% win-rate post; needs visual confirm whether full config or collage; season unclear."
+  },
+  {
+    "sha256": "a7cf02b61c4c30c91d1b87e87f254ea0e407e0824363dcd39e1926729a03380a",
+    "status": "pending",
+    "reason": "Same TapTap 队伍1 config (compressed JPEG twin of 8f8712…); pending season confirmation."
+  },
+  {
+    "sha256": "8f8712038c794bb0d0023ab2fa4cc6c3edd10bc292027fe99d617473109ef7e6",
+    "status": "pending",
+    "reason": "Complete six-pet config (队伍1) on TapTap, but season evidence is early-2026 cup dates without explicit S2/S3/S4 label; keep candidate."
+  },
+  {
+    "sha256": "3c1064aeed6b30ff06f497201db54568e26077c652a4758f2f8ce7248aea4c61",
+    "status": "pending",
+    "reason": "Not fully visually cleared this round; left for follow-up review. No production write."
+  },
+  {
+    "sha256": "ae6549b7776c9ac2f56ba6a77f32afef3b97af3c0708c957b75efd4ba7b63f8b",
+    "status": "rejected",
+    "reason": "Meme/cat reaction image; not a six-member configuration."
+  },
+  {
+    "sha256": "4b36a1e19c737e9a22d364534f988db6c5023da1ebfe10120843fe19f4124bf8",
+    "status": "rejected",
+    "reason": "Government license document screenshot; not a lineup configuration."
+  },
+  {
+    "sha256": "91566d0c1c4ae3cb87852b257569b18244a955b826ef95da3090038bce4cf409",
+    "status": "pending",
+    "reason": "Not fully visually cleared this round; left for follow-up review. No production write."
+  },
+  {
+    "sha256": "a7362facd913789ef7230b6c5a8b03fa4dbcea69004e62cd7c18e74ecc5495ac",
+    "status": "pending",
+    "reason": "Not fully visually cleared this round; left for follow-up review. No production write."
+  },
+  {
+    "sha256": "911a830b02ad8b1d030b474be4cbea99368c1be74c6e7b6a23874da79d3e4e58",
+    "status": "pending",
+    "reason": "Not fully visually cleared this round; left for follow-up review. No production write."
+  },
+  {
+    "sha256": "f5af73ab6bc62ae8d45e8930418a50e9712a51df134712fab7a2f59518af1666",
+    "status": "pending",
+    "reason": "Not fully visually cleared this round; left for follow-up review. No production write."
+  },
+  {
+    "sha256": "cb987a73f54bdc3eac6bc5da10ede2914ab2a230c28bee4db310d52b213f493f",
+    "status": "pending",
+    "reason": "Not fully visually cleared this round; left for follow-up review. No production write."
+  },
+  {
+    "sha256": "51ee975216bcfcb00ed3c5e00157e6db2782fc059b4e032ba952e66fc3832326",
+    "status": "pending",
+    "reason": "Complete six-pet config (队伍2) titled 鼠鼠雪影队; community single source and season label not explicit on image; keep candidate."
+  },
+  {
+    "sha256": "95a589e0018a79175085d9b87b9d99cb0883133fcaea2771e42c0a9761d3b987",
+    "status": "rejected",
+    "reason": "Single-creature talent/detail UI; no complete six-member configuration."
+  }
+]

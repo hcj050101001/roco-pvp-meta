@@ -1,0 +1,85 @@
+{
+  "id": "thunder-rotation-3-s2",
+  "slug": "thunder-rotation-3-s2",
+  "name": "翠顶龙鱼霹雳队",
+  "aliases": [
+    "霹雳轮转队—3"
+  ],
+  "season": "S2",
+  "version_label": "狂欢怪谈",
+  "archetype": [
+    "轮转",
+    "翠顶",
+    "龙鱼"
+  ],
+  "summary": "翠顶夫人、绒光优优、龙鱼等六只精灵的完整配置。",
+  "roster": [
+    {
+      "name": "翠顶夫人",
+      "bloodline": null,
+      "skills": []
+    },
+    {
+      "name": "绒光优优",
+      "bloodline": null,
+      "skills": []
+    },
+    {
+      "name": "龙鱼",
+      "bloodline": null,
+      "skills": []
+    },
+    {
+      "name": "贝古斯",
+      "bloodline": null,
+      "skills": []
+    },
+    {
+      "name": "霹雳迪迪",
+      "bloodline": null,
+      "skills": []
+    },
+    {
+      "name": "魔力猫",
+      "bloodline": null,
+      "skills": []
+    }
+  ],
+  "lineup_images": [
+    {
+      "path": "/assets/lineups/thunder-rotation-3-s2/22a4937656cf806ad4480ade5e5e654964aae29944b8bd07e0f751c2619e9bc1.jpg",
+      "source_url": "https://i.17173cdn.com/2fhnvk/YWxqaGBf/cms3/lzopePbtzumhrrj.jpg",
+      "source_page_url": "https://news.17173.com/content/05272026/172842307.shtml",
+      "source_kind": "article",
+      "capture_method": "direct-image",
+      "published_at": "2026-05-27T17:28:42+08:00",
+      "captured_at": "2026-10-29T09:40:00+08:00",
+      "width": 1080,
+      "height": 603,
+      "sha256": "22a4937656cf806ad4480ade5e5e654964aae29944b8bd07e0f751c2619e9bc1",
+      "phash": "764b19a31e5c2e25",
+      "evidence_grade": "B",
+      "verified": true,
+      "verification_notes": "17173 S2 文内「霹雳轮转队—3」完整六人配置图。 技能未在本轮逐格抄录，skills 留空。仅作 S2 历史回顾。",
+      "attribution": "17173 编辑镜像 / 文内配图"
+    }
+  ],
+  "tutorials": [],
+  "sources": [
+    {
+      "url": "https://news.17173.com/content/05272026/172842307.shtml",
+      "type": "mirror",
+      "title": "《洛克王国：世界》s2热门阵容霹雳轮转队的几种思路附带最新火神轮转队",
+      "published_at": "2026-05-27T17:28:42+08:00",
+      "last_checked_at": "2026-10-29T09:40:00+08:00"
+    }
+  ],
+  "first_seen_at": "2026-10-29T09:40:00+08:00",
+  "last_verified_at": "2026-10-29T09:40:00+08:00",
+  "status": "archived",
+  "verification_notes": "赛季依据为来源标题与正文明确标注 S2；镜像编辑稿按 B 级处理，未当作原作者陈述。未确认精确教学视频。",
+  "archive_reason": "保留 S2 往期霹雳/火神轮转配置供回顾，不作为当前赛季原生阵容。",
+  "guides": [],
+  "signals": [],
+  "player_notes": []
+}

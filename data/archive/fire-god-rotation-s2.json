@@ -1,0 +1,86 @@
+{
+  "id": "fire-god-rotation-s2",
+  "slug": "fire-god-rotation-s2",
+  "name": "电咩咩火神队",
+  "aliases": [
+    "火神轮转队",
+    "电咩咩火神轮转"
+  ],
+  "season": "S2",
+  "version_label": "狂欢怪谈",
+  "archetype": [
+    "火神",
+    "轮转",
+    "电系"
+  ],
+  "summary": "电球咩咩、火神、火焰猿等六只精灵的完整配置。",
+  "roster": [
+    {
+      "name": "电球咩咩",
+      "bloodline": null,
+      "skills": []
+    },
+    {
+      "name": "火神",
+      "bloodline": null,
+      "skills": []
+    },
+    {
+      "name": "火焰猿",
+      "bloodline": null,
+      "skills": []
+    },
+    {
+      "name": "燃薪虫",
+      "bloodline": null,
+      "skills": []
+    },
+    {
+      "name": "烈火守护",
+      "bloodline": null,
+      "skills": []
+    },
+    {
+      "name": "化蝶",
+      "bloodline": null,
+      "skills": []
+    }
+  ],
+  "lineup_images": [
+    {
+      "path": "/assets/lineups/fire-god-rotation-s2/fe00ad15730fbdbb17ac0b9acfaed8cebb7d79e7b84cfa84071fef300bb84326.jpg",
+      "source_url": "https://i.17173cdn.com/2fhnvk/YWxqaGBf/cms3/crphPwbtzumhrqz.jpg",
+      "source_page_url": "https://news.17173.com/content/05272026/172842307.shtml",
+      "source_kind": "article",
+      "capture_method": "direct-image",
+      "published_at": "2026-05-27T17:28:42+08:00",
+      "captured_at": "2026-10-29T09:40:00+08:00",
+      "width": 1080,
+      "height": 654,
+      "sha256": "fe00ad15730fbdbb17ac0b9acfaed8cebb7d79e7b84cfa84071fef300bb84326",
+      "phash": "57a199a1cbf64c06",
+      "evidence_grade": "B",
+      "verified": true,
+      "verification_notes": "17173 S2 文内标注「最新的电咩咩火神队」完整六人配置图；成员顺序按图 2×3 从左到右、上到下。技能未在本轮逐格抄录，skills 留空。仅作 S2 历史回顾。",
+      "attribution": "17173 转载自公众号 / 文内配图"
+    }
+  ],
+  "tutorials": [],
+  "sources": [
+    {
+      "url": "https://news.17173.com/content/05272026/172842307.shtml",
+      "type": "mirror",
+      "title": "《洛克王国：世界》s2热门阵容霹雳轮转队的几种思路附带最新火神轮转队",
+      "published_at": "2026-05-27T17:28:42+08:00",
+      "last_checked_at": "2026-10-29T09:40:00+08:00"
+    }
+  ],
+  "first_seen_at": "2026-10-29T09:40:00+08:00",
+  "last_verified_at": "2026-10-29T09:40:00+08:00",
+  "status": "archived",
+  "verification_notes": "赛季依据为来源标题与正文明确标注 S2；镜像编辑稿按 B 级处理，未当作原作者陈述。未确认精确教学视频。",
+  "archive_reason": "保留 S2 往期霹雳/火神轮转配置供回顾，不作为当前赛季原生阵容。",
+  "guides": [],
+  "signals": [],
+  "player_notes": []
+}

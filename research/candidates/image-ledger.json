@@ -665,5 +665,759 @@
     ],
     "checked_at": "2026-10-23T10:07:29.322Z",
     "retry_after": null
+  },
+  "49d54fb70d24580f661d5144e3295391d3ce6816cb104fda5ecf468aca15736e": {
+    "sha256": "49d54fb70d24580f661d5144e3295391d3ce6816cb104fda5ecf468aca15736e",
+    "status": "pending",
+    "reason": "Not fully visually cleared this round; left for follow-up review. No production write.",
+    "fingerprint": "70356ad6190fd7786c0cfdde64dcb1e74bae433119a3acb37b2436492c063be1",
+    "references": [
+      "https://www.taptap.cn/moment/847022426351994538"
+    ],
+    "checked_at": "2026-10-29T01:37:03.485Z",
+    "retry_after": "2026-11-12T01:37:03.485Z"
+  },
+  "7c22b55b20ec6a43d47ce17b125fc7a8da6513fbe7b75ccbcdb2b88ce71be19c": {
+    "sha256": "7c22b55b20ec6a43d47ce17b125fc7a8da6513fbe7b75ccbcdb2b88ce71be19c",
+    "status": "pending",
+    "reason": "Not fully visually cleared this round; left for follow-up review. No production write.",
+    "fingerprint": "0333b13f29ed25cfc5c368c2f924153cae2a13fc0c81cf7d4b66a74d395601cc",
+    "references": [
+      "https://www.taptap.cn/app/188212/topic"
+    ],
+    "checked_at": "2026-10-29T01:37:03.485Z",
+    "retry_after": "2026-11-12T01:37:03.485Z"
+  },
+  "394e1e1c6344179abfefbcf993689f4551231bc6763b2be8cfbcf4ab1d420015": {
+    "sha256": "394e1e1c6344179abfefbcf993689f4551231bc6763b2be8cfbcf4ab1d420015",
+    "status": "pending",
+    "reason": "Not fully visually cleared this round; left for follow-up review. No production write.",
+    "fingerprint": "0333b13f29ed25cfc5c368c2f924153cae2a13fc0c81cf7d4b66a74d395601cc",
+    "references": [
+      "https://www.taptap.cn/app/188212/topic"
+    ],
+    "checked_at": "2026-10-29T01:37:03.485Z",
+    "retry_after": "2026-11-12T01:37:03.485Z"
+  },
+  "6a58776bd808327843b7884b432dbc85de85993fa52d7a5a7fbd8495a5b0a6be": {
+    "sha256": "6a58776bd808327843b7884b432dbc85de85993fa52d7a5a7fbd8495a5b0a6be",
+    "status": "pending",
+    "reason": "Not fully visually cleared this round; left for follow-up review. No production write.",
+    "fingerprint": "0333b13f29ed25cfc5c368c2f924153cae2a13fc0c81cf7d4b66a74d395601cc",
+    "references": [
+      "https://www.taptap.cn/app/188212/topic"
+    ],
+    "checked_at": "2026-10-29T01:37:03.485Z",
+    "retry_after": "2026-11-12T01:37:03.485Z"
+  },
+  "0d483af451a694b923f047037c2da948d10ed2ab40b704907022335b8d7ebbfe": {
+    "sha256": "0d483af451a694b923f047037c2da948d10ed2ab40b704907022335b8d7ebbfe",
+    "status": "pending",
+    "reason": "Not fully visually cleared this round; left for follow-up review. No production write.",
+    "fingerprint": "3d228a5d8dc2f386ab40d63980ced082fba32eee7fe5676f2c58a10892683be4",
+    "references": [
+      "https://www.taptap.cn/app/188212/topic"
+    ],
+    "checked_at": "2026-10-29T01:37:03.485Z",
+    "retry_after": "2026-11-12T01:37:03.485Z"
+  },
+  "3f6589e9c47915f2d0325a5e1e84e83e03b5fbb5504cf13b89f82e36ef2bbdea": {
+    "sha256": "3f6589e9c47915f2d0325a5e1e84e83e03b5fbb5504cf13b89f82e36ef2bbdea",
+    "status": "pending",
+    "reason": "Not fully visually cleared this round; left for follow-up review. No production write.",
+    "fingerprint": "7a6d3d2859218ad129e2a044676b8746f16368fa2d0b0b7b999e594c57e6d80b",
+    "references": [
+      "https://qiandao.com/topic?id=undefined"
+    ],
+    "checked_at": "2026-10-29T01:37:03.485Z",
+    "retry_after": "2026-11-12T01:37:03.485Z"
+  },
+  "b134991743879d543770220da533f4e46ec5f0ce103dd937de694f11a75064ce": {
+    "sha256": "b134991743879d543770220da533f4e46ec5f0ce103dd937de694f11a75064ce",
+    "status": "pending",
+    "reason": "Not fully visually cleared this round; left for follow-up review. No production write.",
+    "fingerprint": "7a6d3d2859218ad129e2a044676b8746f16368fa2d0b0b7b999e594c57e6d80b",
+    "references": [
+      "https://qiandao.com/topic?id=undefined"
+    ],
+    "checked_at": "2026-10-29T01:37:03.485Z",
+    "retry_after": "2026-11-12T01:37:03.485Z"
+  },
+  "ca41ee5c034beac4cdf66a5a7319963812c1dd7708e8ee938f0536ef39436ec8": {
+    "sha256": "ca41ee5c034beac4cdf66a5a7319963812c1dd7708e8ee938f0536ef39436ec8",
+    "status": "pending",
+    "reason": "Not fully visually cleared this round; left for follow-up review. No production write.",
+    "fingerprint": "7a6d3d2859218ad129e2a044676b8746f16368fa2d0b0b7b999e594c57e6d80b",
+    "references": [
+      "https://qiandao.com/topic?id=undefined"
+    ],
+    "checked_at": "2026-10-29T01:37:03.485Z",
+    "retry_after": "2026-11-12T01:37:03.485Z"
+  },
+  "ba1b128c51df7e01593179e9d8bb851f6beae566c8b8aab5017659b467be25b2": {
+    "sha256": "ba1b128c51df7e01593179e9d8bb851f6beae566c8b8aab5017659b467be25b2",
+    "status": "rejected",
+    "reason": "WeGame promotional/cover art; not a configuration image.",
+    "fingerprint": "f385b6d274964adfceebfe71b9b7c6e0188da9e67a161b0941bc7eb090d9750f",
+    "references": [
+      "https://www.wegame.com.cn/act/wegame/nrc20260618/?wg_ad_from=communitycoverNew"
+    ],
+    "checked_at": "2026-10-29T01:37:03.485Z",
+    "retry_after": null
+  },
+  "2967e59bcaf9197318c8963b99bb53beda2a4d86ba73564bbe9ecf2d7b35c82a": {
+    "sha256": "2967e59bcaf9197318c8963b99bb53beda2a4d86ba73564bbe9ecf2d7b35c82a",
+    "status": "rejected",
+    "reason": "WeGame promotional/cover art; not a configuration image.",
+    "fingerprint": "552610fe659ba5a344b6a0f71faad238ec54703a90ffac187f7d0c5cc6e81b8d",
+    "references": [
+      "https://www.wegame.com.cn/act/wegame/nrc20260618/?wg_ad_from=communitycoverNew"
+    ],
+    "checked_at": "2026-10-29T01:37:03.485Z",
+    "retry_after": null
+  },
+  "15c37ad957c87ba1ccde3804cd68409f44f1e34ad33daf19e95cb6c03dffff44": {
+    "sha256": "15c37ad957c87ba1ccde3804cd68409f44f1e34ad33daf19e95cb6c03dffff44",
+    "status": "rejected",
+    "reason": "WeGame promotional/cover art; not a configuration image.",
+    "fingerprint": "87ab8c8e8f0b80763ca401562571b28a95414bd01574ee6792614c5869d25c9c",
+    "references": [
+      "https://www.wegame.com.cn/act/wegame/nrc20260618/?wg_ad_from=communitycoverNew"
+    ],
+    "checked_at": "2026-10-29T01:37:03.485Z",
+    "retry_after": null
+  },
+  "345fee67dcc794b2fa922e93a853c3135d55bed220801efc1032219e49d0cf2e": {
+    "sha256": "345fee67dcc794b2fa922e93a853c3135d55bed220801efc1032219e49d0cf2e",
+    "status": "pending",
+    "reason": "Not fully visually cleared this round; left for follow-up review. No production write.",
+    "fingerprint": "48de93141abdd376ca5dfe9f79bc9d612e9a750561d17c5c4f26508b179abf4d",
+    "references": [
+      "https://www.wegame.com.cn/act/wegame/nrc20260618/?wg_ad_from=communitycoverNew"
+    ],
+    "checked_at": "2026-10-29T01:37:03.485Z",
+    "retry_after": "2026-11-12T01:37:03.485Z"
+  },
+  "eb5aefa4f1b96bfa80a32c7a18e4d394ddfc3177c8db80aea428949b5f8124df": {
+    "sha256": "eb5aefa4f1b96bfa80a32c7a18e4d394ddfc3177c8db80aea428949b5f8124df",
+    "status": "pending",
+    "reason": "Not fully visually cleared this round; left for follow-up review. No production write.",
+    "fingerprint": "48de93141abdd376ca5dfe9f79bc9d612e9a750561d17c5c4f26508b179abf4d",
+    "references": [
+      "https://www.wegame.com.cn/act/wegame/nrc20260618/?wg_ad_from=communitycoverNew"
+    ],
+    "checked_at": "2026-10-29T01:37:03.485Z",
+    "retry_after": "2026-11-12T01:37:03.485Z"
+  },
+  "d451feada5b4f20a3bc34dd13ab8592c81a5f22544fbd24f8bb7d5c9592651ac": {
+    "sha256": "d451feada5b4f20a3bc34dd13ab8592c81a5f22544fbd24f8bb7d5c9592651ac",
+    "status": "rejected",
+    "reason": "WeGame promotional/cover art; not a configuration image.",
+    "fingerprint": "c0ca10629af332c2443e6ff06f754fc749ff3f534e8871dd9421dabe5f31049c",
+    "references": [
+      "https://www.wegame.com.cn/act/wegame/nrc20260618/?wg_ad_from=communitycoverNew"
+    ],
+    "checked_at": "2026-10-29T01:37:03.485Z",
+    "retry_after": null
+  },
+  "aec5db4f6ea523434ade35ed6c26a56b6590f77fe996b1b97c264de2a9320d59": {
+    "sha256": "aec5db4f6ea523434ade35ed6c26a56b6590f77fe996b1b97c264de2a9320d59",
+    "status": "pending",
+    "reason": "Not fully visually cleared this round; left for follow-up review. No production write.",
+    "fingerprint": "ae8b9248d873ad6170f3cec663c68f5e27960c1f78f073bc970b4a3e668cecf9",
+    "references": [
+      "https://www.wegame.com.cn/act/wegame/lkwgsj20260409launch/index.html"
+    ],
+    "checked_at": "2026-10-29T01:37:03.485Z",
+    "retry_after": "2026-11-12T01:37:03.485Z"
+  },
+  "31520ef7e740aec6580593ac0c45573d39db4bbac7b3c2ddf2f4fd6017e65118": {
+    "sha256": "31520ef7e740aec6580593ac0c45573d39db4bbac7b3c2ddf2f4fd6017e65118",
+    "status": "pending",
+    "reason": "Not fully visually cleared this round; left for follow-up review. No production write.",
+    "fingerprint": "ae8b9248d873ad6170f3cec663c68f5e27960c1f78f073bc970b4a3e668cecf9",
+    "references": [
+      "https://www.wegame.com.cn/act/wegame/lkwgsj20260409launch/index.html"
+    ],
+    "checked_at": "2026-10-29T01:37:03.485Z",
+    "retry_after": "2026-11-12T01:37:03.485Z"
+  },
+  "7b1bc0524b35ab39b8194ddef2922665e25680890c54589643fa5e05f930117c": {
+    "sha256": "7b1bc0524b35ab39b8194ddef2922665e25680890c54589643fa5e05f930117c",
+    "status": "pending",
+    "reason": "Not fully visually cleared this round; left for follow-up review. No production write.",
+    "fingerprint": "89ff62a420b72359e7b88edab8e44b269d31fa48a3ac2736024e71203343d47f",
+    "references": [
+      "https://www.wegame.com.cn/act/wegame/lkwgsj20260521v/index.html"
+    ],
+    "checked_at": "2026-10-29T01:37:03.485Z",
+    "retry_after": "2026-11-12T01:37:03.485Z"
+  },
+  "7fe9a3ae155c31770e9e6ee46655bd256166215df0399c77ba96c416313bab8a": {
+    "sha256": "7fe9a3ae155c31770e9e6ee46655bd256166215df0399c77ba96c416313bab8a",
+    "status": "pending",
+    "reason": "Not fully visually cleared this round; left for follow-up review. No production write.",
+    "fingerprint": "89ff62a420b72359e7b88edab8e44b269d31fa48a3ac2736024e71203343d47f",
+    "references": [
+      "https://www.wegame.com.cn/act/wegame/lkwgsj20260521v/index.html"
+    ],
+    "checked_at": "2026-10-29T01:37:03.485Z",
+    "retry_after": "2026-11-12T01:37:03.485Z"
+  },
+  "758fa766186cb09506fe29ff663f235f42d14ab4434a120ceb991e4bac5213f1": {
+    "sha256": "758fa766186cb09506fe29ff663f235f42d14ab4434a120ceb991e4bac5213f1",
+    "status": "pending",
+    "reason": "Not fully visually cleared this round; left for follow-up review. No production write.",
+    "fingerprint": "2b6d326459d59df311b0c29c3fbede6c647a686c5f8522cf4f0a09fc8194a12f",
+    "references": [
+      "https://news.17173.com/content/05272026/172842307.shtml"
+    ],
+    "checked_at": "2026-10-29T01:37:03.485Z",
+    "retry_after": "2026-11-12T01:37:03.485Z"
+  },
+  "2f3ba5e61a706a56357ad66057a40d596a31b86ff410bc581f66c2647c58aa85": {
+    "sha256": "2f3ba5e61a706a56357ad66057a40d596a31b86ff410bc581f66c2647c58aa85",
+    "status": "pending",
+    "reason": "Not fully visually cleared this round; left for follow-up review. No production write.",
+    "fingerprint": "94ec88c8c3c69e2009da46507ae238e22384007b4a2983e3f9685b4d805c4130",
+    "references": [
+      "https://news.17173.com/content/05272026/172842307.shtml"
+    ],
+    "checked_at": "2026-10-29T01:37:03.485Z",
+    "retry_after": "2026-11-12T01:37:03.485Z"
+  },
+  "50daa1ab57693697bf9fa8701a9ec6552abc2e1e70d8b028f6da7427f2911b76": {
+    "sha256": "50daa1ab57693697bf9fa8701a9ec6552abc2e1e70d8b028f6da7427f2911b76",
+    "status": "verified",
+    "reason": "Complete six-member S2 config on 17173 article explicitly labeled S2; archived under data/archive/.",
+    "fingerprint": "1d68087d13fc4586372fe84f325f9a9d5ada2d4ebf4b52ccccb4d3fc0a6d2f90",
+    "references": [
+      "https://news.17173.com/content/05272026/172842307.shtml"
+    ],
+    "checked_at": "2026-10-29T01:37:03.485Z",
+    "retry_after": null
+  },
+  "0194ba7b2e48f3f0cc314152989dad36795efafb9183c04f51dc813c83bda331": {
+    "sha256": "0194ba7b2e48f3f0cc314152989dad36795efafb9183c04f51dc813c83bda331",
+    "status": "verified",
+    "reason": "Complete six-member S2 config on 17173 article explicitly labeled S2; archived under data/archive/.",
+    "fingerprint": "54c594e3c9f035f223927a62421b6bcfa646229f46665e161ab1bde704efc04c",
+    "references": [
+      "https://news.17173.com/content/05272026/172842307.shtml"
+    ],
+    "checked_at": "2026-10-29T01:37:03.485Z",
+    "retry_after": null
+  },
+  "22a4937656cf806ad4480ade5e5e654964aae29944b8bd07e0f751c2619e9bc1": {
+    "sha256": "22a4937656cf806ad4480ade5e5e654964aae29944b8bd07e0f751c2619e9bc1",
+    "status": "verified",
+    "reason": "Complete six-member S2 config on 17173 article explicitly labeled S2; archived under data/archive/.",
+    "fingerprint": "2a4627665709bcf3ddcefe16b97fec79e184c0503f2a4cd7c3e68ef07c16d669",
+    "references": [
+      "https://news.17173.com/content/05272026/172842307.shtml"
+    ],
+    "checked_at": "2026-10-29T01:37:03.485Z",
+    "retry_after": null
+  },
+  "fe00ad15730fbdbb17ac0b9acfaed8cebb7d79e7b84cfa84071fef300bb84326": {
+    "sha256": "fe00ad15730fbdbb17ac0b9acfaed8cebb7d79e7b84cfa84071fef300bb84326",
+    "status": "verified",
+    "reason": "Complete six-member S2 config on 17173 article explicitly labeled S2; archived under data/archive/.",
+    "fingerprint": "e833dc0f24fc19be165b399d683dcaa951b12bf90db1b239ccfeb1e0bdd67057",
+    "references": [
+      "https://news.17173.com/content/05272026/172842307.shtml"
+    ],
+    "checked_at": "2026-10-29T01:37:03.485Z",
+    "retry_after": null
+  },
+  "22e9c005b39005cc88b4bdd00a6b7e76e7264966de1802206a975ed1cde90f8e": {
+    "sha256": "22e9c005b39005cc88b4bdd00a6b7e76e7264966de1802206a975ed1cde90f8e",
+    "status": "pending",
+    "reason": "Not fully visually cleared this round; left for follow-up review. No production write.",
+    "fingerprint": "4b1e315bb15ec632be4bdef6f43b50a4f08df6c1a589936c953a02832bd8d504",
+    "references": [
+      "https://news.17173.com/content/04062026/170103877.shtml"
+    ],
+    "checked_at": "2026-10-29T01:37:03.485Z",
+    "retry_after": "2026-11-12T01:37:03.485Z"
+  },
+  "17ae4552deffa53e70c0d792827d526339eb72c3af04c6688a43391a40d1bcd3": {
+    "sha256": "17ae4552deffa53e70c0d792827d526339eb72c3af04c6688a43391a40d1bcd3",
+    "status": "pending",
+    "reason": "Not fully visually cleared this round; left for follow-up review. No production write.",
+    "fingerprint": "e3f6999932152a0046125a769429370498f6fb399fdb291a235efdeb56869c02",
+    "references": [
+      "https://news.17173.com/content/04062026/170103877.shtml"
+    ],
+    "checked_at": "2026-10-29T01:37:03.485Z",
+    "retry_after": "2026-11-12T01:37:03.485Z"
+  },
+  "b13ab6373f324f7bf92efcc79e81db51328dc2a82a211f5158fe09724375ab5b": {
+    "sha256": "b13ab6373f324f7bf92efcc79e81db51328dc2a82a211f5158fe09724375ab5b",
+    "status": "pending",
+    "reason": "Not fully visually cleared this round; left for follow-up review. No production write.",
+    "fingerprint": "095041b56d7d46674787b3db2659ed7a7e1603a1c48b49f69f4fc6d650c5eaeb",
+    "references": [
+      "https://news.17173.com/content/04062026/170103877.shtml"
+    ],
+    "checked_at": "2026-10-29T01:37:03.485Z",
+    "retry_after": "2026-11-12T01:37:03.485Z"
+  },
+  "bf2acec395aa0b95657014576fa7801851d064f21b5b771e875f50e107532f6b": {
+    "sha256": "bf2acec395aa0b95657014576fa7801851d064f21b5b771e875f50e107532f6b",
+    "status": "pending",
+    "reason": "Not fully visually cleared this round; left for follow-up review. No production write.",
+    "fingerprint": "6ed6d48f12fa5bb7f53d16cc2decf644dfa6163ee3bd478229e7c4422891bfc6",
+    "references": [
+      "https://news.17173.com/content/04062026/170103877.shtml"
+    ],
+    "checked_at": "2026-10-29T01:37:03.485Z",
+    "retry_after": "2026-11-12T01:37:03.485Z"
+  },
+  "abc3dda50789691070542d7dac38665e2965bf1763f605ba974b9a35ae485a40": {
+    "sha256": "abc3dda50789691070542d7dac38665e2965bf1763f605ba974b9a35ae485a40",
+    "status": "pending",
+    "reason": "Not fully visually cleared this round; left for follow-up review. No production write.",
+    "fingerprint": "d9d9d7ed4462b1a2fc73b15df127456565401a2aa31e8cb5dcf078146420c1d6",
+    "references": [
+      "https://news.17173.com/content/04042026/110201912.shtml"
+    ],
+    "checked_at": "2026-10-29T01:37:03.485Z",
+    "retry_after": "2026-11-12T01:37:03.485Z"
+  },
+  "0480d78106e5eba8d6c12fcd2293a18befef405f1df68394a4cd99ec9029b145": {
+    "sha256": "0480d78106e5eba8d6c12fcd2293a18befef405f1df68394a4cd99ec9029b145",
+    "status": "pending",
+    "reason": "Not fully visually cleared this round; left for follow-up review. No production write.",
+    "fingerprint": "3431ea7c5a60ab3fb89cc5fe07f5d8a7a1fae144b6abf3cdd817f74e452cc0f9",
+    "references": [
+      "https://news.17173.com/content/04042026/110201912.shtml"
+    ],
+    "checked_at": "2026-10-29T01:37:03.485Z",
+    "retry_after": "2026-11-12T01:37:03.485Z"
+  },
+  "b76df8ce0a8343693cdff2dd2217b5a737d340e65e766ff323525ba83c664c36": {
+    "sha256": "b76df8ce0a8343693cdff2dd2217b5a737d340e65e766ff323525ba83c664c36",
+    "status": "pending",
+    "reason": "Not fully visually cleared this round; left for follow-up review. No production write.",
+    "fingerprint": "0f6491781e2f7be6fce7971a289b5017e1bb51ae0656159f1bbd2cf99efc7c98",
+    "references": [
+      "https://wiki.biligame.com/nrc/%E9%A6%96%E9%A1%B5"
+    ],
+    "checked_at": "2026-10-29T01:37:03.485Z",
+    "retry_after": "2026-11-12T01:37:03.485Z"
+  },
+  "a539c411a0843cc4b0ae4f69d3f1f5b001fda99c452571e79899814d97871c8b": {
+    "sha256": "a539c411a0843cc4b0ae4f69d3f1f5b001fda99c452571e79899814d97871c8b",
+    "status": "rejected",
+    "reason": "Wiki homepage decorative image; not a configuration.",
+    "fingerprint": "0f6491781e2f7be6fce7971a289b5017e1bb51ae0656159f1bbd2cf99efc7c98",
+    "references": [
+      "https://wiki.biligame.com/nrc/%E9%A6%96%E9%A1%B5"
+    ],
+    "checked_at": "2026-10-29T01:37:03.485Z",
+    "retry_after": null
+  },
+  "6a6451ab3bfdbee2bbe110078e22747952893a60531ba2d2ea79ce4c667e9e4d": {
+    "sha256": "6a6451ab3bfdbee2bbe110078e22747952893a60531ba2d2ea79ce4c667e9e4d",
+    "status": "rejected",
+    "reason": "Wiki homepage decorative image; not a configuration.",
+    "fingerprint": "0f6491781e2f7be6fce7971a289b5017e1bb51ae0656159f1bbd2cf99efc7c98",
+    "references": [
+      "https://wiki.biligame.com/nrc/%E9%A6%96%E9%A1%B5"
+    ],
+    "checked_at": "2026-10-29T01:37:03.485Z",
+    "retry_after": null
+  },
+  "d0891a223db430fbda5a952e76d82ce177e673e1b04e6a1eaa1e15cc21d551f2": {
+    "sha256": "d0891a223db430fbda5a952e76d82ce177e673e1b04e6a1eaa1e15cc21d551f2",
+    "status": "pending",
+    "reason": "Not fully visually cleared this round; left for follow-up review. No production write.",
+    "fingerprint": "0f6491781e2f7be6fce7971a289b5017e1bb51ae0656159f1bbd2cf99efc7c98",
+    "references": [
+      "https://wiki.biligame.com/nrc/%E9%A6%96%E9%A1%B5"
+    ],
+    "checked_at": "2026-10-29T01:37:03.485Z",
+    "retry_after": "2026-11-12T01:37:03.485Z"
+  },
+  "1d908dc6febb73a260bbee9ea318e8b18149dd887b22d8917ecceda9e4e00162": {
+    "sha256": "1d908dc6febb73a260bbee9ea318e8b18149dd887b22d8917ecceda9e4e00162",
+    "status": "rejected",
+    "reason": "Wiki homepage decorative image; not a configuration.",
+    "fingerprint": "0f6491781e2f7be6fce7971a289b5017e1bb51ae0656159f1bbd2cf99efc7c98",
+    "references": [
+      "https://wiki.biligame.com/nrc/%E9%A6%96%E9%A1%B5"
+    ],
+    "checked_at": "2026-10-29T01:37:03.485Z",
+    "retry_after": null
+  },
+  "6150b0762a1294b8ea6538097bb3641075ebca74e5320b5322854e2cc132f9d7": {
+    "sha256": "6150b0762a1294b8ea6538097bb3641075ebca74e5320b5322854e2cc132f9d7",
+    "status": "rejected",
+    "reason": "Wiki homepage decorative image; not a configuration.",
+    "fingerprint": "0f6491781e2f7be6fce7971a289b5017e1bb51ae0656159f1bbd2cf99efc7c98",
+    "references": [
+      "https://wiki.biligame.com/nrc/%E9%A6%96%E9%A1%B5"
+    ],
+    "checked_at": "2026-10-29T01:37:03.485Z",
+    "retry_after": null
+  },
+  "575ffe5c4176b5500d1449b4daac185b5d6907dc7367b6a5bbc7752187d948db": {
+    "sha256": "575ffe5c4176b5500d1449b4daac185b5d6907dc7367b6a5bbc7752187d948db",
+    "status": "pending",
+    "reason": "Not fully visually cleared this round; left for follow-up review. No production write.",
+    "fingerprint": "0f6491781e2f7be6fce7971a289b5017e1bb51ae0656159f1bbd2cf99efc7c98",
+    "references": [
+      "https://wiki.biligame.com/nrc/%E9%A6%96%E9%A1%B5"
+    ],
+    "checked_at": "2026-10-29T01:37:03.485Z",
+    "retry_after": "2026-11-12T01:37:03.485Z"
+  },
+  "0ceedd37fee92cba18f435d7a888696dd0a2f3bf4dd3bac6a94c9390cfaa8f7b": {
+    "sha256": "0ceedd37fee92cba18f435d7a888696dd0a2f3bf4dd3bac6a94c9390cfaa8f7b",
+    "status": "pending",
+    "reason": "Not fully visually cleared this round; left for follow-up review. No production write.",
+    "fingerprint": "25301758eac99ae9af6211233fbab401c6e3ac081e55f8da55100b1c37c075ec",
+    "references": [
+      "https://wiki.biligame.com/rocom/?:?wiki"
+    ],
+    "checked_at": "2026-10-29T01:37:03.485Z",
+    "retry_after": "2026-11-12T01:37:03.485Z"
+  },
+  "6bb948eeee8a1668309189f45994177432df575c15a28f2d88358546d0aa986e": {
+    "sha256": "6bb948eeee8a1668309189f45994177432df575c15a28f2d88358546d0aa986e",
+    "status": "pending",
+    "reason": "Not fully visually cleared this round; left for follow-up review. No production write.",
+    "fingerprint": "2a5f9632272fcccd6b6f35de1bca1d0c76d906d91b04ae31d60adfbe58b62ed4",
+    "references": [
+      "https://wiki.biligame.com/rocom/?:?wiki"
+    ],
+    "checked_at": "2026-10-29T01:37:03.485Z",
+    "retry_after": "2026-11-12T01:37:03.485Z"
+  },
+  "e1e6e5115901439db603c47d173fc2dd5b36660b4a19b4adea8622beffdc454f": {
+    "sha256": "e1e6e5115901439db603c47d173fc2dd5b36660b4a19b4adea8622beffdc454f",
+    "status": "pending",
+    "reason": "Not fully visually cleared this round; left for follow-up review. No production write.",
+    "fingerprint": "b5a5393b37329bc9ff7f981ed338549320a050cd3b3b5c7b4d1851798863cf02",
+    "references": [
+      "https://ol.3dmgame.com/gl/355668.html",
+      "https://ol.3dmgame.com/gl/348407.html",
+      "https://ol.3dmgame.com/gl/342821.html",
+      "https://ol.3dmgame.com/gl/350006.html",
+      "https://ol.3dmgame.com/gl/354707.html",
+      "https://ol.3dmgame.com/gl/350004.html",
+      "https://ol.3dmgame.com/gl/353804.html"
+    ],
+    "checked_at": "2026-10-29T01:37:03.485Z",
+    "retry_after": "2026-11-12T01:37:03.485Z"
+  },
+  "62859e1332bf0ed8b915f76a25cde3e4225523ef1dba53e11aabb0a9cdaa3a07": {
+    "sha256": "62859e1332bf0ed8b915f76a25cde3e4225523ef1dba53e11aabb0a9cdaa3a07",
+    "status": "pending",
+    "reason": "Not fully visually cleared this round; left for follow-up review. No production write.",
+    "fingerprint": "0d2051dc2a6d0cc40dd85e9739a8536dea36c96f578c4d69d942098b96141581",
+    "references": [
+      "https://www.taptap.cn/moment/792667453384557230"
+    ],
+    "checked_at": "2026-10-29T01:37:03.485Z",
+    "retry_after": "2026-11-12T01:37:03.485Z"
+  },
+  "3a09396cdf9a15da666548d6354d6111e11fd2553c7eeca82cbfffcd8098a0d1": {
+    "sha256": "3a09396cdf9a15da666548d6354d6111e11fd2553c7eeca82cbfffcd8098a0d1",
+    "status": "pending",
+    "reason": "Not fully visually cleared this round; left for follow-up review. No production write.",
+    "fingerprint": "61c2346cb624b21c1e797eb3ee9eaf4707c3cd7acf6c566641df3384caa33d82",
+    "references": [
+      "https://www.taptap.cn/moment/792667453384557230"
+    ],
+    "checked_at": "2026-10-29T01:37:03.485Z",
+    "retry_after": "2026-11-12T01:37:03.485Z"
+  },
+  "a3615d746011c3ab23763610fcc0eef7623f8989beeff8cd3f8b603bffdf6a97": {
+    "sha256": "a3615d746011c3ab23763610fcc0eef7623f8989beeff8cd3f8b603bffdf6a97",
+    "status": "pending",
+    "reason": "Not fully visually cleared this round; left for follow-up review. No production write.",
+    "fingerprint": "61c2346cb624b21c1e797eb3ee9eaf4707c3cd7acf6c566641df3384caa33d82",
+    "references": [
+      "https://www.taptap.cn/moment/792667453384557230"
+    ],
+    "checked_at": "2026-10-29T01:37:03.485Z",
+    "retry_after": "2026-11-12T01:37:03.485Z"
+  },
+  "5d8741f800343a240fdb1430210f2669b0219a0624ee13b699f813e77b3418d1": {
+    "sha256": "5d8741f800343a240fdb1430210f2669b0219a0624ee13b699f813e77b3418d1",
+    "status": "pending",
+    "reason": "Not fully visually cleared this round; left for follow-up review. No production write.",
+    "fingerprint": "564da9f34e18aa47d4e3babb5de63be749a07590867838a3b618c2810a4e7662",
+    "references": [
+      "https://www.taptap.cn/moment/792667453384557230"
+    ],
+    "checked_at": "2026-10-29T01:37:03.485Z",
+    "retry_after": "2026-11-12T01:37:03.485Z"
+  },
+  "60a23cbbbb3c8a5952dd7f5e9179418eebe204cc241e84e0e331cfdbdfa34ac1": {
+    "sha256": "60a23cbbbb3c8a5952dd7f5e9179418eebe204cc241e84e0e331cfdbdfa34ac1",
+    "status": "rejected",
+    "reason": "Team-selection icon list only; skills/bloodlines not readable as a config sheet.",
+    "fingerprint": "5b0585f06025b398535ed68ca77462552e5a089b2ff537d82975a597dcf91e5c",
+    "references": [
+      "https://qiandao.com/post?postId=1023430985116591249"
+    ],
+    "checked_at": "2026-10-29T01:37:03.485Z",
+    "retry_after": null
+  },
+  "41b7a408e2650ca4ea31b4296a598faaa5b2f08b5f89e27901ae1b7b29046f1e": {
+    "sha256": "41b7a408e2650ca4ea31b4296a598faaa5b2f08b5f89e27901ae1b7b29046f1e",
+    "status": "rejected",
+    "reason": "Team-selection icon list only; skills/bloodlines not readable as a config sheet.",
+    "fingerprint": "5b0585f06025b398535ed68ca77462552e5a089b2ff537d82975a597dcf91e5c",
+    "references": [
+      "https://qiandao.com/post?postId=1023430985116591249"
+    ],
+    "checked_at": "2026-10-29T01:37:03.485Z",
+    "retry_after": null
+  },
+  "b562045b2bd64f92d63cca91e21e4e04fad70ad93ed6c86e1ae4983b97e27120": {
+    "sha256": "b562045b2bd64f92d63cca91e21e4e04fad70ad93ed6c86e1ae4983b97e27120",
+    "status": "pending",
+    "reason": "Not fully visually cleared this round; left for follow-up review. No production write.",
+    "fingerprint": "5821d7ed326bc010215d9cee339535bd08c151b237ac9ea6a1eea26ae86355f9",
+    "references": [
+      "https://news.17173.com/content/04082026/110245130.shtml"
+    ],
+    "checked_at": "2026-10-29T01:37:03.485Z",
+    "retry_after": "2026-11-12T01:37:03.485Z"
+  },
+  "a1b8f395f1b5078d379bd1fd8fcdf7390fae2c7d2b5d046814c6637930807ffe": {
+    "sha256": "a1b8f395f1b5078d379bd1fd8fcdf7390fae2c7d2b5d046814c6637930807ffe",
+    "status": "pending",
+    "reason": "Not fully visually cleared this round; left for follow-up review. No production write.",
+    "fingerprint": "1a756417a84d9259aa21a9f221bcf3ed2be49a918a380b50828af92185aeec00",
+    "references": [
+      "https://news.17173.com/content/04022026/200924166.shtml"
+    ],
+    "checked_at": "2026-10-29T01:37:03.485Z",
+    "retry_after": "2026-11-12T01:37:03.485Z"
+  },
+  "f0cacdf06757cb0d3bebe2e193d97d16935eb5b11bed2a46f32972e9a1c9db36": {
+    "sha256": "f0cacdf06757cb0d3bebe2e193d97d16935eb5b11bed2a46f32972e9a1c9db36",
+    "status": "pending",
+    "reason": "Not fully visually cleared this round; left for follow-up review. No production write.",
+    "fingerprint": "9d204494efe3bb5bf9daad1e194ca51bb22d5a33f9fd9acd56d1e5987062b4e9",
+    "references": [
+      "https://news.17173.com/content/04022026/200924166.shtml"
+    ],
+    "checked_at": "2026-10-29T01:37:03.485Z",
+    "retry_after": "2026-11-12T01:37:03.485Z"
+  },
+  "bbb1670b8739e68e8663e6b38777ca7b568416e84eb8e91d482f1505b517483b": {
+    "sha256": "bbb1670b8739e68e8663e6b38777ca7b568416e84eb8e91d482f1505b517483b",
+    "status": "pending",
+    "reason": "Not fully visually cleared this round; left for follow-up review. No production write.",
+    "fingerprint": "46d9349a46c001854e9b8df0f2ba7d2f92d1f87b23cb5cf631b32e70eb47b929",
+    "references": [
+      "https://news.17173.com/content/04022026/200924166.shtml"
+    ],
+    "checked_at": "2026-10-29T01:37:03.485Z",
+    "retry_after": "2026-11-12T01:37:03.485Z"
+  },
+  "a6b7e9208a80e29373f4fa0407343e6bdf52ebe477176f9a683e2325604ee3c1": {
+    "sha256": "a6b7e9208a80e29373f4fa0407343e6bdf52ebe477176f9a683e2325604ee3c1",
+    "status": "pending",
+    "reason": "Not fully visually cleared this round; left for follow-up review. No production write.",
+    "fingerprint": "9b0c55087ee9991cd0346b2f1527976ae7750a0666812ea6ce13ee17fafb8fc3",
+    "references": [
+      "https://news.17173.com/content/04022026/200924166.shtml"
+    ],
+    "checked_at": "2026-10-29T01:37:03.485Z",
+    "retry_after": "2026-11-12T01:37:03.485Z"
+  },
+  "230284834a9397b7671d364c876de299b71f7894a424a6c2715d7b1bfd44b373": {
+    "sha256": "230284834a9397b7671d364c876de299b71f7894a424a6c2715d7b1bfd44b373",
+    "status": "pending",
+    "reason": "Not fully visually cleared this round; left for follow-up review. No production write.",
+    "fingerprint": "dec0f0075612a08a1e5b773ea71c84e2026886a728f123e85758fe40a2d42c1c",
+    "references": [
+      "https://news.17173.com/content/04022026/200924166.shtml"
+    ],
+    "checked_at": "2026-10-29T01:37:03.485Z",
+    "retry_after": "2026-11-12T01:37:03.485Z"
+  },
+  "23674881006f2885d456147496cce4fbf3973a3f8c43a6acf80079801fe496be": {
+    "sha256": "23674881006f2885d456147496cce4fbf3973a3f8c43a6acf80079801fe496be",
+    "status": "pending",
+    "reason": "Not fully visually cleared this round; left for follow-up review. No production write.",
+    "fingerprint": "43437edbd0dc50b2c7af288c6031702cb8ee024c201a46904f5c1e60b87119cc",
+    "references": [
+      "https://news.17173.com/content/04022026/200924166.shtml"
+    ],
+    "checked_at": "2026-10-29T01:37:03.485Z",
+    "retry_after": "2026-11-12T01:37:03.485Z"
+  },
+  "08baef80a664d249d32d53727797d5e63567f9c235521e37ce727d96170e6d88": {
+    "sha256": "08baef80a664d249d32d53727797d5e63567f9c235521e37ce727d96170e6d88",
+    "status": "pending",
+    "reason": "Not fully visually cleared this round; left for follow-up review. No production write.",
+    "fingerprint": "f03e5d306c9f47a26193fa2d9190664dd6bf239f0fcf6ba3728f17ada1b4c115",
+    "references": [
+      "https://news.17173.com/content/04022026/200924166.shtml"
+    ],
+    "checked_at": "2026-10-29T01:37:03.485Z",
+    "retry_after": "2026-11-12T01:37:03.485Z"
+  },
+  "9103cd96ead733ee7dbc48d036faaa757170a67b8fa82993098a15eb65f4ff77": {
+    "sha256": "9103cd96ead733ee7dbc48d036faaa757170a67b8fa82993098a15eb65f4ff77",
+    "status": "rejected",
+    "reason": "Season rewards / rank summary UI with spirit list; not a full configuration sheet.",
+    "fingerprint": "7fdb65d7277514e917c68eaf7644c85f192b786555877c39d9cbf47d810b56d2",
+    "references": [
+      "https://www.taptap.cn/moment/787127821922206858"
+    ],
+    "checked_at": "2026-10-29T01:37:03.485Z",
+    "retry_after": null
+  },
+  "2d45334a81cf2d914e284e428c46858cef26379a239515b49b5b603645692991": {
+    "sha256": "2d45334a81cf2d914e284e428c46858cef26379a239515b49b5b603645692991",
+    "status": "pending",
+    "reason": "TapTap wide image from 87% win-rate post; needs visual confirm whether full config or collage; season unclear.",
+    "fingerprint": "7fdb65d7277514e917c68eaf7644c85f192b786555877c39d9cbf47d810b56d2",
+    "references": [
+      "https://www.taptap.cn/moment/787127821922206858"
+    ],
+    "checked_at": "2026-10-29T01:37:03.485Z",
+    "retry_after": "2026-11-12T01:37:03.485Z"
+  },
+  "a7cf02b61c4c30c91d1b87e87f254ea0e407e0824363dcd39e1926729a03380a": {
+    "sha256": "a7cf02b61c4c30c91d1b87e87f254ea0e407e0824363dcd39e1926729a03380a",
+    "status": "pending",
+    "reason": "Same TapTap 队伍1 config (compressed JPEG twin of 8f8712…); pending season confirmation.",
+    "fingerprint": "558999ee9f683e5c5c405a3f03312a6a61516125e3a944de4a91f93a26df8166",
+    "references": [
+      "https://www.taptap.cn/moment/787127821922206858"
+    ],
+    "checked_at": "2026-10-29T01:37:03.485Z",
+    "retry_after": "2026-11-12T01:37:03.485Z"
+  },
+  "8f8712038c794bb0d0023ab2fa4cc6c3edd10bc292027fe99d617473109ef7e6": {
+    "sha256": "8f8712038c794bb0d0023ab2fa4cc6c3edd10bc292027fe99d617473109ef7e6",
+    "status": "pending",
+    "reason": "Complete six-pet config (队伍1) on TapTap, but season evidence is early-2026 cup dates without explicit S2/S3/S4 label; keep candidate.",
+    "fingerprint": "558999ee9f683e5c5c405a3f03312a6a61516125e3a944de4a91f93a26df8166",
+    "references": [
+      "https://www.taptap.cn/moment/787127821922206858"
+    ],
+    "checked_at": "2026-10-29T01:37:03.485Z",
+    "retry_after": "2026-11-12T01:37:03.485Z"
+  },
+  "3c1064aeed6b30ff06f497201db54568e26077c652a4758f2f8ce7248aea4c61": {
+    "sha256": "3c1064aeed6b30ff06f497201db54568e26077c652a4758f2f8ce7248aea4c61",
+    "status": "pending",
+    "reason": "Not fully visually cleared this round; left for follow-up review. No production write.",
+    "fingerprint": "8aa9577ec331c5549a9e35a690cb95d76f1e007eca9e46bb0141efb5ef92cf78",
+    "references": [
+      "https://www.taptap.cn/moment/858904416206456638"
+    ],
+    "checked_at": "2026-10-29T01:37:03.485Z",
+    "retry_after": "2026-11-12T01:37:03.485Z"
+  },
+  "ae6549b7776c9ac2f56ba6a77f32afef3b97af3c0708c957b75efd4ba7b63f8b": {
+    "sha256": "ae6549b7776c9ac2f56ba6a77f32afef3b97af3c0708c957b75efd4ba7b63f8b",
+    "status": "rejected",
+    "reason": "Meme/cat reaction image; not a six-member configuration.",
+    "fingerprint": "a0a201975d9ad22c212528b4666a104fc667700e35cdb5aaac5c469bf224ad2e",
+    "references": [
+      "https://www.taptap.cn/moment/858904416206456638"
+    ],
+    "checked_at": "2026-10-29T01:37:03.485Z",
+    "retry_after": null
+  },
+  "4b36a1e19c737e9a22d364534f988db6c5023da1ebfe10120843fe19f4124bf8": {
+    "sha256": "4b36a1e19c737e9a22d364534f988db6c5023da1ebfe10120843fe19f4124bf8",
+    "status": "rejected",
+    "reason": "Government license document screenshot; not a lineup configuration.",
+    "fingerprint": "248e7d3986a87727081eb1a19d88782494ae76e42939f242e98111e55c4aeb58",
+    "references": [
+      "https://www.taptap.cn/moment/862617352557038905?group_id=228326"
+    ],
+    "checked_at": "2026-10-29T01:37:03.485Z",
+    "retry_after": null
+  },
+  "91566d0c1c4ae3cb87852b257569b18244a955b826ef95da3090038bce4cf409": {
+    "sha256": "91566d0c1c4ae3cb87852b257569b18244a955b826ef95da3090038bce4cf409",
+    "status": "pending",
+    "reason": "Not fully visually cleared this round; left for follow-up review. No production write.",
+    "fingerprint": "7fe3b839f0b8aaed77e4df505a29b371100670d49830aacd6a2190e858549343",
+    "references": [
+      "https://www.taptap.cn/moment/862617352557038905?group_id=228326"
+    ],
+    "checked_at": "2026-10-29T01:37:03.485Z",
+    "retry_after": "2026-11-12T01:37:03.485Z"
+  },
+  "a7362facd913789ef7230b6c5a8b03fa4dbcea69004e62cd7c18e74ecc5495ac": {
+    "sha256": "a7362facd913789ef7230b6c5a8b03fa4dbcea69004e62cd7c18e74ecc5495ac",
+    "status": "pending",
+    "reason": "Not fully visually cleared this round; left for follow-up review. No production write.",
+    "fingerprint": "516a4777b40ea76c04f93722213a9d736054fa1da3dfcf1f9fcbe0f89bd2bdd2",
+    "references": [
+      "https://www.taptap.cn/moment/862617352557038905?group_id=228326"
+    ],
+    "checked_at": "2026-10-29T01:37:03.485Z",
+    "retry_after": "2026-11-12T01:37:03.485Z"
+  },
+  "911a830b02ad8b1d030b474be4cbea99368c1be74c6e7b6a23874da79d3e4e58": {
+    "sha256": "911a830b02ad8b1d030b474be4cbea99368c1be74c6e7b6a23874da79d3e4e58",
+    "status": "pending",
+    "reason": "Not fully visually cleared this round; left for follow-up review. No production write.",
+    "fingerprint": "516a4777b40ea76c04f93722213a9d736054fa1da3dfcf1f9fcbe0f89bd2bdd2",
+    "references": [
+      "https://www.taptap.cn/moment/862617352557038905?group_id=228326"
+    ],
+    "checked_at": "2026-10-29T01:37:03.485Z",
+    "retry_after": "2026-11-12T01:37:03.485Z"
+  },
+  "f5af73ab6bc62ae8d45e8930418a50e9712a51df134712fab7a2f59518af1666": {
+    "sha256": "f5af73ab6bc62ae8d45e8930418a50e9712a51df134712fab7a2f59518af1666",
+    "status": "pending",
+    "reason": "Not fully visually cleared this round; left for follow-up review. No production write.",
+    "fingerprint": "7fe3b839f0b8aaed77e4df505a29b371100670d49830aacd6a2190e858549343",
+    "references": [
+      "https://www.taptap.cn/moment/862617352557038905?group_id=228326"
+    ],
+    "checked_at": "2026-10-29T01:37:03.485Z",
+    "retry_after": "2026-11-12T01:37:03.485Z"
+  },
+  "cb987a73f54bdc3eac6bc5da10ede2914ab2a230c28bee4db310d52b213f493f": {
+    "sha256": "cb987a73f54bdc3eac6bc5da10ede2914ab2a230c28bee4db310d52b213f493f",
+    "status": "pending",
+    "reason": "Not fully visually cleared this round; left for follow-up review. No production write.",
+    "fingerprint": "7fe3b839f0b8aaed77e4df505a29b371100670d49830aacd6a2190e858549343",
+    "references": [
+      "https://www.taptap.cn/moment/862617352557038905?group_id=228326"
+    ],
+    "checked_at": "2026-10-29T01:37:03.485Z",
+    "retry_after": "2026-11-12T01:37:03.485Z"
+  },
+  "51ee975216bcfcb00ed3c5e00157e6db2782fc059b4e032ba952e66fc3832326": {
+    "sha256": "51ee975216bcfcb00ed3c5e00157e6db2782fc059b4e032ba952e66fc3832326",
+    "status": "pending",
+    "reason": "Complete six-pet config (队伍2) titled 鼠鼠雪影队; community single source and season label not explicit on image; keep candidate.",
+    "fingerprint": "f12313f93e8a51d5590c4206736ed751e2a4df7c13e865a44fd2c35ece229064",
+    "references": [
+      "https://www.taptap.cn/moment/800623911493438323"
+    ],
+    "checked_at": "2026-10-29T01:37:03.485Z",
+    "retry_after": "2026-11-12T01:37:03.485Z"
+  },
+  "95a589e0018a79175085d9b87b9d99cb0883133fcaea2771e42c0a9761d3b987": {
+    "sha256": "95a589e0018a79175085d9b87b9d99cb0883133fcaea2771e42c0a9761d3b987",
+    "status": "rejected",
+    "reason": "Single-creature talent/detail UI; no complete six-member configuration.",
+    "fingerprint": "f12313f93e8a51d5590c4206736ed751e2a4df7c13e865a44fd2c35ece229064",
+    "references": [
+      "https://www.taptap.cn/moment/800623911493438323"
+    ],
+    "checked_at": "2026-10-29T01:37:03.485Z",
+    "retry_after": null
   }
 }

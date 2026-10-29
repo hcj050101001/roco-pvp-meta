@@ -15,11 +15,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
           node-version: 22
           cache: npm
       - run: npm ci
+      - run: npm run refresh:guard
+        env:
+          REFRESH_BASE_SHA: ${{ github.event.pull_request.base.sha || github.event.before }}
+      - run: npm run research:validate
       - uses: ./.github/actions/validate-site
       - name: Remind manual Pages deploy
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'

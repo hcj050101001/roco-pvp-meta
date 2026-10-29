@@ -1,4 +1,4 @@
-import { writeFile, mkdir } from 'node:fs/promises';
+import { writeFile, mkdir, access } from 'node:fs/promises';
 import { readLineups } from '../../src/lib/data';
 import { guardRefresh } from '../../src/lib/refresh';
 import { execFileSync } from 'node:child_process';
@@ -27,9 +27,18 @@ if (process.argv.includes('--snapshot')) {
       JSON.parse(execFileSync('git', ['show', `${ref}:${path}`], { encoding: 'utf8' })),
     ),
   );
-  const run_id = await readLatestRunId();
-  if (!/^[a-zA-Z0-9-]+$/.test(run_id)) throw Error('无效研究路径');
-  const { evidence, accessibleUrls } = await readChangeEvidence(run_id);
+  // A clean checkout has no ignored inbox. Missing evidence must still reject
+  // every content change; malformed or incomplete existing evidence stays fatal.
+  let hasInbox = true;
+  try {
+    await access('research/inbox/latest.json');
+  } catch (error) {
+    if ((error as NodeJS.ErrnoException).code !== 'ENOENT') throw error;
+    hasInbox = false;
+  }
+  const { evidence, accessibleUrls } = hasInbox
+    ? await readChangeEvidence(await readLatestRunId())
+    : { evidence: [], accessibleUrls: [] };
   guardRefresh(previous, current, accessibleUrls, evidence);
   console.log('非破坏性更新检查通过。');
 }

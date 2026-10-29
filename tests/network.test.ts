@@ -62,6 +62,13 @@ test('isPrivateAddress 拒绝私有、链路本地和映射地址', () => {
     assert.equal(isPrivateAddress(address), false, address);
 });
 
+test('isPrivateAddress 拦截 CGNAT /10，允许相邻地址', () => {
+  for (const address of ['100.64.0.1', '100.127.255.255', '::ffff:100.64.0.1'])
+    assert.equal(isPrivateAddress(address), true, address);
+  for (const address of ['100.63.255.255', '100.128.0.1'])
+    assert.equal(isPrivateAddress(address), false, address);
+});
+
 test('assertConnectedAddress 只接受本次核验过的公开地址', () => {
   const allowed: ResolvedAddress[] = [{ address: '1.1.1.1', family: 4 }];
   assert.doesNotThrow(() => assertConnectedAddress('1.1.1.1', allowed));

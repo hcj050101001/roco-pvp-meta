@@ -7,6 +7,7 @@ import type { IncomingHttpHeaders } from 'node:http';
 const privateNetworks = new BlockList();
 privateNetworks.addSubnet('0.0.0.0', 8, 'ipv4');
 privateNetworks.addSubnet('10.0.0.0', 8, 'ipv4');
+privateNetworks.addSubnet('100.64.0.0', 10, 'ipv4');
 privateNetworks.addSubnet('127.0.0.0', 8, 'ipv4');
 privateNetworks.addSubnet('169.254.0.0', 16, 'ipv4');
 privateNetworks.addSubnet('172.16.0.0', 12, 'ipv4');

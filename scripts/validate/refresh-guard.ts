@@ -3,17 +3,28 @@ import { readLineups } from '../../src/lib/data';
 import { guardRefresh } from '../../src/lib/refresh';
 import { execFileSync } from 'node:child_process';
 import { lineupSchema } from '../../src/lib/schema';
-import { readChangeEvidence } from './change-evidence';
+import {
+  assertNoTrackedInbox,
+  assertCommittedReceipts,
+  readChangeEvidence,
+} from './change-evidence';
 import { readLatestRunId } from '../research/io';
 const current = readLineups();
+const tracked = execFileSync('git', ['ls-files', '-z', '--', 'research/inbox', 'research/runs'], {
+  encoding: 'utf8',
+})
+  .split('\0')
+  .filter(Boolean);
+assertNoTrackedInbox(tracked);
 await mkdir('research', { recursive: true });
 if (process.argv.includes('--snapshot')) {
   await writeFile('research/baseline.json', JSON.stringify(current, null, 2) + '\n');
   console.log('已保存更新前快照');
 } else {
   // The baseline comes from the checkout, never from model-writable artifacts.
-  const ref = process.env.REFRESH_BASE_SHA || 'HEAD';
-  if (ref !== 'HEAD' && !/^[a-f0-9]{40}$/.test(ref)) throw Error('无效基线提交');
+  const baseSha = process.env.REFRESH_BASE_SHA;
+  if (baseSha && !/^[a-f0-9]{40}$/.test(baseSha)) throw Error('无效基线提交');
+  const ref = baseSha || 'HEAD';
   const paths = execFileSync(
     'git',
     ['ls-tree', '-r', '--name-only', ref, '--', 'data/lineups', 'data/archive'],
@@ -36,14 +47,13 @@ if (process.argv.includes('--snapshot')) {
     if ((error as NodeJS.ErrnoException).code !== 'ENOENT') throw error;
     hasInbox = false;
   }
-  let changeEvidence: Awaited<ReturnType<typeof readChangeEvidence>> = {
-    evidence: [],
-    accessibleUrls: [],
-  };
+  let changeEvidence: Awaited<ReturnType<typeof readChangeEvidence>>;
   if (hasInbox) {
     const run_id = await readLatestRunId();
     if (!/^[a-zA-Z0-9-]+$/.test(run_id)) throw Error('无效研究路径');
     changeEvidence = await readChangeEvidence(run_id);
+  } else {
+    changeEvidence = await assertCommittedReceipts(tracked, current);
   }
   const { evidence, accessibleUrls } = changeEvidence;
   guardRefresh(previous, current, accessibleUrls, evidence);

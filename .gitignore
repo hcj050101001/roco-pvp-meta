@@ -13,4 +13,7 @@ research/.research.lock
 *.log
 artifacts/
 .refresh-content/
-research/runs/season-*/*.html
+# Raw captured pages belong only in the ignored inbox.
+research/runs/**/*.html
+research/runs/**/*.htm
+research/runs/**/*.xml

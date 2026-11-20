@@ -1,0 +1,114 @@
+{
+  "id": "weakness-luoyin-s5",
+  "slug": "weakness-luoyin-s5",
+  "name": "示弱罗隐",
+  "aliases": [
+    "捧杀莎莎罗隐"
+  ],
+  "season": "S5",
+  "version_label": "圣龙宝藏",
+  "archetype": [
+    "平衡",
+    "水队"
+  ],
+  "summary": "椰浆布丁、彩蝶鲨、机幕方舟、海枝枝、克莱因龙、罗隐的 S5 配置。",
+  "guides": [],
+  "signals": [],
+  "roster": [
+    {
+      "name": "椰浆布丁",
+      "bloodline": "进化之力",
+      "skills": [
+        "冰蛋壳",
+        "水炮",
+        "魔法增效",
+        "捧杀"
+      ]
+    },
+    {
+      "name": "彩蝶鲨",
+      "bloodline": "进化之力",
+      "skills": [
+        "天洪",
+        "贮藏",
+        "灵媒",
+        "风隐"
+      ]
+    },
+    {
+      "name": "机幕方舟",
+      "bloodline": "进化之力",
+      "skills": [
+        "水泡盾",
+        "倾泻",
+        "过山车",
+        "轴承支撑"
+      ]
+    },
+    {
+      "name": "海枝枝",
+      "bloodline": "进化之力",
+      "skills": [
+        "天洪",
+        "背袭",
+        "灵媒",
+        "嘲弄"
+      ]
+    },
+    {
+      "name": "克莱因龙",
+      "bloodline": "进化之力",
+      "skills": [
+        "绵里藏针",
+        "捧杀",
+        "休息回复",
+        "示弱"
+      ]
+    },
+    {
+      "name": "罗隐",
+      "bloodline": "进化之力",
+      "skills": [
+        "地震",
+        "火焰切割",
+        "彼岸之手",
+        "先发制人"
+      ]
+    }
+  ],
+  "lineup_images": [
+    {
+      "path": "/assets/lineups/weakness-luoyin-s5/83c179c6fcbcec09b6372c1e61b5366e2dfc71d62065cc6137ad85633cac2a7a.png",
+      "source_url": "https://rocoduel.com/zh/teams/manx7c65",
+      "source_page_url": "https://rocoduel.com/zh/teams/manx7c65",
+      "source_kind": "community-post",
+      "capture_method": "browser-screenshot",
+      "published_at": "2026-11-16T08:19:16.099Z",
+      "captured_at": "2026-11-20T20:33:00+08:00",
+      "width": 1280,
+      "height": 920,
+      "sha256": "83c179c6fcbcec09b6372c1e61b5366e2dfc71d62065cc6137ad85633cac2a7a",
+      "phash": "6be01f6b900f919c",
+      "evidence_grade": "A",
+      "verified": true,
+      "verification_notes": "完整六只精灵、血脉魔法（进化之力）、性格资质与 24 个技能均清晰可读。",
+      "attribution": "洛克对决 · 玩家分享"
+    }
+  ],
+  "tutorials": [],
+  "sources": [
+    {
+      "url": "https://rocoduel.com/zh/teams/manx7c65",
+      "type": "primary",
+      "title": "示弱罗隐（洛克对决）",
+      "published_at": "2026-11-16T08:19:16.099Z",
+      "last_checked_at": "2026-11-20T20:33:00+08:00"
+    }
+  ],
+  "first_seen_at": "2026-11-20T20:33:00+08:00",
+  "last_verified_at": "2026-11-20T20:33:00+08:00",
+  "status": "active",
+  "verification_notes": "S5 赛季 2026-11-16 发布，含 S5 新精灵彩蝶鲨，六员与技能完整核对。",
+  "archive_reason": null,
+  "player_notes": []
+}

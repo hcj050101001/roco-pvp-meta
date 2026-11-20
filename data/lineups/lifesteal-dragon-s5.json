@@ -1,0 +1,126 @@
+{
+  "id": "lifesteal-dragon-s5",
+  "slug": "lifesteal-dragon-s5",
+  "name": "S5吸血噬金龙2",
+  "aliases": [
+    "龙队初版",
+    "吸血噬金龙"
+  ],
+  "season": "S5",
+  "version_label": "圣龙宝藏",
+  "archetype": [
+    "冥古龙",
+    "平衡"
+  ],
+  "summary": "迪莫、龙息帕尔、水灵、龙嵴金脉、冥古龙、火羽的 S5 龙队配置。",
+  "guides": [],
+  "signals": [],
+  "roster": [
+    {
+      "name": "迪莫",
+      "bloodline": null,
+      "skills": [
+        "热砂",
+        "过曝",
+        "恐吓",
+        "寒风吹"
+      ]
+    },
+    {
+      "name": "龙息帕尔",
+      "bloodline": null,
+      "skills": [
+        "力量增效",
+        "恶念交换",
+        "蝙蝠",
+        "隼鳞"
+      ]
+    },
+    {
+      "name": "水灵",
+      "bloodline": null,
+      "skills": [
+        "润泽",
+        "气泡",
+        "水泡盾",
+        "寒风吹"
+      ]
+    },
+    {
+      "name": "龙嵴金脉",
+      "bloodline": null,
+      "skills": [
+        "贪婪",
+        "过充电",
+        "岩土暴击",
+        "取念"
+      ]
+    },
+    {
+      "name": "冥古龙",
+      "bloodline": null,
+      "skills": [
+        "力量增效",
+        "荒芜之噬",
+        "撞鬼",
+        "借用"
+      ]
+    },
+    {
+      "name": "火羽",
+      "bloodline": null,
+      "skills": [
+        "羽化加速",
+        "流火",
+        "焚烧烙印",
+        "回旋风暴"
+      ]
+    }
+  ],
+  "lineup_images": [
+    {
+      "path": "/assets/lineups/lifesteal-dragon-s5/3f158530e74270b520d94c5f3fb4a0316a3fd536ec247f16fdb74f30472fb918.png",
+      "source_url": "https://i0.hdslb.com/bfs/new_dyn/0c44272482bf4878692e51582db0d9de168238090.png",
+      "source_page_url": "https://www.bilibili.com/video/BV12kWU6GE4z",
+      "source_kind": "comment",
+      "capture_method": "direct-image",
+      "published_at": "2026-11-11T15:20:57.000Z",
+      "captured_at": "2026-11-20T20:33:00+08:00",
+      "width": 1625,
+      "height": 747,
+      "sha256": "3f158530e74270b520d94c5f3fb4a0316a3fd536ec247f16fdb74f30472fb918",
+      "phash": "5ea3198b2b4c5c59",
+      "evidence_grade": "A",
+      "verified": true,
+      "verification_notes": "原视频置顶评论作者本人发出的一图流原图（1625×747），六员性格、资质与 24 个技能清晰可读。",
+      "attribution": "Bilibili · 珍珠一串（置顶评论一图流）"
+    }
+  ],
+  "tutorials": [
+    {
+      "title": "S5吸血噬金龙2，内战幻神狠狠疼爱疯狂水世界",
+      "url": "https://www.bilibili.com/video/BV12kWU6GE4z",
+      "platform": "bilibili",
+      "creator": "珍珠一串",
+      "published_at": "2026-11-11T15:20:57.000Z",
+      "match_reason": "exact-title",
+      "match_notes": "原作者 珍珠一串 发布于 2026-11-11 的实战视频，置顶评论附同队一图流。",
+      "verified_at": "2026-11-20T20:33:00+08:00"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://www.bilibili.com/video/BV12kWU6GE4z",
+      "type": "primary",
+      "title": "S5吸血噬金龙2，内战幻神狠狠疼爱疯狂水世界（珍珠一串）",
+      "published_at": "2026-11-11T15:20:57.000Z",
+      "last_checked_at": "2026-11-20T20:33:00+08:00"
+    }
+  ],
+  "first_seen_at": "2026-11-20T20:33:00+08:00",
+  "last_verified_at": "2026-11-20T20:33:00+08:00",
+  "status": "active",
+  "verification_notes": "标题明确标注「S5吸血噬金龙2」，发布于 2026-11-11，含 S5 冥古龙，24 个技能核对无误。",
+  "archive_reason": null,
+  "player_notes": []
+}

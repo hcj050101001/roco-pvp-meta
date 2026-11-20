@@ -1,0 +1,62 @@
+{
+  "run_id": "2026-11-20T12-33-00Z-s5-batch3",
+  "candidates": [
+    {
+      "source": "https://www.bilibili.com/video/BV19fsT6GEgY",
+      "url": "https://i0.hdslb.com/bfs/new_dyn/5c7fd09eba65b0fb7e39f82ac2d8ca34324871310.png",
+      "sha256": "403be18c0583b3460bab4980464d7ce9252ae689bffd496e053fbd0c2493ee5d",
+      "phash": "5e8719832bdc7458",
+      "width": 1625,
+      "height": 747
+    },
+    {
+      "source": "https://www.bilibili.com/video/BV1qGsr6kEPc",
+      "url": "https://i0.hdslb.com/bfs/new_dyn/e0e6267c846c2eefb0ec2fb841237bfe396279638.png",
+      "sha256": "ad0864ef7be840285245bdce1366d4b2f4690cda4f2ecfdbb886a72ce7a6ea74",
+      "phash": "5ea24b8b0b4c745d",
+      "width": 1625,
+      "height": 747
+    },
+    {
+      "source": "https://www.bilibili.com/video/BV12kWU6GE4z",
+      "url": "https://i0.hdslb.com/bfs/new_dyn/0c44272482bf4878692e51582db0d9de168238090.png",
+      "sha256": "3f158530e74270b520d94c5f3fb4a0316a3fd536ec247f16fdb74f30472fb918",
+      "phash": "5ea3198b2b4c5c59",
+      "width": 1625,
+      "height": 747
+    },
+    {
+      "source": "https://www.bilibili.com/video/BV1XosU6REWB",
+      "url": "https://i0.hdslb.com/bfs/new_dyn/3fc7771c915179caa7b680f500efb9893546911355177340.png",
+      "sha256": "4091fad90ea023b74cfedd508511676e4c37231061e11187c9d7780904d8257e",
+      "phash": "5e8319cb23dc7449",
+      "width": 1625,
+      "height": 747
+    },
+    {
+      "source": "https://www.bilibili.com/video/BV1XosU6REWB",
+      "url": "https://i0.hdslb.com/bfs/new_dyn/b1cb55faea434a97b3e774cfdde35c343546911355177340.png",
+      "sha256": "7c266768858cbfc6577d3b6dcc2ca8b9db3806813c32ee352f9cd1fb6b63e359",
+      "phash": "5e8319832bdc7459",
+      "width": 1761,
+      "height": 810
+    },
+    {
+      "source": "https://rocoduel.com/zh/teams/manx7c65",
+      "url": "https://rocoduel.com/zh/teams/manx7c65",
+      "sha256": "83c179c6fcbcec09b6372c1e61b5366e2dfc71d62065cc6137ad85633cac2a7a",
+      "phash": "6be01f6b900f919c",
+      "width": 1280,
+      "height": 920
+    },
+    {
+      "source": "https://rocoduel.com/zh/teams/axMw3CbQ",
+      "url": "https://rocoduel.com/zh/teams/axMw3CbQ",
+      "sha256": "c374cfff7eceb189eaf0e1c098790384eb9de7ebcaee1a64552b648d21adc9b9",
+      "phash": "6b601f6bc02f919c",
+      "width": 1280,
+      "height": 920
+    }
+  ],
+  "source_failures": []
+}

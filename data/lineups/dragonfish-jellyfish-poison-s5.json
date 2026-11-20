@@ -1,0 +1,124 @@
+{
+  "id": "dragonfish-jellyfish-poison-s5",
+  "slug": "dragonfish-jellyfish-poison-s5",
+  "name": "龙鱼水母毒",
+  "aliases": [
+    "11.14龙鱼毒"
+  ],
+  "season": "S5",
+  "version_label": "圣龙宝藏",
+  "archetype": [
+    "毒队"
+  ],
+  "summary": "裘卡、琉璃水母、影狸、龙鱼、离心舞者、绒光优优的 S5 龙鱼毒配置。",
+  "guides": [],
+  "signals": [],
+  "roster": [
+    {
+      "name": "裘卡",
+      "bloodline": null,
+      "skills": [
+        "毒孢子",
+        "毒囊",
+        "阻断",
+        "防御"
+      ]
+    },
+    {
+      "name": "琉璃水母",
+      "bloodline": null,
+      "skills": [
+        "泡沫幻影",
+        "甩水",
+        "洗礼",
+        "疫病吐息"
+      ]
+    },
+    {
+      "name": "影狸",
+      "bloodline": null,
+      "skills": [
+        "幽灵爆发",
+        "毒液渗透",
+        "黑手",
+        "嘲弄"
+      ]
+    },
+    {
+      "name": "龙鱼",
+      "bloodline": null,
+      "skills": [
+        "力量增效",
+        "龙之利爪",
+        "水刃",
+        "隼鳞"
+      ]
+    },
+    {
+      "name": "离心舞者",
+      "bloodline": null,
+      "skills": [
+        "轴承支撑",
+        "离子震荡",
+        "能量守恒",
+        "翼击"
+      ]
+    },
+    {
+      "name": "绒光优优",
+      "bloodline": null,
+      "skills": [
+        "天光",
+        "热砂",
+        "毒孢子",
+        "硬化"
+      ]
+    }
+  ],
+  "lineup_images": [
+    {
+      "path": "/assets/lineups/dragonfish-jellyfish-poison-s5/ad0864ef7be840285245bdce1366d4b2f4690cda4f2ecfdbb886a72ce7a6ea74.png",
+      "source_url": "https://i0.hdslb.com/bfs/new_dyn/e0e6267c846c2eefb0ec2fb841237bfe396279638.png",
+      "source_page_url": "https://www.bilibili.com/video/BV1qGsr6kEPc",
+      "source_kind": "comment",
+      "capture_method": "direct-image",
+      "published_at": "2026-11-17T14:13:56.000Z",
+      "captured_at": "2026-11-20T20:33:00+08:00",
+      "width": 1625,
+      "height": 747,
+      "sha256": "ad0864ef7be840285245bdce1366d4b2f4690cda4f2ecfdbb886a72ce7a6ea74",
+      "phash": "5ea24b8b0b4c745d",
+      "evidence_grade": "A",
+      "verified": true,
+      "verification_notes": "原视频置顶评论作者本人发出的一图流原图（1625×747），六员性格、资质与 24 个技能清晰可读。",
+      "attribution": "Bilibili · 乱斗仙人鸽子咕（置顶评论一图流）"
+    }
+  ],
+  "tutorials": [
+    {
+      "title": "S5赛季11.14龙鱼毒上大师",
+      "url": "https://www.bilibili.com/video/BV1qGsr6kEPc",
+      "platform": "bilibili",
+      "creator": "乱斗仙人鸽子咕",
+      "published_at": "2026-11-17T14:13:56.000Z",
+      "match_reason": "exact-title",
+      "match_notes": "原作者 乱斗仙人鸽子咕 发布于 2026-11-17 的实战视频，置顶评论附同队一图流。",
+      "verified_at": "2026-11-20T20:33:00+08:00"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://www.bilibili.com/video/BV1qGsr6kEPc",
+      "type": "primary",
+      "title": "S5赛季11.14龙鱼毒上大师（乱斗仙人鸽子咕）",
+      "published_at": "2026-11-17T14:13:56.000Z",
+      "last_checked_at": "2026-11-20T20:33:00+08:00"
+    }
+  ],
+  "first_seen_at": "2026-11-20T20:33:00+08:00",
+  "last_verified_at": "2026-11-20T20:33:00+08:00",
+  "status": "active",
+  "verification_notes": "标题明确标注「S5赛季11.14龙鱼毒上大师」，含 S5 新首领琉璃水母，24 个技能核对无误。",
+  "archive_reason": null,
+  "player_notes": []
+}

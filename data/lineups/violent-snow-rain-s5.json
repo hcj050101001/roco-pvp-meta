@@ -1,0 +1,125 @@
+{
+  "id": "violent-snow-rain-s5",
+  "slug": "violent-snow-rain-s5",
+  "name": "暴力雪雨队",
+  "aliases": [
+    "雪雨队"
+  ],
+  "season": "S5",
+  "version_label": "圣龙宝藏",
+  "archetype": [
+    "雪天",
+    "雨天"
+  ],
+  "summary": "月牙雪熊、水灵、尖嘴狐仙、饮雪狂兽、卡瓦重、彩蝶鲨的 S5 雪雨体系配置。",
+  "guides": [],
+  "signals": [],
+  "roster": [
+    {
+      "name": "月牙雪熊",
+      "bloodline": null,
+      "skills": [
+        "先发制人",
+        "冰点",
+        "冰墙",
+        "鸣沙陷阱"
+      ]
+    },
+    {
+      "name": "水灵",
+      "bloodline": null,
+      "skills": [
+        "水泡盾",
+        "洗礼",
+        "水炮",
+        "借用"
+      ]
+    },
+    {
+      "name": "尖嘴狐仙",
+      "bloodline": null,
+      "skills": [
+        "火焰切割",
+        "冬至",
+        "火焰护盾",
+        "焚烧烙印"
+      ]
+    },
+    {
+      "name": "饮雪狂兽",
+      "bloodline": null,
+      "skills": [
+        "冷凝",
+        "力量增效",
+        "雪原狩猎",
+        "踩地"
+      ]
+    },
+    {
+      "name": "卡瓦重",
+      "bloodline": null,
+      "skills": [
+        "筛管奔流",
+        "速冻",
+        "冬至",
+        "富养化"
+      ]
+    },
+    {
+      "name": "彩蝶鲨",
+      "bloodline": null,
+      "skills": [
+        "贮藏",
+        "天洪",
+        "极寒领域",
+        "离子震荡"
+      ]
+    }
+  ],
+  "lineup_images": [
+    {
+      "path": "/assets/lineups/violent-snow-rain-s5/403be18c0583b3460bab4980464d7ce9252ae689bffd496e053fbd0c2493ee5d.png",
+      "source_url": "https://i0.hdslb.com/bfs/new_dyn/5c7fd09eba65b0fb7e39f82ac2d8ca34324871310.png",
+      "source_page_url": "https://www.bilibili.com/video/BV19fsT6GEgY",
+      "source_kind": "comment",
+      "capture_method": "direct-image",
+      "published_at": "2026-11-17T03:00:00.000Z",
+      "captured_at": "2026-11-20T20:33:00+08:00",
+      "width": 1625,
+      "height": 747,
+      "sha256": "403be18c0583b3460bab4980464d7ce9252ae689bffd496e053fbd0c2493ee5d",
+      "phash": "5e8719832bdc7458",
+      "evidence_grade": "A",
+      "verified": true,
+      "verification_notes": "原视频置顶评论作者本人发出的一图流原图（1625×747），六员性格、资质与 24 个技能清晰可读。",
+      "attribution": "Bilibili · 红发ACG（置顶评论一图流）"
+    }
+  ],
+  "tutorials": [
+    {
+      "title": "全网首发！暴力雪雨队！雪天+疯狂水世界的化学反应？超快节奏的速攻上分阵容！",
+      "url": "https://www.bilibili.com/video/BV19fsT6GEgY",
+      "platform": "bilibili",
+      "creator": "红发ACG",
+      "published_at": "2026-11-17T03:00:00.000Z",
+      "match_reason": "exact-title",
+      "match_notes": "原作者 红发ACG 发布于 2026-11-17 的实战视频，置顶评论附同队一图流。",
+      "verified_at": "2026-11-20T20:33:00+08:00"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://www.bilibili.com/video/BV19fsT6GEgY",
+      "type": "primary",
+      "title": "全网首发！暴力雪雨队！雪天+疯狂水世界的化学反应？超快节奏的速攻上分阵容！（红发ACG）",
+      "published_at": "2026-11-17T03:00:00.000Z",
+      "last_checked_at": "2026-11-20T20:33:00+08:00"
+    }
+  ],
+  "first_seen_at": "2026-11-20T20:33:00+08:00",
+  "last_verified_at": "2026-11-20T20:33:00+08:00",
+  "status": "active",
+  "verification_notes": "S5 开赛后于 2026-11-17 发布，原视频带「S5」标签并含 S5 彩蝶鲨，24 个技能核对无误。",
+  "archive_reason": null,
+  "player_notes": []
+}

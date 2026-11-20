@@ -1,0 +1,124 @@
+{
+  "id": "junlu-starfall-s5",
+  "slug": "junlu-starfall-s5",
+  "name": "君路星陨",
+  "aliases": [
+    "暮星辰星陨队"
+  ],
+  "season": "S5",
+  "version_label": "圣龙宝藏",
+  "archetype": [
+    "星陨"
+  ],
+  "summary": "怖哭菇、暮星辰、玳塔、小皮球、离心舞者、龙息帕尔的 S5 星陨配置。",
+  "guides": [],
+  "signals": [],
+  "roster": [
+    {
+      "name": "怖哭菇",
+      "bloodline": null,
+      "skills": [
+        "星链",
+        "冥想",
+        "心灵洞悉",
+        "吓退"
+      ]
+    },
+    {
+      "name": "暮星辰",
+      "bloodline": null,
+      "skills": [
+        "翼击",
+        "超维投射",
+        "先发制人",
+        "恐吓"
+      ]
+    },
+    {
+      "name": "玳塔",
+      "bloodline": null,
+      "skills": [
+        "错乱",
+        "血气",
+        "超维投射",
+        "心灵洞悉"
+      ]
+    },
+    {
+      "name": "小皮球",
+      "bloodline": null,
+      "skills": [
+        "超维投射",
+        "心灵洞悉",
+        "引燃",
+        "吓退"
+      ]
+    },
+    {
+      "name": "离心舞者",
+      "bloodline": null,
+      "skills": [
+        "羽化加速",
+        "离子震荡",
+        "多维击打",
+        "轴承支撑"
+      ]
+    },
+    {
+      "name": "龙息帕尔",
+      "bloodline": null,
+      "skills": [
+        "力量增效",
+        "先发制人",
+        "极限撕裂",
+        "火云车"
+      ]
+    }
+  ],
+  "lineup_images": [
+    {
+      "path": "/assets/lineups/junlu-starfall-s5/7c266768858cbfc6577d3b6dcc2ca8b9db3806813c32ee352f9cd1fb6b63e359.png",
+      "source_url": "https://i0.hdslb.com/bfs/new_dyn/b1cb55faea434a97b3e774cfdde35c343546911355177340.png",
+      "source_page_url": "https://www.bilibili.com/video/BV1XosU6REWB",
+      "source_kind": "comment",
+      "capture_method": "direct-image",
+      "published_at": "2026-11-18T13:50:27.000Z",
+      "captured_at": "2026-11-20T20:33:00+08:00",
+      "width": 1761,
+      "height": 810,
+      "sha256": "7c266768858cbfc6577d3b6dcc2ca8b9db3806813c32ee352f9cd1fb6b63e359",
+      "phash": "5e8319832bdc7459",
+      "evidence_grade": "A",
+      "verified": true,
+      "verification_notes": "原视频置顶评论作者本人发出的一图流原图（1761×810），右下标注「君路星陨」，24 个技能清晰可读。",
+      "attribution": "Bilibili · 君路（置顶评论一图流）"
+    }
+  ],
+  "tutorials": [
+    {
+      "title": "星陨对战多赛季榜一其幺幺 大胆双切拿下！",
+      "url": "https://www.bilibili.com/video/BV1XosU6REWB",
+      "platform": "bilibili",
+      "creator": "君路",
+      "published_at": "2026-11-18T13:50:27.000Z",
+      "match_reason": "same-author",
+      "match_notes": "原作者 君路 发布于 2026-11-18 的实战视频，置顶评论附同队一图流。",
+      "verified_at": "2026-11-20T20:33:00+08:00"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://www.bilibili.com/video/BV1XosU6REWB",
+      "type": "primary",
+      "title": "星陨对战多赛季榜一其幺幺 大胆双切拿下！（君路）",
+      "published_at": "2026-11-18T13:50:27.000Z",
+      "last_checked_at": "2026-11-20T20:33:00+08:00"
+    }
+  ],
+  "first_seen_at": "2026-11-20T20:33:00+08:00",
+  "last_verified_at": "2026-11-20T20:33:00+08:00",
+  "status": "active",
+  "verification_notes": "原视频发布于 2026-11-18 并带「S5圣龙宝藏」标签，置顶一图流核对无误。",
+  "archive_reason": null,
+  "player_notes": []
+}

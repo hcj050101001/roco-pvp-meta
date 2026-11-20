@@ -1,0 +1,113 @@
+{
+  "id": "three-wing-balance-s5",
+  "slug": "three-wing-balance-s5",
+  "name": "三翼平衡攻",
+  "aliases": [
+    "三翼狮鹫平衡"
+  ],
+  "season": "S5",
+  "version_label": "圣龙宝藏",
+  "archetype": [
+    "平衡"
+  ],
+  "summary": "岚鸟、权杖-V、皇家狮鹫、罗隐、火羽、霹雳迪迪的 S5 三翼平衡配置。",
+  "guides": [],
+  "signals": [],
+  "roster": [
+    {
+      "name": "岚鸟",
+      "bloodline": "愿力强化",
+      "skills": [
+        "龙卷风",
+        "筛管奔流",
+        "水刃",
+        "先发制人"
+      ]
+    },
+    {
+      "name": "权杖-V",
+      "bloodline": "愿力强化",
+      "skills": [
+        "无畏之心",
+        "泥浆铠甲",
+        "钢铁洪流",
+        "冰晶坠"
+      ]
+    },
+    {
+      "name": "皇家狮鹫",
+      "bloodline": "愿力强化",
+      "skills": [
+        "光之矛",
+        "缠丝劲",
+        "羽化加速",
+        "啄击"
+      ]
+    },
+    {
+      "name": "罗隐",
+      "bloodline": "愿力强化",
+      "skills": [
+        "蝙蝠",
+        "地刺",
+        "先发制人",
+        "泥浆铠甲"
+      ]
+    },
+    {
+      "name": "火羽",
+      "bloodline": "愿力强化",
+      "skills": [
+        "高温回火",
+        "焚烧烙印",
+        "幽灵爆发",
+        "回旋风暴"
+      ]
+    },
+    {
+      "name": "霹雳迪迪",
+      "bloodline": "愿力强化",
+      "skills": [
+        "加大功率",
+        "镜像反射",
+        "落雷",
+        "色散"
+      ]
+    }
+  ],
+  "lineup_images": [
+    {
+      "path": "/assets/lineups/three-wing-balance-s5/c374cfff7eceb189eaf0e1c098790384eb9de7ebcaee1a64552b648d21adc9b9.png",
+      "source_url": "https://rocoduel.com/zh/teams/axMw3CbQ",
+      "source_page_url": "https://rocoduel.com/zh/teams/axMw3CbQ",
+      "source_kind": "community-post",
+      "capture_method": "browser-screenshot",
+      "published_at": "2026-11-19T11:16:14.024Z",
+      "captured_at": "2026-11-20T20:33:00+08:00",
+      "width": 1280,
+      "height": 920,
+      "sha256": "c374cfff7eceb189eaf0e1c098790384eb9de7ebcaee1a64552b648d21adc9b9",
+      "phash": "6b601f6bc02f919c",
+      "evidence_grade": "A",
+      "verified": true,
+      "verification_notes": "完整六只精灵、血脉魔法（愿力强化）、性格资质与 24 个技能均清晰可读。",
+      "attribution": "洛克对决 · 作者：雅深路之劫"
+    }
+  ],
+  "tutorials": [],
+  "sources": [
+    {
+      "url": "https://rocoduel.com/zh/teams/axMw3CbQ",
+      "type": "primary",
+      "title": "三翼平衡攻（洛克对决 · 雅深路之劫）",
+      "published_at": "2026-11-19T11:16:14.024Z",
+      "last_checked_at": "2026-11-20T20:33:00+08:00"
+    }
+  ],
+  "first_seen_at": "2026-11-20T20:33:00+08:00",
+  "last_verified_at": "2026-11-20T20:33:00+08:00",
+  "status": "active",
+  "verification_notes": "S5 赛季 2026-11-19 发布，作者明确说明针对当前主流水世界、星陨、狼王与萌队环境，六员与技能完整核对。",
+  "archive_reason": null,
+  "player_notes": []
+}

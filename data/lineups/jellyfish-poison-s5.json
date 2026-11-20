@@ -1,0 +1,113 @@
+{
+  "id": "jellyfish-poison-s5",
+  "slug": "jellyfish-poison-s5",
+  "name": "首领水母毒",
+  "aliases": [
+    "琉璃水母毒队"
+  ],
+  "season": "S5",
+  "version_label": "圣龙宝藏",
+  "archetype": [
+    "毒队"
+  ],
+  "summary": "琉璃水母、影狸、裘卡、厉毒修萝、黑羽夫人、绒光优优的 S5 毒体系配置。",
+  "guides": [],
+  "signals": [],
+  "roster": [
+    {
+      "name": "琉璃水母",
+      "bloodline": "进化之力",
+      "skills": [
+        "不可接触",
+        "复写",
+        "天洪",
+        "疫病吐息"
+      ]
+    },
+    {
+      "name": "影狸",
+      "bloodline": "进化之力",
+      "skills": [
+        "毒液渗透",
+        "疫病吐息",
+        "幽灵爆发",
+        "黑手"
+      ]
+    },
+    {
+      "name": "裘卡",
+      "bloodline": "进化之力",
+      "skills": [
+        "防御",
+        "阻断",
+        "毒孢子",
+        "毒囊"
+      ]
+    },
+    {
+      "name": "厉毒修萝",
+      "bloodline": "进化之力",
+      "skills": [
+        "三连破",
+        "种皮爆裂",
+        "缠丝劲",
+        "趁火打劫"
+      ]
+    },
+    {
+      "name": "黑羽夫人",
+      "bloodline": "进化之力",
+      "skills": [
+        "诋毁",
+        "飞羽",
+        "泡沫幻影",
+        "风隐"
+      ]
+    },
+    {
+      "name": "绒光优优",
+      "bloodline": "进化之力",
+      "skills": [
+        "天光",
+        "毒孢子",
+        "硬化",
+        "热砂"
+      ]
+    }
+  ],
+  "lineup_images": [
+    {
+      "path": "/assets/lineups/jellyfish-poison-s5/a9297597f9f199b10e57c01b7e274b208f1eda1fa3a37e8c163fbf2f8c66cd65.png",
+      "source_url": "https://rocoduel.com/zh/teams/ajMfhoZ5",
+      "source_page_url": "https://rocoduel.com/zh/teams/ajMfhoZ5",
+      "source_kind": "community-post",
+      "capture_method": "browser-screenshot",
+      "published_at": "2026-11-17T12:08:13.396Z",
+      "captured_at": "2026-11-20T18:16:00+08:00",
+      "width": 1280,
+      "height": 920,
+      "sha256": "a9297597f9f199b10e57c01b7e274b208f1eda1fa3a37e8c163fbf2f8c66cd65",
+      "phash": "63601f56e06f919c",
+      "evidence_grade": "A",
+      "verified": true,
+      "verification_notes": "完整六只精灵、血脉魔法（进化之力）、性格资质与 24 个技能均清晰可读。",
+      "attribution": "洛克对决 · 作者：wbg比赛加油"
+    }
+  ],
+  "tutorials": [],
+  "sources": [
+    {
+      "url": "https://rocoduel.com/zh/teams/ajMfhoZ5",
+      "type": "primary",
+      "title": "首领水母毒（洛克对决 · wbg比赛加油）",
+      "published_at": "2026-11-17T12:08:13.396Z",
+      "last_checked_at": "2026-11-20T18:16:00+08:00"
+    }
+  ],
+  "first_seen_at": "2026-11-20T18:16:00+08:00",
+  "last_verified_at": "2026-11-20T18:16:00+08:00",
+  "status": "active",
+  "verification_notes": "S5 赛季 2026-11-17 发布，含 S5 新首领精灵琉璃水母，六员与技能完整核对。",
+  "archive_reason": null,
+  "player_notes": []
+}

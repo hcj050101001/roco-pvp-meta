@@ -1,0 +1,124 @@
+{
+  "id": "minggulong-firecracker-s5",
+  "slug": "minggulong-firecracker-s5",
+  "name": "冥古龙摔炮队",
+  "aliases": [
+    "冥古龙队"
+  ],
+  "season": "S5",
+  "version_label": "圣龙宝藏",
+  "archetype": [
+    "冥古龙",
+    "平衡"
+  ],
+  "summary": "圣剑-X、冥古龙、火羽、黑猫巫师、古卷执政官、冰钻布鲁斯的 S5 配置。",
+  "guides": [],
+  "signals": [],
+  "roster": [
+    {
+      "name": "圣剑-X",
+      "bloodline": null,
+      "skills": [
+        "拖拉机",
+        "啮合传递",
+        "齿轮切开"
+      ]
+    },
+    {
+      "name": "冥古龙",
+      "bloodline": null,
+      "skills": [
+        "撞鬼",
+        "荒芜之噬",
+        "偷袭",
+        "力量增效"
+      ]
+    },
+    {
+      "name": "火羽",
+      "bloodline": null,
+      "skills": [
+        "怒火",
+        "回旋风暴",
+        "幽灵爆发",
+        "焚烧烙印"
+      ]
+    },
+    {
+      "name": "黑猫巫师",
+      "bloodline": null,
+      "skills": [
+        "羽化加速",
+        "午夜铃音",
+        "乱打",
+        "彗星"
+      ]
+    },
+    {
+      "name": "古卷执政官",
+      "bloodline": null,
+      "skills": [
+        "大爆炸",
+        "湮灭",
+        "先发制人",
+        "吓退"
+      ]
+    },
+    {
+      "name": "冰钻布鲁斯",
+      "bloodline": null,
+      "skills": [
+        "暴风雪",
+        "先发制人",
+        "力量增效",
+        "有效预防"
+      ]
+    }
+  ],
+  "lineup_images": [
+    {
+      "path": "/assets/lineups/minggulong-firecracker-s5/568af1b98404c9ee529b1fc8543cd54498fe0260cfe407d80207e32f36c75755.png",
+      "source_url": "https://i0.hdslb.com/bfs/new_dyn/0140b7e16343f753a67c8f5d447c44303494370344962071.png",
+      "source_page_url": "https://www.bilibili.com/video/BV1Vusc6pEGT",
+      "source_kind": "comment",
+      "capture_method": "direct-image",
+      "published_at": "2026-11-16T00:01:48.000Z",
+      "captured_at": "2026-11-20T18:16:00+08:00",
+      "width": 903,
+      "height": 510,
+      "sha256": "568af1b98404c9ee529b1fc8543cd54498fe0260cfe407d80207e32f36c75755",
+      "phash": "5ee37083837c191d",
+      "evidence_grade": "A",
+      "verified": true,
+      "verification_notes": "原视频置顶评论作者本人发出的一图流（903×510）；圣剑-X 第 1 格技能原图字迹模糊，依规留空未填，其余 23 个技能清晰可读。",
+      "attribution": "Bilibili · 灰鼠的蓝灯（置顶评论一图流）"
+    }
+  ],
+  "tutorials": [
+    {
+      "title": "冥古龙是低等精灵?来看看全服前十的冥古龙队是怎么玩的?",
+      "url": "https://www.bilibili.com/video/BV1Vusc6pEGT",
+      "platform": "bilibili",
+      "creator": "灰鼠的蓝灯",
+      "published_at": "2026-11-16T00:01:48.000Z",
+      "match_reason": "same-author",
+      "match_notes": "原作者灰鼠的蓝灯发布于 2026-11-16 的实战视频，置顶评论附同队一图流。",
+      "verified_at": "2026-11-20T18:16:00+08:00"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://www.bilibili.com/video/BV1Vusc6pEGT",
+      "type": "primary",
+      "title": "冥古龙是低等精灵?来看看全服前十的冥古龙队是怎么玩的?（灰鼠的蓝灯）",
+      "published_at": "2026-11-16T00:01:48.000Z",
+      "last_checked_at": "2026-11-20T18:16:00+08:00"
+    }
+  ],
+  "first_seen_at": "2026-11-20T18:16:00+08:00",
+  "last_verified_at": "2026-11-20T18:16:00+08:00",
+  "status": "active",
+  "verification_notes": "含 S5 传说精灵冥古龙，发布于 2026-11-16；圣剑-X 第 1 格技能因原图字迹糊未做猜测，保留其余 3 格清晰技能。",
+  "archive_reason": null,
+  "player_notes": []
+}

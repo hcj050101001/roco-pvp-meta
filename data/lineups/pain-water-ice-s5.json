@@ -1,0 +1,113 @@
+{
+  "id": "pain-water-ice-s5",
+  "slug": "pain-water-ice-s5",
+  "name": "痛苦水世界加冰",
+  "aliases": [
+    "水世界加冰"
+  ],
+  "season": "S5",
+  "version_label": "圣龙宝藏",
+  "archetype": [
+    "水队"
+  ],
+  "summary": "白金独角兽、水灵、沙咔蟹、彩蝶鲨、圣代甜甜、绒光优优的 S5 水冰体系配置。",
+  "guides": [],
+  "signals": [],
+  "roster": [
+    {
+      "name": "白金独角兽",
+      "bloodline": "进化之力",
+      "skills": [
+        "追打",
+        "气泡",
+        "折射",
+        "虹光冲击"
+      ]
+    },
+    {
+      "name": "水灵",
+      "bloodline": "进化之力",
+      "skills": [
+        "水波术",
+        "水泡盾",
+        "洗礼",
+        "润泽"
+      ]
+    },
+    {
+      "name": "沙咔蟹",
+      "bloodline": "进化之力",
+      "skills": [
+        "离岸流",
+        "水环",
+        "仙人掌刺击",
+        "力量增效"
+      ]
+    },
+    {
+      "name": "彩蝶鲨",
+      "bloodline": "进化之力",
+      "skills": [
+        "天洪",
+        "血气",
+        "贮藏",
+        "灵媒"
+      ]
+    },
+    {
+      "name": "圣代甜甜",
+      "bloodline": "进化之力",
+      "skills": [
+        "寒潮",
+        "离子震荡",
+        "打喷嚏",
+        "倾泻"
+      ]
+    },
+    {
+      "name": "绒光优优",
+      "bloodline": "进化之力",
+      "skills": [
+        "放晴",
+        "虹光冲击",
+        "流沙",
+        "热砂"
+      ]
+    }
+  ],
+  "lineup_images": [
+    {
+      "path": "/assets/lineups/pain-water-ice-s5/e700110ae8ef44bf5b84994d8a872b077b0936979ae268c8f4501f9e5a839f75.png",
+      "source_url": "https://rocoduel.com/zh/teams/UkJZLk2A",
+      "source_page_url": "https://rocoduel.com/zh/teams/UkJZLk2A",
+      "source_kind": "community-post",
+      "capture_method": "browser-screenshot",
+      "published_at": "2026-11-18T08:52:04.507Z",
+      "captured_at": "2026-11-20T18:16:00+08:00",
+      "width": 1280,
+      "height": 920,
+      "sha256": "e700110ae8ef44bf5b84994d8a872b077b0936979ae268c8f4501f9e5a839f75",
+      "phash": "6bc01f47c06f919c",
+      "evidence_grade": "A",
+      "verified": true,
+      "verification_notes": "完整六只精灵、血脉魔法（进化之力）、性格资质与 24 个技能均清晰可读。",
+      "attribution": "洛克对决 · 作者：痛苦水世界加冰"
+    }
+  ],
+  "tutorials": [],
+  "sources": [
+    {
+      "url": "https://rocoduel.com/zh/teams/UkJZLk2A",
+      "type": "primary",
+      "title": "痛苦水世界加冰（洛克对决 · 痛苦水世界加冰）",
+      "published_at": "2026-11-18T08:52:04.507Z",
+      "last_checked_at": "2026-11-20T18:16:00+08:00"
+    }
+  ],
+  "first_seen_at": "2026-11-20T18:16:00+08:00",
+  "last_verified_at": "2026-11-20T18:16:00+08:00",
+  "status": "active",
+  "verification_notes": "S5 赛季 2026-11-18 发布，含 S5 新精灵沙咔蟹与彩蝶鲨，六员与技能完整核对。",
+  "archive_reason": null,
+  "player_notes": []
+}

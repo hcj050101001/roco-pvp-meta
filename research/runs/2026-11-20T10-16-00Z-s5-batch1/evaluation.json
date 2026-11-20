@@ -1,0 +1,54 @@
+{
+  "run_id": "2026-11-20T10-16-00Z-s5-batch1",
+  "candidates": [
+    {
+      "source": "https://rocoduel.com/zh/teams/FvSZE2bG",
+      "url": "https://rocoduel.com/zh/teams/FvSZE2bG",
+      "sha256": "78e811d96748b8b3657d24603fad8f73e4564901a5cc13badfe0f02194cf65c0",
+      "phash": "6bc01f6b906f9194",
+      "width": 1280,
+      "height": 920
+    },
+    {
+      "source": "https://rocoduel.com/zh/teams/UsxC7EJ9",
+      "url": "https://rocoduel.com/zh/teams/UsxC7EJ9",
+      "sha256": "2bf19f8a61ed103a3047e7a3ad2d73a76a2e200456ace5f15c979f704cd68925",
+      "phash": "63603f67c067919c",
+      "width": 1280,
+      "height": 920
+    },
+    {
+      "source": "https://rocoduel.com/zh/teams/ajMfhoZ5",
+      "url": "https://rocoduel.com/zh/teams/ajMfhoZ5",
+      "sha256": "a9297597f9f199b10e57c01b7e274b208f1eda1fa3a37e8c163fbf2f8c66cd65",
+      "phash": "63601f56e06f919c",
+      "width": 1280,
+      "height": 920
+    },
+    {
+      "source": "https://rocoduel.com/zh/teams/UkJZLk2A",
+      "url": "https://rocoduel.com/zh/teams/UkJZLk2A",
+      "sha256": "e700110ae8ef44bf5b84994d8a872b077b0936979ae268c8f4501f9e5a839f75",
+      "phash": "6bc01f47c06f919c",
+      "width": 1280,
+      "height": 920
+    },
+    {
+      "source": "https://www.bilibili.com/video/BV1AQsm6gE1E",
+      "url": "https://i0.hdslb.com/bfs/new_dyn/5bff2874d3a0b0f2a71eba6964341464328091041.png",
+      "sha256": "bfca0f638827c213d73add3a614d76fcbf9a280e25cec057fd20c6baa4310e20",
+      "phash": "5ea279a30b5c7449",
+      "width": 1625,
+      "height": 747
+    },
+    {
+      "source": "https://www.bilibili.com/video/BV1Vusc6pEGT",
+      "url": "https://i0.hdslb.com/bfs/new_dyn/0140b7e16343f753a67c8f5d447c44303494370344962071.png",
+      "sha256": "568af1b98404c9ee529b1fc8543cd54498fe0260cfe407d80207e32f36c75755",
+      "phash": "5ee37083837c191d",
+      "width": 903,
+      "height": 510
+    }
+  ],
+  "source_failures": []
+}

@@ -1,0 +1,113 @@
+{
+  "id": "dream-starfall-2-s5",
+  "slug": "dream-starfall-2-s5",
+  "name": "筑梦星陨2.0",
+  "aliases": [
+    "筑梦星陨"
+  ],
+  "season": "S5",
+  "version_label": "圣龙宝藏",
+  "archetype": [
+    "星陨"
+  ],
+  "summary": "怖哭菇、玳塔、仪式巨像、罗隐、友爱星飞、离心舞者的 S5 筑梦星陨配置。",
+  "guides": [],
+  "signals": [],
+  "roster": [
+    {
+      "name": "怖哭菇",
+      "bloodline": "进化之力",
+      "skills": [
+        "吓退",
+        "星链",
+        "错乱",
+        "休息回复"
+      ]
+    },
+    {
+      "name": "玳塔",
+      "bloodline": "进化之力",
+      "skills": [
+        "冥想",
+        "甜心续航",
+        "超维投射",
+        "错乱"
+      ]
+    },
+    {
+      "name": "仪式巨像",
+      "bloodline": "进化之力",
+      "skills": [
+        "四维降解",
+        "灵媒",
+        "陨石",
+        "多维击打"
+      ]
+    },
+    {
+      "name": "罗隐",
+      "bloodline": "进化之力",
+      "skills": [
+        "鼓劲",
+        "彼岸之手",
+        "地刺",
+        "地震"
+      ]
+    },
+    {
+      "name": "友爱星飞",
+      "bloodline": "进化之力",
+      "skills": [
+        "吹散",
+        "无风",
+        "倾泻",
+        "筑梦"
+      ]
+    },
+    {
+      "name": "离心舞者",
+      "bloodline": "进化之力",
+      "skills": [
+        "翼击",
+        "离子震荡",
+        "超维投射",
+        "轴承支撑"
+      ]
+    }
+  ],
+  "lineup_images": [
+    {
+      "path": "/assets/lineups/dream-starfall-2-s5/2bf19f8a61ed103a3047e7a3ad2d73a76a2e200456ace5f15c979f704cd68925.png",
+      "source_url": "https://rocoduel.com/zh/teams/UsxC7EJ9",
+      "source_page_url": "https://rocoduel.com/zh/teams/UsxC7EJ9",
+      "source_kind": "community-post",
+      "capture_method": "browser-screenshot",
+      "published_at": "2026-11-11T03:34:55.178Z",
+      "captured_at": "2026-11-20T18:16:00+08:00",
+      "width": 1280,
+      "height": 920,
+      "sha256": "2bf19f8a61ed103a3047e7a3ad2d73a76a2e200456ace5f15c979f704cd68925",
+      "phash": "63603f67c067919c",
+      "evidence_grade": "A",
+      "verified": true,
+      "verification_notes": "完整六只精灵、血脉魔法（进化之力）、性格资质与 24 个技能（含友爱星飞「筑梦」）均清晰可读。",
+      "attribution": "洛克对决 · 作者：simul"
+    }
+  ],
+  "tutorials": [],
+  "sources": [
+    {
+      "url": "https://rocoduel.com/zh/teams/UsxC7EJ9",
+      "type": "primary",
+      "title": "筑梦星陨2.0（洛克对决 · simul）",
+      "published_at": "2026-11-11T03:34:55.178Z",
+      "last_checked_at": "2026-11-20T18:16:00+08:00"
+    }
+  ],
+  "first_seen_at": "2026-11-20T18:16:00+08:00",
+  "last_verified_at": "2026-11-20T18:16:00+08:00",
+  "status": "active",
+  "verification_notes": "S5 开赛后于 2026-11-11 发布，含 S5 新技能「筑梦」，六员与技能完整核对。",
+  "archive_reason": null,
+  "player_notes": []
+}

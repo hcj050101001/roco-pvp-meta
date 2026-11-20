@@ -1,0 +1,114 @@
+{
+  "id": "minglong-balance-s5",
+  "slug": "minglong-balance-s5",
+  "name": "冥龙平衡队",
+  "aliases": [
+    "冥古龙平衡队"
+  ],
+  "season": "S5",
+  "version_label": "圣龙宝藏",
+  "archetype": [
+    "平衡",
+    "冥古龙"
+  ],
+  "summary": "飞飞钥、友爱星飞、红绒十字、画间沉铁兽、沙咔蟹、冥古龙的 S5 平衡配置。",
+  "guides": [],
+  "signals": [],
+  "roster": [
+    {
+      "name": "飞飞钥",
+      "bloodline": "愿力强化",
+      "skills": [
+        "飞羽",
+        "磁暴",
+        "倾泻",
+        "风隐"
+      ]
+    },
+    {
+      "name": "友爱星飞",
+      "bloodline": "愿力强化",
+      "skills": [
+        "倾泻",
+        "灵媒",
+        "吹散",
+        "无风"
+      ]
+    },
+    {
+      "name": "红绒十字",
+      "bloodline": "愿力强化",
+      "skills": [
+        "引燃",
+        "除厄",
+        "转圈圈",
+        "退化"
+      ]
+    },
+    {
+      "name": "画间沉铁兽",
+      "bloodline": "愿力强化",
+      "skills": [
+        "有效预防",
+        "截拳",
+        "先发制人",
+        "能量刃"
+      ]
+    },
+    {
+      "name": "沙咔蟹",
+      "bloodline": "愿力强化",
+      "skills": [
+        "纤维化",
+        "力量增效",
+        "藤绞",
+        "水刃"
+      ]
+    },
+    {
+      "name": "冥古龙",
+      "bloodline": "愿力强化",
+      "skills": [
+        "当头棒喝",
+        "荒芜之噬",
+        "火焰箭",
+        "撞鬼"
+      ]
+    }
+  ],
+  "lineup_images": [
+    {
+      "path": "/assets/lineups/minglong-balance-s5/78e811d96748b8b3657d24603fad8f73e4564901a5cc13badfe0f02194cf65c0.png",
+      "source_url": "https://rocoduel.com/zh/teams/FvSZE2bG",
+      "source_page_url": "https://rocoduel.com/zh/teams/FvSZE2bG",
+      "source_kind": "community-post",
+      "capture_method": "browser-screenshot",
+      "published_at": "2026-11-11T04:37:46.347Z",
+      "captured_at": "2026-11-20T18:16:00+08:00",
+      "width": 1280,
+      "height": 920,
+      "sha256": "78e811d96748b8b3657d24603fad8f73e4564901a5cc13badfe0f02194cf65c0",
+      "phash": "6bc01f6b906f9194",
+      "evidence_grade": "A",
+      "verified": true,
+      "verification_notes": "完整六只精灵、血脉魔法（愿力强化）、性格资质与 24 个技能均清晰可读。",
+      "attribution": "洛克对决 · 作者：simul"
+    }
+  ],
+  "tutorials": [],
+  "sources": [
+    {
+      "url": "https://rocoduel.com/zh/teams/FvSZE2bG",
+      "type": "primary",
+      "title": "冥龙平衡队（洛克对决 · simul）",
+      "published_at": "2026-11-11T04:37:46.347Z",
+      "last_checked_at": "2026-11-20T18:16:00+08:00"
+    }
+  ],
+  "first_seen_at": "2026-11-20T18:16:00+08:00",
+  "last_verified_at": "2026-11-20T18:16:00+08:00",
+  "status": "active",
+  "verification_notes": "S5 开赛（2026-11-05）后于 2026-11-11 发布，含 S5 传说精灵冥古龙及新精灵沙咔蟹，六员与技能完整核对。",
+  "archive_reason": null,
+  "player_notes": []
+}

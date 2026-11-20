@@ -1,0 +1,41 @@
+{
+  "run_id": "2026-11-20T10-16-00Z-s5-batch1",
+  "sources": [
+    {
+      "url": "https://rocoduel.com/zh/teams/FvSZE2bG",
+      "artifact_sha256": [
+        "78e811d96748b8b3657d24603fad8f73e4564901a5cc13badfe0f02194cf65c0"
+      ]
+    },
+    {
+      "url": "https://rocoduel.com/zh/teams/UsxC7EJ9",
+      "artifact_sha256": [
+        "2bf19f8a61ed103a3047e7a3ad2d73a76a2e200456ace5f15c979f704cd68925"
+      ]
+    },
+    {
+      "url": "https://rocoduel.com/zh/teams/ajMfhoZ5",
+      "artifact_sha256": [
+        "a9297597f9f199b10e57c01b7e274b208f1eda1fa3a37e8c163fbf2f8c66cd65"
+      ]
+    },
+    {
+      "url": "https://rocoduel.com/zh/teams/UkJZLk2A",
+      "artifact_sha256": [
+        "e700110ae8ef44bf5b84994d8a872b077b0936979ae268c8f4501f9e5a839f75"
+      ]
+    },
+    {
+      "url": "https://www.bilibili.com/video/BV1AQsm6gE1E",
+      "artifact_sha256": [
+        "bfca0f638827c213d73add3a614d76fcbf9a280e25cec057fd20c6baa4310e20"
+      ]
+    },
+    {
+      "url": "https://www.bilibili.com/video/BV1Vusc6pEGT",
+      "artifact_sha256": [
+        "568af1b98404c9ee529b1fc8543cd54498fe0260cfe407d80207e32f36c75755"
+      ]
+    }
+  ]
+}

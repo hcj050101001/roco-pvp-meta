@@ -1,0 +1,124 @@
+{
+  "id": "s5-giant-value-s5",
+  "slug": "s5-giant-value-s5",
+  "name": "S5数值巨人队",
+  "aliases": [
+    "数值巨人队"
+  ],
+  "season": "S5",
+  "version_label": "圣龙宝藏",
+  "archetype": [
+    "平衡"
+  ],
+  "summary": "友爱星飞、火焰猿、布克棱岩、瞌睡王、雪巨人、卡瓦重的 S5 实战配置。",
+  "guides": [],
+  "signals": [],
+  "roster": [
+    {
+      "name": "友爱星飞",
+      "bloodline": null,
+      "skills": [
+        "吹散",
+        "倾泻",
+        "休息回复",
+        "吓退"
+      ]
+    },
+    {
+      "name": "火焰猿",
+      "bloodline": null,
+      "skills": [
+        "地刺",
+        "爆米花爆破",
+        "焚烧烙印",
+        "吹火"
+      ]
+    },
+    {
+      "name": "布克棱岩",
+      "bloodline": null,
+      "skills": [
+        "石锁",
+        "地震",
+        "极限撕裂",
+        "吓退"
+      ]
+    },
+    {
+      "name": "瞌睡王",
+      "bloodline": null,
+      "skills": [
+        "技巧打击",
+        "一拳",
+        "后发制人",
+        "先发制人"
+      ]
+    },
+    {
+      "name": "雪巨人",
+      "bloodline": null,
+      "skills": [
+        "丢冰块",
+        "一拳",
+        "惊吓盒子",
+        "等价交换"
+      ]
+    },
+    {
+      "name": "卡瓦重",
+      "bloodline": null,
+      "skills": [
+        "筛管奔流",
+        "火焰切割",
+        "富养化",
+        "晒太阳"
+      ]
+    }
+  ],
+  "lineup_images": [
+    {
+      "path": "/assets/lineups/s5-giant-value-s5/bfca0f638827c213d73add3a614d76fcbf9a280e25cec057fd20c6baa4310e20.png",
+      "source_url": "https://i0.hdslb.com/bfs/new_dyn/5bff2874d3a0b0f2a71eba6964341464328091041.png",
+      "source_page_url": "https://www.bilibili.com/video/BV1AQsm6gE1E",
+      "source_kind": "comment",
+      "capture_method": "direct-image",
+      "published_at": "2026-11-18T08:08:30.000Z",
+      "captured_at": "2026-11-20T18:16:00+08:00",
+      "width": 1625,
+      "height": 747,
+      "sha256": "bfca0f638827c213d73add3a614d76fcbf9a280e25cec057fd20c6baa4310e20",
+      "phash": "5ea279a30b5c7449",
+      "evidence_grade": "A",
+      "verified": true,
+      "verification_notes": "原视频置顶评论作者本人发出的一图流原图（1625×747），六员性格、资质与 24 个技能清晰可读。",
+      "attribution": "Bilibili · 设计司命（置顶评论一图流）"
+    }
+  ],
+  "tutorials": [
+    {
+      "title": "虫队不好打，要怎样打，S5数值巨人队",
+      "url": "https://www.bilibili.com/video/BV1AQsm6gE1E",
+      "platform": "bilibili",
+      "creator": "设计司命",
+      "published_at": "2026-11-18T08:08:30.000Z",
+      "match_reason": "exact-title",
+      "match_notes": "原配队作者设计司命发布于 2026-11-18 的实战视频，置顶评论附同队一图流。",
+      "verified_at": "2026-11-20T18:16:00+08:00"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://www.bilibili.com/video/BV1AQsm6gE1E",
+      "type": "primary",
+      "title": "虫队不好打，要怎样打，S5数值巨人队（设计司命）",
+      "published_at": "2026-11-18T08:08:30.000Z",
+      "last_checked_at": "2026-11-20T18:16:00+08:00"
+    }
+  ],
+  "first_seen_at": "2026-11-20T18:16:00+08:00",
+  "last_verified_at": "2026-11-20T18:16:00+08:00",
+  "status": "active",
+  "verification_notes": "Bilibili 视频标题明确标注「S5数值巨人队」，发布于 2026-11-18，置顶评论一图流经局部放大复核 24 个技能无误。",
+  "archive_reason": null,
+  "player_notes": []
+}

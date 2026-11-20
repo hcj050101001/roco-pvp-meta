@@ -1,0 +1,124 @@
+{
+  "id": "dream-moe-s5",
+  "slug": "dream-moe-s5",
+  "name": "筑梦萌队",
+  "aliases": [
+    "怼玉米萌队"
+  ],
+  "season": "S5",
+  "version_label": "圣龙宝藏",
+  "archetype": [
+    "萌队"
+  ],
+  "summary": "化蝶、珀尔鼬、菊花梨、鸡麻麻、魔眷鸟、卡洛儿的 S5 筑梦萌队配置。",
+  "guides": [],
+  "signals": [],
+  "roster": [
+    {
+      "name": "化蝶",
+      "bloodline": null,
+      "skills": [
+        "掩护",
+        "破罐破摔",
+        "晒太阳",
+        "摇篮曲"
+      ]
+    },
+    {
+      "name": "珀尔鼬",
+      "bloodline": null,
+      "skills": [
+        "蓄水",
+        "魅惑",
+        "捧杀",
+        "筑梦"
+      ]
+    },
+    {
+      "name": "菊花梨",
+      "bloodline": null,
+      "skills": [
+        "防御",
+        "示弱",
+        "撒娇",
+        "击鼓传花"
+      ]
+    },
+    {
+      "name": "鸡麻麻",
+      "bloodline": null,
+      "skills": [
+        "筑梦",
+        "蛋壳",
+        "倾泻",
+        "甜心续航"
+      ]
+    },
+    {
+      "name": "魔眷鸟",
+      "bloodline": null,
+      "skills": [
+        "啄击",
+        "复写",
+        "羽化加速",
+        "月光合奏"
+      ]
+    },
+    {
+      "name": "卡洛儿",
+      "bloodline": null,
+      "skills": [
+        "叠浪",
+        "月光合奏",
+        "热身运动",
+        "等价交换"
+      ]
+    }
+  ],
+  "lineup_images": [
+    {
+      "path": "/assets/lineups/dream-moe-s5/48cd9b54f9bf07b9c1508f674086478160858dbc1dbf9bd977d2790f559679d7.png",
+      "source_url": "https://i0.hdslb.com/bfs/new_dyn/633ac036d473be64023b6155f7dba7a21251549243.png",
+      "source_page_url": "https://www.bilibili.com/video/BV1X6Wo6yEmF",
+      "source_kind": "comment",
+      "capture_method": "direct-image",
+      "published_at": "2026-11-12T15:49:47.000Z",
+      "captured_at": "2026-11-20T18:33:00+08:00",
+      "width": 1625,
+      "height": 747,
+      "sha256": "48cd9b54f9bf07b9c1508f674086478160858dbc1dbf9bd977d2790f559679d7",
+      "phash": "5e835b830bcc744d",
+      "evidence_grade": "A",
+      "verified": true,
+      "verification_notes": "原视频置顶评论作者本人发出的一图流原图（1625×747），六员性格、资质与 24 个技能清晰可读。",
+      "attribution": "Bilibili · 一只高脂阴猫（置顶评论一图流）"
+    }
+  ],
+  "tutorials": [
+    {
+      "title": "【洛克淋国】萌队女孩喜翻在梦里噶人！",
+      "url": "https://www.bilibili.com/video/BV1X6Wo6yEmF",
+      "platform": "bilibili",
+      "creator": "一只高脂阴猫",
+      "published_at": "2026-11-12T15:49:47.000Z",
+      "match_reason": "same-author",
+      "match_notes": "原作者 一只高脂阴猫 发布于 2026-11-12 的实战视频，置顶评论附同队一图流。",
+      "verified_at": "2026-11-20T18:33:00+08:00"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://www.bilibili.com/video/BV1X6Wo6yEmF",
+      "type": "primary",
+      "title": "【洛克淋国】萌队女孩喜翻在梦里噶人！（一只高脂阴猫）",
+      "published_at": "2026-11-12T15:49:47.000Z",
+      "last_checked_at": "2026-11-20T18:33:00+08:00"
+    }
+  ],
+  "first_seen_at": "2026-11-20T18:33:00+08:00",
+  "last_verified_at": "2026-11-20T18:33:00+08:00",
+  "status": "active",
+  "verification_notes": "S5 开赛后于 2026-11-12 发布，含 S5 新精灵鸡麻麻及新技能「筑梦」。",
+  "archive_reason": null,
+  "player_notes": []
+}

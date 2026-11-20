@@ -1,0 +1,125 @@
+{
+  "id": "dual-electric-rotation-s5",
+  "slug": "dual-electric-rotation-s5",
+  "name": "双电轮转平衡队",
+  "aliases": [
+    "电光鸟轮转"
+  ],
+  "season": "S5",
+  "version_label": "圣龙宝藏",
+  "archetype": [
+    "轮转",
+    "平衡"
+  ],
+  "summary": "电球咩咩、星光狮、高帽鹤者、圣剑-X、蹦床松鼠、寂灭骨龙的 S5 双电轮转配置。",
+  "guides": [],
+  "signals": [],
+  "roster": [
+    {
+      "name": "电球咩咩",
+      "bloodline": null,
+      "skills": [
+        "落雷",
+        "闪击折返",
+        "加大功率",
+        "风墙"
+      ]
+    },
+    {
+      "name": "星光狮",
+      "bloodline": null,
+      "skills": [
+        "加大功率",
+        "闪击折返",
+        "光之矛",
+        "闪光弹"
+      ]
+    },
+    {
+      "name": "高帽鹤者",
+      "bloodline": null,
+      "skills": [
+        "倾泻",
+        "远行",
+        "气泡",
+        "晒太阳"
+      ]
+    },
+    {
+      "name": "圣剑-X",
+      "bloodline": null,
+      "skills": [
+        "鸣沙陷阱",
+        "齿轮切开",
+        "齿轮扭矩",
+        "啮合传递"
+      ]
+    },
+    {
+      "name": "蹦床松鼠",
+      "bloodline": null,
+      "skills": [
+        "休息回复",
+        "热身运动",
+        "追打",
+        "遮地"
+      ]
+    },
+    {
+      "name": "寂灭骨龙",
+      "bloodline": null,
+      "skills": [
+        "借用",
+        "隼鳞",
+        "反击拳",
+        "报复"
+      ]
+    }
+  ],
+  "lineup_images": [
+    {
+      "path": "/assets/lineups/dual-electric-rotation-s5/796d7b851b572ae72b029457ca674ce4a6498d4a8c5744d006e85beb36995e46.png",
+      "source_url": "https://i0.hdslb.com/bfs/new_dyn/a370729c31babdc51cc275cb4b9c900a174026049.png",
+      "source_page_url": "https://www.bilibili.com/video/BV1XtWD6bEaC",
+      "source_kind": "comment",
+      "capture_method": "direct-image",
+      "published_at": "2026-11-12T04:00:00.000Z",
+      "captured_at": "2026-11-20T18:33:00+08:00",
+      "width": 1086,
+      "height": 1448,
+      "sha256": "796d7b851b572ae72b029457ca674ce4a6498d4a8c5744d006e85beb36995e46",
+      "phash": "11b95f82687f003f",
+      "evidence_grade": "A",
+      "verified": true,
+      "verification_notes": "原视频置顶评论作者本人发出的一图流原图（1086×1448），图底标注 2026.11.10，六员性格、资质、能耗与 24 个技能清晰可读。",
+      "attribution": "Bilibili · 梦想ccccc（置顶评论一图流）"
+    }
+  ],
+  "tutorials": [
+    {
+      "title": "【洛克PVP】双电轮转平衡队，电光鸟轮转，详细解释高脚鸟与电羊斩杀线！",
+      "url": "https://www.bilibili.com/video/BV1XtWD6bEaC",
+      "platform": "bilibili",
+      "creator": "梦想ccccc",
+      "published_at": "2026-11-12T04:00:00.000Z",
+      "match_reason": "exact-title",
+      "match_notes": "原作者 梦想ccccc 发布于 2026-11-12 的实战视频，置顶评论附同队一图流。",
+      "verified_at": "2026-11-20T18:33:00+08:00"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://www.bilibili.com/video/BV1XtWD6bEaC",
+      "type": "primary",
+      "title": "【洛克PVP】双电轮转平衡队，电光鸟轮转，详细解释高脚鸟与电羊斩杀线！（梦想ccccc）",
+      "published_at": "2026-11-12T04:00:00.000Z",
+      "last_checked_at": "2026-11-20T18:33:00+08:00"
+    }
+  ],
+  "first_seen_at": "2026-11-20T18:33:00+08:00",
+  "last_verified_at": "2026-11-20T18:33:00+08:00",
+  "status": "active",
+  "verification_notes": "S5 开赛后于 2026-11-12 发布（图内标注 2026.11.10），六员与技能完整核对。",
+  "archive_reason": null,
+  "player_notes": []
+}

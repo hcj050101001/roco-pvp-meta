@@ -1,0 +1,47 @@
+{
+  "run_id": "2026-11-20T10-33-00Z-s5-batch2",
+  "sources": [
+    {
+      "url": "https://www.bilibili.com/video/BV1FBWb6VECr",
+      "artifact_sha256": [
+        "1875397dd1842e667427b5f8a2caf7bcc8893edb440a206ef0a8c721566b9443"
+      ]
+    },
+    {
+      "url": "https://www.bilibili.com/video/BV1fyWk61EaW",
+      "artifact_sha256": [
+        "d26242c80a1da29642f8c568ee7c7d77417f73854f71b018690af615eceb7df0"
+      ]
+    },
+    {
+      "url": "https://www.bilibili.com/video/BV1ThsD6HE8A",
+      "artifact_sha256": [
+        "f19afee966cac7308efa2cb1d2d31841c27bccfbe5b1ef3f316d5fba2327eaf0"
+      ]
+    },
+    {
+      "url": "https://www.bilibili.com/video/BV1X6Wo6yEmF",
+      "artifact_sha256": [
+        "48cd9b54f9bf07b9c1508f674086478160858dbc1dbf9bd977d2790f559679d7"
+      ]
+    },
+    {
+      "url": "https://www.bilibili.com/video/BV1XtWD6bEaC",
+      "artifact_sha256": [
+        "796d7b851b572ae72b029457ca674ce4a6498d4a8c5744d006e85beb36995e46"
+      ]
+    },
+    {
+      "url": "https://www.bilibili.com/video/BV1vssm6ZEQu",
+      "artifact_sha256": [
+        "234d7acdaf283bc1aa1c083d27052c081b5114a1c281c4213ed2658aaaf7e8b9"
+      ]
+    },
+    {
+      "url": "https://www.bilibili.com/video/BV1fxsb65E7d",
+      "artifact_sha256": [
+        "96d87870c95a981ed4fb2ca561c5aa2ffa2d1f394f3446debd38b5626567a67e"
+      ]
+    }
+  ]
+}

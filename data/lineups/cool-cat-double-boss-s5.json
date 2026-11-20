@@ -1,0 +1,124 @@
+{
+  "id": "cool-cat-double-boss-s5",
+  "slug": "cool-cat-double-boss-s5",
+  "name": "酷猫教练双首领队",
+  "aliases": [
+    "平衡火队"
+  ],
+  "season": "S5",
+  "version_label": "圣龙宝藏",
+  "archetype": [
+    "平衡"
+  ],
+  "summary": "炮米花、锤头鹤、音速犬、魔力猫、火焰猿、烈火守护的 S5 双首领平衡火队配置。",
+  "guides": [],
+  "signals": [],
+  "roster": [
+    {
+      "name": "炮米花",
+      "bloodline": null,
+      "skills": [
+        "叶绿光束",
+        "暖气",
+        "高温回火",
+        "闪燃"
+      ]
+    },
+    {
+      "name": "锤头鹤",
+      "bloodline": null,
+      "skills": [
+        "霜降",
+        "晒太阳",
+        "水花四溅",
+        "取念"
+      ]
+    },
+    {
+      "name": "音速犬",
+      "bloodline": null,
+      "skills": [
+        "跌落",
+        "高温回火",
+        "火云车",
+        "热身"
+      ]
+    },
+    {
+      "name": "魔力猫",
+      "bloodline": null,
+      "skills": [
+        "藤绞",
+        "筛管奔流",
+        "借用",
+        "丰饶"
+      ]
+    },
+    {
+      "name": "火焰猿",
+      "bloodline": null,
+      "skills": [
+        "吹火",
+        "焚烧烙印",
+        "地刺",
+        "冰爪"
+      ]
+    },
+    {
+      "name": "烈火守护",
+      "bloodline": null,
+      "skills": [
+        "双响炮",
+        "反击拳",
+        "撕咬",
+        "先发制人"
+      ]
+    }
+  ],
+  "lineup_images": [
+    {
+      "path": "/assets/lineups/cool-cat-double-boss-s5/96d87870c95a981ed4fb2ca561c5aa2ffa2d1f394f3446debd38b5626567a67e.png",
+      "source_url": "https://i0.hdslb.com/bfs/new_dyn/3b1309080e8c0d702fbf9d1c833f2a3f452271049.png",
+      "source_page_url": "https://www.bilibili.com/video/BV1fxsb65E7d",
+      "source_kind": "comment",
+      "capture_method": "direct-image",
+      "published_at": "2026-11-19T07:42:06.000Z",
+      "captured_at": "2026-11-20T18:33:00+08:00",
+      "width": 1056,
+      "height": 610,
+      "sha256": "96d87870c95a981ed4fb2ca561c5aa2ffa2d1f394f3446debd38b5626567a67e",
+      "phash": "5e8b198b8b54b744",
+      "evidence_grade": "A",
+      "verified": true,
+      "verification_notes": "原视频置顶评论作者本人发出的一图流原图（1056×610），六员性格、资质与 24 个技能清晰可读。",
+      "attribution": "Bilibili · 可爱的尤莉叶（置顶评论一图流）"
+    }
+  ],
+  "tutorials": [
+    {
+      "title": "绝地反杀，酷猫教练双首领队VS水鲨平衡队",
+      "url": "https://www.bilibili.com/video/BV1fxsb65E7d",
+      "platform": "bilibili",
+      "creator": "可爱的尤莉叶",
+      "published_at": "2026-11-19T07:42:06.000Z",
+      "match_reason": "exact-title",
+      "match_notes": "原作者 可爱的尤莉叶 发布于 2026-11-19 的实战视频，置顶评论附同队一图流。",
+      "verified_at": "2026-11-20T18:33:00+08:00"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://www.bilibili.com/video/BV1fxsb65E7d",
+      "type": "primary",
+      "title": "绝地反杀，酷猫教练双首领队VS水鲨平衡队（可爱的尤莉叶）",
+      "published_at": "2026-11-19T07:42:06.000Z",
+      "last_checked_at": "2026-11-20T18:33:00+08:00"
+    }
+  ],
+  "first_seen_at": "2026-11-20T18:33:00+08:00",
+  "last_verified_at": "2026-11-20T18:33:00+08:00",
+  "status": "active",
+  "verification_notes": "S5 开赛后于 2026-11-19 发布，原视频带「洛克王国S5圣龙宝藏新赛季」标签，六员与技能完整核对。",
+  "archive_reason": null,
+  "player_notes": []
+}

@@ -1,0 +1,124 @@
+{
+  "id": "fire-god-balance-s5",
+  "slug": "fire-god-balance-s5",
+  "name": "火神平衡队",
+  "aliases": [
+    "复写火神平衡队"
+  ],
+  "season": "S5",
+  "version_label": "圣龙宝藏",
+  "archetype": [
+    "平衡"
+  ],
+  "summary": "寂灭骨龙、抹茶布丁、绒光优优、火神、画间沉铁兽、帕帕斯卡的 S5 火神平衡配置。",
+  "guides": [],
+  "signals": [],
+  "roster": [
+    {
+      "name": "寂灭骨龙",
+      "bloodline": null,
+      "skills": [
+        "隼鳞",
+        "力量增效",
+        "报复",
+        "先发制人"
+      ]
+    },
+    {
+      "name": "抹茶布丁",
+      "bloodline": null,
+      "skills": [
+        "叶绿光束",
+        "富养化",
+        "水炮",
+        "泡沫幻影"
+      ]
+    },
+    {
+      "name": "绒光优优",
+      "bloodline": null,
+      "skills": [
+        "流沙",
+        "硬化",
+        "热砂",
+        "虹光冲击"
+      ]
+    },
+    {
+      "name": "火神",
+      "bloodline": null,
+      "skills": [
+        "吹火",
+        "火云车",
+        "山火",
+        "复写"
+      ]
+    },
+    {
+      "name": "画间沉铁兽",
+      "bloodline": null,
+      "skills": [
+        "力量增效",
+        "先发制人",
+        "惊吓盒子",
+        "截拳"
+      ]
+    },
+    {
+      "name": "帕帕斯卡",
+      "bloodline": null,
+      "skills": [
+        "电弧",
+        "轴承支撑",
+        "钢铁洪流",
+        "倾泻"
+      ]
+    }
+  ],
+  "lineup_images": [
+    {
+      "path": "/assets/lineups/fire-god-balance-s5/234d7acdaf283bc1aa1c083d27052c081b5114a1c281c4213ed2658aaaf7e8b9.png",
+      "source_url": "https://i0.hdslb.com/bfs/new_dyn/eb968b46267549790fac61d2ed16f15d506992315.png",
+      "source_page_url": "https://www.bilibili.com/video/BV1vssm6ZEQu",
+      "source_kind": "comment",
+      "capture_method": "direct-image",
+      "published_at": "2026-11-18T08:57:49.000Z",
+      "captured_at": "2026-11-20T18:33:00+08:00",
+      "width": 1625,
+      "height": 747,
+      "sha256": "234d7acdaf283bc1aa1c083d27052c081b5114a1c281c4213ed2658aaaf7e8b9",
+      "phash": "5e83198723dd5c49",
+      "evidence_grade": "A",
+      "verified": true,
+      "verification_notes": "原视频置顶评论作者本人发出的一图流原图（1625×747），六员性格、资质与 24 个技能清晰可读。",
+      "attribution": "Bilibili · 爆笑小Winky（置顶评论一图流）"
+    }
+  ],
+  "tutorials": [
+    {
+      "title": "还在纠结火神带什么？复写火神：多个愿望一次满足。就很...你们懂吧",
+      "url": "https://www.bilibili.com/video/BV1vssm6ZEQu",
+      "platform": "bilibili",
+      "creator": "爆笑小Winky",
+      "published_at": "2026-11-18T08:57:49.000Z",
+      "match_reason": "same-author",
+      "match_notes": "原作者 爆笑小Winky 发布于 2026-11-18 的实战视频，置顶评论附同队一图流。",
+      "verified_at": "2026-11-20T18:33:00+08:00"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://www.bilibili.com/video/BV1vssm6ZEQu",
+      "type": "primary",
+      "title": "还在纠结火神带什么？复写火神：多个愿望一次满足。就很...你们懂吧（爆笑小Winky）",
+      "published_at": "2026-11-18T08:57:49.000Z",
+      "last_checked_at": "2026-11-20T18:33:00+08:00"
+    }
+  ],
+  "first_seen_at": "2026-11-20T18:33:00+08:00",
+  "last_verified_at": "2026-11-20T18:33:00+08:00",
+  "status": "active",
+  "verification_notes": "S5 开赛后于 2026-11-18 发布，原视频带「洛克王国S5圣龙宝藏新赛季」标签，一图流右下标注「火神平衡队」。",
+  "archive_reason": null,
+  "player_notes": []
+}

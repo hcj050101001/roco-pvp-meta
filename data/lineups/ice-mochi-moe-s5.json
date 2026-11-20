@@ -1,0 +1,124 @@
+{
+  "id": "ice-mochi-moe-s5",
+  "slug": "ice-mochi-moe-s5",
+  "name": "冰麻薯萌队",
+  "aliases": [
+    "鸡麻麻冰麻薯萌队"
+  ],
+  "season": "S5",
+  "version_label": "圣龙宝藏",
+  "archetype": [
+    "萌队"
+  ],
+  "summary": "化蝶、鸡麻麻、寒音蛇、蹦床松鼠、咕德帽帽、椰浆布丁的 S5 萌队配置。",
+  "guides": [],
+  "signals": [],
+  "roster": [
+    {
+      "name": "化蝶",
+      "bloodline": null,
+      "skills": [
+        "晒太阳",
+        "破罐破摔",
+        "退化",
+        "毒孢子"
+      ]
+    },
+    {
+      "name": "鸡麻麻",
+      "bloodline": null,
+      "skills": [
+        "蛋壳",
+        "休息回复",
+        "热身运动",
+        "追打"
+      ]
+    },
+    {
+      "name": "寒音蛇",
+      "bloodline": null,
+      "skills": [
+        "月光合奏",
+        "示弱",
+        "有效预防",
+        "连续毒针"
+      ]
+    },
+    {
+      "name": "蹦床松鼠",
+      "bloodline": null,
+      "skills": [
+        "热身运动",
+        "追打",
+        "休息回复",
+        "雪替身"
+      ]
+    },
+    {
+      "name": "咕德帽帽",
+      "bloodline": null,
+      "skills": [
+        "撞鬼",
+        "离魂术",
+        "甜心续航",
+        "欺诈契约"
+      ]
+    },
+    {
+      "name": "椰浆布丁",
+      "bloodline": null,
+      "skills": [
+        "水炮",
+        "离子震荡",
+        "捧杀",
+        "寒风吹"
+      ]
+    }
+  ],
+  "lineup_images": [
+    {
+      "path": "/assets/lineups/ice-mochi-moe-s5/d26242c80a1da29642f8c568ee7c7d77417f73854f71b018690af615eceb7df0.png",
+      "source_url": "https://i0.hdslb.com/bfs/new_dyn/e4525818fe200bd736e17039ab15f95a10153478.png",
+      "source_page_url": "https://www.bilibili.com/video/BV1fyWk61EaW",
+      "source_kind": "comment",
+      "capture_method": "direct-image",
+      "published_at": "2026-11-14T06:14:52.000Z",
+      "captured_at": "2026-11-20T18:33:00+08:00",
+      "width": 1625,
+      "height": 747,
+      "sha256": "d26242c80a1da29642f8c568ee7c7d77417f73854f71b018690af615eceb7df0",
+      "phash": "5ea70b832bcc5459",
+      "evidence_grade": "A",
+      "verified": true,
+      "verification_notes": "原视频置顶评论作者本人发出的一图流原图（1625×747），六员性格、资质与 24 个技能清晰可读。",
+      "attribution": "Bilibili · 一般系道馆训练家（置顶评论一图流）"
+    }
+  ],
+  "tutorials": [
+    {
+      "title": "【洛克王国世界】这还玩个鸡帽啊！另类萌队科研，我鸡麻麻只是一位母亲！",
+      "url": "https://www.bilibili.com/video/BV1fyWk61EaW",
+      "platform": "bilibili",
+      "creator": "一般系道馆训练家",
+      "published_at": "2026-11-14T06:14:52.000Z",
+      "match_reason": "same-author",
+      "match_notes": "原作者 一般系道馆训练家 发布于 2026-11-14 的实战视频，置顶评论附同队一图流。",
+      "verified_at": "2026-11-20T18:33:00+08:00"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://www.bilibili.com/video/BV1fyWk61EaW",
+      "type": "primary",
+      "title": "【洛克王国世界】这还玩个鸡帽啊！另类萌队科研，我鸡麻麻只是一位母亲！（一般系道馆训练家）",
+      "published_at": "2026-11-14T06:14:52.000Z",
+      "last_checked_at": "2026-11-20T18:33:00+08:00"
+    }
+  ],
+  "first_seen_at": "2026-11-20T18:33:00+08:00",
+  "last_verified_at": "2026-11-20T18:33:00+08:00",
+  "status": "active",
+  "verification_notes": "S5 开赛后于 2026-11-14 发布，含 S5 新精灵鸡麻麻，一图流右下标注「冰麻薯萌队」。",
+  "archive_reason": null,
+  "player_notes": []
+}

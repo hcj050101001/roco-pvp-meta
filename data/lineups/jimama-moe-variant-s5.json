@@ -1,0 +1,124 @@
+{
+  "id": "jimama-moe-variant-s5",
+  "slug": "jimama-moe-variant-s5",
+  "name": "鸡麻麻萌队变体",
+  "aliases": [
+    "鸡麻麻连环巴掌萌队"
+  ],
+  "season": "S5",
+  "version_label": "圣龙宝藏",
+  "archetype": [
+    "萌队"
+  ],
+  "summary": "寒音蛇、咕德帽帽、化蝶、智挥章脑、鸡麻麻、斑枭的 S5 萌队配置。",
+  "guides": [],
+  "signals": [],
+  "roster": [
+    {
+      "name": "寒音蛇",
+      "bloodline": null,
+      "skills": [
+        "月光合奏",
+        "连续毒针",
+        "有效预防",
+        "示弱"
+      ]
+    },
+    {
+      "name": "咕德帽帽",
+      "bloodline": null,
+      "skills": [
+        "撞鬼",
+        "离魂术",
+        "甜心续航",
+        "吓退"
+      ]
+    },
+    {
+      "name": "化蝶",
+      "bloodline": null,
+      "skills": [
+        "破罐破摔",
+        "食腐",
+        "退化",
+        "引燃"
+      ]
+    },
+    {
+      "name": "智挥章脑",
+      "bloodline": null,
+      "skills": [
+        "加大功率",
+        "水光冲击",
+        "打湿",
+        "落雨"
+      ]
+    },
+    {
+      "name": "鸡麻麻",
+      "bloodline": null,
+      "skills": [
+        "嗜痛",
+        "追打",
+        "热身运动",
+        "转圈圈"
+      ]
+    },
+    {
+      "name": "斑枭",
+      "bloodline": null,
+      "skills": [
+        "倾泻",
+        "飞羽",
+        "回旋风暴",
+        "复写"
+      ]
+    }
+  ],
+  "lineup_images": [
+    {
+      "path": "/assets/lineups/jimama-moe-variant-s5/f19afee966cac7308efa2cb1d2d31841c27bccfbe5b1ef3f316d5fba2327eaf0.png",
+      "source_url": "https://i0.hdslb.com/bfs/new_dyn/1aebd7ede42ecf0124e95e1b14042a1d10153478.png",
+      "source_page_url": "https://www.bilibili.com/video/BV1ThsD6HE8A",
+      "source_kind": "comment",
+      "capture_method": "direct-image",
+      "published_at": "2026-11-18T17:40:31.000Z",
+      "captured_at": "2026-11-20T18:33:00+08:00",
+      "width": 1625,
+      "height": 747,
+      "sha256": "f19afee966cac7308efa2cb1d2d31841c27bccfbe5b1ef3f316d5fba2327eaf0",
+      "phash": "5ea35b830bcc7449",
+      "evidence_grade": "A",
+      "verified": true,
+      "verification_notes": "原视频置顶评论作者本人发出的一图流原图（1625×747），六员性格、资质与 24 个技能清晰可读。",
+      "attribution": "Bilibili · 一般系道馆训练家（置顶评论一图流）"
+    }
+  ],
+  "tutorials": [
+    {
+      "title": "【洛克王国世界】鸡麻麻连环巴掌扇飞水鲨姐妹！",
+      "url": "https://www.bilibili.com/video/BV1ThsD6HE8A",
+      "platform": "bilibili",
+      "creator": "一般系道馆训练家",
+      "published_at": "2026-11-18T17:40:31.000Z",
+      "match_reason": "same-author",
+      "match_notes": "原作者 一般系道馆训练家 发布于 2026-11-18 的实战视频，置顶评论附同队一图流。",
+      "verified_at": "2026-11-20T18:33:00+08:00"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://www.bilibili.com/video/BV1ThsD6HE8A",
+      "type": "primary",
+      "title": "【洛克王国世界】鸡麻麻连环巴掌扇飞水鲨姐妹！（一般系道馆训练家）",
+      "published_at": "2026-11-18T17:40:31.000Z",
+      "last_checked_at": "2026-11-20T18:33:00+08:00"
+    }
+  ],
+  "first_seen_at": "2026-11-20T18:33:00+08:00",
+  "last_verified_at": "2026-11-20T18:33:00+08:00",
+  "status": "active",
+  "verification_notes": "S5 开赛后于 2026-11-18 发布，含 S5 新精灵鸡麻麻，置顶一图流核对无误。",
+  "archive_reason": null,
+  "player_notes": []
+}

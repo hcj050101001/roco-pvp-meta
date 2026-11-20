@@ -1,0 +1,124 @@
+{
+  "id": "crab-hat-balance-s5",
+  "slug": "crab-hat-balance-s5",
+  "name": "蟹帽平衡队",
+  "aliases": [
+    "沙咔蟹咕德帽帽平衡队"
+  ],
+  "season": "S5",
+  "version_label": "圣龙宝藏",
+  "archetype": [
+    "平衡"
+  ],
+  "summary": "圣代甜甜、贝古斯、咕德帽帽、绒光优优、古卷执政官、沙咔蟹的 S5 平衡配置。",
+  "guides": [],
+  "signals": [],
+  "roster": [
+    {
+      "name": "圣代甜甜",
+      "bloodline": null,
+      "skills": [
+        "打喷嚏",
+        "吹散",
+        "倾泻",
+        "寒潮"
+      ]
+    },
+    {
+      "name": "贝古斯",
+      "bloodline": null,
+      "skills": [
+        "能量守恒",
+        "取念",
+        "焚烧烙印",
+        "燃尽"
+      ]
+    },
+    {
+      "name": "咕德帽帽",
+      "bloodline": null,
+      "skills": [
+        "嘲弄",
+        "幽灵爆发",
+        "取念",
+        "吓退"
+      ]
+    },
+    {
+      "name": "绒光优优",
+      "bloodline": null,
+      "skills": [
+        "热砂",
+        "硬化",
+        "虹光冲击",
+        "流沙"
+      ]
+    },
+    {
+      "name": "古卷执政官",
+      "bloodline": null,
+      "skills": [
+        "嗜痛",
+        "蓄能轰击",
+        "先发制人",
+        "大爆炸"
+      ]
+    },
+    {
+      "name": "沙咔蟹",
+      "bloodline": null,
+      "skills": [
+        "水刃",
+        "力量增效",
+        "纤维化",
+        "藤绞"
+      ]
+    }
+  ],
+  "lineup_images": [
+    {
+      "path": "/assets/lineups/crab-hat-balance-s5/1875397dd1842e667427b5f8a2caf7bcc8893edb440a206ef0a8c721566b9443.png",
+      "source_url": "https://i0.hdslb.com/bfs/new_dyn/5b079225ef9ed9ca11b6db97e621c11910153478.png",
+      "source_page_url": "https://www.bilibili.com/video/BV1FBWb6VECr",
+      "source_kind": "comment",
+      "capture_method": "direct-image",
+      "published_at": "2026-11-09T17:04:48.000Z",
+      "captured_at": "2026-11-20T18:33:00+08:00",
+      "width": 1625,
+      "height": 747,
+      "sha256": "1875397dd1842e667427b5f8a2caf7bcc8893edb440a206ef0a8c721566b9443",
+      "phash": "5ea371830b9d7449",
+      "evidence_grade": "A",
+      "verified": true,
+      "verification_notes": "原视频置顶评论作者本人发出的一图流原图（1625×747），六员性格、资质与 24 个技能清晰可读。",
+      "attribution": "Bilibili · 一般系道馆训练家（置顶评论一图流）"
+    }
+  ],
+  "tutorials": [
+    {
+      "title": "【洛克王国世界】国服第一咕德帽帽！蟹帽平衡队一路杀穿！",
+      "url": "https://www.bilibili.com/video/BV1FBWb6VECr",
+      "platform": "bilibili",
+      "creator": "一般系道馆训练家",
+      "published_at": "2026-11-09T17:04:48.000Z",
+      "match_reason": "exact-title",
+      "match_notes": "原作者 一般系道馆训练家 发布于 2026-11-09 的实战视频，置顶评论附同队一图流。",
+      "verified_at": "2026-11-20T18:33:00+08:00"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://www.bilibili.com/video/BV1FBWb6VECr",
+      "type": "primary",
+      "title": "【洛克王国世界】国服第一咕德帽帽！蟹帽平衡队一路杀穿！（一般系道馆训练家）",
+      "published_at": "2026-11-09T17:04:48.000Z",
+      "last_checked_at": "2026-11-20T18:33:00+08:00"
+    }
+  ],
+  "first_seen_at": "2026-11-20T18:33:00+08:00",
+  "last_verified_at": "2026-11-20T18:33:00+08:00",
+  "status": "active",
+  "verification_notes": "S5 开赛后于 2026-11-09 发布，含 S5 新精灵沙咔蟹，原视频标题与置顶一图流核对一致。",
+  "archive_reason": null,
+  "player_notes": []
+}

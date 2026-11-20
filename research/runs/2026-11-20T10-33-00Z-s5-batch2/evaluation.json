@@ -1,0 +1,62 @@
+{
+  "run_id": "2026-11-20T10-33-00Z-s5-batch2",
+  "candidates": [
+    {
+      "source": "https://www.bilibili.com/video/BV1FBWb6VECr",
+      "url": "https://i0.hdslb.com/bfs/new_dyn/5b079225ef9ed9ca11b6db97e621c11910153478.png",
+      "sha256": "1875397dd1842e667427b5f8a2caf7bcc8893edb440a206ef0a8c721566b9443",
+      "phash": "5ea371830b9d7449",
+      "width": 1625,
+      "height": 747
+    },
+    {
+      "source": "https://www.bilibili.com/video/BV1fyWk61EaW",
+      "url": "https://i0.hdslb.com/bfs/new_dyn/e4525818fe200bd736e17039ab15f95a10153478.png",
+      "sha256": "d26242c80a1da29642f8c568ee7c7d77417f73854f71b018690af615eceb7df0",
+      "phash": "5ea70b832bcc5459",
+      "width": 1625,
+      "height": 747
+    },
+    {
+      "source": "https://www.bilibili.com/video/BV1ThsD6HE8A",
+      "url": "https://i0.hdslb.com/bfs/new_dyn/1aebd7ede42ecf0124e95e1b14042a1d10153478.png",
+      "sha256": "f19afee966cac7308efa2cb1d2d31841c27bccfbe5b1ef3f316d5fba2327eaf0",
+      "phash": "5ea35b830bcc7449",
+      "width": 1625,
+      "height": 747
+    },
+    {
+      "source": "https://www.bilibili.com/video/BV1X6Wo6yEmF",
+      "url": "https://i0.hdslb.com/bfs/new_dyn/633ac036d473be64023b6155f7dba7a21251549243.png",
+      "sha256": "48cd9b54f9bf07b9c1508f674086478160858dbc1dbf9bd977d2790f559679d7",
+      "phash": "5e835b830bcc744d",
+      "width": 1625,
+      "height": 747
+    },
+    {
+      "source": "https://www.bilibili.com/video/BV1XtWD6bEaC",
+      "url": "https://i0.hdslb.com/bfs/new_dyn/a370729c31babdc51cc275cb4b9c900a174026049.png",
+      "sha256": "796d7b851b572ae72b029457ca674ce4a6498d4a8c5744d006e85beb36995e46",
+      "phash": "11b95f82687f003f",
+      "width": 1086,
+      "height": 1448
+    },
+    {
+      "source": "https://www.bilibili.com/video/BV1vssm6ZEQu",
+      "url": "https://i0.hdslb.com/bfs/new_dyn/eb968b46267549790fac61d2ed16f15d506992315.png",
+      "sha256": "234d7acdaf283bc1aa1c083d27052c081b5114a1c281c4213ed2658aaaf7e8b9",
+      "phash": "5e83198723dd5c49",
+      "width": 1625,
+      "height": 747
+    },
+    {
+      "source": "https://www.bilibili.com/video/BV1fxsb65E7d",
+      "url": "https://i0.hdslb.com/bfs/new_dyn/3b1309080e8c0d702fbf9d1c833f2a3f452271049.png",
+      "sha256": "96d87870c95a981ed4fb2ca561c5aa2ffa2d1f394f3446debd38b5626567a67e",
+      "phash": "5e8b198b8b54b744",
+      "width": 1056,
+      "height": 610
+    }
+  ],
+  "source_failures": []
+}

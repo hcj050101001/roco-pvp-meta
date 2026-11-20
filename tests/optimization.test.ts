@@ -33,7 +33,10 @@ test('核对时间不触发发布；换季与内容变化触发发布，时间�
     siteSignature(allLineups, { ...state, season_checked_at: '2026-10-24T00:00:00Z' }, seasons),
     signature,
   );
-  assert.notEqual(siteSignature(allLineups, { ...state, season: 'S5' }, seasons), signature);
+  assert.notEqual(
+    siteSignature(allLineups, { ...state, season: state.season === 'S5' ? 'S6' : 'S5' }, seasons),
+    signature,
+  );
   const next = structuredClone(allLineups);
   next[0].summary += ' 已核验新配置';
   assert.notEqual(siteSignature(next, state, seasons), signature);

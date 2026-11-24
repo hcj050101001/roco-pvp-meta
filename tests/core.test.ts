@@ -117,6 +117,7 @@ test('全面展示超过十套，并排除旧季和归档', () => {
     ...allLineups[0],
     id: `x-${i}`,
     slug: `x-${i}`,
+    season: 'S4',
     archetype: [i < 12 ? '雨天' : '反伤'],
   }));
   const chosen = selectActive(samples, 'S4');

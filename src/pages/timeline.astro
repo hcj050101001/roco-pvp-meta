@@ -1,13 +1,17 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { allLineups } from '../lib/data';
+import { allLineups, seasons } from '../lib/data';
 import { timelineLineups } from '../lib/timeline';
-import { configurationDate } from '../lib/rank';
+import { configurationDate, seasonNumber } from '../lib/rank';
 import { displayDate, withBase } from '../lib/urls';
 import { absoluteUrl, breadcrumbJsonLd } from '../lib/seo';
 import CollectionLinks from '../components/CollectionLinks.astro';
 
 const lineups = timelineLineups(allLineups);
+const datedCount = lineups.filter((l) => Boolean(configurationDate(l))).length;
+const seasonChoices = [...seasons]
+  .filter((s) => lineups.some((l) => l.season === s.id))
+  .sort((a, b) => seasonNumber(b.id) - seasonNumber(a.id));
 const itemListJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'ItemList',
@@ -35,21 +39,66 @@ const itemListJsonLd = {
 >
   <div class="wrap data-page">
     <header class="data-page-heading">
-      <h1>配置时间线</h1>
-      <p>按配置图发布日期排列。未标注日期的阵容列在末尾。</p>
-      <CollectionLinks />
+      <div class="data-page-title-block">
+        <div class="eyebrow">
+          <span class="eyebrow-line"></span> CHRONOLOGICAL ARCHIVE · 跨赛季编年
+        </div>
+        <h1>配置时间线</h1>
+        <p>按配置图真实发布日期由近及远排列；未标注原始发布日期的早期存档列于末尾。</p>
+        <CollectionLinks />
+      </div>
+      <div class="data-page-kpis" aria-hidden="true">
+        <div>
+          <strong>{String(lineups.length).padStart(2, '0')}</strong>
+          <span>已核验阵容</span>
+        </div>
+        <div>
+          <strong>{String(datedCount).padStart(2, '0')}</strong>
+          <span>精确标注日期</span>
+        </div>
+      </div>
     </header>
+
+    <div class="timeline-toolbar" id="timeline-toolbar" hidden>
+      <div class="timeline-filter-group" role="group" aria-label="按赛季筛选时间线">
+        <button type="button" class="filter active" data-tl-season="all" aria-pressed="true">
+          全部赛季（{lineups.length}）
+        </button>
+        {seasonChoices.map((s) => (
+          <button type="button" class="filter" data-tl-season={s.id} aria-pressed="false">
+            {s.id} · {s.name}（{lineups.filter((l) => l.season === s.id).length}）
+          </button>
+        ))}
+      </div>
+      <span id="timeline-count" class="timeline-count" role="status" aria-live="polite">
+        当前显示 {lineups.length} 套阵容
+      </span>
+    </div>
+
     <ol class="timeline-list">
       {lineups.map((lineup) => {
         const date = configurationDate(lineup);
         return (
-          <li>
-            <span class="timeline-date">{date ? displayDate(date) : '未标注'}</span>
-            <div>
-              <a href={withBase(`/lineups/${lineup.slug}/`)}>{lineup.name}</a>
-              <p>
-                {lineup.season} · {lineup.archetype.join(' · ')}
-              </p>
+          <li data-tl-item data-season={lineup.season}>
+            <div class="timeline-stamp">
+              <span class={`timeline-date${date ? '' : ' is-undated'}`}>
+                {date ? displayDate(date) : '日期未标注'}
+              </span>
+              <span class="timeline-season-tag">{lineup.season}</span>
+            </div>
+            <div class="timeline-card">
+              <div class="timeline-card-head">
+                <a href={withBase(`/lineups/${lineup.slug}/`)}>{lineup.name}</a>
+                <div class="timeline-badges">
+                  {lineup.archetype.map((tag) => (
+                    <span class="timeline-tag">{tag}</span>
+                  ))}
+                  {lineup.tutorials.length > 0 && (
+                    <span class="timeline-video-pill">含实战视频</span>
+                  )}
+                </div>
+              </div>
+              <p class="timeline-roster">{lineup.roster.map((p) => p.name).join(' · ')}</p>
             </div>
           </li>
         );
@@ -57,3 +106,29 @@ const itemListJsonLd = {
     </ol>
   </div>
 </Layout>
+<script>
+  const toolbar = document.querySelector<HTMLElement>('#timeline-toolbar');
+  const countEl = document.querySelector<HTMLElement>('#timeline-count');
+  const buttons = [...document.querySelectorAll<HTMLButtonElement>('[data-tl-season]')];
+  const items = [...document.querySelectorAll<HTMLElement>('[data-tl-item]')];
+  if (toolbar && countEl && buttons.length && items.length) {
+    toolbar.hidden = false;
+    buttons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const target = btn.dataset.tlSeason!;
+        let visible = 0;
+        items.forEach((li) => {
+          const show = target === 'all' || li.dataset.season === target;
+          li.hidden = !show;
+          if (show) visible++;
+        });
+        buttons.forEach((b) => {
+          const active = b === btn;
+          b.classList.toggle('active', active);
+          b.setAttribute('aria-pressed', String(active));
+        });
+        countEl.textContent = `当前显示 ${visible} 套阵容`;
+      });
+    });
+  }
+</script>

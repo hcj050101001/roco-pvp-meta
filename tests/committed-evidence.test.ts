@@ -193,11 +193,11 @@ test('回执哈希必须匹配同来源阵容图片', async () => {
     amendBaseline(root, changesPath, evidencePath);
     await assert.rejects(
       assertCommittedReceipts(paths, [lineup], root),
-      /变更回执哈希与阵容图片不符：black-feather-poison-s4/,
+      new RegExp(`变更回执哈希与阵容图片不符：${lineup.id}`),
     );
     await assert.rejects(
       assertCommittedReceipts(paths, [multiSource], root),
-      /变更回执哈希与阵容图片不符：black-feather-poison-s4/,
+      new RegExp(`变更回执哈希与阵容图片不符：${lineup.id}`),
     );
   });
 });

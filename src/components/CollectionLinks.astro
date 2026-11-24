@@ -1,8 +1,13 @@
 ---
+import Icon from './Icon.astro';
 import { withBase } from '../lib/urls';
 ---
 
 <nav class="data-page-links" aria-label="搜索阵容">
-  <a href={withBase('/#collection-search')}>搜索当季阵容</a>
-  <a href={withBase('/history/#collection-search')}>搜索往期阵容</a>
+  <a href={withBase('/#collection-search')}>
+    <Icon name="search" size={14} /> 搜索当季阵容
+  </a>
+  <a href={withBase('/history/#collection-search')}>
+    <Icon name="book" size={14} /> 搜索往期阵容
+  </a>
 </nav>

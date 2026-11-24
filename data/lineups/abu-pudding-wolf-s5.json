@@ -1,0 +1,90 @@
+{
+  "id": "abu-pudding-wolf-s5",
+  "slug": "abu-pudding-wolf-s5",
+  "name": "阿布化蝶能量队",
+  "aliases": ["朽若心阿布队", "阿布能量队"],
+  "season": "S5",
+  "version_label": "圣龙宝藏",
+  "archetype": ["阿布", "强攻"],
+  "summary": "椰浆布丁、恶魔狼、卡瓦重、飞飞钥、化蝶、阿布的 S5 赛季阿布配置。",
+  "guides": [],
+  "signals": [],
+  "roster": [
+    {
+      "name": "椰浆布丁",
+      "bloodline": null,
+      "skills": ["冰蛋壳", "泡沫幻影", "打雪仗", "离子震荡"]
+    },
+    {
+      "name": "恶魔狼",
+      "bloodline": null,
+      "skills": ["先发制人", "蝙蝠", "趁火打劫", "惊吓盒子"]
+    },
+    {
+      "name": "卡瓦重",
+      "bloodline": null,
+      "skills": ["力量增效", "筛管奔流", "火焰切割", "晒太阳"]
+    },
+    {
+      "name": "飞飞钥",
+      "bloodline": null,
+      "skills": ["飞羽", "倾泻", "风隐", "吓退"]
+    },
+    {
+      "name": "化蝶",
+      "bloodline": null,
+      "skills": ["掩护", "超维投射", "破罐破摔", "晒太阳"]
+    },
+    {
+      "name": "阿布",
+      "bloodline": null,
+      "skills": ["先发制人", "防御", "龙炮", "火焰切割"]
+    }
+  ],
+  "lineup_images": [
+    {
+      "path": "/assets/lineups/abu-pudding-wolf-s5/a711974eba747364e6127dfd7f752c2d5d93ffe371e9ef185da680a11811dfdf.png",
+      "source_url": "https://i0.hdslb.com/bfs/new_dyn/5af88a95dcd6c71764e92eb2860d7e93392466369.png",
+      "source_page_url": "https://www.bilibili.com/video/BV1xEyezPE8M",
+      "source_kind": "comment",
+      "capture_method": "direct-image",
+      "published_at": "2026-11-21T13:55:54.000Z",
+      "captured_at": "2026-11-24T19:27:00+08:00",
+      "width": 1625,
+      "height": 747,
+      "sha256": "a711974eba747364e6127dfd7f752c2d5d93ffe371e9ef185da680a11811dfdf",
+      "phash": "5ee35983039d740d",
+      "evidence_grade": "A",
+      "verified": true,
+      "verification_notes": "原视频作者 朽若心 在置顶评论中发布的一图流原图（1625×747），六员性格、个体资质与 24 个技能清晰可读。",
+      "attribution": "Bilibili · 朽若心（置顶评论一图流）"
+    }
+  ],
+  "tutorials": [
+    {
+      "title": "简单无脑的阿布阵容实战！能量巨大伤害爆炸！",
+      "url": "https://www.bilibili.com/video/BV1xEyezPE8M",
+      "platform": "bilibili",
+      "creator": "朽若心",
+      "published_at": "2026-11-21T13:55:54.000Z",
+      "match_reason": "same-author",
+      "match_notes": "原作者 朽若心 发布于 2026-11-21 的阿布实战视频，置顶评论附同队一图流。",
+      "verified_at": "2026-11-24T19:30:00+08:00"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://www.bilibili.com/video/BV1xEyezPE8M",
+      "type": "primary",
+      "title": "简单无脑的阿布阵容实战！能量巨大伤害爆炸！（朽若心）",
+      "published_at": "2026-11-21T13:55:54.000Z",
+      "last_checked_at": "2026-11-24T19:30:00+08:00"
+    }
+  ],
+  "first_seen_at": "2026-11-24T19:30:00+08:00",
+  "last_verified_at": "2026-11-24T19:30:00+08:00",
+  "status": "active",
+  "verification_notes": "S5「圣龙宝藏」阿布上线后由原作者于 2026-11-21 发布的完整一图流，六员及 24 个技能已逐项核对。",
+  "archive_reason": null,
+  "player_notes": []
+}

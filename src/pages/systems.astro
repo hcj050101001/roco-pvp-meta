@@ -5,20 +5,49 @@ import { systemGraph } from '../lib/system-graph';
 import { withBase } from '../lib/urls';
 import { breadcrumbJsonLd } from '../lib/seo';
 import CollectionLinks from '../components/CollectionLinks.astro';
+import Icon from '../components/Icon.astro';
 
 const { systems, edges } = systemGraph(allLineups);
+const partnerMap = new Map<string, string[]>();
+for (const tag of systems) partnerMap.set(tag, []);
+for (const edge of edges) {
+  partnerMap.get(edge.first)!.push(edge.second);
+  partnerMap.get(edge.second)!.push(edge.first);
+}
+
 const systemRecords = systems.map((tag, index) => ({
   tag,
   id: `system-${index + 1}`,
+  partners: partnerMap.get(tag) ?? [],
   lineups: allLineups.filter(
     (lineup) =>
       lineup.lineup_images.some((image) => image.verified) && lineup.archetype.includes(tag),
   ),
 }));
+
+const cx = 560;
+const cy = 530;
+const nodeR = 355;
+const labelR = 412;
+
 const positions = new Map(
-  systems.map((tag, index) => {
-    const angle = (2 * Math.PI * index) / systems.length - Math.PI / 2;
-    return [tag, { x: 480 + Math.cos(angle) * 370, y: 480 + Math.sin(angle) * 370 }] as const;
+  systemRecords.map((record, index) => {
+    const angle = (2 * Math.PI * index) / systemRecords.length - Math.PI / 2;
+    const cos = Math.cos(angle);
+    const sin = Math.sin(angle);
+    const r = Math.min(23, 14 + Math.round(Math.sqrt(record.lineups.length) * 2.4));
+    const anchor = Math.abs(cos) < 0.16 ? 'middle' : cos > 0 ? 'start' : 'end';
+    return [
+      record.tag,
+      {
+        x: Number((cx + cos * nodeR).toFixed(1)),
+        y: Number((cy + sin * nodeR).toFixed(1)),
+        lx: Number((cx + cos * labelR).toFixed(1)),
+        ly: Number((cy + sin * labelR).toFixed(1)),
+        r,
+        anchor,
+      },
+    ] as const;
   }),
 );
 ---
@@ -34,87 +63,264 @@ const positions = new Map(
 >
   <div class="wrap data-page">
     <header class="data-page-heading">
-      <h1>体系共现图</h1>
-      <p>
-        连线表示两个体系标签出现在同一套已核验阵容中。可用 Tab 键选择图中标签，按 Enter
-        跳到关联阵容。
-      </p>
-      <CollectionLinks />
+      <div class="data-page-title-block">
+        <div class="eyebrow">
+          <span class="eyebrow-line"></span> TAXONOMY ATLAS · 体系关联拓扑
+        </div>
+        <h1>体系共现图</h1>
+        <p>
+          弧线连接同一套已核验阵容中共同出现的体系标签，线宽反映共现频次。支持鼠标悬停、Tab
+          键聚焦检视，按 Enter 直达下方对应阵容名录。
+        </p>
+        <CollectionLinks />
+      </div>
+      <div class="data-page-kpis" aria-hidden="true">
+        <div>
+          <strong>{String(systems.length).padStart(2, '0')}</strong>
+          <span>独立体系标签</span>
+        </div>
+        <div>
+          <strong>{String(edges.length).padStart(2, '0')}</strong>
+          <span>跨体系共现组</span>
+        </div>
+      </div>
     </header>
-    <div class="system-graph-scroll" role="region" aria-label="体系共现图，可横向滚动" tabindex="0">
-      <svg
-        class="system-graph"
-        viewBox="0 0 960 960"
-        aria-labelledby="graph-title graph-description"
+
+    <div class="system-atlas-card">
+      <div class="system-atlas-bar">
+        <span id="atlas-readout" class="atlas-readout">
+          <Icon name="network" size={16} />
+          悬停或按 Tab 聚焦任意体系节点，高亮查看其共现拓扑与阵容数量。
+        </span>
+        <div class="atlas-legend" aria-hidden="true">
+          <span>
+            <i class="legend-line is-strong"></i>高频共现（≥2 套）
+          </span>
+          <span>
+            <i class="legend-line"></i>单套共现
+          </span>
+        </div>
+      </div>
+      <div
+        class="system-graph-scroll"
+        role="region"
+        aria-label="体系共现图，可横向滚动"
+        tabindex="0"
       >
-        <title id="graph-title">体系标签共现关系</title>
-        <desc id="graph-description">
-          {systems.length} 个标签，{edges.length} 组共同出现的标签。标签链接可跳到下方的关联阵容。
-        </desc>
-        {edges.map((edge) => {
-          const a = positions.get(edge.first)!;
-          const b = positions.get(edge.second)!;
-          return <line x1={a.x} y1={a.y} x2={b.x} y2={b.y} stroke="#a9c7df" stroke-width="2" />;
-        })}
-        {systemRecords.map(({ tag, id }) => {
-          const point = positions.get(tag)!;
-          return (
-            <a href={`#${id}`} aria-label={`查看${tag}关联阵容`}>
-              <circle
-                cx={point.x}
-                cy={point.y}
-                r="42"
-                fill="#fff"
-                stroke="#5587b2"
-                stroke-width="2"
-              />
-              <text
-                x={point.x}
-                y={point.y}
-                text-anchor="middle"
-                dominant-baseline="middle"
-                font-size="16"
-                fill="#243447"
-              >
-                {tag}
-              </text>
-            </a>
-          );
-        })}
-      </svg>
+        <svg
+          class="system-graph"
+          viewBox="0 0 1120 1060"
+          aria-labelledby="graph-title graph-description"
+        >
+          <title id="graph-title">体系标签共现关系</title>
+          <desc id="graph-description">
+            {systems.length} 个标签，{edges.length} 组共同出现的标签。标签链接可跳到下方的关联阵容。
+          </desc>
+          <circle
+            cx={cx}
+            cy={cy}
+            r={nodeR}
+            fill="none"
+            stroke="#dde5f2"
+            stroke-width="1"
+            stroke-dasharray="4 6"
+          />
+          <circle cx={cx} cy={cy} r={labelR + 58} fill="none" stroke="#ebeef5" stroke-width="1" />
+          <g class="graph-edges">
+            {edges.map((edge) => {
+              const a = positions.get(edge.first)!;
+              const b = positions.get(edge.second)!;
+              const mx = (a.x + b.x) / 2;
+              const my = (a.y + b.y) / 2;
+              const qx = Number((cx + (mx - cx) * 0.2).toFixed(1));
+              const qy = Number((cy + (my - cy) * 0.2).toFixed(1));
+              const weight = edge.lineups.length;
+              const strokeWidth = weight >= 3 ? 3.2 : weight === 2 ? 2.4 : 1.5;
+              return (
+                <path
+                  class={`graph-edge${weight >= 2 ? ' is-strong' : ''}`}
+                  d={`M ${a.x} ${a.y} Q ${qx} ${qy} ${b.x} ${b.y}`}
+                  fill="none"
+                  stroke={weight >= 2 ? '#2952cc' : '#85a2e2'}
+                  stroke-opacity={weight >= 3 ? '0.68' : weight === 2 ? '0.5' : '0.32'}
+                  stroke-width={strokeWidth}
+                  stroke-linecap="round"
+                  data-edge-a={edge.first}
+                  data-edge-b={edge.second}
+                />
+              );
+            })}
+          </g>
+          <g class="graph-nodes">
+            {systemRecords.map(({ tag, id, lineups, partners }) => {
+              const point = positions.get(tag)!;
+              return (
+                <a
+                  href={`#${id}`}
+                  aria-label={`查看${tag}关联阵容`}
+                  data-node-tag={tag}
+                  data-node-count={lineups.length}
+                  data-node-partners={partners.join('、')}
+                >
+                  <circle
+                    cx={point.x}
+                    cy={point.y}
+                    r={point.r}
+                    fill="#ffffff"
+                    stroke="#2952cc"
+                    stroke-width="2"
+                  />
+                  <text
+                    class="node-label"
+                    x={point.lx}
+                    y={point.ly}
+                    text-anchor={point.anchor}
+                    dominant-baseline="central"
+                    font-size="13.5"
+                    font-weight="600"
+                    fill="#182232"
+                  >
+                    {tag}
+                  </text>
+                </a>
+              );
+            })}
+          </g>
+          <g class="graph-counts" aria-hidden="true" pointer-events="none">
+            {systemRecords.map(({ tag, lineups }) => {
+              const point = positions.get(tag)!;
+              return (
+                <text
+                  class="node-count"
+                  x={point.x}
+                  y={point.y}
+                  text-anchor="middle"
+                  dominant-baseline="central"
+                  font-size="11"
+                  font-weight="700"
+                  fill="#2952cc"
+                >
+                  {lineups.length}
+                </text>
+              );
+            })}
+          </g>
+        </svg>
+      </div>
     </div>
-    <h2 id="system-records">按体系浏览</h2>
+
+    <div class="systems-directory-head">
+      <div>
+        <h2 id="system-records">按体系浏览</h2>
+        <p class="subtle">点击任意标签卡片内的阵容名，直接进入完整一图流详情。</p>
+      </div>
+      <label class="systems-filter-box" id="systems-filter-wrap" hidden>
+        <Icon name="search" size={16} />
+        <span class="sr-only">筛选体系目录</span>
+        <input id="systems-filter" type="search" placeholder="快速过滤体系或阵容名…" />
+      </label>
+    </div>
+
     <ul class="system-node-list">
       {systemRecords.map(({ tag, id, lineups }) => (
-        <li id={id}>
-          <strong>{tag}</strong>
-          <span>
-            {lineups.map((lineup, index) => (
-              <span>
-                {index > 0 && '、'}
-                <a href={withBase(`/lineups/${lineup.slug}/`)}>{lineup.name}</a>
-              </span>
+        <li id={id} data-sys-card={`${tag} ${lineups.map((l) => l.name).join(' ')}`.toLowerCase()}>
+          <div class="sys-card-top">
+            <strong>{tag}</strong>
+            <span class="sys-card-count">{lineups.length} 套</span>
+          </div>
+          <div class="sys-card-links">
+            {lineups.map((lineup) => (
+              <a href={withBase(`/lineups/${lineup.slug}/`)}>{lineup.name}</a>
             ))}
-          </span>
+          </div>
         </li>
       ))}
     </ul>
-    <h2>共现记录</h2>
+
+    <div class="systems-directory-head systems-co-head">
+      <div>
+        <h2>共现记录</h2>
+        <p class="subtle">两个体系标签在同一套已核验阵容中携手登场的组合记录。</p>
+      </div>
+    </div>
+
     <ul class="system-edge-list">
       {edges.map((edge) => (
-        <li>
-          <strong>
-            {edge.first} · {edge.second}
-          </strong>
-          <span>共同出现于 {edge.lineups.length} 套阵容：</span>
-          {edge.lineups.map((lineup, index) => (
-            <span>
-              {index > 0 && '、'}
+        <li
+          data-sys-card={`${edge.first} ${edge.second} ${edge.lineups.map((l) => l.name).join(' ')}`.toLowerCase()}
+        >
+          <div class="sys-card-top">
+            <strong>
+              {edge.first} · {edge.second}
+            </strong>
+            <span class="sys-card-count">共现 {edge.lineups.length} 套</span>
+          </div>
+          <div class="sys-card-links">
+            {edge.lineups.map((lineup) => (
               <a href={withBase(`/lineups/${lineup.slug}/`)}>{lineup.name}</a>
-            </span>
-          ))}
+            ))}
+          </div>
         </li>
       ))}
     </ul>
   </div>
 </Layout>
+<script>
+  const svg = document.querySelector<SVGSVGElement>('.system-graph');
+  const readout = document.querySelector<HTMLElement>('#atlas-readout');
+  if (svg && readout) {
+    const defaultText = readout.innerHTML;
+    const nodeLinks = [...svg.querySelectorAll<SVGAElement>('[data-node-tag]')];
+    const edgePaths = [...svg.querySelectorAll<SVGPathElement>('[data-edge-a]')];
+
+    function setActive(tag: string | null, count?: string, partners?: string) {
+      if (!svg || !readout) return;
+      if (!tag) {
+        svg.classList.remove('is-highlighting');
+        nodeLinks.forEach((n) => n.classList.remove('is-active', 'is-neighbor'));
+        edgePaths.forEach((e) => e.classList.remove('is-active'));
+        readout.innerHTML = defaultText;
+        return;
+      }
+      svg.classList.add('is-highlighting');
+      const connected = new Set<string>([tag]);
+      edgePaths.forEach((edge) => {
+        const match = edge.dataset.edgeA === tag || edge.dataset.edgeB === tag;
+        edge.classList.toggle('is-active', match);
+        if (match) {
+          connected.add(edge.dataset.edgeA!);
+          connected.add(edge.dataset.edgeB!);
+        }
+      });
+      nodeLinks.forEach((node) => {
+        const nodeTag = node.dataset.nodeTag!;
+        node.classList.toggle('is-active', nodeTag === tag);
+        node.classList.toggle('is-neighbor', nodeTag !== tag && connected.has(nodeTag));
+      });
+      const partnerDesc = partners ? `共现体系：${partners}` : '暂无跨标签共现记录';
+      readout.textContent = `当前聚焦「${tag}」· 收录 ${count ?? '0'} 套阵容 · ${partnerDesc}`;
+    }
+
+    nodeLinks.forEach((node) => {
+      const activate = () =>
+        setActive(node.dataset.nodeTag!, node.dataset.nodeCount, node.dataset.nodePartners);
+      node.addEventListener('mouseenter', activate);
+      node.addEventListener('focus', activate);
+      node.addEventListener('mouseleave', () => setActive(null));
+      node.addEventListener('blur', () => setActive(null));
+    });
+  }
+
+  const filterWrap = document.querySelector<HTMLElement>('#systems-filter-wrap');
+  const filterInput = document.querySelector<HTMLInputElement>('#systems-filter');
+  const cards = [...document.querySelectorAll<HTMLElement>('[data-sys-card]')];
+  if (filterWrap && filterInput && cards.length) {
+    filterWrap.hidden = false;
+    filterInput.addEventListener('input', () => {
+      const q = filterInput.value.trim().toLowerCase();
+      cards.forEach((li) => {
+        li.hidden = Boolean(q && !li.dataset.sysCard!.includes(q));
+      });
+    });
+  }
+</script>

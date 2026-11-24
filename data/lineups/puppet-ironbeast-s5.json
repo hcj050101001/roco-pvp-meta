@@ -1,0 +1,79 @@
+{
+  "id": "puppet-ironbeast-s5",
+  "slug": "puppet-ironbeast-s5",
+  "name": "魔偶沉铁兽防雪水队",
+  "aliases": ["沉铁兽魔偶队", "魔偶科研队"],
+  "season": "S5",
+  "version_label": "圣龙宝藏",
+  "archetype": ["魔偶", "科研"],
+  "summary": "帅帅魔偶、音速犬、石冠王蜥、画间沉铁兽、獠牙猪、布灵布灵的 S5 科研魔偶配置。",
+  "guides": [],
+  "signals": [],
+  "roster": [
+    {
+      "name": "帅帅魔偶",
+      "bloodline": null,
+      "skills": ["借用", "借用", "借用", "贪婪"]
+    },
+    {
+      "name": "音速犬",
+      "bloodline": null,
+      "skills": ["闪燃", "焚烧烙印", "力量增效", "跌落"]
+    },
+    {
+      "name": "石冠王蜥",
+      "bloodline": null,
+      "skills": ["地刺", "虚化", "地陷", "力量增效"]
+    },
+    {
+      "name": "画间沉铁兽",
+      "bloodline": null,
+      "skills": ["截拳", "鼓劲", "惊吓盒子", "爆冲"]
+    },
+    {
+      "name": "獠牙猪",
+      "bloodline": null,
+      "skills": ["地刺", "冰雹", "泥浆铠甲", "冰墙"]
+    },
+    {
+      "name": "布灵布灵",
+      "bloodline": null,
+      "skills": ["连锁实验", "叠加态", "截拳", "生日蛋糕"]
+    }
+  ],
+  "lineup_images": [
+    {
+      "path": "/assets/lineups/puppet-ironbeast-s5/c7669a19ae806526e9f3b2fe9219d3cfbe7ed95465e4b585f4f1bdfab81f8260.png",
+      "source_url": "https://i0.hdslb.com/bfs/new_dyn/6c31001a15660a5206fb7ddfd28c4ac1454530324.png",
+      "source_page_url": "https://www.bilibili.com/video/BV1VAsg6EEaa",
+      "source_kind": "comment",
+      "capture_method": "direct-image",
+      "published_at": "2026-11-18T03:56:42.000Z",
+      "captured_at": "2026-11-24T19:27:00+08:00",
+      "width": 1625,
+      "height": 747,
+      "sha256": "c7669a19ae806526e9f3b2fe9219d3cfbe7ed95465e4b585f4f1bdfab81f8260",
+      "phash": "5e835ba323dc5c09",
+      "evidence_grade": "B",
+      "verified": true,
+      "verification_notes": "Bilibili 视频评论区玩家 清风一吕先森 于 2026-11-18 分享的一图流原图（1625×747，水印「赚不了洛克贝」），六员与 24 个技能清晰可读。",
+      "attribution": "Bilibili · 清风一吕先森（评论分享一图流）"
+    }
+  ],
+  "tutorials": [],
+  "sources": [
+    {
+      "url": "https://www.bilibili.com/video/BV1VAsg6EEaa",
+      "type": "community",
+      "title": "吉良开发S5最爽的科研阵容！巨獭魔偶队（评论区：清风一吕先森）",
+      "published_at": "2026-11-18T03:56:42.000Z",
+      "last_checked_at": "2026-11-24T19:30:00+08:00"
+    }
+  ],
+  "first_seen_at": "2026-11-24T19:30:00+08:00",
+  "last_verified_at": "2026-11-24T19:30:00+08:00",
+  "status": "active",
+  "verification_notes": "S5 赛季帅帅魔偶+画间沉铁兽科研配置，24 个技能核对无误。",
+  "archive_reason": null,
+  "player_notes": []
+}

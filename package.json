@@ -28,8 +28,10 @@
     "publish:plan": "tsx scripts/validate/publish-plan.ts",
     "refresh:snapshot": "tsx scripts/validate/refresh-guard.ts --snapshot",
     "research:discover": "tsx scripts/collect/run.ts --discover",
+    "research:latest": "tsx scripts/collect/run.ts --scope current --freshness month --concurrency 3 --discover --browser",
     "research:full": "tsx scripts/collect/run.ts --discover --browser",
     "research:vision": "tsx scripts/research/prepare-vision.ts",
+    "research:review": "tsx scripts/research/review-queue.ts",
     "research:record": "tsx scripts/research/record-decisions.ts",
     "season:check": "tsx scripts/collect/season.ts"
   },

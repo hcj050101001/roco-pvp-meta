@@ -1,7 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import Collection from '../../components/Collection.astro';
-import { activeLineups, overview } from '../../lib/data';
+import { activeLineups, currentSeason, overview } from '../../lib/data';
 import { additionalStaticPages } from '../../lib/static-pages';
 import { withBase } from '../../lib/urls';
 import { breadcrumbJsonLd } from '../../lib/seo';
@@ -34,6 +34,10 @@ const { page } = Astro.props;
         </a>
         <h1>当季阵容 · 第 {page} 页</h1>
       </div>
+      <span class="collection-subtitle">
+        <span class="status-dot"></span>
+        {currentSeason.id} · {currentSeason.name}
+      </span>
     </div>
     <Collection lineups={activeLineups} fallback={overview.fallback} initialPage={page} />
   </section>

@@ -1,19 +1,29 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Icon from '../components/Icon.astro';
 import { withBase } from '../lib/urls';
 ---
 
 <Layout title="未找到这一页" noindex>
   <div class="not-found wrap">
-    <div class="eyebrow">FIELD NOTE / 404</div>
-    <h1>
-      这页笔记，
-      <br />
-      还没被发现。
-    </h1>
-    <p>页面可能已移动，回到图鉴继续探索吧。</p>
-    <a href={withBase('/')} class="button primary">
-      ← 返回阵容总览
-    </a>
+    <div class="not-found-card">
+      <div class="eyebrow">
+        <span class="eyebrow-line"></span> FIELD NOTE / 404
+      </div>
+      <h1>
+        这页笔记，
+        <br />
+        <span>还没被发现。</span>
+      </h1>
+      <p>你访问的页面可能已移动或链接输入有误，不妨回到配队图鉴继续探索。</p>
+      <div class="not-found-actions">
+        <a href={withBase('/')} class="button primary">
+          ← 返回阵容总览
+        </a>
+        <a href={withBase('/history/')} class="button secondary">
+          浏览往期阵容 <Icon name="arrow" size={16} />
+        </a>
+      </div>
+    </div>
   </div>
 </Layout>

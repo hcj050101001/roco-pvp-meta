@@ -2,7 +2,13 @@ import { createHash } from 'node:crypto';
 import policy from '../../data/research-policy.json';
 
 export type Scope = 'all' | 'current' | 'history';
-export type Query = { query: string; season: string; platform: string };
+export type Freshness = 'week' | 'month' | 'all';
+export type Query = {
+  query: string;
+  season: string;
+  platform: string;
+  freshness?: Freshness;
+};
 export type Source = {
   id: string;
   url: string;
@@ -39,21 +45,61 @@ export function selectedSeasons(current: string, known: string[], scope: string)
 }
 
 // Only explicit placeholders expand: literal S2/S3 queries must never become S4.
-export function queryPlan(templates: string[], seasons: string[]): Query[] {
+export function queryPlan(
+  templates: string[],
+  seasons: string[],
+  options: { freshness?: Freshness; currentSeason?: string; seasonName?: string } = {},
+): Query[] {
   const result: Query[] = [];
+  const { freshness = 'all', currentSeason, seasonName } = options;
+
+  // High-recency discovery queries for the active season.
+  if (currentSeason && seasons.includes(currentSeason)) {
+    const label = seasonName ? `${currentSeason} ${seasonName}` : currentSeason;
+    const latestTemplates = [
+      `洛克王国世界 ${label} 最新 PVP 配队 一图流`,
+      `洛克王国世界 ${currentSeason} 新版本 上分 阵容 配置`,
+      `site:bilibili.com 洛克王国世界 ${currentSeason} 配队 一图流`,
+      `site:taptap.cn 洛克王国世界 ${currentSeason} 配队 阵容`,
+      `site:douyin.com 洛克王国世界 ${currentSeason} 配队 阵容`,
+      `site:xiaohongshu.com 洛克王国世界 ${currentSeason} 配队 一图流`,
+      `site:tieba.baidu.com 洛克王国世界 ${currentSeason} 配队`,
+      `site:nga.cn 洛克王国世界 ${currentSeason} 配队 阵容`,
+      `site:qiandao.com 洛克王国世界 ${currentSeason} 配队`,
+    ];
+    for (const q of latestTemplates) {
+      const siteMatch = q.match(/^site:(\S+)/);
+      const platform = siteMatch
+        ? (policy.platforms.find((p) => p.domain === siteMatch[1])?.id ?? 'any')
+        : 'any';
+      result.push({
+        query: q,
+        season: currentSeason,
+        platform,
+        freshness: freshness === 'all' ? 'month' : freshness,
+      });
+    }
+  }
+
   for (const season of seasons)
     for (const p of policy.platforms)
       result.push({
         query: `site:${p.domain} 洛克王国世界 ${season} PVP 配队 一图流`,
         season,
         platform: p.id,
+        freshness: season === currentSeason ? freshness : 'all',
       });
   for (const template of templates) {
     const literalSeason = template.match(/\bS\d+\b/i)?.[0].toUpperCase();
     if (!template.includes('{season}') && literalSeason && !seasons.includes(literalSeason))
       continue;
     for (const season of template.includes('{season}') ? seasons : [literalSeason ?? 'unspecified'])
-      result.push({ query: template.replaceAll('{season}', season), season, platform: 'any' });
+      result.push({
+        query: template.replaceAll('{season}', season),
+        season,
+        platform: 'any',
+        freshness: season === currentSeason ? freshness : 'all',
+      });
   }
   return result.filter((q, i, all) => all.findIndex((x) => x.query === q.query) === i);
 }

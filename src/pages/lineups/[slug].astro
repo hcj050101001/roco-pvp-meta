@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import Icon from '../../components/Icon.astro';
 import { allLineups, activeLineups, historyLineups, state } from '../../lib/data';
 import { withBase, displayDate } from '../../lib/urls';
 import { configurationDate } from '../../lib/rank';
@@ -70,9 +71,10 @@ const breadcrumbJsonLd = {
       <a href={back}>{backLabel}</a>
       <nav aria-label="详情导航">
         <a href="#configuration">配置图</a>
+        <a href="#roster">阵容成员</a>
         {l.signals.length > 0 && <a href="#signals">公开记录</a>}
         {l.guides.length > 0 && <a href="#guides">作者攻略</a>}
-        {l.tutorials.length > 0 && <a href="#tutorials">教学视频</a>}
+        <a href="#tutorials">教学视频</a>
         <a href="#sources">来源</a>
       </nav>
     </div>
@@ -82,7 +84,7 @@ const breadcrumbJsonLd = {
       <div class="eyebrow">
         <span class="eyebrow-line"></span>
         {l.season} · {l.version_label}
-        {historical ? ' / 往期阵容' : ''}
+        {historical ? ' / 往期阵容' : ' / 当季收录'}
       </div>
       <div class="detail-title">
         <h1>{l.name}</h1>
@@ -90,15 +92,22 @@ const breadcrumbJsonLd = {
           {l.season}
         </span>
       </div>
+      {l.aliases.length > 0 && <p class="detail-aliases">常用别称：{l.aliases.join(' · ')}</p>}
       <div class="tags">
         {l.archetype.map((t) => (
           <span>{t}</span>
         ))}
       </div>
       <div class="detail-provenance">
-        <span>{published ? `配置发布 ${displayDate(published)}` : '配置发布日期未标注'}</span>
-        <span>{evidenceLabels[l.lineup_images[0].evidence_grade]}</span>
-        <span>资料核对于 {displayDate(l.last_verified_at)}</span>
+        <span class="provenance-chip">
+          <Icon name="clock" size={14} />
+          {published ? `配置发布 ${displayDate(published)}` : '配置发布日期未标注'}
+        </span>
+        <span class="provenance-chip">
+          <Icon name="shield" size={14} />
+          {evidenceLabels[l.lineup_images[0].evidence_grade]}
+        </span>
+        <span class="provenance-chip">资料核对于 {displayDate(l.last_verified_at)}</span>
       </div>
       {(verifiedSkillCount < l.roster.length || l.tutorials.length === 0) && (
         <p class="fact-badges">
@@ -109,18 +118,20 @@ const breadcrumbJsonLd = {
     </header>
     {historical && (
       <aside class="transition-banner">
-        <strong>{l.season} 赛季配置</strong>
-        <p>保留当时配置，使用前请结合当前版本调整。</p>
+        <strong>{l.season} 赛季配置存档</strong>
+        <p>保留当时版本的真实配置与署名，实战前请结合当前赛季环境调整。</p>
       </aside>
     )}
     <div class="detail-columns">
       <div class="detail-main">
         <section id="configuration" class="detail-section">
-          <div class="section-label">
-            <span>CONFIGURATION</span>
-            <h2>完整配队</h2>
+          <div class="section-header-bar">
+            <div class="section-label">
+              <span>CONFIGURATION PLATE</span>
+              <h2>完整配队一图流</h2>
+            </div>
+            <p class="subtle">保留完整原图与水印 · 点击可放大检视细节</p>
           </div>
-          <p class="subtle">点击图片查看原图。</p>
           <div
             class="image-tabs"
             role="tablist"
@@ -153,6 +164,8 @@ const breadcrumbJsonLd = {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={`打开${l.name}配置图 ${i + 1}原图`}
+                data-zoom-trigger
+                data-zoom-caption={img.attribution}
               >
                 <img
                   src={withBase(img.path)}
@@ -168,10 +181,24 @@ const breadcrumbJsonLd = {
                 </span>
               </a>
               <figcaption>
-                {img.attribution}
-                <a href={withBase(img.path)} target="_blank" rel="noopener noreferrer">
-                  查看原图 ↗
-                </a>
+                <span class="figcaption-meta">
+                  <strong>图源署名</strong> · {img.attribution}（{img.width} × {img.height}）
+                </span>
+                <span class="figcaption-actions">
+                  <button
+                    type="button"
+                    class="zoom-inline-btn"
+                    data-zoom-btn={withBase(img.path)}
+                    data-zoom-alt={`${l.name}完整阵容配置`}
+                    data-zoom-caption={img.attribution}
+                    hidden
+                  >
+                    <Icon name="zoom" size={14} /> 灯箱放大
+                  </button>
+                  <a href={withBase(img.path)} target="_blank" rel="noopener noreferrer">
+                    新窗口原图 ↗
+                  </a>
+                </span>
               </figcaption>
             </figure>
           ))}
@@ -183,52 +210,101 @@ const breadcrumbJsonLd = {
             </aside>
           )}
         </section>
+
+        <section id="roster" class="detail-section">
+          <div class="section-header-bar">
+            <div class="section-label">
+              <span>SIX-PET ROSTER</span>
+              <h2>阵容成员配置</h2>
+            </div>
+            <p class="info-gap">
+              {verifiedSkillCount} / 6 只精灵有已核实技能记录；未核实的技能不作补写。
+            </p>
+          </div>
+          <div class="roster-list">
+            {l.roster.map((p, i) => (
+              <div class="roster-row">
+                <div class="roster-row-head">
+                  <span class="roster-number">0{i + 1}</span>
+                  <h3>{p.name}</h3>
+                  {p.bloodline && (
+                    <span class="bloodline">
+                      血脉 · <strong>{p.bloodline}</strong>
+                    </span>
+                  )}
+                </div>
+                <div class="roster-row-body">
+                  {p.skills.length > 0 ? (
+                    <div class="skill-tags">
+                      {p.skills.map((s) => (
+                        <span>{s}</span>
+                      ))}
+                    </div>
+                  ) : (
+                    <p class="skill-missing">技能未核实（请对照上方原图）</p>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
         {l.signals.length > 0 && (
           <section id="signals" class="detail-section">
             <div class="section-label">
               <span>PUBLIC RECORDS</span>
               <h2>公开记录</h2>
             </div>
-            {l.signals.map((s) => (
-              <a class="source-row" href={s.source_url} target="_blank" rel="noopener noreferrer">
-                <div>
-                  <span>
-                    {s.kind === 'high-rank' ? '公开实绩' : '公开热度记录'} ·{' '}
-                    {displayDate(s.observed_at)}
+            <div class="source-stack">
+              {l.signals.map((s) => (
+                <a class="source-row" href={s.source_url} target="_blank" rel="noopener noreferrer">
+                  <div>
+                    <span>
+                      {s.kind === 'high-rank' ? '公开实绩' : '公开热度记录'} ·{' '}
+                      {displayDate(s.observed_at)}
+                    </span>
+                    <h3>{s.note}</h3>
+                  </div>
+                  <span class="row-action-badge" aria-hidden="true">
+                    <Icon name="diagonal" size={17} />
                   </span>
-                  <h3>{s.note}</h3>
-                </div>
-                <span>↗</span>
-              </a>
-            ))}
+                </a>
+              ))}
+            </div>
           </section>
         )}
+
         <section id="tutorials" class="detail-section">
           <div class="section-label">
             <span>WATCH & LEARN</span>
             <h2>教学与实战</h2>
           </div>
           {l.tutorials.length > 0 ? (
-            l.tutorials.map((t) => (
-              <a
-                class="source-row video-row"
-                href={t.url}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <div>
-                  <span>
-                    {platformLabels[t.platform]} · {t.creator} · {displayDate(t.published_at)}
+            <div class="source-stack">
+              {l.tutorials.map((t) => (
+                <a
+                  class="source-row video-row"
+                  href={t.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <div>
+                    <span>
+                      {platformLabels[t.platform]} · {t.creator} · {displayDate(t.published_at)}
+                    </span>
+                    <h3>{t.title}</h3>
+                  </div>
+                  <span class="row-action-badge video-badge" aria-hidden="true">
+                    <Icon name="play" size={16} />
                   </span>
-                  <h3>{t.title}</h3>
-                </div>
-                <span>▷</span>
-              </a>
-            ))
+                </a>
+              ))}
+            </div>
           ) : (
             <p class="info-gap">暂未找到能确认对应这套阵容的教学视频。</p>
           )}
         </section>
+
         {l.guides.length > 0 && (
           <section id="guides" class="detail-section">
             <div class="section-label">
@@ -250,147 +326,150 @@ const breadcrumbJsonLd = {
             ))}
           </section>
         )}
-        <section id="roster" class="detail-section">
+
+        <section id="sources" class="detail-section">
           <div class="section-label">
-            <span>MEMBERS</span>
-            <h2>阵容成员</h2>
+            <span>CREDITS & PROVENANCE</span>
+            <h2>配置来源</h2>
           </div>
-          <p class="info-gap">
-            {verifiedSkillCount} / 6 只精灵有已核实技能记录；未核实的技能不作补写。
-          </p>
-          <div class="roster-list">
-            {l.roster.map((p, i) => (
-              <div class="roster-row">
-                <span class="roster-number">0{i + 1}</span>
+          <div class="source-stack">
+            {l.sources.map((s) => (
+              <a class="source-row" href={s.url} target="_blank" rel="noopener noreferrer">
                 <div>
-                  <h3>{p.name}</h3>
-                  {p.skills.length > 0 ? (
-                    <div class="skill-tags">
-                      {p.skills.map((s) => (
-                        <span>{s}</span>
-                      ))}
-                    </div>
-                  ) : (
-                    <p class="skill-missing">技能未核实</p>
-                  )}
-                </div>
-                {p.bloodline && (
-                  <span class="bloodline">
-                    血脉
-                    <br />
-                    <strong>{p.bloodline}</strong>
+                  <span>
+                    {displayDate(s.updated_at || s.published_at)}
+                    {s.updated_at ? ' · 帖子更新' : ' · 原始发布'}
                   </span>
-                )}
-              </div>
+                  <h3>{s.title}</h3>
+                </div>
+                <span class="row-action-badge" aria-hidden="true">
+                  <Icon name="diagonal" size={17} />
+                </span>
+              </a>
             ))}
           </div>
         </section>
-        <section id="sources" class="detail-section">
-          <div class="section-label">
-            <span>CREDITS</span>
-            <h2>配置来源</h2>
-          </div>
-          {l.sources.map((s) => (
-            <a class="source-row" href={s.url} target="_blank" rel="noopener noreferrer">
-              <div>
-                <span>
-                  {displayDate(s.updated_at || s.published_at)}
-                  {s.updated_at ? ' · 帖子更新' : ''}
-                </span>
-                <h3>{s.title}</h3>
-              </div>
-              <span>↗</span>
-            </a>
-          ))}
-        </section>
+
         <section id="continue-browsing" class="detail-section">
           <div class="section-label">
             <span>KEEP BROWSING</span>
-            <h2>继续浏览</h2>
+            <h2>关联阵容探索</h2>
           </div>
           <div class="related-links">
             {sameSeason ? (
-              <a class="source-row" href={withBase(`/lineups/${sameSeason.slug}/`)}>
+              <a class="source-row related-card" href={withBase(`/lineups/${sameSeason.slug}/`)}>
                 <div>
                   <span>同赛季 · {sameSeason.season}</span>
                   <h3>{sameSeason.name}</h3>
                 </div>
-                <span>↗</span>
+                <span class="row-action-badge" aria-hidden="true">
+                  <Icon name="arrow" size={16} />
+                </span>
               </a>
             ) : (
               <a
-                class="source-row"
+                class="source-row related-card"
                 href={withBase(historical ? `/history/?season=${l.season}` : '/')}
               >
                 <div>
                   <span>同赛季 · {l.season}</span>
                   <h3>浏览{l.season}赛季阵容</h3>
                 </div>
-                <span>↗</span>
+                <span class="row-action-badge" aria-hidden="true">
+                  <Icon name="arrow" size={16} />
+                </span>
               </a>
             )}
             {sharedType ? (
-              <a class="source-row" href={withBase(`/lineups/${sharedType.candidate.slug}/`)}>
+              <a
+                class="source-row related-card"
+                href={withBase(`/lineups/${sharedType.candidate.slug}/`)}
+              >
                 <div>
                   <span>共同体系标签 · {sharedType.fact}</span>
                   <h3>{sharedType.candidate.name}</h3>
                 </div>
-                <span>↗</span>
+                <span class="row-action-badge" aria-hidden="true">
+                  <Icon name="arrow" size={16} />
+                </span>
               </a>
             ) : (
-              <a class="source-row" href={withBase(historical ? '/history/' : '/')}>
+              <a class="source-row related-card" href={withBase(historical ? '/history/' : '/')}>
                 <div>
                   <span>体系标签</span>
                   <h3>浏览{historical ? '往期' : '当季'}阵容</h3>
                 </div>
-                <span>↗</span>
+                <span class="row-action-badge" aria-hidden="true">
+                  <Icon name="arrow" size={16} />
+                </span>
               </a>
             )}
             {sharedMember ? (
-              <a class="source-row" href={withBase(`/lineups/${sharedMember.candidate.slug}/`)}>
+              <a
+                class="source-row related-card"
+                href={withBase(`/lineups/${sharedMember.candidate.slug}/`)}
+              >
                 <div>
                   <span>共同成员 · {sharedMember.fact}</span>
                   <h3>{sharedMember.candidate.name}</h3>
                 </div>
-                <span>↗</span>
+                <span class="row-action-badge" aria-hidden="true">
+                  <Icon name="arrow" size={16} />
+                </span>
               </a>
             ) : (
-              <a class="source-row" href={withBase(historical ? '/history/' : '/')}>
+              <a class="source-row related-card" href={withBase(historical ? '/history/' : '/')}>
                 <div>
                   <span>共同成员</span>
                   <h3>浏览{historical ? '往期' : '当季'}阵容</h3>
                 </div>
-                <span>↗</span>
+                <span class="row-action-badge" aria-hidden="true">
+                  <Icon name="arrow" size={16} />
+                </span>
               </a>
             )}
           </div>
         </section>
-        <a class="button primary bottom-return" href={back}>
-          {backLabel}
-        </a>
+
+        <div class="detail-bottom-bar">
+          <a class="button primary bottom-return" href={back}>
+            {backLabel}
+          </a>
+          <a class="button secondary" href={withBase(`/compare/?first=${l.slug}`)}>
+            <Icon name="compare" size={16} /> 与其他阵容对比
+          </a>
+        </div>
         <noscript>
           <a class="text-link" href={staticBack}>
             ← 返回这套阵容的卡片
           </a>
         </noscript>
       </div>
+
       <aside class="detail-sidebar">
         <div class="sidebar-inner">
-          <span class="eyebrow muted">TEAM NOTES</span>
+          <span class="eyebrow muted">TEAM DOSSIER</span>
           <h2>配队速览</h2>
           <dl>
-            <dt>体系</dt>
+            <dt>体系标签</dt>
             <dd>{l.archetype.join(' / ')}</dd>
-            <dt>成员</dt>
+            <dt>上场成员</dt>
             <dd>{l.roster.map((p) => p.name).join('、')}</dd>
-            <dt>版本</dt>
+            <dt>收录版本</dt>
             <dd>
               {l.season} · {l.version_label}
             </dd>
+            <dt>资料凭据</dt>
+            <dd>{evidenceLabels[l.lineup_images[0].evidence_grade]}</dd>
           </dl>
-          <a class="button secondary" href="#configuration">
-            查看配置 ↑
-          </a>
+          <div class="sidebar-actions">
+            <a class="button primary" href={withBase(`/compare/?first=${l.slug}`)}>
+              <Icon name="compare" size={15} /> 加入阵容对比
+            </a>
+            <a class="button secondary" href="#configuration">
+              查看配置图 ↑
+            </a>
+          </div>
           <a class="text-link sidebar-return" href={back}>
             {backLabel}
           </a>
@@ -398,6 +477,27 @@ const breadcrumbJsonLd = {
       </aside>
     </div>
   </article>
+
+  <dialog id="image-lightbox" class="lightbox-dialog" aria-label="原图放大预览">
+    <div class="lightbox-toolbar">
+      <span id="lightbox-caption" class="lightbox-caption"></span>
+      <div class="lightbox-controls">
+        <a
+          id="lightbox-raw"
+          class="lightbox-raw-link"
+          href={withBase(l.lineup_images[0].path)}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          打开独立原图 ↗
+        </a>
+        <button type="button" id="lightbox-close" class="lightbox-close" aria-label="关闭原图预览">
+          <Icon name="close" size={18} /> 关闭
+        </button>
+      </div>
+    </div>
+    <div id="lightbox-stage" class="lightbox-stage"></div>
+  </dialog>
 </Layout>
 <script>
   import { safeCollectionReturn } from '../../lib/collection-state';
@@ -436,5 +536,42 @@ const breadcrumbJsonLd = {
       }
     });
   });
+
+  const dialog = document.querySelector<HTMLDialogElement>('#image-lightbox');
+  const stage = document.querySelector<HTMLElement>('#lightbox-stage');
+  const caption = document.querySelector<HTMLElement>('#lightbox-caption');
+  const rawLink = document.querySelector<HTMLAnchorElement>('#lightbox-raw');
+  const closeBtn = document.querySelector<HTMLButtonElement>('#lightbox-close');
+  if (dialog && stage && caption && rawLink && closeBtn && typeof dialog.showModal === 'function') {
+    function openZoom(src: string, alt: string, text: string) {
+      if (!dialog || !stage || !caption || !rawLink) return;
+      const preview = document.createElement('img');
+      preview.src = src;
+      preview.alt = alt;
+      stage.replaceChildren(preview);
+      caption.textContent = text;
+      rawLink.href = src;
+      dialog.showModal();
+    }
+    document.querySelectorAll<HTMLButtonElement>('[data-zoom-btn]').forEach((btn) => {
+      btn.hidden = false;
+      btn.addEventListener('click', () => {
+        openZoom(btn.dataset.zoomBtn!, btn.dataset.zoomAlt!, btn.dataset.zoomCaption ?? '');
+      });
+    });
+    document.querySelectorAll<HTMLAnchorElement>('[data-zoom-trigger]').forEach((anchor) => {
+      anchor.addEventListener('click', (e) => {
+        if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
+        const img = anchor.querySelector('img');
+        if (!img) return;
+        e.preventDefault();
+        openZoom(anchor.href, img.alt, anchor.dataset.zoomCaption ?? '');
+      });
+    });
+    closeBtn.addEventListener('click', () => dialog.close());
+    dialog.addEventListener('click', (e) => {
+      if (e.target === dialog || e.target === stage) dialog.close();
+    });
+  }
   initImageFallback();
 </script>

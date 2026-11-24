@@ -1,26 +1,78 @@
 ---
 import type { Lineup } from '../lib/schema';
-import { withBase } from '../lib/urls';
+import { withBase, displayDate } from '../lib/urls';
+import { configurationDate } from '../lib/rank';
+import { cardImageSources } from '../lib/card-image';
+import Icon from './Icon.astro';
 
 interface Props {
   lineup: Lineup;
 }
 
 const { lineup } = Astro.props;
+const img = lineup.lineup_images[0];
+const { src, srcset, avifSrcset, sizes } = cardImageSources(img);
+const date = configurationDate(lineup);
 ---
 
-<h2>
-  <a href={withBase(`/lineups/${lineup.slug}/`)}>{lineup.name}</a>
-</h2>
-<p>
-  {lineup.season} · 体系标签：{lineup.archetype.join(' · ')}
-</p>
+<div class="compare-panel-head" data-panel-slug={lineup.slug}>
+  <div class="compare-panel-meta">
+    <span class="compare-season-pill">
+      {lineup.season} · {lineup.version_label}
+    </span>
+    <span class="compare-date-note">{date ? `发布于 ${displayDate(date)}` : '日期未标注'}</span>
+  </div>
+  <h2>
+    <a href={withBase(`/lineups/${lineup.slug}/`)}>
+      {lineup.name}
+      <Icon name="diagonal" size={17} />
+    </a>
+  </h2>
+  <div class="compare-tags">
+    {lineup.archetype.map((tag) => (
+      <span class="compare-tag" data-archetype={tag}>
+        {tag}
+      </span>
+    ))}
+  </div>
+  <div class="compare-preview">
+    <picture>
+      {avifSrcset && <source type="image/avif" srcset={avifSrcset} sizes={sizes} />}
+      <img
+        src={src}
+        srcset={srcset}
+        sizes={sizes}
+        width={img.width}
+        height={img.height}
+        alt={`${lineup.name}一图流配置预览`}
+        loading="lazy"
+        decoding="async"
+      />
+    </picture>
+  </div>
+</div>
 <ol class="compare-roster">
-  {lineup.roster.map((member) => (
-    <li>
-      <h3>{member.name}</h3>
-      <p>血脉：{member.bloodline ?? '未记录'}</p>
-      <p>技能：{member.skills.length ? member.skills.join(' · ') : '未记录'}</p>
+  {lineup.roster.map((member, idx) => (
+    <li data-pet-name={member.name}>
+      <div class="compare-slot-top">
+        <span class="compare-slot-num">0{idx + 1}</span>
+        <h3>{member.name}</h3>
+        <span class="compare-shared-flag" hidden>
+          同宠
+        </span>
+        <span class="compare-bloodline">血脉：{member.bloodline ?? '未记录'}</span>
+      </div>
+      {member.skills.length > 0 ? (
+        <div class="compare-skill-chips">
+          {member.skills.map((skill) => (
+            <span class="compare-skill" data-skill={skill}>
+              {skill}
+            </span>
+          ))}
+        </div>
+      ) : (
+        <p class="compare-skill-empty">技能：未记录</p>
+      )}
     </li>
   ))}
 </ol>

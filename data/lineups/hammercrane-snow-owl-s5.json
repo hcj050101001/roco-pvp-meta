@@ -1,0 +1,79 @@
+{
+  "id": "hammercrane-snow-owl-s5",
+  "slug": "hammercrane-snow-owl-s5",
+  "name": "锤头鹤雪灵夜枭队",
+  "aliases": ["队伍3干扰雪灵", "锤头鹤控制队"],
+  "season": "S5",
+  "version_label": "圣龙宝藏",
+  "archetype": ["控制", "平衡"],
+  "summary": "锤头鹤、半朽蜜果灵、荆棘电环、雪灵、绒光优优、夜枭的 S5 控制干扰配置。",
+  "guides": [],
+  "signals": [],
+  "roster": [
+    {
+      "name": "锤头鹤",
+      "bloodline": null,
+      "skills": ["精神扰乱", "取念", "虚假破产", "恶意逃离"]
+    },
+    {
+      "name": "半朽蜜果灵",
+      "bloodline": null,
+      "skills": ["报复", "休息回复", "倾泻", "冰捆绑"]
+    },
+    {
+      "name": "荆棘电环",
+      "bloodline": null,
+      "skills": ["防御", "晒太阳", "精神扰乱", "倾泻"]
+    },
+    {
+      "name": "雪灵",
+      "bloodline": null,
+      "skills": ["借用", "休息回复", "冰捆绑", "冰墙"]
+    },
+    {
+      "name": "绒光优优",
+      "bloodline": null,
+      "skills": ["精神扰乱", "流沙", "硬化", "天光"]
+    },
+    {
+      "name": "夜枭",
+      "bloodline": null,
+      "skills": ["快速移动", "灵媒", "阻火增辉", "限时特惠"]
+    }
+  ],
+  "lineup_images": [
+    {
+      "path": "/assets/lineups/hammercrane-snow-owl-s5/c8ea98bb6f4532a8462ac71bc2bed0d95cbce18637a8b355f31f970fff0b47c8.jpg",
+      "source_url": "https://i0.hdslb.com/bfs/new_dyn/ff05db64ac9cd29212cf56a53d2266ce108399131.jpg",
+      "source_page_url": "https://www.bilibili.com/video/BV1QnyhzNEbq",
+      "source_kind": "comment",
+      "capture_method": "direct-image",
+      "published_at": "2026-11-21T04:05:44.000Z",
+      "captured_at": "2026-11-24T19:28:00+08:00",
+      "width": 1625,
+      "height": 747,
+      "sha256": "c8ea98bb6f4532a8462ac71bc2bed0d95cbce18637a8b355f31f970fff0b47c8",
+      "phash": "5e8359830b5e7459",
+      "evidence_grade": "B",
+      "verified": true,
+      "verification_notes": "Bilibili 评论区玩家 398454djjtlc 于 2026-11-21 分享的「队伍3」一图流原图（1625×747），六员与 24 个技能清晰可读。",
+      "attribution": "Bilibili · 398454djjtlc（评论分享一图流）"
+    }
+  ],
+  "tutorials": [],
+  "sources": [
+    {
+      "url": "https://www.bilibili.com/video/BV1QnyhzNEbq",
+      "type": "community",
+      "title": "大师以下随便杀！龙威阿布15连胜阵容分享！（评论区：398454djjtlc）",
+      "published_at": "2026-11-21T04:05:44.000Z",
+      "last_checked_at": "2026-11-24T19:30:00+08:00"
+    }
+  ],
+  "first_seen_at": "2026-11-24T19:30:00+08:00",
+  "last_verified_at": "2026-11-24T19:30:00+08:00",
+  "status": "active",
+  "verification_notes": "S5 赛季锤头鹤与半朽蜜果灵干扰控制队配置，24 个技能核对无误。",
+  "archive_reason": null,
+  "player_notes": []
+}

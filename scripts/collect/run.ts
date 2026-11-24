@@ -1,7 +1,8 @@
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { resolve, join } from 'node:path';
 import { createHash } from 'node:crypto';
-import { extractPage } from '../extract/page';
+import { extractWithAdapter } from './adapters';
+import { closeBrowserPool } from './browser';
 import { acquireResearchLock } from './lock';
 import { publicFetch } from './network';
 import { imageInfo } from '../extract/image';
@@ -19,6 +20,7 @@ import {
   remainingImages,
   unprocessedImages,
   processedImages,
+  type Freshness,
   type Source,
 } from './strategy';
 import policy from '../../data/research-policy.json';
@@ -81,6 +83,14 @@ const option = (name: string, fallback: string) => {
 const state = loadState();
 const known = loadSeasons();
 const scope = option('--scope', 'all');
+const freshnessRaw = option('--freshness', 'all');
+if (!['week', 'month', 'all'].includes(freshnessRaw))
+  throw Error('freshness 必须为 week、month 或 all');
+const freshness = freshnessRaw as Freshness;
+const concurrency = Math.max(
+  1,
+  Math.min(6, Number.parseInt(option('--concurrency', '3'), 10) || 3),
+);
 const seasons = selectedSeasons(
   state.season,
   known.map((s) => s.id),
@@ -183,7 +193,12 @@ for (const l of lineups) for (const s of l.sources) add(s.url, [l.season], 'publ
 let searchHealth: unknown[] = [];
 if (process.argv.includes('--discover')) {
   const templates = JSON.parse(await readFile('data/search-queries.json', 'utf8')) as string[];
-  const queries = queryPlan(templates, seasons);
+  const currentSeasonMeta = known.find((s) => s.id === state.season);
+  const queries = queryPlan(templates, seasons, {
+    freshness,
+    currentSeason: state.season,
+    seasonName: currentSeasonMeta?.name,
+  });
   await writeFile(join(root, 'query-plan.json'), JSON.stringify(queries, null, 2) + '\n');
   const found = await discover(queries, (name, body) => writeFile(join(root, name), body));
   searchHealth = found.health;
@@ -211,20 +226,19 @@ const records: SourceRecord[] = [];
 const related: Source[] = [];
 const imageBacklog: Source[] = [];
 const failedSources: Source[] = [];
-for (let index = 0; index < queue.length; index++) {
-  const source = queue[index];
+const useBrowser = process.argv.includes('--browser');
+
+async function processSource(source: Source) {
   const folder = join(root, source.id);
   await mkdir(folder, { recursive: true });
   try {
     const document = await sourceDocument(source.url, {
-      browser:
-        process.argv.includes('--browser') &&
-        ['qiandao', 'taptap', 'bilibili', 'douyin'].includes(source.platform),
+      browser: useBrowser && ['qiandao', 'taptap', 'bilibili', 'douyin'].includes(source.platform),
     });
     const { html, browser_error: browserError } = document;
     if (document.screenshot) await writeFile(join(folder, 'page.png'), document.screenshot);
     await writeFile(join(folder, 'page.html'), html);
-    const extracted = extractPage(html, document.url);
+    const extracted = extractWithAdapter(html, document.url, source.platform);
     const evidence_hash = createHash('sha256')
       .update(
         JSON.stringify([
@@ -321,8 +335,18 @@ for (let index = 0; index < queue.length; index++) {
     });
     console.log(`${source.platform}: ${errorMessage(e)}`);
   }
+}
+
+async function runBatch(items: Source[]) {
+  for (let i = 0; i < items.length; i += concurrency) {
+    await Promise.all(items.slice(i, i + concurrency).map(processSource));
+  }
+}
+
+try {
+  await runBatch(queue);
   // Discover from all initial platforms first, then distribute remaining slots fairly.
-  if (index === queue.length - 1 && related.length) {
+  if (related.length && queue.length < policy.max_pages) {
     const extras = balancedSources(
       related.filter((s) => !seen.has(s.url)),
       seasons,
@@ -334,7 +358,10 @@ for (let index = 0; index < queue.length; index++) {
     }
     deferred.push(...extras.deferred);
     related.length = 0;
+    await runBatch(extras.selected);
   }
+} finally {
+  await closeBrowserPool();
 }
 const backlog = mergeSources([
   ...carriedBacklog,

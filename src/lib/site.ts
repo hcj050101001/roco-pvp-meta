@@ -1,5 +1,10 @@
-// 默认仓库仅为本地开发兜底：未设置 GITHUB_REPOSITORY 时不中断构建；
-// CI 与 GitHub Actions 环境下以 GITHUB_REPOSITORY 为准，不要依赖该默认值做线上判断。
+// 自有服务器优先使用 SITE_URL 与 SITE_BASE（默认站点根 /）；
+// 仅在 GitHub Actions 且未显式覆盖时，自动推导 GitHub Pages 仓库子路径。
+try {
+  process.loadEnvFile?.();
+} catch {
+  /* .env 不存在时忽略 */
+}
 const DEFAULT_REPOSITORY = 'hcj050101001/roco-pvp-meta';
 const repositoryPattern = /^[a-zA-Z0-9_.-]+\/[a-zA-Z0-9_.-]+$/;
 
@@ -30,12 +35,18 @@ export function projectBasePathFor(ownerName: string, repoNameValue: string): st
 }
 export const projectBasePath = projectBasePathFor(owner, repoName);
 
-// 本地开发默认站点根；CI 的项目页自动带仓库子路径；SITE_BASE 可显式覆盖。
+export const deploymentTarget: 'github-pages' | 'server' =
+  process.env.GITHUB_ACTIONS && !process.env.SITE_URL ? 'github-pages' : 'server';
+
+// 自有服务器默认站点根 ''；CI 的 GitHub Pages 项目页自动带仓库子路径；SITE_BASE 可显式覆盖。
 export const basePath = normalizeBase(
-  process.env.SITE_BASE ?? (process.env.GITHUB_ACTIONS ? projectBasePath : ''),
+  process.env.SITE_BASE ?? (deploymentTarget === 'github-pages' ? projectBasePath : ''),
 );
 export const base = basePath || '/';
-export const siteUrl = (process.env.SITE_URL || `https://${owner}.github.io`).replace(/\/+$/, '');
+export const siteUrl = (
+  process.env.SITE_URL ||
+  (deploymentTarget === 'github-pages' ? `https://${owner}.github.io` : 'http://127.0.0.1:4321')
+).replace(/\/+$/, '');
 
 /** 将已在站点 base 下的路径解析为完整地址。 */
 export function absoluteUrl(path: string): string {

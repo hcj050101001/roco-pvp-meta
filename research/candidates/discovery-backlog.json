@@ -1,5 +1,5 @@
 {
-  "run_id": "2026-10-29T01-21-34-138Z",
+  "run_id": "2026-11-24T11-21-55-253Z",
   "untrusted": true,
   "sources": [
     {
@@ -89,7 +89,10 @@
         "S3",
         "S2"
       ],
-      "origin": "related-link"
+      "origin": "backlog",
+      "pending_image_urls": [],
+      "processed_image_urls": [],
+      "attempts": 0
     },
     {
       "id": "source-bb35da991cf43d79",
@@ -101,7 +104,10 @@
         "S3",
         "S2"
       ],
-      "origin": "related-link"
+      "origin": "backlog",
+      "pending_image_urls": [],
+      "processed_image_urls": [],
+      "attempts": 0
     },
     {
       "id": "source-886810daeda22969",
@@ -113,7 +119,10 @@
         "S3",
         "S2"
       ],
-      "origin": "related-link"
+      "origin": "backlog",
+      "pending_image_urls": [],
+      "processed_image_urls": [],
+      "attempts": 0
     },
     {
       "id": "source-fa8bb5b007ae0cd5",
@@ -125,7 +134,10 @@
         "S3",
         "S2"
       ],
-      "origin": "related-link"
+      "origin": "backlog",
+      "pending_image_urls": [],
+      "processed_image_urls": [],
+      "attempts": 0
     },
     {
       "id": "source-f69c8244cba56696",
@@ -135,9 +147,10 @@
       "seasons": [
         "S4",
         "S3",
-        "S2"
+        "S2",
+        "S5"
       ],
-      "origin": "seed",
+      "origin": "backlog",
       "pending_image_urls": [
         "https://img-tc.tapimg.com/market/images/32c22f00fb39db6efe22afdd8ffb1480.png",
         "https://img-tc.tapimg.com/market/images/17a929b2fb36da6ca1d925a7d08acef9.png",
@@ -178,7 +191,8 @@
         "https://img-tc.tapimg.com/market/images/83aae3b303b53f2e05194d4ffd873132.png"
       ],
       "evidence_hash": "5dbeb0cf9fe1469e79bffa2bd180fa153bc5d3e0aff3f66a551de1cd8c826be6",
-      "attempts": 0
+      "attempts": 1,
+      "retry_after": "2026-11-25T11:22:25.069Z"
     },
     {
       "id": "source-7662c8fb83c31f9f",
@@ -188,9 +202,10 @@
       "seasons": [
         "S4",
         "S3",
-        "S2"
+        "S2",
+        "S5"
       ],
-      "origin": "seed",
+      "origin": "backlog",
       "pending_image_urls": [
         "https://assets.tapimg.com/img/touch-icon-ipad-retina.png",
         "https://assets.tapimg.com/apps/web-app-next/_nuxt/tap-logo-share.Cua4v4Xg.png",
@@ -311,7 +326,8 @@
         "https://assets.tapimg.com/apps/web-app-next/_nuxt/home-login-guide-art.BuhmlC33.png"
       ],
       "evidence_hash": "927536e0d51219ee68e003435552d77edcd3057e10a7c9b9a5a8f763af96af06",
-      "attempts": 0
+      "attempts": 1,
+      "retry_after": "2026-11-25T11:22:41.655Z"
     },
     {
       "id": "source-9f5cfc789a9ede41",
@@ -321,21 +337,10 @@
       "seasons": [
         "S4",
         "S3",
-        "S2"
+        "S2",
+        "S5"
       ],
-      "origin": "expansion",
-      "evidence_hash": "df360adbf4ac6fb6ab4d65bf1178778ab6c8c56c6c55af1ba0aa40ad9bbbfc6a",
-      "processed_image_urls": [
-        "https://tap-client-logs-bj.cn-beijing.dualstack.log.aliyuncs.com/logstores/web_apm/track_ua.gif?t_log_id=082cd35e-63b1-4dd4-9fc4-fda0ba981421&APIVersion=0.6.0&XUA=V%3D1%26PN%3DWeb%26LANG%3Dzh_CN%26VN_CODE%3D100000000%26LOC%3DCN%26PLT%3DPC%26DS%3DAndroid%26UID%3D15c5ceed-8775-4826-a70f-204a04505034%26OS%3DLinux%26OSV%3Dx86_64%26DT%3DPC&UID=15c5ceed-8775-4826-a70f-204a04505034&browser_name=HeadlessChrome&action=startup&ts=1793236927364&request_path=%2Fmoment%2F814312527868461907",
-        "https://assets.tapimg.com/apps/web-app-next/_nuxt/login-button-art.CyO-kNSq.png",
-        "https://img.tapimg.com/market/images/d20ff71e1f1e1961755e6e4ffc6e2c3f.png",
-        "https://img-tc.tapimg.com/market/images/e9a61869998a8d5b95b0668d65c28d6d.png/_tap_appicon.jpg",
-        "https://img-tc.tapimg.com/market/images/d8a70575966d311941f2b38aee62f74f.png/_tap_appicon.jpg",
-        "https://img-tc.tapimg.com/market/images/3c29b16e61555fb01291ac3c0aeee4a7.png/_tap_appicon.jpg",
-        "https://img-tc.tapimg.com/market/images/ba24dee85b38c7364ac8279b3fe4a2c6.png/_tap_appicon.jpg",
-        "https://img-tc.tapimg.com/market/images/a395edeea4e8c60315097a7472c7393c.jpg/_tap_appicon.jpg"
-      ],
-      "attempts": 0,
+      "origin": "backlog",
       "pending_image_urls": [
         "https://assets.tapimg.com/protocol/%E6%98%93%E7%8E%A9%E5%B9%BF%E7%94%B5%E8%AF%81.jpg",
         "https://img-tc.tapimg.com/market/images/4c04d8dabd10d4d185fcb936a387e290.png",
@@ -361,7 +366,20 @@
         "https://img2-tc.tapimg.com/moment/etag/FsPu7BJhOOOp3iVBMAd50RHfImC3_20261028173203.jpg/_tap_ugc.jpg",
         "https://img-tc.tapimg.com/video-recthumb/tid-6a2406913cc879057fd11691/FtunKrDDJFrMlH3Pj_1fap1MEOTX.png/_tap_ugc.jpg",
         "https://assets.tapimg.com/web-app-global/public-static/img/icons/apple-touch-icon-180x180-v3.png"
-      ]
+      ],
+      "processed_image_urls": [
+        "https://tap-client-logs-bj.cn-beijing.dualstack.log.aliyuncs.com/logstores/web_apm/track_ua.gif?t_log_id=082cd35e-63b1-4dd4-9fc4-fda0ba981421&APIVersion=0.6.0&XUA=V%3D1%26PN%3DWeb%26LANG%3Dzh_CN%26VN_CODE%3D100000000%26LOC%3DCN%26PLT%3DPC%26DS%3DAndroid%26UID%3D15c5ceed-8775-4826-a70f-204a04505034%26OS%3DLinux%26OSV%3Dx86_64%26DT%3DPC&UID=15c5ceed-8775-4826-a70f-204a04505034&browser_name=HeadlessChrome&action=startup&ts=1793236927364&request_path=%2Fmoment%2F814312527868461907",
+        "https://assets.tapimg.com/apps/web-app-next/_nuxt/login-button-art.CyO-kNSq.png",
+        "https://img.tapimg.com/market/images/d20ff71e1f1e1961755e6e4ffc6e2c3f.png",
+        "https://img-tc.tapimg.com/market/images/e9a61869998a8d5b95b0668d65c28d6d.png/_tap_appicon.jpg",
+        "https://img-tc.tapimg.com/market/images/d8a70575966d311941f2b38aee62f74f.png/_tap_appicon.jpg",
+        "https://img-tc.tapimg.com/market/images/3c29b16e61555fb01291ac3c0aeee4a7.png/_tap_appicon.jpg",
+        "https://img-tc.tapimg.com/market/images/ba24dee85b38c7364ac8279b3fe4a2c6.png/_tap_appicon.jpg",
+        "https://img-tc.tapimg.com/market/images/a395edeea4e8c60315097a7472c7393c.jpg/_tap_appicon.jpg"
+      ],
+      "evidence_hash": "df360adbf4ac6fb6ab4d65bf1178778ab6c8c56c6c55af1ba0aa40ad9bbbfc6a",
+      "attempts": 1,
+      "retry_after": "2026-11-25T11:22:54.120Z"
     },
     {
       "id": "source-062dd768a9909d1c",
@@ -688,16 +706,16 @@
         "S3",
         "S2"
       ],
-      "origin": "search",
-      "attempts": 0,
-      "evidence_hash": "e647d9c33e0eb828dbb8b9f1715caaa36f2010d53670e8176b0a0d1447c6d567",
+      "origin": "backlog",
+      "pending_image_urls": [
+        "https://wegame.gtimg.com/tgp_act/release/wegame/lkwgsj20260521v/images/part5-zw2.png"
+      ],
       "processed_image_urls": [
         "https://wegame.gtimg.com/tgp_act/release/wegame/lkwgsj20260521v/images/part5-zw1.png",
         "https://wegame.gtimg.com/tgp_act/release/wegame/lkwgsj20260521v/images/part4-rule.png"
       ],
-      "pending_image_urls": [
-        "https://wegame.gtimg.com/tgp_act/release/wegame/lkwgsj20260521v/images/part5-zw2.png"
-      ]
+      "evidence_hash": "e647d9c33e0eb828dbb8b9f1715caaa36f2010d53670e8176b0a0d1447c6d567",
+      "attempts": 0
     },
     {
       "id": "source-7d38ced49f3a36d8",
@@ -709,8 +727,32 @@
         "S3",
         "S2"
       ],
-      "origin": "expansion",
-      "evidence_hash": "2977d84661ff0d844f61efe2154a01dc7ad18df88cbfd85de4ead1c142d8c576",
+      "origin": "backlog",
+      "pending_image_urls": [
+        "https://i.17173cdn.com/2fhnvk/YWxqaGBf/cms3/kKjYNNbufDEtdlD.gif",
+        "https://i.17173cdn.com/gdthue/YWxqaGBf/novar/20260915/CSlfxPbucsdDcxy.jpg!a-3-240x.jpg",
+        "https://i.17173cdn.com/gdthue/YWxqaGBf/novar/20260915/WTQeribucsdDpAu.jpg!a-3-240x.jpg",
+        "https://i.17173cdn.com/gdthue/YWxqaGBf/novar/20260525/lWxQMvbtzoEEglv.jpg!a-3-240x.jpg",
+        "https://i.17173cdn.com/gdthue/YWxqaGBf/novar/20261022/PTfmEDbufrjfwwD.jpg!a-3-240x.jpg",
+        "https://i.17173cdn.com/gdthue/YWxqaGBf/novar/20260518/VUmVEwbtyDaxkzg.png!a-3-240x.jpg",
+        "https://i.17173cdn.com/gdthue/YWxqaGBf/novar/20261028/wIzHzubufFEFzmf.jpg!a-3-480x.jpg",
+        "https://i.17173cdn.com/gdthue/YWxqaGBf/novar/20261028/aCzpOXbugayevcC.jpg!a-3-480x.jpg",
+        "https://i.17173cdn.com/gdthue/YWxqaGBf/novar/20261028/yGicebbufFEyBqF.jpg!a-3-480x.jpg",
+        "https://i.17173cdn.com/gdthue/YWxqaGBf/novar/20261028/WVODQGbugaurypy.jpg!a-3-480x.jpg",
+        "https://i.17173cdn.com/gdthue/YWxqaGBf/novar/20261026/SqQXHsbufBcznfB.jpg!a-3-480x.jpg",
+        "https://i.17173cdn.com/0561y4/YWxqaGBf/gamebase/game-cover-horizontal_small/vkXGqrbufjvsbvl.jpg!a-3-240x.jpg",
+        "https://i.17173cdn.com/gdthue/YWxqaGBf/kidhub/game_cover_horizontal_small/xDajTxbtlrzejex.jpg!a-3-240x.jpg",
+        "https://i.17173cdn.com/0561y4/YWxqaGBf/gamebase/game-cover-horizontal_small/jHzojObtumhBrrA.jpg!a-3-240x.jpg",
+        "https://i.17173cdn.com/0561y4/YWxqaGBf/gamebase/game-cover-horizontal_small/PdkubAbucbEaEcA.png!a-3-240x.jpg",
+        "https://i.17173cdn.com/0561y4/YWxqaGBf/gamebase/game-cover-horizontal_small/ibbWiFbtEzhdoDk.jpg!a-3-240x.jpg",
+        "https://i.17173cdn.com/2fhnvk/YWxqaGBf/cms3/hvrkDAbtAAldqam.jpg!a-3-240x.jpg",
+        "https://i.17173cdn.com/2fhnvk/YWxqaGBf/cms3/XznsxWbufjmpCze.jpg!a-3-240x.jpg",
+        "https://i.17173cdn.com/2fhnvk/YWxqaGBf/cms3/fTezTPbufjkrFAA.jpg!a-3-240x.jpg",
+        "https://i.17173cdn.com/2fhnvk/YWxqaGBf/cms3/bjVfCSbtzyzqDwf.jpg!a-3-240x.jpg",
+        "https://i.17173cdn.com/2fhnvk/YWxqaGBf/cms3/CkwjQabubnkzynj.jpg!a-3-240x.jpg",
+        "https://ue.17173cdn.com/a/news/final/pc/2026/img/17173app.webp",
+        "https://ue.17173cdn.com/a/news/final/pc/2026/img/17173wx.webp"
+      ],
       "processed_image_urls": [
         "https://i.17173cdn.com/2fhnvk/YWxqaGBf/cms3/rWrMOebtzumhrrm.jpg",
         "https://i.17173cdn.com/2fhnvk/YWxqaGBf/cms3/sKhwWNbtzumhrqv.jpg",
@@ -721,12 +763,22 @@
         "https://i.17173cdn.com/0561y4/YWxqaGBf/gamebase/game-screenshot-horizontal/wRMjNObtiggowCf.jpg!a-3-240x.png",
         "https://i.17173cdn.com/gdthue/YWxqaGBf/8tha/GcTjiXbuapdEAyb.jpg!a-3-240x.png"
       ],
-      "attempts": 0,
+      "evidence_hash": "2977d84661ff0d844f61efe2154a01dc7ad18df88cbfd85de4ead1c142d8c576",
+      "attempts": 0
+    },
+    {
+      "id": "source-b4b6b2556d41eae6",
+      "url": "https://news.17173.com/content/04062026/170103877.shtml",
+      "platform": "17173",
+      "enabled": true,
+      "seasons": [
+        "S4",
+        "S3",
+        "S2",
+        "S5"
+      ],
+      "origin": "backlog",
       "pending_image_urls": [
-        "https://i.17173cdn.com/2fhnvk/YWxqaGBf/cms3/kKjYNNbufDEtdlD.gif",
-        "https://i.17173cdn.com/gdthue/YWxqaGBf/novar/20260915/CSlfxPbucsdDcxy.jpg!a-3-240x.jpg",
-        "https://i.17173cdn.com/gdthue/YWxqaGBf/novar/20260915/WTQeribucsdDpAu.jpg!a-3-240x.jpg",
-        "https://i.17173cdn.com/gdthue/YWxqaGBf/novar/20260525/lWxQMvbtzoEEglv.jpg!a-3-240x.jpg",
         "https://i.17173cdn.com/gdthue/YWxqaGBf/novar/20261022/PTfmEDbufrjfwwD.jpg!a-3-240x.jpg",
         "https://i.17173cdn.com/gdthue/YWxqaGBf/novar/20260518/VUmVEwbtyDaxkzg.png!a-3-240x.jpg",
         "https://i.17173cdn.com/gdthue/YWxqaGBf/novar/20261028/wIzHzubufFEFzmf.jpg!a-3-480x.jpg",
@@ -745,21 +797,22 @@
         "https://i.17173cdn.com/2fhnvk/YWxqaGBf/cms3/bjVfCSbtzyzqDwf.jpg!a-3-240x.jpg",
         "https://i.17173cdn.com/2fhnvk/YWxqaGBf/cms3/CkwjQabubnkzynj.jpg!a-3-240x.jpg",
         "https://ue.17173cdn.com/a/news/final/pc/2026/img/17173app.webp",
-        "https://ue.17173cdn.com/a/news/final/pc/2026/img/17173wx.webp"
-      ]
-    },
-    {
-      "id": "source-b4b6b2556d41eae6",
-      "url": "https://news.17173.com/content/04062026/170103877.shtml",
-      "platform": "17173",
-      "enabled": true,
-      "seasons": [
-        "S4",
-        "S3",
-        "S2"
+        "https://ue.17173cdn.com/a/news/final/pc/2026/img/17173wx.webp",
+        "https://i.17173cdn.com/gdthue/YWxqaGBf/novar/20260915/mTgDRIbucsdFksF.jpg!a-3-240x.jpg",
+        "https://i.17173cdn.com/gdthue/YWxqaGBf/novar/20261124/KNoKPCbuightydw.jpg!a-3-480x.jpg",
+        "https://i.17173cdn.com/gdthue/YWxqaGBf/novar/20261124/PcixTBbuifAtudF.jpg!a-3-480x.jpg",
+        "https://i.17173cdn.com/gdthue/YWxqaGBf/novar/20261124/vOdGudbuifrBAqF.jpg!a-3-480x.jpg",
+        "https://i.17173cdn.com/gdthue/YWxqaGBf/novar/20261123/ejjqEnbuidqxdax.jpg!a-3-480x.jpg",
+        "https://i.17173cdn.com/gdthue/YWxqaGBf/novar/20261123/jJwNiRbuiddrAvh.jpg!a-3-480x.jpg",
+        "https://i.17173cdn.com/0561y4/YWxqaGBf/gamebase/game-cover-horizontal_small/jmqmIIbtqyksFAm.jpg!a-3-240x.jpg",
+        "https://i.17173cdn.com/0561y4/YWxqaGBf/gamebase/game-cover-horizontal_small/YgOeSmbuhyDDxfw.jpg!a-3-240x.jpg",
+        "https://i.17173cdn.com/0561y4/YWxqaGBf/gamebase/game-cover-horizontal_small/xJPDHObuhrhcdhu.jpg!a-3-240x.jpg",
+        "https://i.17173cdn.com/0561y4/YWxqaGBf/gamebase/game-cover-horizontal_small/QVXRmPbtcAdkufE.jpg!a-3-240x.jpg",
+        "https://i.17173cdn.com/0561y4/YWxqaGBf/gamebase/game-cover-horizontal_small/BFwlawbtcAbqqvo.jpg!a-3-240x.jpg",
+        "https://i.17173cdn.com/2fhnvk/YWxqaGBf/cms3/MDkWztbuhwhiywh.jpg!a-3-240x.jpg",
+        "https://i.17173cdn.com/2fhnvk/YWxqaGBf/cms3/JWPFEdbtCirxnAq.jpg!a-3-240x.jpg",
+        "https://i.17173cdn.com/2fhnvk/YWxqaGBf/cms3/KFuRMubtBmmpfjo.jpg!a-3-240x.jpg"
       ],
-      "origin": "expansion",
-      "evidence_hash": "d6077b183f6cb1192cebf90ba2e0f167d2e35aeabf9a8e9395a6fadabccd3099",
       "processed_image_urls": [
         "https://i.17173cdn.com/2fhnvk/YWxqaGBf/cms3/RMpJymbtvramiDB.jpg",
         "https://i.17173cdn.com/2fhnvk/YWxqaGBf/cms3/oCWBwvbtvramiEe.jpg",
@@ -770,28 +823,8 @@
         "https://i.17173cdn.com/gdthue/YWxqaGBf/novar/20260915/WTQeribucsdDpAu.jpg!a-3-240x.jpg",
         "https://i.17173cdn.com/gdthue/YWxqaGBf/novar/20260525/lWxQMvbtzoEEglv.jpg!a-3-240x.jpg"
       ],
-      "attempts": 0,
-      "pending_image_urls": [
-        "https://i.17173cdn.com/gdthue/YWxqaGBf/novar/20261022/PTfmEDbufrjfwwD.jpg!a-3-240x.jpg",
-        "https://i.17173cdn.com/gdthue/YWxqaGBf/novar/20260518/VUmVEwbtyDaxkzg.png!a-3-240x.jpg",
-        "https://i.17173cdn.com/gdthue/YWxqaGBf/novar/20261028/wIzHzubufFEFzmf.jpg!a-3-480x.jpg",
-        "https://i.17173cdn.com/gdthue/YWxqaGBf/novar/20261028/aCzpOXbugayevcC.jpg!a-3-480x.jpg",
-        "https://i.17173cdn.com/gdthue/YWxqaGBf/novar/20261028/yGicebbufFEyBqF.jpg!a-3-480x.jpg",
-        "https://i.17173cdn.com/gdthue/YWxqaGBf/novar/20261028/WVODQGbugaurypy.jpg!a-3-480x.jpg",
-        "https://i.17173cdn.com/gdthue/YWxqaGBf/novar/20261026/SqQXHsbufBcznfB.jpg!a-3-480x.jpg",
-        "https://i.17173cdn.com/0561y4/YWxqaGBf/gamebase/game-cover-horizontal_small/vkXGqrbufjvsbvl.jpg!a-3-240x.jpg",
-        "https://i.17173cdn.com/gdthue/YWxqaGBf/kidhub/game_cover_horizontal_small/xDajTxbtlrzejex.jpg!a-3-240x.jpg",
-        "https://i.17173cdn.com/0561y4/YWxqaGBf/gamebase/game-cover-horizontal_small/jHzojObtumhBrrA.jpg!a-3-240x.jpg",
-        "https://i.17173cdn.com/0561y4/YWxqaGBf/gamebase/game-cover-horizontal_small/PdkubAbucbEaEcA.png!a-3-240x.jpg",
-        "https://i.17173cdn.com/0561y4/YWxqaGBf/gamebase/game-cover-horizontal_small/ibbWiFbtEzhdoDk.jpg!a-3-240x.jpg",
-        "https://i.17173cdn.com/2fhnvk/YWxqaGBf/cms3/hvrkDAbtAAldqam.jpg!a-3-240x.jpg",
-        "https://i.17173cdn.com/2fhnvk/YWxqaGBf/cms3/XznsxWbufjmpCze.jpg!a-3-240x.jpg",
-        "https://i.17173cdn.com/2fhnvk/YWxqaGBf/cms3/fTezTPbufjkrFAA.jpg!a-3-240x.jpg",
-        "https://i.17173cdn.com/2fhnvk/YWxqaGBf/cms3/bjVfCSbtzyzqDwf.jpg!a-3-240x.jpg",
-        "https://i.17173cdn.com/2fhnvk/YWxqaGBf/cms3/CkwjQabubnkzynj.jpg!a-3-240x.jpg",
-        "https://ue.17173cdn.com/a/news/final/pc/2026/img/17173app.webp",
-        "https://ue.17173cdn.com/a/news/final/pc/2026/img/17173wx.webp"
-      ]
+      "evidence_hash": "d6077b183f6cb1192cebf90ba2e0f167d2e35aeabf9a8e9395a6fadabccd3099",
+      "attempts": 0
     },
     {
       "id": "source-7e6d404f99f8c9d5",
@@ -801,21 +834,10 @@
       "seasons": [
         "S4",
         "S3",
-        "S2"
+        "S2",
+        "S5"
       ],
-      "origin": "expansion",
-      "evidence_hash": "0e95091eaa829631813e02b79ff94517ec01885269285e5faea8496d0c8a8787",
-      "processed_image_urls": [
-        "https://i.17173cdn.com/2fhnvk/YWxqaGBf/cms3/VBhnjkbtvlhbnbp.jpg",
-        "https://i.17173cdn.com/2fhnvk/YWxqaGBf/cms3/kKjYNNbufDEtdlD.gif",
-        "https://i.17173cdn.com/gdthue/YWxqaGBf/novar/20260915/CSlfxPbucsdDcxy.jpg!a-3-240x.jpg",
-        "https://i.17173cdn.com/gdthue/YWxqaGBf/novar/20260915/WTQeribucsdDpAu.jpg!a-3-240x.jpg",
-        "https://i.17173cdn.com/gdthue/YWxqaGBf/novar/20260525/lWxQMvbtzoEEglv.jpg!a-3-240x.jpg",
-        "https://i.17173cdn.com/gdthue/YWxqaGBf/novar/20261022/PTfmEDbufrjfwwD.jpg!a-3-240x.jpg",
-        "https://i.17173cdn.com/gdthue/YWxqaGBf/novar/20260518/VUmVEwbtyDaxkzg.png!a-3-240x.jpg",
-        "https://i.17173cdn.com/gdthue/YWxqaGBf/novar/20261028/wIzHzubufFEFzmf.jpg!a-3-480x.jpg"
-      ],
-      "attempts": 0,
+      "origin": "backlog",
       "pending_image_urls": [
         "https://i.17173cdn.com/gdthue/YWxqaGBf/novar/20261028/aCzpOXbugayevcC.jpg!a-3-480x.jpg",
         "https://i.17173cdn.com/gdthue/YWxqaGBf/novar/20261028/yGicebbufFEyBqF.jpg!a-3-480x.jpg",
@@ -832,8 +854,34 @@
         "https://i.17173cdn.com/2fhnvk/YWxqaGBf/cms3/bjVfCSbtzyzqDwf.jpg!a-3-240x.jpg",
         "https://i.17173cdn.com/2fhnvk/YWxqaGBf/cms3/CkwjQabubnkzynj.jpg!a-3-240x.jpg",
         "https://ue.17173cdn.com/a/news/final/pc/2026/img/17173app.webp",
-        "https://ue.17173cdn.com/a/news/final/pc/2026/img/17173wx.webp"
-      ]
+        "https://ue.17173cdn.com/a/news/final/pc/2026/img/17173wx.webp",
+        "https://i.17173cdn.com/gdthue/YWxqaGBf/novar/20261124/PcixTBbuifAtudF.jpg!a-3-480x.jpg",
+        "https://i.17173cdn.com/gdthue/YWxqaGBf/novar/20261124/vOdGudbuifrBAqF.jpg!a-3-480x.jpg",
+        "https://i.17173cdn.com/gdthue/YWxqaGBf/novar/20261123/ejjqEnbuidqxdax.jpg!a-3-480x.jpg",
+        "https://i.17173cdn.com/gdthue/YWxqaGBf/novar/20261123/jJwNiRbuiddrAvh.jpg!a-3-480x.jpg",
+        "https://i.17173cdn.com/0561y4/YWxqaGBf/gamebase/game-cover-horizontal_small/jmqmIIbtqyksFAm.jpg!a-3-240x.jpg",
+        "https://i.17173cdn.com/0561y4/YWxqaGBf/gamebase/game-cover-horizontal_small/YgOeSmbuhyDDxfw.jpg!a-3-240x.jpg",
+        "https://i.17173cdn.com/0561y4/YWxqaGBf/gamebase/game-cover-horizontal_small/xJPDHObuhrhcdhu.jpg!a-3-240x.jpg",
+        "https://i.17173cdn.com/0561y4/YWxqaGBf/gamebase/game-cover-horizontal_small/QVXRmPbtcAdkufE.jpg!a-3-240x.jpg",
+        "https://i.17173cdn.com/0561y4/YWxqaGBf/gamebase/game-cover-horizontal_small/BFwlawbtcAbqqvo.jpg!a-3-240x.jpg",
+        "https://i.17173cdn.com/2fhnvk/YWxqaGBf/cms3/MDkWztbuhwhiywh.jpg!a-3-240x.jpg",
+        "https://i.17173cdn.com/2fhnvk/YWxqaGBf/cms3/JWPFEdbtCirxnAq.jpg!a-3-240x.jpg",
+        "https://i.17173cdn.com/2fhnvk/YWxqaGBf/cms3/KFuRMubtBmmpfjo.jpg!a-3-240x.jpg"
+      ],
+      "processed_image_urls": [
+        "https://i.17173cdn.com/2fhnvk/YWxqaGBf/cms3/VBhnjkbtvlhbnbp.jpg",
+        "https://i.17173cdn.com/2fhnvk/YWxqaGBf/cms3/kKjYNNbufDEtdlD.gif",
+        "https://i.17173cdn.com/gdthue/YWxqaGBf/novar/20260915/CSlfxPbucsdDcxy.jpg!a-3-240x.jpg",
+        "https://i.17173cdn.com/gdthue/YWxqaGBf/novar/20260915/WTQeribucsdDpAu.jpg!a-3-240x.jpg",
+        "https://i.17173cdn.com/gdthue/YWxqaGBf/novar/20260525/lWxQMvbtzoEEglv.jpg!a-3-240x.jpg",
+        "https://i.17173cdn.com/gdthue/YWxqaGBf/novar/20261022/PTfmEDbufrjfwwD.jpg!a-3-240x.jpg",
+        "https://i.17173cdn.com/gdthue/YWxqaGBf/novar/20260518/VUmVEwbtyDaxkzg.png!a-3-240x.jpg",
+        "https://i.17173cdn.com/gdthue/YWxqaGBf/novar/20261028/wIzHzubufFEFzmf.jpg!a-3-480x.jpg",
+        "https://i.17173cdn.com/gdthue/YWxqaGBf/novar/20260915/mTgDRIbucsdFksF.jpg!a-3-240x.jpg",
+        "https://i.17173cdn.com/gdthue/YWxqaGBf/novar/20261124/KNoKPCbuightydw.jpg!a-3-480x.jpg"
+      ],
+      "evidence_hash": "0e95091eaa829631813e02b79ff94517ec01885269285e5faea8496d0c8a8787",
+      "attempts": 0
     },
     {
       "id": "source-f8143bf134cc74bc",
@@ -843,9 +891,10 @@
       "seasons": [
         "S4",
         "S3",
-        "S2"
+        "S2",
+        "S5"
       ],
-      "origin": "seed",
+      "origin": "backlog",
       "pending_image_urls": [
         "https://patchwiki.biligame.com/images/nrc/8/83/5pgb7ze1ijipoe5mqmlwcmqgodvyxin.png",
         "https://wiki.biligame.com/nrc/ImageObject",
@@ -863,19 +912,20 @@
         "https://patchwiki.biligame.com/images/nrc/9/96/3tw6nxfuj5nimwbj81a37h3lwbuzglw.png",
         "https://static.biligame.net/common/images/culture-logo.png",
         "https://static.biligame.net/common/images/record-logo.png",
-        "https://patchwiki.biligame.com/images/nrc/6/68/oitygxndm17xufinmtw0yknt4mry5j4.png?version=252cd363dd7e2aefa8c4ebdee73f5518"
+        "https://patchwiki.biligame.com/images/nrc/6/68/oitygxndm17xufinmtw0yknt4mry5j4.png?version=252cd363dd7e2aefa8c4ebdee73f5518",
+        "https://wiki.biligame.com/resources/assets/wiki.png"
       ],
       "processed_image_urls": [
-        "https://wiki.biligame.com/resources/assets/wiki.png",
-        "https://patchwiki.biligame.com/images/nrc/thumb/f/f7/tabzbmm9b4uyssbiatmfyx5nwmy66ka.png/800px-Activity_Outbreak_1900034_V1.png",
-        "https://patchwiki.biligame.com/images/nrc/thumb/f/f7/tabzbmm9b4uyssbiatmfyx5nwmy66ka.png/1200px-Activity_Outbreak_1900034_V1.png",
-        "https://patchwiki.biligame.com/images/nrc/thumb/f/f7/tabzbmm9b4uyssbiatmfyx5nwmy66ka.png/1600px-Activity_Outbreak_1900034_V1.png",
-        "https://patchwiki.biligame.com/images/nrc/thumb/f/fe/6515vv3kymwyb67h48qonnpp6sokkjt.png/800px-Activity_Starlight_1031_V1.png",
-        "https://patchwiki.biligame.com/images/nrc/thumb/f/fe/6515vv3kymwyb67h48qonnpp6sokkjt.png/1200px-Activity_Starlight_1031_V1.png",
-        "https://patchwiki.biligame.com/images/nrc/thumb/f/fe/6515vv3kymwyb67h48qonnpp6sokkjt.png/1600px-Activity_Starlight_1031_V1.png",
-        "https://patchwiki.biligame.com/images/nrc/thumb/8/83/5pgb7ze1ijipoe5mqmlwcmqgodvyxin.png/800px-PetPortrait_img_Win_LiangFengWan1_001_Res.png"
+        "https://patchwiki.biligame.com/images/nrc/7/72/69b6hqpwdwl7ulpqsvfh1mo4dihiv09.png",
+        "https://patchwiki.biligame.com/images/nrc/thumb/2/27/1338abxa4rc9xur88ququuru2pgqq2i.png/800px-PetPortrait_MingLong2Ar.png",
+        "https://patchwiki.biligame.com/images/nrc/2/27/1338abxa4rc9xur88ququuru2pgqq2i.png",
+        "https://patchwiki.biligame.com/images/nrc/8/87/4o846a66y8w8yzmhymunjvef9gfyia2.png",
+        "https://patchwiki.biligame.com/images/nrc/c/c4/mmk1c6bfsjvqpbpuxd0rhsztlfekam1.png",
+        "https://patchwiki.biligame.com/images/nrc/d/d3/svj9kvl5j6ptu48igb6ycolozk0p8ip.png",
+        "https://static.biligame.net/common/images/culture-logo.png",
+        "https://static.biligame.net/common/images/record-logo.png"
       ],
-      "evidence_hash": "2ba6fcf998210cefad65ee90067e3d7630714b20123a68701d1685470472b0d9",
+      "evidence_hash": "542aea3f8f6f96a5cb7b8a9155facd26525238d6a51227fa46749cddfa6eaf01",
       "attempts": 0
     },
     {
@@ -888,19 +938,7 @@
         "S3",
         "S2"
       ],
-      "origin": "search",
-      "attempts": 0,
-      "evidence_hash": "4aae23a5c3e5669225eebbcab5cd2c76879bbbd08e5afaf0502a996e3258bc41",
-      "processed_image_urls": [
-        "https://patchwiki.biligame.com/images/rocom/thumb/e/e4/pd01mne2ugswj9qumyujbjjxh5qqi5y.png/150px-Logo_rocom.png",
-        "https://patchwiki.biligame.com/images/rocom/thumb/e/e4/pd01mne2ugswj9qumyujbjjxh5qqi5y.png/225px-Logo_rocom.png",
-        "https://patchwiki.biligame.com/images/rocom/e/e4/pd01mne2ugswj9qumyujbjjxh5qqi5y.png",
-        "https://patchwiki.biligame.com/images/rocom/5/54/hlqkfkfyjwbj3fd12d6du1nts1gzt7m.png",
-        "https://patchwiki.biligame.com/images/rocom/7/7f/62fmtmgkyf5u5ec5exun45vktc27x8a.png",
-        "https://patchwiki.biligame.com/images/rocom/5/56/3ajoiunaq75uxndjhn30jt5rfdp64ki.png",
-        "https://patchwiki.biligame.com/images/rocom/8/84/caciauuopas2mi7qqvrqblfg4e3ufo6.png",
-        "https://patchwiki.biligame.com/images/rocom/8/8f/qz3v2o1aukpu5oqrxis6u8vqol0bz3y.png"
-      ],
+      "origin": "backlog",
       "pending_image_urls": [
         "https://patchwiki.biligame.com/images/rocom/6/6d/bk8vv803rkpnu1sy5zlr9ctyrdvfagb.png",
         "https://patchwiki.biligame.com/images/rocom/7/7e/11k59zt0jeuvtltczx4j1c0h8e9g783.png",
@@ -980,7 +1018,19 @@
         "https://static.biligame.net/common/images/record-logo.png",
         "https://wiki.biligame.com/resources/assets/wiki.png",
         "https://wiki.biligame.com/rocom/ImageObject"
-      ]
+      ],
+      "processed_image_urls": [
+        "https://patchwiki.biligame.com/images/rocom/thumb/e/e4/pd01mne2ugswj9qumyujbjjxh5qqi5y.png/150px-Logo_rocom.png",
+        "https://patchwiki.biligame.com/images/rocom/thumb/e/e4/pd01mne2ugswj9qumyujbjjxh5qqi5y.png/225px-Logo_rocom.png",
+        "https://patchwiki.biligame.com/images/rocom/e/e4/pd01mne2ugswj9qumyujbjjxh5qqi5y.png",
+        "https://patchwiki.biligame.com/images/rocom/5/54/hlqkfkfyjwbj3fd12d6du1nts1gzt7m.png",
+        "https://patchwiki.biligame.com/images/rocom/7/7f/62fmtmgkyf5u5ec5exun45vktc27x8a.png",
+        "https://patchwiki.biligame.com/images/rocom/5/56/3ajoiunaq75uxndjhn30jt5rfdp64ki.png",
+        "https://patchwiki.biligame.com/images/rocom/8/84/caciauuopas2mi7qqvrqblfg4e3ufo6.png",
+        "https://patchwiki.biligame.com/images/rocom/8/8f/qz3v2o1aukpu5oqrxis6u8vqol0bz3y.png"
+      ],
+      "evidence_hash": "4aae23a5c3e5669225eebbcab5cd2c76879bbbd08e5afaf0502a996e3258bc41",
+      "attempts": 0
     },
     {
       "id": "source-f3d5f7c56cb02b8c",
@@ -990,7 +1040,7 @@
       "seasons": [
         "S4"
       ],
-      "origin": "seed",
+      "origin": "backlog",
       "pending_image_urls": [
         "https://sylyfile.3dmgame.com/upload/game/20260428/656fc37e35fe2714e2c2d20587e6708e.png",
         "https://yx.3dmgame.com/uploads/images/thumbsmall/20260429/1777452636_579807.png",
@@ -1033,7 +1083,7 @@
       "seasons": [
         "S3"
       ],
-      "origin": "expansion",
+      "origin": "backlog",
       "pending_image_urls": [
         "https://sylyfile.3dmgame.com/upload/game/20260428/656fc37e35fe2714e2c2d20587e6708e.png",
         "https://yx.3dmgame.com/uploads/images/thumbsmall/20260429/1777452636_579807.png",
@@ -1076,7 +1126,7 @@
       "seasons": [
         "S2"
       ],
-      "origin": "expansion",
+      "origin": "backlog",
       "pending_image_urls": [
         "https://sylyfile.3dmgame.com/upload/game/20260428/656fc37e35fe2714e2c2d20587e6708e.png",
         "https://yx.3dmgame.com/uploads/images/thumbsmall/20260429/1777452636_579807.png",
@@ -1119,9 +1169,10 @@
       "seasons": [
         "S4",
         "S3",
-        "S2"
+        "S2",
+        "S5"
       ],
-      "origin": "expansion",
+      "origin": "backlog",
       "pending_image_urls": [
         "https://n.sinaimg.cn/default/7bd4e141/20251230/sina.png",
         "https://tvax3.sinaimg.cn/crop.0.0.600.600.50/006CDV5Ply8hrgp3aypthj30go0go773.jpg?KID=imgbed,tva&Expires=1793247837&ssig=ZylIS%2FAVo6",
@@ -1141,17 +1192,12 @@
         "https://tvax4.sinaimg.cn/crop.0.0.1080.1080.50/007EaaLmly8ih4ixu2q8wj30u00u0jty.jpg?KID=imgbed,tva&Expires=1793247838&ssig=VGAOYSQfQe"
       ],
       "processed_image_urls": [
-        "https://tvax1.sinaimg.cn/crop.0.0.512.512.50/007YhdVHly8ha8038tr5sj30e80e8mxj.jpg?KID=imgbed,tva&Expires=1792755773&ssig=J%2FzGjH0JzI",
-        "https://tvax1.sinaimg.cn/crop.0.0.1080.1080.50/006rHPw0ly8ihkuhzj65nj30u00u0ae2.jpg?KID=imgbed,tva&Expires=1792755773&ssig=7WsmRioQBx",
-        "https://tvax3.sinaimg.cn/crop.0.0.1009.1009.50/538bc62dly8huv6yh7lzsj20s10s1tce.jpg?KID=imgbed,tva&Expires=1792755773&ssig=Yy09I6w4gb",
-        "https://tvax2.sinaimg.cn/crop.0.0.1080.1080.50/007RQS1Yly8ihw72eu4x4j30u00u0q4s.jpg?KID=imgbed,tva&Expires=1792755773&ssig=q2wQSrUYy6",
-        "https://tvax3.sinaimg.cn/crop.0.0.419.419.50/008u581Xly8iic8vqst65j30bn0bn3z5.jpg?KID=imgbed,tva&Expires=1792755773&ssig=e5LgNsze2b",
-        "https://tvax1.sinaimg.cn/crop.0.0.512.512.50/b56f48a7ly8hrn8t01jicj20e80e8dgm.jpg?KID=imgbed,tva&Expires=1792755773&ssig=G%2B8AjEaz%2Ff",
-        "https://tvax2.sinaimg.cn/crop.0.0.512.512.50/005JxvZaly8i1om5c12aaj30e80e83z5.jpg?KID=imgbed,tva&Expires=1792755773&ssig=upKaQDT4WD",
-        "https://tvax1.sinaimg.cn/crop.0.0.1057.1057.50/008I0PUZly8ift3lwkgt3j30td0tddgt.jpg?KID=imgbed,tva&Expires=1792755773&ssig=qFZq3d15od"
+        "https://tvax3.sinaimg.cn/crop.0.0.600.600.50/006CDV5Ply8hrgp3aypthj30go0go773.jpg?KID=imgbed,tva&Expires=1795530162&ssig=5%2FkckVtr%2Fn",
+        "https://n.sinaimg.cn/default/7bd4e141/20251230/sina.png"
       ],
-      "evidence_hash": "d539e4dfa860c12217f0b2e1d9520580940a669fed09ed8ee5d89e0eb72a8aec",
-      "attempts": 0
+      "evidence_hash": "9dea63b0c3fa5d36a9f84e5fece68021471998cd5116e869216c1616c2477e92",
+      "attempts": 0,
+      "retry_after": "2026-12-08T11:22:42.871Z"
     },
     {
       "id": "source-ed8ab14764764b96",
@@ -1189,21 +1235,10 @@
       "seasons": [
         "S4",
         "S3",
-        "S2"
+        "S2",
+        "S5"
       ],
-      "origin": "expansion",
-      "evidence_hash": "75366e3737538218706dc83c97c8b18da8bd90538b022b51332ffe041715894c",
-      "processed_image_urls": [
-        "https://tap-client-logs-bj.cn-beijing.dualstack.log.aliyuncs.com/logstores/web_apm/track_ua.gif?t_log_id=c76d552a-6f76-4321-bd90-8da5ebc9fff4&APIVersion=0.6.0&XUA=V%3D1%26PN%3DWeb%26LANG%3Dzh_CN%26VN_CODE%3D100000000%26LOC%3DCN%26PLT%3DPC%26DS%3DAndroid%26UID%3D15c5ceed-8775-4826-a70f-204a04505034%26OS%3DLinux%26OSV%3Dx86_64%26DT%3DPC&UID=15c5ceed-8775-4826-a70f-204a04505034&browser_name=HeadlessChrome&action=startup&ts=1793237048827&request_path=%2Fmoment%2F789640283590494730",
-        "https://assets.tapimg.com/apps/web-app-next/_nuxt/login-button-art.CyO-kNSq.png",
-        "https://img.tapimg.com/market/images/d20ff71e1f1e1961755e6e4ffc6e2c3f.png",
-        "https://img-tc.tapimg.com/market/images/e9a61869998a8d5b95b0668d65c28d6d.png/_tap_appicon.jpg",
-        "https://img-tc.tapimg.com/market/images/d8a70575966d311941f2b38aee62f74f.png/_tap_appicon.jpg",
-        "https://img-tc.tapimg.com/market/images/3c29b16e61555fb01291ac3c0aeee4a7.png/_tap_appicon.jpg",
-        "https://img-tc.tapimg.com/market/images/ba24dee85b38c7364ac8279b3fe4a2c6.png/_tap_appicon.jpg",
-        "https://img-tc.tapimg.com/market/images/a395edeea4e8c60315097a7472c7393c.jpg/_tap_appicon.jpg"
-      ],
-      "attempts": 0,
+      "origin": "backlog",
       "pending_image_urls": [
         "https://assets.tapimg.com/protocol/%E6%98%93%E7%8E%A9%E5%B9%BF%E7%94%B5%E8%AF%81.jpg",
         "https://img-tc.tapimg.com/market/images/6b917ee91e9b8fa84296e55a86bc96a5.png",
@@ -1242,7 +1277,20 @@
         "https://img2-tc.tapimg.com/moment/etag/FmAfpne7fxLNvzdRqHmhQrRs5CZa_20260902201912.png/_tap_ugc.jpg",
         "https://img2-tc.tapimg.com/moment/etag/Fjef6uVwLGKyzN8rHKhbBugMcYPM_20260804184711.jpg/_tap_ugc.jpg",
         "https://assets.tapimg.com/web-app-global/public-static/img/icons/apple-touch-icon-180x180-v3.png"
-      ]
+      ],
+      "processed_image_urls": [
+        "https://tap-client-logs-bj.cn-beijing.dualstack.log.aliyuncs.com/logstores/web_apm/track_ua.gif?t_log_id=c76d552a-6f76-4321-bd90-8da5ebc9fff4&APIVersion=0.6.0&XUA=V%3D1%26PN%3DWeb%26LANG%3Dzh_CN%26VN_CODE%3D100000000%26LOC%3DCN%26PLT%3DPC%26DS%3DAndroid%26UID%3D15c5ceed-8775-4826-a70f-204a04505034%26OS%3DLinux%26OSV%3Dx86_64%26DT%3DPC&UID=15c5ceed-8775-4826-a70f-204a04505034&browser_name=HeadlessChrome&action=startup&ts=1793237048827&request_path=%2Fmoment%2F789640283590494730",
+        "https://assets.tapimg.com/apps/web-app-next/_nuxt/login-button-art.CyO-kNSq.png",
+        "https://img.tapimg.com/market/images/d20ff71e1f1e1961755e6e4ffc6e2c3f.png",
+        "https://img-tc.tapimg.com/market/images/e9a61869998a8d5b95b0668d65c28d6d.png/_tap_appicon.jpg",
+        "https://img-tc.tapimg.com/market/images/d8a70575966d311941f2b38aee62f74f.png/_tap_appicon.jpg",
+        "https://img-tc.tapimg.com/market/images/3c29b16e61555fb01291ac3c0aeee4a7.png/_tap_appicon.jpg",
+        "https://img-tc.tapimg.com/market/images/ba24dee85b38c7364ac8279b3fe4a2c6.png/_tap_appicon.jpg",
+        "https://img-tc.tapimg.com/market/images/a395edeea4e8c60315097a7472c7393c.jpg/_tap_appicon.jpg"
+      ],
+      "evidence_hash": "75366e3737538218706dc83c97c8b18da8bd90538b022b51332ffe041715894c",
+      "attempts": 1,
+      "retry_after": "2026-11-25T11:23:01.743Z"
     },
     {
       "id": "source-c00fd46b705d1d5e",
@@ -1252,21 +1300,10 @@
       "seasons": [
         "S4",
         "S3",
-        "S2"
+        "S2",
+        "S5"
       ],
-      "origin": "expansion",
-      "evidence_hash": "100633163b4f6672178b3b85f81d5f40ec47bf0e33737c78876c1cac8757c9f6",
-      "processed_image_urls": [
-        "https://tap-client-logs-bj.cn-beijing.dualstack.log.aliyuncs.com/logstores/web_apm/track_ua.gif?t_log_id=d2057bd2-d57d-4132-b732-320af63392b9&APIVersion=0.6.0&XUA=V%3D1%26PN%3DWeb%26LANG%3Dzh_CN%26VN_CODE%3D100000000%26LOC%3DCN%26PLT%3DPC%26DS%3DAndroid%26UID%3D15c5ceed-8775-4826-a70f-204a04505034%26OS%3DLinux%26OSV%3Dx86_64%26DT%3DPC&UID=15c5ceed-8775-4826-a70f-204a04505034&browser_name=HeadlessChrome&action=startup&ts=1793237057634&request_path=%2Fmoment%2F788306876868592445",
-        "https://assets.tapimg.com/apps/web-app-next/_nuxt/login-button-art.CyO-kNSq.png",
-        "https://img.tapimg.com/market/images/d20ff71e1f1e1961755e6e4ffc6e2c3f.png",
-        "https://img-tc.tapimg.com/market/images/e9a61869998a8d5b95b0668d65c28d6d.png/_tap_appicon.jpg",
-        "https://img-tc.tapimg.com/market/images/d8a70575966d311941f2b38aee62f74f.png/_tap_appicon.jpg",
-        "https://img-tc.tapimg.com/market/images/3c29b16e61555fb01291ac3c0aeee4a7.png/_tap_appicon.jpg",
-        "https://img-tc.tapimg.com/market/images/ba24dee85b38c7364ac8279b3fe4a2c6.png/_tap_appicon.jpg",
-        "https://img-tc.tapimg.com/market/images/a395edeea4e8c60315097a7472c7393c.jpg/_tap_appicon.jpg"
-      ],
-      "attempts": 0,
+      "origin": "backlog",
       "pending_image_urls": [
         "https://assets.tapimg.com/protocol/%E6%98%93%E7%8E%A9%E5%B9%BF%E7%94%B5%E8%AF%81.jpg",
         "https://img-tc.tapimg.com/market/images/27ec2e19b595675b4655cc919a159e93.png",
@@ -1305,7 +1342,20 @@
         "https://img2-tc.tapimg.com/moment/etag/Fjfzk649Grk8-2RHloeUYVSp9U-k_20260401061116.png/_tap_ugc.jpg",
         "https://assets.tapimg.com/web-app-global/public-static/img/icons/apple-touch-icon-180x180-v3.png",
         "https://img2-tc.tapimg.com/moment/etag/Fjfzk649Grk8-2RHloeUYVSp9U-k_20260401061116.png"
-      ]
+      ],
+      "processed_image_urls": [
+        "https://tap-client-logs-bj.cn-beijing.dualstack.log.aliyuncs.com/logstores/web_apm/track_ua.gif?t_log_id=d2057bd2-d57d-4132-b732-320af63392b9&APIVersion=0.6.0&XUA=V%3D1%26PN%3DWeb%26LANG%3Dzh_CN%26VN_CODE%3D100000000%26LOC%3DCN%26PLT%3DPC%26DS%3DAndroid%26UID%3D15c5ceed-8775-4826-a70f-204a04505034%26OS%3DLinux%26OSV%3Dx86_64%26DT%3DPC&UID=15c5ceed-8775-4826-a70f-204a04505034&browser_name=HeadlessChrome&action=startup&ts=1793237057634&request_path=%2Fmoment%2F788306876868592445",
+        "https://assets.tapimg.com/apps/web-app-next/_nuxt/login-button-art.CyO-kNSq.png",
+        "https://img.tapimg.com/market/images/d20ff71e1f1e1961755e6e4ffc6e2c3f.png",
+        "https://img-tc.tapimg.com/market/images/e9a61869998a8d5b95b0668d65c28d6d.png/_tap_appicon.jpg",
+        "https://img-tc.tapimg.com/market/images/d8a70575966d311941f2b38aee62f74f.png/_tap_appicon.jpg",
+        "https://img-tc.tapimg.com/market/images/3c29b16e61555fb01291ac3c0aeee4a7.png/_tap_appicon.jpg",
+        "https://img-tc.tapimg.com/market/images/ba24dee85b38c7364ac8279b3fe4a2c6.png/_tap_appicon.jpg",
+        "https://img-tc.tapimg.com/market/images/a395edeea4e8c60315097a7472c7393c.jpg/_tap_appicon.jpg"
+      ],
+      "evidence_hash": "100633163b4f6672178b3b85f81d5f40ec47bf0e33737c78876c1cac8757c9f6",
+      "attempts": 1,
+      "retry_after": "2026-11-25T11:23:21.003Z"
     },
     {
       "id": "source-b6fb380508ed54c6",
@@ -1315,21 +1365,10 @@
       "seasons": [
         "S4",
         "S3",
-        "S2"
+        "S2",
+        "S5"
       ],
-      "origin": "expansion",
-      "evidence_hash": "3bfa717dbca486a65c4381ed6d2eb36d73d8b91c2a6ef65527a7c47fa88a32b1",
-      "processed_image_urls": [
-        "https://tap-client-logs-bj.cn-beijing.dualstack.log.aliyuncs.com/logstores/web_apm/track_ua.gif?t_log_id=6e6cfeae-7e7d-4d91-ba26-91ef0c78ce50&APIVersion=0.6.0&XUA=V%3D1%26PN%3DWeb%26LANG%3Dzh_CN%26VN_CODE%3D100000000%26LOC%3DCN%26PLT%3DPC%26DS%3DAndroid%26UID%3D15c5ceed-8775-4826-a70f-204a04505034%26OS%3DLinux%26OSV%3Dx86_64%26DT%3DPC&UID=15c5ceed-8775-4826-a70f-204a04505034&browser_name=HeadlessChrome&action=startup&ts=1793237066461&request_path=%2Fmoment%2F792667453384557230",
-        "https://assets.tapimg.com/apps/web-app-next/_nuxt/login-button-art.CyO-kNSq.png",
-        "https://img.tapimg.com/market/images/d20ff71e1f1e1961755e6e4ffc6e2c3f.png",
-        "https://img-tc.tapimg.com/market/images/89ad5c99b1eedc08e4499898d7505b95.png",
-        "https://img-tc.tapimg.com/market/images/d80a29f65fae8e4083f84d7fcd800636.png",
-        "https://img2-tc.tapimg.com/moment/etag/FmMrv4jYX0jIvu3oII8u1nDlekES_20260413075815.jpg/_tap_ugc.jpg",
-        "https://img2-tc.tapimg.com/moment/etag/FmMrv4jYX0jIvu3oII8u1nDlekES_20260413075815.jpg",
-        "https://img2-tc.tapimg.com/moment/etag/FjI9sOP7YnXJ2SVADWDsok3s_TpC_20260413075816.png/_tap_ugc.jpg"
-      ],
-      "attempts": 0,
+      "origin": "backlog",
       "pending_image_urls": [
         "https://img2-tc.tapimg.com/moment/etag/FjI9sOP7YnXJ2SVADWDsok3s_TpC_20260413075816.png",
         "https://img2-tc.tapimg.com/moment/etag/FnU57WKXNam2k4oAb-1O4ce2AiG5_20260413075817.jpg/_tap_ugc.jpg",
@@ -1356,7 +1395,20 @@
         "https://img2-tc.tapimg.com/moment/etag/FkWdvB2ldXRc95BjQ9KcR7PXOUUD_20260807111931.jpg/_tap_ugc.jpg",
         "https://img2-tc.tapimg.com/moment/etag/FvyxtzsNwTZxZ4mGEwJPZSx7ivpv_20260329171448.png/_tap_ugc.jpg",
         "https://assets.tapimg.com/web-app-global/public-static/img/icons/apple-touch-icon-180x180-v3.png"
-      ]
+      ],
+      "processed_image_urls": [
+        "https://tap-client-logs-bj.cn-beijing.dualstack.log.aliyuncs.com/logstores/web_apm/track_ua.gif?t_log_id=6e6cfeae-7e7d-4d91-ba26-91ef0c78ce50&APIVersion=0.6.0&XUA=V%3D1%26PN%3DWeb%26LANG%3Dzh_CN%26VN_CODE%3D100000000%26LOC%3DCN%26PLT%3DPC%26DS%3DAndroid%26UID%3D15c5ceed-8775-4826-a70f-204a04505034%26OS%3DLinux%26OSV%3Dx86_64%26DT%3DPC&UID=15c5ceed-8775-4826-a70f-204a04505034&browser_name=HeadlessChrome&action=startup&ts=1793237066461&request_path=%2Fmoment%2F792667453384557230",
+        "https://assets.tapimg.com/apps/web-app-next/_nuxt/login-button-art.CyO-kNSq.png",
+        "https://img.tapimg.com/market/images/d20ff71e1f1e1961755e6e4ffc6e2c3f.png",
+        "https://img-tc.tapimg.com/market/images/89ad5c99b1eedc08e4499898d7505b95.png",
+        "https://img-tc.tapimg.com/market/images/d80a29f65fae8e4083f84d7fcd800636.png",
+        "https://img2-tc.tapimg.com/moment/etag/FmMrv4jYX0jIvu3oII8u1nDlekES_20260413075815.jpg/_tap_ugc.jpg",
+        "https://img2-tc.tapimg.com/moment/etag/FmMrv4jYX0jIvu3oII8u1nDlekES_20260413075815.jpg",
+        "https://img2-tc.tapimg.com/moment/etag/FjI9sOP7YnXJ2SVADWDsok3s_TpC_20260413075816.png/_tap_ugc.jpg"
+      ],
+      "evidence_hash": "3bfa717dbca486a65c4381ed6d2eb36d73d8b91c2a6ef65527a7c47fa88a32b1",
+      "attempts": 1,
+      "retry_after": "2026-11-25T11:23:21.000Z"
     },
     {
       "id": "source-08e0a7f61192db02",
@@ -1366,7 +1418,7 @@
       "seasons": [
         "S4"
       ],
-      "origin": "seed",
+      "origin": "backlog",
       "pending_image_urls": [
         "https://post.qiandaocdn.com/post/images/fdtKHlFMr6E_resize.webp?imginfo=w1625,h747",
         "https://post.qiandaocdn.com/post/images/fdtKNlyCQAs_resize.webp?imginfo=w1625,h747",
@@ -1417,21 +1469,10 @@
       "seasons": [
         "S4",
         "S3",
-        "S2"
+        "S2",
+        "S5"
       ],
-      "origin": "expansion",
-      "evidence_hash": "452d9d94f98522a8a4b3d000352f5908379af0b26228d8fae182c2d7be49cb99",
-      "processed_image_urls": [
-        "https://i.17173cdn.com/2fhnvk/YWxqaGBf/cms3/KfIhXbbtvvqvtAu.jpg",
-        "https://i.17173cdn.com/0561y4/YWxqaGBf/gamebase/game-screenshot-horizontal/wRMjNObtiggowCf.jpg!a-3-240x.png",
-        "https://i.17173cdn.com/gdthue/YWxqaGBf/8tha/GcTjiXbuapdEAyb.jpg!a-3-240x.png",
-        "https://i.17173cdn.com/2fhnvk/YWxqaGBf/cms3/kKjYNNbufDEtdlD.gif",
-        "https://i.17173cdn.com/gdthue/YWxqaGBf/novar/20260915/CSlfxPbucsdDcxy.jpg!a-3-240x.jpg",
-        "https://i.17173cdn.com/gdthue/YWxqaGBf/novar/20260915/WTQeribucsdDpAu.jpg!a-3-240x.jpg",
-        "https://i.17173cdn.com/gdthue/YWxqaGBf/novar/20260525/lWxQMvbtzoEEglv.jpg!a-3-240x.jpg",
-        "https://i.17173cdn.com/gdthue/YWxqaGBf/novar/20261022/PTfmEDbufrjfwwD.jpg!a-3-240x.jpg"
-      ],
-      "attempts": 0,
+      "origin": "backlog",
       "pending_image_urls": [
         "https://i.17173cdn.com/gdthue/YWxqaGBf/novar/20260518/VUmVEwbtyDaxkzg.png!a-3-240x.jpg",
         "https://i.17173cdn.com/gdthue/YWxqaGBf/novar/20261028/wIzHzubufFEFzmf.jpg!a-3-480x.jpg",
@@ -1450,8 +1491,34 @@
         "https://i.17173cdn.com/2fhnvk/YWxqaGBf/cms3/bjVfCSbtzyzqDwf.jpg!a-3-240x.jpg",
         "https://i.17173cdn.com/2fhnvk/YWxqaGBf/cms3/CkwjQabubnkzynj.jpg!a-3-240x.jpg",
         "https://ue.17173cdn.com/a/news/final/pc/2026/img/17173app.webp",
-        "https://ue.17173cdn.com/a/news/final/pc/2026/img/17173wx.webp"
-      ]
+        "https://ue.17173cdn.com/a/news/final/pc/2026/img/17173wx.webp",
+        "https://i.17173cdn.com/gdthue/YWxqaGBf/novar/20261124/KNoKPCbuightydw.jpg!a-3-480x.jpg",
+        "https://i.17173cdn.com/gdthue/YWxqaGBf/novar/20261124/PcixTBbuifAtudF.jpg!a-3-480x.jpg",
+        "https://i.17173cdn.com/gdthue/YWxqaGBf/novar/20261124/vOdGudbuifrBAqF.jpg!a-3-480x.jpg",
+        "https://i.17173cdn.com/gdthue/YWxqaGBf/novar/20261123/ejjqEnbuidqxdax.jpg!a-3-480x.jpg",
+        "https://i.17173cdn.com/gdthue/YWxqaGBf/novar/20261123/jJwNiRbuiddrAvh.jpg!a-3-480x.jpg",
+        "https://i.17173cdn.com/0561y4/YWxqaGBf/gamebase/game-cover-horizontal_small/jmqmIIbtqyksFAm.jpg!a-3-240x.jpg",
+        "https://i.17173cdn.com/0561y4/YWxqaGBf/gamebase/game-cover-horizontal_small/YgOeSmbuhyDDxfw.jpg!a-3-240x.jpg",
+        "https://i.17173cdn.com/0561y4/YWxqaGBf/gamebase/game-cover-horizontal_small/xJPDHObuhrhcdhu.jpg!a-3-240x.jpg",
+        "https://i.17173cdn.com/0561y4/YWxqaGBf/gamebase/game-cover-horizontal_small/QVXRmPbtcAdkufE.jpg!a-3-240x.jpg",
+        "https://i.17173cdn.com/0561y4/YWxqaGBf/gamebase/game-cover-horizontal_small/BFwlawbtcAbqqvo.jpg!a-3-240x.jpg",
+        "https://i.17173cdn.com/2fhnvk/YWxqaGBf/cms3/MDkWztbuhwhiywh.jpg!a-3-240x.jpg",
+        "https://i.17173cdn.com/2fhnvk/YWxqaGBf/cms3/JWPFEdbtCirxnAq.jpg!a-3-240x.jpg",
+        "https://i.17173cdn.com/2fhnvk/YWxqaGBf/cms3/KFuRMubtBmmpfjo.jpg!a-3-240x.jpg"
+      ],
+      "processed_image_urls": [
+        "https://i.17173cdn.com/2fhnvk/YWxqaGBf/cms3/KfIhXbbtvvqvtAu.jpg",
+        "https://i.17173cdn.com/0561y4/YWxqaGBf/gamebase/game-screenshot-horizontal/wRMjNObtiggowCf.jpg!a-3-240x.png",
+        "https://i.17173cdn.com/gdthue/YWxqaGBf/8tha/GcTjiXbuapdEAyb.jpg!a-3-240x.png",
+        "https://i.17173cdn.com/2fhnvk/YWxqaGBf/cms3/kKjYNNbufDEtdlD.gif",
+        "https://i.17173cdn.com/gdthue/YWxqaGBf/novar/20260915/CSlfxPbucsdDcxy.jpg!a-3-240x.jpg",
+        "https://i.17173cdn.com/gdthue/YWxqaGBf/novar/20260915/WTQeribucsdDpAu.jpg!a-3-240x.jpg",
+        "https://i.17173cdn.com/gdthue/YWxqaGBf/novar/20260525/lWxQMvbtzoEEglv.jpg!a-3-240x.jpg",
+        "https://i.17173cdn.com/gdthue/YWxqaGBf/novar/20261022/PTfmEDbufrjfwwD.jpg!a-3-240x.jpg",
+        "https://i.17173cdn.com/gdthue/YWxqaGBf/novar/20260915/mTgDRIbucsdFksF.jpg!a-3-240x.jpg"
+      ],
+      "evidence_hash": "452d9d94f98522a8a4b3d000352f5908379af0b26228d8fae182c2d7be49cb99",
+      "attempts": 0
     },
     {
       "id": "source-839d378795199896",
@@ -1461,21 +1528,10 @@
       "seasons": [
         "S4",
         "S3",
-        "S2"
+        "S2",
+        "S5"
       ],
-      "origin": "expansion",
-      "evidence_hash": "140008c38934f12a6498b0629cda3edb81ace4bd225565b464cf57baba50c88b",
-      "processed_image_urls": [
-        "https://i.17173cdn.com/2fhnvk/YWxqaGBf/cms3/fUssplbtvhbshCc.jpg",
-        "https://i.17173cdn.com/2fhnvk/YWxqaGBf/cms3/rjjwYNbtvhbshDb.jpg",
-        "https://i.17173cdn.com/2fhnvk/YWxqaGBf/cms3/tTVqVCbtvhbshFt.jpg",
-        "https://i.17173cdn.com/2fhnvk/YWxqaGBf/cms3/ROEGeYbtvhbshCt.jpg",
-        "https://i.17173cdn.com/2fhnvk/YWxqaGBf/cms3/MSPaQmbtvhbshAc.jpg",
-        "https://i.17173cdn.com/2fhnvk/YWxqaGBf/cms3/cxjLJWbtvhbshDD.jpg",
-        "https://i.17173cdn.com/2fhnvk/YWxqaGBf/cms3/QlgIdKbtvhbshCu.jpg",
-        "https://i.17173cdn.com/2fhnvk/YWxqaGBf/cms3/kKjYNNbufDEtdlD.gif"
-      ],
-      "attempts": 0,
+      "origin": "backlog",
       "pending_image_urls": [
         "https://i.17173cdn.com/gdthue/YWxqaGBf/novar/20260915/CSlfxPbucsdDcxy.jpg!a-3-240x.jpg",
         "https://i.17173cdn.com/gdthue/YWxqaGBf/novar/20260915/WTQeribucsdDpAu.jpg!a-3-240x.jpg",
@@ -1498,8 +1554,34 @@
         "https://i.17173cdn.com/2fhnvk/YWxqaGBf/cms3/bjVfCSbtzyzqDwf.jpg!a-3-240x.jpg",
         "https://i.17173cdn.com/2fhnvk/YWxqaGBf/cms3/CkwjQabubnkzynj.jpg!a-3-240x.jpg",
         "https://ue.17173cdn.com/a/news/final/pc/2026/img/17173app.webp",
-        "https://ue.17173cdn.com/a/news/final/pc/2026/img/17173wx.webp"
-      ]
+        "https://ue.17173cdn.com/a/news/final/pc/2026/img/17173wx.webp",
+        "https://i.17173cdn.com/gdthue/YWxqaGBf/novar/20260915/mTgDRIbucsdFksF.jpg!a-3-240x.jpg",
+        "https://i.17173cdn.com/gdthue/YWxqaGBf/novar/20261124/KNoKPCbuightydw.jpg!a-3-480x.jpg",
+        "https://i.17173cdn.com/gdthue/YWxqaGBf/novar/20261124/PcixTBbuifAtudF.jpg!a-3-480x.jpg",
+        "https://i.17173cdn.com/gdthue/YWxqaGBf/novar/20261124/vOdGudbuifrBAqF.jpg!a-3-480x.jpg",
+        "https://i.17173cdn.com/gdthue/YWxqaGBf/novar/20261123/ejjqEnbuidqxdax.jpg!a-3-480x.jpg",
+        "https://i.17173cdn.com/gdthue/YWxqaGBf/novar/20261123/jJwNiRbuiddrAvh.jpg!a-3-480x.jpg",
+        "https://i.17173cdn.com/0561y4/YWxqaGBf/gamebase/game-cover-horizontal_small/jmqmIIbtqyksFAm.jpg!a-3-240x.jpg",
+        "https://i.17173cdn.com/0561y4/YWxqaGBf/gamebase/game-cover-horizontal_small/YgOeSmbuhyDDxfw.jpg!a-3-240x.jpg",
+        "https://i.17173cdn.com/0561y4/YWxqaGBf/gamebase/game-cover-horizontal_small/xJPDHObuhrhcdhu.jpg!a-3-240x.jpg",
+        "https://i.17173cdn.com/0561y4/YWxqaGBf/gamebase/game-cover-horizontal_small/QVXRmPbtcAdkufE.jpg!a-3-240x.jpg",
+        "https://i.17173cdn.com/0561y4/YWxqaGBf/gamebase/game-cover-horizontal_small/BFwlawbtcAbqqvo.jpg!a-3-240x.jpg",
+        "https://i.17173cdn.com/2fhnvk/YWxqaGBf/cms3/MDkWztbuhwhiywh.jpg!a-3-240x.jpg",
+        "https://i.17173cdn.com/2fhnvk/YWxqaGBf/cms3/JWPFEdbtCirxnAq.jpg!a-3-240x.jpg",
+        "https://i.17173cdn.com/2fhnvk/YWxqaGBf/cms3/KFuRMubtBmmpfjo.jpg!a-3-240x.jpg"
+      ],
+      "processed_image_urls": [
+        "https://i.17173cdn.com/2fhnvk/YWxqaGBf/cms3/fUssplbtvhbshCc.jpg",
+        "https://i.17173cdn.com/2fhnvk/YWxqaGBf/cms3/rjjwYNbtvhbshDb.jpg",
+        "https://i.17173cdn.com/2fhnvk/YWxqaGBf/cms3/tTVqVCbtvhbshFt.jpg",
+        "https://i.17173cdn.com/2fhnvk/YWxqaGBf/cms3/ROEGeYbtvhbshCt.jpg",
+        "https://i.17173cdn.com/2fhnvk/YWxqaGBf/cms3/MSPaQmbtvhbshAc.jpg",
+        "https://i.17173cdn.com/2fhnvk/YWxqaGBf/cms3/cxjLJWbtvhbshDD.jpg",
+        "https://i.17173cdn.com/2fhnvk/YWxqaGBf/cms3/QlgIdKbtvhbshCu.jpg",
+        "https://i.17173cdn.com/2fhnvk/YWxqaGBf/cms3/kKjYNNbufDEtdlD.gif"
+      ],
+      "evidence_hash": "140008c38934f12a6498b0629cda3edb81ace4bd225565b464cf57baba50c88b",
+      "attempts": 0
     },
     {
       "id": "source-f7125ea9f61fbce4",
@@ -1509,7 +1591,7 @@
       "seasons": [
         "S3"
       ],
-      "origin": "expansion",
+      "origin": "backlog",
       "pending_image_urls": [
         "https://sylyfile.3dmgame.com/upload/game/20260428/656fc37e35fe2714e2c2d20587e6708e.png",
         "https://yx.3dmgame.com/uploads/images/thumbsmall/20260429/1777452636_579807.png",
@@ -1552,21 +1634,10 @@
       "seasons": [
         "S4",
         "S3",
-        "S2"
+        "S2",
+        "S5"
       ],
-      "origin": "expansion",
-      "evidence_hash": "d408477701431ed967a999932e508ab6eb03997eee97312d1d44443288fb24b9",
-      "processed_image_urls": [
-        "https://tap-client-logs-bj.cn-beijing.dualstack.log.aliyuncs.com/logstores/web_apm/track_ua.gif?t_log_id=f3ff1f28-c157-4917-879b-3b7b521a7884&APIVersion=0.6.0&XUA=V%3D1%26PN%3DWeb%26LANG%3Dzh_CN%26VN_CODE%3D100000000%26LOC%3DCN%26PLT%3DPC%26DS%3DAndroid%26UID%3D15c5ceed-8775-4826-a70f-204a04505034%26OS%3DLinux%26OSV%3Dx86_64%26DT%3DPC&UID=15c5ceed-8775-4826-a70f-204a04505034&browser_name=HeadlessChrome&action=startup&ts=1793237122594&request_path=%2Fmoment%2F787127821922206858",
-        "https://assets.tapimg.com/apps/web-app-next/_nuxt/login-button-art.CyO-kNSq.png",
-        "https://img.tapimg.com/market/images/d20ff71e1f1e1961755e6e4ffc6e2c3f.png",
-        "https://img2-tc.tapimg.com/moment/etag/FpE3Pv8_pQ-T8Z2mSc01KEr2Uvft_20260329012452.jpg/_tap_ugc.jpg",
-        "https://img2-tc.tapimg.com/moment/etag/FpE3Pv8_pQ-T8Z2mSc01KEr2Uvft_20260329012452.jpg",
-        "https://img2-tc.tapimg.com/moment/etag/FkkLnxfCeOkQ_juv0pW-AXfsiPcc_20260329025518.png/_tap_ugc.jpg",
-        "https://img2-tc.tapimg.com/moment/etag/FkkLnxfCeOkQ_juv0pW-AXfsiPcc_20260329025518.png",
-        "https://img-tc.tapimg.com/market/images/6fa8eeabce96920c955f643b434dec51.png/_tap_icon.jpg"
-      ],
-      "attempts": 0,
+      "origin": "backlog",
       "pending_image_urls": [
         "https://img-tc.tapimg.com/market/images/27330daef3a3696edddd4a5e858f3d26.png/_tap_appicon_m.jpg",
         "https://img-tc.tapimg.com/market/images/2628c7a2531124999a88dddd29ee3686.jpg/_tap_banner.jpg",
@@ -1581,7 +1652,20 @@
         "https://img2-tc.tapimg.com/moment/etag/Fjfzk649Grk8-2RHloeUYVSp9U-k_20260401061116.png/_tap_ugc.jpg",
         "https://img2-tc.tapimg.com/moment/etag/FhbsaR4ZOkdlYV8Vx6x0yNHwx11M_20260731162909.png/_tap_ugc.jpg",
         "https://assets.tapimg.com/web-app-global/public-static/img/icons/apple-touch-icon-180x180-v3.png"
-      ]
+      ],
+      "processed_image_urls": [
+        "https://tap-client-logs-bj.cn-beijing.dualstack.log.aliyuncs.com/logstores/web_apm/track_ua.gif?t_log_id=f3ff1f28-c157-4917-879b-3b7b521a7884&APIVersion=0.6.0&XUA=V%3D1%26PN%3DWeb%26LANG%3Dzh_CN%26VN_CODE%3D100000000%26LOC%3DCN%26PLT%3DPC%26DS%3DAndroid%26UID%3D15c5ceed-8775-4826-a70f-204a04505034%26OS%3DLinux%26OSV%3Dx86_64%26DT%3DPC&UID=15c5ceed-8775-4826-a70f-204a04505034&browser_name=HeadlessChrome&action=startup&ts=1793237122594&request_path=%2Fmoment%2F787127821922206858",
+        "https://assets.tapimg.com/apps/web-app-next/_nuxt/login-button-art.CyO-kNSq.png",
+        "https://img.tapimg.com/market/images/d20ff71e1f1e1961755e6e4ffc6e2c3f.png",
+        "https://img2-tc.tapimg.com/moment/etag/FpE3Pv8_pQ-T8Z2mSc01KEr2Uvft_20260329012452.jpg/_tap_ugc.jpg",
+        "https://img2-tc.tapimg.com/moment/etag/FpE3Pv8_pQ-T8Z2mSc01KEr2Uvft_20260329012452.jpg",
+        "https://img2-tc.tapimg.com/moment/etag/FkkLnxfCeOkQ_juv0pW-AXfsiPcc_20260329025518.png/_tap_ugc.jpg",
+        "https://img2-tc.tapimg.com/moment/etag/FkkLnxfCeOkQ_juv0pW-AXfsiPcc_20260329025518.png",
+        "https://img-tc.tapimg.com/market/images/6fa8eeabce96920c955f643b434dec51.png/_tap_icon.jpg"
+      ],
+      "evidence_hash": "d408477701431ed967a999932e508ab6eb03997eee97312d1d44443288fb24b9",
+      "attempts": 1,
+      "retry_after": "2026-11-25T11:23:21.204Z"
     },
     {
       "id": "source-951b25e6d252b0f8",
@@ -1591,21 +1675,10 @@
       "seasons": [
         "S4",
         "S3",
-        "S2"
+        "S2",
+        "S5"
       ],
-      "origin": "expansion",
-      "evidence_hash": "b6ba67a9298db6df509fd26ede1f8411e3b59b89305778ac669d1704440cac94",
-      "processed_image_urls": [
-        "https://tap-client-logs-bj.cn-beijing.dualstack.log.aliyuncs.com/logstores/web_apm/track_ua.gif?t_log_id=427233bc-5d30-4c87-a8fb-3db6a919749d&APIVersion=0.6.0&XUA=V%3D1%26PN%3DWeb%26LANG%3Dzh_CN%26VN_CODE%3D100000000%26LOC%3DCN%26PLT%3DPC%26DS%3DAndroid%26UID%3D15c5ceed-8775-4826-a70f-204a04505034%26OS%3DLinux%26OSV%3Dx86_64%26DT%3DPC&UID=15c5ceed-8775-4826-a70f-204a04505034&browser_name=HeadlessChrome&action=startup&ts=1793237134479&request_path=%2Fmoment%2F807310182068521942",
-        "https://assets.tapimg.com/apps/web-app-next/_nuxt/login-button-art.CyO-kNSq.png",
-        "https://img.tapimg.com/market/images/d20ff71e1f1e1961755e6e4ffc6e2c3f.png",
-        "https://img-tc.tapimg.com/market/images/e9a61869998a8d5b95b0668d65c28d6d.png/_tap_appicon.jpg",
-        "https://img-tc.tapimg.com/market/images/d8a70575966d311941f2b38aee62f74f.png/_tap_appicon.jpg",
-        "https://img-tc.tapimg.com/market/images/3c29b16e61555fb01291ac3c0aeee4a7.png/_tap_appicon.jpg",
-        "https://img-tc.tapimg.com/market/images/ba24dee85b38c7364ac8279b3fe4a2c6.png/_tap_appicon.jpg",
-        "https://img-tc.tapimg.com/market/images/a395edeea4e8c60315097a7472c7393c.jpg/_tap_appicon.jpg"
-      ],
-      "attempts": 0,
+      "origin": "backlog",
       "pending_image_urls": [
         "https://assets.tapimg.com/protocol/%E6%98%93%E7%8E%A9%E5%B9%BF%E7%94%B5%E8%AF%81.jpg",
         "https://img2-tc.tapimg.com/moment/etag/FuzaptdM3ltfvKKo6REK58g92HRr_20260523180349.png/_tap_ugc.jpg",
@@ -1626,7 +1699,20 @@
         "https://img2-tc.tapimg.com/moment/etag/FrbMZKNiGfKnDDjEbmHdeLsf6LvR_20260523172647.png/_tap_ugc.jpg",
         "https://assets.tapimg.com/web-app-global/public-static/img/icons/apple-touch-icon-180x180-v3.png",
         "https://img2-tc.tapimg.com/moment/etag/FrbMZKNiGfKnDDjEbmHdeLsf6LvR_20260523172647.png"
-      ]
+      ],
+      "processed_image_urls": [
+        "https://tap-client-logs-bj.cn-beijing.dualstack.log.aliyuncs.com/logstores/web_apm/track_ua.gif?t_log_id=427233bc-5d30-4c87-a8fb-3db6a919749d&APIVersion=0.6.0&XUA=V%3D1%26PN%3DWeb%26LANG%3Dzh_CN%26VN_CODE%3D100000000%26LOC%3DCN%26PLT%3DPC%26DS%3DAndroid%26UID%3D15c5ceed-8775-4826-a70f-204a04505034%26OS%3DLinux%26OSV%3Dx86_64%26DT%3DPC&UID=15c5ceed-8775-4826-a70f-204a04505034&browser_name=HeadlessChrome&action=startup&ts=1793237134479&request_path=%2Fmoment%2F807310182068521942",
+        "https://assets.tapimg.com/apps/web-app-next/_nuxt/login-button-art.CyO-kNSq.png",
+        "https://img.tapimg.com/market/images/d20ff71e1f1e1961755e6e4ffc6e2c3f.png",
+        "https://img-tc.tapimg.com/market/images/e9a61869998a8d5b95b0668d65c28d6d.png/_tap_appicon.jpg",
+        "https://img-tc.tapimg.com/market/images/d8a70575966d311941f2b38aee62f74f.png/_tap_appicon.jpg",
+        "https://img-tc.tapimg.com/market/images/3c29b16e61555fb01291ac3c0aeee4a7.png/_tap_appicon.jpg",
+        "https://img-tc.tapimg.com/market/images/ba24dee85b38c7364ac8279b3fe4a2c6.png/_tap_appicon.jpg",
+        "https://img-tc.tapimg.com/market/images/a395edeea4e8c60315097a7472c7393c.jpg/_tap_appicon.jpg"
+      ],
+      "evidence_hash": "b6ba67a9298db6df509fd26ede1f8411e3b59b89305778ac669d1704440cac94",
+      "attempts": 1,
+      "retry_after": "2026-11-25T11:23:21.953Z"
     },
     {
       "id": "source-ba0bea48c64deab8",
@@ -1706,7 +1792,7 @@
       "seasons": [
         "S4"
       ],
-      "origin": "seed",
+      "origin": "backlog",
       "pending_image_urls": [
         "https://sylyfile.3dmgame.com/upload/game/20260428/656fc37e35fe2714e2c2d20587e6708e.png",
         "https://yx.3dmgame.com/uploads/images/thumbsmall/20260429/1777452636_579807.png",
@@ -1749,7 +1835,7 @@
       "seasons": [
         "S3"
       ],
-      "origin": "expansion",
+      "origin": "backlog",
       "pending_image_urls": [
         "https://sylyfile.3dmgame.com/upload/game/20260428/656fc37e35fe2714e2c2d20587e6708e.png",
         "https://yx.3dmgame.com/uploads/images/thumbsmall/20260429/1777452636_579807.png",
@@ -1940,7 +2026,7 @@
       "seasons": [
         "S4"
       ],
-      "origin": "seed",
+      "origin": "backlog",
       "pending_image_urls": [
         "https://sylyfile.3dmgame.com/upload/game/20260428/656fc37e35fe2714e2c2d20587e6708e.png",
         "https://yx.3dmgame.com/uploads/images/thumbsmall/20260429/1777452636_579807.png",
@@ -2055,19 +2141,7 @@
         "S3",
         "S2"
       ],
-      "origin": "search",
-      "attempts": 0,
-      "evidence_hash": "1216fbe297d8ef9c4c2a493cb45bc66bd08c1fa7e342ed63cd665620c1146f09",
-      "processed_image_urls": [
-        "https://tap-client-logs-bj.cn-beijing.dualstack.log.aliyuncs.com/logstores/web_apm/track_ua.gif?t_log_id=dd3c7638-1dcf-4d99-872a-c7bb39124e03&APIVersion=0.6.0&XUA=V%3D1%26PN%3DWeb%26LANG%3Dzh_CN%26VN_CODE%3D100000000%26LOC%3DCN%26PLT%3DPC%26DS%3DAndroid%26UID%3D15c5ceed-8775-4826-a70f-204a04505034%26OS%3DLinux%26OSV%3Dx86_64%26DT%3DPC&UID=15c5ceed-8775-4826-a70f-204a04505034&browser_name=HeadlessChrome&action=startup&ts=1793237224356&request_path=%2Fapp%2F188212%2Ftopic",
-        "https://assets.tapimg.com/apps/web-app-next/_nuxt/login-button-art.CyO-kNSq.png",
-        "https://img.tapimg.com/market/images/d20ff71e1f1e1961755e6e4ffc6e2c3f.png",
-        "https://img-tc.tapimg.com/market/images/e9a61869998a8d5b95b0668d65c28d6d.png/_tap_appicon.jpg",
-        "https://img-tc.tapimg.com/market/images/d8a70575966d311941f2b38aee62f74f.png/_tap_appicon.jpg",
-        "https://img-tc.tapimg.com/market/images/3c29b16e61555fb01291ac3c0aeee4a7.png/_tap_appicon.jpg",
-        "https://img-tc.tapimg.com/market/images/ba24dee85b38c7364ac8279b3fe4a2c6.png/_tap_appicon.jpg",
-        "https://img-tc.tapimg.com/market/images/a395edeea4e8c60315097a7472c7393c.jpg/_tap_appicon.jpg"
-      ],
+      "origin": "backlog",
       "pending_image_urls": [
         "https://assets.tapimg.com/protocol/%E6%98%93%E7%8E%A9%E5%B9%BF%E7%94%B5%E8%AF%81.jpg",
         "https://img-tc.tapimg.com/market/images/895ed85a16175a61a74e6089f6466a25.jpg/_tap_banner.jpg",
@@ -2127,7 +2201,19 @@
         "https://assets.tapimg.com/apps/web-app-next/_nuxt/home-login-guide-art.BuhmlC33.png",
         "https://assets.tapimg.com/img/touch-icon-ipad-retina.png",
         "https://assets.tapimg.com/apps/web-app-next/_nuxt/tap-logo-share.Cua4v4Xg.png"
-      ]
+      ],
+      "processed_image_urls": [
+        "https://tap-client-logs-bj.cn-beijing.dualstack.log.aliyuncs.com/logstores/web_apm/track_ua.gif?t_log_id=dd3c7638-1dcf-4d99-872a-c7bb39124e03&APIVersion=0.6.0&XUA=V%3D1%26PN%3DWeb%26LANG%3Dzh_CN%26VN_CODE%3D100000000%26LOC%3DCN%26PLT%3DPC%26DS%3DAndroid%26UID%3D15c5ceed-8775-4826-a70f-204a04505034%26OS%3DLinux%26OSV%3Dx86_64%26DT%3DPC&UID=15c5ceed-8775-4826-a70f-204a04505034&browser_name=HeadlessChrome&action=startup&ts=1793237224356&request_path=%2Fapp%2F188212%2Ftopic",
+        "https://assets.tapimg.com/apps/web-app-next/_nuxt/login-button-art.CyO-kNSq.png",
+        "https://img.tapimg.com/market/images/d20ff71e1f1e1961755e6e4ffc6e2c3f.png",
+        "https://img-tc.tapimg.com/market/images/e9a61869998a8d5b95b0668d65c28d6d.png/_tap_appicon.jpg",
+        "https://img-tc.tapimg.com/market/images/d8a70575966d311941f2b38aee62f74f.png/_tap_appicon.jpg",
+        "https://img-tc.tapimg.com/market/images/3c29b16e61555fb01291ac3c0aeee4a7.png/_tap_appicon.jpg",
+        "https://img-tc.tapimg.com/market/images/ba24dee85b38c7364ac8279b3fe4a2c6.png/_tap_appicon.jpg",
+        "https://img-tc.tapimg.com/market/images/a395edeea4e8c60315097a7472c7393c.jpg/_tap_appicon.jpg"
+      ],
+      "evidence_hash": "1216fbe297d8ef9c4c2a493cb45bc66bd08c1fa7e342ed63cd665620c1146f09",
+      "attempts": 0
     },
     {
       "id": "source-d3de8a7d080da4cd",
@@ -2137,7 +2223,7 @@
       "seasons": [
         "S4"
       ],
-      "origin": "seed",
+      "origin": "backlog",
       "pending_image_urls": [
         "https://sylyfile.3dmgame.com/upload/game/20260428/656fc37e35fe2714e2c2d20587e6708e.png",
         "https://yx.3dmgame.com/uploads/images/thumbsmall/20260429/1777452636_579807.png",
@@ -2182,19 +2268,7 @@
         "S3",
         "S2"
       ],
-      "origin": "related-link",
-      "attempts": 0,
-      "evidence_hash": "2607e22b6ab345d75108c63c118f2f9cd0f155a29af8ed28e0abbcf3d165be4d",
-      "processed_image_urls": [
-        "https://tap-client-logs-bj.cn-beijing.dualstack.log.aliyuncs.com/logstores/web_apm/track_ua.gif?t_log_id=942673fe-9a08-421c-9f94-c14fbda5ceea&APIVersion=0.6.0&XUA=V%3D1%26PN%3DWeb%26LANG%3Dzh_CN%26VN_CODE%3D100000000%26LOC%3DCN%26PLT%3DPC%26DS%3DAndroid%26UID%3D15c5ceed-8775-4826-a70f-204a04505034%26OS%3DLinux%26OSV%3Dx86_64%26DT%3DPC&UID=15c5ceed-8775-4826-a70f-204a04505034&browser_name=HeadlessChrome&action=startup&ts=1793237250949&request_path=%2Fmoment%2F804842769402038693",
-        "https://assets.tapimg.com/apps/web-app-next/_nuxt/login-button-art.CyO-kNSq.png",
-        "https://img.tapimg.com/market/images/d20ff71e1f1e1961755e6e4ffc6e2c3f.png",
-        "https://img-tc.tapimg.com/market/images/e9a61869998a8d5b95b0668d65c28d6d.png/_tap_appicon.jpg",
-        "https://img-tc.tapimg.com/market/images/d8a70575966d311941f2b38aee62f74f.png/_tap_appicon.jpg",
-        "https://img-tc.tapimg.com/market/images/3c29b16e61555fb01291ac3c0aeee4a7.png/_tap_appicon.jpg",
-        "https://img-tc.tapimg.com/market/images/ba24dee85b38c7364ac8279b3fe4a2c6.png/_tap_appicon.jpg",
-        "https://img-tc.tapimg.com/market/images/a395edeea4e8c60315097a7472c7393c.jpg/_tap_appicon.jpg"
-      ],
+      "origin": "backlog",
       "pending_image_urls": [
         "https://assets.tapimg.com/protocol/%E6%98%93%E7%8E%A9%E5%B9%BF%E7%94%B5%E8%AF%81.jpg",
         "https://img-tc.tapimg.com/market/images/a04f94ce34955e4ffbfbb3d59b62e18d.png",
@@ -2226,7 +2300,19 @@
         "https://img2-tc.tapimg.com/moment/etag/FjWwgL56tEnksPODKTTFtEs7TfNx_20260518195543.png/_tap_ugc.jpg",
         "https://assets.tapimg.com/web-app-global/public-static/img/icons/apple-touch-icon-180x180-v3.png",
         "https://img2-tc.tapimg.com/moment/etag/FjWwgL56tEnksPODKTTFtEs7TfNx_20260518195543.png"
-      ]
+      ],
+      "processed_image_urls": [
+        "https://tap-client-logs-bj.cn-beijing.dualstack.log.aliyuncs.com/logstores/web_apm/track_ua.gif?t_log_id=942673fe-9a08-421c-9f94-c14fbda5ceea&APIVersion=0.6.0&XUA=V%3D1%26PN%3DWeb%26LANG%3Dzh_CN%26VN_CODE%3D100000000%26LOC%3DCN%26PLT%3DPC%26DS%3DAndroid%26UID%3D15c5ceed-8775-4826-a70f-204a04505034%26OS%3DLinux%26OSV%3Dx86_64%26DT%3DPC&UID=15c5ceed-8775-4826-a70f-204a04505034&browser_name=HeadlessChrome&action=startup&ts=1793237250949&request_path=%2Fmoment%2F804842769402038693",
+        "https://assets.tapimg.com/apps/web-app-next/_nuxt/login-button-art.CyO-kNSq.png",
+        "https://img.tapimg.com/market/images/d20ff71e1f1e1961755e6e4ffc6e2c3f.png",
+        "https://img-tc.tapimg.com/market/images/e9a61869998a8d5b95b0668d65c28d6d.png/_tap_appicon.jpg",
+        "https://img-tc.tapimg.com/market/images/d8a70575966d311941f2b38aee62f74f.png/_tap_appicon.jpg",
+        "https://img-tc.tapimg.com/market/images/3c29b16e61555fb01291ac3c0aeee4a7.png/_tap_appicon.jpg",
+        "https://img-tc.tapimg.com/market/images/ba24dee85b38c7364ac8279b3fe4a2c6.png/_tap_appicon.jpg",
+        "https://img-tc.tapimg.com/market/images/a395edeea4e8c60315097a7472c7393c.jpg/_tap_appicon.jpg"
+      ],
+      "evidence_hash": "2607e22b6ab345d75108c63c118f2f9cd0f155a29af8ed28e0abbcf3d165be4d",
+      "attempts": 0
     },
     {
       "id": "source-581a68c68e6105f2",
@@ -2238,19 +2324,7 @@
         "S3",
         "S2"
       ],
-      "origin": "related-link",
-      "evidence_hash": "de19c6a33b5574945657e1d4b86a1b93437abd142f34e1bb274d90aff2ccdafd",
-      "processed_image_urls": [
-        "https://tap-client-logs-bj.cn-beijing.dualstack.log.aliyuncs.com/logstores/web_apm/track_ua.gif?t_log_id=08f3319e-1cd4-457d-853c-338ceccf1655&APIVersion=0.6.0&XUA=V%3D1%26PN%3DWeb%26LANG%3Dzh_CN%26VN_CODE%3D100000000%26LOC%3DCN%26PLT%3DPC%26DS%3DAndroid%26UID%3D15c5ceed-8775-4826-a70f-204a04505034%26OS%3DLinux%26OSV%3Dx86_64%26DT%3DPC&UID=15c5ceed-8775-4826-a70f-204a04505034&browser_name=HeadlessChrome&action=startup&ts=1793237259076&request_path=%2Fmoment%2F801002398964253174",
-        "https://assets.tapimg.com/apps/web-app-next/_nuxt/login-button-art.CyO-kNSq.png",
-        "https://img.tapimg.com/market/images/d20ff71e1f1e1961755e6e4ffc6e2c3f.png",
-        "https://img-tc.tapimg.com/market/images/e9a61869998a8d5b95b0668d65c28d6d.png/_tap_appicon.jpg",
-        "https://img-tc.tapimg.com/market/images/d8a70575966d311941f2b38aee62f74f.png/_tap_appicon.jpg",
-        "https://img-tc.tapimg.com/market/images/3c29b16e61555fb01291ac3c0aeee4a7.png/_tap_appicon.jpg",
-        "https://img-tc.tapimg.com/market/images/ba24dee85b38c7364ac8279b3fe4a2c6.png/_tap_appicon.jpg",
-        "https://img-tc.tapimg.com/market/images/a395edeea4e8c60315097a7472c7393c.jpg/_tap_appicon.jpg"
-      ],
-      "attempts": 0,
+      "origin": "backlog",
       "pending_image_urls": [
         "https://assets.tapimg.com/protocol/%E6%98%93%E7%8E%A9%E5%B9%BF%E7%94%B5%E8%AF%81.jpg",
         "https://img2-tc.tapimg.com/moment/etag/FmRPUw-ksDkTJuUlEXcXZKjNGoAI_20260506064623.jpg/_tap_ugc.jpg",
@@ -2282,7 +2356,19 @@
         "https://img2-tc.tapimg.com/moment/etag/Fi2aJT1-gkczCTHinBYXN7d2dq6F_20260506064518.png/_tap_ugc.jpg",
         "https://assets.tapimg.com/web-app-global/public-static/img/icons/apple-touch-icon-180x180-v3.png",
         "https://img2-tc.tapimg.com/moment/etag/Fi2aJT1-gkczCTHinBYXN7d2dq6F_20260506064518.png"
-      ]
+      ],
+      "processed_image_urls": [
+        "https://tap-client-logs-bj.cn-beijing.dualstack.log.aliyuncs.com/logstores/web_apm/track_ua.gif?t_log_id=08f3319e-1cd4-457d-853c-338ceccf1655&APIVersion=0.6.0&XUA=V%3D1%26PN%3DWeb%26LANG%3Dzh_CN%26VN_CODE%3D100000000%26LOC%3DCN%26PLT%3DPC%26DS%3DAndroid%26UID%3D15c5ceed-8775-4826-a70f-204a04505034%26OS%3DLinux%26OSV%3Dx86_64%26DT%3DPC&UID=15c5ceed-8775-4826-a70f-204a04505034&browser_name=HeadlessChrome&action=startup&ts=1793237259076&request_path=%2Fmoment%2F801002398964253174",
+        "https://assets.tapimg.com/apps/web-app-next/_nuxt/login-button-art.CyO-kNSq.png",
+        "https://img.tapimg.com/market/images/d20ff71e1f1e1961755e6e4ffc6e2c3f.png",
+        "https://img-tc.tapimg.com/market/images/e9a61869998a8d5b95b0668d65c28d6d.png/_tap_appicon.jpg",
+        "https://img-tc.tapimg.com/market/images/d8a70575966d311941f2b38aee62f74f.png/_tap_appicon.jpg",
+        "https://img-tc.tapimg.com/market/images/3c29b16e61555fb01291ac3c0aeee4a7.png/_tap_appicon.jpg",
+        "https://img-tc.tapimg.com/market/images/ba24dee85b38c7364ac8279b3fe4a2c6.png/_tap_appicon.jpg",
+        "https://img-tc.tapimg.com/market/images/a395edeea4e8c60315097a7472c7393c.jpg/_tap_appicon.jpg"
+      ],
+      "evidence_hash": "de19c6a33b5574945657e1d4b86a1b93437abd142f34e1bb274d90aff2ccdafd",
+      "attempts": 0
     },
     {
       "id": "source-0c962fdba746c57b",
@@ -2294,19 +2380,7 @@
         "S3",
         "S2"
       ],
-      "origin": "related-link",
-      "evidence_hash": "cc4076f0c75b16d9a97feec3a246d822cb905592ac9fead0e3485e3909004d79",
-      "processed_image_urls": [
-        "https://tap-client-logs-bj.cn-beijing.dualstack.log.aliyuncs.com/logstores/web_apm/track_ua.gif?t_log_id=cd8683df-dfc3-43d6-bf51-3584cdcf6eaa&APIVersion=0.6.0&XUA=V%3D1%26PN%3DWeb%26LANG%3Dzh_CN%26VN_CODE%3D100000000%26LOC%3DCN%26PLT%3DPC%26DS%3DAndroid%26UID%3D15c5ceed-8775-4826-a70f-204a04505034%26OS%3DLinux%26OSV%3Dx86_64%26DT%3DPC&UID=15c5ceed-8775-4826-a70f-204a04505034&browser_name=HeadlessChrome&action=startup&ts=1793237268260&request_path=%2Fmoment%2F832744337958768624",
-        "https://assets.tapimg.com/apps/web-app-next/_nuxt/login-button-art.CyO-kNSq.png",
-        "https://img.tapimg.com/market/images/d20ff71e1f1e1961755e6e4ffc6e2c3f.png",
-        "https://img-tc.tapimg.com/market/images/e9a61869998a8d5b95b0668d65c28d6d.png/_tap_appicon.jpg",
-        "https://img-tc.tapimg.com/market/images/d8a70575966d311941f2b38aee62f74f.png/_tap_appicon.jpg",
-        "https://img-tc.tapimg.com/market/images/3c29b16e61555fb01291ac3c0aeee4a7.png/_tap_appicon.jpg",
-        "https://img-tc.tapimg.com/market/images/ba24dee85b38c7364ac8279b3fe4a2c6.png/_tap_appicon.jpg",
-        "https://img-tc.tapimg.com/market/images/a395edeea4e8c60315097a7472c7393c.jpg/_tap_appicon.jpg"
-      ],
-      "attempts": 0,
+      "origin": "backlog",
       "pending_image_urls": [
         "https://assets.tapimg.com/protocol/%E6%98%93%E7%8E%A9%E5%B9%BF%E7%94%B5%E8%AF%81.jpg",
         "https://img-tc.tapimg.com/market/images/a33bd47eaf3bc8189c160b0f2fe70647.png",
@@ -2365,7 +2439,19 @@
         "https://img2-tc.tapimg.com/moment/etag/FhbsaR4ZOkdlYV8Vx6x0yNHwx11M_20260731162909.png/_tap_ugc.jpg",
         "https://assets.tapimg.com/web-app-global/public-static/img/icons/apple-touch-icon-180x180-v3.png",
         "https://img2-tc.tapimg.com/moment/etag/FhbsaR4ZOkdlYV8Vx6x0yNHwx11M_20260731162909.png"
-      ]
+      ],
+      "processed_image_urls": [
+        "https://tap-client-logs-bj.cn-beijing.dualstack.log.aliyuncs.com/logstores/web_apm/track_ua.gif?t_log_id=cd8683df-dfc3-43d6-bf51-3584cdcf6eaa&APIVersion=0.6.0&XUA=V%3D1%26PN%3DWeb%26LANG%3Dzh_CN%26VN_CODE%3D100000000%26LOC%3DCN%26PLT%3DPC%26DS%3DAndroid%26UID%3D15c5ceed-8775-4826-a70f-204a04505034%26OS%3DLinux%26OSV%3Dx86_64%26DT%3DPC&UID=15c5ceed-8775-4826-a70f-204a04505034&browser_name=HeadlessChrome&action=startup&ts=1793237268260&request_path=%2Fmoment%2F832744337958768624",
+        "https://assets.tapimg.com/apps/web-app-next/_nuxt/login-button-art.CyO-kNSq.png",
+        "https://img.tapimg.com/market/images/d20ff71e1f1e1961755e6e4ffc6e2c3f.png",
+        "https://img-tc.tapimg.com/market/images/e9a61869998a8d5b95b0668d65c28d6d.png/_tap_appicon.jpg",
+        "https://img-tc.tapimg.com/market/images/d8a70575966d311941f2b38aee62f74f.png/_tap_appicon.jpg",
+        "https://img-tc.tapimg.com/market/images/3c29b16e61555fb01291ac3c0aeee4a7.png/_tap_appicon.jpg",
+        "https://img-tc.tapimg.com/market/images/ba24dee85b38c7364ac8279b3fe4a2c6.png/_tap_appicon.jpg",
+        "https://img-tc.tapimg.com/market/images/a395edeea4e8c60315097a7472c7393c.jpg/_tap_appicon.jpg"
+      ],
+      "evidence_hash": "cc4076f0c75b16d9a97feec3a246d822cb905592ac9fead0e3485e3909004d79",
+      "attempts": 0
     },
     {
       "id": "source-067395bb98ce512d",
@@ -2377,19 +2463,7 @@
         "S3",
         "S2"
       ],
-      "origin": "related-link",
-      "evidence_hash": "f19d561f0f7b925c7e6d5bd6a2f2979b812fc7aff89c2a1ef17b7b9d1ea295d0",
-      "processed_image_urls": [
-        "https://patchwiki.biligame.com/images/rocom/thumb/e/e4/pd01mne2ugswj9qumyujbjjxh5qqi5y.png/150px-Logo_rocom.png",
-        "https://patchwiki.biligame.com/images/rocom/thumb/e/e4/pd01mne2ugswj9qumyujbjjxh5qqi5y.png/225px-Logo_rocom.png",
-        "https://patchwiki.biligame.com/images/rocom/e/e4/pd01mne2ugswj9qumyujbjjxh5qqi5y.png",
-        "https://patchwiki.biligame.com/images/rocom/7/70/kqlxpew7bv7xo3vz747ifr1svk6mjmd.png",
-        "https://patchwiki.biligame.com/images/rocom/8/83/boazfhqhggs0lx0d9z2p8o8r7qnw24y.png",
-        "https://patchwiki.biligame.com/images/rocom/3/3c/3c4if8q0wzaqt060q9efwf5kdsyhloc.png",
-        "https://patchwiki.biligame.com/images/rocom/d/de/n2a74bd4dvdud8b4t4819y9md4t811z.png",
-        "https://patchwiki.biligame.com/images/rocom/4/4f/phxlz5xdyhy7f9kn3zjfxedqdzn8e07.png"
-      ],
-      "attempts": 0,
+      "origin": "backlog",
       "pending_image_urls": [
         "https://patchwiki.biligame.com/images/rocom/3/37/64qynej133560ytxe7ttj8u0q7gso0l.png",
         "https://patchwiki.biligame.com/images/rocom/b/b6/j0l12pmdb0zcb8kpomyvl79bbkquso4.png",
@@ -2571,7 +2645,19 @@
         "https://wiki.biligame.com/resources/assets/wiki.png",
         "https://static.hdslb.com/images/akari.jpg",
         "https://wiki.biligame.com/rocom/ImageObject"
-      ]
+      ],
+      "processed_image_urls": [
+        "https://patchwiki.biligame.com/images/rocom/thumb/e/e4/pd01mne2ugswj9qumyujbjjxh5qqi5y.png/150px-Logo_rocom.png",
+        "https://patchwiki.biligame.com/images/rocom/thumb/e/e4/pd01mne2ugswj9qumyujbjjxh5qqi5y.png/225px-Logo_rocom.png",
+        "https://patchwiki.biligame.com/images/rocom/e/e4/pd01mne2ugswj9qumyujbjjxh5qqi5y.png",
+        "https://patchwiki.biligame.com/images/rocom/7/70/kqlxpew7bv7xo3vz747ifr1svk6mjmd.png",
+        "https://patchwiki.biligame.com/images/rocom/8/83/boazfhqhggs0lx0d9z2p8o8r7qnw24y.png",
+        "https://patchwiki.biligame.com/images/rocom/3/3c/3c4if8q0wzaqt060q9efwf5kdsyhloc.png",
+        "https://patchwiki.biligame.com/images/rocom/d/de/n2a74bd4dvdud8b4t4819y9md4t811z.png",
+        "https://patchwiki.biligame.com/images/rocom/4/4f/phxlz5xdyhy7f9kn3zjfxedqdzn8e07.png"
+      ],
+      "evidence_hash": "f19d561f0f7b925c7e6d5bd6a2f2979b812fc7aff89c2a1ef17b7b9d1ea295d0",
+      "attempts": 0
     },
     {
       "id": "source-e61b9454f9ebab03",
@@ -2583,19 +2669,7 @@
         "S3",
         "S2"
       ],
-      "origin": "related-link",
-      "evidence_hash": "82a4863aabea8356d47d4ae15e52dd46afaf47ee04209208e80837eb49fa22c6",
-      "processed_image_urls": [
-        "https://patchwiki.biligame.com/images/rocom/thumb/e/e4/pd01mne2ugswj9qumyujbjjxh5qqi5y.png/150px-Logo_rocom.png",
-        "https://patchwiki.biligame.com/images/rocom/thumb/e/e4/pd01mne2ugswj9qumyujbjjxh5qqi5y.png/225px-Logo_rocom.png",
-        "https://patchwiki.biligame.com/images/rocom/e/e4/pd01mne2ugswj9qumyujbjjxh5qqi5y.png",
-        "https://patchwiki.biligame.com/images/rocom/d/da/pi10f4899t9hj4l7hz5xnsy7z7aqmx8.png",
-        "https://patchwiki.biligame.com/images/rocom/3/3b/59m80tc92dkgyccqx475pruhbottdd5.png",
-        "https://patchwiki.biligame.com/images/rocom/6/6c/luimkdv9n7jernb6gukhpyyc6hlnnev.png",
-        "https://patchwiki.biligame.com/images/rocom/d/db/fsbi4vuokojlyyazi6qqfg035y6xysk.png",
-        "https://patchwiki.biligame.com/images/rocom/1/12/b8bsilucec9a98rsmqkmxt06c4mnnix.png"
-      ],
-      "attempts": 0,
+      "origin": "backlog",
       "pending_image_urls": [
         "https://patchwiki.biligame.com/images/rocom/5/5f/80jhk99eosjv1ld26wp7ljtmif27lfv.png",
         "https://patchwiki.biligame.com/images/rocom/e/e4/jnqw79mnfgi46zb2nkst8hcm90t5943.png",
@@ -2857,7 +2931,19 @@
         "https://wiki.biligame.com/resources/assets/wiki.png",
         "https://static.hdslb.com/images/akari.jpg",
         "https://wiki.biligame.com/rocom/ImageObject"
-      ]
+      ],
+      "processed_image_urls": [
+        "https://patchwiki.biligame.com/images/rocom/thumb/e/e4/pd01mne2ugswj9qumyujbjjxh5qqi5y.png/150px-Logo_rocom.png",
+        "https://patchwiki.biligame.com/images/rocom/thumb/e/e4/pd01mne2ugswj9qumyujbjjxh5qqi5y.png/225px-Logo_rocom.png",
+        "https://patchwiki.biligame.com/images/rocom/e/e4/pd01mne2ugswj9qumyujbjjxh5qqi5y.png",
+        "https://patchwiki.biligame.com/images/rocom/d/da/pi10f4899t9hj4l7hz5xnsy7z7aqmx8.png",
+        "https://patchwiki.biligame.com/images/rocom/3/3b/59m80tc92dkgyccqx475pruhbottdd5.png",
+        "https://patchwiki.biligame.com/images/rocom/6/6c/luimkdv9n7jernb6gukhpyyc6hlnnev.png",
+        "https://patchwiki.biligame.com/images/rocom/d/db/fsbi4vuokojlyyazi6qqfg035y6xysk.png",
+        "https://patchwiki.biligame.com/images/rocom/1/12/b8bsilucec9a98rsmqkmxt06c4mnnix.png"
+      ],
+      "evidence_hash": "82a4863aabea8356d47d4ae15e52dd46afaf47ee04209208e80837eb49fa22c6",
+      "attempts": 0
     },
     {
       "id": "source-71884328a332cab3",
@@ -2869,19 +2955,7 @@
         "S3",
         "S2"
       ],
-      "origin": "related-link",
-      "evidence_hash": "7b21e697f930b56b11c4baf045339166e3a06d40fe73a70960f76f20d34a8f7c",
-      "processed_image_urls": [
-        "https://patchwiki.biligame.com/images/rocom/thumb/e/e4/pd01mne2ugswj9qumyujbjjxh5qqi5y.png/150px-Logo_rocom.png",
-        "https://patchwiki.biligame.com/images/rocom/thumb/e/e4/pd01mne2ugswj9qumyujbjjxh5qqi5y.png/225px-Logo_rocom.png",
-        "https://patchwiki.biligame.com/images/rocom/e/e4/pd01mne2ugswj9qumyujbjjxh5qqi5y.png",
-        "https://patchwiki.biligame.com/images/rocom/thumb/f/fb/40ew1mdy3j3km17nwkdvlit9es9y39b.png/75px-%E9%A1%B5%E9%9D%A2_%E5%AE%A0%E7%89%A9_%E7%AB%8B%E7%BB%98_%E5%85%BD%E8%8A%B1%E8%95%BE_1.png",
-        "https://patchwiki.biligame.com/images/rocom/thumb/f/fb/40ew1mdy3j3km17nwkdvlit9es9y39b.png/113px-%E9%A1%B5%E9%9D%A2_%E5%AE%A0%E7%89%A9_%E7%AB%8B%E7%BB%98_%E5%85%BD%E8%8A%B1%E8%95%BE_1.png",
-        "https://patchwiki.biligame.com/images/rocom/thumb/f/fb/40ew1mdy3j3km17nwkdvlit9es9y39b.png/150px-%E9%A1%B5%E9%9D%A2_%E5%AE%A0%E7%89%A9_%E7%AB%8B%E7%BB%98_%E5%85%BD%E8%8A%B1%E8%95%BE_1.png",
-        "https://patchwiki.biligame.com/images/rocom/thumb/7/76/fyktbyiugga3qdq8gkeboear0slov69.png/75px-%E9%A1%B5%E9%9D%A2_%E5%AE%A0%E7%89%A9_%E7%AB%8B%E7%BB%98_%E7%BB%92%E5%85%89%E4%BC%98%E4%BC%98_1.png",
-        "https://patchwiki.biligame.com/images/rocom/thumb/7/76/fyktbyiugga3qdq8gkeboear0slov69.png/113px-%E9%A1%B5%E9%9D%A2_%E5%AE%A0%E7%89%A9_%E7%AB%8B%E7%BB%98_%E7%BB%92%E5%85%89%E4%BC%98%E4%BC%98_1.png"
-      ],
-      "attempts": 0,
+      "origin": "backlog",
       "pending_image_urls": [
         "https://patchwiki.biligame.com/images/rocom/thumb/7/76/fyktbyiugga3qdq8gkeboear0slov69.png/150px-%E9%A1%B5%E9%9D%A2_%E5%AE%A0%E7%89%A9_%E7%AB%8B%E7%BB%98_%E7%BB%92%E5%85%89%E4%BC%98%E4%BC%98_1.png",
         "https://patchwiki.biligame.com/images/rocom/thumb/5/5f/67uopai58qg98apg0dci57gi1bgxhn4.png/75px-%E9%A1%B5%E9%9D%A2_%E5%AE%A0%E7%89%A9_%E7%AB%8B%E7%BB%98_%E5%99%BC%E5%95%AA%E9%B8%9F_1.png",
@@ -3546,7 +3620,19 @@
         "https://wiki.biligame.com/resources/assets/wiki.png",
         "https://static.hdslb.com/images/akari.jpg",
         "https://wiki.biligame.com/rocom/ImageObject"
-      ]
+      ],
+      "processed_image_urls": [
+        "https://patchwiki.biligame.com/images/rocom/thumb/e/e4/pd01mne2ugswj9qumyujbjjxh5qqi5y.png/150px-Logo_rocom.png",
+        "https://patchwiki.biligame.com/images/rocom/thumb/e/e4/pd01mne2ugswj9qumyujbjjxh5qqi5y.png/225px-Logo_rocom.png",
+        "https://patchwiki.biligame.com/images/rocom/e/e4/pd01mne2ugswj9qumyujbjjxh5qqi5y.png",
+        "https://patchwiki.biligame.com/images/rocom/thumb/f/fb/40ew1mdy3j3km17nwkdvlit9es9y39b.png/75px-%E9%A1%B5%E9%9D%A2_%E5%AE%A0%E7%89%A9_%E7%AB%8B%E7%BB%98_%E5%85%BD%E8%8A%B1%E8%95%BE_1.png",
+        "https://patchwiki.biligame.com/images/rocom/thumb/f/fb/40ew1mdy3j3km17nwkdvlit9es9y39b.png/113px-%E9%A1%B5%E9%9D%A2_%E5%AE%A0%E7%89%A9_%E7%AB%8B%E7%BB%98_%E5%85%BD%E8%8A%B1%E8%95%BE_1.png",
+        "https://patchwiki.biligame.com/images/rocom/thumb/f/fb/40ew1mdy3j3km17nwkdvlit9es9y39b.png/150px-%E9%A1%B5%E9%9D%A2_%E5%AE%A0%E7%89%A9_%E7%AB%8B%E7%BB%98_%E5%85%BD%E8%8A%B1%E8%95%BE_1.png",
+        "https://patchwiki.biligame.com/images/rocom/thumb/7/76/fyktbyiugga3qdq8gkeboear0slov69.png/75px-%E9%A1%B5%E9%9D%A2_%E5%AE%A0%E7%89%A9_%E7%AB%8B%E7%BB%98_%E7%BB%92%E5%85%89%E4%BC%98%E4%BC%98_1.png",
+        "https://patchwiki.biligame.com/images/rocom/thumb/7/76/fyktbyiugga3qdq8gkeboear0slov69.png/113px-%E9%A1%B5%E9%9D%A2_%E5%AE%A0%E7%89%A9_%E7%AB%8B%E7%BB%98_%E7%BB%92%E5%85%89%E4%BC%98%E4%BC%98_1.png"
+      ],
+      "evidence_hash": "7b21e697f930b56b11c4baf045339166e3a06d40fe73a70960f76f20d34a8f7c",
+      "attempts": 0
     },
     {
       "id": "source-27fc3e6a56ab05b6",
@@ -3558,19 +3644,7 @@
         "S3",
         "S2"
       ],
-      "origin": "related-link",
-      "evidence_hash": "fc10a4fd0208b54a5fc4edd9b2da3c7c68917d16056e173026f0726d09735683",
-      "processed_image_urls": [
-        "https://tap-client-logs-bj.cn-beijing.dualstack.log.aliyuncs.com/logstores/web_apm/track_ua.gif?t_log_id=4ec64666-e395-46b5-8b48-718a0b44f5c8&APIVersion=0.6.0&XUA=V%3D1%26PN%3DWeb%26LANG%3Dzh_CN%26VN_CODE%3D100000000%26LOC%3DCN%26PLT%3DPC%26DS%3DAndroid%26UID%3D15c5ceed-8775-4826-a70f-204a04505034%26OS%3DLinux%26OSV%3Dx86_64%26DT%3DPC&UID=15c5ceed-8775-4826-a70f-204a04505034&browser_name=HeadlessChrome&action=startup&ts=1793237292919&request_path=%2Fmoment%2F812368489653207641",
-        "https://assets.tapimg.com/apps/web-app-next/_nuxt/login-button-art.CyO-kNSq.png",
-        "https://img.tapimg.com/market/images/d20ff71e1f1e1961755e6e4ffc6e2c3f.png",
-        "https://img-tc.tapimg.com/market/images/e9a61869998a8d5b95b0668d65c28d6d.png/_tap_appicon.jpg",
-        "https://img-tc.tapimg.com/market/images/d8a70575966d311941f2b38aee62f74f.png/_tap_appicon.jpg",
-        "https://img-tc.tapimg.com/market/images/3c29b16e61555fb01291ac3c0aeee4a7.png/_tap_appicon.jpg",
-        "https://img-tc.tapimg.com/market/images/ba24dee85b38c7364ac8279b3fe4a2c6.png/_tap_appicon.jpg",
-        "https://img-tc.tapimg.com/market/images/a395edeea4e8c60315097a7472c7393c.jpg/_tap_appicon.jpg"
-      ],
-      "attempts": 0,
+      "origin": "backlog",
       "pending_image_urls": [
         "https://assets.tapimg.com/protocol/%E6%98%93%E7%8E%A9%E5%B9%BF%E7%94%B5%E8%AF%81.jpg",
         "https://img2-tc.tapimg.com/moment/etag/FnGdeLdZwDNPkB16QGz7zuZ2ETKJ_20260606155735.png/_tap_ugc.jpg",
@@ -3592,7 +3666,19 @@
         "https://img2-tc.tapimg.com/moment/etag/FpXjKJlDly-QicAw7UfCjkcLeoTx_20260606155502.png/_tap_ugc.jpg",
         "https://assets.tapimg.com/web-app-global/public-static/img/icons/apple-touch-icon-180x180-v3.png",
         "https://img2-tc.tapimg.com/moment/etag/FpXjKJlDly-QicAw7UfCjkcLeoTx_20260606155502.png"
-      ]
+      ],
+      "processed_image_urls": [
+        "https://tap-client-logs-bj.cn-beijing.dualstack.log.aliyuncs.com/logstores/web_apm/track_ua.gif?t_log_id=4ec64666-e395-46b5-8b48-718a0b44f5c8&APIVersion=0.6.0&XUA=V%3D1%26PN%3DWeb%26LANG%3Dzh_CN%26VN_CODE%3D100000000%26LOC%3DCN%26PLT%3DPC%26DS%3DAndroid%26UID%3D15c5ceed-8775-4826-a70f-204a04505034%26OS%3DLinux%26OSV%3Dx86_64%26DT%3DPC&UID=15c5ceed-8775-4826-a70f-204a04505034&browser_name=HeadlessChrome&action=startup&ts=1793237292919&request_path=%2Fmoment%2F812368489653207641",
+        "https://assets.tapimg.com/apps/web-app-next/_nuxt/login-button-art.CyO-kNSq.png",
+        "https://img.tapimg.com/market/images/d20ff71e1f1e1961755e6e4ffc6e2c3f.png",
+        "https://img-tc.tapimg.com/market/images/e9a61869998a8d5b95b0668d65c28d6d.png/_tap_appicon.jpg",
+        "https://img-tc.tapimg.com/market/images/d8a70575966d311941f2b38aee62f74f.png/_tap_appicon.jpg",
+        "https://img-tc.tapimg.com/market/images/3c29b16e61555fb01291ac3c0aeee4a7.png/_tap_appicon.jpg",
+        "https://img-tc.tapimg.com/market/images/ba24dee85b38c7364ac8279b3fe4a2c6.png/_tap_appicon.jpg",
+        "https://img-tc.tapimg.com/market/images/a395edeea4e8c60315097a7472c7393c.jpg/_tap_appicon.jpg"
+      ],
+      "evidence_hash": "fc10a4fd0208b54a5fc4edd9b2da3c7c68917d16056e173026f0726d09735683",
+      "attempts": 0
     },
     {
       "id": "source-fa8006cf4ff09bbd",
@@ -3604,19 +3690,7 @@
         "S3",
         "S2"
       ],
-      "origin": "related-link",
-      "evidence_hash": "a6ef7201707f352769036a9367846fc143ebab149491d33fd2a5db9a4fa949b2",
-      "processed_image_urls": [
-        "https://tap-client-logs-bj.cn-beijing.dualstack.log.aliyuncs.com/logstores/web_apm/track_ua.gif?t_log_id=eb226099-cb4c-4da9-921f-2eaf3b898138&APIVersion=0.6.0&XUA=V%3D1%26PN%3DWeb%26LANG%3Dzh_CN%26VN_CODE%3D100000000%26LOC%3DCN%26PLT%3DPC%26DS%3DAndroid%26UID%3D15c5ceed-8775-4826-a70f-204a04505034%26OS%3DLinux%26OSV%3Dx86_64%26DT%3DPC&UID=15c5ceed-8775-4826-a70f-204a04505034&browser_name=HeadlessChrome&action=startup&ts=1793237301442&request_path=%2Fmoment%2F800623911493438323",
-        "https://assets.tapimg.com/apps/web-app-next/_nuxt/login-button-art.CyO-kNSq.png",
-        "https://img.tapimg.com/market/images/d20ff71e1f1e1961755e6e4ffc6e2c3f.png",
-        "https://img-tc.tapimg.com/market/images/d7267c48b844cd3f7ecb8520f8ef34d8.gif",
-        "https://img2-tc.tapimg.com/moment/etag/Fq6qgQ9VkB8i83ewW8WnjELsmHrs_20260505053806.jpg/_tap_ugc.jpg",
-        "https://img-tc.tapimg.com/market/images/d7547e34585c2c07b11aa50c3194e41f.gif",
-        "https://img-tc.tapimg.com/market/images/3dd873f30f136d66be1ac5b4c43d298a.gif",
-        "https://img2-tc.tapimg.com/moment/etag/Fg07FUeBzAHo-g17xDt_7s2KbgdO_20260505065629.jpg/_tap_ugc.jpg"
-      ],
-      "attempts": 0,
+      "origin": "backlog",
       "pending_image_urls": [
         "https://img-tc.tapimg.com/market/images/6fa8eeabce96920c955f643b434dec51.png/_tap_icon.jpg",
         "https://img-tc.tapimg.com/market/images/27330daef3a3696edddd4a5e858f3d26.png/_tap_appicon_m.jpg",
@@ -3633,7 +3707,19 @@
         "https://img2-tc.tapimg.com/moment/etag/FtgILgem9xF9yg0YJHyFFCpKId9Q_20260617072321.png/_tap_ugc.jpg",
         "https://assets.tapimg.com/web-app-global/public-static/img/icons/apple-touch-icon-180x180-v3.png",
         "https://img2-tc.tapimg.com/moment/etag/Fq6qgQ9VkB8i83ewW8WnjELsmHrs_20260505053806.jpg"
-      ]
+      ],
+      "processed_image_urls": [
+        "https://tap-client-logs-bj.cn-beijing.dualstack.log.aliyuncs.com/logstores/web_apm/track_ua.gif?t_log_id=eb226099-cb4c-4da9-921f-2eaf3b898138&APIVersion=0.6.0&XUA=V%3D1%26PN%3DWeb%26LANG%3Dzh_CN%26VN_CODE%3D100000000%26LOC%3DCN%26PLT%3DPC%26DS%3DAndroid%26UID%3D15c5ceed-8775-4826-a70f-204a04505034%26OS%3DLinux%26OSV%3Dx86_64%26DT%3DPC&UID=15c5ceed-8775-4826-a70f-204a04505034&browser_name=HeadlessChrome&action=startup&ts=1793237301442&request_path=%2Fmoment%2F800623911493438323",
+        "https://assets.tapimg.com/apps/web-app-next/_nuxt/login-button-art.CyO-kNSq.png",
+        "https://img.tapimg.com/market/images/d20ff71e1f1e1961755e6e4ffc6e2c3f.png",
+        "https://img-tc.tapimg.com/market/images/d7267c48b844cd3f7ecb8520f8ef34d8.gif",
+        "https://img2-tc.tapimg.com/moment/etag/Fq6qgQ9VkB8i83ewW8WnjELsmHrs_20260505053806.jpg/_tap_ugc.jpg",
+        "https://img-tc.tapimg.com/market/images/d7547e34585c2c07b11aa50c3194e41f.gif",
+        "https://img-tc.tapimg.com/market/images/3dd873f30f136d66be1ac5b4c43d298a.gif",
+        "https://img2-tc.tapimg.com/moment/etag/Fg07FUeBzAHo-g17xDt_7s2KbgdO_20260505065629.jpg/_tap_ugc.jpg"
+      ],
+      "evidence_hash": "a6ef7201707f352769036a9367846fc143ebab149491d33fd2a5db9a4fa949b2",
+      "attempts": 0
     },
     {
       "id": "source-e2764caf8da62eb2",
@@ -3645,19 +3731,7 @@
         "S3",
         "S2"
       ],
-      "origin": "related-link",
-      "evidence_hash": "6e087309f540dd1dc175b04df0d668cbf94f9bf9033365b65fd97aca88ab8d26",
-      "processed_image_urls": [
-        "https://tap-client-logs-bj.cn-beijing.dualstack.log.aliyuncs.com/logstores/web_apm/track_ua.gif?t_log_id=2b3a1c89-179f-4b7d-b66c-d5b395dc5eee&APIVersion=0.6.0&XUA=V%3D1%26PN%3DWeb%26LANG%3Dzh_CN%26VN_CODE%3D100000000%26LOC%3DCN%26PLT%3DPC%26DS%3DAndroid%26UID%3D15c5ceed-8775-4826-a70f-204a04505034%26OS%3DLinux%26OSV%3Dx86_64%26DT%3DPC&UID=15c5ceed-8775-4826-a70f-204a04505034&browser_name=HeadlessChrome&action=startup&ts=1793237310309&request_path=%2Fmoment%2F793146703359247295",
-        "https://assets.tapimg.com/apps/web-app-next/_nuxt/login-button-art.CyO-kNSq.png",
-        "https://img.tapimg.com/market/images/d20ff71e1f1e1961755e6e4ffc6e2c3f.png",
-        "https://img-tc.tapimg.com/market/images/e9a61869998a8d5b95b0668d65c28d6d.png/_tap_appicon.jpg",
-        "https://img-tc.tapimg.com/market/images/d8a70575966d311941f2b38aee62f74f.png/_tap_appicon.jpg",
-        "https://img-tc.tapimg.com/market/images/3c29b16e61555fb01291ac3c0aeee4a7.png/_tap_appicon.jpg",
-        "https://img-tc.tapimg.com/market/images/ba24dee85b38c7364ac8279b3fe4a2c6.png/_tap_appicon.jpg",
-        "https://img-tc.tapimg.com/market/images/a395edeea4e8c60315097a7472c7393c.jpg/_tap_appicon.jpg"
-      ],
-      "attempts": 0,
+      "origin": "backlog",
       "pending_image_urls": [
         "https://assets.tapimg.com/protocol/%E6%98%93%E7%8E%A9%E5%B9%BF%E7%94%B5%E8%AF%81.jpg",
         "https://img2-tc.tapimg.com/moment/etag/Fkn1Ws8l41qMXC_PDt_GsrE2JZOS_20260414041848.jpg/_tap_ugc.jpg",
@@ -3685,7 +3759,19 @@
         "https://img2-tc.tapimg.com/moment/etag/Fg5byhFgoRtnutUSFCUcTceX8_to_20260414041217.png/_tap_ugc.jpg",
         "https://assets.tapimg.com/web-app-global/public-static/img/icons/apple-touch-icon-180x180-v3.png",
         "https://img2-tc.tapimg.com/moment/etag/Fg5byhFgoRtnutUSFCUcTceX8_to_20260414041217.png"
-      ]
+      ],
+      "processed_image_urls": [
+        "https://tap-client-logs-bj.cn-beijing.dualstack.log.aliyuncs.com/logstores/web_apm/track_ua.gif?t_log_id=2b3a1c89-179f-4b7d-b66c-d5b395dc5eee&APIVersion=0.6.0&XUA=V%3D1%26PN%3DWeb%26LANG%3Dzh_CN%26VN_CODE%3D100000000%26LOC%3DCN%26PLT%3DPC%26DS%3DAndroid%26UID%3D15c5ceed-8775-4826-a70f-204a04505034%26OS%3DLinux%26OSV%3Dx86_64%26DT%3DPC&UID=15c5ceed-8775-4826-a70f-204a04505034&browser_name=HeadlessChrome&action=startup&ts=1793237310309&request_path=%2Fmoment%2F793146703359247295",
+        "https://assets.tapimg.com/apps/web-app-next/_nuxt/login-button-art.CyO-kNSq.png",
+        "https://img.tapimg.com/market/images/d20ff71e1f1e1961755e6e4ffc6e2c3f.png",
+        "https://img-tc.tapimg.com/market/images/e9a61869998a8d5b95b0668d65c28d6d.png/_tap_appicon.jpg",
+        "https://img-tc.tapimg.com/market/images/d8a70575966d311941f2b38aee62f74f.png/_tap_appicon.jpg",
+        "https://img-tc.tapimg.com/market/images/3c29b16e61555fb01291ac3c0aeee4a7.png/_tap_appicon.jpg",
+        "https://img-tc.tapimg.com/market/images/ba24dee85b38c7364ac8279b3fe4a2c6.png/_tap_appicon.jpg",
+        "https://img-tc.tapimg.com/market/images/a395edeea4e8c60315097a7472c7393c.jpg/_tap_appicon.jpg"
+      ],
+      "evidence_hash": "6e087309f540dd1dc175b04df0d668cbf94f9bf9033365b65fd97aca88ab8d26",
+      "attempts": 0
     },
     {
       "id": "source-7df19db1251df7af",
@@ -3695,12 +3781,15 @@
       "seasons": [
         "S4",
         "S3",
-        "S2"
+        "S2",
+        "S5"
       ],
-      "origin": "seed",
+      "origin": "backlog",
       "pending_image_urls": [],
+      "processed_image_urls": [],
       "attempts": 2,
-      "retry_after": "2026-10-31T01:22:12.842Z"
+      "retry_after": "2026-12-08T11:22:25.210Z",
+      "evidence_hash": "05a6662cd683dd3f40c832470c935472d64b3a816e8b8735df7177e5b8096442"
     },
     {
       "id": "source-fe866c2f89b9637e",
@@ -3710,11 +3799,14 @@
       "seasons": [
         "S4",
         "S3",
-        "S2"
+        "S2",
+        "S5"
       ],
-      "origin": "expansion",
+      "origin": "backlog",
+      "pending_image_urls": [],
+      "processed_image_urls": [],
       "attempts": 1,
-      "retry_after": "2026-10-30T01:22:13.166Z"
+      "retry_after": "2026-11-25T11:22:44.439Z"
     },
     {
       "id": "source-62f2a0c9c7423452",
@@ -3724,7 +3816,7 @@
       "seasons": [
         "S4"
       ],
-      "origin": "seed",
+      "origin": "backlog",
       "pending_image_urls": [
         "https://yx.3dmgame.com/uploads/images/thumbsmall/20260821/1787301342_141361.png",
         "https://my.3dmgame.com/newuser/images/appdown.png",
@@ -3759,6 +3851,227 @@
       "evidence_hash": "4f3e08bd5c6934a63c028412e69d7674848f982d03b054e75309af4f4d951570",
       "attempts": 1,
       "retry_after": "2026-10-30T01:25:11.515Z"
+    },
+    {
+      "id": "source-7950cad2ff985dfe",
+      "url": "https://www.sina.cn/news/detail/5365461220071316.html",
+      "platform": "sina",
+      "enabled": true,
+      "seasons": [
+        "S5"
+      ],
+      "origin": "search",
+      "evidence_hash": "5a2c684c542ef17439ac7e8428ded1505be66f6a3ac02a85caa426c38df847f5",
+      "processed_image_urls": [
+        "https://tvax3.sinaimg.cn/crop.0.0.1009.1009.50/538bc62dly8huv6yh7lzsj20s10s1tce.jpg?KID=imgbed,tva&Expires=1795530164&ssig=cYqu7dTrW8",
+        "https://tvax4.sinaimg.cn/crop.0.0.261.261.50/006jjd3wly8hww8x26ccrj3079079t8t.jpg?KID=imgbed,tva&Expires=1795525714&ssig=tw8kCSEA%2Bt",
+        "https://tvax3.sinaimg.cn/crop.0.0.1047.1047.50/006wqqm9ly8iicb4c6nicj30t30t3adt.jpg?KID=imgbed,tva&Expires=1795525714&ssig=%2FNSwEkQCzW",
+        "https://tvax4.sinaimg.cn/crop.25.0.1080.1080.50/0093omX2ly8iezvx9g09dj30vf0u0djl.jpg?KID=imgbed,tva&Expires=1795525714&ssig=Tyv5XNsD5k",
+        "https://tvax4.sinaimg.cn/crop.0.0.1080.1080.50/008mlDCBly8i2s2g4dtspj30u00u1myz.jpg?KID=imgbed,tva&Expires=1795525714&ssig=GoZ03wXI1M",
+        "https://tvax4.sinaimg.cn/crop.0.0.480.480.50/006mDlFIly8hd1j34x99mj30dc0dcglm.jpg?KID=imgbed,tva&Expires=1795525714&ssig=p7jF2d3RBL",
+        "https://tvax1.sinaimg.cn/crop.0.0.1003.1003.50/619151c7ly8i1wchz4a4hj20rw0rvju2.jpg?KID=imgbed,tva&Expires=1795525714&ssig=kdEW46CxEz",
+        "https://tvax4.sinaimg.cn/crop.0.0.1080.1080.50/007SCD3Jly8i3rqq1hubuj30u00u0jus.jpg?KID=imgbed,tva&Expires=1795525714&ssig=xUTvSR593f"
+      ],
+      "attempts": 0,
+      "pending_image_urls": [
+        "https://n.sinaimg.cn/default/7bd4e141/20251230/sina.png",
+        "https://n.sinaimg.cn/default/2fb77759/20151125/320X320.png"
+      ]
+    },
+    {
+      "id": "source-b486887026cd59b1",
+      "url": "https://www.bilibili.com/video/BV1fxsb65E7d",
+      "platform": "bilibili",
+      "enabled": true,
+      "seasons": [
+        "S5"
+      ],
+      "origin": "published-reference",
+      "evidence_hash": "434cb5ab3ae4e5abf8867b8166fd0fb64b642c9562754bd56176ae0abe23b29d",
+      "processed_image_urls": [],
+      "attempts": 0,
+      "retry_after": "2026-12-08T11:22:54.418Z",
+      "pending_image_urls": []
+    },
+    {
+      "id": "source-fc548e5ba552cba2",
+      "url": "https://www.bilibili.com/video/BV1FBWb6VECr",
+      "platform": "bilibili",
+      "enabled": true,
+      "seasons": [
+        "S5"
+      ],
+      "origin": "published-reference",
+      "evidence_hash": "a0425139a669c60b9e213caf5d58d71904150b09d5f662919ac6902864764016",
+      "processed_image_urls": [],
+      "attempts": 0,
+      "retry_after": "2026-12-08T11:23:01.791Z",
+      "pending_image_urls": []
+    },
+    {
+      "id": "source-235e453009d27c1a",
+      "url": "https://www.bilibili.com/video/BV1qGsr6kEPc",
+      "platform": "bilibili",
+      "enabled": true,
+      "seasons": [
+        "S5"
+      ],
+      "origin": "published-reference",
+      "evidence_hash": "2f9381cddf8cc9979c4d1e83500d569f75ceb1c105f7578bab7a9df64c32f791",
+      "processed_image_urls": [],
+      "attempts": 0,
+      "retry_after": "2026-12-08T11:23:21.095Z",
+      "pending_image_urls": []
+    },
+    {
+      "id": "source-3eb952f1122465e0",
+      "url": "https://www.bilibili.com/video/BV1X6Wo6yEmF",
+      "platform": "bilibili",
+      "enabled": true,
+      "seasons": [
+        "S5"
+      ],
+      "origin": "published-reference",
+      "evidence_hash": "c06787c26507bb7e086181a2645fc9677dd4fd298c496d88fcbc8f1497ee83f3",
+      "processed_image_urls": [],
+      "attempts": 0,
+      "retry_after": "2026-12-08T11:23:21.292Z",
+      "pending_image_urls": []
+    },
+    {
+      "id": "source-87711e33da7191e1",
+      "url": "https://www.bilibili.com/video/BV1XtWD6bEaC",
+      "platform": "bilibili",
+      "enabled": true,
+      "seasons": [
+        "S5"
+      ],
+      "origin": "published-reference",
+      "evidence_hash": "e749ace3a356dfc4bf893252a09536d6442e6377ee0af23b1aa2583960a73482",
+      "processed_image_urls": [],
+      "attempts": 0,
+      "retry_after": "2026-12-08T11:23:21.823Z",
+      "pending_image_urls": []
+    },
+    {
+      "id": "source-a4e0a432931165e1",
+      "url": "https://www.bilibili.com/video/BV1fyWk61EaW",
+      "platform": "bilibili",
+      "enabled": true,
+      "seasons": [
+        "S5"
+      ],
+      "origin": "published-reference",
+      "evidence_hash": "95bc18e4dd9a2315099851204bd9dfebb1e729ac78553693de577d1caab82719",
+      "processed_image_urls": [],
+      "attempts": 0,
+      "retry_after": "2026-12-08T11:23:22.121Z",
+      "pending_image_urls": []
+    },
+    {
+      "id": "source-d57c11feca703dbe",
+      "url": "https://www.bilibili.com/video/BV1vssm6ZEQu",
+      "platform": "bilibili",
+      "enabled": true,
+      "seasons": [
+        "S5"
+      ],
+      "origin": "published-reference",
+      "evidence_hash": "94a09be8e1fea0fbaff83e561fbf3fe0e5f33496891fe73a8d9b82fdf7262d24",
+      "processed_image_urls": [],
+      "attempts": 0,
+      "retry_after": "2026-12-08T11:23:22.137Z",
+      "pending_image_urls": []
+    },
+    {
+      "id": "source-8ac7de15aa946c9d",
+      "url": "https://www.bilibili.com/video/BV12kWU6GE4z",
+      "platform": "bilibili",
+      "enabled": true,
+      "seasons": [
+        "S5"
+      ],
+      "origin": "published-reference",
+      "evidence_hash": "e8331678d9e71aca62467ccdc0a003b816ab53819088cc8fa15ce8b55e926e47",
+      "processed_image_urls": [],
+      "attempts": 0,
+      "retry_after": "2026-12-08T11:23:22.349Z",
+      "pending_image_urls": []
+    },
+    {
+      "id": "source-9fb5c2ccb723cc30",
+      "url": "https://www.bilibili.com/video/BV1XosU6REWB",
+      "platform": "bilibili",
+      "enabled": true,
+      "seasons": [
+        "S5"
+      ],
+      "origin": "published-reference",
+      "attempts": 0,
+      "evidence_hash": "972291be1e175183e1bc8d5876dea8df762bc4b6098226e2c984801c3eb76136",
+      "processed_image_urls": [],
+      "retry_after": "2026-12-08T11:23:22.356Z",
+      "pending_image_urls": []
+    },
+    {
+      "id": "source-56231ad26b6eb449",
+      "url": "https://www.bilibili.com/video/BV1ThsD6HE8A",
+      "platform": "bilibili",
+      "enabled": true,
+      "seasons": [
+        "S5"
+      ],
+      "origin": "published-reference",
+      "evidence_hash": "c65c9c6002f1d56f657406178c5b2936a38aae9b59d57a0757f671149771c61c",
+      "processed_image_urls": [],
+      "attempts": 0,
+      "retry_after": "2026-12-08T11:23:23.000Z",
+      "pending_image_urls": []
+    },
+    {
+      "id": "source-82d0c87ab94853a4",
+      "url": "https://www.bilibili.com/video/BV1AQsm6gE1E",
+      "platform": "bilibili",
+      "enabled": true,
+      "seasons": [
+        "S5"
+      ],
+      "origin": "published-reference",
+      "evidence_hash": "be945bdafeaff6cf4de0a7dd373eea377ca8fa560936f0c139ba0dea59a94b47",
+      "processed_image_urls": [],
+      "attempts": 0,
+      "retry_after": "2026-12-08T11:23:23.293Z",
+      "pending_image_urls": []
+    },
+    {
+      "id": "source-efe4756d1f77be5e",
+      "url": "https://www.bilibili.com/video/BV1Vusc6pEGT",
+      "platform": "bilibili",
+      "enabled": true,
+      "seasons": [
+        "S5"
+      ],
+      "origin": "published-reference",
+      "evidence_hash": "3bca82a1f8110f1cd95eed3c6a3b4ca68fb1d54b3bb24a809e0d82bd96e19043",
+      "processed_image_urls": [],
+      "attempts": 0,
+      "retry_after": "2026-12-08T11:23:23.341Z",
+      "pending_image_urls": []
+    },
+    {
+      "id": "source-d41b1780d3bf2dd1",
+      "url": "https://www.bilibili.com/video/BV19fsT6GEgY",
+      "platform": "bilibili",
+      "enabled": true,
+      "seasons": [
+        "S5"
+      ],
+      "origin": "published-reference",
+      "evidence_hash": "576a0c1effeec661f586b8f4717fe8189f80c10ba570dbc334828d2f71846b0c",
+      "processed_image_urls": [],
+      "attempts": 0,
+      "retry_after": "2026-12-08T11:23:23.398Z",
+      "pending_image_urls": []
     }
   ]
 }

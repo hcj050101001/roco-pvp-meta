@@ -29,18 +29,21 @@ const staticPages = staticPageCount(lineups.length);
   <div class="filter-panel">
     <form class="collection-tools" role="search" onsubmit="return false">
       <label class="search-box">
-        <Icon name="search" size={20} />
+        <Icon name="search" size={19} />
         <span class="sr-only">搜索阵容或精灵</span>
         <input
           id="search"
           type="search"
-          placeholder="搜索阵容、精灵或体系"
+          placeholder="搜索阵容名、精灵成员或体系（按 / 快速定位）"
           autocomplete="off"
           disabled
         />
+        <kbd class="search-kbd" aria-hidden="true">
+          /
+        </kbd>
       </label>
       <label class="sort-label">
-        排列方式{' '}
+        <span>排列方式</span>
         <select id="sort" aria-describedby="sort-explanation" disabled>
           <option value="recommended">近期线索优先</option>
           <option value="recent">配置发布时间</option>
@@ -170,12 +173,12 @@ const staticPages = staticPageCount(lineups.length);
   // 其标记、类名与 data 属性与 LineupCard.astro 保持一致。
   type IndexCard = CollectionIndexCard & CollectionCard;
   const ICON_PATHS = {
-    diagonal: 'M6 18 18 6M6 6h12v12',
+    diagonal: 'M7 17 17 7M8 7h9v9',
     arrow: 'M4 12h16m-6-6 6 6-6 6',
-    play: 'm9 5 11 7-11 7V5Z',
+    play: 'm8.5 5.5 10 6.5-10 6.5v-13Z',
   };
   const icon = (path: string, size: number) =>
-    `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="icon"><path d="${path}"></path></svg>`;
+    `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="icon"><path d="${path}"></path></svg>`;
   function cardHtml(card: IndexCard): string {
     const label =
       card.label === 'fallback'
@@ -183,6 +186,7 @@ const staticPages = staticPageCount(lineups.length);
         : card.label === 'historical'
           ? '往期配队'
           : '当季配队';
+    const folio = String(card.index + 1).padStart(2, '0');
     const img = card.image;
     const srcset = img.srcset
       ? ` srcset="${escapeHtml(img.srcset)}" sizes="${escapeHtml(img.sizes ?? '')}"`
@@ -195,19 +199,24 @@ const staticPages = staticPageCount(lineups.length);
       ? card.videos
           .map(
             (v) =>
-              `<a class="video-link" href="${escapeHtml(v.url)}" target="_blank" rel="noopener noreferrer" title="${escapeHtml(v.title)}">${icon(ICON_PATHS.play, 14)}${escapeHtml(v.platform)}教学</a>`,
+              `<a class="video-link" href="${escapeHtml(v.url)}" target="_blank" rel="noopener noreferrer" title="${escapeHtml(v.title)}">${icon(ICON_PATHS.play, 13)}${escapeHtml(v.platform)}教学</a>`,
           )
           .join('')
       : '<span class="card-gap">暂无对应教学</span>';
+    const pets = card.roster
+      .split(' · ')
+      .filter(Boolean)
+      .map((name) => `<span class="pet-chip">${escapeHtml(name)}</span>`)
+      .join('');
     return (
       `<article id="lineup-${escapeHtml(card.slug)}" class="lineup-card" data-card data-season="${escapeHtml(card.season)}" data-search="${escapeHtml(card.search)}" data-types="${escapeHtml(card.archetype.join('|'))}" data-date="${escapeHtml(card.date)}" data-index="${card.index}" data-video="${card.video ? 'yes' : 'no'}">` +
       `<a href="${escapeHtml(card.href)}" class="card-link">` +
-      `<div class="card-top"><span class="card-number"><span class="status-dot"></span>${escapeHtml(card.season)} / ${escapeHtml(card.archetype[0])}</span><span class="card-label">${label}</span></div>` +
+      `<div class="card-top"><span class="card-number"><span class="status-dot"></span><strong>${escapeHtml(card.season)}</strong><span class="card-sep" aria-hidden="true">/</span><span>${escapeHtml(card.archetype[0])}</span></span><span class="card-label card-label--${escapeHtml(card.label)}"><span class="card-folio" aria-hidden="true">#${escapeHtml(folio)}</span>${label}</span></div>` +
       `<div class="card-image"><picture>${avif}<img src="${escapeHtml(img.src)}"${srcset} width="${img.width}" height="${img.height}" alt="${escapeHtml(card.name)}完整六只精灵与技能配置一图流" loading="${card.index === 0 ? 'eager' : 'lazy'}" decoding="async"${fetchpriority} data-image-fallback /></picture><p class="image-load-fallback" aria-live="polite" hidden>图片暂时无法加载，可稍后重试。</p></div>` +
-      `<div class="card-content"><div class="card-title"><h3>${escapeHtml(card.name)}</h3><span class="card-arrow">${icon(ICON_PATHS.diagonal, 18)}</span></div>` +
+      `<div class="card-content"><div class="card-title"><h3>${escapeHtml(card.name)}</h3><span class="card-arrow">${icon(ICON_PATHS.diagonal, 16)}</span></div>` +
       `<div class="tags">${card.archetype.map((t) => `<span>${escapeHtml(t)}</span>`).join('')}</div>` +
-      `<p class="card-roster">${escapeHtml(card.roster)}</p></div></a>` +
-      `<div class="card-bottom"><span class="card-date">${card.dateKind === 'published' ? '配置发布' : '所属赛季'}<strong>${escapeHtml(card.dateText)}</strong></span><div class="card-actions">${videos}<a class="card-cta" href="${escapeHtml(card.href)}">查看配置 ${icon(ICON_PATHS.arrow, 16)}</a></div></div></article>`
+      `<div class="card-roster">${pets}</div></div></a>` +
+      `<div class="card-bottom"><span class="card-date">${card.dateKind === 'published' ? '配置发布' : '所属赛季'}<strong>${escapeHtml(card.dateText)}</strong></span><div class="card-actions">${videos}<a class="card-cta" href="${escapeHtml(card.href)}">查看配置 ${icon(ICON_PATHS.arrow, 15)}</a></div></div></article>`
     );
   }
   function pageButtons(totalPages: number, current: number): string {
@@ -492,6 +501,21 @@ const staticPages = staticPageCount(lineups.length);
     input.addEventListener('input', () => {
       clearTimeout(searchTimer);
       searchTimer = window.setTimeout(() => queue(), 120);
+    });
+    window.addEventListener('keydown', (e) => {
+      if (
+        e.key === '/' &&
+        !e.metaKey &&
+        !e.ctrlKey &&
+        !e.altKey &&
+        !(e.target instanceof HTMLInputElement) &&
+        !(e.target instanceof HTMLTextAreaElement) &&
+        !(e.target instanceof HTMLSelectElement) &&
+        !(e.target as HTMLElement | null)?.isContentEditable
+      ) {
+        e.preventDefault();
+        input.focus();
+      }
     });
     sort.addEventListener('change', () => queue());
     video.addEventListener('change', () => queue());

@@ -1,0 +1,14 @@
+use_default_settings: true
+
+server:
+  secret_key: 'replace-with-random-secret-before-public-exposure'
+  limiter: false
+  image_proxy: false
+
+search:
+  safe_search: 0
+  autocomplete: ''
+  default_lang: 'zh-CN'
+  formats:
+    - html
+    - json

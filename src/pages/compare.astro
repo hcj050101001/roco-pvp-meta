@@ -4,6 +4,7 @@ import { allLineups } from '../lib/data';
 import { breadcrumbJsonLd } from '../lib/seo';
 import ComparePanel from '../components/ComparePanel.astro';
 import CollectionLinks from '../components/CollectionLinks.astro';
+import Icon from '../components/Icon.astro';
 
 const lineups = allLineups
   .filter((lineup) => lineup.lineup_images.some((image) => image.verified))
@@ -21,35 +22,67 @@ const lineups = allLineups
 >
   <div class="wrap data-page">
     <header class="data-page-heading">
-      <h1>阵容对比</h1>
-      <p>选择两套已核验阵容，并排查看已记录的配置事实。</p>
-      <CollectionLinks />
+      <div class="data-page-title-block">
+        <div class="eyebrow">
+          <span class="eyebrow-line"></span> SIDE-BY-SIDE BENCHMARK · 阵容并排对照
+        </div>
+        <h1>阵容对比</h1>
+        <p>任选两套已核验阵容，并排对照配置原图、六宠顺位、携带技能与共同构筑点。</p>
+        <CollectionLinks />
+      </div>
+      <div class="data-page-kpis" aria-hidden="true">
+        <div>
+          <strong>{String(lineups.length).padStart(2, '0')}</strong>
+          <span>可选核验阵容</span>
+        </div>
+        <div>
+          <strong>06</strong>
+          <span>标准对战席位</span>
+        </div>
+      </div>
     </header>
-    <div class="compare-controls">
-      <label>
-        第一套阵容
-        <select id="compare-first" disabled>
-          {lineups.map((lineup, index) => (
-            <option value={lineup.slug} selected={index === 0}>
-              {lineup.season} · {lineup.name}
-            </option>
-          ))}
-        </select>
-      </label>
-      <label>
-        第二套阵容
-        <select id="compare-second" disabled>
-          {lineups.map((lineup, index) => (
-            <option value={lineup.slug} selected={index === 1}>
-              {lineup.season} · {lineup.name}
-            </option>
-          ))}
-        </select>
-      </label>
+
+    <div class="compare-console">
+      <div class="compare-controls">
+        <label>
+          第一套阵容
+          <select id="compare-first" disabled>
+            {lineups.map((lineup, index) => (
+              <option value={lineup.slug} selected={index === 0}>
+                {lineup.season} · {lineup.name}
+              </option>
+            ))}
+          </select>
+        </label>
+        <button
+          type="button"
+          id="compare-swap"
+          class="compare-swap-btn"
+          title="互换左右对比阵容"
+          disabled
+        >
+          <Icon name="swap" size={17} />
+          <span>互换阵容</span>
+        </button>
+        <label>
+          第二套阵容
+          <select id="compare-second" disabled>
+            {lineups.map((lineup, index) => (
+              <option value={lineup.slug} selected={index === 1}>
+                {lineup.season} · {lineup.name}
+              </option>
+            ))}
+          </select>
+        </label>
+      </div>
+      <div class="compare-status-bar">
+        <p id="compare-status" role="status" aria-live="polite">
+          正在对比{lineups[0].season} · {lineups[0].name}与{lineups[1].season} · {lineups[1].name}。
+        </p>
+        <div id="compare-diff-summary" class="compare-diff-summary" hidden></div>
+      </div>
     </div>
-    <p id="compare-status" role="status" aria-live="polite">
-      正在对比{lineups[0].season} · {lineups[0].name}与{lineups[1].season} · {lineups[1].name}。
-    </p>
+
     <div class="compare-grid">
       <section id="compare-left" aria-label="第一套阵容">
         <ComparePanel lineup={lineups[0]} />
@@ -58,6 +91,7 @@ const lineups = allLineups
         <ComparePanel lineup={lineups[1]} />
       </section>
     </div>
+
     <section class="compare-catalog" id="compare-catalog" aria-label="更多阵容配置">
       <h2>更多阵容配置</h2>
       <p>未启用脚本时，可展开任意两套阵容查看已记录的配置事实。</p>
@@ -77,11 +111,16 @@ const lineups = allLineups
   </div>
 </Layout>
 <script>
+  import { escapeHtml } from '../lib/escape-html';
+
   const first = document.querySelector<HTMLSelectElement>('#compare-first');
   const second = document.querySelector<HTMLSelectElement>('#compare-second');
+  const swapBtn = document.querySelector<HTMLButtonElement>('#compare-swap');
   const left = document.querySelector<HTMLElement>('#compare-left');
   const right = document.querySelector<HTMLElement>('#compare-right');
   const status = document.querySelector<HTMLElement>('#compare-status');
+  const diffSummary = document.querySelector<HTMLElement>('#compare-diff-summary');
+
   if (first && second && left && right && status) {
     const panels = new Map<string, Node>([
       [first.options[0].value, left.cloneNode(true)],
@@ -96,12 +135,81 @@ const lineups = allLineups
     document.querySelector<HTMLElement>('#compare-catalog')!.hidden = true;
     first.disabled = false;
     second.disabled = false;
+    if (swapBtn) swapBtn.disabled = false;
+
+    const params = new URL(location.href).searchParams;
+    const reqFirst = params.get('first');
+    const reqSecond = params.get('second');
+    if (reqFirst && panels.has(reqFirst)) {
+      first.value = reqFirst;
+      if (!reqSecond && second.value === reqFirst) {
+        const alt = [...panels.keys()].find((slug) => slug !== reqFirst);
+        if (alt) second.value = alt;
+      }
+    }
+    if (reqSecond && panels.has(reqSecond)) {
+      second.value = reqSecond;
+    }
+
+    function highlightShared() {
+      if (!left || !right || !diffSummary) return;
+      const leftPets = new Set(
+        [...left.querySelectorAll<HTMLElement>('[data-pet-name]')].map((e) => e.dataset.petName!),
+      );
+      const rightPets = new Set(
+        [...right.querySelectorAll<HTMLElement>('[data-pet-name]')].map((e) => e.dataset.petName!),
+      );
+      const sharedPets = [...leftPets].filter((p) => rightPets.has(p));
+
+      const leftSkills = new Set(
+        [...left.querySelectorAll<HTMLElement>('[data-skill]')].map((e) => e.dataset.skill!),
+      );
+      const rightSkills = new Set(
+        [...right.querySelectorAll<HTMLElement>('[data-skill]')].map((e) => e.dataset.skill!),
+      );
+      const sharedSkills = [...leftSkills].filter((s) => rightSkills.has(s));
+
+      const leftTags = new Set(
+        [...left.querySelectorAll<HTMLElement>('[data-archetype]')].map(
+          (e) => e.dataset.archetype!,
+        ),
+      );
+      const rightTags = new Set(
+        [...right.querySelectorAll<HTMLElement>('[data-archetype]')].map(
+          (e) => e.dataset.archetype!,
+        ),
+      );
+      const sharedTags = [...leftTags].filter((t) => rightTags.has(t));
+
+      for (const container of [left, right]) {
+        container.querySelectorAll<HTMLElement>('[data-pet-name]').forEach((li) => {
+          const isShared = sharedPets.includes(li.dataset.petName!);
+          li.classList.toggle('is-shared-pet', isShared);
+          const flag = li.querySelector<HTMLElement>('.compare-shared-flag');
+          if (flag) flag.hidden = !isShared;
+        });
+        container.querySelectorAll<HTMLElement>('[data-skill]').forEach((chip) => {
+          chip.classList.toggle('is-shared-skill', sharedSkills.includes(chip.dataset.skill!));
+        });
+        container.querySelectorAll<HTMLElement>('[data-archetype]').forEach((chip) => {
+          chip.classList.toggle('is-shared-tag', sharedTags.includes(chip.dataset.archetype!));
+        });
+      }
+
+      diffSummary.hidden = false;
+      diffSummary.innerHTML =
+        `<span class="diff-pill">共同精灵 <strong>${sharedPets.length}</strong>${sharedPets.length ? `（${escapeHtml(sharedPets.join('、'))}）` : ''}</span>` +
+        `<span class="diff-pill">共同技能 <strong>${sharedSkills.length}</strong></span>` +
+        `<span class="diff-pill">共同体系 <strong>${sharedTags.length}</strong>${sharedTags.length ? `（${escapeHtml(sharedTags.join('·'))}）` : ''}</span>`;
+    }
+
     function render() {
       if (!first || !second || !left || !right || !status) return;
       if (first.value === second.value) {
         status.textContent = '请选择两套不同的阵容。';
         left.replaceChildren();
         right.replaceChildren();
+        if (diffSummary) diffSummary.hidden = true;
         return;
       }
       const a = panels.get(first.value);
@@ -109,9 +217,20 @@ const lineups = allLineups
       if (!a || !b) return;
       left.replaceChildren(...[...a.childNodes].map((node) => node.cloneNode(true)));
       right.replaceChildren(...[...b.childNodes].map((node) => node.cloneNode(true)));
-      status.textContent = `正在对比${first.selectedOptions[0].textContent}与${second.selectedOptions[0].textContent}。`;
+      const aLabel = first.selectedOptions[0]?.textContent?.trim() ?? '';
+      const bLabel = second.selectedOptions[0]?.textContent?.trim() ?? '';
+      status.textContent = `正在对比 ${aLabel} 与 ${bLabel}。`;
+      highlightShared();
     }
+
     first.addEventListener('change', render);
     second.addEventListener('change', render);
+    swapBtn?.addEventListener('click', () => {
+      const tmp = first.value;
+      first.value = second.value;
+      second.value = tmp;
+      render();
+    });
+    render();
   }
 </script>

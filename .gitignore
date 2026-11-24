@@ -1,6 +1,7 @@
 node_modules/
 dist/
 .astro/
+deploy/site/
 public/assets/lineups/derived/
 .env
 .env.*

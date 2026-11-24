@@ -1,0 +1,79 @@
+{
+  "id": "abu-starfall-stubborn-s5",
+  "slug": "abu-starfall-stubborn-s5",
+  "name": "星陨固执阿布",
+  "aliases": ["固执阿布星陨队", "无镜子固执阿布"],
+  "season": "S5",
+  "version_label": "圣龙宝藏",
+  "archetype": ["阿布", "星陨"],
+  "summary": "巨噬针鼹、玳塔、卡瓦重、化蝶、贝古斯、阿布的 S5 固执性格阿布星陨配置。",
+  "guides": [],
+  "signals": [],
+  "roster": [
+    {
+      "name": "巨噬针鼹",
+      "bloodline": null,
+      "skills": ["先发制人", "虫击", "地刺", "偷袭"]
+    },
+    {
+      "name": "玳塔",
+      "bloodline": null,
+      "skills": ["大爆炸", "冥想", "拟寄生", "甜心续航"]
+    },
+    {
+      "name": "卡瓦重",
+      "bloodline": null,
+      "skills": ["筛管奔流", "火焰切割", "拟寄生", "富养化"]
+    },
+    {
+      "name": "化蝶",
+      "bloodline": null,
+      "skills": ["掩护", "退化", "破罐破摔", "毒孢子"]
+    },
+    {
+      "name": "贝古斯",
+      "bloodline": null,
+      "skills": ["离子震荡", "灵媒", "易燃物质", "焚烧烙印"]
+    },
+    {
+      "name": "阿布",
+      "bloodline": null,
+      "skills": ["先发制人", "龙炮", "火焰切割", "吹炎"]
+    }
+  ],
+  "lineup_images": [
+    {
+      "path": "/assets/lineups/abu-starfall-stubborn-s5/c9947b4dc2724ed39097c5a44d567c70de1f550f433901366a9b295989bb6395.png",
+      "source_url": "https://i0.hdslb.com/bfs/new_dyn/c20b917c3b12782a5db72bffac93606611686120.png",
+      "source_page_url": "https://www.bilibili.com/video/BV18zytzxEJf",
+      "source_kind": "comment",
+      "capture_method": "direct-image",
+      "published_at": "2026-11-24T07:27:08.000Z",
+      "captured_at": "2026-11-24T19:28:00+08:00",
+      "width": 1625,
+      "height": 747,
+      "sha256": "c9947b4dc2724ed39097c5a44d567c70de1f550f433901366a9b295989bb6395",
+      "phash": "568359a323dd5c49",
+      "evidence_grade": "B",
+      "verified": true,
+      "verification_notes": "Bilibili 评论区玩家 繁星之下览夜空 于 2026-11-24 分享的「星陨固执布」一图流原图（1625×747），六员性格、个体资质与 24 个技能清晰可读。",
+      "attribution": "Bilibili · 繁星之下览夜空（评论分享一图流）"
+    }
+  ],
+  "tutorials": [],
+  "sources": [
+    {
+      "url": "https://www.bilibili.com/video/BV18zytzxEJf",
+      "type": "community",
+      "title": "不用金镜子也能玩到加速性格阿布的办法2.0（评论区：繁星之下览夜空）",
+      "published_at": "2026-11-24T07:27:08.000Z",
+      "last_checked_at": "2026-11-24T19:30:00+08:00"
+    }
+  ],
+  "first_seen_at": "2026-11-24T19:30:00+08:00",
+  "last_verified_at": "2026-11-24T19:30:00+08:00",
+  "status": "active",
+  "verification_notes": "S5 赛季固执性格阿布星陨变体配置，24 个技能核对无误；暂无该六只变体的独立教学视频。",
+  "archive_reason": null,
+  "player_notes": []
+}

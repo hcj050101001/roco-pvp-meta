@@ -1,0 +1,9 @@
+node_modules
+dist
+.astro
+research/inbox
+deploy/site
+.git
+.env
+playwright-report
+test-results

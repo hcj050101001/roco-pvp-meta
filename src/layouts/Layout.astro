@@ -61,10 +61,10 @@ const structured = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
       <div class="header-inner wrap">
         <a href={withBase('/')} class="brand">
           <span class="brand-symbol" aria-hidden="true">
-            <Icon name="book" size={22} />
+            <Icon name="book" size={21} />
           </span>
-          <span>
-            洛克配队手册<small>ROCO KINGDOM · PVP</small>
+          <span class="brand-text">
+            洛克配队手册<small>ROCO KINGDOM · PVP ATLAS</small>
           </span>
         </a>
         <nav aria-label="主导航">
@@ -89,7 +89,9 @@ const structured = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
         </nav>
         <a class="season-pill" href={withBase('/#lineup-overview')}>
           <span class="status-dot"></span>
-          {currentSeason.id} · {currentSeason.name}
+          <span class="season-pill-text">
+            <strong>{currentSeason.id}</strong> · {currentSeason.name}
+          </span>
           <Icon name="diagonal" size={14} />
         </a>
       </div>
@@ -97,23 +99,41 @@ const structured = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
     <main id="main">
       <slot />
     </main>
-    <footer class="site-footer wrap">
-      <div>
-        <a class="footer-brand" href={withBase('/')}>
-          <Icon name="book" size={18} />
-          洛克配队手册
-        </a>
-        <p>每一种配队，都有新的可能。</p>
-      </div>
-      <div>
-        <p>非官方玩家站 · 配置图归原作者所有</p>
-        <a
-          href="https://github.com/hcj050101001/roco-pvp-meta/issues"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          反馈与纠错 ↗
-        </a>
+    <footer class="site-footer">
+      <div class="wrap footer-inner">
+        <div class="footer-col-brand">
+          <a class="footer-brand" href={withBase('/')}>
+            <span class="footer-emblem" aria-hidden="true">
+              <Icon name="book" size={16} />
+            </span>
+            洛克配队手册
+          </a>
+          <p class="footer-motto">
+            面向《洛克王国：世界》玩家的配队图鉴。收录真实完整配置图、作者原话与对应教学视频。
+          </p>
+        </div>
+        <nav class="footer-links" aria-label="页脚导航">
+          <a href={withBase('/')}>当季阵容</a>
+          <a href={withBase('/history/')}>往期阵容</a>
+          <a href={withBase('/timeline/')}>配置时间线</a>
+          <a href={withBase('/compare/')}>阵容对比</a>
+          <a href={withBase('/systems/')}>体系共现图</a>
+        </nav>
+        <div class="footer-meta">
+          <p class="footer-season-tag">
+            <span class="status-dot"></span>
+            当前收录基准：{currentSeason.id} · {currentSeason.name}
+          </p>
+          <p>非官方玩家图鉴 · 配置图与视频归原作者所有</p>
+          <a
+            class="footer-feedback"
+            href="https://github.com/hcj050101001/roco-pvp-meta/issues"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            反馈与纠错 <Icon name="diagonal" size={13} />
+          </a>
+        </div>
       </div>
     </footer>
   </body>

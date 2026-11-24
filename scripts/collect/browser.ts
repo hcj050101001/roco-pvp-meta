@@ -1,16 +1,47 @@
-import { chromium } from '@playwright/test';
+import { chromium, type Browser } from '@playwright/test';
 import { assertPublicUrl } from './network';
-// A fresh browser context: no persistent profile, private cookies or login.
+
+let sharedBrowser: Browser | null = null;
+let launching: Promise<Browser> | null = null;
+
+async function getBrowser(): Promise<Browser> {
+  if (sharedBrowser?.isConnected()) return sharedBrowser;
+  if (launching) return launching;
+  launching = chromium
+    .launch({
+      headless: true,
+      ...(process.env.RESEARCH_CHROMIUM_PATH
+        ? { executablePath: process.env.RESEARCH_CHROMIUM_PATH }
+        : {}),
+    })
+    .then((browser) => {
+      sharedBrowser = browser;
+      browser.on('disconnected', () => {
+        if (sharedBrowser === browser) sharedBrowser = null;
+      });
+      return browser;
+    })
+    .finally(() => {
+      launching = null;
+    });
+  return launching;
+}
+
+export async function closeBrowserPool(): Promise<void> {
+  const browser = sharedBrowser;
+  sharedBrowser = null;
+  if (browser?.isConnected()) {
+    await browser.close().catch(() => {});
+  }
+}
+
+// Fresh incognito context per URL: no persistent profile, private cookies, or login,
+// while reusing a single Chromium process across the run.
 export async function publicBrowserSnapshot(url: string) {
   await assertPublicUrl(url);
-  const browser = await chromium.launch({
-    headless: true,
-    ...(process.env.RESEARCH_CHROMIUM_PATH
-      ? { executablePath: process.env.RESEARCH_CHROMIUM_PATH }
-      : {}),
-  });
+  const browser = await getBrowser();
+  const context = await browser.newContext({ viewport: { width: 1440, height: 1000 } });
   try {
-    const context = await browser.newContext({ viewport: { width: 1440, height: 1000 } });
     await context.route('**/*', async (route) => {
       try {
         const u = new URL(route.request().url());
@@ -37,6 +68,6 @@ export async function publicBrowserSnapshot(url: string) {
       url: page.url(),
     };
   } finally {
-    await browser.close();
+    await context.close().catch(() => {});
   }
 }

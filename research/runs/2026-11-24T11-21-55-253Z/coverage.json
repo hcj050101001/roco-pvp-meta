@@ -1,0 +1,265 @@
+{
+  "run_id": "2026-11-24T11-21-55-253Z",
+  "status": "limited-source-coverage",
+  "target_successful_platforms": 3,
+  "successful_image_platforms": 2,
+  "platforms": [
+    {
+      "platform": "taptap",
+      "kind": "community",
+      "attempted": 8,
+      "fetched": 0,
+      "browser_failures": 0,
+      "image_sources": 0,
+      "unique_images": 0,
+      "unpublished_images": 0,
+      "deferred_images": 0
+    },
+    {
+      "platform": "bilibili",
+      "kind": "creator",
+      "attempted": 15,
+      "fetched": 14,
+      "browser_failures": 14,
+      "image_sources": 0,
+      "unique_images": 0,
+      "unpublished_images": 0,
+      "deferred_images": 0
+    },
+    {
+      "platform": "qiandao",
+      "kind": "community",
+      "attempted": 0,
+      "fetched": 0,
+      "browser_failures": 0,
+      "image_sources": 0,
+      "unique_images": 0,
+      "unpublished_images": 0,
+      "deferred_images": 0
+    },
+    {
+      "platform": "douyin",
+      "kind": "creator",
+      "attempted": 0,
+      "fetched": 0,
+      "browser_failures": 0,
+      "image_sources": 0,
+      "unique_images": 0,
+      "unpublished_images": 0,
+      "deferred_images": 0
+    },
+    {
+      "platform": "xiaohongshu",
+      "kind": "creator",
+      "attempted": 0,
+      "fetched": 0,
+      "browser_failures": 0,
+      "image_sources": 0,
+      "unique_images": 0,
+      "unpublished_images": 0,
+      "deferred_images": 0
+    },
+    {
+      "platform": "tieba",
+      "kind": "community",
+      "attempted": 0,
+      "fetched": 0,
+      "browser_failures": 0,
+      "image_sources": 0,
+      "unique_images": 0,
+      "unpublished_images": 0,
+      "deferred_images": 0
+    },
+    {
+      "platform": "nga",
+      "kind": "community",
+      "attempted": 0,
+      "fetched": 0,
+      "browser_failures": 0,
+      "image_sources": 0,
+      "unique_images": 0,
+      "unpublished_images": 0,
+      "deferred_images": 0
+    },
+    {
+      "platform": "gamekee",
+      "kind": "community",
+      "attempted": 0,
+      "fetched": 0,
+      "browser_failures": 0,
+      "image_sources": 0,
+      "unique_images": 0,
+      "unpublished_images": 0,
+      "deferred_images": 0
+    },
+    {
+      "platform": "wegame",
+      "kind": "community",
+      "attempted": 0,
+      "fetched": 0,
+      "browser_failures": 0,
+      "image_sources": 0,
+      "unique_images": 0,
+      "unpublished_images": 0,
+      "deferred_images": 0
+    },
+    {
+      "platform": "17173",
+      "kind": "editorial",
+      "attempted": 4,
+      "fetched": 4,
+      "browser_failures": 0,
+      "image_sources": 4,
+      "unique_images": 14,
+      "unpublished_images": 14,
+      "deferred_images": 75
+    },
+    {
+      "platform": "duowan",
+      "kind": "editorial",
+      "attempted": 0,
+      "fetched": 0,
+      "browser_failures": 0,
+      "image_sources": 0,
+      "unique_images": 0,
+      "unpublished_images": 0,
+      "deferred_images": 0
+    },
+    {
+      "platform": "gamersky",
+      "kind": "editorial",
+      "attempted": 0,
+      "fetched": 0,
+      "browser_failures": 0,
+      "image_sources": 0,
+      "unique_images": 0,
+      "unpublished_images": 0,
+      "deferred_images": 0
+    },
+    {
+      "platform": "biligame",
+      "kind": "wiki",
+      "attempted": 1,
+      "fetched": 1,
+      "browser_failures": 0,
+      "image_sources": 1,
+      "unique_images": 4,
+      "unpublished_images": 4,
+      "deferred_images": 3
+    },
+    {
+      "platform": "3dm",
+      "kind": "editorial",
+      "attempted": 0,
+      "fetched": 0,
+      "browser_failures": 0,
+      "image_sources": 0,
+      "unique_images": 0,
+      "unpublished_images": 0,
+      "deferred_images": 0
+    },
+    {
+      "platform": "sina",
+      "kind": "mirror",
+      "attempted": 2,
+      "fetched": 2,
+      "browser_failures": 0,
+      "image_sources": 0,
+      "unique_images": 0,
+      "unpublished_images": 0,
+      "deferred_images": 2
+    }
+  ],
+  "seasons": [
+    {
+      "season": "S5",
+      "queries_attempted": 114,
+      "supported_search_results": 1,
+      "scoped_pages_attempted": 30,
+      "published_lineups": 20,
+      "published_source_platforms": [
+        "bilibili",
+        "rocoduel.com"
+      ]
+    }
+  ],
+  "published": [
+    {
+      "platform": "taptap",
+      "lineups": 0,
+      "unique_source_pages": 0
+    },
+    {
+      "platform": "bilibili",
+      "lineups": 14,
+      "unique_source_pages": 13
+    },
+    {
+      "platform": "qiandao",
+      "lineups": 10,
+      "unique_source_pages": 1
+    },
+    {
+      "platform": "douyin",
+      "lineups": 0,
+      "unique_source_pages": 0
+    },
+    {
+      "platform": "xiaohongshu",
+      "lineups": 0,
+      "unique_source_pages": 0
+    },
+    {
+      "platform": "tieba",
+      "lineups": 0,
+      "unique_source_pages": 0
+    },
+    {
+      "platform": "nga",
+      "lineups": 0,
+      "unique_source_pages": 0
+    },
+    {
+      "platform": "gamekee",
+      "lineups": 0,
+      "unique_source_pages": 0
+    },
+    {
+      "platform": "wegame",
+      "lineups": 0,
+      "unique_source_pages": 0
+    },
+    {
+      "platform": "17173",
+      "lineups": 4,
+      "unique_source_pages": 1
+    },
+    {
+      "platform": "duowan",
+      "lineups": 0,
+      "unique_source_pages": 0
+    },
+    {
+      "platform": "gamersky",
+      "lineups": 0,
+      "unique_source_pages": 0
+    },
+    {
+      "platform": "biligame",
+      "lineups": 0,
+      "unique_source_pages": 0
+    },
+    {
+      "platform": "3dm",
+      "lineups": 9,
+      "unique_source_pages": 9
+    },
+    {
+      "platform": "sina",
+      "lineups": 0,
+      "unique_source_pages": 0
+    }
+  ],
+  "deferred_sources": 70,
+  "note": "平台数、图片哈希与查询赛季均不证明独立原创或图片语义；转载链、作者、六只成员和真实赛季仍须逐项核验。覆盖目标只用于发现诊断，不是发布数量配额。"
+}

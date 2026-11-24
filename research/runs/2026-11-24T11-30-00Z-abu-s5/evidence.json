@@ -1,0 +1,29 @@
+{
+  "run_id": "2026-11-24T11-30-00Z-abu-s5",
+  "sources": [
+    {
+      "url": "https://www.bilibili.com/video/BV1xEyezPE8M",
+      "artifact_sha256": [
+        "a711974eba747364e6127dfd7f752c2d5d93ffe371e9ef185da680a11811dfdf"
+      ]
+    },
+    {
+      "url": "https://www.bilibili.com/video/BV18zytzxEJf",
+      "artifact_sha256": [
+        "c9947b4dc2724ed39097c5a44d567c70de1f550f433901366a9b295989bb6395"
+      ]
+    },
+    {
+      "url": "https://www.bilibili.com/video/BV1VAsg6EEaa",
+      "artifact_sha256": [
+        "c7669a19ae806526e9f3b2fe9219d3cfbe7ed95465e4b585f4f1bdfab81f8260"
+      ]
+    },
+    {
+      "url": "https://www.bilibili.com/video/BV1QnyhzNEbq",
+      "artifact_sha256": [
+        "c8ea98bb6f4532a8462ac71bc2bed0d95cbce18637a8b355f31f970fff0b47c8"
+      ]
+    }
+  ]
+}
